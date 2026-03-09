@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: output/build/main.aux
+The style file: Definitions/mdpi.bst
+Database file #1: content/referencias.bib
+Warning--empty booktitle in ART04
+Warning--empty booktitle in A157
+Warning--empty booktitle in A167
+Warning--empty booktitle in A028
+Warning--empty booktitle in A165
+You've used 29 entries,
+            2887 wiz_defined-function locations,
+            826 strings with 15389 characters,
+and the built_in function-call counts, 12320 in all, are:
+= -- 1057
+> -- 797
+< -- 14
++ -- 344
+- -- 215
+* -- 1086
+:= -- 1917
+add.period$ -- 116
+call.type$ -- 29
+change.case$ -- 29
+chr.to.int$ -- 29
+cite$ -- 34
+duplicate$ -- 561
+empty$ -- 942
+format.name$ -- 284
+if$ -- 2605
+int.to.chr$ -- 1
+int.to.str$ -- 29
+missing$ -- 28
+newline$ -- 176
+num.names$ -- 87
+pop$ -- 243
+preamble$ -- 0
+purify$ -- 29
+quote$ -- 0
+skip$ -- 374
+stack$ -- 0
+substring$ -- 447
+swap$ -- 128
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 203
+warning$ -- 5
+while$ -- 78
+width$ -- 0
+write$ -- 429
+(There were 5 warnings)

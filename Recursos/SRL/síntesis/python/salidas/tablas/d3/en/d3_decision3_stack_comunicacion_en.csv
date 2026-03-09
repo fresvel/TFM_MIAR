@@ -1,0 +1,45 @@
+﻿Technology,k,n,%,Pattern,Decision_reading
+MATLAB,7,19,36.8,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+Cloud_Server,6,19,31.6,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+WiFi,6,19,31.6,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+MCU_Arduino,4,19,21.1,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+Bluetooth,3,19,15.8,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+ESP32,3,19,15.8,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+ESP8266,3,19,15.8,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+ThingSpeak,3,19,15.8,Recurrent,Stack element repeated across multiple studies; candidate for common baseline.
+Python,2,19,10.5,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+RaspberryPi,2,19,10.5,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Zigbee,2,19,10.5,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+AWS_EC2,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Google_Map,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Google_Sheets,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+HDFS_MapReduce,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+I2C,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+LoRa,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:ATMega32,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:AWS_IoT,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Android_Studio,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Arduino_Controllers,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:BluEpyc,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:CAN,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Cloud_Data_Access,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:CodeVision_CVAVR,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Ethernet,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Firebase,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Gateway_LAN,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Google_Colab,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:IBM_SPSS,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:IoT_Sensor_Network,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:JavaScript_Web_App,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:LCD,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Local_DB_Server,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:MAX232,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:MCU_CORTEX-M3,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:NRF24L01_RF_Link,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:PMS7003,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:SD_Logging,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:SGP30,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:Thonny,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:WP6003,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Other:WordPress,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."
+Serial,1,19,5.3,Contextual,"Point/specialized usage depending on domain, hardware, or study ecosystem."

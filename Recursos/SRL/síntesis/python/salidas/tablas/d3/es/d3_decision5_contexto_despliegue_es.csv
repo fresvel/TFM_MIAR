@@ -1,0 +1,5 @@
+﻿Contexto_despliegue,Criterio_operativo,k,n,%,Lectura_decision
+Interior,Predominio de contextos indoor/residencial/sanitario/industrial sin componente exterior explicito.,8,19,42.1,Escenario dominante para instrumentacion controlada.
+Exterior,Predominio de contextos outdoor/urban/rural/desert sin componente interior explicito.,2,19,10.5,Escenario de exposicion ambiental abierta.
+Mixto_interior_exterior,Convivencia de contextos indoor y outdoor en el mismo estudio.,9,19,47.4,Patron mixto con necesidades de calibracion y operacion heterogeneas.
+NR,Sin evidencia suficiente para clasificar contexto de despliegue.,0,19,0.0,NR en contexto de despliegue.

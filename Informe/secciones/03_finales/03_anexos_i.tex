@@ -1,0 +1,27 @@
+% ANEXOS I
+\setcounter{section}{0}
+
+\newcommand{\VIUAnexoSection}[2]{%
+  \refstepcounter{section}%
+  \VIUSectionStar{#1}%
+  \label{#2}%
+}
+
+\VIUAnexoSection{Anexo I}{ane:anexo_checklist_calidad}
+\subsection*{ Checklist de evaluación de calidad}
+
+\input{assets/tablas/03_finales/03_anexos_i/anexo_checklist_calidad.tex}
+
+\VIUAnexoSection{Anexo II}{ane:anexo_diccionario_extraccion}
+\subsection*{ Diccionario operativo de la matriz de extracción}
+%Los anexos también contienen información adicional que se considera relevante para justificar las conclusiones del trabajo, pero, por lo general, el autor de contenido del anexo es distinto al autor del trabajo. Suele ser un documento independiente del trabajo. Pueden ser tablas de datos, imágenes, etc. Es necesario incluir las referencias de los documentos de donde procedan.
+
+\input{assets/tablas/03_finales/03_anexos_i/diccionario_extraccion.tex}
+
+
+\VIUAnexoSection{Anexo III}{ane:d3_tabla_principal}
+\subsection*{Tabla principal de evidencia cuantitativa D3}
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_tabla_principal_es.tex}
+
+\subsection*{Frecuencia de métricas por grupos comparables core (desempeño)}
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_metricas_por_unidad_core_es.tex}

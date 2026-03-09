@@ -1,0 +1,8 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Indoor_Outdoor,Indoor; Outdoor,multilabel_split,Contexto mixto se representa como doble etiqueta explicita.
+Other:Operating_Room,Healthcare_Facility,domain_unification,Subcontexto sanitario hospitalario/quirurgico.
+Other:Hospital,Healthcare_Facility,domain_unification,Subcontexto sanitario hospitalario/quirurgico.
+Other:Personalized_Healthcare,Healthcare_Personalized,domain_specialization,Contexto sanitario personalizado no necesariamente hospitalario.
+Other:Educational_Classroom,Educational_Classroom,label_cleanup,Normalizacion sintactica sin cambio semantico.
+Other:Rural,Rural,label_cleanup,Normalizacion sintactica sin cambio semantico.
+Other:Desert,Desert,label_cleanup,Normalizacion sintactica sin cambio semantico.

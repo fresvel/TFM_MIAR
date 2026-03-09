@@ -1,0 +1,6 @@
+﻿Temporal_strategy,Included_categories,k,n,%,Decision_reading
+Tiempo_real_estricto,Real_Time_Distributed; Real_Time_Edge,6,19,31.6,Low-latency edge/distributed operation; strong operational pattern.
+Cuasi_tiempo_real,Near_Real_Time,7,19,36.8,Dominant corpus mode for continuous monitoring with update windows.
+Hibrido,Hybrid,4,19,21.1,Combines online operation with deferred/auxiliary analytics.
+Offline,Offline_Analytics,1,19,5.3,Isolated cases without online operational loop.
+NR,NR,1,19,5.3,Insufficient temporal detail to classify processing mode.

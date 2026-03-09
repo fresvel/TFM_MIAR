@@ -1,0 +1,50 @@
+﻿Article_ID,Title,DOI,Retrieval_result
+A001,UAV-Based Hybrid Fuzzy Inference Framework for Symmetry and Asymmetry in Real-Time Air Quality Monitoring,10.3390/sym17122048,Retrieved
+A005,Real-Time Data Fusion Algorithm for Multi-Modal Environmental Sensor Networks Using Kalman Filtering and IoT Integration,10.1080/00032719.2026.2615824,Requested
+A008,IoT-Based Air Quality Monitoring System Using Tsukamoto Fuzzy Logic - 2025 7th International Conference on Cybernetics and Intelligent System (ICORIS),10.1109/ICORIS67789.2025.11296111,Not retrieved
+A009,Air Quality Indices Prediction using Sugeno’s Fuzzy Logic - 2022 International Conference on IoT and Blockchain Technology (ICIBT),10.1109/ICIBT52874.2022.9807786,Retrieved
+A010,"Optimizing Indoor Air Quality: A Fuzzy Logic-based Control System - 2023 2nd International Conference on Automation, Computing and Renewable Systems (ICACRS)",10.1109/ICACRS58579.2023.10404877,Requested
+A016,"IoT-based Indoor Air Quality Surveillance and Purifier - 2023 IEEE 5th Eurasia Conference on IOT, Communication and Engineering (ECICE)",10.1109/ECICE59523.2023.10383051,Requested
+A019,An IoT-based Approach to Air Circulation within a Specific Room Environment - 2023 Third International Conference on Artificial Intelligence and Smart Energy (ICAIS),10.1109/ICAIS56108.2023.10073742,Requested
+A020,Indoor air quality assessment and control using fuzzy inference - 2022 IEEE 10th International Conference on Smart City and Informatization (iSCI),10.1109/iSCI57775.2022.00019,Requested
+A021,Smartphone Application As An Air Quality Monitor Using Raspberry Pi For Reducing Air Pollution - 2021 2nd International Conference on Innovative and Creative Information Technology (ICITech),10.1109/ICITech50181.2021.9590187,Retrieved
+A028,Urban Air Quality Analysis Using Ensemble Learning - 2025 Eighth International Conference on Advances in Biomedical Engineering (ICABME),10.1109/ICABME66883.2025.11211707,Retrieved
+A048,Vision and Olfactory-Based Wildfire Monitoring with Uncrewed Aircraft Systems - 2023 20th International Conference on Ubiquitous Robots (UR),10.1109/UR57808.2023.10202419,Requested
+A079,Intelligent multi-pollutant prediction for indoor air quality management in industrial buildings using adaptive sensor fusion,10.1016/j.jobe.2025.115048,Requested
+A080,Development of a Fuzzy Logic-Based Smart Closed Loop Control and Warning System for Kitchen Hoods,10.1007/s40010-026-00981-y,Requested
+A082,Toward Air Quality Fuzzy Classification: Measuring the Performance of Fuzzy Logic Methods for Air Quality Classification,10.1007/978-3-032-08570-2_7,Requested
+A084,Explainable AI for rule reduction in fuzzy models for air pollution measurement adjustment,10.1016/j.envsoft.2025.106734,Retrieved
+A085,Decision support system using the expert-fuzzy method in validating real-time acid rain measurements,10.1007/s40860-025-00258-y,Requested
+A087,IoT-based filter management system using reinforced ANFIS for VOCs reduction in urban industrial facilities,10.1038/s41598-025-02435-8,Retrieved
+A091,"Evaluating the transferability of low-cost sensor calibration using ANFIS: a field study in Putrajaya, Malaysia",10.1007/s10661-025-14377-9,Requested
+A099,Enhancing Low-Cost Air Quality Sensors with AI for Smart Green Routing,10.15439/2025F3919,Retrieved
+A103,Methods and Algorithms for Decision-Making in Agro-Industrial Environmental Management,,Not retrieved
+A107,Real-Time Monitoring System for CO Pollutant Concentration Using Fuzzy Logic on an Internet of Things (IoT) Platform and Telegram Around UNNES,10.1051/bioconf/202414403004,Retrieved
+A111,A novel hybrid time-series approach for IoT-cloud-enabled environment monitoring,10.1007/s11227-023-05782-3,Requested
+A113,Forecasting Air Pollution with Artificial Intelligence: Recent Advancements at Global Scale and Future Perspectives,10.1201/9781032683805-5,Requested
+A114,Intelligent Factory with Environment Quality Control Based on Fuzzy Method through Deep Reinforcement Learning,10.18494/SAM4661,Retrieved
+A117,Real-Time Air Quality Monitoring Model using Fuzzy Inference System,10.14569/IJACSA.2024.0150684,Retrieved
+A123,Microcontroller-based air quality monitoring design using mamdani fuzzy method,10.11591/ijeecs.v32.i2.pp715-724,Retrieved
+A124,Modeling and implementation of a low-cost IoT-smart weather monitoring station and air quality assessment based on fuzzy inference model and MQTT protocol,10.1007/s40808-023-01701-w,Not retrieved
+A129,Implimentation and Study of Fuzzy Based IoT enabled Health Alert system using AQI,10.1109/ICICAT57735.2023.10263668,Requested
+A132,Neuro-Fuzzy Decision Support System for Optimization of the Indoor Air Quality in Operation Rooms,10.31763/ijrcs.v3i1.854,Retrieved
+A135,Modeling indoor PM2.5 using Adaptive Dynamic Fuzzy Inference System Tree (ADFIST) on Internet of Things-based sensor network data,10.1016/j.iot.2022.100628,Retrieved
+A136,Context-aware IoT-enabled framework to analyse and predict indoor air quality,10.1016/j.iswa.2022.200132,Retrieved
+A138,A novel application of fuzzy inference system optimized with particle swarm optimization and genetic algorithm for PM10 prediction,10.1007/s00500-022-06777-7,Retrieved
+A142,A Fuzzy Inference System for the Assessment of Indoor Air Quality in an Operating Room to Prevent Surgical Site Infection,10.3390/ijerph19063533,Retrieved
+A144,ADFIST: Adaptive Dynamic Fuzzy Inference System Tree Driven by Optimized Knowledge Base for Indoor Air Quality Assessment,10.3390/s22031008,Retrieved
+A145,An intelligent fuzzy and IoT-aware air quality prediction and monitoring system using CRF and Bi-LSTM,10.1504/IJIEI.2022.129095,Requested
+A146,FL-CNN-LSTM: Indoor Air Quality Prediction Using Fuzzy Logic and CNN-LSTM Model,10.1109/IC2ECS57645.2022.10088050,Requested
+A149,Application of ARIMA Kalman Filter with Multi-Sensor Data Fusion Fuzzy Logic to Improve Indoor Air Quality Index Estimation,10.30630/joiv.6.4.889,Retrieved
+A150,Design and Development of Fuzzy Logic Based Car Cabin Pollution Monitoring System,10.1109/ICCSCE54767.2022.9935658,Requested
+A151,Efficient Monitoring and Adaptive Control of Indoor Air Quality Based on IoT Technology and Fuzzy Inference,10.1155/2022/4127079,Retracted
+A152,Environmental Condition Monitoring and Decision Making System Using Fuzzy Logic Method,10.1109/IES55876.2022.9888554,Retrieved
+A155,Big Data Analytics with Artificial Intelligence Enabled Environmental Air Pollution Monitoring Framework,10.32604/cmc.2022.029604,Retrieved
+A156,Online Monitoring of Indoor Air Quality and Thermal Comfort Using a Distributed Sensor-Based Fuzzy Decision Tree Model,10.1007/978-3-030-96486-3_8,Requested
+A157,Application of a Fuzzy ARTMAP Neural Network for Indoor Air Quality Prediction,10.1109/iEECON53204.2022.9741563,Retrieved
+A165,Implementation of Fuzzy Tsukamoto Algorithm on Smart Node Sensors for Air Quality Monitoring,10.1109/IES53407.2021.9594014,Retrieved
+A167,An intelligent IoT fuzzy based approach for automated indoor air quality monitoring,10.1109/MED51440.2021.9480313,Retrieved
+A168,Monitoring of air pollution to establish optimal less polluted path by utilizing wireless sensor network,10.1007/s12652-020-02232-3,Retrieved
+A169,Air Pollution Monitoring based Fuzzy Controller with Embedded System,10.1088/1742-6596/1879/2/022085,Retrieved
+A174,An Ensemble Approach of Multi-objective Differential Evolution Based Benzene Detection,10.1007/978-981-16-1480-4_23,Requested
+A178,Personalised healthcare model for monitoring and prediction of airpollution: machine learning approach,10.1080/0952813X.2020.1744197,Retrieved

@@ -1,0 +1,5 @@
+﻿Data_source_type,Unidad_comparable,k,n,%
+Direct_Sensors,IAQ_Classification_Control,3,19,15.8
+Direct_Sensors,AQI_Classification,2,19,10.5
+Direct_Sensors,AQI_IAQ_Estimation,2,19,10.5
+Hybrid_Sensors+Datasets,PM2.5_Prediction,2,19,10.5

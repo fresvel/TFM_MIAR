@@ -1,0 +1,6 @@
+﻿Real_time_evidence,Operational_criterion,k,n,%,Decision_reading
+Explicit_latency_synchronization,Explicit report of latency and/or temporal synchronization.,1,19,5.3,Highest robustness of real-time operational evidence.
+Continuous_loop,Continuous operation reported as monitoring loop.,10,19,52.6,Dominant online operation pattern.
+Interval_sampling,Temporal operation by acquisition windows/intervals.,5,19,26.3,Near-real-time mode with defined cadence.
+General_operational_statement,"Only general real-time operation evidence, without explicit temporal metric.",2,19,10.5,Useful operational support but less comparable.
+NR,Insufficient evidence to classify temporal operation.,1,19,5.3,NR in real-time characteristics.

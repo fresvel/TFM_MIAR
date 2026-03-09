@@ -1,0 +1,15 @@
+\begin{longtblr}[
+  entry=none,
+  label={tab:d3_decision1_architecture_reference},
+  caption={D3 -- Decision 1: reference architecture (inferred family grouping; k/n/%; n=19).}
+]{
+  colspec={X[1.0,l,m] X[1.6,l,m] X[0.45,c,m] X[0.45,c,m] X[0.55,c,m] X[2.3,l,m]},
+  width=\textwidth,
+  row{1}={font=\bfseries}
+}
+Architecture\_option & Included\_categories & k & n & \% & Decision\_reading \\
+Edge/Cloud & IoT\_Edge\_Cloud; IoT\_Fog\_Layered & 7 & 19 & 36.8 & Highest-coverage family; primary reference for baseline design. \\
+IoT\_2Tier & IoT\_2Tier & 5 & 19 & 26.3 & Second dominant pattern; stable alternative for local deployments. \\
+Alternativas & Sensor\_Node\_External\_Analytics; Standalone\_Node\_PC; WSN\_Pipeline & 5 & 19 & 26.3 & Contextual patterns (pipeline, node+external analytics, standalone). \\
+NR & NR & 2 & 19 & 10.5 & Insufficient structural detail to classify architecture. \\
+\end{longtblr}

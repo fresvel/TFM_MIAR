@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this replication package, please cite it as below."
+title: "Replication Package: SLR on Fuzzy Inference Systems for Air Quality Monitoring"
+type: dataset
+authors:
+  - family-names: "Velastegui Izurieta"
+    given-names: "Homero Javier"
+  - family-names: "[Coauthor1]"
+    given-names: "[GivenName1]"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.XXXXXXX"
+repository-code: "https://doi.org/10.5281/zenodo.XXXXXXX"
+license: "CC-BY-4.0"
+abstract: >-
+  Replication package containing data extraction matrix, quality assessment checklist,
+  and consolidated SLR process outputs used in the study.
+keywords:
+  - systematic literature review
+  - fuzzy inference system
+  - air quality
+  - evidence synthesis
+version: "v1.0.0"
+date-released: "2026-02-15"

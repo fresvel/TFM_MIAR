@@ -1,0 +1,245 @@
+\begin{thebibliography}{999}
+
+\bibitem[K and Kumar(2022)]{ART01}
+K, P.; Kumar, P.
+\newblock A critical evaluation of air quality index models (1960--2021).
+\newblock {\em Environmental Monitoring and Assessment} {\bf 2022}, {\em
+  194},~324.
+\newblock {\url{https://doi.org/10.1007/s10661-022-09896-8}}.
+
+\bibitem[Suman(2020)]{ART02}
+Suman.
+\newblock Air quality indices: A review of methods to interpret air quality
+  status.
+\newblock {\em Materials Today: Proceedings} {\bf 2020}.
+\newblock {\url{https://doi.org/10.1016/j.matpr.2020.07.141}}.
+
+\bibitem[Zadeh(1973)]{ART03}
+Zadeh, L.A.
+\newblock Outline of a New Approach to the Analysis of Complex Systems and
+  Decision Processes.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics} {\bf 1973},
+  {\em SMC-3},~28--44.
+
+\bibitem[Seibert et~al.(2024)Seibert, Bastos, Maia, Lucca, Santos, Yamin, and
+  Reiser]{ART04}
+Seibert, V.A.; Bastos, R.; Maia, G.; Lucca, G.; Santos, H.; Yamin, A.; Reiser,
+  R.H.R.
+\newblock Toward Air Quality Fuzzy Classification.
+\newblock  2024.
+\newblock {\url{https://doi.org/10.5220/0012689000003690}}.
+
+\bibitem[Bushnag(2023)]{ART05}
+Bushnag, A.
+\newblock An improved air quality and climate control monitoring system using
+  fuzzy logic for enclosed areas.
+\newblock {\em Journal of Ambient Intelligence and Humanized Computing} {\bf
+  2023}, {\em 14},~6339 -- 6347.
+\newblock Cited by: 13, {\url{https://doi.org/10.1007/s12652-022-03814-z}}.
+
+\bibitem[Andrianto et~al.(2024)Andrianto, Purnomo, and Irawan]{ART06}
+Andrianto, R.; Purnomo, N.; Irawan, Y.
+\newblock Application of Fuzzy Logic Mamdani in IoT-Based Air Quality
+  Monitoring Systems.
+\newblock {\em The Indonesian Journal of Computer Science} {\bf 2024}, {\em
+  13}.
+\newblock {\url{https://doi.org/10.33022/ijcs.v13i5.4291}}.
+
+\bibitem[Saleem et~al.(2024)Saleem, Shingari, Farooq, Mago, and Khan]{ART07}
+Saleem, M.; Shingari, N.; Farooq, M.S.; Mago, B.; Khan, M.A.
+\newblock Real-Time Air Quality Monitoring Model using Fuzzy Inference System.
+\newblock {\em International Journal of Advanced Computer Science and
+  Applications} {\bf 2024}, {\em 15},~838 -- 846.
+\newblock Cited by: 2; All Open Access; Gold Open Access,
+  {\url{https://doi.org/10.14569/IJACSA.2024.0150684}}.
+
+\bibitem[Lingaraj et~al.(2025)Lingaraj, Malghan, Rao, Garg, Somanath~Swamy, and
+  Vishwanatha]{ART08}
+Lingaraj, K.; Malghan, R.L.; Rao, K.; Garg, L.; Somanath~Swamy, R.H.;
+  Vishwanatha, H.M.
+\newblock FLPSO-AMPS: an optimized WSN model for air quality monitoring in
+  tier-2 smart cities.
+\newblock {\em Scientific Reports} {\bf 2025}, {\em 15}.
+\newblock Cited by: 0; All Open Access; Gold Open Access; Green Accepted Open
+  Access; Green Open Access,
+  {\url{https://doi.org/10.1038/s41598-025-19748-3}}.
+
+\bibitem[Kitchenham and Charters(2007)]{kitchenham2007}
+Kitchenham, B.; Charters, S.
+\newblock Guidelines for Performing Systematic Literature Reviews in Software
+  Engineering.
+\newblock Technical Report EBSE-2007-01, Keele University and Durham
+  University,  2007.
+\newblock Version 2.3.
+
+\bibitem[Page et~al.(2021)Page, McKenzie, Bossuyt, Boutron, Hoffmann, Mulrow,
+  Shamseer, Tetzlaff, Akl, Brennan, Chou, Glanville, Grimshaw, Hrobjartsson,
+  Lalu, Li, Loder, Mayo-Wilson, McDonald, McGuinness, Stewart, Thomas, Tricco,
+  Welch, Whiting, and Moher]{prisma2020}
+Page, M.J.; McKenzie, J.E.; Bossuyt, P.M.; Boutron, I.; Hoffmann, T.C.; Mulrow,
+  C.D.; Shamseer, L.; Tetzlaff, J.M.; Akl, E.A.; Brennan, S.E.;  et~al.
+\newblock The PRISMA 2020 statement: an updated guideline for reporting
+  systematic reviews.
+\newblock {\em BMJ} {\bf 2021}, {\em 372},~n71.
+\newblock {\url{https://doi.org/10.1136/bmj.n71}}.
+
+\bibitem[Saini et~al.(2022)Saini, Dutta, and Marques]{A135}
+Saini, J.; Dutta, M.; Marques, G.
+\newblock Modeling indoor PM2.5 using Adaptive Dynamic Fuzzy Inference System
+  Tree (ADFIST) on Internet of Things-based sensor network data.
+\newblock {\em Internet of Things (Netherlands)} {\bf 2022}, {\em 20}.
+\newblock Cited by: 12, {\url{https://doi.org/10.1016/j.iot.2022.100628}}.
+
+\bibitem[de~Assis Pedrobon~Ferreira et~al.(2022)de~Assis Pedrobon~Ferreira,
+  Grout, and da~Silva]{A157}
+de~Assis Pedrobon~Ferreira, W.; Grout, I.A.; da~Silva, A.C.R.
+\newblock Application of a Fuzzy ARTMAP Neural Network for Indoor Air Quality
+  Prediction.
+\newblock Institute of Electrical and Electronics Engineers Inc.,  2022.
+\newblock Cited by: 8,
+  {\url{https://doi.org/10.1109/iEECON53204.2022.9741563}}.
+
+\bibitem[Saini et~al.(2022)Saini, Dutta, and Marques]{A144}
+Saini, J.; Dutta, M.; Marques, G.
+\newblock ADFIST: Adaptive Dynamic Fuzzy Inference System Tree Driven by
+  Optimized Knowledge Base for Indoor Air Quality Assessment.
+\newblock {\em Sensors} {\bf 2022}, {\em 22}.
+\newblock Cited by: 22; All Open Access; Gold Open Access; Green Accepted Open
+  Access; Green Open Access, {\url{https://doi.org/10.3390/s22031008}}.
+
+\bibitem[Kowalski et~al.(2026)Kowalski, Casari, and Po]{A084}
+Kowalski, P.A.; Casari, M.; Po, L.
+\newblock Explainable AI for rule reduction in fuzzy models for air pollution
+  measurement adjustment.
+\newblock {\em Environmental Modelling and Software} {\bf 2026}, {\em 195}.
+\newblock Cited by: 1; All Open Access; Green Accepted Open Access; Green Open
+  Access; Hybrid Gold Open Access,
+  {\url{https://doi.org/10.1016/j.envsoft.2025.106734}}.
+
+\bibitem[Kumar et~al.(2022)Kumar, Kumar, and Amiy]{A009}
+Kumar, R.; Kumar, S.; Amiy, E.
+\newblock Air Quality Indices Prediction using Sugeno’s Fuzzy Logic.
+\newblock In Proceedings of the 2022 International Conference on IoT and
+  Blockchain Technology (ICIBT). IEEE,  2022, pp. 1--5.
+\newblock {\url{https://doi.org/10.1109/ICIBT52874.2022.9807786}}.
+
+\bibitem[Preethi and Tamilarasan(2021)]{A168}
+Preethi, K.R.; Tamilarasan, R.
+\newblock Monitoring of air pollution to establish optimal less polluted path
+  by utilizing wireless sensor network.
+\newblock {\em Journal of Ambient Intelligence and Humanized Computing} {\bf
+  2021}, {\em 12},~6375 -- 6386.
+\newblock Cited by: 11, {\url{https://doi.org/10.1007/s12652-020-02232-3}}.
+
+\bibitem[Zareb et~al.(2021)Zareb, Bakhti, Bouzid, Batista, Ternifi, and
+  Abdenour]{A167}
+Zareb, M.; Bakhti, B.; Bouzid, Y.; Batista, C.E.; Ternifi, I.; Abdenour, M.
+\newblock An intelligent IoT fuzzy based approach for automated indoor air
+  quality monitoring.
+\newblock Institute of Electrical and Electronics Engineers Inc.,  2021, pp.
+  770 -- 775.
+\newblock Cited by: 10, {\url{https://doi.org/10.1109/MED51440.2021.9480313}}.
+
+\bibitem[Rastogi and Lohani(2022)]{A136}
+Rastogi, K.; Lohani, D.
+\newblock Context-aware IoT-enabled framework to analyse and predict indoor air
+  quality.
+\newblock {\em Intelligent Systems with Applications} {\bf 2022}, {\em 16}.
+\newblock Cited by: 15; All Open Access; Gold Open Access; Green Accepted Open
+  Access; Green Open Access,
+  {\url{https://doi.org/10.1016/j.iswa.2022.200132}}.
+
+\bibitem[Saini et~al.(2022)Saini, Dutta, and Marques]{A138}
+Saini, J.; Dutta, M.; Marques, G.
+\newblock A novel application of fuzzy inference system optimized with particle
+  swarm optimization and genetic algorithm for PM10 prediction.
+\newblock {\em Soft Computing} {\bf 2022}, {\em 26},~9573 -- 9586.
+\newblock Cited by: 14, {\url{https://doi.org/10.1007/s00500-022-06777-7}}.
+
+\bibitem[Haidar et~al.(2025)Haidar, Itani, Kaouk, Kaddah, Alloul, and
+  Doughan]{A028}
+Haidar, I.M.; Itani, S.S.; Kaouk, A.; Kaddah, A.; Alloul, D.A.; Doughan, Z.
+\newblock Urban Air Quality Analysis Using Ensemble Learning.
+\newblock Institute of Electrical and Electronics Engineers Inc.,  2025.
+\newblock Cited by: 0,
+  {\url{https://doi.org/10.1109/ICABME66883.2025.11211707}}.
+
+\bibitem[Behal and Singh(2021)]{A178}
+Behal, V.; Singh, R.K.
+\newblock Personalised healthcare model for monitoring and prediction of
+  airpollution: machine learning approach.
+\newblock {\em Journal of Experimental and Theoretical Artificial Intelligence}
+  {\bf 2021}, {\em 33},~425 -- 449.
+\newblock Cited by: 14, {\url{https://doi.org/10.1080/0952813X.2020.1744197}}.
+
+\bibitem[Kim et~al.(2025)Kim, Chun, and Yang]{A087}
+Kim, K.; Chun, D.; Yang, W.
+\newblock IoT-based filter management system using reinforced ANFIS for VOCs
+  reduction in urban industrial facilities.
+\newblock {\em Scientific Reports} {\bf 2025}, {\em 15}.
+\newblock Cited by: 0; All Open Access; Gold Open Access; Green Accepted Open
+  Access; Green Open Access,
+  {\url{https://doi.org/10.1038/s41598-025-02435-8}}.
+
+\bibitem[Erfianto and Rahmatsyah(2022)]{A149}
+Erfianto, B.; Rahmatsyah, A.
+\newblock Application of ARIMA Kalman Filter with Multi-Sensor Data Fusion
+  Fuzzy Logic to Improve Indoor Air Quality Index Estimation.
+\newblock {\em International Journal on Informatics Visualization} {\bf 2022},
+  {\em 6},~771 -- 777.
+\newblock Cited by: 7; All Open Access; Gold Open Access,
+  {\url{https://doi.org/10.30630/joiv.6.4.889}}.
+
+\bibitem[Beryozkina and Zicmane(2025)]{A001}
+Beryozkina, S.; Zicmane, I.
+\newblock UAV-Based Hybrid Fuzzy Inference Framework for Symmetry and Asymmetry
+  in Real-Time Air Quality Monitoring.
+\newblock {\em SYMMETRY-BASEL} {\bf 2025}, {\em 17}.
+\newblock {\url{https://doi.org/10.3390/sym17122048}}.
+
+\bibitem[Sung et~al.(2024)Sung, Aryani, and Sung-Jung]{A114}
+Sung, W.T.; Aryani, J.; Sung-Jung, H.
+\newblock Intelligent Factory with Environment Quality Control Based on Fuzzy
+  Method through Deep Reinforcement Learning.
+\newblock {\em Sensors and Materials} {\bf 2024}, {\em 36},~3491 -- 3517.
+\newblock Cited by: 0; All Open Access; Gold Open Access,
+  {\url{https://doi.org/10.18494/SAM4661}}.
+
+\bibitem[Istiqomah et~al.(2021)Istiqomah, Yuliana, and Santoso]{A165}
+Istiqomah, N.; Yuliana, M.; Santoso, T.B.
+\newblock Implementation of Fuzzy Tsukamoto Algorithm on Smart Node Sensors for
+  Air Quality Monitoring.
+\newblock Institute of Electrical and Electronics Engineers Inc.,  2021, pp.
+  275 -- 280.
+\newblock Cited by: 1, {\url{https://doi.org/10.1109/IES53407.2021.9594014}}.
+
+\bibitem[Colella et~al.(2022)Colella, Valente, Rossano, Trunfio, Fiorillo, and
+  Improta]{A142}
+Colella, Y.; Valente, A.S.; Rossano, L.; Trunfio, T.A.; Fiorillo, A.; Improta,
+  G.
+\newblock A Fuzzy Inference System for the Assessment of Indoor Air Quality in
+  an Operating Room to Prevent Surgical Site Infection.
+\newblock {\em International Journal of Environmental Research and Public
+  Health} {\bf 2022}, {\em 19}.
+\newblock Cited by: 56; All Open Access; Gold Open Access; Green Accepted Open
+  Access; Green Open Access, {\url{https://doi.org/10.3390/ijerph19063533}}.
+
+\bibitem[Sujono et~al.(2023)Sujono, Sulistyowati, and Satriya]{A123}
+Sujono, H.A.; Sulistyowati, R.; Satriya, W.A.
+\newblock Microcontroller-based air quality monitoring design using mamdani
+  fuzzy method.
+\newblock {\em Indonesian Journal of Electrical Engineering and Computer
+  Science} {\bf 2023}, {\em 32},~715 -- 724.
+\newblock Cited by: 0; All Open Access; Gold Open Access,
+  {\url{https://doi.org/10.11591/ijeecs.v32.i2.pp715-724}}.
+
+\bibitem[Jamali et~al.(2023)Jamali, Gharib, and Koma]{A132}
+Jamali, N.; Gharib, M.R.; Koma, B.O.
+\newblock Neuro-Fuzzy Decision Support System for Optimization of the Indoor
+  Air Quality in Operation Rooms.
+\newblock {\em International Journal of Robotics and Control Systems} {\bf
+  2023}, {\em 3},~98 -- 106.
+\newblock Cited by: 9; All Open Access; Gold Open Access,
+  {\url{https://doi.org/10.31763/ijrcs.v3i1.854}}.
+
+\end{thebibliography}

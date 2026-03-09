@@ -1,0 +1,11 @@
+﻿value,k
+IoT_Edge_Cloud,6
+IoT_2Tier,3
+NR,2
+WSN_Pipeline,2
+Other:Hospital_Monitoring_Setup,1
+Other:Standalone_Microcontroller+PC,1
+Other:Hospital_IoT_Local_Network,1
+Other:Sensor_Node+Local_Web_App+Offline_Analytics,1
+Other:Sensor_Node+Cloud_DB+Laptop_Analytics,1
+IoT_Fog_Layered,1

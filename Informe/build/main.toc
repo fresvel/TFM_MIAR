@@ -1,0 +1,55 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{Resumen}{7}{Doc-Start}%
+\contentsline {section}{\numberline {1}Introducción}{8}{section.1}%
+\contentsline {section}{\numberline {2}Objetivos}{11}{section.2}%
+\contentsline {section}{\numberline {3}Fundamentación Teórica }{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Revisión de Literatura}{12}{subsection.3.1}%
+\contentsline {subsubsection}{Perfil del corpus y alcance de la evidencia}{12}{subsubsection*.1}%
+\contentsline {subsubsection}{Datos y Variables para la Evaluación de la Calidad del Aire (D1)}{14}{subsubsection*.5}%
+\contentsline {subsubsection}{Enfoque de Lógica Difusa y Decisiones de Diseño (D2)}{22}{subsubsection*.10}%
+\contentsline {subsubsection}{Plataforma y Operación en Tiempo Real (D3)}{30}{subsubsection*.15}%
+\contentsline {paragraph}{Arquitectura y tecnologías empleadas}{30}{paragraph*.16}%
+\contentsline {paragraph}{Operación en tiempo real y despliegue}{32}{paragraph*.19}%
+\contentsline {subsubsection}{Resultados de desempeño (síntesis transversal D1--D3)}{36}{subsubsection*.23}%
+\contentsline {subsubsection}{Calidad metodológica, heterogeneidad y análisis de sensibilidad}{41}{subsubsection*.27}%
+\contentsline {subsubsection}{Vacíos, limitaciones e implicaciones para la propuesta}{42}{subsubsection*.28}%
+\contentsline {paragraph}{Generalización Externa Insuficiente}{42}{paragraph*.29}%
+\contentsline {paragraph}{Cobertura Limitada de Variables y Contaminantes}{42}{paragraph*.30}%
+\contentsline {paragraph}{Integración y Despliegue Operativo Incompleto}{43}{paragraph*.31}%
+\contentsline {paragraph}{Coste Computacional y Eficiencia de Red}{43}{paragraph*.32}%
+\contentsline {paragraph}{Restricciones de Hardware, Sensores y Calibración}{44}{paragraph*.33}%
+\contentsline {paragraph}{Degradación por Horizonte Predictivo}{44}{paragraph*.34}%
+\contentsline {paragraph}{Dominio Clínico sin Cierre Causal Fuerte}{45}{paragraph*.35}%
+\contentsline {paragraph}{Implicaciones de diseño derivadas de D2 y D3}{46}{paragraph*.36}%
+\contentsline {subsection}{\numberline {3.2}Síntesis Conceptual}{48}{subsection.3.2}%
+\contentsline {subsubsection}{AQI, contaminantes atmosféricos y variables meteorológicas}{48}{subsubsection*.37}%
+\contentsline {paragraph}{Contaminantes y variables}{49}{paragraph*.38}%
+\contentsline {paragraph}{Variables ambientales}{50}{paragraph*.39}%
+\contentsline {paragraph}{Cálculo y categorías del AQI}{50}{paragraph*.40}%
+\contentsline {subsubsection}{Modelos de lógica difusa y defuzzificación}{51}{subsubsection*.41}%
+\contentsline {paragraph}{Familias principales de sistemas difusos}{52}{paragraph*.42}%
+\contentsline {paragraph}{Reglas, funciones de pertenencia y defuzzificación}{53}{paragraph*.44}%
+\contentsline {subsubsection}{Modelos de regresión supervisada y métricas}{56}{subsubsection*.49}%
+\contentsline {subsubsection}{Datasets públicos de calidad del aire y sus características}{59}{subsubsection*.50}%
+\contentsline {section}{\numberline {4}Desarrollo del proyecto y resultados}{63}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Planteamiento del problema}{63}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Metodología}{65}{subsection.4.2}%
+\contentsline {subsubsection}{Enfoque y tipo de investigación}{65}{subsubsection*.51}%
+\contentsline {subsubsection}{Diseño metodológico del estudio}{65}{subsubsection*.52}%
+\contentsline {subsubsection}{1: Revisión sistemática del estado del arte}{65}{subsubsection*.53}%
+\contentsline {subsubsection}{Evaluación de Calidad}{71}{subsubsection*.54}%
+\contentsline {subsubsection}{Extracción de datos}{72}{subsubsection*.55}%
+\contentsline {subsubsection}{Análisis y Síntesis de Datos}{74}{subsubsection*.56}%
+\contentsline {subsubsection}{2: Diseño del módulo de monitoreo}{76}{subsubsection*.58}%
+\contentsline {subsubsection}{3: Implementación del módulo propuesto}{77}{subsubsection*.59}%
+\contentsline {subsubsection}{4: Validación del módulo propuesto}{78}{subsubsection*.60}%
+\contentsline {subsubsection}{Consideraciones finales de la metodología}{79}{subsubsection*.61}%
+\contentsline {subsection}{\numberline {4.3}Desarrollo del proyecto}{80}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Resultados}{80}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusión y trabajos futuros}{81}{section.5}%
+\contentsline {section}{\numberline {6}Referencias}{82}{section.6}%
+\contentsline {section}{}{82}{section.6}%
+\contentsline {section}{Apéndice I}{87}{section.6}%
+\contentsline {section}{Anexo I}{88}{section.1}%
+\contentsline {section}{Anexo II}{90}{section.2}%
+\contentsline {section}{Anexo III}{92}{section.3}%

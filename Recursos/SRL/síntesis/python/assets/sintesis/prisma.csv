@@ -1,0 +1,31 @@
+section,topic,box,col,row,description,boxtext,tooltips,n,data,url
+1,newstud,id,0,0,Identification of studies via databases and registers,,,,,
+1,newstud,id_right,1,0,,,,,,
+2,db,database_results,0,1,Records identified from*:,,Databases (n = ),240,,
+2,reg,register_results,1,1,,,Registers (n = ),0,,
+2,db,database_specific_results,0,2,,,"Scopus (n=105)
+IEEE Xplore (n=90)
+Web of Science (n=45)",,,
+2,reg,register_specific_results,1,2,,,"Register 1 (n = )
+Register 2 (n = )",,,
+2,newstud,records_removed,0,3,Records removed before screening:,,"Duplicate records removed (n = 62)
+Records marked as ineligible by automation tools (n = 0)
+Records removed for other reasons (n = 0)
+Rayyan imported total (n = 240)
+Duplicates flagged (n = 119)
+Duplicates resolved (n = 57)
+Dedup priority rule: Scopus > WoS > IEEE",62,,
+3,newstud,records_screened,0,4,Records screened,,,178,,
+3,newstud,records_excluded,1,4,Records excluded**,,,129,,
+3,newstud,reports_sought,0,5,Reports sought for retrieval,,,49,,
+3,newstud,reports_notretrieved,1,5,Reports not retrieved,,,23,,
+3,newstud,reports_assessed,0,6,Reports assessed for eligibility,,,26,,
+3,newstud,reports_excluded,1,6,Reports excluded:,,"D2-NoModelStructure (n=4)
+Transversal-NoEmpiricalValidation (n=2)
+D3-NoPlatformImplementation (n=1)",7,,
+4,prevstud,previous_studies,0,7,Studies included in previous version of review,,,0,,
+4,prevstud,previous_reports,1,7,Reports of studies included in previous version of review,,,0,,
+4,newstud,new_studies,0,8,Studies included in review,,,19,,
+4,newstud,new_reports,1,8,Reports of included studies,,,19,,
+4,othstud,total_studies,0,9,Total studies included in review,,,19,,
+4,othstud,total_reports,1,9,Total reports of included studies,,,19,,

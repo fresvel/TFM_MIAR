@@ -1,0 +1,9 @@
+﻿value,k
+AQI_Classification,12
+Risk_Alerting,8
+Pollutant_Prediction,7
+AQI_Estimation,5
+Other:Sensor_Calibration_Adjustment,1
+Other:Filter_Replacement_Support,1
+Other:HVAC_Power_Optimization,1
+Route_Optimization,1

@@ -1,0 +1,6 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:Hospital_Monitoring_Setup,IoT_2Tier,family_unification,Configuracion hospitalaria local con estructura de dos capas.
+Other:Hospital_IoT_Local_Network,IoT_2Tier,family_unification,Red local IoT hospitalaria agregada a patron 2-tier.
+Other:Standalone_Microcontroller+PC,Standalone_Node_PC,preserve_variant,Arquitectura local MCU+PC sin componente cloud.
+Other:Sensor_Node+Local_Web_App+Offline_Analytics,Sensor_Node_External_Analytics,pattern_unification,Nodo de sensado con analitica externa (local/offline).
+Other:Sensor_Node+Cloud_DB+Laptop_Analytics,Sensor_Node_External_Analytics,pattern_unification,Nodo de sensado con analitica externa (cloud+laptop).

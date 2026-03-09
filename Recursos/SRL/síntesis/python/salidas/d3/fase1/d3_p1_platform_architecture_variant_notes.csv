@@ -1,0 +1,6 @@
+﻿Article_ID,D3_Platform_architecture,D3_Platform_architecture_norm,Evidence_D3_pages,D3_Synthesis_notes
+A123,Other:Standalone_Microcontroller+PC,Standalone_Node_PC,p.2-p.3; p.7-p.8,D3-P1 arquitectura: MCU+PC local sin nube -> Standalone_Node_PC (evidencia: p.2-p.3; p.7-p.8).
+A132,Other:Hospital_Monitoring_Setup,IoT_2Tier,p.3-p.5,D3-P1 arquitectura: monitoreo hospitalario local -> IoT_2Tier (evidencia: p.3-p.5).
+A142,Other:Hospital_IoT_Local_Network,IoT_2Tier,p.3-p.5; p.11; p.15-p.17,D3-P1 arquitectura: red IoT hospitalaria local -> IoT_2Tier (evidencia: p.3-p.5; p.11; p.15-p.17).
+A149,Other:Sensor_Node+Local_Web_App+Offline_Analytics,Sensor_Node_External_Analytics,p.3-p.4; p.6,D3-P1 arquitectura: sensor node con app local y analitica externa offline -> Sensor_Node_External_Analytics (evidencia: p.3-p.4; p.6).
+A157,Other:Sensor_Node+Cloud_DB+Laptop_Analytics,Sensor_Node_External_Analytics,p.2-p.4,D3-P1 arquitectura: sensor node con cloud DB y analitica externa en laptop -> Sensor_Node_External_Analytics (evidencia: p.2-p.4).

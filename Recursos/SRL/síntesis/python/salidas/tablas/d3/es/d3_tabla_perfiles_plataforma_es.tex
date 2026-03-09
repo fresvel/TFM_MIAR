@@ -1,0 +1,14 @@
+\begin{longtblr}[
+  entry=none,
+  label={tab:d3_perfiles_plataforma},
+  caption={Directriz D3: perfiles compactos por familia de arquitectura (m sobre n=19). Elaboracion propia.}
+]{
+  colspec={X[0.9,l,m] X[0.3,c,m] X[1.3,l,m] X[1.2,l,m] X[1.2,l,m] X[1.2,l,m] X[1.2,l,m] X[1.2,l,m]},
+  width=\textwidth,
+  row{1}={font=\bfseries}
+}
+Familia\_arquitectura & m & Procesamiento\_dominante & Stack\_recurrente & Visualizacion\_alerta\_tipica & Contexto\_despliegue\_dominante & Hardware\_sensores\_tipicos & Rasgo\_tiempo\_real \\
+IoT\_Edge\_Cloud & 7 & Near\_Real\_Time (6/7; 85.7\%) / Real\_Time\_Distributed (1/7; 14.3\%) & MATLAB (5/7; 71.4\%) / WiFi (5/7; 71.4\%) & Dashboard (6/7; 85.7\%) / Alarm\_Module (2/7; 28.6\%) & Indoor (6/7; 85.7\%) / Urban (4/7; 57.1\%) & PM\_Sensor (5/7; 71.4\%) / MCU\_Arduino (4/7; 57.1\%) & Continuous\_Loop (4/7; 57.1\%) / Interval\_Sampling (4/7; 57.1\%) \\
+IoT\_2Tier & 5 & Real\_Time\_Edge (3/5; 60.0\%) / Hybrid (2/5; 40.0\%) & Bluetooth (1/5; 20.0\%) / Google\_Sheets (1/5; 20.0\%) & Dashboard (3/5; 60.0\%) / Alarm\_Module (2/5; 40.0\%) & Indoor (4/5; 80.0\%) / Healthcare\_Facility (2/5; 40.0\%) & TempHumidity\_Sensor (4/5; 80.0\%) / PM\_Sensor (3/5; 60.0\%) & Continuous\_Loop (3/5; 60.0\%) / RealTime\_Data\_Collection (2/5; 40.0\%) \\
+Otros/Hybrid & 5 & Hybrid (2/5; 40.0\%) / Real\_Time\_Edge (2/5; 40.0\%) & Cloud\_Server (2/5; 40.0\%) / RaspberryPi (2/5; 40.0\%) & TimeSeries\_Plot (2/5; 40.0\%) / AQI\_Color\_Index (1/5; 20.0\%) & Indoor (4/5; 80.0\%) / Outdoor (3/5; 60.0\%) & CO\_Sensor (3/5; 60.0\%) / CO2\_Sensor (2/5; 40.0\%) & Interval\_Sampling (4/5; 80.0\%) / Continuous\_Loop (3/5; 60.0\%) \\
+\end{longtblr}

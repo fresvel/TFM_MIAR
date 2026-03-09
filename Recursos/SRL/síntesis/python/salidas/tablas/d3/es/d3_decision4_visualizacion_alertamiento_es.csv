@@ -1,0 +1,5 @@
+﻿Estrategia_salida,Criterio_operativo,k,n,%,Lectura_decision
+Dashboard_visual,Presencia de salidas visuales (dashboard/plots/display) sin modulo de alerta explicito.,10,19,52.6,Predomina la capa visual para monitoreo operativo.
+Alerta,Presencia de alerta explicita sin componente visual reportado.,1,19,5.3,Casos puntuales con orientacion a evento/alarma.
+Mixto_visual_alerta,Convivencia de salida visual y modulo de alerta en el mismo estudio.,5,19,26.3,Patron mixto para seguimiento continuo y respuesta operativa.
+NR,Sin evidencia suficiente para clasificar estrategia de salida.,3,19,15.8,NR en visualizacion/alertamiento.

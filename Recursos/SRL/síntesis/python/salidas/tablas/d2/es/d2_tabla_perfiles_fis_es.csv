@@ -1,0 +1,5 @@
+﻿Familia_FIS,m,Rol_dominante,Proposito_principal,MF_tipica,Base_reglas,Defuzz_reportada,Riesgo_principal,Interpretabilidad_clave
+Mamdani,7,Central (7/7; 100.0%),AQI_Classification (6/7; 85.7%),Linguistic_Labels (6/7; 85.7%),Explicit_Rule_Table (6/7; 85.7%),Centroid (5/7; 71.4%),AQI_Thresholds (4/7; 57.1%),Rule_Transparency (7/7; 100.0%)
+ANFIS,7,Central (6/7; 85.7%),Operational_Optimization (4/7; 57.1%),Bell / Gaussian / Trapezoidal +... (2/7; 28.6%),Adaptive_Rule_Base (4/7; 57.1%),Weighted_Average (3/7; 42.9%),AQI_Thresholds / Prediction_Based_Risk (2/7; 28.6%),Rule_Transparency (5/7; 71.4%)
+Sugeno/TSK,4,Central (4/4; 100.0%),AQI_Classification (4/4; 100.0%),Gaussian / Trapezoidal (2/4; 50.0%),Explicit_Rule_Table (4/4; 100.0%),Weighted_Average (2/4; 50.0%),AQI_Thresholds (3/4; 75.0%),Rule_Transparency (4/4; 100.0%)
+Hybrid_Fuzzy,4,Central (4/4; 100.0%),AQI_Classification (3/4; 75.0%),Linguistic_Labels (3/4; 75.0%),Explicit_Rule_Table (3/4; 75.0%),Centroid (3/4; 75.0%),AQI_Thresholds / Prediction_Based_Risk (2/4; 50.0%),Rule_Transparency (3/4; 75.0%)

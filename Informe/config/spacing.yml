@@ -1,0 +1,32 @@
+# Spacing configuration for the report.
+# Units are LaTeX dimensions (e.g. 0.2cm, 10pt, 0.8\baselineskip).
+# Use null to keep current LaTeX/package defaults for optional values.
+
+paragraph:
+  indent: "0pt"
+  skip: "0.8\\baselineskip"
+
+headings:
+  section:
+    before: "0pt"
+    after: "0.15cm"
+  subsection:
+    before: "0.5cm"
+    after: "0.0cm"
+  subsubsection:
+    before: "0.0cm"
+    after: "-0.5cm"
+  section_title_pad: "0.2cm"
+
+tables:
+  around: null
+  caption_before: null
+  caption_after: null
+
+links:
+  internal: "79C6EB"
+  figure: "79C6EB"
+  table: "79C6EB"
+  annex: "79C6EB"
+  bibliography: "79C6EB"
+  url: "79C6EB"

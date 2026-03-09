@@ -1,0 +1,9 @@
+﻿Dimension,Columna,NR_articulos,n,%_NR,NR_en_tabla_principal
+Tipo de FIS,D2_Fuzzy_approach_type_norm,0,19,0.0,No
+Rol difuso,D2_Fuzzy_role,0,19,0.0,No
+Proposito de inferencia,D2_Inference_purpose_norm,0,19,0.0,No
+Base de reglas,D2_Rule_base_definition_norm,0,19,0.0,No
+Funciones de pertenencia,D2_Membership_functions_norm,0,19,0.0,No
+Defuzzificacion,D2_Defuzzification_method_norm,8,19,42.1,Si
+Modelado de riesgo,D2_Risk_modeling_approach_norm,2,19,10.5,No
+Interpretabilidad,D2_Interpretability_elements_norm,1,19,5.3,No

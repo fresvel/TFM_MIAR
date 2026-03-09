@@ -1,0 +1,30 @@
+% Auto-generated file. Do not edit directly.
+% Source: config/spacing.yml
+\providecommand{\VIUParagraphIndent}{0pt}
+\providecommand{\VIUParagraphSkip}{0.8\baselineskip}
+\providecommand{\VIUSectionBeforeSkip}{0pt}
+\providecommand{\VIUSectionAfterSkip}{0.15cm}
+\providecommand{\VIUSubsectionBeforeSkip}{0.5cm}
+\providecommand{\VIUSubsectionAfterSkip}{0.0cm}
+\providecommand{\VIUSectionTitlePadLen}{0.2cm}
+\definecolor{VIULinkInternalColor}{HTML}{79C6EB}
+\definecolor{VIULinkFigureColor}{HTML}{79C6EB}
+\definecolor{VIULinkTableColor}{HTML}{79C6EB}
+\definecolor{VIULinkAnnexColor}{HTML}{79C6EB}
+\definecolor{VIULinkBibliographyColor}{HTML}{79C6EB}
+\definecolor{VIULinkUrlColor}{HTML}{79C6EB}
+\newcommand{\VIUApplyOptionalSpacing}{%
+  \titlespacing*{\subsubsection}{0pt}{0.0cm}{-0.5cm}%
+}
+\newcommand{\VIUApplyLinkColors}{%
+  \hypersetup{%
+    colorlinks=true,%
+    linkcolor=VIULinkInternalColor,%
+    citecolor=VIULinkBibliographyColor,%
+    urlcolor=VIULinkUrlColor,%
+    filecolor=VIULinkUrlColor%
+  }%
+}
+\newcommand{\figref}[1]{\hyperref[#1]{\textcolor{VIULinkFigureColor}{Figura~\ref*{#1}}}}
+\newcommand{\tabref}[1]{\hyperref[#1]{\textcolor{VIULinkTableColor}{Tabla~\ref*{#1}}}}
+\newcommand{\aneref}[1]{\hyperref[#1]{\textcolor{VIULinkAnnexColor}{Anexo~\ref*{#1}}}}

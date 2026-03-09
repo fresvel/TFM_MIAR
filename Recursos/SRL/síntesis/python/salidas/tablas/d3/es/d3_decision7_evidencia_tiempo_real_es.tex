@@ -1,0 +1,16 @@
+\begin{longtblr}[
+  entry=none,
+  label={tab:d3_decision7_evidencia_tiempo_real},
+  caption={D3 -- Decision 7: evidencia operativa de tiempo real (jerarquia de evidencia; k/n/\%; n=19). Elaboracion propia.}
+]{
+  colspec={X[1.1,l,m] X[2.0,l,m] X[0.45,c,m] X[0.45,c,m] X[0.55,c,m] X[1.7,l,m]},
+  width=\textwidth,
+  row{1}={font=\bfseries}
+}
+Evidencia\_tiempo\_real & Criterio\_operativo & k & n & \% & Lectura\_decision \\
+Latencia\_sincronizacion\_explicita & Reporte explicito de latencia y/o sincronizacion temporal. & 1 & 19 & 5.3 & Mayor robustez de evidencia operativa en tiempo real. \\
+Bucle\_continuo & Operacion continua reportada como ciclo de monitoreo. & 10 & 19 & 52.6 & Patron dominante de operacion en linea. \\
+Muestreo\_por\_intervalo & Operacion temporal por ventanas/intervalos de adquisicion. & 5 & 19 & 26.3 & Modo cuasi-tiempo real con cadencia definida. \\
+Declaracion\_general\_operativa & Solo evidencia general de operacion en tiempo real, sin metrica temporal explicita. & 2 & 19 & 10.5 & Soporte operativo util pero menos comparable. \\
+NR & Sin evidencia suficiente para clasificar operacion temporal. & 1 & 19 & 5.3 & NR en caracteristicas de tiempo real. \\
+\end{longtblr}

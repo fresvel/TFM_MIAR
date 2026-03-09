@@ -1,0 +1,5 @@
+﻿Output_strategy,Operational_criterion,k,n,%,Decision_reading
+Dashboard_visual,Presence of visual outputs (dashboard/plots/display) without explicit alert module.,10,19,52.6,Visual layer dominates operational monitoring.
+Alert,Explicit alert presence without reported visual component.,1,19,5.3,Isolated cases with event/alarm orientation.
+Mixed_visual_alert,Coexistence of visual output and alert module in the same study.,5,19,26.3,Mixed pattern for continuous monitoring and operational response.
+NR,Insufficient evidence to classify output strategy.,3,19,15.8,NR in visualization/alerting.

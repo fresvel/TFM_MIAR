@@ -1,0 +1,5 @@
+﻿Hardware_configuration,Operational_criterion,k,n,%,Decision_reading
+Baseline,Only baseline sensors/controllers reported in the study.,4,19,21.1,Minimum viable instrumentation profile.
+Specialized,Only specialized components (without explicit baseline set).,0,19,0.0,Configuration oriented to a specific use case.
+Mixed_baseline_specialized,Coexistence of baseline sensing and specialized components.,14,19,73.7,Dominant pattern to extend functional coverage.
+NR,Insufficient evidence to classify instrumentation.,1,19,5.3,NR in hardware/sensors.

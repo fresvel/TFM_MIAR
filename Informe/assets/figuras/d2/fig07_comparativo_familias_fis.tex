@@ -1,0 +1,41 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small]
+  % Tarjetas base
+  \draw[rounded corners=3pt, fill=gray!6, draw=black!45] (0,0) rectangle (4.6,5.2);
+  \draw[rounded corners=3pt, fill=gray!6, draw=black!45] (4.9,0) rectangle (9.5,5.2);
+  \draw[rounded corners=3pt, fill=gray!6, draw=black!45] (9.8,0) rectangle (14.4,5.2);
+
+  % Encabezados
+  \fill[VIUORANGE!28] (0,4.35) rectangle (4.6,5.2);
+  \fill[VIUORANGE!22] (4.9,4.35) rectangle (9.5,5.2);
+  \fill[VIUORANGE!16] (9.8,4.35) rectangle (14.4,5.2);
+
+  \node[anchor=center, font=\bfseries] at (2.3,4.78) {Mamdani};
+  \node[anchor=center, font=\bfseries] at (7.2,4.78) {Sugeno/TSK};
+  \node[anchor=center, font=\bfseries] at (12.1,4.78) {ANFIS};
+
+  % Contenido
+  \node[anchor=north west, align=left, text width=4.1cm] at (0.25,4.15) {%
+    \textbf{Salida:} conjunto\\
+    difuso + defuzzificación\\[2pt]
+    \textbf{Interpretabilidad:} alta\\[2pt]
+    \textbf{Costo de inferencia:} medio\\[2pt]
+    \textbf{Ajuste con datos:} bajo a medio
+  };
+
+  \node[anchor=north west, align=left, text width=4.1cm] at (5.15,4.15) {%
+    \textbf{Salida:} función o\\
+    constante por regla\\[2pt]
+    \textbf{Interpretabilidad:} media\\[2pt]
+    \textbf{Costo de inferencia:} bajo\\[2pt]
+    \textbf{Ajuste con datos:} medio
+  };
+
+  \node[anchor=north west, align=left, text width=4.1cm] at (10.05,4.15) {%
+    \textbf{Salida:} estructura\\
+    neuro-difusa entrenable\\[2pt]
+    \textbf{Interpretabilidad:} media a baja\\[2pt]
+    \textbf{Costo de entrenamiento:} alto\\[2pt]
+    \textbf{Ajuste con datos:} alto
+  };
+
+\end{tikzpicture}

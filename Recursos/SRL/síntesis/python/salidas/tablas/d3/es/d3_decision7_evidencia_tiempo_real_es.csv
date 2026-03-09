@@ -1,0 +1,6 @@
+﻿Evidencia_tiempo_real,Criterio_operativo,k,n,%,Lectura_decision
+Latencia_sincronizacion_explicita,Reporte explicito de latencia y/o sincronizacion temporal.,1,19,5.3,Mayor robustez de evidencia operativa en tiempo real.
+Bucle_continuo,Operacion continua reportada como ciclo de monitoreo.,10,19,52.6,Patron dominante de operacion en linea.
+Muestreo_por_intervalo,Operacion temporal por ventanas/intervalos de adquisicion.,5,19,26.3,Modo cuasi-tiempo real con cadencia definida.
+Declaracion_general_operativa,"Solo evidencia general de operacion en tiempo real, sin metrica temporal explicita.",2,19,10.5,Soporte operativo util pero menos comparable.
+NR,Sin evidencia suficiente para clasificar operacion temporal.,1,19,5.3,NR en caracteristicas de tiempo real.

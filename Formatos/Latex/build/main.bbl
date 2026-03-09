@@ -1,0 +1,33 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Goodfellow%
+\ \protect \BOthers {.}}{%
+Goodfellow%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+goodfellow2014generative}
+\APACinsertmetastar {%
+goodfellow2014generative}%
+\begin{APACrefauthors}%
+Goodfellow, I.%
+, Pouget-Abadie, J.%
+, Mirza, M.%
+, Xu, B.%
+, Warde-Farley, D.%
+, Ozair, S.%
+\BDBL {}Bengio, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Generative adversarial nets} {Generative adversarial
+  nets}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Advances in neural information processing systems}
+  {Advances in neural information processing systems}\ (\BPGS\ 2672--2680).
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

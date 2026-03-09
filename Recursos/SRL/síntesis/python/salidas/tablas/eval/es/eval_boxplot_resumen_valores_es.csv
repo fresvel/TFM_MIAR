@@ -1,0 +1,9 @@
+﻿Unidad comparable,Metrica,n valores,n articulos,Mediana,Min,Max
+Clasificacion de AQI,Exactitud,2,2,96.45,94.0,98.9
+Clasificacion de IAQ con control,Exactitud,3,2,95.0,91.16,97.3
+Prediccion de PM2.5,Error absoluto medio (MAE),4,1,1.635,0.26,7.65
+Estimacion de AQI/IAQ,Error porcentual absoluto medio (MAPE),4,1,0.17,0.03,0.63
+Prediccion de PM2.5,Error porcentual absoluto medio (MAPE),2,2,2.0457,0.4825,3.609
+Prediccion de PM2.5,Raiz del error cuadratico medio normalizado (NRMSE),4,2,0.4175,0.3447,0.6679
+Estimacion de AQI/IAQ,Coeficiente de determinacion (R2),2,1,96.0,96.0,96.0
+Prediccion de PM2.5,Coeficiente de determinacion (R2),2,2,79.985,78.25,81.72

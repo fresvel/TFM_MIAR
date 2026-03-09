@@ -1,0 +1,6 @@
+﻿Estrategia_temporal,Categorias_incluidas,k,n,%,Lectura_decision
+Tiempo_real_estricto,Real_Time_Distributed; Real_Time_Edge,6,19,31.6,Operacion de baja latencia en borde/distribuida; patron operativo fuerte.
+Cuasi_tiempo_real,Near_Real_Time,7,19,36.8,Modo dominante del corpus para monitoreo continuo con ventanas de actualizacion.
+Hibrido,Hybrid,4,19,21.1,Combina componente en linea con analitica diferida/auxiliar.
+Offline,Offline_Analytics,1,19,5.3,Casos puntuales sin bucle operativo en linea.
+NR,NR,1,19,5.3,Sin detalle temporal suficiente para clasificar modo de procesamiento.

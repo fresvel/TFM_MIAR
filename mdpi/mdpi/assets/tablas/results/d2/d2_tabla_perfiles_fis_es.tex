@@ -1,0 +1,22 @@
+\begin{longtblr}[
+  label={tab:d2_perfiles_fis},
+  caption={Directriz D2: perfiles compactos de diseño por familia FIS (m/n, con m = número de estudios de la familia y n = 19). Elaboración propia.}
+]{
+  colspec={X[1,l,m] X[1.2,l,m] X[1.2,l,m] X[1.2,l,m] X[1.2,l,m]},
+  width=\textwidth,
+  rowhead=1,
+  row{1}={font=\bfseries}
+}
+\toprule
+Campo & Mamdani & ANFIS & Sugeno/TSK & Híbrido difuso \\
+\midrule
+Número de estudios & 7 & 7 & 4 & 4 \\
+Rol dominante & Central (7/7; 100.0\%) & Central (6/7; 85.7\%) & Central (4/4; 100.0\%) & Central (4/4; 100.0\%) \\
+Propósito principal & Clasificación AQI (6/7; 85.7\%) & Optimización operativa (4/7; 57.1\%) & Clasificación AQI (4/4; 100.0\%) & Clasificación AQI (3/4; 75.0\%) \\
+Función de pertenencia típica & Etiquetas lingüísticas (6/7; 85.7\%) & Campana / gaussiana / trapezoidal + ... (2/7; 28.6\%) & Gaussiana / trapezoidal (2/4; 50.0\%) & Etiquetas lingüísticas (3/4; 75.0\%) \\
+Base de reglas & Tabla de reglas explícita (6/7; 85.7\%) & Base de reglas adaptativa (4/7; 57.1\%) & Tabla de reglas explícita (4/4; 100.0\%) & Tabla de reglas explícita (3/4; 75.0\%) \\
+Defuzzificación reportada & Centroide (5/7; 71.4\%) & Promedio ponderado (3/7; 42.9\%) & Promedio ponderado (2/4; 50.0\%) & Centroide (3/4; 75.0\%) \\
+Riesgo principal & Umbrales AQI (4/7; 57.1\%) & Umbrales AQI / riesgo basado en predicción (2/7; 28.6\%) & Umbrales AQI (3/4; 75.0\%) & Umbrales AQI / riesgo basado en predicción (2/4; 50.0\%) \\
+Interpretabilidad clave & Transparencia de reglas (7/7; 100.0\%) & Transparencia de reglas (5/7; 71.4\%) & Transparencia de reglas (4/4; 100.0\%) & Transparencia de reglas (3/4; 75.0\%) \\
+\bottomrule
+\end{longtblr}

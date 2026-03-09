@@ -1,0 +1,6 @@
+﻿Article_ID,Variant_detected,Proposed_normalized,Decision_status,Evidence_D2_pages,Title,Technical_note
+A157,NR,NR,working_v1,p.1-p.3,Application of a Fuzzy ARTMAP Neural Network for Indoor Air Quality Prediction,Se mantiene explicito para trazabilidad de ausencia de reporte.
+A168,Other:Color_Mapping,AQI_Mapping,working_v1,p.1; p.5-p.6; p.8,Monitoring of air pollution to establish optimal less polluted path by utilizing wireless sensor network,Se integra como mapeo visual de clases AQI.
+A136,Other:Confusion_Matrix,Confusion_Matrix,working_v1,p.12-p.16,Context-aware IoT-enabled framework to analyse and predict indoor air quality,Se explicita como evidencia de desempeno clasificatorio.
+A009,Other:Fuzzy_Surface,Fuzzy_Surface,working_v1,p.2-p.3,Air Quality Indices Prediction using Sugeno’s Fuzzy Logic - 2022 International Conference on IoT and Blockchain Technology (ICIBT),Se explicita como visualizacion de superficie difusa.
+A144,Other:Tree_Structure,Rule_Transparency,working_v1,p.2-p.5,ADFIST: Adaptive Dynamic Fuzzy Inference System Tree Driven by Optimized Knowledge Base for Indoor Air Quality Assessment,Se integra en transparencia de reglas por su caracter explicativo estructural.

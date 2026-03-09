@@ -1,0 +1,8867 @@
+Design Science in Information Systems Research
+Author(s): Alan R. Hevner, Salvatore T. March, Jinsoo Park and Sudha Ram
+Source: MIS Quarterly, Vol. 28, No. 1 (Mar., 2004), pp. 75-105
+Published by: Management Information Systems Research Center, University of Minnesota
+Stable URL: http://www.jstor.org/stable/25148625 .
+Accessed: 07/08/2013 09:04
+Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at .
+http://www.jstor.org/page/info/about/policies/terms.jsp
+
+.
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of
+content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms
+of scholarship. For more information about JSTOR, please contact support@jstor.org.
+
+.
+
+Management Information Systems Research Center, University of Minnesota is collaborating with JSTOR to
+digitize, preserve and extend access to MIS Quarterly.
+
+http://www.jstor.org
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+V
+
+I ^^^^l
+
+y|^^
+
+et al./Design
+
+Science
+
+in IS Research
+
+Research
+
+i^/
+
+Essay
+
+in Information
+Design Science
+systems
+research1
+Sudha Ram
+
+By: Alan R. Hevner
+and Decision
+Information Systems
+Sciences
+Administration
+College of Business
+University of South Florida
+Tampa, FL 33620
+
+Information Systems
+Management
+Eller College of Business
+and Public
+Administration
+University of Arizona
+Tucson, AZ 85721
+U.S.A.
+
+U.S.A.
+
+ram@bpa.arizona.edu
+
+ahevner@coba.usf.edu
+
+Salvatore T. March
+Own Graduate School
+Vanderbilt University
+Nashville, TN 37203
+
+of Management
+
+Abstract
+Two paradigms characterize much of the research
+in the Information Systems discipline: behavioral
+science and design science.
+The behavioral
+science paradigm seeks to develop and verify
+theories that explain or predict human or organi
+zational behavior. The design-science
+paradigm
+seeks to extend the boundaries of human and
+organizational capabilities by creating new and
+
+U.S.A.
+
+Sal.March@owen.vanderbilt.edu
+Jinsoo
+
+Park
+College of Business
+Korea University
+Seoul, 136-701
+KOREA
+
+Administration
+
+innovative
+
+artifacts.
+
+Both
+
+paradigms
+
+tional to the IS discipline, positioned
+
+jinsoo.park@acm.org
+
+confluence
+
+of people,
+
+organizations,
+
+are
+
+founda
+
+as it is at the
+and
+
+techno
+
+logy. Our objective is to describe the performance
+of design-science
+research in Information Sys
+tems via a concise conceptual
+framework and
+
+1Allen S.
+paper.
+
+Lee was
+
+the accepting
+
+senior
+
+editor
+
+for this
+
+clear guidelines for understanding, executing, and
+In the design-science
+evaluating the research.
+and understanding
+of a
+paradigm, knowledge
+problem domain and its solution are achieved in
+the building and application of the designed arti
+fact. Three recent exemplars
+in the research
+literature are used to demonstrate the application
+
+MIS Quarterly Vol. 28 No. 1, pp. 75-105/March 2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+75
+
+Hevner
+
+et al./Design
+
+Science
+
+in IS Research
+
+We conclude with an analysis
+of performing high-quality
+research in the context of the
+
+of these guidelines.
+of the challenges
+
+design-science
+broader IS community.
+Keywords:
+odologies,
+ness
+
+Information Systems
+science,
+
+design
+
+environment,
+
+search
+
+design
+
+research meth
+artifact, busi
+methods,
+
+experimental
+
+creativity
+
+H
+
+Introduction
+
+Information systems are implemented within an
+for the purpose of improving the
+organization
+effectiveness
+and efficiency of that organization.
+of
+the information system and char
+Capabilities
+itswork systems,
+acteristics of the organization,
+its people, and its development and implemen
+the
+tation methodologies
+together determine
+extent towhich that purpose is achieved (Silver et
+al. 1995).
+
+It is incumbent upon researchers in the
+Information Systems
+(IS) discipline to "further
+in
+that
+the productive application
+aids
+knowledge
+of information technology to human organizations
+and their management"
+cover)
+
+and
+
+(ISR 2002,
+
+to develop
+
+and
+
+inside front
+
+communicate
+
+"knowl
+
+of
+both the management
+concerning
+edge
+information technology and the use of information
+poses"
+
+and
+
+for managerial
+
+technology
+
+and efficiency of an organization.
+These
+impact and are impacted by design
+made with respect to the system
+
+theories
+decisions
+
+development methodology used and the functional
+and human
+information contents,
+capabilities,
+interfaces implemented within the information
+system.
+
+infrastructure,
+
+technology
+
+strategies,
+
+ness
+
+pur
+
+organizational
+
+(Zmud 1997).
+
+We argue that acquiring such knowledge involves
+but distinct paradigms,
+two complementary
+behavioral science and design science
+(March
+and Smith 1995). The behavioral-science
+para
+research
+digm has its roots in natural science
+Itseeks to develop and justify theories
+methods.
+(i.e., principles and laws) that explain or predict
+
+The
+
+design-science
+paradigm has its roots in
+of the artificial
+and the sciences
+engineering
+It is fundamentally a problem
+(Simon 1996).
+Itseeks to create innovations
+solving paradigm.
+that define the ideas, practices, technical capa
+bilities, and products through which the analysis,
+and use of
+design, implementation, management,
+can be effectively
+and
+information systems
+
+1997;
+accomplished
+efficiently
+(Denning
+Tsichritzis 1998). Such artifacts are not exempt
+from natural laws or behavioral theories. To the
+contrary, their creation relies on existing kernel
+theories that are applied, tested, modified, and
+extended
+creativity,
+through the experience,
+intuition, and problem solving capabilities of the
+researcher (Markus et al. 2002; Walls et al. 1992).
+The importance of design iswell recognized in the
+IS literature (Glass 1999; Winograd
+1996, 1998).
+Benbasat and Zmud (1999, p. 5) argue that the
+relevance of IS research is directly related to its
+applicability indesign, stating that the implications
+of empirical IS research should be "implemen
+table,...synthesize
+
+an
+
+existing
+
+body
+
+of
+
+research,
+
+...[or] stimulate critical thinking" among IS practi
+tioners. However, designing useful artifacts is
+in
+complex due to the need for creative advances
+domain areas inwhich existing theory is often
+insufficient. "As technical knowledge grows, IT is
+applied to new application areas that were not
+
+Such
+
+previously believed to be amenable to ITsupport"
+(Markus et al. 2002, p. 180). The resultant IT
+artifacts extend the boundaries of human problem
+capabilities by pro
+solving and organizational
+as
+as
+well
+intellectual
+computational tools.
+viding
+Theories regarding their application and impact
+will follow their development and use.
+
+stated
+
+purpose,
+
+Here, we argue, is an opportunity for IS research
+to make significant contributions by engaging the
+research cycle between design
+complementary
+
+76
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+human
+
+and
+
+organizational
+
+rounding
+
+the analysis,
+
+management,
+
+and
+
+use
+
+of
+
+sur
+
+phenomena
+
+design,
+
+implementation,
+
+information
+
+systems.
+
+theories ultimately inform researchers and
+practitioners of the interactions among people,
+that must be
+and organizations
+technology,
+ifan information system is to achieve its
+managed
+namely
+
+improving the effective
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+science
+
+and
+
+to address
+
+behavioral-science
+
+funda
+
+mental problems faced in the productive applica
+tion of information technology. Technology and
+in an information
+behavior are not dichotomous
+system. They are inseparable (Lee 2000). They
+are similarly inseparable in IS research. Philo
+sophically these arguments draw from the prag
+matists
+(Aboulafia 1991) who argue that truth
+(justified theory) and utility (artifacts that are
+effective) are two sides of the same coin and that
+scientific research should be evaluated in light of
+its practical implications.
+realm of IS research is at the confluence of
+people, organizations, and technology (Davis and
+ITartifacts are broadly
+Olson 1985; Lee 1999).
+defined as constructs (vocabulary and symbols),
+and
+models
+representations),
+(abstractions
+The
+
+methods
+(algorithms and practices), and instan
+tiations (implemented and prototype systems).
+These are concrete prescriptions that enable IT
+researchers and practitioners to understand and
+address the problems inherent in developing and
+successfully
+implementing information systems
+within organizations
+(March and Smith 1995;
+Nunamaker etal. 1991a). As illustrations, Markus
+et al. (2002) and Walls et al. (1992) present
+research aimed at developing
+design-science
+executive information systems (EISs) and systems
+to support emerging
+processes
+knowledge
+(EKPs), respectively, within the context of "IS
+design
+
+theories."
+
+Such
+
+theories
+
+prescribe
+
+"effec
+
+tive development practices" (methods) and "a type
+of system solution" (instantiation) for "a particular
+class of user requirements" (models) (Markus et
+al. 2002, p. 180). Such prescriptive theories must
+be evaluated with respect to the utility provided for
+the class of problems addressed.
+ITartifact, implemented in an organizational
+context, is often the object of study in IS behav
+ioral-science research. Theories seek to predict
+or explain phenomena that occur with respect to
+the artifact's use (intention to use), perceived
+
+An
+
+usefulness,
+
+zations
+
+and
+
+impact
+
+on
+
+individuals
+
+and
+
+organi
+
+on system,
+(net benefits) depending
+service, and information quality (DeLone and
+McLean 1992, 2003; Seddon 1997). Much of this
+behavioral research has focused on one class of
+
+et al./Design
+
+in IS Research
+
+Science
+
+artifact, the instantiation (system), although other
+on the
+research efforts have also focused
+evaluation of constructs (e.g., Batra et al. 1990;
+Bodart et al. 2001; Geerts and McCarthy 2002;
+Kim and March 1995) and methods (e.g., Marakas
+and Elam 1998; Sinha and Vessey
+1999).
+Relatively little behavioral research has focused
+on evaluating models, a major focus of research
+in the management
+
+science
+
+literature.
+
+as the other side of the IS
+Design science,
+ITartifacts
+research cycle, creates and evaluates
+intended to solve identified organizational prob
+lems. Such artifacts are represented in a struc
+tured form that may vary from software, formal
+to informal
+logic, and rigorous mathematics
+A mathematical
+natural language descriptions.
+basis for design allows many types of quantitative
+evaluations of an ITartifact, including optimization
+proofs, analytical simulation, and quantitative
+comparisons with alternative designs. The further
+evaluation
+
+a
+
+of
+
+new
+
+artifact
+
+in a
+
+given
+
+organi
+
+zational context affords the opportunity to apply
+The rich
+empirical and qualitative methods.
+that emerge from the interaction of
+phenomena
+people, organizations, and technology may need
+to be qualitatively assessed
+to yield an under
+standing of the phenomena adequate for theory
+or problem solving
+development
+(Klein and
+Meyers
+science
+
+1999). As field studies enable behavioral
+researchers to understand organizational
+
+phenomena
+
+and
+
+in context,
+
+exercising
+
+design-science
+
+the process
+
+of constructing
+
+innovative
+
+IT artifacts
+
+researchers
+
+to
+
+understand
+
+enable
+the
+
+problem addressed
+by the artifact and the
+of
+their
+to its solution
+feasibility
+approach
+(Nunamaker et al. 1991a).
+The primary goal of this paper is to inform the
+community of IS researchers and practitioners of
+how to conduct, evaluate, and present design
+science research. We do so by describing the
+boundaries
+
+of design
+science within the IS
+discipline via a conceptual framework for under
+information systems
+research and by
+standing
+developing a set of guidelines for conducting and
+
+evaluating
+
+good
+
+design-science
+
+research.
+
+We
+
+primarily on technology-based
+design
+although we note with interest the current explora
+focus
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+77
+
+Hevner
+
+et al./Design
+
+Science
+
+in IS Research
+
+tion of organizations, policies, and work practices
+as designed artifacts (Boland 2002).
+Following
+Klein and Myers (1999) treatise on the conduct
+and evaluation of interpretive research in IS,we
+use the proposed guidelines
+to assess
+recent
+exemplar papers published in the IS literature in
+order to illustrate how authors, reviewers, and
+editors can apply them consistently. We conclude
+with an analysis of the challenges of performing
+research and a call for
+high-quality design-science
+synergistic
+and
+
+efforts
+
+between
+
+behavioral-science
+
+researchers.
+
+design-science
+
+A Framework
+
+for ISResearch
+
+Information systems and the organizations
+they
+support are complex, artificial, and purposefully
+designed.
+They are composed of people, struc
+and work systems
+tures, technologies,
+(Alter
+Simon
+2003; Bunge 1985;
+1996). Much of the
+work performed by ISpractitioners, and managers
+ingeneral (Boland 2002), deals with design?the
+purposeful organization of resources to accom
+plish a goal.
+Figure 1 illustrates the essential
+between business and information
+alignments
+technology strategies
+and
+
+information
+
+systems
+
+and between organizational
+infrastructures
+
+(Hender
+
+son and Venkatraman 1993). The effective transi
+tion of strategy into infrastructure requires exten
+sive design activity on both sides of the figure?
+to create an effective
+organizational
+design
+information
+infrastructure
+and
+organizational
+an
+to
+create
+information
+effective
+systems design
+system
+
+infrastructure.
+
+enablers
+
+of
+
+business
+
+strategy
+
+and
+
+organiza
+
+tional infrastructure (Kalakota and Robinson 2001;
+Available and
+Orlikowski and Barley 2001).
+emerging ITcapabilities are a significant factor in
+determining the strategies that guide an organiza
+allow
+information systems
+tion. Cutting-edge
+
+78
+
+strategy,
+
+and
+
+alignment,
+
+ture design are outside
+
+infrastruc
+
+organizational
+
+the scope of this paper.
+
+a true understanding of and appre
+ciation for design science as an IS research
+paradigm, an important dichotomy must be faced.
+Design is both a process (set of activities) and a
+To achieve
+
+product (artifact)?a verb and a noun (Walls et al.
+1992). Itdescribes the world as acted upon (pro
+cesses) and the world as sensed (artifacts). This
+Platonic view of design supports a problem
+solving paradigm that continuously shifts perspec
+tive between design processes
+and designed
+artifacts for the same complex problem.
+The
+design process is a sequence of expert activities
+that produces an innovative product (i.e., the
+design artifact). The evaluation of the artifact then
+information and a better
+feedback
+provides
+understanding of the problem inorder to improve
+both the quality of the product and the design
+process. This build-and-evaluate
+loop is typically
+iterated a number of times before the final design
+artifact is generated (Markus et al. 2002). During
+this
+
+creative
+
+process,
+
+the
+
+re
+
+design-science
+
+searcher must be cognizant of evolving both the
+design process and the design artifact as part of
+the
+
+research.
+
+and Smith (1995) identify two design
+and four design artifacts produced by
+research in IS. The two processes
+design-science
+
+March
+
+processes
+
+These are interdependent design activities that
+are central to the ISdiscipline. Hence, IS research
+the interplay among business
+must address
+IT
+strategy,
+organizational infrastructure,
+strategy,
+and IS infrastructure. This interplay is becoming
+more crucial as information technologies are seen
+as
+
+new forms and new
+to engage
+organizations
+structures-?to
+change the ways they "do busi
+ness" (Drucker 1988,1991; Orlikowski 2000). Our
+subsequent discussion of design science will be
+limited to the activities of building the IS infrastruc
+ture within the business organization.
+Issues of
+
+are
+
+build
+
+structs,
+
+and
+models,
+
+evaluate.
+methods,
+
+The
+
+artifacts
+and
+
+are
+
+coa7
+
+instantiations.
+
+Purposeful artifacts are built to address heretofore
+unsolved problems.
+They are evaluated with
+respect to the utility provided in solving those
+Constructs provide the language in
+problems.
+which problems and solutions are defined and
+communicated
+(Schon 1983). Models use con
+structs to represent a real world situation?the
+design problem and its solution space (Simon
+1996). Models aid problem and solution under
+standing and frequently represent the connection
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+_
+DUSineSS
+
+_
+
+o_
+
+??
+
+Strategy
+
+.
+strategy
+Alignment
+
+?
+
+fc
+
+et al./Design
+
+in IS Research
+
+Science
+
+Information
+,
+
+Technology
+
+^^
+
+??-1
+I
+Activities
+JL
+_5_
+
+1 -gr?
+JL
+AD?si?n
+Activities
+_^
+Infrastructure
+Alignment _^
+
+Organizational
+
+Infrastructure
+
+4
+
+lr?*#*-nr?-?*ij"k?
+inTormauon
+
+*
+
+Systems
+Infrastructure
+
+1. Organizational
+and Information
+Design Activities
+Systems
+Design
+Figure
+and N. Venkatraman,
+from J. Henderson
+Leveraging
+"Strategic
+Alignment:
+(Adapted
+IBM Systems
+Journal
+for Transforming
+Information
+Organizations,"
+Technology
+(32:1),
+
+1993.)_
+
+components
+problem and solution
+effects
+of design
+of
+the
+exploration
+enabling
+decisions and changes in the realworld. Methods
+define processes.
+They provide guidance on how
+between
+
+to solve problems, that is, how to search the
+These can range from formal,
+solution space.
+mathematical algorithms that explicitly define the
+search process to informal, textual descriptions of
+"best
+
+practice"
+
+approaches,
+
+or some
+
+combination.
+
+Instantiations show that constructs, models, or
+methods can be implemented in a working sys
+tem. They demonstrate feasibility, enabling con
+crete assessment
+of an artifact's suitability to its
+intended purpose. They also enable researchers
+to learn about the real world, how the artifact
+affects it,and how users appropriate it.
+
+and
+their
+people,
+(business)
+organizations,
+existing or planned technologies
+(Silver et al.
+In itare the goals, tasks, problems, and
+1995).
+opportunities that define business needs as they
+are perceived by people within the organization.
+are shaped
+Such perceptions
+by the roles,
+the
+
+work to position and compare
+
+these paradigms.
+
+defines
+the problem space
+environment
+in
+the phenomena of
+which
+reside
+(Simon 1996)
+it is composed
+of
+For IS research,
+interest.
+
+The
+
+Business
+
+organization.
+
+needs
+
+are
+
+assessed
+
+and evaluated within the context of organizational
+structure,
+
+strategies,
+
+culture,
+
+and
+
+busi
+
+existing
+
+They are positioned relative to
+infrastructure, applications,
+existing technology
+and development
+communication
+architectures,
+capabilities. Together these define the business
+need or "problem" as perceived by the researcher.
+ness processes.
+
+Framing
+needs
+
+Figure 2 presents our conceptual framework for
+and evaluating
+IS
+executing,
+understanding,
+and
+behavioral-science
+research
+combining
+paradigms. We use this frame
+design-science
+
+of people within
+
+and characteristics
+
+capabilities,
+
+research activities
+
+assures
+
+research
+
+to address
+
+business
+
+relevance.
+
+IS
+Given such an articulated business
+need,
+in two complementary
+research
+is conducted
+phases.
+
+Behavioral
+
+science
+
+addresses
+
+research
+
+and justification of
+through the development
+theories that explain or predict phenomena related
+to the identified business need. Design science
+addresses
+research through the building and
+evaluation of artifacts designed to meet the iden
+
+MIS Quarterly Vol. 28 No. 1/March 2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+79
+
+et al./Design
+
+Hevner
+
+Science
+
+in IS Research
+
+J-^
+
+Environment
+
+J-^
+
+IS Research
+
+Relevance
+
+I-p_n-K_r
+
+Pe?P,e
+-Theories
+
+RolesDevelop/Build
+
+Organizations
+Strategies
+Structure & Culture
+
+Processes
+
+Business
+
+-.--r-
+
+Applicable
+Knowledge
+
+Needs
+Assess
+
+^^^^^^^
+
+Refine
+
+^^^^^^_
+
+^^|^^^^T
+^
+
+Infrastructure
+
+.Data
+
+Experimental
+Field Study
+Architecture
+Simulation
+
+Development
+
+Analysis
+
+-Measures
+
+in
+Application
+Environment
+Appropriate
+Information
+
+Systems
+
+the
+
+|_|
+
+_I
+I_
+
+Additions
+
+to the
+Base
+
+Knowledge
+Research
+
+need.
+
+science
+
+research
+
+science
+
+research
+
+The goal of behavioral
+is truth.2 The goal of design
+
+is utility. As argued above, our
+is that truth and utility are inseparable.
+
+position
+Truth informs design and utility informs theory. An
+artifact may have utility because of some as yet
+
+undiscovered truth. A theory may yet to be devel
+oped to the point where its truth can be incorpor
+ated into design.
+Inboth cases, research assess
+ment via the justify/evaluate activities can result in
+the identification of weaknesses
+
+in the theory or
+
+are principled
+in behavioral
+science
+2Theories
+posed
+of phenomena.
+We
+that such
+explanations
+recognize
+are approximations
+to numer
+theories
+and are subject
+ous assumptions
+and conditions.
+However,
+they are
+evaluated
+the norms
+of truth or explanatory
+against
+and are valued
+
+as
+
+the claims
+
+they make
+
+power
+borne
+
+out
+
+80
+
+MIS Quarterly Vol. 28 No. 1/March 2004
+
+only
+
+in reality.
+
+are
+
+Criteria
+
+-Validation
+
+Capabilities
+
+tified business
+
+Methodologies
+
+Analytical Techniques
+-Case Study
+-Formalisms
+
+Applications
+Communications
+
+2.
+
+x-1
+Foundations
+
+%^^**
+.Methods
+-Instantiations
+
+^H|^^^^^
+^
+
+I-^-'-1
+Technology Justify/Evaluate
+
+Figure
+
+I-1
+
+Theories -Frameworks
+Artifacts-Instruments
+
+Capabilities
+Characteristics
+
+TZ__b?r
+
+Base
+
+Knowledge
+
+Rigor
+
+\^
+
+Framework
+
+artifact and the need to refine and reassess.
+refinement and reassessment
+described
+
+process
+in future research directions.
+
+The
+
+is typically
+
+The knowledge base provides the raw materials
+from and through which IS research is accom
+The knowledge base is composed
+of
+plished.
+foundations and methodologies.
+Prior IS research
+and results
+foundational
+
+from reference
+
+disciplines provide
+theories, frameworks, instruments,
+constructs, models, methods, and instantiations
+used in the develop/build phase of a research
+study. Methodologies
+provide guidelines used in
+the justify/evaluate phase. Rigor is achieved by
+appropriately applying existing foundations and
+Inbehavioral science, methodol
+methodologies.
+are
+ogies
+typically rooted in data collection and
+Indesign science,
+empirical analysis techniques.
+are
+and
+mathematical
+methods
+computational
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+et al./Design
+
+Hevner
+
+primarily used to evaluate the quality and effec
+tiveness of artifacts; however, empirical techni
+ques may also be employed.
+The
+
+and
+contributions of behavioral science
+are
+as
+in
+science
+IS
+research
+assessed
+design
+are
+an
+to
+business
+in
+the
+need
+applied
+they
+appropriate environment and as they add to the
+content of the knowledge base for further research
+and practice. A justified theory that is not useful
+for the environment contributes as little to the IS
+literature as an artifact that solves a nonexistent
+
+in IS Research
+
+Science
+
+has produced a considerable
+literature on design
+(Dym 1994; Pahl and Beitz 1996; Petroski 1996).
+Within the IS discipline, many design activities
+have been extensively studied, formalized, and
+or
+
+normal
+
+become
+
+routine.
+
+Design-science
+
+research in IS addresses what are considered to
+be wicked problems (Brooks 1987, 1996; Rittel
+and Webber
+That is, those problems
+1984).
+characterized by
+unstable requirements and constraints based
+upon ill-defined environmental contexts
+
+problem.
+
+complex interactions among subcomponents
+of the problem and its solution
+
+in design
+One issue that must be addressed
+science research is differentiating routine design
+or system building from design research.
+The
+
+inherent
+
+flexibility
+
+is in the nature of the problems and
+Routine design is the application of
+existing knowledge to organizational problems,
+such as constructing a financial or marketing
+
+malleable
+
+information system
+
+a critical dependence
+
+difference
+solutions.
+
+cesses
+
+research
+
+design-science
+
+addresses
+
+efficient ways. The key differentiator between rou
+tine design and design research is the clear iden
+tification of a contribution to the archival knowl
+edge base of foundations and methodologies.
+In the early stages
+
+of a discipline or with signifi
+
+cant
+
+the
+
+in
+
+environment,
+
+each
+
+new
+
+artifact created for that discipline or environment
+is "an experiment" that "poses a question to
+nature" (Newell and Simon 1976, p 114). Existing
+knowledge is used where appropriate; however,
+often the requisite knowledge
+is nonexistent
+(Markus et al. 2002). Reliance on creativity and
+trial-and-error
+research
+
+are
+
+search
+efforts.
+
+As
+
+characteristic
+
+design-science
+
+of
+
+such
+
+research
+
+results are codified in the knowledge base, they
+become best practice. System building is then the
+routine application of the knowledge base to
+known
+
+pro
+
+design
+artifacts
+
+(i.e.,
+
+and artifacts)
+
+processes
+
+problems.
+
+a critical dependence
+upon human social
+abilities (e.g., teamwork) to produce effective
+solutions
+As a result, we agree with Simon (1996) that a
+in information systems,
+of
+theory of design
+is in a constant state of scientific
+necessity,
+revolution (Kuhn 1996). Technological advances
+the result of innovative, creative design
+
+are
+
+science
+
+activities are endemic
+in many profes
+In particular, the engineering profession
+
+Ifnot capricious,
+
+processes.
+
+least arbitrary (Brooks
+business
+needs
+and
+such
+
+Innovations,
+tems,
+
+high-level
+
+as
+
+1987) with
+
+they are at
+respect to
+
+existing
+
+knowledge.
+
+database
+
+management
+personal
+
+languages,
+
+sys
+
+computers,
+
+software
+
+components,
+intelligent agents, object
+the Internet, and the World Wide
+technology,
+Web, have had dramatic and at times unintended
+impacts on the way inwhich
+are conceived,
+designed,
+managed.
+
+Design
+sions.
+
+design
+
+impor
+
+tant unsolved problems in unique or innovative
+in more effective or
+ways or solved problems
+
+changes
+
+to change
+
+as
+
+well
+
+upon human cognitive
+abilities (e.g., creativity) to produce effective
+solutions
+
+using best practice artifacts
+(constructs, models, methods, and instantiations)
+existing in the knowledge base. On the other
+hand,
+
+as
+
+present
+
+Consequently
+below
+
+are,
+
+of
+
+information systems
+implemented,
+the guidelines
+
+necessity,
+
+adaptive
+
+and
+we
+and
+
+process-oriented.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+81
+
+et al./Design
+
+Hevner
+
+Science
+
+in IS Research
+
+contend that each of these guidelines should be
+addressed
+in some manner for design-science
+research to be complete. How well the research
+satisfies the intent of each of the guidelines
+is
+then a matter for the reviewers, editors, and
+
+Guidelines for Design Science
+in Information Systems
+Research
+As discussed above, design science
+a problem solving process.
+The
+
+is inherently
+fundamental
+research from which
+principle of design-science
+our seven guidelines are derived is that knowl
+edge and understanding of a design problem and
+in the building and
+its solution are acquired
+an
+of
+That
+artifact.
+is, design-science
+application
+research requires the creation of an innovative,
+purposeful artifact (Guideline 1) for a specified
+the
+Because
+problem domain
+(Guideline 2).
+itmust yield utility for the
+artifact is purposeful,
+specified problem. Hence, thorough evaluation of
+the artifact is crucial (Guideline 3). Novelty is
+the artifact must
+be
+similarly crucial since
+innovative, solving a heretofore unsolved problem
+or solving a known problem ina more effective or
+manner
+
+In this way,
+(Guideline 4).
+research is differentiated from the
+design-science
+The artifact itself must be
+practice of design.
+
+efficient
+
+rigorously defined, formally represented, coherent,
+and internally consistent (Guideline 5). The pro
+cess by which it is created, and often the artifact
+itself,
+
+or enables
+
+incorporates
+a problem
+
+whereby
+
+space
+
+a search
+
+process
+
+is constructed
+
+and
+
+a
+
+mechanism posed or enacted to find an effective
+solution (Guideline 6). Finally, the results of the
+research
+
+design-science
+
+must
+
+be
+
+readers
+
+1 summarizes the seven guidelines.
+Each
+In the following
+is discussed
+in detail below.
+section, they are applied to specific exemplar
+
+Table
+
+research
+
+efforts.
+
+1: Design
+
+Guideline
+
+as an Artifact
+
+The result of design-science
+research in IS is, by
+definition, a purposeful ITartifact created to ad
+It
+dress an important organizational
+problem.
+must be described
+mentation
+
+and
+
+effectively, enabling its imple
+in an appropriate
+application
+
+domain.
+
+Orlikowski and lacono (2001) call the ITartifact
+the "core subject matter" of the IS field. Although
+they articulate multiple definitions of the term IT
+artifact, many of which include components of the
+organization and people involved in the use of a
+artifact,
+
+computer-based
+
+they
+
+the
+
+emphasize
+
+importance of "those bundles of cultural properties
+packaged insome socially recognizable form such
+as
+
+communicated
+
+to determine.
+
+hardware
+
+and
+
+software"
+
+(p.
+
+121),
+
+i.e.,
+
+the
+
+IT
+
+effectively
+(Guideline 7) both to a technical
+audience (researchers who will extend them and
+practitioners who will implement them) and to a
+managerial audience (researchers who will study
+them in context and practitioners who will decide
+if they should be
+implemented within their
+
+artifact as an instantiation. Weber (1987) argues
+that theories of long-lived artifacts (instantiations)
+and their representations
+(Weber 2003) are
+fundamental to the IS discipline. Such theories
+must explain how artifacts are created and
+and
+to their changing environments
+adapted
+
+organizations).
+
+underlying technologies.
+
+Our
+
+for establishing
+
+purpose
+
+guidelines
+
+is
+
+to
+
+assist
+
+these
+
+researchers,
+
+seven
+
+reviewers,
+
+editors, and readers to understand the require
+research.
+for effective
+ments
+design-science
+Following Klein and Myers (1999), we advise
+against mandatory or rote use of the guidelines.
+reviewers,
+
+Researchers,
+
+their creative
+when, where,
+
+and
+
+editors
+
+must
+
+use
+
+skills and judgment to determine
+and how to apply each of the guide
+
+lines
+
+in a specific
+
+82
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+research
+
+project.
+
+However,
+
+we
+
+Our definition of ITartifacts is both broader and
+It is
+narrower then those articulated above.
+that we include not only
+broader in the sense
+instantiations inour definition of the ITartifact but
+also the constructs, models, and methods applied
+and use of information
+in the development
+systems.
+
+However,
+
+it is narrower
+
+in the sense
+
+that
+
+we do not include people or elements of organi
+in our definition nor do we explicitly
+zations
+include the process by which such artifacts evolve
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+1. Design-Science
+
+Table
+
+Research
+
+Description
+
+1: Design as an Artifact
+
+a model,
+
+of a construct,
+
+a method,
+
+or an
+
+instantiation.
+
+The objective of design-science
+research is to develop
+solutions to important and relevant
+technology-based
+
+2: Problem Relevance
+
+business
+
+problems.
+
+The utility, quality, and efficacy of a design artifact must be
+evaluation
+rigorously demonstrated via well-executed
+
+3: Design Evaluation
+
+Guideline
+
+research must produce a viable artifact in the
+
+Design-science
+form
+
+Guideline
+
+in IS Research
+
+Science
+
+Guidelines
+
+Guideline
+Guideline
+
+et al./Design
+
+methods.
+
+Guideline
+
+4: Research
+
+Guideline
+
+5: Research
+
+Contributions
+
+Effective design-science
+verifiable contributions
+
+Guideline
+
+research relies upon the application of
+Design-science
+in both the construction and evaluation
+rigorous methods
+the design artifact.
+
+Rigor
+
+as a Search
+
+6: Design
+
+environment.
+
+problem
+
+7: Communication
+
+of
+
+The search for an effective artifact requires utilizing available
+means to reach desired ends while satisfying laws in the
+
+Process
+
+Guideline
+
+and/or design methodologies.
+
+foundations,
+
+design
+
+research must provide clear and
+in the areas of the design artifact,
+
+of
+
+research must be presented effectively
+Design-science
+as well as management-oriented
+to technology-oriented
+
+Research
+
+both
+
+audiences.
+
+over time. We conceive of IT artifacts not as
+independent of people or the organizational and
+social contexts
+in which they are used but as
+and
+interdependent
+coequal with them inmeeting
+business
+
+needs.
+
+We
+
+that
+
+acknowledge
+
+percep
+
+1997; Tsichritzis 1998). This definition of the
+artifact is consistent with the concept of IS design
+theory as used byWalls et al. (1992) and Markus
+et al. (2002) where the theory addresses both the
+process of design and the designed product.
+
+tions and fitwith an organization
+
+are crucial to the
+and implementation of an
+
+successful
+
+development
+
+information
+
+system.
+
+We
+
+capabilities
+
+of
+
+constructs,
+
+and
+
+instantiations
+
+argue,
+
+however,
+models,
+
+are equally
+
+research
+
+design-science
+their
+
+the
+
+efforts
+
+that
+
+the
+
+methods,
+
+crucial and
+
+that
+
+are
+
+for
+
+necessary
+
+creation.
+
+in design
+Furthermore, artifacts constructed
+science research are rarely full-grown information
+Instead, artif
+systems that are used in practice.
+acts
+
+are
+
+practices,
+
+innovations
+technical
+
+through which
+tation,
+
+and
+
+use
+
+that define
+capabilities,
+
+the analysis,
+of
+
+information
+
+and
+
+design,
+systems
+
+effectively and efficiently accomplished
+
+the
+
+ideas,
+
+products
+implemen
+can
+
+be
+
+(Denning
+
+More precisely, constructs provide the vocabulary
+and symbols
+used
+to define problems
+and
+solutions. They have a significant impact on the
+way inwhich tasks and problems are conceived
+(Boland 2002; Schon 1983). They enable the
+construction of models or representations of the
+has a profound
+problem domain. Representation
+impact on design work. The field of mathematics
+was
+
+revolutionized,
+
+for
+
+example,
+
+with
+
+the
+
+con
+
+structs
+
+defined by Arabic numbers, zero, and
+place notation. The search for an effective prob
+lem representation is crucial to finding an effective
+design solution (Weber 2003). Simon (1996, p.
+132) states, "solving a problem simply means
+it so as to make
+the solution
+representing
+transparent."
+
+MIS Quarterly Vol. 28 No. 1'/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+83
+
+et al./Design
+
+Hevner
+
+in IS Research
+
+Science
+
+The entity-relationship model (Chen 1976), for
+is a set of constructs for representing
+example,
+the semantics of data.
+It has had a profound
+impact on the way inwhich systems analysis and
+design are executed and the way in
+information systems are represented and
+Furthermore, these constructs have
+developed.
+
+database
+which
+
+been used to build models of specific business
+situations that have been generalized into patterns
+for application
+
+(Purao et al.
+for building such models have
+
+in similar domains
+
+Methods
+
+2003).
+also been
+
+the subject of considerable
+
+(Halpin 2001; McCarthy 1982; Parsons
+2000; Storey et al. 1997).
+
+research
+and Wand
+
+Artifact instantiation demonstrates
+
+feasibility both
+and of the designed pro
+research in IT often ad
+related to some aspect of the
+
+of the design process
+duct. Design-science
+dresses
+
+problems
+Hence, the
+design of an information system.
+in
+the form of
+be
+instantiations produced may
+or
+intellectual
+software tools aimed at improving
+the process of information system development.
+a system
+instantiation that auto
+Constructing
+that the process
+mates a process demonstrates
+Itprovides "proof by
+can, in fact, be automated.
+construction"
+
+(Nunamaker
+
+1991a).
+research
+
+of design-science
+
+nature
+
+The critical
+in IS lies
+
+in the
+
+identification of as yet undeveloped capabilities
+to expand
+IS into new realms "not
+to IT support"
+previously believed amenable
+(Markus et al. 2002, p. 180). Such a result is
+significant IS research only if there is a serious
+question about the ability to construct such an
+needed
+
+there is uncertainty about its ability to
+and the automated task is
+appropriately,
+perform
+TOP Modeler
+to
+the
+IS
+community.
+important
+al.
+for
+et
+example, is a tool that
+2002),
+(Markus
+
+artifact,
+
+instantiates
+
+methods
+
+information
+
+systems
+
+of
+for the development
+that support
+"emergent
+Construction of such a
+
+processes."
+prototype artifact in a research setting or in a
+single organizational setting is only a first step
+toward its deployment, but we argue that it is a
+knowledge
+
+necessary
+
+one.
+
+As
+
+an exemplar
+
+of design-science
+
+research (see below), this research resulted in a
+commercial product that "has been used in over
+two dozen 'real use' situations" (p. 187).
+
+84
+
+To illustrate further, prior to the construction of the
+first expert system (instantiation), itwas not clear
+ifsuch a system could be constructed.
+Itwas not
+clear how to describe or represent it,or how well
+itwould perform. Once feasibility was demon
+strated by constructing an expert system
+in a
+selected domain, constructs and models were
+and subsequent
+research in expert
+developed
+on
+focused
+systems
+demonstrating
+significant
+improvements in the product or process (methods)
+of construction (Tarn 1990; Trice and Davis 1993).
+Similar examples exist in requirements determi
+nation (Bell 1993; Bhargavaetal.
+1998), individual
+and group decision support systems (Aiken et al.
+1991; Basu and Blanning 1994), database design
+and integration (Dey et al. 1998; Dey et al. 1999;
+Storey et al. 1997), and workflow analysis (Basu
+and Blanning 2000), to name a few important
+areas
+
+of
+
+IS design-science
+
+research.
+
+2: Problem
+
+Guideline
+
+Relevance
+
+The objective of research in information systems
+that
+is to acquire knowledge and understanding
+and implementation of
+enable the development
+technology-based solutions to heretofore unsolved
+and important business
+Behavioral
+problems.
+science
+
+this
+
+approaches
+
+the
+
+through
+
+goal
+
+devel
+
+opment and justification of theories explaining or
+predicting phenomena that occur. Design science
+this goal through the construction of
+approaches
+innovative artifacts aimed at changing the pheno
+mena that occur. Each must inform and challenge
+the
+
+For
+
+other.
+
+the
+
+example,
+
+accep
+
+technology
+
+tance model provides a theory that explains and
+of information techno
+predicts the acceptance
+within
+logies
+organizations
+(Venkatesh 2000).
+re
+This
+design-science
+theory challenges
+to create
+
+searchers
+
+that
+
+artifacts
+
+enable
+
+organi
+
+to overcome
+the acceptance
+problems
+We
+argue that a combination of
+predicted.
+
+zations
+
+artifacts
+
+technology-based
+tualizations
+
+and
+
+nical
+
+capabilities,
+
+based
+
+artifacts
+
+interfaces,
+
+artifacts
+
+people-based
+building,
+
+etc.)
+
+practices,
+
+are
+
+compensation,
+
+social systems,
+(e.g.,
+
+necessary
+
+issues.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+tech
+
+organization
+
+etc.),
+
+structures,
+
+(e.g.,
+
+reporting relationships,
+
+concep
+
+system
+
+(e.g.,
+
+representations,
+
+training,
+to
+
+etc.), and
+consensus
+
+address
+
+such
+
+Hevner
+
+Formally, a problem can be defined as the
+differences between a goal state and the current
+state of a system. Problem solving can be defined
+as a search process
+(see Guideline 6) using
+actions to reduce or eliminate the differences
+(Simon 1996). These definitions imply an environ
+ment
+
+that
+
+constraints
+
+criteria
+
+goal
+
+imposes
+
+a system.
+
+upon
+
+as well
+
+Business
+
+as
+
+organiza
+
+in an
+tions are goal-oriented
+entities existing
+economic and social setting. Economic theory
+often portrays the goals of business organizations
+as being related to profit (utility) maximization.
+problems and opportunities often
+
+Hence, business
+to
+
+relate
+
+revenue
+
+increasing
+
+or
+
+decreasing
+
+cost
+
+pro
+through the design of effective business
+cesses.
+The design of organizational and inter
+information systems plays a major
+organizational
+to
+role in enabling effective business processes
+achieve
+
+these
+
+goals.
+
+The relevance of any design-science
+research
+effort iswith respect to a constituent community.
+For IS researchers, that constituent community is
+the
+
+who
+
+practitioners
+
+implement,
+
+operate,
+and
+
+systems
+implement,
+
+those
+operate,
+
+plan,
+and
+
+manage,
+
+evaluate
+
+who
+
+plan,
+and
+
+design,
+information
+
+manage,
+
+design,
+
+evaluate
+
+the
+
+tech
+
+that enable
+their development
+and
+nologies
+To
+relevant
+to
+this
+be
+implementation.
+community,
+research must address the problems faced and
+the opportunities afforded by the interaction of
+people,
+
+organizations,
+
+and
+
+information
+
+technology.
+
+Organizations spend billions of dollars annually on
+IT, only too often to conclude that those dollars
+were wasted (Keil 1995; Keil et al. 1998; Keil and
+Robey 1999). This community would welcome
+effective artifacts that enable such problems to be
+addressed?constructs
+by which to think about
+them, models by which to represent and explore
+them, methods by which to analyze or optimize
+them, and instantiations that demonstrate
+affect them.
+
+how to
+
+3: Design
+
+Evaluation
+
+The utility, quality, and efficacy of a design artifact
+must
+be rigorously demonstrated
+via well
+executed evaluation methods.
+is a
+Evaluation
+
+in IS Research
+
+Science
+
+crucial component of the research process. The
+business
+environment establishes
+the require
+ments upon which the evaluation of the artifact is
+based. This environment
+includes the technical
+infrastructure which itself is incrementally built by
+the implementation of new IT artifacts.
+Thus,
+evaluation includes the integration of the artifact
+within the technical infrastructure of the business
+environment.
+
+in the justification of a behavioral science
+of a designed
+IT artifact
+theory, evaluation
+of appropriate metrics and
+the
+definition
+requires
+possibly the gathering and analysis of appropriate
+IT artifacts can be evaluated
+in terms of
+data.
+
+As
+
+functionality,
+
+completeness,
+
+accu
+
+consistency,
+
+racy, performance, reliability, usability, fitwith the
+organization, and other relevant quality attributes.
+When analytical metrics are appropriate, designed
+artifacts may be mathematically
+As
+evaluated.
+two examples, distributed database design algo
+rithms can be evaluated using expected operating
+cost or average
+time for a given
+response
+characterization of information processing require
+ments
+et al. 2003) and search
+(Johansson
+can
+be
+evaluated
+algorithms
+using information
+retrieval metrics such as precision and recall
+(Salton 1988).
+Because
+is inherently an iterative and
+design
+incremental activity, the evaluation phase provides
+essential feedback to the construction phase as to
+the quality of the design process and the design
+A design artifact is
+product under development.
+and effective when
+it satisfies
+the
+complete
+requirements and constraints of the problem it
+was
+
+meant
+
+to solve.
+
+research
+
+Design-science
+
+efforts may
+
+begin with
+
+simplified
+
+zations
+
+representations
+
+of
+
+and
+
+conceptuali
+As
+
+problems.
+
+available technology or organizational
+ments
+made
+assumptions
+change,
+
+environ
+in prior
+
+research may become invalid. Johansson (2000),
+for example, demonstrated that network latency is
+a major
+
+Guideline
+
+et al./Design
+
+component
+
+in the
+
+response-time
+
+perfor
+
+mance of distributed databases.
+Prior research in
+distributed database
+design
+ignored latency
+it assumed
+a low-bandwidth network
+because
+where latency is negligible.
+Ina high-bandwidth
+network,
+
+however,
+
+latency
+
+can
+
+account
+
+for over
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+90
+
+85
+
+et al./Design
+
+Hevner
+
+Science
+
+2. Design
+
+Table
+
+in IS Research
+
+Evaluation
+
+1. Observational
+
+Methods
+
+Case Study:
+
+Study artifact in depth
+
+in business
+
+environment
+
+Field Study: Monitor use of artifact inmultiple projects
+2. Analytical
+
+Static Analysis:
+
+Examine structure of artifact for static qualities
+
+(e.g.,
+
+complexity)
+Architecture Analysis:
+
+Study fit of artifact into technical
+
+IS architecture
+
+inherent optimal properties of artifact or provide
+Optimization: Demonstrate
+optimality bounds on artifact behavior
+Dynamic Analysis:
+performance)
+
+Study artifact in use for dynamic qualities
+
+(e.g.,
+
+3. Experimental
+
+Controlled Experiment: Study artifact in controlled environment
+(e.g., usability)
+Simulation - Execute artifact with artificial data
+
+4. Testing
+
+Functional
+
+(Black Box) Testing:
+failures and identify defects
+
+for qualities
+
+Execute artifact interfaces to discover
+
+Structural (White Box) Testing: Perform coverage testing of some metric
+(e.g., execution paths) in the artifact implementation
+5. Descriptive
+
+Informed Argument: Use information from the knowledge base (e.g.,
+relevant research) to build a convincing argument for the artifact's utility
+Scenarios:
+its utility
+
+of
+
+percent
+
+the
+
+time.
+
+response
+
+Construct
+
+et
+
+Johansson
+
+detailed scenarios
+
+al.
+
+(2003) extended prior distributed database design
+research by developing a model that includes
+network latency and the effects of parallel pro
+on
+
+cessing
+
+response
+
+time.
+
+The evaluation of designed artifacts typically uses
+available in the knowledge base.
+methodologies
+These are summarized inTable 2. The selection
+of evaluation methods must be matched appro
+priately with the designed artifact and the selected
+For example,
+evaluation metrics.
+descriptive
+methods of evaluation should only be used for
+innovative artifacts for which other
+especially
+The
+forms of evaluation may not be feasible.
+an
+can
+of
+be
+and
+artifact
+efficacy
+goodness
+rigorously
+
+demonstrated
+
+via well-selected
+
+evalua
+
+tion methods (Basili 1996; Kleindorfer et al. 1998;
+Zelkowitz and Wallace
+1998).
+
+86
+
+Design,
+landscaping,
+
+around the artifact to demonstrate
+
+in all of
+art,
+
+its realizations
+music),
+
+has
+
+(e.g.,
+
+architecture,
+
+style.
+
+Given
+
+the
+
+sufficient
+problem and solution requirements,
+degrees of freedom remain to express a variety of
+in the artifact that are
+forms and functions
+to
+both
+the designer and the
+aesthetically pleasing
+user. Good designers bring an element of style to
+their work (Norman 1988). Thus, we posit that
+design evaluation should include an assessment
+of the artifact's style.
+of style lies in the realm of
+human perception and taste. Inother words, we
+know good style when we see it.While difficult to
+define, style in IS design iswidely recognized and
+appreciated (Kernighan and Plauger 1978; Wino
+grad 1996). Gelernter (1998) terms the essence
+
+The measurement
+
+He de
+of style in IS design machine beauty.
+scribes it as a marriage between simplicity and
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+that drives innovation in science
+and
+technology. Simon (1996) also notes the impor
+tance of style in the design process. The ability to
+creatively vary the design process, within the
+limits of satisfactory constraints, challenges and
+adds value to designers who participate in the
+
+information systems (Aiken 1991; Markus et
+al. 2002; Walls et al. 1992) are examples of
+such artifacts.
+
+process.
+
+3.
+
+4: Research
+
+Contributions
+
+Finally, the creative develop
+Methodologies.
+ment and use of evaluation methods
+(e.g.,
+experimental,
+
+Effective design-science
+research must provide
+clear contributions
+in the areas of the design
+artifact, design construction knowledge (i.e., foun
+dations), and/or design evaluation knowledge (i.e.,
+The ultimate assessment
+for any
+methodologies).
+research is, "What are the new and interesting
+contributions?"
+research holds
+Design-science
+the potential for three types of research contri
+butions based on the novelty, generality, and
+significance of the designed artifact. One or more
+of these contributions must be found in a given
+research
+
+1.
+
+project.
+
+The Design Artifact. Most often, the contribu
+tion of design-science
+research is the artifact
+itself. The artifact must enable the solution of
+heretofore unsolved problems.
+Itmay extend
+the knowledge base (see below) or apply
+in new and innovative
+existing knowledge
+ways. As shown inFigure 2 by the left-facing
+arrow at the bottom of the figure from IS
+Research to the Environment, exercising the
+artifact
+in the environment
+produces
+value
+to the constituent
+IS
+significant
+community.
+System development method
+ologies, design tools, and prototype systems
+(e.g.,
+
+GDSS,
+
+expert
+
+systems)
+
+are
+
+examples
+
+Foundations.
+
+observational,
+
+analytical,
+
+testing, and descriptive) and new evaluation
+metrics
+research
+provide design-science
+contributions.
+Measures
+and evaluation
+metrics in particular are crucial components
+of design-science
+research. The right-facing
+arrow at the bottom of the figure from IS
+Research to the Knowledge Base inFigure 2
+also indicates these contributions. TAM, for
+example, presents a framework for predicting
+and explaining why a particular information
+ina given
+system will or will not be accepted
+organizational
+setting
+(Venkatesh
+2000).
+Although TAM is posed as a behavioral
+theory, it also provides metrics by which a
+information system or implemen
+designed
+tation process can be evaluated.
+Its implica
+tions for design itself are as yet unexplored.
+Criteria
+
+for assessing
+contribution
+focus on
+representational
+fidelity and implementability.
+Artifacts must accurately represent the business
+and technology
+in the
+environments
+used
+information
+themselves
+research,
+systems
+being
+models of the business. These artifacts must be
+"implementable,"
+
+hence
+
+tiating design
+
+science
+
+artifacts.
+
+research
+
+must
+
+however,
+
+the
+
+the
+
+importance
+
+of
+
+Beyond
+
+demonstrate
+
+instan
+
+these,
+a clear
+
+contribution to the business environment, solving
+an important, previously unsolved problem.
+
+of such artifacts.
+2.
+
+in IS Research
+
+Science
+
+formalisms, ontologies
+(Wand and Weber
+1993, 1995; Weber
+1997), problem and
+solution representations,
+design algorithms
+et al.
+and
+innovative
+(Storey
+1997),
+
+power
+
+Guideline
+
+et al./Design
+
+The creative
+
+development of
+novel, appropriately evaluated
+constructs,
+or instantiations
+that
+models,
+methods,
+extend and improve the existing foundations
+in the design-science
+knowledge base are
+also important contributions. The right-facing
+arrow at the bottom of the figure from IS
+Research to the Knowledge Base inFigure 2
+indicates these contributions.
+Modeling
+
+Guideline
+
+5: Research
+
+Rigor
+
+the way in which research is
+Rigor addresses
+conducted. Design-science
+research requires the
+in both the
+application of rigorous methods
+construction
+and evaluation
+of the designed
+artifact. In behavioral-science
+research, rigor is
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+87
+
+Hevner
+
+et al./Design
+
+in IS Research
+
+Science
+
+often assessed
+by adherence to appropriate data
+Over
+collection
+and analysis
+techniques.
+emphasis on rigor in behavioral IS research has
+often resulted in a corresponding
+lowering of
+relevance
+
+(Lee 1999).
+
+Design-science
+
+research
+
+matical
+
+formalism
+
+about or prove anything about why the artifact
+and
+is where
+works.
+This
+design-science
+
+mathe
+
+and
+
+to describe
+
+the specified
+
+However,
+
+the environments
+
+artifact.
+
+constructed
+
+on
+
+relies
+
+often
+
+comparability, subject selection,
+training, time,
+and tasks. Methods for this type of evaluation are
+not unlike those for justifying or testing behavioral
+theories. However, the principal aim is to deter
+mine how well an artifact works, not to theorize
+
+another.
+
+must
+
+researchers
+
+behavioral-science
+one
+
+Because
+
+complement
+artifacts
+
+design-science
+
+inwhich ITartifacts must perform and the artifacts
+themselves may defy excessive formalism. Or, in
+an attempt
+to be mathematically
+rigorous,
+important parts of the problem may be abstracted
+
+are often the "machine" part of the human
+machine system constituting an information sys
+tem, it is imperative to understand why an artifact
+works or does not work to enable new artifacts to
+
+or
+
+be constructed
+
+"assumed
+
+In particular,
+
+away."
+
+with
+
+to
+
+respect
+
+the construction activity, rigor must be assessed
+with respect to the applicability and generali
+zability of the artifact. Again, an overemphasis on
+rigor
+
+can
+
+relevance.
+
+lessen
+
+We
+
+argue,
+
+with
+
+along
+
+behavioral IS researchers (Applegate 1999), that
+it is possible and necessary
+for all IS research
+paradigms to be both rigorous and relevant.
+and behavioral-science
+In both design-science
+from the effective use of
+is
+derived
+research, rigor
+foundations and
+base?theoretical
+the knowledge
+is predicated
+Success
+research methodologies.
+on the researcher's skilled selection of appropriate
+techniques to develop or construct a theory or
+and
+
+artifact
+
+justify the theory or evaluate
+Claims
+upon
+
+about
+
+metrics.
+rely on
+
+matical
+
+proofs
+
+which
+
+the performance
+
+measured.
+
+are
+
+artifacts
+
+performance
+
+means
+
+of appropriate
+
+the selection
+
+typically dependent
+
+evaluation
+
+formal
+
+mathe
+
+criteria
+
+against
+
+of an artifact can
+
+be
+
+must
+
+researchers
+
+Design-science
+
+of their
+the appropriateness
+constantly assess
+metrics and the construction of effective metrics is
+research.
+an important part of design-science
+Furthermore, designed artifacts are often com
+problem-solving
+ponents of a human-machine
+of behav
+For
+such
+artifacts,
+knowledge
+system.
+ioral theories and empirical work are necessary to
+construct
+
+and
+
+evaluate
+
+models, methods,
+within
+exercised
+
+such
+
+and
+
+artifacts.
+
+Constructs,
+
+instantiations
+
+must
+
+be
+
+environments.
+appropriate
+Appropriate subject groups must be obtained for
+include
+Issues that are addressed
+such studies.
+
+88
+
+Guideline 6: Design
+Search Process
+
+as a
+
+Design science is inherently iterative. The search
+for the best, or optimal, design is often intractable
+information systems
+for realistic
+problems.
+Heuristic search strategies produce feasible, good
+designs that can be implemented in the business
+environment. Simon (1996) describes the nature
+of the design process as a Generate/Test
+Cycle
+(Figure 3).
+
+to
+
+the artifact.
+
+Even
+
+that exploit the former and avoid
+
+the latter.
+
+Design is essentially a search process to discover
+Problem
+an effective solution to a problem.
+means
+as
+can
+available
+be
+viewed
+utilizing
+solving
+laws
+to reach desired ends while satisfying
+in the environment
+1996).
+(Simon
+existing
+and representation
+of appropriate
+Abstraction
+means,
+
+ends,
+
+design-science
+
+laws are
+
+and
+
+research.
+
+crucial
+These
+
+of
+
+components
+factors
+
+are
+
+prob
+
+lem and environment dependent and invariably
+involve creativity and innovation. Means are the
+set of actions and resources available to construct
+a solution. Ends represent goals and constraints
+on the solution. Laws are uncontrollable forces in
+the environment. Effective design requires knowl
+edge of both the application domain (e.g., require
+ments and constraints) and the solution domain
+(e.g.,
+
+technical
+
+Design-science
+
+and
+
+organizational).
+
+research
+
+often
+
+lem by explicitly representing
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+simplifies
+
+a prob
+
+only a subset of the
+
+Hevner
+
+et al./Design
+
+Science
+
+in IS Research
+
+Generate
+?--.
+
+CDesign
+
+Alternatives
+
+\^
+
+Test Alternatives
+
+/
+*^^
+
+Against
+Requirements/Constraints
+
+Figure
+
+relevant
+
+3. The Generate/Test
+
+means,
+
+ends,
+
+and
+
+Cycle
+
+laws
+
+or
+
+by
+
+decom
+
+posing a problem into simpler subproblems. Such
+simplifications and decompositions
+may not be
+realistic enough to have a significant impact on
+practice but may represent a starting point.
+ismade iteratively as the scope of the
+Progress
+As means, ends,
+design problem is expanded.
+and laws are refined and made more realistic, the
+more
+artifact becomes
+relevant and
+design
+The means,
+ends, and laws for IS
+design problems can often be represented using
+valuable.
+the
+
+tools
+
+Means
+
+of mathematics
+are
+
+represented
+
+and
+
+operations
+
+research.
+
+decision
+
+variables
+
+by
+
+whose values constitute an implementable design
+solution.
+Ends are represented using a utility
+function and constraints that can be expressed
+in
+terms
+
+of decision
+
+variables
+
+and
+
+constants.
+
+are represented by the values of constants
+in the utility function and constraints.
+
+computationally
+a
+
+"reliable,
+
+secure,
+
+infeasible.
+and
+
+For example,
+responsive
+
+to build
+
+information
+
+infrastructure," one of the key issues
+systems
+faced by ISmanagers
+(Brancheau et al. 1996), a
+would
+to represent all possible
+need
+designer
+infrastructures (means), determine their utility and
+constraints (ends), and specify all cost and benefit
+constants
+(laws). Clearly such an approach is
+infeasible.
+However, this does not mean that
+research is inappropriate for such
+design-science
+a problem.
+
+Laws
+
+used
+
+set of possible design solutions for any
+problem is specified as all possible means that
+satisfy all end conditions consistent with identified
+laws. When
+these can be formulated appro
+and
+standard
+priately
+posed mathematically,
+can
+research
+be
+used to
+operations
+techniques
+determine an optimal solution for the specified
+end conditions. Given the wicked nature of many
+information system design problems, however, it
+
+The
+
+not be possible
+to determine,
+let alone
+explicitly describe, the relevant means, ends, or
+laws (Vessey and Glass 1998). Even when it is
+possible to do so, the sheer size and complexity of
+the solution space will often render the problem
+
+may
+
+In such situations, the search is for satisfactory
+solutions,
+i.e., satisficing (Simon 1996), without
+The
+explicitly specifying all possible solutions.
+task
+involves
+the
+creation, utilization, and
+design
+assessment
+of heuristic search strategies.
+That
+is, constructing an artifact that "works"well for the
+class of problems.
+Although its con
+is based on prior theory and existing
+itmay or may not be entirely
+design knowledge,
+clear why itworks or the extent of its generaliza
+bility; it simply qualifies as "credentialed knowl
+specified
+struction
+
+edge" (Meehl 1986, p. 311). While
+
+it is important
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+89
+
+Hevner
+
+et al./Design
+
+Science
+
+in IS Research
+
+to understand why an artifact works, the critical
+nature of design in ISmakes
+it important to first
+establish that itdoes work and to characterize the
+inwhich itworks, even ifwe cannot
+environments
+completely explain why itworks. This enables IS
+practitioners to take advantage of the artifact to
+improve practice and provides a context for
+additional research aimed at more fully explicating
+the resultant phenomena.
+Markus et al. (2002),
+for example, describe
+in
+their search process
+terms of iteratively identifying deficiencies
+in
+constructed
+
+and
+prototype software systems
+creatively developing solutions to address them.
+
+The use of heuristics to find "good" design solu
+tions opens the question of how goodness
+is
+Different problem representations may
+how
+provide varying techniques for measuring
+good a solution is. One approach is to prove or
+that a heuristic design solution is
+demonstrate
+always within close proximity of an optimal solu
+
+measured.
+
+tion. Another is to compare produced solutions
+with those constructed by expert human designers
+for the same problem situation.
+
+should
+
+be committed
+
+to constructing
+(or pur
+and
+the
+artifact
+within
+their
+chasing)
+using
+specific
+context.
+Zmud (1997) suggests
+organizational
+that presentation of design-science
+research for a
+managerial audience requires an emphasis not on
+the inherent nature of the artifact itself, but on the
+knowledge required to effectively apply the artifact
+"within specific contexts for individual or organi
+zational gain" (p. ix). That is, the emphasis must
+be on the importance of the problem and the
+novelty and effectiveness of the solution approach
+realized in the artifact. While we agree with this
+to
+statement, we note that itmay be necessary
+the artifact in some detail to enable
+describe
+managers to appreciate its nature and understand
+its application. Presenting that detail in concise,
+well-organized appendices, as advised by Zmud,
+is an appropriate communication mechanism
+for
+such
+
+an
+
+audience.
+
+Application
+Science
+
+Research
+
+Guidelines
+Guideline 7: Communication
+of Research
+research must be presented
+
+Design-science
+
+as well
+
+to technology-oriented
+oriented
+
+To
+
+audiences.
+
+both
+
+as management
+audi
+
+Technology-oriented
+
+ences
+
+the
+need sufficient detail to enable
+described artifact to be constructed (implemented)
+and used within an appropriate organizational
+context. This enables practitioners to take advan
+tage of the benefits offered by the artifact and it
+enables researchers to build a cumulative knowl
+It
+edge base for further extension and evaluation.
+to under
+is also important for such audiences
+stand the processes
+by which the artifact was
+constructed
+
+and
+
+evaluated.
+
+This
+
+establishes
+
+repeatability of the research project and builds the
+knowledge base for further research extensions by
+design-science
+
+researchers
+
+in IS.
+
+audiences need sufficient
+Management-oriented
+if
+the
+to
+determine
+detail
+organizational resources
+
+90
+
+illustrate
+
+of the Design
+wmmmimmmm
+
+the application
+
+of
+
+the design-science
+
+guidelines to IS research, we have selected three
+exemplar articles for analysis from three different
+IS journals, one from Decision Support Systems,
+one from Information Systems Research, and one
+Each has strengths and
+from MIS Quarterly.
+weaknesses
+when viewed through the lens of the
+Our goal is not to perform a
+above guidelines.
+critical evaluation of the quality of the research
+contributions, but rather to illuminate the design
+science guidelines. The articles are
+(1998), which develops
+in
+for implementing anonymity
+techniques
+Decision
+Support Systems
+Group
+(GDSS)
+
+Gavish
+
+and Gerdes
+
+environments
+
+Aalst and Kumar (2003), which proposes a
+Routing Lan
+design for an exchangeable
+commerce
+to
+electronic
+guage (XRL) support
+workflows
+
+among
+
+trading partners
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+and Gasser
+Markus, Majchrzak,
+a design
+which proposes
+theory
+development of information systems
+support emergent
+
+knowledge
+
+(2002),
+for the
+built to
+
+for design-science
+The fundamental questions
+research are, "What utility does the new artifact
+that utility?"
+provide?" and "What demonstrates
+Evidence must be presented to address these two
+questions. That is the essence of design science.
+Contribution arises from utility. Ifexisting artifacts
+are adequate, then design-science
+research that
+creates a new artifact is unnecessary
+(it is
+irrelevant). Ifthe new artifact does not map ade
+quately to the real world (rigor), itcannot provide
+utility. If the artifact does not solve the problem
+(search, implementability), ithas no utility. Ifutility
+is not demonstrated
+(evaluation), then there is no
+upon which to accept the claims that it
+provides any contribution (contribution). Further
+more, ifthe problem, the artifact, and its utility are
+in a manner such that the implica
+not presented
+basis
+
+tions
+
+for
+
+publication
+
+research
+
+and
+
+practice
+
+are
+
+clear,
+
+then
+
+in the IS literature is not appropriate
+
+(communication).
+
+environment
+
+GDSS
+
+in IS Research
+
+Science
+
+and then study the individual,
+using a
+
+group, or organizational
+implications
+research paradigm.
+behavioral-science
+
+Several
+
+in MIS
+papers have appeared
+Quarterly (e.g., Dickson et al. 1993; Gallupe et al.
+1988; Jarvenpaa et al. 1988; Sengupta and Te'eni
+such
+
+processes
+
+et al./Design
+
+GDSS
+
+1993).
+role of design science
+in GDSS
+is
+the
+in
+foundation
+papers
+clearly recognized
+early
+of the field. The University of Arizona Electronic
+
+The central
+
+Meeting System
+need
+for both
+
+group,
+
+for example,
+
+states
+
+the
+
+and empirical
+developmental
+research agendas
+(Dennis et al. 1988; Nuna
+or design
+maker et al. 1991b). Developmental,
+science,
+
+research
+
+is called
+
+for in the areas
+
+of
+
+process structures and support and task struc
+tures and support. Process structure and support
+are generic to all
+and methods
+technologies
+GDSS
+
+environments
+and tasks. Technologies
+and methods
+for distributed communications,
+and
+group memory, decision-making
+methods,
+are
+a
+few
+of
+the
+critical
+issues
+anonymity
+design
+for GDSS process support needed
+in any task
+domain. Task structure and support are specific
+to the problem domain under consideration by the
+
+The Design and Implementation
+in GDSS:
+of Anonymity
+Gavish and Gerdes
+
+(e.g., medical decision making, software
+Task support includes the design
+development).
+of new technologies and methods for managing
+and analyzing task-related information and using
+that information to make specific, task-related
+
+The
+
+decisions.
+
+group
+
+study of group decision support systems
+(GDSS) has been and remains one of the most
+visible and successful research streams in the IS
+field. The use of information technology to effec
+tively support meetings of groups of different sizes
+over time and space
+is a real problem that
+all
+Recent
+business
+challenges
+organizations.
+
+GDSS
+
+literature surveys demonstrate
+the large
+numbers of GDSS research papers published in
+the IS field and, more importantly, the wide variety
+of research paradigms applied to GDSS research
+(e.g., Dennis and Wixom 2001; Fjermestad and
+
+Hiltz 1998; Nunamaker et al. 1996). However,
+only a small number of GDSS papers can be
+considered to make true design-science
+research
+contributions. Most assume the introduction of a
+new information technology or process
+in the
+
+The
+
+issue of anonymity
+has been studied
+inGDSS environments.
+Behavioral
+extensively
+research studies have shown both positive and
+negative impacts on group interactions. On the
+positive side, GDSS participants can express their
+views
+reprisal.
+
+freely without
+However,
+
+fear of embarrassment
+
+anonymity
+
+can
+
+encourage
+
+or
+free
+
+riding and antisocial behaviors. While the pros
+and cons of anonymity
+in GDSS are much
+lack of
+researched, there has been a noticeable
+research on the design of techniques for imple
+in GDSS
+environments.
+menting
+anonymity
+Gavish and Gerdes (1998) address this issue by
+five basic mechanisms
+designing
+GDSS procedural anonymity.
+
+to provide
+
+MIS Quarterly Vol. 28 No. 1/March 2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+91
+
+Hevner
+
+et al./Design
+
+Problem
+
+Science
+
+in IS Research
+
+Relevance
+
+The amount of interest and research on anonymity
+issues inGDSS testifies to its relevance.
+Field
+studies and surveys clearly indicate that partici
+pants rank anonymity as a highly desired attribute
+in the GDSS system. Many individuals state that
+they would refuse to participate in or trust the
+results of a GDSS meeting without a satisfactory
+level of assured
+
+anonymity
+
+Design
+
+as an Artifact
+
+(Fjermestad and Hiltz
+The authors design a GDSS system architecture
+that provides a rigorous level of procedural
+are employed to
+Five mechanisms
+anonymity.
+ensure participant anonymity:
+
+1998).
+
+Research
+
+mechanisms
+to satisfy
+the system
+design
+requirements for anonymity. Proposed designs
+are presented and anonymity claims are proved to
+be correct. A thorough discussion of the costs
+and
+the proposed
+benefits
+of
+anonymity
+is provided inSection 4 of the paper.
+mechanisms
+
+Rigor
+
+are encrypted
+
+and Gerdes base their GDSS anonymity
+designs on past research in the fields of crypto
+graphy and secure network communication proto
+
+All messages
+
+cols (e.g., Chaum 1981; Schneier 1996). These
+research areas have a long history of formal,
+rigorous results that have been applied to the
+
+The sender's header
+from all messages
+
+design of many practical security and privacy
+mechanisms.
+Appendix A of the exemplar paper
+a
+set
+of formal proofs that the claims
+provides
+made by the authors for the anonymity designs
+are correct and draw their validity from the
+knowledge base of this past research.
+
+All messages
+
+Gavish
+
+session
+
+key
+
+mission
+
+are
+
+of
+
+upon
+
+retrans
+
+server
+
+messages
+
+is
+
+ran
+
+domized
+are introduced to thwart
+
+analysis
+
+Process
+
+their design
+science
+The authors motivate
+research by identifying three basic types of anony
+mity in a GDSS system: environmental, content,
+and procedural.
+After a definition and brief dis
+cussion of each type, they focus on the design of
+for procedural anonymity; the ability
+mechanisms
+of the GDSS system to hide the source of any
+This is a very difficult requirement
+message.
+because
+standard network protocols
+typically
+attach source information in headers to support
+reliable transmission protocols. Thus, GDSS sys
+tems must modify standard communication proto
+cols and include additional transmission proce
+dures to ensure required levels of anonymity.
+The design-science
+process employed by the
+authors is to state the desired procedural anony
+mity attributes of the GDSS system and then to
+
+92
+
+re-encrypted
+
+order
+
+Transmission
+
+traffic
+
+as a Search
+
+information is removed
+
+from any GDSS
+
+Artificial messages
+Design
+
+with a unique
+
+The procedures and communication protocols that
+ina GDSS system
+implement these mechanisms
+are
+
+the artifacts
+
+Design
+
+of
+
+this
+
+research.
+
+Evaluation
+
+The evaluation consists of two reported activities.
+is proved to
+First, inAppendix A, each mechanism
+correctly provide the claimed anonymity benefits.
+Formal proof methods are used to validate the
+mechanisms.
+of the designed
+effectiveness
+Second, Section 4 presents a thorough cost
+It is shown that the operational
+benefit analysis.
+the proposed
+costs of supporting
+anonymity
+Inaddition,
+can be quite significant.
+mechanisms
+the communication
+protocols to implement the
+add considerable complexity to the
+mechanisms
+Thus, the authors recommend that a
+system.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+et al./Design
+
+Hevner
+
+cost-benefit
+justification be performed before
+determining the level of anonymity to implement
+for a GDSS meeting.
+
+business
+systems
+many
+
+Workflow management
+processes.
+are becoming
+of
+integral components
+information
+commercial
+enterprise-wide
+(Leymann and Roller 2000).
+
+systems
+The authors do not claim to have implemented the
+in a prototype
+proposed anonymity mechanisms
+or actual GDSS system. Thus, an instantiation of
+in
+the designed artifact remains to be evaluated
+an operational GDSS environment.
+
+Research
+
+for workflow
+
+semantics
+
+languages)
+
+and
+
+GDSS meetings.
+
+Research
+
+the paper
+for
+
+also
+
+contains
+
+a managerial
+
+important,
+audience.
+
+Managers should have a good understanding of
+the implications of anonymity inGDSS meetings.
+This
+
+understanding
+
+are
+
+tools to model
+
+across
+
+and distributed environments,
+commerce
+
+in electronic
+chains
+
+inter
+
+heterogeneous
+
+such as those found
+
+and
+
+complex
+
+supply
+
+(Kumar and Zhao 2002).
+
+Aalst and Kumar (2003) investigate the problem of
+exchanging business process information across
+in an automated manner.
+multiple organizations
+
+embedded
+
+is
+of this research
+Although the presentation
+aimed at an audience familiar with network system
+concepts such as encryption and communication
+information
+
+for effective
+processes
+
+inextensible
+
+Markup Language (XML)
+transmission to all participants inan
+
+for electronic
+
+useful
+
+(i.e., workflow
+
+architectures
+
+They design an eXchangable Routing Language
+(XRL) to capture workflow models that are then
+
+Communication
+
+protocols,
+
+syntax
+
+workflow
+
+Standards
+
+by
+promulgated
+Management
+Coalition (WfMC 2000). While workflow models
+have been used for many years to manage
+intra
+there is now a
+organizational business processes,
+organization
+
+The design-science
+contributions of this research
+as the
+are the proposed anonymity mechanisms
+design artifacts and the evaluation results in the
+form of formal proofs and cost-benefit analyses.
+These contributions advance our understanding of
+how best to provide participant anonymity
+in
+
+and
+
+the Workflow
+
+great demand
+
+Contributions
+
+in IS Research
+
+Science
+
+must
+
+include
+
+an
+
+appreciation
+
+interorganizational business process. The design
+of XRL is based upon Petri nets, which provide a
+formal basis for analyzing the correctness and
+as well as
+of the workflows,
+performance
+supporting
+authors
+
+the extensibility of the language.
+a workflow
+
+develop
+
+tecture
+
+and
+
+a
+
+evaluate
+
+XRL
+
+in a proof
+
+Problem
+
+Relevance
+
+prototype
+
+management
+
+The
+archi
+
+implementation
+
+to
+
+of concept.
+
+of
+
+the costs of providing desired
+levels of
+participant anonymity. While the authors provide
+a thorough discussion
+of cost-benefit
+tradeoffs
+toward the end of the paper, the paper would be
+more accessible
+to a managerial audience
+if it
+included a stronger motivation up front on the
+in GDSS
+important implications of anonymity
+and
+system development
+operations.
+
+commerce
+is
+electronic
+Interorganizational
+soon
+and
+is
+to
+exceed
+growing rapidly
+projected
+one trillion dollars annually (eMarketer 2002). A
+multitude of electronic commerce solutions are
+being proposed (e.g., ebXML, UDDI, RosettaNet)
+to enable businesses
+to execute transactions in
+
+A Workflow
+
+Language for Inter
+Processes:
+organizational
+Aalst and Kumar
+Workflow models
+scribing, analyzing,
+
+are an effective means
+
+standardized, open environments. While XML has
+as a protocol for ex
+been widely accepted
+business
+there is still no clear
+data,
+changing
+standard for exchanging business process infor
+for de
+
+implementing, and managing
+
+mation
+
+This is the very
+(e.g., workflow models).
+relevant problem addressed by this research.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+93
+
+Hevner
+
+et al./Design
+
+Research
+
+in IS Research
+
+Science
+
+Design
+
+Rigor
+
+as an Artifact
+
+Research on workflow modeling has long been
+based on rigorous mathematical
+techniques such
+as Markov chains, queueing networks, and Petri
+In this paper, Petri
+nets (Aalst and Hee 2002).
+nets provide the underlying semantics for XRL.
+These formal semantics allow for powerful analy
+
+There are two clearly identifiable artifacts pro
+duced in this research.
+First, the workflow lan
+XRL is based on Petri
+guage XRL is designed.
+in XML syntax.
+net formalisms and described
+are
+business
+processes
+Interorganizational
+a
+via
+in
+XRL
+for execution
+distributed,
+specified
+
+sis
+
+heterogeneous
+
+techniques
+
+correctness,
+
+(e.g.,
+
+to
+
+performance)
+
+be applied to the designed workflow models.
+Such formalisms also enable the development of
+automated tools to manipulate and analyze com
+plex workflow designs. Each language construct
+inXRL has an equivalent Petri-net representation
+in the paper. The language is exten
+presented
+sible in that adding a new construct simply
+requires defining its Petri-net representation and
+adding its syntax to the XRL. Thus, this research
+draws from a clearly defined and tested base of
+modeling literature and knowledge.
+
+as a Search
+
+Design
+
+is designed
+
+traverse
+
+routes
+
+available
+
+through
+
+tasks
+
+(i.e.,
+
+in the electronic business
+business
+services)
+The
+basic
+environment.
+routing constructs of XRL
+define the specific control flow of the business
+The authors build 13 basic constructs
+process.
+into
+
+XRL:
+
+Task,
+
+Choice,
+
+Condition,
+
+sync,
+
+Parallel_part_sync,
+
+While_do,
+Petri-net
+
+Sequence,
+
+of each
+
+They show the
+construct.
+
+control
+
+flow
+
+sequence,
+
+iteration,
+
+and
+
+supported
+
+inXRL.
+
+examples.
+
+Thus,
+
+structures
+
+workflow
+
+terminates,
+
+no
+
+workflows.
+
+process
+
+Petri-net
+
+requires
+tokens
+
+that
+
+the
+
+are
+
+left
+
+behind upon termination, and there are no dead
+This verification tool is
+tasks in the workflow.
+in a different paper
+described more completely
+(Aalst 1999).
+
+Evaluation
+
+concurrency
+
+The authors evaluate the XRL and XRL/flower
+designs in several important ways:
+
+of
+are
+
+the capabilities
+
+However,
+
+they
+
+are
+
+of XRL
+careful
+
+in the formal
+not to claim that XRL is complete
+sense that all possible business processes can be
+modeled inXRL. The search for a complete set of
+XRL constructs is left for future research.
+
+94
+
+of
+
+of a workflow
+
+XRL
+guages
+
+The authors demonstrate
+
+business
+
+soundness
+
+Soundness
+
+Wait_any,
+
+Wait_all,
+
+decision,
+
+in several
+
+is a workflow
+Another artifact of this research
+verification tool named Wolfan that verifies the
+
+Design
+
+Parallel_no_
+
+Stop, and Terminate.
+representation
+
+(Aalst and Kumar 2003).
+
+Any_sequence,
+
+Parallel_sync,
+
+fundamental
+
+the
+
+The second research artifact is the XRL/flower
+workflow management
+architecture inwhich XRL
+are executed.
+The XRL
+described processes
+an
+is
+XML parser and
+routing scheme
+parsed by
+as
+an
+data
+structure.
+This structure is
+stored
+XML
+read into a Petri-net engine which determines the
+next step of the business process and informs the
+next task provider via an e-mail message.
+Results
+of each task are sent back to the engine which
+the next step in the process until
+then executes
+The paper presents a prototype
+completion.
+implementation of the XRL/flower architecture as
+a proof of concept
+
+Process
+
+in the paper by performing a
+thorough analysis of business process require
+ments and identifying features provided by leading
+workflow management
+commercial
+systems.
+Using the terminology from the paper, workflows
+XRL
+
+environment.
+
+is compared and contrasted
+in existing
+commercial
+
+with lan
+workflow
+
+The
+and research prototypes.
+systems
+are
+of
+these
+proprietary
+languages
+majority
+and difficult to adapt to ad hoc business
+process
+
+design.
+
+is
+The fit of XRL with proposed standards
+studied. Inparticular, the Interoperability Wf
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+XML Binding standard (WfMC 2000) does not
+at this time include the specification of control
+flow and, thus, is not suitable for inter
+com
+
+Electronic
+
+workflows.
+
+organizational
+
+merce
+some
+
+standards (e.g., RosettaNet)
+provide
+for
+level of control flow specification
+not
+do
+business
+but
+activities,
+predefined
+of
+readily allow the ad hoc specification
+
+business
+
+processes.
+
+A research prototype of XRL/flower has been
+implemented and several of the user interface
+are
+
+screens
+a
+
+strate
+
+screens
+
+The
+
+presented.
+
+mail-order
+
+routing
+
+demon
+case
+
+schema
+
+study.
+
+The Petri-net foundation of XRL allows the
+authors to claim the XRL workflows can be
+for
+
+verified
+
+and
+
+correctness
+
+performance.
+
+XRL is extensible since new constructs can
+be added to the language based on their
+translation to underlying Petri-net
+repre
+sentations.
+
+as
+
+However,
+
+discussed
+
+above,
+
+the authors do not make a formal claim for
+of XRL.
+the representational completeness
+
+Research
+
+Contributions
+
+The clear contributions of this research are the
+(a workflow
+design artifacts?XRL
+language),
+XRL/flower
+and
+its
+(a workflow architecture
+and
+Wolfan
+implemented prototype system),
+(a
+Petri-net verification engine). Another interesting
+contribution is the extension of XML in itsability to
+describe
+
+and
+
+transmit
+
+routing
+
+schemas
+
+control flow information) to support
+zational
+
+Research
+
+electronic
+
+Design for
+Processes:
+
+Information Systems
+Emergent Knowledge
+Markus,
+
+and
+
+Majchrzak,
+
+in IS Research
+
+Science
+
+Gasser
+
+Despite decades of research and development
+for developing
+infor
+efforts, effective methods
+mation systems that meet the information require
+ments
+
+of
+
+upper
+
+remain
+
+management
+
+elusive.
+
+used a "waterfall" approach
+Early approaches
+where requirements were defined and validated
+prior to initiating design efforts which, in turn,were
+prior to implementation (Royce 1998).
+Prototyping approaches emerged next, followed
+including CASE tool
+by numerous proposals
+based approaches, rapid application development,
+and extreme
+programming
+(Kruchten 2000).
+Walls et al. (1992) propose a framework for a
+information system design theory
+prescriptive
+aimed at enabling designers to construct "more
+completed
+
+effective information systems" (p. 36). They apply
+this framework to the design of vigilant executive
+information systems. The framework establishes
+a class of user requirements (model of design
+problems) that are most effectively addressed
+solution
+using a particular type of system
+a
+prescribed set of
+(instantiation) designed using
+development practices (methods). Markus et al.
+(2002) extend this framework to the development
+of information systems
+to support emergent
+in
+processes
+knowledge
+(EKPs)?processes
+which structure is "neither possible nor desirable"
+(p.
+
+182)
+
+and
+
+where
+
+are
+
+processes
+
+user
+
+by "highly unpredictable
+contexts" (p. 183).
+
+characterized
+
+types and work
+
+(e.g.,
+
+interorgani
+
+Problem
+
+Relevance
+
+commerce.
+
+The relevance and importance of the problem are
+well demonstrated. Markus et al. describe a class
+of management activities that they term emergent
+
+Communication
+
+knowledge
+This paper provides clear information to both
+technical and managerial audiences. The presen
+tation, while primarily technical with XML coding
+and Petri-net diagrams throughout, motivates a
+managerial audience with a strong introduction on
+risks and benefits of applying
+workflows
+
+et al./Design
+
+to electronic
+
+commerce
+
+interorganizational
+applications.
+
+"basic
+
+processes
+
+research,
+
+(EKPs).
+
+new
+
+product
+
+These
+
+include
+
+development,
+
+strategic business
+planning, and organization
+design" (p. 179). They are characterized by "pro
+cess emergence,
+unpredictable user types and
+use contexts, and distributed expert knowledge"
+(p. 186). They are crucial to many manufacturing
+in high-tech
+organizations,
+particularly those
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+95
+
+Hevner
+
+et al./Design
+
+in IS Research
+
+Science
+
+industries.
+Such organizations
+the
+recognize
+need to integrate organizational design and infor
+mation system design with manufacturing opera
+tions. They recognize the potential for significant
+offered by such
+performance
+improvements
+integration. Yet few have realized that potential.
+Markus et al. argue that this is due to a lack of an
+adequate design theory and lack of scientifically
+based
+information
+tools, noting that existing
+focus on
+system development
+methodologies
+structured or semi-structured decision processes
+and are inadequate for the development of sys
+tems to support EKPs. TOP Modeler, the artifact
+created in this research effort, squarely addresses
+this problem. Not surprisingly, its development
+attracted the attention and active participation of
+several
+organi
+large, high-tech manufacturing
+zations
+General
+including "Hewlett-Packard,
+Motors, Digital Equipment Corporation, and Texas
+
+in over
+
+two
+
+dozen
+
+'real
+
+use'
+
+situations."
+
+(p.
+
+187).
+
+Insummary,
+foundations
+
+this work effectively used theoretical
+from IS and organizational
+theory,
+research
+in
+methods
+applied
+appropriate
+the artifact, defined and applied
+developing
+and tested
+appropriate performance measures,
+the artifact within an appropriate context.
+
+Design
+
+as a Search
+
+Process
+
+As discussed above, implementation and iteration
+are central to this research. The authors study
+that instantiate posed or newly learned
+design prescriptions. Their use and impacts were
+observed,
+identified, solutions posed
+problems
+and
+the cycle was
+and
+then
+implemented,
+a
+over
+interventions occurred
+repeated. These
+prototypes
+
+Instruments" (p. 186).
+
+period of 18 months within the aforementioned
+as they dealt with organizational
+companies
+
+Research
+
+design tasks. As a result, not only was the TOP
+Modeler developed and deployed but prescrip
+tions (methods) in the form of six principles for
+developing systems to support EKPs were also
+
+Rigor
+
+The presented work has theoretical foundations in
+both IS design theory and organizational design
+It uses the basic notions of IS design
+theory.
+theory presented inWalls et al. (1992) and poses
+a prescription for designing information systems to
+in developing
+Prior research
+support EKPs.
+information
+decision support systems, executive
+systems,
+
+and
+
+expert
+
+systems
+
+serves
+
+as
+
+a
+
+knowledge-base
+
+creativity,
+
+improvements
+
+to address
+
+shortcomings
+
+identified.
+
+Design
+
+as an Artifact
+
+constructed
+
+within TOP Modeler was formed from a synthesis
+of socio-technical
+theory and the
+systems
+on
+literature
+design
+empirical
+organizational
+Itwas evaluated theoretically using
+knowledge.
+from the expert systems
+standard metrics
+literature and empirically using data gathered from
+numerous electronics manufacturing companies
+of TOP
+States.
+Development
+Modeler used an "action research paradigm"
+starting with a "kernel theory" based on prior
+development methods and theoretical results and
+iteratively posing and testing artifacts (prototypes)
+to assess
+progress toward the desired result.
+was commercialized and "used
+the
+artifact
+Finally,
+in the United
+
+96
+
+experience,
+
+foun
+
+of these
+for this work and deficiencies
+approaches for the examined problem type serve
+The
+
+extensive
+
+intuition, and problem solving capabilities of the
+researchers were involved inassessing
+problems
+and interpreting the results of deploying various
+in constructing
+TOP modeler
+iterations and
+
+dation
+
+as motivation.
+
+The
+
+devised.
+
+is an
+
+implemented software
+It
+is composed
+of an
+system
+(instantiation).
+an
+user
+interface,
+object-oriented
+object-oriented
+
+The TOP Modeler
+
+query generator, and an analysis module built on
+base that
+top of a relational meta-knowledge
+access
+to "pluggable" knowledge bases
+enables
+Italso includes
+representing different domains.
+tools to support the design and construction of
+these knowledge bases. The TOP Modeler sup
+ports a development process incorporating the six
+to support
+systems
+principles for developing
+EKPs. As mentioned above, TOP Modeler was
+commercialized and used ina number of different
+organizational
+
+redesign
+
+situations.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+Evaluation
+
+Design
+
+empirical
+such
+
+is in the context
+
+Evaluation
+
+in manufacturing
+
+design
+
+with
+
+and
+
+organizations,
+
+artifacts.
+
+other
+
+is not
+
+This
+
+for developing
+to
+information systems
+ologies
+semi-structured
+activities
+support
+management
+are the closest available artifacts, it is appropriate
+them
+
+as
+
+a comparative
+
+measure.
+
+In effect,
+
+this was
+
+accomplished
+by using principles from
+to inform the initialdesign of
+these methodologies
+TOP Modeler.
+
+The identification of deficiencies
+in
+the resultant artifact provides evidence that these
+artifacts are ill-suited to the task at hand.
+Iterative development and deployment within the
+context of organizational design inmanufacturing
+organizations
+improvement
+tion?at each
+
+to observe
+provide opportunities
+but do not enable formal evalua
+iteration, changes are induced in the
+
+organization
+
+that
+
+tioned above,
+
+cannot
+
+be
+
+controlled.
+
+As
+
+men
+
+the authors have taken a creative
+
+and innovative approach that, of necessity, trades
+off rigor for relevancy.
+In the initial stages of a
+this
+is extremely effective.
+discipline,
+approach
+TOP Modeler demonstrates
+the feasibility of
+an
+artifact
+to
+support organizational
+developing
+design and EKPs within high-tech manufacturing
+organizations.
+
+"In short,
+
+that TOP Modeler was
+
+the
+
+will establish
+
+evidence
+
+the validity" of
+
+claims.
+
+is
+
+surprising, nor is ita criticism of this work. There
+simply are no existing artifacts that address the
+same problem.
+However, given that method
+
+to use
+
+in IS Research
+
+Science
+
+of organizational
+
+based on observation during the development and
+deployment of a single artifact, TOP Modeler. No
+formal evaluation was attempted in the sense of
+comparison
+
+et al./Design
+
+evidence
+
+successful
+
+suggests
+
+in supporting
+
+organizational
+design" (p. 187) but additional
+is
+the comparative
+study
+required to assess
+effectiveness
+of other possible approaches
+in this
+or other contexts. Again, this is not a criticism of
+this work; rather it is a call for further research
+
+in
+the general class of problems dealing with emer
+As additional re
+gent knowledge processes.
+on
+search builds
+this foundation, formal, rigorous
+evaluation
+and comparison
+with alternative
+in a variety of contexts become
+approaches
+crucial to enable claims of generalizability. As the
+authors point out, "Only the accumulated weight of
+
+Research
+
+Contributions
+
+The design-science
+contributions of this research
+are the TOP Modeler software and the design
+the feasi
+principles. TOP Modeler demonstrates
+bility of using the design principles to develop an
+artifact to support EKPs. Because TOP Modeler
+is the first artifact to address
+this task, its
+construction
+is itself a contribution to design
+science.
+
+because
+
+Furthermore,
+
+the
+
+are
+
+authors
+
+able to articulate the design principles upon which
+its construction was based,
+these serve as
+hypotheses to be tested by future empirical work.
+Their applicability to the development
+of other
+types of information systems can also be tested.
+An agenda for addressing
+such issues is pre
+sented.
+This focuses on validation, evaluation,
+and the challenges
+
+of improvement inherent in the
+
+evaluation
+
+process.
+
+Research
+
+Communication
+
+This work presents two types of artifacts, TOP
+Modeler (an instantiation) and a set of design
+principles (method) that address a heretofore
+unsolved problem dealing with the design of an
+information system to support EKPs. Recognizing
+that existing system development methods and
+are
+
+instantiations
+
+structured
+
+aimed
+
+at
+
+or
+
+structured
+
+semi
+
+activities,
+opportunity to apply
+
+Markus et al. identify an
+information technology in a
+
+new
+
+way.
+
+and
+
+innovative
+
+Their
+
+presentation
+
+each of the design guidelines posed
+addresses
+above. TOP Modeler exemplifies "proof by con
+struction"?it
+
+is feasible
+
+to
+
+an
+
+construct
+
+infor
+
+mation system to support EKPs. Since it is the
+first such artifact, its evaluation using formal
+is deferred
+until future research.
+methods
+Technical details of TOP Modeler are not pre
+it difficult for a technical
+sented,
+making
+researcher or practitioner to replicate their work.
+The uniqueness of the artifacts and the innovation
+inherent in them are presented so that managerial
+researchers
+new
+
+and
+
+IT managers
+
+are
+
+aware
+
+of
+
+the
+
+capabilities.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+97
+
+Hevner
+
+et al./Design
+
+Discussion
+
+in IS Research
+
+Science
+
+and Conclusions
+
+tation,
+
+debates on how to conduct
+IS
+Philosophical
+research (e.g., positivism vs. interpretivism) have
+been the focus of much recent attention (Klein and
+The
+1999; Robey 1996; Weber 2003).
+of such debates
+lies in the
+major emphasis
+of research,
+the underlying
+epistemologies
+assumption being that of the natural sciences.
+some
+That
+truth exists and
+is, somewhere
+somehow that truth can be extracted, explicated,
+and codified. The behavioral-science
+paradigm
+to find "what is true." In contrast, the
+seeks
+Myers
+
+design-science
+paradigm seeks to create "what is
+effective." While itcan be argued that utility relies
+on truth, the discovery of truthmay lag the appli
+cation of its utility. We argue that both design
+science
+
+and
+
+behavioral-science
+
+are
+
+paradigms
+
+needed to ensure the relevance and effectiveness
+of IS research.
+Given the artificial nature of
+that
+organizations and the information systems
+support them, the design-science
+paradigm can
+play a significant role in resolving the fundamental
+dilemmas that have plagued IS research: rigor,
+relevance,
+
+discipline
+
+technology
+
+(Lee 2000).
+
+Information systems
+section
+
+of people,
+
+science,
+
+lies at the inter
+and
+
+organizations,
+
+(Silver et al. 1995).
+cognitive
+
+research
+
+and
+
+behavior,
+
+boundaries,
+
+technology
+
+Itrelies on and contributes
+theory,
+
+organizational
+
+to
+
+manage
+
+and
+
+management,
+
+use
+
+of
+
+such
+
+techno
+
+research
+logies. The dangers of a design-science
+paradigm are an overemphasis on the technologi
+cal artifacts and a failure tomaintain an adequate
+theory base, potentially resulting inwell-designed
+artifacts that are useless
+in real organizational
+The dangers of a behavioral-science
+settings.
+research
+
+are
+
+paradigm
+
+on
+
+overemphasis
+
+contex
+
+tual theories and failure to adequately
+
+identify and
+anticipate technological
+capabilities, potentially
+resulting in theories and principles addressing
+outdated or ineffective technologies. We argue
+strongly that IS research must be both proactive
+and reactive with respect to technology.
+Itneeds
+a complete research cycle where design science
+creates artifacts for specific information problems
+based on relevant behavioral science theory and
+behavioral
+created
+
+science
+
+technology
+
+anticipates
+artifacts.
+
+and engages
+
+the
+
+Hence, we reiterate the call made earlier by March
+et al. (2000) to align IS design-science
+research
+with real-world production experience.
+Results
+from such industrial experience can be framed in
+the context of our seven guidelines. These must
+be assessed
+not only by IS design-science
+researchers but also by IS behavioral-science
+researchers
+
+who
+
+problems
+
+as well
+
+impacts
+
+of created
+
+collaborative
+
+can
+
+validate
+
+the
+
+organizational
+
+as study and anticipate
+artifacts.
+
+Thus,
+
+industrial/academic
+
+we
+
+the
+
+encourage
+
+research
+
+pro
+
+this setting, the design-science
+research
+is
+to
+with
+proactive
+respect
+technology.
+paradigm
+Itfocuses on creating and evaluating innovative IT
+
+jects and publications based on such experience.
+Markus et al. (2002) is an excellent example of
+such collaboration.
+Publication of these results
+will help accelerate
+the development of domain
+and
+scalable
+solutions to large-scale
+independent
+information systems problems within organiza
+tions. We recognize that a lag exists between
+academic research and its adoption in industry.
+We also recognize the possible ad hoc nature of
+solutions developed in indus
+technology-oriented
+can
+The
+latter
+be reduced considerably
+gap
+try.
+
+artifacts that enable organizations to address im
+portant information-related tasks. The behavioral
+
+by developing and framing the industrial solutions
+based on our proposed guidelines.
+
+It is both
+ment sciences, and computer science.
+an organizational and a technical discipline that is
+concerned
+ment,
+
+with
+use,
+
+the analysis,
+
+evaluation,
+
+construction,
+and
+
+evolution,
+
+deploy
+manage
+
+of information system artifacts in organi
+zational settings (Madnick 1992; Orlikowski and
+Barley 2001).
+
+ment
+
+Within
+
+science
+
+research
+
+paradigm
+
+is
+
+reactive
+
+with
+
+respect to technology in the sense that it takes
+technology as "given." Itfocuses on developing
+and justifying theories that explain and predict
+related to the acquisition, implemen
+phenomena
+
+98
+
+It is also important to distinguish between
+building"
+
+efforts
+
+and
+
+Guidelines addressing
+and rigor are especially
+
+design-science
+
+"system
+research.
+
+contributions,
+important inproviding this
+
+evaluation,
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+distinction. The underlying formalism required by
+to develop
+these guidelines
+helps researchers
+IS
+of
+problems, solutions, and
+representations
+solution processes
+that clarify the knowledge
+produced by the research effort.
+
+environment
+
+more
+
+of
+
+tools
+
+constructs,
+
+exist
+
+senting the business/technology
+abstract
+
+Highly
+
+no
+
+having
+ments.
+
+relationship
+
+On
+
+descriptive
+
+the
+
+The
+
+and
+
+rigor
+
+(e.g.,
+
+analyti
+
+to "real-world"
+
+environ
+
+hand,
+
+informal,
+
+other
+
+many
+
+lack an underlying
+
+IS models
+
+base.
+
+theory
+vance
+
+repre
+
+are criticized as
+
+models)
+
+trade-offs
+are
+
+rele
+
+between
+
+finding representational
+techniques with an
+acceptable balance between the two is very
+difficult.
+The existing knowledge base is often insuffi
+cient for design purposes and designers must
+rely
+
+on
+
+intuition,
+
+error methods.
+
+and
+
+experience,
+
+trial-and
+
+artifact em
+bodies
+the designer's
+of the
+knowledge
+Innew and emerging
+problem and solution.
+applications of technology, the artifact itself
+an
+
+represents
+
+we
+
+A constructed
+
+In its execution,
+
+experiment.
+
+learn about the nature of the problem, the
+
+environment,
+
+the
+
+and
+
+the
+
+possible
+
+solutions?
+
+importance of developing and
+implementing prototype artifacts (Newell and
+Simon 1976).
+hence,
+
+itbecame a non-event?
+
+We
+
+believe that design science will play an
+IS
+increasingly important role in the ISprofession.
+in particular are actively engaged
+in
+managers
+design
+
+activities?the
+
+creation,
+
+enable
+
+organizations
+
+eval
+
+deployment,
+
+uation, and improvement of purposeful
+that
+
+problematic;
+
+clearly
+
+object-oriented
+
+(Tichy 1998; Zelkowitz and Wallace
+1998).
+For example, the use of a design artifact on a
+single project may not generalize to different
+environments
+(Markus et al. 2002).
+
+environment.
+
+representations
+
+cal mathematical
+
+on
+
+research
+
+Rigorous evaluation methods are extremely
+difficult to apply in design-science
+research
+
+models,
+
+for accurately
+
+recent
+
+2000 problem before
+
+the organization.
+
+sets
+
+to mana
+
+importantly
+
+databases (Chaudhri and Loomis 1998). Just
+as important to IS researchers, design results
+can be overtaken by technology before they
+even appear in the research literature. How
+much research was published on the Year
+
+gerial audience that must make technology
+adoption decisions that can have far-reaching
+
+and
+
+just as
+
+or,
+
+artificial intelligence community in the 1980s
+(Feigenbaum and McCorduck 1983) and the
+
+There is an inadequate theoretical base upon
+which to build an engineering discipline of
+information systems
+design
+(Basili 1996).
+The field is still very young
+lacking the
+cumulative theory development found inother
+It
+disciplines.
+engineering and social-science
+is important to demonstrate the feasibility and
+utility of such a theoretical base to a mana
+
+Insufficient
+
+perishable.
+
+gers, before adequate
+payback can be
+achieved
+by committing
+organizational
+resources
+to implementing those results.
+Two examples are the promises made by the
+
+here.
+
+methods,
+
+is
+
+in technology can invalidate
+Rapid advances
+research
+results before they
+design-science
+are implemented effectively in the business
+
+forward, there exist a number of
+facing the design-science
+exciting challenges
+research community in IS. A few are summarized
+
+on
+
+in IS Research
+
+Science
+
+research
+
+Design-science
+
+As we move
+
+impacts
+
+et al./Design
+
+to achieve
+
+ITartifacts
+their
+
+goals.
+
+The challenge for design-science
+in
+researchers
+IS is to inform managers of the capabilities and
+impacts of new ITartifacts.
+Much of the research published inMIS Quarterly
+It is
+employs the behavioral-science
+paradigm.
+passive with respect to technology, often ignoring
+or "under-theorizing" the artifact itself (Orlikowski
+and lacono 2001).
+Its focus is on describing the
+of
+its impact on indivi
+implications
+technology?
+and
+It regularly
+duals, groups,
+organizations.
+includes studies that examine how people employ
+a technology, report on the benefits and difficulties
+encountered when a technology is implemented
+within an organization, or discuss how managers
+might facilitate the use of a technology. Orman
+(2002) argues that many of the equivocal results
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+99
+
+Hevner
+
+et al./Design
+
+Science
+
+in IS Research
+
+in IS behavioral-science
+studies can be explained
+by a failure to differentiate the capabilities and
+purposes of the studied technology.
+is active with respect to tech
+science
+in the creation of technological
+nology, engaging
+artifacts that impact people and organizations.
+Its
+focus is on problem solving but often takes a
+simplistic view of the people and the organiza
+tional contexts inwhich designed artifacts must
+function. As stated earlier, the design of an arti
+fact, its formal specification, and an assessment
+of its utility, often by comparison with competing
+
+Design
+
+artifacts,
+
+are
+
+These
+
+must
+
+integral
+
+to design-science
+
+research.
+
+be combined with behavioral and
+theories to develop an under
+organizational
+
+standing of business problems, contexts, solu
+to
+tions, and evaluation approaches
+adequate
+servicing the IS research and practitioner com
+The effective presentation of design
+munities.
+science research inmajor IS journals, such as
+MIS Quarterly, will be an important step toward
+integrating the design-science
+in IS.
+science communities
+
+and behavioral
+
+Acknowledgements
+
+between behavioral-science
+and design-science
+research.
+This work has also benefited from
+seminars and discussions at Arizona State Univer
+sity, Florida International University, Georgia State
+University, Michigan State University, Notre Dame
+University, and The University of Utah. We would
+particularly like to thank Brian Pentland and Steve
+Alter for feedback and suggestions
+they provided
+on an earlier version of this paper. The comments
+editors and
+provided by several anonymous
+the content and
+reviewers greatly enhanced
+
+100
+
+Aalst, W.
+
+"Wolfan: A Petri-Net-Based
+
+of the paper.
+
+Workflow
+
+Analyzer," Systems Analysis-Modeling-Simu
+lation (34:3), 1999, pp. 345-357.
+Aalst, W., and Hee, K. Workflow Management:
+and Systems,
+The MIT
+Models, Methods,
+2002.
+Press, Cambridge, MA,
+Aalst,
+
+and
+
+W.,
+
+A.
+
+Kumar,
+
+"XML-Based
+
+Schema
+
+Definition
+
+for Support of Interorganizational
+Information Systems Research
+Workflow,"
+(14:1), March 2003, pp. 23-46.
+Aboulafia, M. (ed.). Philosophy, Social Theory,
+and the Thought of George Herbert Mead
+in Philosophy of the Social
+(SUNY Series
+State University of New York
+Sciences),
+Press, Albany, NY, 1991.
+Aiken,
+
+M. W.,
+
+O.
+
+Sheng,
+
+R.
+
+L., and
+
+D.
+
+Vogel,
+
+with
+"Integrating Expert Systems
+Decision Support Systems," ACM
+on
+actions
+Information Systems
+1991,
+
+January
+
+R.
+
+Group
+Trans
+(9:1),
+
+75-95.
+
+pp.
+
+Alter, S.
+
+"18 Reasons Why
+IT-Reliant Work
+ITArtifact' as
+Should
+The
+Systems
+Replace
+the Core Subject Matter of the ISField," Com
+munications of the AIS (12), October 2003,
+pp. 365-394.
+L. M. "Rigor and Relevance
+inMIS
+Applegate,
+MIS
+
+Research?Introduction,"
+
+We would like to thank Allen Lee, Ron Weber,
+and Gordon Davis who in different ways each
+contributed to our thinking about design science in
+the Information Systems
+and en
+profession
+couraged us to pursue this line of research. We
+would also like to acknowledge
+the efforts of
+Rosann Collins who provided insightful comments
+and perspectives on the nature of the relationship
+
+presentation
+
+References
+
+Quarterly
+
+(23:1), March 1999, pp. 1-2.
+Basili, V. "The Role of Experimentation
+ware
+
+Past,
+
+Engineering:
+
+ture," inProceedings
+on
+
+Conference
+
+Basu,
+
+Current,
+
+Software
+
+and M. Zelkowitz
+
+Germany,
+
+March
+
+and
+
+25-29,1996,
+
+Blanning,
+
+Fu
+
+of the 18thInternational
+
+Maibaum
+A.,
+
+in Soft
+and
+
+Engineering,
+
+T.
+
+(eds.),
+
+Berlin,
+
+pp.
+
+R. W.
+
+442-449.
+
+"A Formal
+
+Ap
+
+to Workflow Analysis,"
+Information
+Systems Research
+(11:1), March 2000, pp.
+proach
+17-36.
+Basu,
+
+A.,
+
+and
+
+Blanning,
+
+R. W.
+
+A
+
+"Metagraphs:
+
+Tool forModeling Decision Support Systems,"
+Science
+Management
+(40:12), December
+1579-1600.
+1994, pp.
+Batra,
+
+D.,
+
+Hoffer,
+
+J. A.,
+
+and
+
+Bostrom,
+
+R.
+
+P.
+
+"A
+
+Comparison of User Performance between
+the Relational and the Extended Entity Rela
+tionship Models in the Discovery Phase of
+of the
+Database Design," Communications
+ACM (33:2), February 1990, pp. 126-139.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Hevner
+
+Bell, D. A. "From Data Properties to Evidence,"
+IEEE Transactions on Knowledge and Data
+1993, pp. 965
+Engineering (5:6), December
+969.
+I., and
+
+Benbasat,
+
+R.
+
+Zmud,
+
+W.
+
+H. K.,
+
+Bhargava,
+
+Krishnan,
+
+and
+
+R.,
+
+P.
+
+Piela,
+
+Patel,
+
+A.,
+
+M.,
+
+Sim,
+
+and
+
+Weber,
+
+R.
+
+"Should the Optional Property Construct be
+Used inConceptual Modeling? A Theory and
+Three Empirical Tests," Information Systems
+Research
+(12:4), December 2001, pp 384
+
+cation
+
+and
+
+R.
+
+Research,
+
+Boland
+
+(ed.),
+
+Fron
+
+tiers of Management Workshop, Weather
+June 14-15,
+head School of Management,
+at
+2002
+online
+(available
+http://design.
+cwru.edu).
+Brancheau,
+
+J.,
+
+Janz,
+
+B.,
+
+and Wetherbe,
+
+J.
+
+"Key
+
+Issues in Information Systems Management:
+1994-95 SIM Delphi Results," MIS Quarterly
+(20:2), June 1996, pp. 225-242.
+Brooks, F. P., Jr. "The Computer Scientist as
+Toolsmith
+of the ACM
+II,"Communications
+(39:3), March 1996, pp. 61-68.
+Brooks,
+
+F. P.,
+
+Accidents
+
+Jr.
+
+"No Silver
+
+of Software
+
+Bullet:
+
+Essence
+
+and
+
+IEEE
+Engineering,"
+10-19.
+Computer (20:4), April 1987, pp
+Treatise on Basic Philosophy:
+Bunge, M. A.
+Volume 7?Epistemology
+& Methodology
+III:
+Philosophy of Science and Technology?Part
+II: Life Science, Social Science and Tech
+nology, D. Reidel Publishing Company,
+Boston, MA, 1985.
+Chaudhri, A., and Loomis, M. Object Databases
+in Practice,
+Prentice-Hall,
+Upper Saddle
+River, NJ, 1998.
+Chaum, D. "Untraceable Electronic Mail, Return
+and Digital Pseudonyms," Com
+Addresses,
+munications
+of the ACM (24:2), February
+1981, pp. 84-87.
+
+H.
+
+M.
+
+Olson,
+
+Management
+
+and
+
+H.,
+
+E. R.
+
+McLean,
+
+"The DeLone
+
+and McLean Model of Information Systems
+A Ten-Year Update," Journal of
+Success:
+Information Systems
+Management
+(19:4),
+Spring 2003, pp. 9-30.
+W.
+
+DeLone,
+
+and
+
+H.,
+
+McLean,
+
+E. R.
+
+"Information
+
+Success:
+
+The Quest
+for the
+Systems
+Information
+Variable,"
+Dependent
+Systems
+Research
+(3:1), March 1992, pp. 60-95.
+"A New Social Contract for
+P. J.
+Denning,
+of the ACM
+1997, pp. 132-134.
+
+Communications
+
+Research,"
+
+405.
+
+Boland, R. J. "Design in the Punctuation of Man
+agement Action" inManaging as Designing:
+Creating a Vocabulary forManagement Edu
+
+W.
+
+DeLone,
+
+Formal Semantics
+
+F.,
+
+and
+
+B.,
+
+Information Systems:
+Foun
+Conceptual
+Structure
+and
+dations,
+Development
+(2nded.),
+McGraw-Hill, NewYork, 1985.
+
+Modeling
+Ascend,"
+Bodart,
+
+G.
+
+Davis,
+
+"On
+
+and Analysis of Typed
+An Analysis
+of
+Languages:
+INFORMS Journal on Computing
+(10:2), Spring 1998, pp. 189-208.
+
+in IS Research
+
+Science
+
+Chen, P. P. S. "The Entity-Relationship Model:
+Toward a Unified View," ACM Transactions
+on Database Systems
+(1:1), 1976, pp. 9-36.
+
+"Empirical
+
+in Information Systems: The Prac
+Research
+tice of Relevance," MIS Quarterly (23:1),
+March 1999, pp. 3-16.
+
+et al./Design
+
+(40:2), February
+Dennis,
+
+A., George,
+
+J., Jessup,
+
+L., Nunamaker,
+
+J.,
+
+and Vogel, D. "Information Technology
+to
+Electronic
+MIS
+Support
+Meetings,"
+Quarterly
+1988, pp. 591-624.
+(12:4), December
+Dennis, A., and Wixom, B.
+"Investigating the
+Moderators of the Group Support Systems
+Use with Meta-Analysis," Journal of Manage
+ment
+Information Systems
+(18:3), Winter
+2001-02,
+Dey,
+
+D.,
+
+pp. 235-257.
+
+Sarkar,
+
+S.,
+
+and
+
+De,
+
+P.
+
+"A Probabilistic
+
+Decision Model for Entity Matching inHetero
+geneous Databases," Management Science
+(44:10), October 1998, pp. 1379-1395.
+D.,
+
+Dey,
+
+Storey,
+
+V.
+
+and
+
+C,
+
+Barron,
+
+T.
+
+M.
+
+"Improving Database
+Design
+through the
+Analysis of Relationships," ACM Transactions
+on Database
+Systems
+(24:4), December
+1999, pp. 453-486.
+Dickson,
+
+G.,
+
+Partridge,
+
+J.,
+
+and
+
+Robinson,
+
+L.
+
+"Exploring Modes of Facilitative Support for
+GDSS Technology," MIS Quarterly (17:2),
+June 1993, pp. 173-194.
+Drucker, P. F. "The Coming of the New Organi
+Review
+zation," Harvard Business
+(66:1),
+January-February 1988, pp. 45-53.
+Drucker, P. F. "The New Productivity Challenge,"
+Harvard Business Rev/ew(69:6),
+November
+December
+1991, pp. 45-53.
+Dym, C. L. Engineering Design, Cambridge Uni
+versity Press, NewYork,
+
+1994.
+
+MIS Quarterly Vol. 28 No. 1/March 2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+101
+
+Hevner
+
+et al./Design
+
+eMarketer.
+
+in IS Research
+
+Science
+
+Trade and B2B Ex
+at
+
+E-Commerce
+
+J.,
+
+Fjermestad,
+
+and
+
+Hiltz,
+
+R.
+
+S.
+
+"An Assessment
+
+of Group Support Systems Experimental Re
+search: Methodology and Results," Journal
+of Management
+Information Systems
+(15:3),
+Winter 1998-99, pp. 7-149.
+R.,
+
+Gallupe,
+
+DeSanctis,
+
+and
+
+G.,
+
+Dickson,
+
+G.
+
+"Computer-Based Support for Group Prob
+lem-Finding: An Experimental Investigation,"
+MIS Quarterly, (12:2), June 1988, pp. 277
+298.
+Gavish,
+
+B.,
+
+and
+
+J.
+
+Gerdes,
+
+"Anonymous
+
+Mecha
+
+in Group Decision Support Systems
+Communication," Decision Support Systems
+(23:4), October 1998, pp. 297-328.
+Geerts, G., and McCarthy, W. E. "AnOntological
+Analysis of the Primitives of the Extended
+REA Enterprise
+Information Architecture,"
+The International Journal of Accounting
+Information Systems
+(3:1), 2002, pp. 1-16.
+Gelernter, D. Machine Beauty: Elegance and the
+Heart of Technology, Basic Books, NewYork,
+nisms
+
+1998.
+
+IEEE Software (16:2),
+March/April 1999, pp. 103-104.
+Halpin, T. A. Information Modeling and Relational
+
+Glass,
+
+R.
+
+"On Design,"
+
+Databases,
+
+Henderson,
+
+Kaufmann
+
+Morgan
+
+NewYork,
+J.,
+
+Publishers,
+
+2001.
+and
+
+Venkatraman,
+
+N.
+
+"Strategic
+
+Alignment: Leveraging Information Techno
+IBM
+logy for Transforming Organizations,"
+Systems Journal (32:1), 1993.
+ISR. Editorial Statement and Policy, Information
+(13:4), December 2002.
+Systems Research
+S.,
+
+Jarvenpaa,
+
+Rao,
+
+V.,
+
+and
+
+Huber,
+
+G.
+
+"Computer
+
+Support for Meetings of Groups Working on
+Unstructured Problems: A Field Experiment,"
+MIS Quarterly (12:4), December
+1988, pp.
+
+and
+
+J.
+
+Naumann,
+
+"Modeling Network Latency and Parallel
+inDistributed Database Design,"
+Processing
+Decision Sciences Journal (34:4), Fall 2003.
+Kalakota,
+
+R.,
+
+and
+
+M.
+
+Robinson,
+
+E-Business
+
+2.0:
+
+for Success,
+Roadmap
+Addison-Wesley
+Pearson Education, Boston, MA, 2001.
+Software Project
+Keil, M.
+"Pulling the Plug:
+and
+the
+of Project
+Problem
+Management
+Escalation," MIS Quarterly (19:4) December
+1995, pp. 421-447.
+Keil,
+
+P. E.,
+
+M.,
+
+Cule,
+
+C.
+
+"A Framework
+
+K., and
+
+Lyytinen,
+
+Schmidt,
+
+R.
+
+for Identifying Software
+of the ACM
+Project Risks," Communications
+(41:11), November 1998, pp. 76-83.
+Keil, M., and Robey, D. "TurningAround Troubled
+Software Projects: An Exploratory Study of
+the Deescalation
+to Failing
+of Commitment
+Courses of Action," Journal of Management
+Information Systems, (15:4) December 1999,
+pp.
+
+63-87.
+
+Kernighan, B., and Plauger, P. J. The Elements
+of Programming Style (2nded.), McGraw-Hill,
+NewYork, 1978.
+Kim,
+
+Y. G.,
+
+and
+
+March,
+
+S.
+
+T.
+
+"Comparing
+
+Data
+
+of
+Modeling Formalisms," Communications
+the ACM (38:6), June 1995, pp. 103-115.
+Klein, H. K., and Myers, M. D. "ASet of Principles
+for Conducting and Evaluating
+Interpretive
+in Information Systems," MIS
+Field Studies
+Quarterly (23:1), March 1999, pp. 67-94.
+Kleindorfer,
+
+G.,
+
+O'Neill,
+
+L.,
+
+and
+
+Ganeshan,
+
+R.
+
+"Validation inSimulation: Various Positions
+in the Philosophy of Science," Management
+Science (44:8), August 1998, pp. 1087-1099.
+An
+Kruchten, P. The Rational Unified Process:
+Introduction (2nded.), Addison-Wesley,
+Inc.,
+Reading, MA, 2000.
+Kuhn, T. S. The Structure of Scientific Revolu
+tions (3rded.), University of Chicago Press,
+IL, 1996.
+Chicago,
+and
+Kumar, A.,
+Zhao, J. "Workflow Support for
+Electronic Commerce Applications," Decision
+Support Systems
+
+(32:3), January 2002,
+
+pp.
+
+265-278.
+A.
+
+Editor's
+
+MIS
+
+645-666.
+
+Lee,
+
+J. M. "On the Impact of Network
+Design,"
+Latency on Distributed Systems
+Information Technology Management
+(1),
+2000, pp. 183-194.
+
+Quarterly (23:1), March 1999, pp. v-xi.
+Lee, A. "Systems Thinking, Design Science, and
+Paradigms: Heeding Three Lessons from the
+in the
+Three Dilemmas
+Past to Resolve
+
+Johansson,
+
+102
+
+S. T.,
+
+March,
+
+D.
+
+hp?ecommerce_trade).
+
+E., and McCorduck, P. The Fifth
+Feigenbaum,
+Generation: Artificial Intelligence and Japan's
+Computer Challenge to the World, Addison
+Inc., Reading, MA, 1983.
+Wesley,
+
+J. M.,
+
+Johansson,
+
+changes, March 2002 (available online
+http://www.emarketer.eom/products/report.p
+
+"Inaugural
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Comments,"
+
+Hevner
+
+to Direct a Trajectory for Future
+Present
+in the Information Systems Field,"
+Research
+Keynote Address, Eleventh International Con
+on
+
+ference
+
+Information
+
+Taiwan,
+
+Management,
+
+(available online at
+
+May 2000
+
+people.vcu.edu/~aslee/ICIM-keynote-2000).
+
+Leymann, F., and Roller, D. Production Workflow:
+and Techniques,
+Prentice-Hall,
+Concepts
+Saddle
+River, NJ, 2000.
+Upper
+Madnick, S. E. "TheChallenge: To Be Part of the
+Solution Instead of Being Part of the Prob
+of the Second Annual
+lem," inProceedings
+on
+Information
+Workshop
+Technology and
+A.
+V.
+and
+Whinston
+Systems,
+Storey
+(eds.),
+Dallas, TX, December
+G.
+
+Marakas,
+
+M.,
+
+and
+
+12-13, 1992, pp. 1-9.
+
+Elam,
+
+J.
+
+J.
+
+"Semantic
+
+Structuring inAnalyst Acquisition and Repre
+sentation of Facts inRequirements Analysis,"
+Information Systems Research
+(9:1), March
+1998, pp. 37-63.
+S. T.,
+
+March,
+
+Hevner,
+
+A.,
+
+and
+
+Ram,
+
+S.
+
+"Research
+
+An Agenda
+for Information
+Commentary:
+inHeterogeneous
+and
+Technology Research
+Distributed Environment," Information Sys
+tems Research
+(11:4), December 2000, pp.
+327-341.
+March, S. T., and Smith, G. "Design and Natural
+on Information Techno
+Science Research
+Support Systems
+logy," Decision
+December
+1995, pp. 251-266.
+Markus,
+
+M.
+
+Design
+
+L., Majchrzak,
+
+Theory
+
+Emergent
+
+A.,
+
+and
+
+for Systems
+Processes,"
+
+Knowledge
+
+(15:4),
+L.
+
+Gasser,
+
+"A
+
+that Support
+MIS
+
+P. E.
+
+"What Social Scientists
+Don't
+in
+Social
+Understand,"
+Science,
+Metatheoryin
+D. W. Fiske and R. A. Shweder
+(eds.),
+
+Newell,
+
+A.,
+
+and
+
+Simon,
+
+H.
+
+Nunamaker,
+
+Press,
+
+Chicago,
+
+"Computer
+
+Science
+
+J., Briggs,
+and
+
+R.,
+
+Mittleman,
+P.
+
+Balthazard,
+
+D.,
+
+Vogel,
+
+"Lessons
+
+a
+
+from
+
+Dozen Years of Group Support Systems
+A Discussion
+Research:
+of Lab and Field
+Informa
+Findings," Journal of Management
+tion Systems,
+1996-97, pp.
+(13:3), Winter
+163-207.
+Nunamaker,
+
+J., Chen,
+
+and
+
+M.,
+
+Purdin,
+
+T.
+
+D. M.
+
+in Information Sys
+"Systems Development
+tems Research,"
+Journal of Management
+Information Systems (7:3),Winter 1991a, pp.
+89-106.
+Nunamaker,
+
+J., Dennis,
+
+A., Valacich,
+
+D.,
+
+J., Vogel,
+
+and George, J. "Electronic Meeting Systems
+to Support Group Work," Communications of
+the ACM, (34:7), July 1991b, pp. 40-61.
+Orlikowski, W. J. "Using Technology and Con
+A Practice Lens for
+stituting Structures:
+in Organizations."
+Studying
+Technology
+Science
+Organization
+(11:4), December 2000,
+pp.
+
+404-428.
+
+Orlikowski,
+
+W.
+
+J., and
+
+R.
+
+S.
+
+Barley,
+
+"Technology
+
+on
+Can Research
+on
+and Research
+Learn From Each Other?," MIS
+
+and Institutions: What
+Information Technology
+Organizations
+Quarterly
+W.
+
+Orlikowski,
+
+(25:2), June 2001, pp 145-165.
+J.,
+
+and
+
+lacono,
+
+C.
+
+S.
+
+"Research
+
+Commentary: Desperately Seeking the 'IT' in
+IT Research?A
+Call to Theorizing the IT
+Information
+
+Artifact,"
+
+Research
+
+Systems
+
+(12:2), June 2001, pp. 121-134.
+
+578.
+
+University of Chicago
+1986, pp. 315-338.
+
+in IS Research
+
+D. The Design of Everyday Things,
+Currency Doubleday, NewYork, 1988.
+
+Quar
+
+terly (26:3), September, 2002, pp. 179-212.
+McCarthy, W. E. "The REA Accounting Model: A
+Generalized Framework for Accounting Sys
+tems in a Shared Data Environment," The
+Accounting Review
+(58:3), 1982, pp. 554
+Meehl,
+
+Science
+
+Norman,
+
+D.,
+
+http://www.
+
+et al./Design
+
+IL,
+as
+
+and Search,"
+Empirical
+Inquiry: Symbols
+Communications
+of the ACM (19:3), March
+1976, pp. 113-126.
+
+Orman,
+
+L. V.
+
+"Electronic
+
+Hubs,
+
+and
+
+mation
+
+Systems
+
+Markets,
+
+Hierarchies,
+
+Journal
+
+Intermediaries,"
+
+Frontiers
+
+of
+
+Infor
+
+(4:2), 2002,
+
+pp.
+
+207-222.
+
+Pahl, G., and Beitz, W.
+
+Engineering
+
+Systematic Approach,
+don, 1996.
+Parsons,
+
+J.,
+
+and
+
+Wand,
+
+Design:
+
+Springer-Verlag,
+Y.
+
+A
+Lon
+
+"Emancipating
+
+Instances from the Tyranny of Classes
+in
+Information Modeling," ACM Transactions on
+Database
+Systems
+(25:2), June 2000, pp.
+228-268.
+
+Petroski, H. Invention by Design: How Engineers
+Get from Thought to Thing, Harvard Univer
+sity Press, Cambridge,
+
+MA, 1996.
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+103
+
+Hevner
+
+et al./Design
+
+Science
+
+in IS Research
+
+Purao,
+
+S.,
+
+V. C,
+
+and
+
+Storey,
+
+T.
+
+Han,
+
+D.
+
+"Im
+
+H.
+
+Rittel,
+
+M. M.
+
+J., and Webber,
+
+"Planning
+
+Information Systems
+Research:
+Threat,
+Opportunity, and Responsibility," Information
+Systems Research
+(7:4), 1996, pp. 400-408.
+A
+Software Project Management:
+Royce, W.
+Unified Framework, Addison-Wesley,
+Inc.,
+Reading, MA, 1998.
+The
+Salton, G. Automatic Text Processing:
+Transformation, Analysis, and Retrieval of
+Information by Computer, Addison-Wesley,
+Inc., Reading,
+
+MA,
+
+1988.
+
+B. Applied Cryptography: Protocols,
+Algorithms, and Source Code in C (2nded.),
+John Wiley and Sons, New York, January
+
+Schneier,
+
+1996.
+Schon, D. A. The Reflective Practitioner: How
+Think in Action, Basic Books,
+Professionals
+NewYork, 1983.
+and Extension
+Seddon, P. B. "ARespecification
+of the DeLone and McLean Model of IS
+Information
+
+Success,"
+
+(8:3), September
+K., and
+
+Sengupta,
+
+Te'eni,
+
+Systems
+
+"Cognitive
+
+M.
+
+S.,
+
+Markus,
+
+M.
+
+L.,
+
+and
+
+C.
+
+M.
+
+Interaction
+Information Technology
+A Foundation for the MBA Core
+Model:
+Course," MIS Quarterly (19:3), September
+1995, pp. 361-390.
+of the Artificial (3rd
+Simon, H. A. The Sciences
+MIT
+MA, 1996.
+Press,
+Cambridge,
+ed.),
+A.
+
+P.,
+
+and
+
+Vessey,
+
+I. "An Empirical
+
+Inves
+
+tigation of Entity-Based and Object-Oriented
+Life Cycle
+Data Modeling: A Development
+of the Twentieth
+Approach," inProceedings
+on Information
+International Conference
+P. De and J. I. DeGross
+(eds.),
+Systems,
+Charlotte,
+229-244.
+
+104
+
+NC, December
+
+13-15,
+
+K. Y.
+
+Construction
+
+"Automated
+
+of Knowl
+
+167.
+
+"Should Computer Scientists Experi
+Tichy, W.
+ment More?" IEEE Computer
+(31:5), May
+1998, pp. 32-40.
+Trice,
+
+A.,
+
+and
+
+R.
+
+Davis,
+
+"Heuristics
+
+for Recon
+
+ciling Independent Knowledge Bases," Infor
+mation Systems Research
+(4:3), September
+1993, pp. 262-288.
+Tsichritzis, D. "The Dynamics of Innovation," in
+Beyond Calculation: The Next Fifty Years of
+Computing, P. J. Denning and R. M. Metcalfe
+1998,
+(eds.), Copernicus Books, NewYork,
+pp. 259-265.
+Venkatesh, V. "Determinants pf Perceived Ease
+of Use:
+Integrating Control, Intrinsic Motiva
+tion, and Emotion into the Technology Accep
+tance Model," Information Systems Research
+(11:4), December 2000, pp. 342-365.
+Vessey,
+
+I., and
+
+Glass,
+
+R.
+
+"Strong
+
+Vs.
+
+Weak
+
+Development,"
+Approaches
+Systems
+of the ACM (41:4), April
+Communications
+1998, pp. 99-102.
+
+"The
+
+Sinha,
+
+Design
+
+from Examples,"
+Information
+edge-Bases
+Systems Research
+(1:2), June 1990, pp. 144
+
+Feedback
+
+Beath,
+
+D., Goldstein,
+
+"Database
+
+to
+
+87-113.
+
+pp.
+
+S.
+
+Sundaresan,
+
+471-512.
+
+pp.
+Tarn,
+
+1997, pp. 240-253.
+D.
+
+R. H. L., Dey,
+
+Chiang,
+
+and
+
+with Common Sense Business Reasoning
+on
+and
+Transactions
+Learning," ACM
+Database Systems
+1997,
+(22:4), December
+
+Research
+
+in GDSS:
+Improving Control and Conver
+MIS
+Quarterly (17:1), March 1993,
+gence,"
+Silver,
+
+R. C,
+
+Prob
+
+lems Are Wicked
+in Develop
+Problems,"
+ments inDesign Methodology, N. Cross (ed.),
+John Wiley & Sons, New York, 1984.
+Robey, D. "Research Commentary:
+Diversity in
+
+V. C,
+
+Storey,
+
+proving Reuse-Based
+System Design with
+Research
+Learning," Information Systems
+(14:3), September 2003, pp. 269-290.
+
+1999, pp.
+
+Walls,
+
+J. G., Widmeyer,
+
+G. R.,
+
+and
+
+El Sawy,
+
+O. A.
+
+Design
+"Building an Information System
+Theory forVigilant EIS," Information Systems
+Research
+(3:1), March 1992, pp. 36-59.
+Wand, Y., and Weber, R. "On the Deep Structure
+of Information Systems," Information Systems
+Journal (5), 1995, pp. 203-233.
+Wand, Y., and Weber, R. "On the Ontological
+of
+Information Systems
+Expressiveness
+and Design Grammars,"
+Design Analysis
+Journal of Information Systems
+(3:3), 1993,
+pp. 217-237.
+Weber, R. "Editor's Comments: Still Desperately
+Seeking the ITArtifact," MIS Quarterly (27:2),
+June 2003, pp. iii-xi.
+Weber, R. Ontological Foundations of Information
+Systems,
+Australia,
+
+Coopers
+1997.
+
+& Lybrand,
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+Brisbane,
+
+Hevner
+
+A
+"Toward a Theory of Artifacts:
+Paradigmatic Base for Information Systems
+Research," Journal of Information Systems
+(1:2), Spring 1987, pp. 3-19.
+Wf
+WfMC. "Workflow Standard?Interoperability
+XML Binding," Document Number WFMC-TC
+1023, Version 1.0, Workflow Management
+Coalition, 2000.
+to Software,
+T.
+Winograd,
+Bringing Design
+Inc., Reading, MA, 1996.
+Addison-Wesley,
+T.
+"The
+Design of Interaction," in
+Winograd,
+The Next 50 Years of
+Calculation:
+Beyond
+P.
+Denning and R. Metcalfe
+Computing,
+
+Weber,
+
+R.
+
+(eds.), Copernicus
+pp. 149-162.
+M.,
+
+Zelkowitz,
+
+and
+
+Books, NewYork,
+D.
+
+Wallace,
+
+1998,
+
+"Experimental
+
+IEEE
+Technology,"
+23-31.
+Computer (31:5), May 1998, pp.
+Zmud, R. "Editor's Comments," MIS Quarterly
+(21:2), June 1997, pp. xxi-xxii.
+Models
+
+for Validating
+
+the Authors
+
+Alan R. Hevner is an Eminent Scholar and Pro
+fessor in the College of Business Administration at
+the University of South Florida. He holds the
+Salomon Brothers/Hidden River Corporate Park
+His areas of
+Chair of Distributed Technology.
+research
+development,
+database
+
+interest
+
+include
+
+software
+systems,
+
+and
+
+information systems
+
+in IS Research
+
+associate editor forMIS Quarterly. He is currently
+a senior editor for Information Systems Research
+editor for Decision Sciences
+and an associate
+Journal.
+
+Jinsoo Park is an assistant professor of infor
+mation systems in the College of Business Admin
+istration at Korea University. He was formerly on
+the faculty of the Carlson School of Management
+at the University of Minnesota.
+He holds a Ph.D.
+in MIS from the University of Arizona.
+His
+research interests are in the areas of semantic
+in
+interoperability and metadata management
+interorganizational
+information
+
+information systems,
+resource
+
+hetero
+and
+
+management
+
+integration, knowledge sharing and coordination,
+His published
+and data modeling.
+research
+articles appear in IEEE Computer, IEEE Transac
+tions on Knowledge and Data Engineering, and
+He currently
+Information Systems
+Frontiers.
+serves on the editorial board of Journal of Data
+base Management.
+He is a member of ACM,
+IEEE,AIS, and INFORMS.
+Sudha
+
+Ram
+
+is the Eller Professor
+
+of MIS at the
+
+engineering,
+
+distributed
+
+University
+
+healthcare
+
+information
+
+from the University of Madras in 1979,
+Science
+PGDM from the Indian Institute of Management,
+Calcutta in 1981 and a Ph.D. from the University
+of Illinois at Urbana-Champaign,
+in 1985. Dr.
+Ram has published articles in such journals as
+Communications
+of the ACM, IEEE Transactions
+on Knowledge and Data Engineering, Information
+
+He has published numerous research
+systems.
+on
+these topics and has consulted for
+papers
+several Fortune 500 companies.
+Dr. Hevner
+in Computer Science
+received a Ph.D.
+from
+Purdue University. He has held faculty positions
+at the University of Maryland at College Park and
+Dr. Hevner is a
+the University of Minnesota.
+member
+
+Science
+
+His
+base design, and electronic commerce.
+research has appeared in journals such as Com
+of the ACM, IEEE Transactions on
+munications
+Knowledge and Data Engineering, and Informa
+He served as the Editor
+tion Systems Research.
+in-Chief of ACM Computing Surveys and as an
+
+geneous
+
+About
+
+et al./Design
+
+of ACM, IEEE,AIS, and INFORMS.
+
+Salvatore T. March is the David K. Wilson Pro
+at the Owen Graduate
+fessor of Management
+School of Management, Vanderbilt University. He
+received a B.S. in Industrial Engineering and M.S.
+inOperations Research from
+and Ph.D. degrees
+Cornell University. His research interests are in
+information system development, distributed data
+
+of Arizona.
+
+She
+
+received
+
+a B.S.
+
+in
+
+and Management
+Science.
+Systems Research,
+Her research deals with interoperability in hetero
+semantic modeling,
+data
+databases,
+geneous
+and
+allocation,
+intelligent agents for data manage
+ment.
+Her research has been funded by IBM,
+National Institute of Standards and Technology
+Foundation
+(NIST), National Science
+(NSF),
+National Aeronautics and Space Administration
+(NASA), and the Office of Research and Devel
+opment of the Central Intelligence Agency (CIA).
+
+MIS Quarterly Vol. 28 No. 1/March2004
+
+This content downloaded from 129.252.86.83 on Wed, 7 Aug 2013 09:04:01 AM
+All use subject to JSTOR Terms and Conditions
+
+105
+
+

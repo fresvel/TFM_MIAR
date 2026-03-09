@@ -1,0 +1,26 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagrama de flujo PRISMA 2020 del proceso de selección de estudios. Elaboración propia.}}{13}{figure.caption.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Perfil descriptivo del corpus incluido (n=19) y de la trazabilidad de recuperación (n=49). Elaboración propia.}}{14}{figure.caption.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Campos analíticos con mayor frecuencia de NR en el dataset de extracción. Elaboración propia.}}{14}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Coocurrencia entre contaminantes y variables ambientales en los estudios incluidos.}}{16}{figure.caption.6}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Estructura de combinaciones y dimensionalidad de entradas contaminantes en los estudios incluidos.}}{16}{figure.caption.7}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Distribución y coocurrencia de variables ambientales en función de la clase de salida en plataformas de monitoreo en tiempo real.}}{19}{figure.caption.8}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Distribución y coocurrencia de contaminantes en función de la clase de salida en plataformas de monitoreo en tiempo real.}}{21}{figure.caption.9}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Coocurrencia entre tipo de FIS y propósito de inferencia en D2.}}{24}{figure.caption.11}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Resumen de clases AQI reportadas en D2: número de clases por estudio y etiquetas más frecuentes.}}{25}{figure.caption.12}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Relaciones entre familia FIS y decisiones de salida/riesgo en D2.}}{26}{figure.caption.13}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Coocurrencia entre propósito de inferencia y elementos de interpretabilidad reportados.}}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Panorama de arquitectura y procesamiento en D3.}}{31}{figure.caption.17}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Coocurrencia entre arquitectura de plataforma y modo de procesamiento en D3.}}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Coocurrencia entre arquitectura de plataforma y stack tecnológico en D3.}}{33}{figure.caption.20}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Coocurrencia entre contexto de despliegue e instrumentación en D3.}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Coocurrencia entre características temporales y visualización y alertamiento en D3.}}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Panorama de frecuencias de métricas reportadas en el corpus y en los grupos comparables core.}}{38}{figure.caption.24}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Distribución de valores reportados por métrica en grupos comparables core (una gráfica por métrica; lectura exploratoria; normalización \texttt {0--1} a \texttt {0--100} en métricas acotadas).}}{39}{figure.caption.25}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Coocurrencia entre origen de datos y unidad comparable (solo celdas con \texttt {k>1}); se añade una columna final con el total por tipo de fuente.}}{40}{figure.caption.26}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Comparación conceptual de familias FIS para diseño de sistemas de calidad del aire. Elaboración propia.}}{52}{figure.caption.43}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Flujo general de inferencia difusa para sistemas de calidad del aire. Elaboración propia.}}{53}{figure.caption.45}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Representación de funciones de pertenencia y números borrosos en un FIS. Elaboración propia.}}{54}{figure.caption.46}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Comparación de salida en Mamdani (centroide) y Sugeno/TSK (promedio ponderado). Elaboración propia.}}{54}{figure.caption.47}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Elementos estructurales e interpretación funcional de ANFIS. Elaboración propia.}}{55}{figure.caption.48}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Fases del análisis y síntesis de datos. Elaboración propia.}}{75}{figure.caption.57}%

@@ -1,0 +1,5 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:RealTime_Data_Collection,RealTime_Data_Collection,label_cleanup,Se conserva semantica de adquisicion en tiempo real sin forzar bucle continuo.
+Other:RealTime_Outlier_Correction,RealTime_Data_Correction,operation_normalization,Correccion en tiempo real de datos atipicos durante operacion.
+Other:Map_Route_Update,Route_Update_Event,operation_normalization,Actualizacion de ruta como evento operativo de tiempo real.
+Other:Clock_Synchronization,Clock_Synchronization,label_cleanup,Sincronizacion temporal explicita para consistencia de muestreo/latencia.

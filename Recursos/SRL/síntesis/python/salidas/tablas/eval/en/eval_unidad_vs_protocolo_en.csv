@@ -1,0 +1,11 @@
+﻿Comparable_unit,Protocol,k,n,%
+AQI_IAQ_Estimation,TrainTest,1,19,5.3
+IAQ_Classification_Control,TrainTest,1,19,5.3
+PM10_Prediction,TrainTest,1,19,5.3
+PM2.5_Calibration,Online,1,19,5.3
+PM2.5_Prediction,CV,1,19,5.3
+PM2.5_Prediction,CrossSite,1,19,5.3
+PM2.5_Prediction,Holdout,1,19,5.3
+PM2.5_Prediction,Online,1,19,5.3
+PM2.5_Prediction,TrainTest,1,19,5.3
+SIA_Classification,TrainTest,1,19,5.3

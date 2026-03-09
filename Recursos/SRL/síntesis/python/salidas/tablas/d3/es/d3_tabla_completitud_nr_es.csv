@@ -1,0 +1,8 @@
+﻿Dimension,Columna,NR_articulos,n,%_NR
+Arquitectura de plataforma,D3_Platform_architecture_norm,2,19,10.5
+Modo de procesamiento,D3_Processing_mode_norm,1,19,5.3
+Comunicacion/tecnologia,D3_Communication_and_tech_norm,2,19,10.5
+Visualizacion y alertamiento,D3_Visualization_alerting_norm,3,19,15.8
+Contexto de despliegue,D3_Deployment_context_norm,0,19,0.0
+Hardware y sensores,D3_Hardware_and_sensors_norm,1,19,5.3
+Operacion en tiempo real,D3_Real_time_characteristics_norm,1,19,5.3

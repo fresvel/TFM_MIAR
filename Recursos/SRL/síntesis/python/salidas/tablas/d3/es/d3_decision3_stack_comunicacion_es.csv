@@ -1,0 +1,45 @@
+﻿Tecnologia,k,n,%,Patron,Lectura_decision
+MATLAB,7,19,36.8,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+Cloud_Server,6,19,31.6,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+WiFi,6,19,31.6,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+MCU_Arduino,4,19,21.1,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+Bluetooth,3,19,15.8,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+ESP32,3,19,15.8,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+ESP8266,3,19,15.8,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+ThingSpeak,3,19,15.8,Recurrente,Elemento de stack repetido en multiples estudios; candidato a base comun.
+Python,2,19,10.5,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+RaspberryPi,2,19,10.5,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Zigbee,2,19,10.5,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+AWS_EC2,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Google_Map,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Google_Sheets,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+HDFS_MapReduce,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+I2C,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+LoRa,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:ATMega32,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:AWS_IoT,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Android_Studio,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Arduino_Controllers,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:BluEpyc,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:CAN,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Cloud_Data_Access,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:CodeVision_CVAVR,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Ethernet,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Firebase,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Gateway_LAN,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Google_Colab,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:IBM_SPSS,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:IoT_Sensor_Network,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:JavaScript_Web_App,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:LCD,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Local_DB_Server,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:MAX232,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:MCU_CORTEX-M3,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:NRF24L01_RF_Link,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:PMS7003,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:SD_Logging,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:SGP30,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:Thonny,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:WP6003,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Other:WordPress,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."
+Serial,1,19,5.3,Contextual,"Uso puntual/especializado segun dominio, hardware o ecosistema del estudio."

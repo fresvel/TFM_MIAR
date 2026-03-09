@@ -1,0 +1,210 @@
+\usepackage[a4paper,margin=3cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{caption}
+\usepackage{capt-of}
+\usepackage{tabularray}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage{iftex}
+\usepackage{enumitem}
+
+% Rutas base para imágenes
+\graphicspath{{assets/figuras/}{assets/figuras/branding/}}
+
+
+% === Selector de fuentes ===
+% true  -> usa Arial/Cambria/Calibri (igual a la plantilla Word)
+% false -> usa fuentes por defecto de LaTeX
+\newif\ifviufonts
+\viufontstrue
+
+\newcommand{\ViuCambria}{\rmfamily}
+\newcommand{\ViuCalibri}{\sffamily}
+
+\ifviufonts
+  \ifXeTeX
+    \usepackage{fontspec}
+    \setmainfont{Arial}
+    \setsansfont{Arial}
+    \newfontfamily\ViuCambriaFamily{Cambria}
+    \newfontfamily\ViuCalibriFamily{Calibri}
+    \renewcommand{\ViuCambria}{\ViuCambriaFamily}
+    \renewcommand{\ViuCalibri}{\ViuCalibriFamily}
+    \renewcommand\familydefault{\sfdefault}
+  \fi
+  \ifLuaTeX
+    \usepackage{fontspec}
+    \setmainfont{Arial}
+    \setsansfont{Arial}
+    \newfontfamily\ViuCambriaFamily{Cambria}
+    \newfontfamily\ViuCalibriFamily{Calibri}
+    \renewcommand{\ViuCambria}{\ViuCambriaFamily}
+    \renewcommand{\ViuCalibri}{\ViuCalibriFamily}
+    \renewcommand\familydefault{\sfdefault}
+  \fi
+\fi
+
+\definecolor{VIUGRAY}{HTML}{333333}
+\definecolor{VIUORANGE}{HTML}{ED7D31}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\setstretch{1.2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6\baselineskip}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% Quitar numeración/encabezados por defecto (usamos overlay)
+\makeatletter
+\def\ps@plain{%
+  \let\@oddhead\@empty
+  \let\@evenhead\@empty
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty}
+\makeatother
+
+% Estilos de títulos
+\titleformat{\section}
+  {\normalfont\fontsize{22}{26}\selectfont}
+  {\thesection.}
+  {0.8em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{16}{19}\selectfont}
+  {\thesubsection.}
+  {1.0em}
+  {}
+
+\titlespacing*{\section}{0pt}{0pt}{0.15cm}
+\titlespacing*{\subsection}{0pt}{0.5cm}{0.2cm}
+
+% Ajuste fino de separación título <-> header
+\newcommand{\VIUTitlePad}{\vspace*{0.2cm}}
+\let\VIUOrigSection\section
+\renewcommand{\section}{\VIUTitlePad\VIUOrigSection}
+
+% Secciones sin numerar con sangría como en Word
+\newcommand{\VIUSectionStar}[1]{%
+  \VIUTitlePad%
+  \section*{\hspace{0.65cm}#1}%
+  \addcontentsline{toc}{section}{#1}%
+}
+
+% TOC
+\newcommand{\VIUIndexTitleFont}{\ViuCambria\fontsize{24}{28}\selectfont}
+\renewcommand{\contentsname}{Índice}
+\renewcommand{\cfttoctitlefont}{\VIUIndexTitleFont}
+\renewcommand{\cftaftertoctitle}{\par\vspace{0.2cm}}
+\renewcommand{\cftdotsep}{4}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecaftersnum}{.}
+\setlength{\cftsecnumwidth}{1.8em}
+\setlength{\cftsecindent}{0pt}
+\renewcommand{\cftsubsecaftersnum}{.}
+\setlength{\cftsubsecnumwidth}{2.4em}
+\setlength{\cftsubsecindent}{0.38cm}
+\setlength{\cftbeforesecskip}{0.3\baselineskip}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+
+% Listas (dinámicas)
+\renewcommand{\listfigurename}{Índice de ilustraciones}
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\cftloftitlefont}{\VIUIndexTitleFont}
+\renewcommand{\cftlottitlefont}{\VIUIndexTitleFont}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{0.2cm}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{0.2cm}
+\renewcommand{\cftfigpresnum}{Ilustración }
+\renewcommand{\cftfigaftersnum}{.}
+\setlength{\cftfignumwidth}{3.0cm}
+\setlength{\cftfigindent}{0pt}
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftfigfont}{\normalfont}
+\renewcommand{\cftfigpagefont}{\normalfont}
+\renewcommand{\cfttabpresnum}{Tabla }
+\renewcommand{\cfttabaftersnum}{.}
+\setlength{\cfttabnumwidth}{2.2cm}
+\setlength{\cfttabindent}{0pt}
+\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttabfont}{\normalfont}
+\renewcommand{\cfttabpagefont}{\normalfont}
+
+% Etiquetas de figuras y tablas
+\renewcommand{\figurename}{Ilustración}
+\renewcommand{\tablename}{Tabla}
+\captionsetup{
+  font=footnotesize,
+  labelfont=normalfont,
+  textfont=normalfont,
+  labelsep=period,
+  justification=centering
+}
+\captionsetup[table]{
+  font=footnotesize,
+  labelfont=it,
+  textfont=it,
+  labelsep=period,
+  justification=centering
+}
+
+% Estilo global de tablas (tabularray)
+\UseTblrLibrary{booktabs}
+\SetTblrInner[tblr,longtblr]{%
+  hlines={0.4pt,VIUORANGE},
+  vlines={0.4pt,VIUORANGE},
+  rowsep=2pt,
+  colsep=6pt,
+  row{1-Z}={font=\footnotesize},
+  row{1}={bg=VIUORANGE, fg=white, font=\footnotesize\bfseries}
+}
+
+% Viñetas
+\renewcommand{\labelitemi}{\raisebox{0.15ex}{\scalebox{0.9}{$\bullet$}}}
+\renewcommand{\labelitemii}{\raisebox{0.15ex}{\scalebox{0.85}{$\circ$}}}
+
+\setlist[itemize]{leftmargin=1.2em}
+\setlist[itemize,2]{leftmargin=1.8em}
+\setlist[enumerate]{leftmargin=1.4em}
+
+% Cabecera/pie para páginas 2+
+% Posicionamiento absoluto del logo y pie (páginas 2+)
+\AddToShipoutPictureFG{%
+  \ifnum\value{page}>1
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north west] at ([xshift=0.87cm,yshift=-0.92cm]current page.north west)
+        {\includegraphics[width=4.56cm]{viu-header.png}};
+      \node[anchor=south west] at ([xshift=16.68cm,yshift=0.33cm]current page.south west)
+        {\color{VIUGRAY}\fontsize{9}{11}\selectfont\thepage\ de \pageref{LastPage}};
+    \end{tikzpicture}
+  \fi
+}
+
+% Caja informativa
+\definecolor{VIUINFO}{HTML}{E6B5B5}
+\newcommand{\VIUInfoBox}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{10pt}%
+  \noindent\colorbox{VIUINFO}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep\relax}{\itshape #1}%
+  }%
+  \endgroup
+}
+
+% Hipervínculos en índices y referencias
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{apacite}

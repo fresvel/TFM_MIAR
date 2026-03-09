@@ -1,0 +1,5 @@
+﻿Deployment_context,Operational_criterion,k,n,%,Decision_reading
+Indoor,Predominance of indoor/residential/healthcare/industrial contexts without explicit outdoor component.,8,19,42.1,Dominant scenario for controlled instrumentation.
+Outdoor,Predominance of outdoor/urban/rural/desert contexts without explicit indoor component.,2,19,10.5,Open-environment exposure scenario.
+Mixed_indoor_outdoor,Coexistence of indoor and outdoor contexts in the same study.,9,19,47.4,Mixed pattern with heterogeneous calibration and operation needs.
+NR,Insufficient evidence to classify deployment context.,0,19,0.0,NR in deployment context.

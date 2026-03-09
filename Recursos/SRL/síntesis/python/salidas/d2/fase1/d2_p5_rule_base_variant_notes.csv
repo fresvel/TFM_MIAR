@@ -1,0 +1,3 @@
+﻿Article_ID,Variant_detected,Proposed_normalized,Decision_status,Evidence_D2_pages,Title,Technical_note
+A132,Other:Mamdani_Rule_Base,Explicit_Rule_Table,working_v1,p.3; p.5-p.7,Neuro-Fuzzy Decision Support System for Optimization of the Indoor Air Quality in Operation Rooms,Se integra como base de reglas explicita de tipo Mamdani.
+A009,Other:Two_Rules_Reported,Explicit_Rule_Table,working_v1,p.2-p.3,Air Quality Indices Prediction using Sugeno’s Fuzzy Logic - 2022 International Conference on IoT and Blockchain Technology (ICIBT),Se integra como base de reglas explicita al reportar reglas concretas.

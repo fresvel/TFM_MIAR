@@ -1,0 +1,37 @@
+﻿Dimension,Category,k,n,%
+FIS Type,ANFIS,7,19,36.8
+FIS Type,Mamdani,7,19,36.8
+FIS Type,Hybrid_Fuzzy,4,19,21.1
+FIS Type,Sugeno/TSK,4,19,21.1
+FIS Type,ADFIST,2,19,10.5
+FIS Type,Type1_Generic,2,19,10.5
+FIS Type,Tsukamoto,1,19,5.3
+Fuzzy Role,Central,18,19,94.7
+Fuzzy Role,Complementary,1,19,5.3
+Inference Purpose,AQI_Classification,12,19,63.2
+Inference Purpose,Risk_Alerting,8,19,42.1
+Inference Purpose,Pollutant_Prediction,7,19,36.8
+Inference Purpose,AQI_Estimation,5,19,26.3
+Inference Purpose,Operational_Optimization,4,19,21.1
+Rule Base,Explicit_Rule_Table,11,19,57.9
+Rule Base,Adaptive_Rule_Base,7,19,36.8
+Rule Base,Equation_Based,1,19,5.3
+Membership Functions,Linguistic_Labels,10,19,52.6
+Membership Functions,Triangular,7,19,36.8
+Membership Functions,Trapezoidal,4,19,21.1
+Membership Functions,Gaussian,3,19,15.8
+Membership Functions,Bell,2,19,10.5
+Membership Functions,Implicit_MF,2,19,10.5
+Membership Functions,Adaptive_MF,1,19,5.3
+Defuzzification,NR,8,19,42.1
+Defuzzification,Centroid,6,19,31.6
+Defuzzification,Weighted_Average,6,19,31.6
+Risk Modeling,AQI_Thresholds,9,19,47.4
+Risk Modeling,Prediction_Based_Risk,6,19,31.6
+Risk Modeling,Custom_Risk_Scale,2,19,10.5
+Interpretability,Rule_Transparency,16,19,84.2
+Interpretability,MF_Plots,8,19,42.1
+Interpretability,AQI_Mapping,6,19,31.6
+Interpretability,Confusion_Matrix,1,19,5.3
+Interpretability,Fuzzy_Surface,1,19,5.3
+Interpretability,SOM_Visualization,1,19,5.3

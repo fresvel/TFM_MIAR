@@ -1,0 +1,2 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Real_Time_FogCloud,Real_Time_Distributed,semantic_unification,Modo de procesamiento distribuido en tiempo real sobre capas fog/cloud.

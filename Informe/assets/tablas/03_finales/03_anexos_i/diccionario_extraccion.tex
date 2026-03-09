@@ -1,0 +1,65 @@
+\begin{longtblr}
+[
+ label={tab:diccionario_extraccion},
+ caption={Diccionario operativo de campos de la matriz final de extracción de datos.}]{
+  colspec = {X[0.8,j,m] X[2.5,j,m] X[4.0,j,m]},
+  rowhead = 1,
+  row{1} = {font=\bfseries},
+  hlines
+}
+Bloque & Campo & Descripción operacional \\
+
+Meta & \texttt{Article\_ID} & Identificador único del estudio en la revisión. \\
+Meta & \texttt{Title} & Título del artículo. \\
+Meta & \texttt{Year} & Año de publicación. \\
+Meta & \texttt{Venue} & Revista o congreso de publicación. \\
+Meta & \texttt{DOI\_or\_URL} & DOI o enlace trazable de la fuente. \\
+Meta & \texttt{Study\_type\_quant} & Subtipo cuantitativo aplicado en evaluación metodológica. \\
+Meta & \texttt{Country\_or\_region} & País o región del caso de estudio cuando es reportado. \\
+
+D1 & \texttt{D1\_Pollutants\_inputs} & Contaminantes atmosféricos usados como entradas. \\
+D1 & \texttt{D1\_Env\_variables\_inputs} & Variables ambientales no contaminantes usadas como entradas. \\
+D1 & \texttt{D1\_Target\_output} & Variable objetivo reportada por el estudio. \\
+D1 & \texttt{D1\_Reported\_input\_values} & Rangos o valores numéricos de variables de entrada reportados por el estudio. \\
+D1 & \texttt{D1\_Sampling\_frequency\_values} & Frecuencia de muestreo o periodicidad de adquisición. \\
+D1 & \texttt{D1\_Time\_window\_values} & Ventana temporal, periodo de captura o duración del dataset. \\
+D1 & \texttt{D1\_Data\_source\_type} & Tipo de fuente de datos (sensores, datasets públicos, híbrido, etc.). \\
+D1 & \texttt{D1\_Preprocessing} & Pasos de preprocesamiento aplicados antes del modelado. \\
+
+D2 & \texttt{D2\_Fuzzy\_approach\_type} & Tipo de enfoque difuso implementado (Mamdani, Sugeno, ANFIS, etc.). \\
+D2 & \texttt{D2\_Fuzzy\_role} & Rol del componente difuso en la solución (central, comparativo, complementario). \\
+D2 & \texttt{D2\_Model\_size\_values} & Tamaño/estructura del modelo (entradas, reglas, capas, estados). \\
+D2 & \texttt{D2\_Optimization\_values} & Parámetros o métodos de optimización/entrenamiento reportados. \\
+D2 & \texttt{D2\_Inference\_purpose} & Propósito funcional de la inferencia difusa (estimación, clasificación, alerta, ruta). \\
+D2 & \texttt{D2\_Rule\_base\_definition} & Forma de definición de la base de reglas. \\
+D2 & \texttt{D2\_Membership\_functions} & Tipo de funciones de pertenencia y representación lingüística. \\
+D2 & \texttt{D2\_Defuzzification\_method} & Método de defuzzificación reportado. \\
+D2 & \texttt{D2\_Risk\_modeling\_approach} & Enfoque para traducir inferencia a riesgo o severidad. \\
+D2 & \texttt{D2\_Interpretability\_elements} & Elementos explícitos de interpretabilidad (reglas, tablas, gráficos, etc.). \\
+
+D3 & \texttt{D3\_Platform\_architecture} & Arquitectura de plataforma/sistema de monitoreo. \\
+D3 & \texttt{D3\_Processing\_mode} & Modo de procesamiento (tiempo real, casi real, híbrido, offline). \\
+D3 & \texttt{D3\_Communication\_and\_tech} & Tecnologías de comunicación, software y servicios usados. \\
+D3 & \texttt{D3\_Visualization\_alerting} & Mecanismos de visualización y alertamiento implementados. \\
+D3 & \texttt{D3\_Deployment\_context} & Contexto de despliegue (indoor/outdoor, urbano, industrial, etc.). \\
+D3 & \texttt{D3\_Hardware\_and\_sensors} & Hardware y sensores utilizados en implementación/medición. \\
+D3 & \texttt{D3\_Real\_time\_characteristics} & Características operativas de comportamiento en tiempo real. \\
+
+Eval & \texttt{Eval\_Metrics\_reported} & Métricas de desempeño reportadas por el estudio. \\
+Eval & \texttt{Eval\_Reported\_values} & Valores numéricos de las métricas reportadas. \\
+Eval & \texttt{Eval\_Comparator\_values} & Resultados de comparación con baseline/modelos alternativos. \\
+Eval & \texttt{Eval\_Improvement\_reported} & Mejoras cuantificadas o declaradas frente a referencias. \\
+Eval & \texttt{Eval\_Dataset\_size\_values} & Tamaño del dataset, muestras o registros usados en evaluación. \\
+Eval & \texttt{Eval\_Data\_split\_values} & Esquema de partición de datos para entrenamiento/validación/prueba. \\
+Eval & \texttt{Eval\_Key\_results\_summary} & Síntesis técnica breve de resultados principales del estudio. \\
+
+Synth & \texttt{Main\_contribution\_reported} & Contribución principal declarada para síntesis narrativa. \\
+Synth & \texttt{Main\_limitation\_reported} & Limitación principal reportada para discusión crítica. \\
+Synth & \texttt{Evidence\_D1\_pages} & Páginas de soporte para campos D1. \\
+Synth & \texttt{Evidence\_D2\_pages} & Páginas de soporte para campos D2. \\
+Synth & \texttt{Evidence\_D3\_pages} & Páginas de soporte para campos D3. \\
+Synth & \texttt{Evidence\_Eval\_pages} & Páginas de soporte para resultados de evaluación. \\
+Synth & \texttt{QA\_Quality\_band} & Banda de calidad metodológica del estudio (Alta/Media/Baja). \\
+Synth & \texttt{QA\_Score\_percent} & Puntaje porcentual de calidad metodológica. \\
+Synth & \texttt{Sensitivity\_set} & Etiqueta de inclusión para análisis de sensibilidad de síntesis. \\
+\end{longtblr}

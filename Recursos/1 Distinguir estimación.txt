@@ -1,0 +1,61 @@
+1. Distinguir estimación (valores numéricos), clasificación (clases AQI) y predicción temporal
+     (horizonte t+h).
+  2. Pipeline propuesto:
+      1. Ingesta y preprocesamiento de datos de contaminantes.
+      2. Modelado predictivo de concentraciones contaminantes (regresión ML clásica o ANFIS).
+      3. Inferencia difusa para clasificar nível AQI en horizonte t+h.
+      4. Salida con grados de pertenencia o probabilidades.
+  3. Convivencia de lógica difusa en la literatura:
+      - Clasificadores 100% difusos para AQI actual (ej. A009, A165, A167).
+      - Modelos híbridos: predicción con ARIMA/KF + fusión difusa (A149), ANFIS para predicción
+        contaminantes y AQI (A135, A144, A138).
+      - Control en tiempo real con alertas difusas (A114, A142).
+      - Arquitecturas edge-cloud para procesamiento cercano a IoT.
+  4. Recomendación específica:
+      - Usar enfoque de dos niveles: primero predecir contaminantes con ML (LightGBM, RF) o ANFIS.
+      - Luego clasificar AQI usando base de reglas difusas Mamdani para buena interpretabilidad.
+      - Para predicción numérica continua (opcional), aplicar defuzzificación Sugeno/TSK (promedio
+        ponderado).
+      - Para clasificación final (nivel AQI), Mamdani + método centroid.
+  5. Métricas sugeridas:
+      - Para regresión: MAE, RMSE, MAPE, R².
+      - Para clasificación: exactitud, F1, matriz de confusión por clase.
+  6. Evaluar degradación al aumentar horizonte de predicción: 1h, 6h, 12h, 24h.
+  7. Protocolo: división temporal y validación cruzada con separación geográfica (ciudades) para
+     robustez.
+
+  Se recomienda este enfoque híbrido por su balance entre precisión, interpretabilidad y posibilidad
+  de adaptación al contexto local con sensores IoT.
+
+  Referencias a artículos: A135, A144, A149, A157, A178, entre otros, respaldan esta arquitectura y
+  combinación de lógica difusa con modelos predictivos.
+
+• Buena dirección. Para tu objetivo, lo más sólido es un esquema híbrido en dos etapas:
+
+  1. Predicción de contaminantes a horizonte (t+h) (regresión supervisada).
+  2. Clasificación de nivel AQI con tu sistema de lógica difusa usando esos valores predichos.
+
+  Así conviven bien predicción + interpretación.
+
+  Según los PDFs/artículos que ya trabajamos, la convivencia más común es:
+
+  1. Fuzzy directo para clasificar nivel/riesgo actual (interpretabilidad alta).
+  2. Predicción + fuzzy: primero estiman variables (ARIMA/ML/ANFIS), luego fuzzy convierte a índice/
+     clase.
+  3. Fuzzy optimizado (GA/PSO/DE) para mejorar precisión, con costo computacional mayor.
+  4. Monitoreo en tiempo real + alertas con reglas difusas para decisión operativa.
+
+  Para tu propuesta te recomiendo:
+
+  1. Usar Mamdani para la parte de clasificación de nivel AQI (más explicable para informe).
+  2. Incluir un baseline de regresión supervisada (p. ej., RF/XGBoost/SVR) para contaminantes.
+  3. Comparar también con una variante ANFIS/TSK si quieres salida numérica continua de AQI antes de
+     discretizar clase.
+  4. Evaluar por horizonte (1h, 6h, 12h, 24h), porque ya viste degradación al aumentar horizonte.
+  5. Reportar dos grupos de métricas:
+      - Regresión: MAE, RMSE, MAPE, (R^2).
+      - Clasificación AQI: Accuracy + F1 macro + matriz de confusión.
+
+  Si quieres, te redacto ese bloque como subsección de marco teórico “Predicción y clasificación
+  difusa de AQI” listo para pegar en LaTeX.
+

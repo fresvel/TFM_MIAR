@@ -1,0 +1,25 @@
+\section{Metodología de evaluación de calidad de estudios primarios}
+\label{sec:qa_metodologia}
+
+\subsubsection{Evaluación de Calidad}
+
+La evaluación de calidad se fundamentó en el apartado 6.3 de Kitchenham (2007), aplicando su recomendación de seleccionar los ítems en función de las preguntas de investigación. Cada pregunta del checklist fue contrastada con la pregunta principal de la revisión y con las directrices D1--D3, conservando únicamente aquellos criterios que aportaban evidencia relevante sobre validez metodológica y robustez de resultados en el contexto de monitoreo de calidad del aire con lógica difusa.
+
+El procedimiento incluyó una tipificación previa de los estudios. Cada artículo incluido por texto completo se clasificó como \texttt{Qualitative}, \texttt{Quantitative} o \texttt{Mixed}. Para los estudios con componente cuantitativo, se realizó una subclasificación en: cuantitativo empírico general, correlacional/observacional, \textit{survey} o experimento. El checklist se aplicó de manera condicionada a esta tipificación, evaluando cada estudio solo con los ítems pertinentes a su tipo y subtipo.
+
+El instrumento final se construyó a partir del bloque cuantitativo de Kitchenham (preguntas comunes y específicas por subtipo), aplicando tres criterios de selección: relevancia para la pregunta de investigación, capacidad de identificar riesgo de sesgo (diseño, ejecución, análisis y conclusiones) y aplicabilidad al corpus final. El resultado fue un instrumento de 30 ítems, organizados en un núcleo común y componentes específicos para estudios experimentales, correlacionales/observacionales y cuantitativos empíricos sin subtipo específico. Los ítems asociados a \textit{survey} se excluyeron, ya que no hubo estudios de ese tipo en la muestra.
+
+La unidad de evaluación fue el estudio primario incluido por texto completo. Dado que el corpus final estuvo compuesto exclusivamente por estudios cuantitativos, no se aplicó el checklist cualitativo. La codificación utilizó la escala \texttt{Yes}, \texttt{Partial}, \texttt{No}, \texttt{Unclear} y \texttt{N/A}. La categoría \texttt{Unclear} se empleó cuando la información reportada era insuficiente para decidir, y \texttt{N/A} únicamente cuando el criterio no aplicaba al subtipo del estudio. Cada decisión se respaldó con evidencia textual y referencia de página (formato \texttt{p.X} o \texttt{p.X-p.Y}) para garantizar trazabilidad.
+
+La puntuación agregada se calculó mediante ponderación explícita (\texttt{Yes}=1, \texttt{Partial}=0.5, \texttt{Unclear}=0.25, \texttt{No}=0), excluyendo los \texttt{N/A} del denominador:
+\begin{equation}
+\textit{Score}_{raw} = 1\cdot n_{Yes} + 0.5\cdot n_{Partial} + 0.25\cdot n_{Unclear}
+\end{equation}
+\begin{equation}
+\textit{Items}_{aplicables} = 30 - n_{N/A}
+\end{equation}
+\begin{equation}
+\textit{Score}_{\%} = \left( \frac{\textit{Score}_{raw}}{\textit{Items}_{aplicables}} \right)\times 100
+\end{equation}
+
+Con base en este porcentaje se definieron tres niveles de calidad: \textbf{Alta} (\(\textit{Score}_{\%}\geq 80\)), \textbf{Media} (\(60 \leq \textit{Score}_{\%} < 80\)) y \textbf{Baja} (\(\textit{Score}_{\%}<60\)). La evaluación no se utilizó como criterio de exclusión automática, sino como insumo para interpretar la heterogeneidad de los hallazgos, identificar posibles sesgos y realizar análisis de sensibilidad. De este modo, la calidad orienta la interpretación de la evidencia sin reemplazar el análisis sustantivo de los resultados.

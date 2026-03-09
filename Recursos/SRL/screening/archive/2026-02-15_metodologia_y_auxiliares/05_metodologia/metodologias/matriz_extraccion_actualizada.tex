@@ -1,0 +1,29 @@
+% Requiere:
+% \usepackage{tabularray}
+% \usepackage{caption}
+
+\begin{center}
+\begin{longtblr}
+[entry=none,
+ label={tab:matriz_extraccion_actualizada},
+ caption={Matriz conceptual de extracción de datos alineada con la pregunta principal y las directrices D1--D3.}]{
+  colspec = {X[1,j,m] X[3,j,m] X[3,j,m] X[0.7,j,m]},
+  rowhead = 1,
+  row{1} = {font=\bfseries},
+  hlines
+}
+Bloque & Campos representativos & Propósito analítico & Directriz \\
+
+Metadatos del estudio & \texttt{Article\_ID}, \texttt{Title}, \texttt{Year}, \texttt{Venue}, \texttt{DOI\_or\_URL}, \texttt{Study\_type\_quant}, \texttt{Country\_or\_region} & Identificar el contexto bibliográfico, tipología del estudio y trazabilidad de la fuente primaria para análisis temporal y comparativo. & Transversal \\
+
+Datos y variables de entrada & \texttt{D1\_Pollutants\_inputs}, \texttt{D1\_Env\_variables\_inputs}, \texttt{D1\_Target\_output}, \texttt{D1\_Sampling\_frequency\_values}, \texttt{D1\_Time\_window\_values}, \texttt{D1\_Data\_source\_type}, \texttt{D1\_Preprocessing} & Determinar qué contaminantes y variables se usan con mayor frecuencia, cómo se capturan y cómo se preparan antes del modelado. & D1 \\
+
+Diseño del sistema difuso & \texttt{D2\_Fuzzy\_approach\_type}, \texttt{D2\_Fuzzy\_role}, \texttt{D2\_Model\_size\_values}, \texttt{D2\_Inference\_purpose}, \texttt{D2\_Rule\_base\_definition}, \texttt{D2\_Membership\_functions}, \texttt{D2\_Defuzzification\_method}, \texttt{D2\_Optimization\_values} & Caracterizar el tipo de inferencia difusa, su centralidad en el estudio y las decisiones de diseño que impactan interpretabilidad y desempeño. & D2 \\
+
+Plataforma y operación en tiempo real & \texttt{D3\_Platform\_architecture}, \texttt{D3\_Processing\_mode}, \texttt{D3\_Communication\_and\_tech}, \texttt{D3\_Visualization\_alerting}, \texttt{D3\_Deployment\_context}, \texttt{D3\_Hardware\_and\_sensors}, \texttt{D3\_Real\_time\_characteristics} & Describir cómo se implementa la solución en infraestructura de monitoreo, su modo de procesamiento y su nivel real de operación continua. & D3 \\
+
+Resultados y desempeño & \texttt{Eval\_Metrics\_reported}, \texttt{Eval\_Reported\_values}, \texttt{Eval\_Comparator\_values}, \texttt{Eval\_Improvement\_reported}, \texttt{Eval\_Dataset\_size\_values}, \texttt{Eval\_Data\_split\_values}, \texttt{Eval\_Key\_results\_summary} & Comparar rendimiento entre enfoques, identificar métricas dominantes y sostener análisis de eficacia y transferibilidad entre contextos. & D1--D3 \\
+
+Trazabilidad y robustez para síntesis & \texttt{Main\_contribution\_reported}, \texttt{Main\_limitation\_reported}, \texttt{Evidence\_D1\_pages}, \texttt{Evidence\_D2\_pages}, \texttt{Evidence\_D3\_pages}, \texttt{Evidence\_Eval\_pages}, \texttt{QA\_Quality\_band}, \texttt{QA\_Score\_percent}, \texttt{Sensitivity\_set} & Vincular hallazgos con evidencia verificable por página e integrar calidad metodológica en el análisis de sensibilidad de la síntesis. & Transversal \\
+\end{longtblr}
+\end{center}

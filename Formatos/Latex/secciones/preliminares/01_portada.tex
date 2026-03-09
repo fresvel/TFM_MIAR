@@ -1,0 +1,90 @@
+% PORTADA
+% Variables (editar aqui)
+\newcommand{\PortadaTitulo}{Plataforma de Monitoreo de Calidad del Aire en Tiempo Real Basado en Lógica Difusa}
+\newcommand{\PortadaTitulacion}{Master Universitario en Inteligencia Artificial}
+\newcommand{\PortadaAlumno}{Velasteguí Izurieta, Homero Javier}
+\newcommand{\PortadaDni}{1804326534}
+\newcommand{\PortadaConvocatoria}{Tercera}
+\newcommand{\PortadaCursoAcademico}{2025 -- 2026}
+\newcommand{\PortadaDirector}{Msc. Altamiranda Junior PhD.}
+\newcommand{\PortadaFecha}{\FechaActualPortada}
+
+% Ajustes de layout
+\newcommand{\PortadaTituloWidth}{15.50cm}
+\newcommand{\PortadaColAX}{2.92cm}
+\newcommand{\PortadaColBX}{8.30cm}
+\newcommand{\PortadaColCX}{14.14cm}
+\newcommand{\PortadaDatosY}{-21.33cm}
+\newcommand{\PortadaColAWidth}{5.38cm}
+\newcommand{\PortadaColBWidth}{5.84cm}
+\newcommand{\PortadaColCWidth}{5.38cm}
+\newcommand{\PortadaDatosHeight}{3.0cm}
+\newcommand{\PortadaDatosInnerSep}{6pt}
+\newcommand{\PortadaBarWidth}{0.25cm}
+\newcommand{\PortadaDatosFont}{\fontsize{11}{13}\selectfont}
+\newcommand{\PortadaFechaFont}{\fontsize{9}{11}\selectfont}
+
+% Fecha actual en formato "DD Mes YYYY"
+\newcommand{\PortadaMesActual}{%
+  \ifcase\month\or Enero\or Febrero\or Marzo\or Abril\or Mayo\or Junio\or Julio\or Agosto\or Septiembre\or Octubre\or Noviembre\or Diciembre\fi}
+\newcommand{\FechaActualPortada}{\number\day\space \PortadaMesActual\space \number\year}
+
+\begin{titlepage}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture, overlay]
+  % Fondo
+  \node[anchor=center] at (current page.center)
+    {\includegraphics[width=\paperwidth,height=\paperheight]{portada-bg.png}};
+
+  % Título
+  \node[anchor=north west, text width=\PortadaTituloWidth, align=left] at ([xshift=2.61cm,yshift=-17.21cm]current page.north west)
+    {\fontsize{26}{31}\selectfont\bfseries\color{black}\raggedright \PortadaTitulo};
+
+  % Bloque de datos con rectángulos verticales al inicio de cada columna
+  \fill[white] ([xshift=\PortadaColAX,yshift=\PortadaDatosY]current page.north west)
+    rectangle ++(\PortadaBarWidth,-\PortadaDatosHeight);
+  \fill[white] ([xshift=\PortadaColBX,yshift=\PortadaDatosY]current page.north west)
+    rectangle ++(\PortadaBarWidth,-\PortadaDatosHeight);
+  \fill[white] ([xshift=\PortadaColCX,yshift=\PortadaDatosY]current page.north west)
+    rectangle ++(\PortadaBarWidth,-\PortadaDatosHeight);
+
+  \node[
+    anchor=north west,
+    text width=\dimexpr\PortadaColAWidth-\PortadaBarWidth-2\PortadaDatosInnerSep\relax,
+    inner sep=\PortadaDatosInnerSep,
+    align=left
+  ] at ([xshift=\dimexpr\PortadaColAX+\PortadaBarWidth\relax,yshift=\PortadaDatosY]current page.north west)
+    {\PortadaDatosFont\color{white}\raggedright
+    Titulación:\\
+    \PortadaTitulacion\\[4pt]
+    Curso académico\\
+    \PortadaCursoAcademico};
+
+  \node[
+    anchor=north west,
+    text width=\dimexpr\PortadaColBWidth-\PortadaBarWidth-2\PortadaDatosInnerSep\relax,
+    inner sep=\PortadaDatosInnerSep,
+    align=left
+  ] at ([xshift=\dimexpr\PortadaColBX+\PortadaBarWidth\relax,yshift=\PortadaDatosY]current page.north west)
+    {\PortadaDatosFont\color{white}\raggedright
+    Alumno/a: \PortadaAlumno\\[4pt]
+    D.N.I: \PortadaDni\\[4pt]
+    Director/a de TFM: \PortadaDirector};
+
+  \node[
+    anchor=north west,
+    text width=\dimexpr\PortadaColCWidth-\PortadaBarWidth-2\PortadaDatosInnerSep\relax,
+    inner sep=\PortadaDatosInnerSep,
+    align=left
+  ] at ([xshift=\dimexpr\PortadaColCX+\PortadaBarWidth\relax,yshift=\PortadaDatosY]current page.north west)
+    {\PortadaDatosFont\color{white}\raggedright
+    Convocatoria:\\
+    \PortadaConvocatoria};
+
+  % Fecha
+  \node[anchor=north west] at ([xshift=2.61cm,yshift=-27.91cm]current page.north west)
+    {\PortadaFechaFont\color{white} \PortadaFecha};
+\end{tikzpicture}
+
+\end{titlepage}

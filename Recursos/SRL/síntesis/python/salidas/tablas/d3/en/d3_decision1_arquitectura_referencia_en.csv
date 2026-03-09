@@ -1,0 +1,5 @@
+﻿Architecture_option,Included_categories,k,n,%,Decision_reading
+Edge/Cloud,IoT_Edge_Cloud; IoT_Fog_Layered,7,19,36.8,Highest-coverage family; primary reference for baseline design.
+IoT_2Tier,IoT_2Tier,5,19,26.3,Second dominant pattern; stable alternative for local deployments.
+Alternativas,Sensor_Node_External_Analytics; Standalone_Node_PC; WSN_Pipeline,5,19,26.3,"Contextual patterns (pipeline, node+external analytics, standalone)."
+NR,NR,2,19,10.5,Insufficient structural detail to classify architecture.

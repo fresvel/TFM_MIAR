@@ -1,0 +1,809 @@
+\section{Fundamentación Teórica }
+\label{sec:resultados_revision}
+
+Este apartado presenta los \textbf{resultados obtenidos a partir del proceso de revisión sistemática}, estructurada mediante el modelo PICo y el protocolo PRISMA. El énfasis se sitúa en los hallazgos derivados del análisis del corpus final de estudios seleccionados.
+
+\subsection{Revisión de Literatura}
+
+\subsubsection{Perfil del corpus y alcance de la evidencia}
+La identificación inicial recuperó 240 registros en total, distribuidos en Scopus (105), IEEE Xplore (90) y Web of Science (45). En la depuración de duplicados en Rayyan se detectaron 119 registros duplicados; una parte fue resuelta automáticamente por la plataforma y los casos pendientes se resolvieron manualmente. Como resultado, se conservaron 57 registros y se eliminaron 62 duplicados, aplicando un criterio de priorización de fuente (Scopus, luego Web of Science y finalmente IEEE Xplore) cuando un mismo estudio aparecía en múltiples bases.
+Tras la deduplicación, se cribaron 178 registros: 129 se excluyeron en título/resumen y 49 pasaron a búsqueda de texto completo. De estos 49, se obtuvieron 26 reportes y 23 no se recuperaron (incluido un registro retractado). En la fase de elegibilidad de texto completo se excluyeron 7 estudios y se incluyeron 19 para extracción y síntesis. En esta etapa, la base operativa corresponde al dataset de extracción consolidado, con 48 variables por estudio.
+
+El flujo de identificación, cribado, elegibilidad e inclusión se resume en el diagrama PRISMA de la Figura~\ref{fig:prisma_srl}.
+
+En la Figura~\ref{fig:perfil_corpus_subfig}\subref{fig:sub_perfil_anual} la distribución anual se concentra entre 2021 y 2026, con mayor densidad en 2022. En \subref{fig:sub_perfil_tipo} predominan los estudios experimentales y correlacionales/observacionales, mientras que los estudios cuantitativos empíricos sin subtipo específico son minoritarios.
+
+Esta configuración sugiere un corpus con evidencia reciente y de corte principalmente empírico, adecuado para caracterización comparativa de prácticas de implementación y evaluación en el periodo analizado.
+
+La Figura~\ref{fig:perfil_corpus_subfig}\subref{fig:sub_perfil_retrieval} muestra que, dentro de los 49 registros enviados a búsqueda de texto completo, el grupo mayoritario corresponde a reportes obtenidos, seguido por los registros en estado solicitado; los casos no recuperados y retractados son minoritarios. Esto indica una cobertura documental suficiente para sostener la síntesis, con una fracción de registros todavía dependiente de recuperación.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{perfil/prisma.pdf}
+\caption{Diagrama de flujo PRISMA 2020 del proceso de selección de estudios. Elaboración propia.}
+\label{fig:prisma_srl}
+\end{figure}
+
+
+
+En \subref{fig:sub_perfil_calidad} se observa una distribución equilibrada entre bandas alta y media, con baja presencia de estudios en banda baja. En términos de significado metodológico, este patrón sugiere un nivel de confianza intermedio-alto en el conjunto, pero con necesidad de mantener control de sesgo por heterogeneidad de diseño.
+
+En la Figura~\ref{fig:perfil_nr_campos} se identifican campos con mayor frecuencia de \texttt{NR}, lo que evidencia variabilidad en la completitud de reporte entre dimensiones del instrumento. Su implicación operativa es que la comparación entre estudios debe explicitar denominadores por variable y distinguir entre ausencia de información reportada y ausencia del fenómeno evaluado.
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{perfil/fig02_distribucion_anual.png}
+\caption{Distribución anual de estudios incluidos.}
+\label{fig:sub_perfil_anual}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{perfil/fig03_tipo_estudio.png}
+\caption{Tipos de estudio reportados.}
+\label{fig:sub_perfil_tipo}
+\end{subfigure}
+
+\vspace{0.7em}
+
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{perfil/fig04_estado_retrieval.png}
+\caption{Estado de recuperación de texto completo.}
+\label{fig:sub_perfil_retrieval}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{perfil/fig05_bandas_calidad.png}
+\caption{Bandas de calidad metodológica.}
+\label{fig:sub_perfil_calidad}
+\end{subfigure}
+\caption{Perfil descriptivo del corpus incluido (n=19) y de la trazabilidad de recuperación (n=49). Elaboración propia.}
+\label{fig:perfil_corpus_subfig}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{perfil/fig07_nr_campos_criticos.png}
+\caption{Campos analíticos con mayor frecuencia de NR en el dataset de extracción. Elaboración propia.}
+\label{fig:perfil_nr_campos}
+\end{figure}
+
+
+
+
+
+\subsubsection{Datos y Variables para la Evaluación de la Calidad del Aire (D1)}
+
+En esta sección se analiza qué contaminantes atmosféricos y variables ambientales se emplean con mayor frecuencia para evaluar la calidad del aire en plataformas de monitoreo en tiempo real. El énfasis se sitúa en la configuración de entradas, su relación con los objetivos de salida y el grado de comparabilidad entre estudios.
+
+El material particulado fino (PM$_{2.5}$) y el monóxido de carbono (CO) presentan la mayor frecuencia de uso dentro del corpus analizado, cada uno reportado en ocho estudios. Esta recurrencia es consistente con el hecho de que PM$_{2.5}$ aparece como variable central en tareas de pronóstico y predicción específica de concentración \cite{A135}, \cite{A157}, \cite{A144}, así como en escenarios de ajuste y calibración contra estación de referencia \cite{A084}, mientras que CO se emplea de forma destacada en modelos orientados a clasificación y severidad de AQI \cite{A009}, \cite{A168} y en enfoques combinados para categorizar IAQ/AQI \cite{A167}. Les siguen el dióxido de carbono (CO$_2$) y el material particulado grueso (PM$_{10}$), con frecuencias intermedias. 
+
+En términos de diseño de entradas, CO$_2$ suele integrarse en configuraciones multivariadas junto con PM y CO para caracterización del estado de aire interior \cite{A136} o para predicción conjunta con material particulado y gases \cite{A135}, \cite{A138}; de forma análoga, PM$_{10}$ aparece con fuerza en esquemas de forecasting \cite{A138} y en combinaciones amplias de contaminantes para predicción de AQI \cite{A028} o de niveles de contaminante e índices derivados \cite{A178}. También se observa una presencia relevante de compuestos orgánicos volátiles (TVOC) y dióxido de azufre (SO$_2$), mientras que NO$_2$ aparece en un número moderado de trabajos. En particular, TVOC se asocia a objetivos explícitos de predicción de VOC y soporte de decisión operativa (p.\,ej., reemplazo de filtros) \cite{A087} o a la construcción de índices de calidad interior basados en lógica difusa \cite{A149}, mientras que SO$_2$ y NO$_2$ tienden a integrarse en modelos multigás orientados a reconstrucción o predicción de AQI y evaluación conjunta de niveles de contaminantes \cite{A001}, \cite{A028}. Otros contaminantes, como O$_3$, NOx, CH$_4$, NH$_3$, humo, partículas de polvo y conteos específicos de partículas ultrafinas, se incorporan de forma puntual. Esta incorporación minoritaria responde a casos más específicos: humo y polvo para clasificación ambiental con actuación (control de AC/alarma) \cite{A114}; CH$_4$ como gas adicional en clasificación/alerta \cite{A165}; y conteo de partículas ultrafinas como variable especializada para clasificación de riesgo de contaminación (p.\,ej., quirófano) \cite{A142}.
+
+La Tabla~\ref{tab:d1_resumen_frecuencias} consolida esta lectura de frecuencia de entradas y confirma la concentración en un conjunto reducido de contaminantes, con destaque de PM$_{2.5}$, CO, CO$_2$ y PM$_{10}$. Como complemento relacional, la Figura~\ref{fig:d1_frecuencia_y_cooc_entradas} muestra que estos contaminantes suelen aparecer combinados dentro de configuraciones similares de modelado, lo que indica una tendencia hacia arquitecturas relativamente homogéneas en las plataformas analizadas. Este patrón es coherente con estudios que operan con \emph{paquetes} de contaminantes (PM$_{2.5}$/PM$_{10}$/CO/CO$_2$/NO$_2$/TVOC) para tareas de predicción o pronóstico \cite{A135}, \cite{A138} o con configuraciones multigás para predicción de AQI \cite{A028}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{d1/fig05_coocurrencia_top.png}
+\caption{Coocurrencia entre contaminantes y variables ambientales en los estudios incluidos.}
+\label{fig:d1_frecuencia_y_cooc_entradas}
+\end{figure}
+
+La Figura~\ref{fig:d1_cooc_y_dimensionalidad}\subref{fig:sub_cooc_contaminantes} permite observar la estructura interna de combinaciones entre contaminantes. La coocurrencia más consistente se concentra en el par PM$_{10}$--PM$_{2.5}$ y en combinaciones que integran CO y CO$_2$, patrón alineado con diseños multigás orientados a pronóstico o estimación de AQI/IAQ en propuestas como \cite{A135}, \cite{A136}, \cite{A138} y \cite{A028}. En contraste, entradas como NOx/NH$_3$/humo aparecen en configuraciones puntuales de clasificación en contextos específicos \cite{A009}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d1/fig08_coocurrencia_contaminantes.png}
+\caption{Coocurrencia entre contaminantes atmosfericos.}
+\label{fig:sub_cooc_contaminantes}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d1/fig09_numero_contaminantes_por_estudio.png}
+\caption{Numero de contaminantes por estudio.}
+\label{fig:sub_num_contaminantes_por_estudio}
+\end{subfigure}
+\caption{Estructura de combinaciones y dimensionalidad de entradas contaminantes en los estudios incluidos.}
+\label{fig:d1_cooc_y_dimensionalidad}
+\end{figure}
+
+En términos de dimensionalidad de entrada, la Figura~\ref{fig:d1_cooc_y_dimensionalidad}\subref{fig:sub_num_contaminantes_por_estudio} muestra predominio de configuraciones de baja a media complejidad (1 y 2 contaminantes), junto con un subconjunto menor de diseños multivariados amplios (4 a 6 contaminantes). Los casos con seis contaminantes \cite{A028}, \cite{A135} se asocian a objetivos de predicción más integrales, mientras que los casos de un contaminante tienden a objetivos focalizados de calibración o monitoreo específico (por ejemplo PM$_{2.5}$ o TVOC) \cite{A084}, \cite{A087}, \cite{A144}, \cite{A157}. Este contraste aporta un criterio operativo para la fase de diseño: definir la complejidad de entradas en función del objetivo funcional del módulo.
+
+La Tabla~\ref{tab:d1_resumen_frecuencias} consolida los conteos y porcentajes (k/n/\%) de las variables de entrada más reportadas.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d1/d1_tabla_resumen_es.tex}
+
+Las variables ambientales cumplen un papel de soporte transversal en estos sistemas. La temperatura y la humedad son, con diferencia, las más utilizadas, superando ampliamente al resto de variables contextuales. Su incorporación sistemática sugiere que los modelos consideran la influencia de condiciones microclimáticas básicas en la dinámica de los contaminantes. Esta evidencia se refuerza con ejemplos donde temperatura y humedad acompañan explícitamente configuraciones multigás para reconstrucción/predicción de AQI \cite{A001}, \cite{A028} y modelos de pronóstico de material particulado (PM$_{2.5}$ y PM$_{10}$) \cite{A135}, \cite{A138}. En aplicaciones interiores, dichas variables también se mantienen como soporte para evaluar el estado del aire o índices específicos de IAQ \cite{A136}, \cite{A149}.
+
+En contraste, variables como presión atmosférica, radiación UV, velocidad del viento y atributos temporales (día de la semana y hora del día) presentan una frecuencia considerablemente menor. La presión y la UV aparecen asociadas a diseños puntuales de entrada, típicamente en modelos de predicción de AQI con múltiples contaminantes \cite{A028} o en escenarios de calibración/ajuste donde la consistencia temporal y las condiciones de medición son críticas \cite{A084}. El viento se reporta como covariable adicional únicamente en configuraciones específicas \cite{A001}. Las variables temporales se concentran en modelos de predicción de PM$_{2.5}$, donde se explicita su uso como parte del diseño de características para capturar patrones horarios y semanales \cite{A157}. El análisis de coocurrencia confirma que PM$_{2.5}$, CO y CO$_2$ se combinan mayoritariamente con temperatura y humedad, reforzando el carácter estructural de estas variables ambientales dentro de los esquemas de monitoreo en tiempo real.
+
+La relación entre variables ambientales y clase de salida permite precisar cómo estas variables de soporte se distribuyen según el objetivo del modelo. La Figura~\ref{fig:variables_ambientales_salida} muestra que la temperatura mantiene una presencia constante en las principales clases de salida, particularmente en estimación de AQI/IAQ, predicción de contaminantes y clasificación, donde alcanza la mayor frecuencia relativa. La humedad presenta un comportamiento similar, con alta recurrencia en estimación y predicción, y presencia moderada en clasificación. Esta distribución es compatible con el hecho de que las salidas dominantes del corpus incluyen predicción de AQI \cite{A009}, \cite{A028}, reconstrucción/estimación de índices \cite{A001}, \cite{A167}, pronóstico de PM \cite{A135}, \cite{A138}, \cite{A157} y clasificación operativa con actuadores/alertas \cite{A114}, \cite{A165}.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d1/fig02_ambientales_vs_salida.png}
+\caption{Frecuencia de variables ambientales según clase de salida del modelo.}
+\label{fig:variables_ambientales_salida}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d1/fig07_relacion_ambiente_vs_salida.png}
+\caption{Mapa de calor de la relación entre variables ambientales y tipo de salida.}
+\label{fig:relacion_ambientales_salida}
+\end{subfigure}
+\caption{Distribución y coocurrencia de variables ambientales en función de la clase de salida en plataformas de monitoreo en tiempo real.}
+\label{fig:ambientales_por_salida}
+\end{figure}
+
+En los modelos orientados a predicción de contaminantes, ambas variables —temperatura y humedad— aparecen de forma conjunta, lo que confirma su papel estructural dentro de arquitecturas enfocadas en modelado dinámico. Este comportamiento es consistente con propuestas de pronóstico de PM$_{2.5}$ y PM$_{10}$ \cite{A135}, \cite{A138}, \cite{A157} y con predicción de VOC en esquemas que integran variables microclimáticas \cite{A087}. En tareas de calibración de contaminantes y evaluación de riesgo de contaminación, su frecuencia disminuye, aunque continúan presentes como variables de ajuste contextual; por ejemplo, en ajustes de PM$_{2.5}$ contra estación de referencia \cite{A084} o en clasificación de riesgo basada en conteo de partículas \cite{A142}.
+
+Las demás variables ambientales muestran un uso considerablemente más específico. La presión atmosférica se asocia principalmente a tareas de estimación y calibración, mientras que radiación UV y velocidad del viento aparecen únicamente vinculadas a escenarios puntuales de estimación/predicción de AQI \cite{A028} o reconstrucción de AQI con variables meteorológicas adicionales \cite{A001}. Las variables temporales (día de la semana y hora del día) se concentran exclusivamente en modelos de predicción de contaminantes, lo que sugiere su incorporación en enfoques con componente temporal explícito \cite{A157}. El mapa de calor de la Figura~\ref{fig:relacion_ambientales_salida} refuerza esta interpretación al evidenciar que la mayor intensidad de coocurrencia se concentra en temperatura y humedad frente a las tres clases de salida predominantes: estimación de AQI/IAQ, predicción de contaminantes y clasificación. Las demás variables presentan valores dispersos y de baja frecuencia, confirmando que su uso responde a necesidades metodológicas puntuales más que a una práctica generalizada.
+
+La Figura~\ref{fig:ambientales_por_salida} resume de forma conjunta la distribución y coocurrencia de variables ambientales por clase de salida.
+
+El análisis por clase de salida permite observar cómo los contaminantes se distribuyen según el objetivo funcional de las plataformas. La Figura~\ref{fig:contaminantes_por_salida} muestra que en los modelos orientados a clasificación AQI/IAQ existe una fuerte concentración en CO, que alcanza la mayor frecuencia dentro de esta categoría, acompañado de manera secundaria por CO$_2$ y PM$_{2.5}$. Esta lectura es consistente con propuestas donde la salida es clasificación o severidad de AQI, e incluso soporte a rutas menos contaminadas, basadas en CO y variables microclimáticas \cite{A168}, o clasificación con alertas \cite{A165}. 
+
+En los modelos de predicción de contaminantes, el comportamiento cambia: PM$_{2.5}$ se convierte en la variable dominante, seguido por TVOC, CO$_2$, PM$_{10}$ y NO$_2$. Esta configuración se corresponde con trabajos de forecasting de PM$_{2.5}$ que integran además gases y VOC como entradas \cite{A135} y con pronóstico específico de PM$_{10}$ usando combinaciones de PM, CO$_2$ y TVOC \cite{A138}. Para estimación de AQI/IAQ se observa una distribución más balanceada. CO, CO$_2$, TVOC, SO$_2$ y NO$_2$ presentan frecuencias similares, lo que es compatible con enfoques donde el objetivo es reconstruir/estimar un índice compuesto a partir de múltiples contaminantes \cite{A001}, \cite{A028}, \cite{A149}, \cite{A178}. En contraste, las tareas de calibración muestran una focalización prácticamente exclusiva en PM$_{2.5}$, coherente con estudios cuyo objetivo explícito es el ajuste de concentración y calibración contra referencia \cite{A084}. La evaluación de riesgo de contaminación aparece asociada de forma puntual a variables específicas como el conteo de partículas ultrafinas, que define grupos de riesgo \cite{A142}.
+
+El mapa de calor de la Figura~\ref{fig:relacion_salida_contaminantes} confirma estos patrones al evidenciar mayores intensidades en las combinaciones CO–clasificación y PM$_{2.5}$–predicción. También se observa que la estimación de índices presenta coocurrencias moderadas distribuidas entre varios contaminantes, en lugar de depender de uno solo. Las clases de salida menos frecuentes muestran valores dispersos y bajos, lo que coincide con objetivos más especializados, como el índice híbrido LoP/m-AQI basado en contaminantes específicos (p.\,ej., benceno) \cite{A178} o soporte de decisión operativa (actuadores) en escenarios de clasificación ambiental \cite{A114}, \cite{A123}, \cite{A132}.
+
+La Figura~\ref{fig:contaminantes_vs_salida} integra esta lectura al combinar frecuencia y coocurrencia de contaminantes según tipo de salida.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d1/fig03_contaminantes_vs_salida.png}
+\caption{Frecuencia de contaminantes según clase de salida del modelo.}
+\label{fig:contaminantes_por_salida}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d1/fig06_relacion_salida_vs_contaminantes.png}
+\caption{Mapa de calor de la relación entre tipo de salida y contaminantes utilizados.}
+\label{fig:relacion_salida_contaminantes}
+\end{subfigure}
+\caption{Distribución y coocurrencia de contaminantes en función de la clase de salida en plataformas de monitoreo en tiempo real.}
+\label{fig:contaminantes_vs_salida}
+\end{figure}
+
+La selección de contaminantes no es homogénea entre clases de salida. La clasificación se apoya con mayor frecuencia en CO, la predicción prioriza PM$_{2.5}$ y combinaciones multivariadas, mientras que la estimación de índices integra varios contaminantes con intensidades similares. La evidencia del corpus confirma, además, que esta selección se acompaña de prácticas de preprocesamiento coherentes con el tipo de dato y objetivo: calibración y normalización en esquemas de reconstrucción/estimación \cite{A001}, \cite{A167}; limpieza, imputación y \emph{feature engineering} en pronóstico de PM \cite{A135}, \cite{A138}; sincronización e imputación en calibración contra estación \cite{A084}; y estrategias específicas como agregación semanal \cite{A009} o ventanas deslizantes \cite{A157} cuando el enfoque es temporal. Este comportamiento sugiere que el objetivo funcional del sistema condiciona la configuración de variables de entrada y el tratamiento de los datos, reforzando la consistencia metodológica de las plataformas de monitoreo en tiempo real revisadas.
+
+Como respaldo de auditabilidad de la síntesis, la Tabla~\ref{tab:d1_trazabilidad_minima} presenta la trazabilidad mínima de evidencia por estudio y campo.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d1/d1_tabla_trazabilidad_minima_es.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Use upper columns for síntesis and cites
+
+
+\subsubsection{Enfoque de Lógica Difusa y Decisiones de Diseño (D2)}
+En esta sección se examina cómo se implementa el componente difuso dentro de los sistemas analizados, organizando la síntesis en cuatro capas: distribución de configuraciones, relaciones de coocurrencia entre decisiones de diseño, perfiles compactos por familia FIS y trazabilidad mínima por estudio.
+
+En la primera capa, la Tabla~\ref{tab:d2_tabla_principal} consolida la evidencia cuantitativa (k/n/\%) para las ocho dimensiones de D2. El corpus muestra predominio compartido de \texttt{ANFIS} y \texttt{Mamdani} (\texttt{7/19}; \texttt{36.8\%} cada uno), con rol difuso central casi total (\texttt{18/19}; \texttt{94.7\%}). En propósito de inferencia, prevalecen clasificación AQI (\texttt{12/19}; \texttt{63.2\%}), alertamiento de riesgo (\texttt{8/19}; \texttt{42.1\%}) y predicción de contaminantes (\texttt{7/19}; \texttt{36.8\%}) \cite{A084, A132, A149, A168}. En completitud de reporte, la principal brecha permanece en defuzzificación (\texttt{NR=8/19}; \texttt{42.1\%}), mientras que en las demás dimensiones la cobertura es mayor.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d2/d2_tabla_principal_es.tex}
+
+La Tabla~\ref{tab:d2_tabla_principal} fija los conteos marginales por dimensión (k/n/\%), mientras que la Figura~\ref{fig:d2_tipos_y_proposito} se emplea para visualizar la relación cruzada entre familia FIS y propósito de inferencia.
+
+La Figura~\ref{fig:d2_tipos_y_proposito} complementa esta lectura al mostrar la coocurrencia entre tipo de FIS y propósito de inferencia. El patrón dominante ubica a \texttt{Mamdani} en escenarios de clasificación/alerta y a \texttt{ANFIS} en configuraciones orientadas a predicción y optimización operativa \cite{A114, A123, A149, A084, A087, A168}. Esta diferencia no es solo nominal: refleja dos estilos de diseño, uno centrado en reglas lingüísticas explícitas y otro más orientado a ajuste paramétrico.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{d2/fig02_coocurrencia_fis_vs_proposito.png}
+\caption{Coocurrencia entre tipo de FIS y propósito de inferencia en D2.}
+\label{fig:d2_tipos_y_proposito}
+\end{figure}
+
+Como cierre de la primera capa descriptiva, la Figura~\ref{fig:d2_aqi_resumen} resume, desde los campos de conteo y etiquetas de clases AQI, la configuración de clases AQI reportadas: número de clases por estudio y etiquetas más frecuentes. En el corpus (\texttt{n=15} con etiquetado explícito), se observa una convergencia nominal en etiquetas base de baja exposición (\texttt{Good}, \texttt{Moderate}) y una divergencia progresiva en etiquetas de mayor severidad. En frecuencia, predominan \texttt{Good} (\texttt{12/15}) y \texttt{Moderate} (\texttt{11/15}), mientras que \texttt{Unhealthy} y \texttt{Hazardous} aparecen en \texttt{8/15} estudios; esto indica que la coincidencia interestudio es mayor en niveles bajos/medios que en la zona alta de riesgo.
+
+Esta heterogeneidad se entiende mejor al comparar esquemas de etiquetado. Un primer grupo adopta taxonomías cercanas al AQI clásico de 5--6 clases (\texttt{Good/Moderate/.../Hazardous}), como en \cite{A001, A009, A135, A167, A168}. Un segundo grupo usa variantes semánticas para afinar interpretación local del riesgo, por ejemplo \texttt{Sensitive/Harmful} \cite{A149}, \texttt{Very Poor} \cite{A136} o \texttt{Good/Medium/Bad/Very Bad/Dangerous} \cite{A123}. Un tercer grupo codifica el riesgo en escalas ordinales o propias, como \texttt{Low/Medium/High} \cite{A178}, niveles \texttt{NAP/LAP/HAP} \cite{A132} o gradientes \texttt{RG0--RG13} \cite{A142}. En términos de diseño, esta mezcla de etiquetas describe la misma idea funcional (estratificar riesgo para decisión y alerta), pero con distinta granularidad y distinta semántica operativa; por ello, la comparación entre estudios requiere armonizar primero el significado de las clases y no solo su cantidad.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{d2/fig03_resumen_clases_aqi.png}
+\caption{Resumen de clases AQI reportadas en D2: número de clases por estudio y etiquetas más frecuentes.}
+\label{fig:d2_aqi_resumen}
+\end{figure}
+
+En la segunda capa, las Figuras~\ref{fig:d2_fis_defuzz} y \ref{fig:d2_fis_riesgo} evidencian patrones de acoplamiento entre familia FIS, método de defuzzificación y estrategia de modelado de riesgo \cite{A001, A009, A123, A149, A114, A142, A178}. La Figura~\ref{fig:d2_proposito_interpretabilidad} añade la relación entre propósito de inferencia y elementos explícitos de interpretabilidad \cite{A149, A165, A167}. En conjunto, estas figuras indican que la decisión sobre familia FIS condiciona no solo la salida del modelo, sino también la forma de explicar y auditar sus resultados.
+
+La lectura cruzada de estas coocurrencias muestra un patrón estable: los diseños \texttt{Mamdani} se asocian con mayor frecuencia a esquemas de clasificación basados en umbrales AQI y defuzzificación por centroide, mientras que en \texttt{ANFIS} aumenta la presencia de salidas orientadas a predicción/optimización y mecanismos de ajuste más intensivos \cite{A001, A009, A084, A138, A149, A168}. Esta diferencia aporta un criterio práctico para seleccionar familia FIS según prioridad de interpretabilidad inmediata o de ajuste predictivo.
+
+En términos de tamaño/configuración del sistema, también se identifican contrastes relevantes: existen propuestas con bases de reglas extensas (por ejemplo, 138 reglas en \cite{A135} y 576 reglas en \cite{A142}) y otras con estructuras más contenidas (como 24 reglas en \cite{A149} o 36 reglas en \cite{A167}). Este contraste sugiere distintos compromisos entre granularidad de decisión e interpretabilidad operativa.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d2/fig04_coocurrencia_fis_vs_defuzzificacion.png}
+\caption{Tipo de FIS vs defuzzificación.}
+\label{fig:d2_fis_defuzz}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d2/fig05_coocurrencia_fis_vs_riesgo.png}
+\caption{Tipo de FIS vs modelado de riesgo.}
+\label{fig:d2_fis_riesgo}
+\end{subfigure}
+\caption{Relaciones entre familia FIS y decisiones de salida/riesgo en D2.}
+\label{fig:d2_diseno_relaciones}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png}
+\caption{Coocurrencia entre propósito de inferencia y elementos de interpretabilidad reportados.}
+\label{fig:d2_proposito_interpretabilidad}
+\end{figure}
+
+En términos de interpretabilidad, la Figura~\ref{fig:d2_proposito_interpretabilidad} muestra que clasificación AQI y alertamiento de riesgo concentran con mayor frecuencia artefactos explícitos de explicación (transparencia de reglas y mapeo AQI), mientras que los estudios centrados en predicción tienden a reportar más detalles de configuración de funciones y ajuste del modelo \cite{A149, A165, A167, A084, A135}. Esto sugiere que la forma de justificar resultados cambia con el propósito operativo del sistema.
+
+Respecto a optimización y ajuste, se observan enfoques heterogéneos: desde combinaciones PSO/GA para calibración de desempeño \cite{A138}, hasta ajuste evolutivo por DE \cite{A178} y esquemas de reducción/ajuste de reglas en marcos ANFIS \cite{A084}. Estos mecanismos influyen directamente en complejidad final del modelo y costo de entrenamiento, y ayudan a explicar por qué estudios con objetivos similares reportan arquitecturas con cargas de ajuste diferentes.
+
+A partir de la evidencia cuantitativa y de las relaciones de coocurrencia, D2 se traduce en siete decisiones de diseño:
+
+\begin{enumerate}
+\item \textbf{Rol difuso.} El rol del componente difuso es mayoritariamente central, por lo que la inferencia difusa se utiliza como núcleo decisional del sistema y no solo como posprocesamiento auxiliar \cite{A001, A009, A149, A165}.
+\item \textbf{Objetivo de inferencia.} La clasificación AQI, el alertamiento de riesgo y la predicción de contaminantes concentran la mayor recurrencia; esto sugiere priorizar salidas operativas orientadas a diagnóstico y alerta, con componente predictivo cuando el caso de uso lo requiera \cite{A009, A135, A165, A168}.
+\item \textbf{Definición de reglas.} Predominan las bases de reglas explícitas, seguidas por enfoques adaptativos; en consecuencia, resulta consistente iniciar con una base interpretable y escalar a ajuste adaptativo según desempeño \cite{A132, A149, A144}.
+\item \textbf{Funciones de pertenencia.} Las funciones lingüísticas y las formas triangulares/trapezoidales son las más frecuentes, lo que favorece configuraciones de mayor trazabilidad semántica frente a alternativas más especializadas \cite{A001, A138, A142}.
+\item \textbf{Defuzzificación.} Los patrones principales se reparten entre \texttt{Centroide} y \texttt{Promedio ponderado}; la elección debe alinearse con la familia FIS y el tipo de salida requerido, manteniendo explícito el método para preservar comparabilidad entre estudios \cite{A001, A009, A123, A149}.
+\item \textbf{Modelado de riesgo.} El enfoque dominante utiliza umbrales de AQI, seguido por estrategias predictivas; las escalas personalizadas aparecen de forma puntual y deben justificarse cuando se apartan del esquema AQI estándar \cite{A001, A114, A142, A178}.
+\item \textbf{Interpretabilidad.} La transparencia de reglas, los gráficos de funciones de pertenencia y el mapeo AQI constituyen la base interpretativa más consistente; por tanto, estos artefactos deben considerarse mínimos para auditoría y uso operativo \cite{A149, A165, A167}.
+\end{enumerate}
+
+En la tercera capa, la Tabla~\ref{tab:d2_perfiles_fis} sintetiza perfiles compactos por familia (\texttt{Mamdani}, \texttt{ANFIS}, \texttt{Sugeno/TSK}, \texttt{Híbrido difuso}), integrando rol, propósito dominante, funciones de pertenencia, base de reglas, defuzzificación, enfoque de riesgo e interpretabilidad. Esta vista se utiliza como base de transferencia para la fase de diseño del módulo, porque traduce la evidencia del SLR en configuraciones reutilizables.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d2/d2_tabla_perfiles_fis_es.tex}
+
+La lectura comparada de estos perfiles muestra dos patrones de diseño claramente diferenciados. Por un lado, \texttt{Mamdani} y \texttt{Sugeno/TSK} concentran configuraciones más estables y trazables, con rol central, predominio de clasificación AQI y bases de reglas explícitas; por otro, \texttt{ANFIS} presenta mayor orientación a optimización y ajuste adaptativo, con mayor variabilidad en funciones de pertenencia y en mecanismos de salida \cite{A009, A123, A132, A149, A084, A138}. En términos de transferencia al diseño del módulo, esta evidencia respalda iniciar con un núcleo interpretable de reglas explícitas y escalar, cuando el desempeño lo justifique, hacia ajustes adaptativos o híbridos para mejorar capacidad predictiva sin perder trazabilidad operativa.
+
+En la cuarta capa, la Tabla~\ref{tab:d2_trazabilidad_minima} documenta evidencia mínima por estudio/campo para componentes críticos de diseño difuso. Esta trazabilidad permite sostener cada patrón interpretado con evidencia verificable a nivel de artículo.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d2/d2_tabla_trazabilidad_minima_es.tex}
+
+La evidencia general de D2 muestra un predominio de arquitecturas con núcleo difuso central y una presencia balanceada entre familias \texttt{Mamdani} y \texttt{ANFIS}. Esta distribución confirma que la lógica difusa no se utiliza de forma marginal, sino como componente principal para tareas de clasificación AQI, alertamiento y, en menor medida, predicción \cite{A009, A132, A149, A168}.
+
+Desde la perspectiva configuracional, se observa convergencia parcial en bases de reglas explícitas e interpretabilidad apoyada en transparencia de reglas, pero coexistiendo con variación relevante en funciones de pertenencia, defuzzificación y modelado de riesgo \cite{A001, A123, A144, A149, A178}. Esta heterogeneidad técnica limita comparaciones directas entre estudios si no se explicitan denominadores y decisiones de diseño por familia.
+
+Por ello, la combinación de tabla principal, coocurrencias y perfiles compactos permite pasar de una lectura descriptiva a una lectura de diseño: identificar qué configuraciones son dominantes, dónde se concentran las variaciones metodológicas y qué elementos deben fijarse explícitamente para sostener trazabilidad y comparabilidad en la propuesta técnica.
+
+\subsubsection{Plataforma y Operación en Tiempo Real (D3)}
+En esta sección se analiza cómo se implementan las plataformas de monitoreo de calidad del aire en tiempo real, con énfasis en su arquitectura, modo de procesamiento y operación. El propósito es identificar configuraciones técnicas recurrentes y evaluar su coherencia entre stack tecnológico, contexto de despliegue, instrumentación y capa de visualización y alertamiento, manteniendo trazabilidad explícita entre la evidencia por estudio y las afirmaciones de síntesis.
+
+
+\paragraph{Arquitectura y tecnologías empleadas}
+La distribución de arquitectura y modo de procesamiento en este subapartado se fundamenta en las Figuras~\ref{fig:d3_sub_distribucion_arquitectura}, \ref{fig:d3_sub_distribucion_procesamiento} y \ref{fig:d3_cooc_arquitectura_procesamiento}. A partir de esa base, se observa un núcleo de implementación IoT con predominio de \texttt{IoT borde-nube} (\texttt{6/19}; \texttt{31.6\%}) y \texttt{IoT de dos capas} (\texttt{5/19}; \texttt{26.3\%}), junto con una franja menor de arquitecturas alternativas (\texttt{Canal WSN}, \texttt{Nodo sensor con analítica externa} y \texttt{Nodo independiente con PC}). En la dimensión temporal, el modo más frecuente es \texttt{Casi tiempo real} (\texttt{7/19}; \texttt{36.8\%}), seguido por operación estricta en tiempo real al considerar \texttt{Tiempo real en borde} y \texttt{Tiempo real distribuido} (\texttt{6/19}; \texttt{31.6\%} en conjunto), con presencia adicional de configuraciones híbridas (\texttt{4/19}; \texttt{21.1\%}).
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_tabla_completitud_nr_es.tex}
+
+La Tabla~\ref{tab:d3_tabla_completitud_nr} cumple un rol distinto: documenta la completitud de reporte (NR) por dimensión crítica y funciona como control de cobertura de la evidencia analizada en D3.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d3/fig01_distribucion_arquitectura.png}
+\caption{Distribución de arquitectura de plataforma.}
+\label{fig:d3_sub_distribucion_arquitectura}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{d3/fig02_distribucion_procesamiento.png}
+\caption{Distribución del modo de procesamiento.}
+\label{fig:d3_sub_distribucion_procesamiento}
+\end{subfigure}
+\caption{Panorama de arquitectura y procesamiento en D3.}
+\label{fig:d3_panorama_arquitectura_procesamiento}
+\end{figure}
+
+
+La Figura~\ref{fig:d3_cooc_arquitectura_procesamiento} sustenta los patrones de acoplamiento arquitectura--modo temporal. Esta configuración refleja que en entornos \texttt{IoT borde-nube}, se observan flujos con adquisición multisensor, envío a nube y supervisión operativa en línea, como la integración FIS+DRL con ESP32 y base de datos en la nube reportada en \cite{A114}, o la arquitectura IoT con Arduino/ESP8266 y canal \texttt{ThingSpeak} para seguimiento de IAQ casi en tiempo real en \cite{A135}. En la familia \texttt{IoT de dos capas}, aparecen diseños con procesamiento local y capa de visualización y alertamiento para operación inmediata, por ejemplo el dispositivo IoT-fuzzy de dos capas con calibración dual de MQ-7 en \cite{A167} y el sistema clínico con sensado inalámbrico y DSS difuso para quirófano en \cite{A142}. Como variante distribuida, \cite{A178} combina IoT-Fog con ANFIS optimizado y visualización para servicios de monitorización/predicción en escenarios urbanos personalizados.
+
+
+En términos de stack tecnológico, la recurrencia de \texttt{MATLAB} (\texttt{7/19}), \texttt{Servidor en nube} (\texttt{6/19}) y \texttt{WiFi} (\texttt{6/19}) sugiere una base tecnológica relativamente estable, mientras que otras tecnologías se activan según contexto y objetivo del estudio.  
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png}
+\caption{Coocurrencia entre arquitectura de plataforma y modo de procesamiento en D3.}
+\label{fig:d3_cooc_arquitectura_procesamiento}
+\end{figure}
+
+La Figura~\ref{fig:d3_cooc_arquitectura_procesamiento} también evidencia excepciones que no deben
+tratarse como ruido. Los casos \texttt{Híbrido} aparecen en dos familias distintas:
+  \texttt{IoT de dos capas} \cite{A132, A142} y \texttt{Nodo sensor con analítica externa} \cite{A149,
+  A157}, lo que sugiere diseños que combinan inferencia local con analítica externa o actualización
+  adaptativa. El patrón \texttt{Tiempo real distribuido} aparece de forma puntual en
+  \texttt{IoT-Fog por capas} \cite{A178}, asociado a sincronización y coordinación entre capas. La
+  implicación es clara: el diseño base puede ser concentrado, pero la arquitectura debe prever
+  extensibilidad explícita para modos híbridos y distribución temporal cuando el contexto operativo
+  lo exija.
+
+\paragraph{Operación en tiempo real y despliegue}
+En esta parte se analiza cómo se combinan la tecnología usada, el lugar de despliegue y la forma de operación para identificar patrones recurrentes entre estudios.
+
+
+La Figura~\ref{fig:d3_cooc_arquitectura_stack} muestra una concentración de coocurrencias entre \texttt{IoT borde-nube} y \texttt{Servidor en nube}, \texttt{WiFi}, \texttt{MATLAB} \texttt{k=4}. En el corpus, este resultado corresponde a una secuencia técnica recurrente: adquisición local en el nodo, transmisión hacia infraestructura en nube y procesamiento analítico en software. La evidencia por estudio mantiene esa estructura con variaciones de implementación: en \cite{A114}, el ESP32 transmite por WiFi a Firebase para monitoreo en línea y soporte decisional FIS+DRL; en \cite{A135}, Arduino+ESP8266 envía datos periódicos a ThingSpeak y se integra análisis en MATLAB; en \cite{A009}, la telemetría registrada en ThingSpeak se utiliza en MATLAB para inferencia difusa; y en \cite{A138}, el flujo IoT hacia ThingSpeak se complementa con preprocesamiento en MATLAB mediante imputación y normalización previo al pronóstico.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{d3/fig04_coocurrencia_arquitectura_vs_stack.png}
+\caption{Coocurrencia entre arquitectura de plataforma y stack tecnológico en D3.}
+\label{fig:d3_cooc_arquitectura_stack}
+\end{figure}
+
+
+Además del bloque dominante, la cola de ocurrencias únicas aporta señales técnicas cuyo análisis es conveniente. En \cite{A142}, la combinación \texttt{Python}+\texttt{Google Colab}+ \texttt{Bluetooth}/\texttt{Gateway LAN} aparece en un escenario clínico de monitoreo IAQ en quirófano con DSS difuso; en \cite{A167}, \texttt{WiFi}+\texttt{I2C}+\texttt{Google Sheets} se usa para recolección en tiempo real y visualización web con alerta; en \cite{A168}, \texttt{Zigbee}+\texttt{HDFS MapReduce}+\texttt{Google Map} soporta monitoreo distribuido y servicios de ruta; y en \cite{A178}, la integración \texttt{Bluetooth}/\texttt{Zigbee}/\texttt{WiFi} con \texttt{AWS EC2} se enmarca en una arquitectura IoT-Fog para operación distribuida. Estas configuraciones no cambian el patrón principal de la Figura~\ref{fig:d3_cooc_arquitectura_stack}, pero sí muestran que la elección del stack tecnológico responde a exigencias de dominio y despliegue. Esa relación se examina de forma directa en la Figura~\ref{fig:d3_cooc_contexto_instrumentacion}.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{d3/fig05_coocurrencia_contexto_vs_instrumentacion.png}
+\caption{Coocurrencia entre contexto de despliegue e instrumentación en D3.}
+\label{fig:d3_cooc_contexto_instrumentacion}
+\end{figure}
+
+La Figura~\ref{fig:d3_cooc_contexto_instrumentacion} muestra dos perfiles de instrumentación claramente diferenciados según el entorno de despliegue. En \texttt{Interior}, la mayor densidad se concentra en \texttt{Sensor PM} \texttt{(k=9)}, \texttt{Sensor temperatura-humedad} \texttt{(k=8)} y \texttt{Sensor de CO} \texttt{(k=7)}, lo que refleja una lógica de monitoreo IAQ de alta resolución para espacios ocupados. Esta pauta se materializa en implementaciones con captura periódica multivariable y calibración previa \cite{A135}, en marcos context-aware con envío a nube para clasificación/predicción de estado interior \cite{A136}, y en escenarios clínicos donde el monitoreo incorpora conteo de partículas y variables ambientales para estimar riesgo operativo en quirófano \cite{A142}. En contraste, en \texttt{Urbano}/\texttt{Exterior} ganan peso las combinaciones con \texttt{Sensor de CO} y \texttt{MCU Arduino} \texttt{(urbano: k=6 en ambos casos)}, asociadas a nodos de cobertura territorial y operación continua; por ejemplo, redes WSN con sensado distribuido y servicios de ruta menos contaminada \cite{A168}, nodos LoRa con clasificación en borde y envío de alertas en campo \cite{A165}, y despliegues con evaluación en condiciones urbanas y desérticas para robustez ambiental \cite{A001}. 
+
+En la cola de baja ocurrencia también aparecen configuraciones con valor metodológico. En entorno
+clínico, \cite{A142} combina \texttt{Infraestructura BLE}, \texttt{Contador de partículas} y variables microclimáticas para vigilar quirófano y estimar grupos de riesgo, incluyendo trazabilidad de movimiento del personal y condiciones de esterilidad. En despliegues mixtos interior/exterior, \cite{A165} integra \texttt{Transceptor LoRa} y \texttt{SBC Raspberry Pi} con sensores de CO/ CO$_2$/CH$_4$, realizando pruebas en laboratorio y vía pública con envío periódico y alerta temprana. En escenarios no convencionales, \cite{A001} reporta validación en contexto urbano y desértico con sensado de NO$_2$/SO$_2$/CO$_2$ y control de perturbaciones ambientales, mientras \cite{A136} extiende el monitoreo IAQ a contexto educativo con combinación PM/CO/CO$_2$ y variables térmicas. Estas ocurrencias son menos frecuentes, pero muestran cómo la instrumentación se especializa cuando cambia el dominio operativo.
+
+Con esta lectura queda delimitada la capa física de implementación: dónde se despliega el sistema y con qué sensores opera. El siguiente paso es revisar cómo ese flujo de datos se traduce en operación continua para usuario final, especialmente en términos de visualización y respuesta por alerta. La Figura~\ref{fig:d3_cooc_tiempo_real_visualizacion} indica qué salidas son más frecuentes, además permite distinguir dos comportamientos operativos en los estudios: monitoreo continuo con visualización (\texttt{Bucle continuo}+\texttt{Tablero}) y monitoreo con activación por umbral (\texttt{Alerta por umbral}+\texttt{Módulo de alarma}). 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png}
+\caption{Coocurrencia entre características temporales y visualización y alertamiento en D3.}
+\label{fig:d3_cooc_tiempo_real_visualizacion}
+\end{figure}
+
+En el bloque \texttt{Bucle continuo}+\texttt{Tablero} \texttt{(k=7)}, los estudios describen monitoreo continuo con visualización para seguimiento operativo: en \cite{A114} el sistema transmite datos en tiempo real a Firebase y los presenta por app/web mientras el módulo FIS+DRL actualiza decisiones de control; en \cite{A136} la arquitectura context-aware usa nube IoT para análisis/predicción y entrega información con alertas y recomendaciones al usuario; y en \cite{A167} la plataforma registra en tiempo real CO, temperatura, humedad y PM en una aplicación web sobre Google Sheets. En el bloque \texttt{Alerta por umbral}+\texttt{Módulo de alarma} \texttt{(k=5)}, la lógica de activación es explícita: \cite{A167} define la regla "si AQI de CO supera nivel peligroso, activar alarma", \cite{A165} reporta alertas tempranas con tramas periódicas de ID/tiempo/sensores cada 30 segundos, \cite{A142} emite mensajes de advertencia según grupos de riesgo en quirófano, y \cite{A114} integra buzzer y actuación sobre ventilación/AC ante deterioro ambiental. La coocurrencia observada representa una transición de monitoreo descriptivo a operación con respuesta automática basada en condición.
+
+Los casos de menor frecuencia muestran funciones operativas que amplían el alcance del monitoreo convencional. En \cite{A142}, la salida visualiza variables, integra conteo de partículas, condiciones ambientales y trazas de movimiento del personal para estimar grupos de riesgo en quirófano y emitir advertencias. En \cite{A165}, el sistema combina clasificación difusa con envío periódico de tramas cada 30 segundos por LoRa y alertamiento temprano en campo. En \cite{A114}, la capa de salida se vincula con actuación, al integrar notificación y control sobre ventilación/AC cuando el estado ambiental se degrada. En \cite{A136}, el flujo operativo incorpora recomendaciones contextuales al usuario, además de la clasificación del estado de aire interior.
+
+La evidencia muestra que la capa de salida cumple dos funciones complementarias: observabilidad continua del entorno y respuesta operativa ante condiciones críticas. Esta distinción permite interpretar los resultados del corpus, porque estudios con visualización pasiva y estudios con alertamiento/actuación no representan el mismo nivel funcional de implementación.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_trazabilidad_minima.tex}
+
+Como cierre de esta sección, la Tabla~\ref{tab:d3_trazabilidad_minima} documenta evidencia mínima por estudio/campo para componentes críticos de plataforma y operación en tiempo real. Esta trazabilidad permite sostener los patrones interpretados con evidencia verificable a nivel de artículo.
+
+
+\subsubsection{Resultados de desempeño (síntesis transversal D1--D3)}
+Para sostener comparaciones válidas, esta síntesis de desempeño se estructura en tres planos conceptuales: el tipo de resultado evaluado por cada estudio (unidad comparable), la naturaleza de la métrica reportada (rendimiento, error o comportamiento operativo) y el esquema de validación utilizado. Este encuadre evita contrastes directos entre trabajos que persiguen objetivos distintos o cuantifican el desempeño con medidas no equivalentes.
+
+Con este criterio, primero se delimita qué grupos del corpus son comparables y con qué peso relativo; después se analiza qué métricas se repiten en esos grupos y cómo se distribuyen sus valores reportados. Esta secuencia permite pasar de la organización del corpus a una lectura cuantitativa con mayor consistencia interpretativa.
+
+La Tabla~\ref{tab:eval_unidades_comparables} muestra un núcleo de cuatro unidades comparables con igual peso (\texttt{3/19} cada una; \texttt{12/19} en conjunto, \texttt{63.2\%}) y una cola de unidades de baja frecuencia (\texttt{7/19}; \texttt{36.8\%}). La diferencia entre esas cuatro unidades es operativa: en \textit{clasificación AQI} la salida es una clase discreta del estado del aire; en \textit{estimación AQI/IAQ} la salida es un valor continuo del índice; en \textit{clasificación+control IAQ} además de clasificar se acciona un actuador o una respuesta de control; y en \textit{predicción PM2.5} la salida es una concentración futura de material particulado.
+
+Estas diferencias se reflejan en la selección de métricas y en la forma de interpretar los resultados por unidad comparable.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_unidades_comparables_es.tex}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{eval/fig00_metricas_top_general.png}
+\caption{Frecuencia general de métricas reportadas (top, omitiendo métricas con \texttt{k=1}).}
+\label{fig:eval_metricas_top_general}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{eval/fig01_metricas_por_grupo_comparable.png}
+\caption{Frecuencia de métricas reportadas en los grupos comparables core.}
+\label{fig:eval_metricas_grupos_core}
+\end{subfigure}
+\caption{Panorama de frecuencias de métricas reportadas en el corpus y en los grupos comparables core.}
+\label{fig:eval_metricas_panorama}
+\end{figure}
+
+La Figura~\ref{fig:eval_metricas_panorama} muestra que, a nivel global, predominan \texttt{Accuracy} \texttt{8/19} y \texttt{RMSE} \texttt{7/19}, seguidas por \texttt{MAE} y \texttt{MAPE} \texttt{5/19}. Al desagregar por grupos comparables, \texttt{Accuracy} se concentra en tareas de clasificación y clasificación con control, mientras que \texttt{RMSE}/\texttt{MAE}/\texttt{MAPE}/\texttt{R2} se concentran en estimación y predicción de PM2.5. En este bloque, el foco es la frecuencia y selección de métricas por tipo de salida.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_boxplot_resumen_valores_es.tex}
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{eval/fig02_boxplot_metric_mape.png}
+\caption{MAPE}
+\label{fig:eval_boxplot_metric_mape}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{eval/fig02_boxplot_metric_accuracy.png}
+\caption{Accuracy}
+\label{fig:eval_boxplot_metric_accuracy}
+\end{subfigure}
+
+\vspace{0.4em}
+\begin{subfigure}[t]{0.32\textwidth}
+\centering
+\includegraphics[width=\textwidth]{eval/fig02_boxplot_metric_mae.png}
+\caption{MAE}
+\label{fig:eval_boxplot_metric_mae}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.32\textwidth}
+\centering
+\includegraphics[width=\textwidth]{eval/fig02_boxplot_metric_nrmse.png}
+\caption{NRMSE}
+\label{fig:eval_boxplot_metric_nrmse}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.32\textwidth}
+\centering
+\includegraphics[width=\textwidth]{eval/fig02_boxplot_metric_r2.png}
+\caption{R2}
+\label{fig:eval_boxplot_metric_r2}
+\end{subfigure}
+
+\caption{Distribución de valores reportados por métrica en grupos comparables core (una gráfica por métrica; lectura exploratoria; normalización \texttt{0--1} a \texttt{0--100} en métricas acotadas).}
+\label{fig:eval_boxplots_metricas_core}
+\end{figure}
+
+
+La Tabla~\ref{tab:eval_boxplot_resumen_valores} fija la referencia numérica puntual por unidad comparable (mediana, mínimo y máximo), mientras que la Figura~\ref{fig:eval_boxplots_metricas_core} se utiliza para visualizar de forma compacta la dispersión y el rango de esos valores.
+
+Con esta lectura complementaria, el desempeño por clase comparable se caracteriza sin perder trazabilidad numérica. En \textit{Clasificación AQI}, la \textit{Exactitud} se mantiene alta (\texttt{mediana 96.45}, rango \texttt{94.0--98.9}), consistente con esquemas de clasificación en línea \cite{A165,A168}. En \textit{Clasificación+control IAQ}, la \textit{Exactitud} también se mantiene elevada (\texttt{mediana 95.0}, rango \texttt{91.16--97.3}), incorporando además respuesta operativa del sistema \cite{A114,A132}. En \textit{Estimación AQI/IAQ}, los valores reportados muestran \texttt{MAPE} bajo (\texttt{mediana 0.17}, \texttt{0.03--0.63}) y \texttt{R2} alto (\texttt{96.0}), en línea con trabajos orientados a estimación continua del índice \cite{A028,A149}. En \textit{Predicción PM2.5}, la magnitud del error es más variable (\texttt{MAE} mediana \texttt{1.635}, \texttt{0.26--7.65}; \texttt{MAPE} mediana \texttt{2.0457}, \texttt{0.4825--3.609}; \texttt{NRMSE} mediana \texttt{0.4175}) y el ajuste \texttt{R2} se ubica en un rango más moderado (\texttt{78.25--81.72}), lo que refleja mayor exigencia predictiva en series de concentración \cite{A135,A144,A157}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{eval/fig03_cooc_datasource_vs_unidad.png}
+\caption{Coocurrencia entre origen de datos y unidad comparable (solo celdas con \texttt{k>1}); se añade una columna final con el total por tipo de fuente.}
+\label{fig:eval_cooc_contexto_objetivo}
+\end{figure}
+
+La Figura~\ref{fig:eval_cooc_contexto_objetivo} refuerza que el contexto de origen de datos condiciona el tipo de evaluación. Con el umbral \texttt{k>1}, la mayor masa corresponde a \textit{sensores directos} (total por fila \texttt{7}), vinculada a tareas de clasificación y clasificación+control en operación de campo; en cambio, el \textit{esquema híbrido} (sensores + datasets, total por fila \texttt{2}) se concentra en \textit{Predicción PM2.5}, donde la combinación de datos instrumentados y datasets externos se usa para entrenar y validar generalización.
+
+El énfasis en datasets públicos aparece sobre todo en los estudios predictivos. En \cite{A135}, la validación se realiza con el \href{https://archive.ics.uci.edu/dataset/501}{\textit{Beijing Multi-Site Air-Quality Data Set}} del repositorio UCI, usando ciudades como Dongsi, Shunyi y Wanliu; en \cite{A144}, se incorpora el \href{https://github.com/twairball/gams-dataset}{\textit{GAMS Indoor Air Quality Dataset}}; y en \cite{A178}, se reporta evaluación sobre cuatro conjuntos de UCI/Kaggle (\href{https://archive.ics.uci.edu/ml/datasets/Air+quality}{\textit{AQD-IC}}, \href{http://www.fenceline.org/richmond/data.php}{\textit{AQD-RM}}, \href{https://transparencia.gijon.es/}{\textit{AQD-GC}}, \href{https://taqm.epa.gov.tw/taqm/tw/YearlyDataDownload.aspx}{\textit{AQD-NT}}). Como variante, \cite{A084} integra registros de co-localización LCS--estación de referencia en ciudades italianas con datasets abiertos de \href{https://doi.org/10.5281/zenodo.3473833}{Calgary} y \href{https://www.mdpi.com/1424-8220/23/7/3776}{Lima}, y publica artefactos de datos/modelo en \href{https://zenodo.org/records/13982208}{Zenodo}. Finalmente, fuera del umbral \texttt{k>1} de la figura, \cite{A028} ejemplifica el caso basado solo en datos públicos usando la \href{https://airquality.cpcb.gov.in/}{fuente nacional AQI de India (CPCB)} para estimación de índice.
+
+
+\subsubsection{Calidad metodológica, heterogeneidad y análisis de sensibilidad}
+La evaluación de calidad se presenta en dos tablas complementarias. La Tabla~\ref{tab:qa_distribucion_bandas} integra, en un solo bloque, la distribución por bandas de calidad y la magnitud de puntajes; la Tabla~\ref{tab:qa_trazabilidad_sensibilidad} documenta la trazabilidad mínima de casos representativos y la configuración del conjunto de sensibilidad para verificar estabilidad de hallazgos ante variaciones de robustez metodológica.
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/qa_distribucion_bandas.tex}
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/qa_trazabilidad_sensibilidad.tex}
+
+La Tabla~\ref{tab:qa_distribucion_bandas} muestra una estructura claramente concentrada en calidad \textit{Alta}+\textit{Media} \texttt{18/19} \texttt{94.7\%}, con presencia marginal de calidad \textit{Baja} \texttt{1/19} \texttt{5.3\%}. A nivel de puntaje, la separación entre bandas no solo es nominal: la mediana de \textit{Alta} \texttt{90.00} supera a \textit{Media} \texttt{75.00} en \texttt{15} puntos, y el mínimo de \textit{Alta} \texttt{80.00} queda por encima del máximo de \textit{Media} \texttt{78.33}, lo que evidencia ausencia de solapamiento entre ambos rangos.
+
+En términos de heterogeneidad interna, \textit{Media} presenta una amplitud mayor \texttt{61.67--78.33} frente a \textit{Alta} \texttt{80.00--94.00}, por lo que concentra más variación metodológica dentro de una banda todavía apta para síntesis. La Tabla~\ref{tab:qa_trazabilidad_sensibilidad} complementa esta lectura al explicitar, por identificador de estudio, la banda de calidad, el puntaje porcentual y el conjunto de sensibilidad asignado, junto con una observación breve de contexto metodológico. Bajo esta trazabilidad, el análisis queda anclado en \texttt{Núcleo alta-media} \texttt{18/19} \texttt{94.7\%}, mientras que el caso \texttt{Solo global} \texttt{1/19} funciona como contraste de robustez para verificar que las conclusiones no dependan de evidencia de menor calidad.
+
+\subsubsection{Vacíos, limitaciones e implicaciones para la propuesta}
+\paragraph{Generalización Externa Insuficiente}
+Un vacío relevante es la generalización externa insuficiente: varios estudios reportan buen desempeño dentro de su propio entorno experimental, pero con evidencia todavía limitada cuando cambian ciudad, red de sensores o ventana operativa \cite{A028,A084,A087,A144,A009}. Esta pauta se observa, por ejemplo, en \cite{A028}, donde se predice AQI con datos públicos pero sin despliegue operativo ni verificación en más de una ciudad; en \cite{A144}, que reconoce alcance de despliegue acotado y necesidad de validación en múltiples sitios; y en \cite{A084}, donde la sensibilidad del ajuste varía según la ciudad y exige validación adicional.
+
+El contraste externo confirma esta lectura y, en el corpus, la respalda la combinación de predominio de sensores directos (\texttt{13/19}), baja proporción de estudios solo con datos públicos (\texttt{1/19}) y heterogeneidad de evaluación (\texttt{Accuracy=8}, \texttt{RMSE=7}, \texttt{MAE=5}, \texttt{MAPE=5}, \texttt{R2=3}), que dificulta comparaciones directas.
+
+\paragraph{Cobertura Limitada de Variables y Contaminantes}
+Otra brecha importante es la cobertura limitada de variables y contaminantes frente a la complejidad del fenómeno que se intenta modelar. En el corpus, esta brecha se observa en \cite{A009}, donde la propia limitación reportada señala conjunto de contaminantes acotado y evaluación mayormente a nivel de clase; en \cite{A138}, que aunque incorpora varias señales ambientales y de contaminación para entrenamiento, concentra la salida en pronóstico de PM10 y reconoce la necesidad de ampliar contaminantes y balancear precisión con costo computacional; en \cite{A142}, cuyo esquema clínico prioriza conteo de partículas y variables de operación del quirófano, pero reporta límite en tipo/número de entradas y ausencia de cierre causal directo con incidencia clínica; y en \cite{A149}, centrado en CO2 y TVOC para estimar FIAQI, con recomendación explícita de profundizar la relevancia sanitaria de cada parámetro.
+
+El contraste externo conserva este mismo patrón y, en términos transversales, los datos del corpus lo respaldan: en \texttt{11/19} estudios (\texttt{57.9\%}) se modelan como máximo dos contaminantes (\texttt{1}=7, \texttt{2}=4), mientras solo \texttt{6/19} trabajan con cuatro o más; además, \texttt{5/19} no reportan variables ambientales de apoyo y predomina la adquisición directa (\texttt{13/19}), configuración que favorece despliegue práctico pero puede estrechar el alcance químico y contextual de la evaluación.
+
+\paragraph{Integración y Despliegue Operativo Incompleto}
+También persiste un cierre incompleto entre buen desempeño experimental y operación end-to-end en condiciones de uso. En \cite{A028}, el modelo logra ajuste alto con datos públicos, pero la propia limitación reporta ausencia de despliegue operacional; en \cite{A135}, se documenta desempeño robusto para pronóstico PM2.5, aunque sin integración completa del módulo de forecasting en el portal en línea; y en \cite{A144}, se reporta capacidad predictiva sólida, pero con alcance de despliegue limitado y necesidad de validación multi-sitio. Esta brecha no implica que el componente difuso-predictivo no funcione, sino que la transición a operación estable (adquisición continua, publicación de resultados, retroalimentación y mantenimiento) queda parcialmente resuelta.
+
+El contraste externo mantiene la misma tensión entre prototipo y operación sostenida, y dentro del corpus \cite{A114} destaca como referencia positiva al integrar monitoreo, visualización y actuación con latencia de inferencia reportada. A nivel transversal, existe base operativa (\texttt{13/19} estudios con operación en tiempo real o casi tiempo real; \texttt{Dashboard}=9; \texttt{Alarm\_Module}=5; \texttt{Continuous\_Loop}=10), pero persiste heterogeneidad de arquitectura y trazabilidad (por ejemplo, A028 con campos D3 en \texttt{NR}), lo que dificulta replicar el paso completo desde validación técnica hasta despliegue reproducible.
+
+\paragraph{Coste Computacional y Eficiencia de Red}
+Además, el costo computacional y la eficiencia de red se mantienen como dimensiones secundarias en la evaluación. En \cite{A135}, además del desempeño predictivo, se reporta como limitación el tiempo de entrenamiento elevado y la integración incompleta del pronóstico en el portal operativo; en \cite{A138}, el propio estudio expone el compromiso entre precisión y tiempo de cómputo al comparar variantes optimizadas; y en \cite{A178}, se reconoce como trabajo pendiente la eficiencia de red y la interacción humano-computador para los servicios de visualización. Los estudios priorizan la mejora de error predictivo, mientras la sostenibilidad operativa del pipeline (costo de cómputo, latencia bajo carga y eficiencia de comunicación) suele quedar reportada de forma parcial.
+
+El contraste externo confirma esta asimetría y mantiene a \cite{ART08} como excepción en evaluación explícita de eficiencia de red. En el corpus, aunque \texttt{13/19} estudios operan en tiempo real o casi tiempo real, solo \texttt{4/19} reportan métricas de familia \textit{System}; además, los indicadores de eficiencia aparecen dispersos y con baja repetición (\texttt{Training\_Time}, \texttt{Inference\_Time}, \texttt{Temporal\_Delay}, \texttt{Throughput}, \texttt{Reliability}, \texttt{Stability\_AAS}), lo que limita comparaciones consistentes de costo-beneficio técnico.
+
+\paragraph{Restricciones de Hardware, Sensores y Calibración}
+La dependencia de hardware de bajo costo y la madurez desigual de los procedimientos de calibración constituyen otra limitación recurrente. En \cite{A001}, se reportan límites operativos asociados a plataforma y sensado (carga útil, autonomía y sensibilidad al viento en UAV, junto con no linealidad/precisión de sensores y alcance de comunicación); y en \cite{A087}, aunque el sistema mejora desempeño predictivo para gestión de filtros en entorno industrial, se reconocen explícitamente deriva/envejecimiento de sensores, necesidad de calibración más robusta y ausencia de criterio cerrado para número óptimo de sensores. En ambos casos, el resultado técnico es prometedor, pero el comportamiento del sistema depende de condiciones instrumentales que pueden degradar transferencia y estabilidad fuera del entorno de prueba.
+
+El contraste externo mantiene esta lectura y refuerza la necesidad de protocolos de calibración longitudinal y control de deriva. En el corpus, el perfil de instrumentación se concentra en cadenas estándar (\texttt{PM\_Sensor}=10, \texttt{TempHumidity\_Sensor}=9, \texttt{CO\_Sensor}=8, \texttt{MCU\_Arduino}=7, \texttt{CO2\_Sensor}=5, \texttt{VOC\_Sensor}=4) con predominio de adquisición directa (\texttt{13/19}); esta combinación favorece adopción práctica, pero exige mayor homogeneidad en reporte de calibración y mantenimiento.
+
+\paragraph{Degradación por Horizonte Predictivo}
+La pérdida de precisión cuando aumenta el horizonte de predicción aparece como un problema explícito en \cite{A157}. En ese estudio, el enfoque fuzzy ARTMAP para predicción de PM2.5 con entrenamiento en línea mantiene ajuste global aceptable, pero reporta degradación para horizontes más lejanos por propagación de error, lo que limita su uso cuando la decisión operativa requiere anticipación amplia y estable. Este resultado es relevante porque no cuestiona la validez del enfoque difuso en sí, sino su robustez temporal cuando se extiende la predicción más allá del tramo inmediato.
+
+El contraste externo muestra que la mayoría de trabajos prioriza clasificación/monitoreo en tiempo real o control local, sin profundizar en sensibilidad del error frente al horizonte. A nivel transversal, la unidad \texttt{PM2.5\_Prediction} reúne solo \texttt{3/19} estudios (\cite{A135,A144,A157}) con protocolos distintos (\texttt{TrainTest+CrossSite}, \texttt{CV+Holdout}, \texttt{Online}), lo que reduce la comparabilidad directa de estabilidad temporal y mantiene abierta esta brecha metodológica.
+
+\paragraph{Dominio Clínico sin Cierre Causal Fuerte}
+Finalmente, en los estudios con orientación clínica o sanitaria persiste un cierre causal débil entre indicadores de calidad del aire y desenlaces de salud: existen salidas útiles para decisión operativa, pero con fuerza inferencial limitada. En \cite{A142}, el sistema difuso para quirófano clasifica grupos de riesgo de contaminación con reglas interpretables y alertas en tiempo real, pero la propia limitación reconoce ausencia de correlación directa con incidencia clínica de infección y necesidad de reconfigurar reglas al incorporar nuevas variables. De forma convergente, \cite{A149} mejora la estimación de FIAQI mediante fusión ARIMA-Kalman+FIS sobre CO2/TVOC, aunque reporta como límite que la evaluación sanitaria de largo plazo por parámetro sigue abierta. En ambos casos, la inferencia es útil para monitoreo y prevención, pero todavía no cierra plenamente la trazabilidad causa-efecto sobre evento clínico.
+
+El contraste externo refuerza esta lectura: predomina el énfasis funcional de monitoreo/control sobre validación clínica causal. En el corpus, el contexto \texttt{Healthcare\_Facility} aparece en solo \texttt{2} estudios y la unidad clínica \texttt{OR\_Risk\_Classification} en \texttt{1/19}; además, la trazabilidad de protocolo de evaluación clínica permanece limitada (\texttt{Eval\_Protocol\_norm=NR}), lo que restringe la fuerza inferencial para sostener relaciones causales robustas.
+
+
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/cierre_vacios_implicaciones.tex}
+
+El vacío principal identificado es la falta de una solución integral que, en un mismo marco metodológico, combine datasets públicos trazables, inferencia difusa para monitoreo urbano, evaluación comparable entre estudios y validación externa en contextos distintos. La evidencia revisada muestra avances relevantes en cada componente por separado, pero todavía con cierres parciales cuando se exige trazabilidad completa del dato, consistencia evaluativa y transferencia del desempeño a más de un entorno de aplicación; por ello, la propuesta se orienta hacia una arquitectura reproducible apoyada en datos públicos, con prioridad en trazabilidad, comparabilidad y capacidad de generalización, definiendo la operación en tiempo cuasi real (según la disponibilidad efectiva de la fuente) y reforzando el aseguramiento de calidad de datos.
+
+\paragraph{Implicaciones de diseño derivadas de D2 y D3}
+Desde la evidencia de D2, se desprenden criterios de diseño del componente difuso que deben quedar explícitos en la propuesta:
+\begin{enumerate}
+\item \textbf{Rol difuso}: la inferencia difusa se configura como núcleo decisional y no como posprocesamiento auxiliar \cite{A001, A009, A149, A165}.
+\item \textbf{Objetivo de inferencia}: predominan clasificación AQI, alertamiento de riesgo y predicción de contaminantes; por tanto, la salida debe definirse desde el uso operativo objetivo \cite{A009, A135, A165, A168}.
+\item \textbf{Definición de reglas}: se observan bases explícitas y enfoques adaptativos; conviene documentar cuándo se usa cada estrategia \cite{A132, A149, A144}.
+\item \textbf{Funciones de pertenencia}: dominan funciones lingüísticas triangulares/trapezoidales, con implicaciones directas en trazabilidad semántica \cite{A001, A138, A142}.
+\item \textbf{Defuzzificación}: la selección entre \texttt{Centroide} y \texttt{Promedio ponderado} debe alinearse con familia FIS y tipo de salida \cite{A001, A009, A123, A149}.
+\item \textbf{Modelado de riesgo}: predominan umbrales AQI, mientras escalas personalizadas requieren justificación explícita \cite{A001, A114, A142, A178}.
+\item \textbf{Interpretabilidad}: transparencia de reglas, funciones de pertenencia y mapeo AQI constituyen mínimos de auditoría \cite{A149, A165, A167}.
+\end{enumerate}
+
+Desde D3, la arquitectura operativa se beneficia de una estructura con base común y componentes adaptables. Como base común, se define arquitectura principal (\texttt{IoT borde-nube} o \texttt{IoT de dos capas}), modo operativo dominante (\texttt{Casi tiempo real} o \texttt{Tiempo real en borde}) y documentación mínima de conectividad, procesamiento y visualización. Como componente adaptable, se ajustan estrategia híbrida/distribuida, instrumentación y tipo de despliegue; para sostener comparabilidad, cada variante debe reportar objetivo de salida, métricas, partición de datos y latencia o frecuencia operativa.
+
+Con esa base, los requisitos de ingeniería para la propuesta se establecen así:
+\begin{enumerate}
+\item \textbf{Trazabilidad de datos abiertos}: cada experimento debe registrar fuente, fecha/hora de consulta, cobertura geográfica, contaminantes usados y versión del conjunto extraído.
+\item \textbf{Operación en tiempo cuasi real}: el pipeline debe ejecutar ingesta, preprocesamiento, inferencia y publicación con frecuencia configurable, reportando latencia observada de extremo a extremo condicionada por la actualización de la fuente.
+\item \textbf{Núcleo difuso auditable}: se debe documentar explícitamente la base de reglas, funciones de pertenencia, método de inferencia y defuzzificación para asegurar reproducibilidad técnica.
+\item \textbf{Evaluación comparable y reproducible}: se debe reportar unidad comparable, protocolo de validación, partición de datos y conjunto mínimo de métricas, evitando comparaciones entre objetivos no equivalentes.
+\item \textbf{Validación externa multi-contexto}: el desempeño debe verificarse en más de una ciudad y en más de una ventana temporal, para evaluar estabilidad fuera del contexto inicial.
+\item \textbf{Aseguramiento de calidad de datos}: al no controlar sensores físicos, la propuesta debe incluir control sistemático de completitud, consistencia, atípicos y estabilidad temporal de las series de entrada.
+\item \textbf{Eficiencia operativa}: se deben reportar costos de ejecución (tiempo de procesamiento/inferencia y consumo computacional), junto con su impacto sobre frecuencia de actualización y escalabilidad.
+\end{enumerate}
+
+
+\subsection{Síntesis Conceptual}
+
+Con base en los hallazgos del estado del arte, esta síntesis conceptual fija los fundamentos técnicos que sostienen la propuesta: definición operativa del AQI, estructura de los modelos difusos, criterios de evaluación predictiva y características de los datasets públicos utilizados en estudios recientes.
+
+\subsubsection{AQI, contaminantes atmosféricos y variables meteorológicas}
+El índice de calidad del aire (AQI) es un indicador sintético y adimensional diseñado para transformar concentraciones de contaminantes atmosféricos en una escala única de interpretación del riesgo \cite{ART01,ART02}. Su finalidad es convertir mediciones técnicas en información comprensible y utilizable para vigilancia ambiental, comunicación pública y toma de decisiones en salud y gestión de la calidad del aire \cite{ART01,ART02}.
+
+El AQI opera como un mecanismo de normalización y agregación, parte de concentraciones observadas, las relaciona con valores de referencia normativos y produce un valor integrado que resume la condición ambiental en un instante o periodo de análisis \cite{ART01,ART02}. Esta transformación resuelve un problema central de interpretación, porque los contaminantes presentan unidades, escalas y niveles de impacto diferentes; por ello, una lectura directa de concentraciones aisladas no ofrece, por sí sola, una visión clara del nivel de riesgo global.
+
+En términos de propósito, el AQI cumple las siguientes funciones:
+\begin{itemize}
+\item \textbf{Función informativa}: comunica de forma estandarizada el estado de la calidad del aire.
+\item \textbf{Función preventiva}: alerta sobre escenarios de deterioro para reducir exposición poblacional.
+\item \textbf{Función operativa}: sirve como variable de referencia para sistemas de monitoreo, alerta y control ambiental.
+\end{itemize}
+
+Por esta razón, el AQI se considera una pieza conceptual clave en arquitecturas de evaluación y gestión de contaminación del aire \cite{ART01,ART02}.
+
+\paragraph{Contaminantes y variables}
+Los modelos de AQI se construyen con contaminantes criterio que representan el nivel de exposición de la población y el riesgo sanitario asociado \cite{ART01,ART02}. En términos generales, el núcleo más extendido incluye PM2.5, PM10, O3, NO2, SO2 y CO; en algunos marcos regulatorios también se incorpora Pb \cite{ART01,ART02}.
+
+Las definiciones técnicas de estos contaminantes, en el contexto del AQI, son:
+\begin{itemize}
+\item \textbf{PM2.5}: material particulado fino con diámetro aerodinámico menor o igual a 2.5 \(\mu m\), capaz de penetrar regiones profundas del sistema respiratorio.
+\item \textbf{PM10}: material particulado inhalable con diámetro aerodinámico menor o igual a 10 \(\mu m\), útil para caracterizar carga de partículas gruesas y fracción respirable.
+\item \textbf{O3} (ozono troposférico): contaminante secundario formado por reacciones fotoquímicas entre precursores (principalmente NOx y compuestos orgánicos) bajo radiación solar.
+\item \textbf{NO2} (dióxido de nitrógeno): gas reactivo asociado a procesos de combustión (tráfico, calderas y fuentes estacionarias), relevante por su papel en irritación respiratoria y química atmosférica secundaria.
+\item \textbf{SO2} (dióxido de azufre): gas generado por combustibles con azufre y procesos industriales; se asocia a irritación respiratoria y formación de sulfatos/lluvia ácida.
+\item \textbf{CO} (monóxido de carbono): gas producto de combustión incompleta, incluido en esquemas AQI por su efecto sobre transporte de oxígeno en sangre.
+\item \textbf{Pb} (plomo): metal pesado tóxico considerado en algunos marcos de calidad del aire por su impacto sistémico y neurológico.
+\end{itemize}
+
+Además del núcleo anterior, existen modelos de AQI que incorporan contaminantes o términos compuestos adicionales (por ejemplo, TSP, NOx o combinaciones ponderadas) para contextos específicos de evaluación \cite{ART01,ART02}. Por separado, los modelos de calidad de aire interior suelen ampliar entradas con CO2, TVOC y variables ambientales; estas extensiones fortalecen la lectura del entorno, aunque no siempre forman parte del AQI regulatorio clásico.
+
+\paragraph{Variables ambientales}
+En los modelos de calidad del aire, las variables ambientales funcionan como covariables transversales para interpretar la dinámica de los contaminantes y la variación del índice en el tiempo y en el espacio \cite{ART01,ART02}. La temperatura del aire condiciona procesos físico-químicos atmosféricos y modifica patrones temporales de concentración; la humedad relativa influye en el comportamiento del material particulado y en la respuesta de los aerosoles; y el viento, tanto en velocidad como en dirección, determina la dispersión, el transporte y la posible procedencia espacial de episodios de contaminación \cite{ART01,ART02}.
+
+A este conjunto se suman variables de estabilidad atmosférica y presión, que ayudan a distinguir escenarios de mezcla o estancamiento del aire. Por ello, estas variables no se tratan como entradas accesorias, sino como componentes de contexto que permiten interpretar con mayor precisión el valor del AQI y su significado operativo \cite{ART01,ART02}.
+
+\paragraph{Cálculo y categorías del AQI}
+El cálculo del AQI se estructura en dos etapas. En la primera etapa, la concentración observada de cada contaminante se transforma en un subíndice normalizado; en la segunda etapa, los subíndices se combinan para obtener un valor único de calidad del aire \cite{ART01,ART02}. Esta estructura permite integrar variables con unidades y rangos distintos en una salida común.
+
+En un enfoque dependiente de estándares de calidad del aire, una formulación reportada para el subíndice es:
+\[
+Q_i = 10\left(\frac{C_i}{S_i}\right),
+\]
+donde \(Q_i\) es la calificación del contaminante \(i\), \(C_i\) es la concentración observada y \(S_i\) es el valor estándar de referencia. A partir de esos subíndices, el índice global puede expresarse como:
+\[
+AQI=\left(Q_1\cdot Q_2\cdots Q_n\right)^{1/n},
+\]
+con \(n\) contaminantes considerados \cite{ART02}.
+
+Otro esquema ampliamente utilizado emplea concentraciones de quiebre (\textit{breakpoints}) e interpolación lineal segmentada para mapear cada concentración al subíndice correspondiente \cite{ART01,ART02}. Después, los subíndices se agregan con una regla definida por el modelo y el marco regulatorio, por ejemplo operador máximo o funciones de agregación \cite{ART01}.
+
+La interpretación final del AQI se comunica mediante categorías cualitativas de riesgo, vinculadas a intervalos numéricos y a recomendaciones sanitarias para la población. En la práctica, son frecuentes escalas como \textit{Good, Satisfactory, Moderately Polluted, Poor, Very Poor} y \textit{Severe}; también se emplean escalas que culminan en \textit{Hazardous} \cite{ART01,ART02}.
+
+Las diferencias entre normas y jurisdicciones se originan en los parámetros reglamentarios que define cada autoridad ambiental: conjunto de contaminantes obligatorios, valores de quiebre (\textit{breakpoints}), periodos de promediación y denominación de categorías \cite{ART01,ART02}. En consecuencia, la interpretación del AQI depende de la norma aplicada en cada país o región, y la comparación entre resultados exige declarar explícitamente el marco normativo de referencia.
+
+El AQI puede entenderse como una cadena técnica de cuatro elementos: selección de contaminantes, normalización por estándar, agregación de subíndices y traducción a categorías de riesgo \cite{ART01,ART02}. La validez interpretativa del índice depende de la coherencia entre esos elementos y del marco normativo que los define. Por ello, cualquier implementación orientada a monitoreo o predicción debe declarar de forma explícita contaminantes incluidos, valores de referencia, método de cálculo y esquema categorial, para asegurar trazabilidad y lectura correcta del resultado \cite{ART01,ART02}. Sobre esta base se sustenta el siguiente tema, centrado en cómo la lógica difusa modela esa transición desde variables ambientales y de contaminación hacia salidas de decisión.
+
+
+
+
+\subsubsection{Modelos de lógica difusa y defuzzificación}
+La lógica difusa se fundamenta en la representación de pertenencia gradual, donde cada elemento puede tomar un grado en el intervalo \([0,1]\) dentro de un conjunto difuso \cite{ART03,ARTFZ01,ARTFZ02}. Esta formulación permite modelar fenómenos con fronteras no nítidas y condiciones de transición continua, que son frecuentes en variables ambientales.
+
+Sobre esa base, la inferencia difusa se construye mediante variables lingüísticas, funciones de pertenencia y reglas \textit{if-then}. El flujo general comprende fuzzificación de entradas, evaluación de reglas en el motor de inferencia y defuzzificación para obtener una salida numérica utilizable en decisión o control \cite{ART07,ARTFZ02}. Esta estructura proporciona trazabilidad entre conocimiento experto y salida del sistema.
+
+En aplicaciones de calidad del aire, este marco se implementa de forma práctica para transformar lecturas de sensores en niveles de riesgo o estado ambiental. Se reportan implementaciones con inferencia Mamdani para operación en tiempo real y manejo de incertidumbre en entradas de contaminación \cite{ART06}; también se presentan configuraciones neuro-difusas adaptativas para integrar aprendizaje sobre datos y ajuste del sistema de inferencia \cite{ART04}.
+
+\paragraph{Familias principales de sistemas difusos}
+En sistemas difusos aplicados a calidad del aire se emplean tres familias principales: \textit{Mamdani}, \textit{Sugeno/TSK} y \textit{ANFIS}. Comparten la misma base de conjuntos difusos, funciones de pertenencia y reglas, pero difieren en la forma de producir la salida final y en el mecanismo de ajuste del modelo \cite{ART04,ART06,ART07}. Esa diferencia determina su uso en problemas orientados a interpretación, eficiencia computacional o aprendizaje con datos.
+
+\textbf{Mamdani} utiliza reglas con consecuentes lingüísticos. Tras evaluar las reglas, se agregan los conjuntos de salida y se aplica defuzzificación para obtener un valor numérico \cite{ART06,ART07}. Este enfoque mantiene una lectura directa de la lógica del sistema y favorece interpretación práctica de reglas.
+
+\textbf{Sugeno/TSK} conserva antecedentes difusos en las reglas, pero define consecuentes numéricos (constantes o funciones de entrada). La salida global se obtiene por promedio ponderado de esos consecuentes, lo que reduce costo computacional en inferencia y facilita integración con bloques matemáticos de control o predicción.
+
+\textbf{ANFIS} (\textit{Adaptive Neuro-Fuzzy Inference System}) integra estructura difusa con entrenamiento sobre datos para ajustar parámetros del sistema, en especial funciones de pertenencia y pesos asociados a reglas \cite{ART04}. Este modelo incrementa capacidad de adaptación, aunque exige mayor control metodológico para conservar trazabilidad del proceso.
+
+La selección práctica depende del objetivo del sistema: Mamdani cuando se prioriza interpretación de reglas, Sugeno/TSK cuando se prioriza inferencia eficiente y ANFIS cuando se requiere ajuste guiado por datos. La Figura~\ref{fig:marco_fis_comparativo} resume este contraste con foco en criterios de diseño prácticos.
+
+\begin{figure}[H]
+  \centering
+  \input{assets/figuras/d2/fig07_comparativo_familias_fis.tex}
+  \caption{Comparación conceptual de familias FIS para diseño de sistemas de calidad del aire. Elaboración propia.}
+  \label{fig:marco_fis_comparativo}
+\end{figure}
+
+\paragraph{Reglas, funciones de pertenencia y defuzzificación}
+El funcionamiento de un FIS puede leerse como una cadena de transformación de datos, desde una medición numérica hasta una salida de decisión. La Figura~\ref{fig:marco_fis_flujo} resume esa cadena y permite ubicar con precisión el rol de reglas, funciones de pertenencia y defuzzificación \cite{ART06,ART07}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{d2/fig10_flujo_fis.png}
+  \caption{Flujo general de inferencia difusa para sistemas de calidad del aire. Elaboración propia.}
+  \label{fig:marco_fis_flujo}
+\end{figure}
+
+La lectura técnica del flujo es la siguiente:
+\begin{enumerate}
+\item \textbf{Entradas crisp}. El sistema recibe variables numéricas medidas (por ejemplo, concentración de contaminantes, temperatura o humedad). Estas magnitudes están en unidades físicas y todavía no tienen significado lingüístico dentro del FIS.
+\item \textbf{Fuzzificación}. Cada entrada \(x_j\) se transforma a grados de pertenencia mediante funciones \(\mu_{A_{jk}}(x_j)\in[0,1]\), donde \(A_{jk}\) representa etiquetas como \textit{bajo}, \textit{medio} o \textit{alto}. Esta etapa convierte una lectura puntual en una representación gradual, permitiendo modelar transiciones suaves entre estados \cite{ARTFZ01,ARTFZ02}.
+\item \textbf{Base de reglas}. El motor de inferencia evalúa reglas \textit{if-then}; por ejemplo: ``si PM2.5 es alto y humedad es alta, entonces riesgo es alto''. Cada regla obtiene una fuerza de activación \(\alpha_r\) a partir de operadores difusos (t-norm/t-conorm), lo que cuantifica cuánto se cumple la condición antecedente \cite{ARTFZ01,ARTFZ02}.
+\item \textbf{Agregación}. Las salidas parciales de las reglas activadas se combinan en una única función de salida \(\mu_{\mathrm{agg}}(z)\). En Mamdani, esto suele hacerse con operaciones tipo \(\max\) y \(\min\), preservando la contribución conjunta de todas las reglas relevantes.
+\item \textbf{Defuzzificación}. La salida difusa agregada se convierte en un valor crisp \(z^*\) para habilitar decisión operativa (clasificación, control o alerta). El método más común es el centroide, que entrega un punto representativo del área de salida.
+\end{enumerate}
+
+En términos de implementación, este encadenamiento conserva interpretación semántica en las etapas intermedias y, al mismo tiempo, entrega un resultado numérico operativo al final \cite{ART06,ART07}. Esto es particularmente útil en monitoreo de calidad del aire, donde se necesita trazabilidad de la decisión y respuesta cuantificable.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig08a_conjuntos_borrosos.png}
+    \caption{Funciones de pertenencia para una variable de contaminación.}
+    \label{fig:marco_fis_mf_conjuntos_sub}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig08b_numero_borroso_alpha.png}
+    \caption{Número borroso y corte alfa.}
+    \label{fig:marco_fis_numero_alpha_sub}
+  \end{subfigure}
+  \caption{Representación de funciones de pertenencia y números borrosos en un FIS. Elaboración propia.}
+  \label{fig:marco_fis_mf_numeros}
+\end{figure}
+
+La Figura~\ref{fig:marco_fis_mf_numeros}\subref{fig:marco_fis_mf_conjuntos_sub} muestra cómo se construye la semántica de entrada en un FIS. El eje horizontal representa el universo de la variable (PM2.5), y el eje vertical el grado de pertenencia. Las funciones trapezoidales en extremos (\textit{bajo}, \textit{alto}) modelan zonas de saturación, mientras que la triangular central (\textit{medio}) enfatiza una región de transición. La superposición entre curvas es intencional: una misma medición puede activar más de una etiqueta con distinta intensidad, evitando discontinuidades cuando el valor cruza umbrales.
+
+La Figura~\ref{fig:marco_fis_mf_numeros}\subref{fig:marco_fis_numero_alpha_sub} detalla el número borroso y su corte alfa. El número borroso se expresa como una función de pertenencia (triangular o trapezoidal), y el corte \(\alpha\) selecciona todos los valores del universo cuyo grado de pertenencia cumple \(\mu(x)\ge\alpha\). Ese intervalo permite pasar de una descripción difusa a bandas numéricas con interpretación operativa, por ejemplo para fijar márgenes de decisión o niveles de incertidumbre \cite{ART03,ARTFZ01,ARTFZ02}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{d2/fig09_defuzzificacion_centroide.png}
+  \caption{Comparación de salida en Mamdani (centroide) y Sugeno/TSK (promedio ponderado). Elaboración propia.}
+  \label{fig:marco_fis_centroide}
+\end{figure}
+
+La Figura~\ref{fig:marco_fis_centroide} contrasta dos formas de obtener la salida crisp. En el panel A (Mamdani), cada regla produce una salida recortada, las salidas se agregan en una envolvente difusa y el valor final se calcula por centroide. Ese valor se obtiene como centro de masa de la salida agregada:
+\[
+z^*=\frac{\int z\,\mu_{\mathrm{agg}}(z)\,dz}{\int \mu_{\mathrm{agg}}(z)\,dz}.
+\]
+En el panel B (Sugeno/TSK), cada regla entrega un consecuente numérico \(z_r\) y la salida se obtiene mediante promedio ponderado por niveles de activación:
+\[
+z^*=\frac{\sum_r \alpha_r z_r}{\sum_r \alpha_r}.
+\]
+Esta diferencia es clave: Mamdani conserva interpretación lingüística hasta la agregación final, mientras que Sugeno/TSK opera directamente con consecuentes numéricos y reduce costo de inferencia \cite{ART03,ART06,ART07,ARTFZ02}. En ambos casos, la etapa final transforma la inferencia difusa en un valor operativo para clasificación, control o alerta.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig11a_anfis_capas.png}
+    \caption{Arquitectura por capas de un modelo ANFIS de dos entradas.}
+    \label{fig:marco_anfis_capas}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig11b_anfis_superficie.png}
+    \caption{Ejemplo de superficie de salida aprendida por ANFIS.}
+    \label{fig:marco_anfis_superficie}
+  \end{subfigure}
+  \caption{Elementos estructurales e interpretación funcional de ANFIS. Elaboración propia.}
+  \label{fig:marco_anfis_elementos}
+\end{figure}
+
+La Figura~\ref{fig:marco_anfis_elementos}\subref{fig:marco_anfis_capas} muestra la arquitectura interna típica de ANFIS. La Capa 1 calcula pertenencias de las entradas; la Capa 2 combina esas pertenencias para obtener la fuerza de activación de cada regla; la Capa 3 normaliza los pesos relativos; la Capa 4 evalúa el consecuente de cada regla como función lineal; y la Capa 5 integra todas las contribuciones en una salida única. Esta descomposición explica por qué ANFIS conserva semántica difusa en la premisa y, al mismo tiempo, se ajusta con parámetros entrenables sobre datos \cite{ART04,A084,A149}.
+
+La Figura~\ref{fig:marco_anfis_elementos}\subref{fig:marco_anfis_superficie} representa la salida final como superficie en función de dos entradas. En práctica, esta superficie resume el comportamiento conjunto de todas las reglas después del entrenamiento: zonas planas indican sensibilidad baja, mientras que regiones con mayor pendiente reflejan cambios más rápidos de la salida frente a variaciones de entrada. Esta lectura es útil para verificar estabilidad, interpretar rangos operativos y detectar transiciones críticas en sistemas de calidad del aire \cite{A084,A135,A149,ARTFZ02}.
+
+
+La comparación técnica permite fijar un criterio operativo para la propuesta. Mamdani es adecuado cuando la prioridad es trazabilidad de reglas y lectura directa de niveles de riesgo; Sugeno/TSK es conveniente cuando se requiere inferencia rápida con salida numérica estable en tiempo de ejecución; y ANFIS aporta capacidad de ajuste a partir de datos cuando el objetivo incluye estimación/predicción con variabilidad temporal \cite{ART03,ART04,ART06,A084,A149}. Con base en ello, un diseño consistente para calidad del aire puede separar funciones: núcleo de decisión interpretable con reglas difusas explícitas y módulo de ajuste/predicción entrenable para mejorar respuesta cuantitativa sin perder auditabilidad del sistema.
+
+\subsubsection{Modelos de regresión supervisada y métricas}
+En aprendizaje supervisado, la regresión se utiliza cuando la variable objetivo es continua. El modelo aprende una función \(f(\mathbf{x})\) que aproxima la relación entre predictores y salida numérica, a partir de ejemplos etiquetados \((\mathbf{x}_i, y_i)\) \cite{ARTML01}. Esta formulación es coherente con tareas como predicción de concentración de contaminantes o estimación de un índice continuo de calidad del aire.
+
+Dentro de este marco, las familias de modelos se diferencian por el tipo de relación que pueden representar, el costo de entrenamiento y el nivel de interpretación disponible \cite{ARTML01}. En términos prácticos:
+\begin{enumerate}
+\item \textbf{Modelos lineales}. Suponen una relación aproximadamente lineal entre predictores y salida, del tipo \(\hat{y}=\mathbf{w}^{\top}\mathbf{x}+b\). Son útiles como línea base por su bajo costo computacional y alta interpretabilidad de coeficientes. Su principal límite aparece cuando la dinámica real es no lineal o presenta interacciones complejas entre variables.
+\item \textbf{Árboles de decisión y ensambles}. Los árboles particionan el espacio de entrada por reglas secuenciales y capturan no linealidades sin requerir escalado estricto de variables. Ensambles como \textit{Random Forest} o \textit{Gradient Boosting} reducen varianza o sesgo respecto a un árbol único y suelen mejorar robustez predictiva. El costo es menor interpretabilidad global y mayor complejidad de ajuste de hiperparámetros.
+\item \textbf{Máquinas de soporte para regresión (SVR)}. Buscan una función con buen margen y control explícito de complejidad, con posibilidad de mapear relaciones no lineales mediante kernels. Son efectivas en conjuntos de tamaño medio y con fronteras funcionales bien estructuradas. Su limitación práctica es la sensibilidad a parámetros del kernel y a la escala de variables.
+\item \textbf{Redes neuronales}. Modelan relaciones altamente no lineales mediante composiciones de capas y activaciones, y pueden aproximar comportamientos complejos en escenarios multivariables. Son convenientes cuando existe volumen suficiente de datos y se prioriza capacidad predictiva. A cambio, requieren mayor costo de entrenamiento, regularización cuidadosa y validación estricta para evitar sobreajuste.
+\end{enumerate}
+
+La selección no se basa en preferencia algorítmica aislada, sino en la coherencia entre complejidad del fenómeno, disponibilidad de datos, requisitos de tiempo de inferencia y necesidad de trazabilidad del modelo en el entorno de aplicación.
+
+En términos de decisión, cuando la prioridad es \textbf{interpretabilidad y trazabilidad}, se favorecen modelos lineales o árboles de baja profundidad, porque permiten explicar con claridad el efecto de cada variable. Cuando la prioridad es \textbf{precisión predictiva en patrones no lineales}, suelen ser más competitivos los ensambles y las redes neuronales, asumiendo mayor costo de ajuste y menor transparencia global. Para contextos operativos de calidad del aire, una práctica sólida consiste en comenzar con una base interpretable y escalar a modelos más complejos solo si la mejora de desempeño justifica la pérdida relativa de explicabilidad.
+
+Las métricas centrales para regresión son MAE, MSE/RMSE, MAPE y \(R^2\), pero su utilidad depende del tipo de salida, la escala de los datos y el objetivo operativo de la predicción \cite{ARTML01}. Su interpretación técnica puede resumirse así:
+\begin{enumerate}
+\item \textbf{MAE (Error Absoluto Medio)}. Mide error promedio en unidades originales de la variable objetivo. Es robusto frente a valores atípicos extremos en comparación con métricas cuadráticas y resulta útil cuando se busca una lectura directa del error esperado en operación.
+\item \textbf{MSE/RMSE (Error Cuadrático Medio / Raíz del Error Cuadrático Medio)}. Penalizan con mayor peso los errores grandes. Son adecuados cuando el costo de fallos severos es alto, por ejemplo sobreestimaciones o subestimaciones amplias en pronóstico de concentración.
+\item \textbf{MAPE (Error Porcentual Absoluto Medio)}. Expresa error relativo en porcentaje, lo que facilita comparar magnitudes entre series con escalas diferentes. Su uso exige cautela cuando los valores reales son cercanos a cero, porque puede inflar artificialmente el error porcentual.
+\item \textbf{\(R^2\) (Coeficiente de determinación)}. Resume proporción de variabilidad explicada por el modelo respecto a una referencia base. Es útil como indicador de ajuste global, pero no sustituye métricas de error absoluto para evaluación operativa.
+\end{enumerate}
+
+En aplicaciones de calidad del aire, una práctica metodológica sólida es reportar al menos una métrica de error absoluto (MAE o RMSE) y una de ajuste global (\(R^2\)), añadiendo MAPE cuando la escala de la variable permita una lectura porcentual estable. Esto mejora comparabilidad y evita conclusiones basadas en un único indicador.
+
+Como contraste conceptual, el aprendizaje por refuerzo optimiza políticas de decisión secuencial mediante recompensas y no modela directamente una variable objetivo continua en formato supervisado estándar \cite{ARTRL01}. Por ello, en esta investigación la base comparativa de desempeño predictivo se fundamenta en métricas de regresión y protocolos de validación supervisada.
+
+Para asegurar comparabilidad según tipo de salida, se distinguen cuatro escenarios metodológicos:
+\begin{enumerate}
+\item \textbf{Predicción/estimación continua de contaminantes o índice}. La comparación válida se realiza con métricas de regresión (MAE, RMSE, MAPE, \(R^2\)), manteniendo la misma unidad física y el mismo horizonte temporal de predicción.
+\item \textbf{Clasificación de estados o categorías AQI/IAQ}. La lectura debe basarse en métricas de clasificación (por ejemplo, exactitud, precisión, sensibilidad, F1 y matriz de confusión), porque el objetivo es asignar clases y no estimar magnitudes continuas.
+\item \textbf{Clasificación con actuación o alertamiento}. Además del acierto de clase, la evaluación debe incluir desempeño operativo (latencia de inferencia, falsas alarmas y omisiones de alerta), ya que la utilidad final depende de la respuesta en campo.
+\item \textbf{Pronóstico en series temporales por horizonte}. Cuando existe predicción a distintos horizontes, el error debe reportarse por tramo de anticipación (corto, medio, largo), evitando promedios únicos que oculten degradación a horizontes extensos.
+\end{enumerate}
+
+Con estas reglas, la comparación entre estudios requiere tres condiciones simultáneas: misma unidad de salida evaluable, mismo protocolo de validación y métricas compatibles con dicha salida. Si alguna de estas condiciones no se cumple, el contraste cuantitativo pierde validez interpretativa.
+
+Como cierre metodológico, la evaluación de la propuesta debe definirse desde el tipo de salida que se desea validar: si el objetivo principal es predicción/estimación continua, el bloque central de evaluación debe estructurarse con MAE/RMSE/\(R^2\) y análisis por horizonte; si el objetivo incluye clasificación de niveles o alertamiento, debe añadirse desempeño por clase y evidencia operativa de respuesta. Esta estructura permite que los resultados sean técnicamente auditables, comparables con antecedentes afines y útiles para decisiones de implementación en contexto real.
+
+\subsubsection{Datasets públicos de calidad del aire y sus características}
+En esta investigación, los datasets públicos se consideran un componente estructural del diseño experimental y no solo una fuente de entrenamiento. Su función en el marco teórico es doble: sostener reproducibilidad de resultados y habilitar comparación técnica entre estudios con objetivos similares \cite{A135,A144,A178,A084,A028}. Desde esa perspectiva, la lectura de fuentes públicas debe separar con claridad tres perfiles: plataformas actualizables, repositorios históricos curados y artefactos de proyecto publicados para replicación.
+
+Las plataformas actualizables, como \textit{OpenAQ}, aportan cobertura geográfica amplia, trazabilidad por estación y acceso programático para consulta de series históricas y ventanas recientes \cite{DATA_OPENAQ}. Su valor metodológico es que permiten construir flujos de ingestión y evaluación sobre datos que evolucionan en el tiempo, más cercanos a un escenario operativo. En ese mismo perfil, los portales nacionales de AQI usados en algunos antecedentes, como CPCB en India, ofrecen continuidad institucional de publicación, aunque con diferencias normativas y de estructura frente a otras fuentes \cite{A028}.
+
+Los repositorios históricos curados responden a otra necesidad: controlar mejor las condiciones de entrenamiento y validación. El conjunto \textit{Air Quality} de UCI (ID 360) concentra una serie temporal horaria con canales de sensores químicos, variables meteorológicas y valores de referencia para tareas de modelado y calibración \cite{DATA_UCI_360}. En esa misma línea, el conjunto \textit{Beijing Multi-Site Air Quality} (UCI ID 501) extiende la evaluación a múltiples estaciones y periodos, lo cual favorece análisis por sitio, particiones temporales y pruebas de transferencia entre contextos \cite{DATA_UCI_501,A135}.
+
+Un tercer grupo corresponde a artefactos abiertos asociados a estudios concretos. Aquí se ubican repositorios como \textit{GAMS Indoor Air Quality Dataset}, colecciones heterogéneas UCI/Kaggle empleadas en marcos multipaís y conjuntos publicados en Zenodo con insumos de datos y modelos \cite{A144,A178,A084}. Estos recursos son valiosos para replicar decisiones de preprocesamiento y comparar pipelines, pero suelen reflejar el contexto específico del estudio que los publica, por lo que requieren mayor cautela para extrapolar resultados.
+
+La principal implicación metodológica es que ``dataset público'' no equivale automáticamente a ``dataset comparable''. Cambian la cobertura de contaminantes, las unidades de reporte, la resolución temporal, la proporción de valores faltantes y los criterios de control de calidad. Si estas diferencias no se normalizan y documentan, la comparación entre modelos mezcla efectos del método con efectos de la fuente de datos.
+
+Por ello, para esta propuesta se exige trazabilidad mínima en cada fuente: origen institucional, licencia de uso, variables seleccionadas, ventana temporal efectiva, resolución de muestreo, reglas de limpieza e imputación, y protocolo de partición/validación. Esta trazabilidad reduce el riesgo de sobreestimar rendimiento en un entorno local y mejora la transferibilidad de los resultados hacia escenarios urbanos distintos.
+
+La Tabla~\ref{tab:datasets_publicos_sintesis} resume las fuentes públicas priorizadas y su lectura metodológica para esta investigación.
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/datasets_publicos_sintesis.tex}
+
+A partir de esta síntesis, el análisis de limitaciones no se reduce al tamaño del dataset, sino al tipo de sesgo que introduce en el ciclo de modelado. El sesgo de cobertura espacial aparece cuando el entrenamiento se concentra en pocas estaciones o en un solo contexto urbano; en ese caso, el modelo puede aprender patrones locales y perder estabilidad al transferirse a otra ciudad \cite{A084,A144}. El sesgo temporal surge cuando la ventana de datos no incluye suficiente variación estacional o cambios operativos, lo que afecta especialmente tareas de predicción por horizonte y validación fuera de muestra \cite{A135,DATA_UCI_501}. 
+
+También existe sesgo por instrumentación y protocolo de medición: distintas redes usan sensores, calibraciones y criterios de control de calidad diferentes, por lo que una misma variable puede no ser estrictamente equivalente entre fuentes \cite{A178,A084}. A esto se suma el sesgo de completitud, asociado a valores faltantes, retrasos de publicación y revisiones posteriores de registros en plataformas actualizables, situación que puede alterar métricas si no se fija una política de corte temporal y depuración reproducible \cite{DATA_OPENAQ}. Finalmente, en fuentes basadas en índices nacionales, aparece sesgo normativo: cambian umbrales y categorías de interpretación, de modo que comparar resultados entre jurisdicciones exige armonizar primero la semántica del índice \cite{A028}.
+
+Por tanto, la validez metodológica depende de declarar explícitamente qué sesgos son tolerados, cuáles se corrigen y cuáles se controlan por diseño experimental. Sin esta declaración, un resultado puede parecer competitivo en métrica agregada y, al mismo tiempo, carecer de robustez cuando se desplaza a otro contexto geográfico, temporal o regulatorio.
+
+Con esta base, la selección de datasets para la propuesta se define mediante criterios operativos verificables:
+\begin{enumerate}
+\item \textbf{Trazabilidad de origen}. La fuente debe identificar institución responsable, ubicación de medición, marca temporal y metadatos suficientes para auditoría.
+\item \textbf{Cobertura de variables pertinente}. Debe incluir contaminantes y variables ambientales coherentes con la salida objetivo del modelo (clasificación o predicción de AQI/IAQ).
+\item \textbf{Resolución temporal utilizable}. La frecuencia de muestreo debe permitir construir ventanas de entrada y horizontes de salida sin interpolaciones excesivas.
+\item \textbf{Calidad y completitud}. Se requiere política explícita para faltantes, valores atípicos y consistencia de unidades antes de cualquier comparación de desempeño.
+\item \textbf{Comparabilidad normativa}. Si se integran fuentes de distintas jurisdicciones, se debe armonizar la semántica de categorías y umbrales del índice.
+\item \textbf{Reproducibilidad técnica}. El acceso a datos debe ser estable y replicable (consulta programática o descarga versionada), junto con documentación mínima de extracción.
+\item \textbf{Potencial de validación externa}. La fuente debe permitir particiones por tiempo, sitio o contexto para evaluar transferencia y no solo ajuste local.
+\end{enumerate}
+
+La regla de decisión derivada de estos criterios es usar una combinación de fuentes con roles complementarios: una fuente pública actualizable como base operativa del sistema, y una o más fuentes históricas curadas para pruebas controladas y validación de estabilidad. Esta combinación permite balancear realismo de despliegue, comparabilidad metodológica y robustez externa del desempeño reportado.

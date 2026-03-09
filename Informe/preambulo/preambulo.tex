@@ -1,0 +1,253 @@
+\usepackage[a4paper,margin=3cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{capt-of}
+\usepackage{tabularray}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+\usepackage{iftex}
+\usepackage[spanish]{babel}
+\usepackage{enumitem}
+
+% Rutas base para imágenes
+\graphicspath{{assets/figuras/}{assets/figuras/branding/}}
+
+
+% === Selector de fuentes ===
+% true  -> usa Arial/Cambria/Calibri (igual a la plantilla Word)
+% false -> usa fuentes por defecto de LaTeX
+\newif\ifviufonts
+\viufontstrue
+
+\newcommand{\ViuCambria}{\rmfamily}
+\newcommand{\ViuCalibri}{\sffamily}
+
+\ifviufonts
+  \ifXeTeX
+    \usepackage{fontspec}
+    \setmainfont{Arial}
+    \setsansfont{Arial}
+    \newfontfamily\ViuCambriaFamily{Cambria}
+    \newfontfamily\ViuCalibriFamily{Calibri}
+    \renewcommand{\ViuCambria}{\ViuCambriaFamily}
+    \renewcommand{\ViuCalibri}{\ViuCalibriFamily}
+    \renewcommand\familydefault{\sfdefault}
+  \fi
+  \ifLuaTeX
+    \usepackage{fontspec}
+    \setmainfont{Arial}
+    \setsansfont{Arial}
+    \newfontfamily\ViuCambriaFamily{Cambria}
+    \newfontfamily\ViuCalibriFamily{Calibri}
+    \renewcommand{\ViuCambria}{\ViuCambriaFamily}
+    \renewcommand{\ViuCalibri}{\ViuCalibriFamily}
+    \renewcommand\familydefault{\sfdefault}
+  \fi
+\fi
+
+\definecolor{VIUGRAY}{HTML}{333333}
+\definecolor{VIUORANGE}{HTML}{ED7D31}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+% Spacing config generated from config/spacing.yml
+\input{config/spacing.generated.tex}
+
+\setstretch{1.2}
+% Espacio visible entre párrafos (sin sangría cuando hay parskip)
+\setlength{\parindent}{\VIUParagraphIndent}
+\setlength{\parskip}{\VIUParagraphSkip}
+\AtBeginDocument{%
+  % Reafirma tras paquetes/estilos que puedan sobrescribirlo
+  \setlength{\parindent}{\VIUParagraphIndent}%
+  \setlength{\parskip}{\VIUParagraphSkip}%
+}
+% Permite cortes de palabra y mejor ajuste en textos justificados
+\tolerance=1000
+\emergencystretch=1em
+\hyphenpenalty=200
+\exhyphenpenalty=200
+
+% Quitar numeración/encabezados por defecto (usamos overlay)
+\makeatletter
+\def\ps@plain{%
+  \let\@oddhead\@empty
+  \let\@evenhead\@empty
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty}
+\makeatother
+
+% Estilos de títulos
+\titleformat{\section}
+  {\normalfont\fontsize{22}{26}\selectfont}
+  {\thesection.}
+  {0.8em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{16}{19}\selectfont}
+  {\thesubsection.}
+  {1.0em}
+  {}
+
+\titlespacing*{\section}{0pt}{\VIUSectionBeforeSkip}{\VIUSectionAfterSkip}
+\titlespacing*{\subsection}{0pt}{\VIUSubsectionBeforeSkip}{\VIUSubsectionAfterSkip}
+\VIUApplyOptionalSpacing
+
+% Ajuste fino de separación título <-> header
+\newcommand{\VIUTitlePad}{\vspace*{\VIUSectionTitlePadLen}}
+\let\VIUOrigSection\section
+\renewcommand{\section}{\VIUTitlePad\VIUOrigSection}
+
+% Secciones sin numerar con sangría como en Word
+\newcommand{\VIUSectionStar}[1]{%
+  \VIUTitlePad%
+  \section*{\hspace{0.65cm}#1}%
+  \addcontentsline{toc}{section}{#1}%
+}
+
+% TOC
+\newcommand{\VIUIndexTitleFont}{\ViuCambria\fontsize{24}{28}\selectfont}
+\renewcommand{\contentsname}{Índice}
+\renewcommand{\cfttoctitlefont}{\VIUIndexTitleFont}
+\renewcommand{\cftaftertoctitle}{\par\vspace{0.2cm}}
+\renewcommand{\cftdotsep}{4}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecaftersnum}{.}
+\setlength{\cftsecnumwidth}{1.8em}
+\setlength{\cftsecindent}{0pt}
+\renewcommand{\cftsubsecaftersnum}{.}
+\setlength{\cftsubsecnumwidth}{2.4em}
+\setlength{\cftsubsecindent}{0.38cm}
+\setlength{\cftbeforesecskip}{0.3\baselineskip}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+
+% Listas (dinámicas)
+\renewcommand{\listfigurename}{Índice de Figuras}
+\renewcommand{\listtablename}{Índice de Tablas}
+\renewcommand{\cftloftitlefont}{\VIUIndexTitleFont}
+\renewcommand{\cftlottitlefont}{\VIUIndexTitleFont}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{0.2cm}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{0.2cm}
+\renewcommand{\cftfigpresnum}{}
+\renewcommand{\cftfigaftersnum}{.}
+\setlength{\cftfignumwidth}{2.4em}
+\setlength{\cftfigindent}{0pt}
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftfigfont}{\normalfont}
+\renewcommand{\cftfigpagefont}{\normalfont}
+\renewcommand{\cfttabpresnum}{}
+\renewcommand{\cfttabaftersnum}{.}
+\setlength{\cfttabnumwidth}{2.4em}
+\setlength{\cfttabindent}{0pt}
+\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttabfont}{\normalfont}
+\renewcommand{\cfttabpagefont}{\normalfont}
+
+% Etiquetas de figuras y tablas
+\renewcommand{\figurename}{Ilustración}
+\renewcommand{\tablename}{Tabla}
+\captionsetup{
+  font=footnotesize,
+  labelfont=normalfont,
+  textfont=normalfont,
+  labelsep=period,
+  justification=centering
+}
+\captionsetup[table]{
+  font=footnotesize,
+  labelfont=it,
+  textfont=it,
+  labelsep=period,
+  justification=centering
+}
+
+% Estilo global de tablas (tabularray)
+\UseTblrLibrary{booktabs}
+\SetTblrInner[tblr,longtblr]{%
+  hlines={0.4pt,VIUORANGE},
+  %vlines={0.4pt,VIUORANGE},
+  vline{1}={0.4pt,VIUORANGE},
+  vline{Z}={0.4pt,VIUORANGE},
+  rowsep=2pt,
+  colsep=6pt,
+  row{1-Z}={font=\footnotesize},
+  row{1}={bg=VIUORANGE, fg=white, font=\footnotesize\bfseries},
+  rowhead={1}
+}
+
+% Caption de tabularray con etiqueta fija en español
+\DefTblrTemplate{caption-tag}{default}{Tabla\hspace{0.25em}\thetable}
+\DefTblrTemplate{caption-sep}{default}{.\enskip}
+\DefTblrTemplate{caption-text}{default}{\InsertTblrText{caption}}
+\SetTblrStyle{caption-tag}{font=\footnotesize\itshape}
+\SetTblrStyle{caption-sep}{font=\footnotesize\itshape}
+\SetTblrStyle{caption-text}{font=\footnotesize\itshape}
+\SetTblrStyle{caption}{halign=c}
+
+% Ubicar caption al final de la tabla (no arriba)
+\DefTblrTemplate{firsthead}{default}{}
+\DefTblrTemplate{middlehead,lasthead}{default}{
+  \UseTblrTemplate{conthead}{default}
+}
+\DefTblrTemplate{firstfoot,middlefoot}{default}{
+  \UseTblrTemplate{contfoot}{default}
+}
+\DefTblrTemplate{lastfoot}{default}{
+  \UseTblrTemplate{caption}{default}
+  \UseTblrTemplate{note}{default}
+  \UseTblrTemplate{remark}{default}
+}
+
+% Viñetas
+\renewcommand{\labelitemi}{\raisebox{0.15ex}{\scalebox{0.9}{$\bullet$}}}
+\renewcommand{\labelitemii}{\raisebox{0.15ex}{\scalebox{0.85}{$\circ$}}}
+
+\setlist[itemize]{leftmargin=1.2em}
+\setlist[itemize,2]{leftmargin=1.8em}
+\setlist[enumerate]{leftmargin=1.4em}
+
+% Cabecera/pie para páginas 2+
+% Posicionamiento absoluto del logo y pie (páginas 2+)
+\AddToShipoutPictureFG{%
+  \ifnum\value{page}>1
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north west] at ([xshift=0.87cm,yshift=-0.92cm]current page.north west)
+        {\includegraphics[width=4.56cm]{viu-header.png}};
+      \node[anchor=south west] at ([xshift=16.68cm,yshift=0.33cm]current page.south west)
+        {\color{VIUGRAY}\fontsize{9}{11}\selectfont\thepage\ de \pageref{LastPage}};
+    \end{tikzpicture}
+  \fi
+}
+
+% Caja informativa
+\definecolor{VIUINFO}{HTML}{E6B5B5}
+\newcommand{\VIUInfoBox}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{10pt}%
+  \noindent\colorbox{VIUINFO}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep\relax}{\itshape #1}%
+  }%
+  \endgroup
+}
+
+% Hipervínculos en índices y referencias
+\usepackage{hyperref}
+\VIUApplyLinkColors
+\usepackage{bookmark}
+\usepackage{apacite}

@@ -1,0 +1,18 @@
+\begin{longtblr}[
+  label={tab:eval_aqi_matriz_slr},
+  caption={Antecedentes directos con componente de predicción (n=4): salida evaluable, métricas, modelo IA/ML, fuente de datos y auditoría del bloque difuso. Elaboración propia.}
+]{
+  colspec={X[0.55,c,m] X[1.95,l,m] X[1.15,l,m] X[0.80,l,m] X[2.25,l,m]},
+  width=\textwidth,
+  rowhead=1,
+  row{1}={font=\bfseries}
+}
+\toprule
+ID (cita) & Unidad comparable + métricas comparables & Modelo IA/ML & Fuente de datos & Modelo difuso (tipo; reglas; defuzzificación; evidencia) \\
+\midrule
+\cite{A009} & Clasificación AQI: Exactitud; acuerdo de clase AQI & Sugeno/TSK & Sensores directos & Sugeno/TSK; reglas explícitas (\texttt{2}); defuzzificación por promedio ponderado; evidencia \texttt{p.2--p.3}. \\
+\cite{A028} & Estimación AQI/IAQ: R2; MSE & Ensamble ML + ANFIS & Datasets públicos & ANFIS con base de reglas adaptativa; número de reglas \texttt{NR} en la extracción; defuzzificación por promedio ponderado; evidencia \texttt{p.1--p.2; p.4}. \\
+\cite{A149} & Estimación AQI/IAQ: MAPE; desviación estándar del error & ARIMA + Kalman (entrada a FIS) & Sensores directos & Mamdani; reglas explícitas (\texttt{24}); defuzzificación por centroide; evidencia \texttt{p.3--p.4; p.6}. \\
+\cite{A136} & Clasificación SIA (estado de aire interior): Exactitud; precisión; sensibilidad; F1; AUC & ANFIS + DTMC & Sensores directos & ANFIS/Sugeno-TSK; reglas explícitas; número de reglas \texttt{NR} en la extracción; defuzzificación \texttt{NR}; evidencia \texttt{p.12--p.16}. \\
+\bottomrule
+\end{longtblr}

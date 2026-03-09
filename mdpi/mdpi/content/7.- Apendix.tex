@@ -1,0 +1,79 @@
+\section[\appendixname~\thesection]{}
+\subsection[\appendixname~\thesubsection]{}
+The appendix is an optional section that can contain details and data supplemental to the main text---for example, explanations of experimental details that would disrupt the flow of the main text but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data are shown in the main text can be added here if brief, or as Supplementary Data. Mathematical proofs of results not central to the paper can be added as an appendix.
+
+\begin{table}[H] 
+\caption{This is a table caption.\label{tab5}}
+%\newcolumntype{C}{>{\centering\arraybackslash}X}
+\begin{tabularx}{\textwidth}{CCC}
+\toprule
+\textbf{Title 1} & \textbf{Title 2} & \textbf{Title 3}\\
+\midrule
+Entry 1 & Data & Data\\
+Entry 2 & Data & Data\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section[\appendixname~\thesection]{}
+All appendix sections must be cited in the main text. In the appendices, Figures, Tables, etc. should be labeled, starting with ``A''---e.g., Figure A1, Figure A2, etc.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\section*{Supplementary Material S1: Complete Selection and Evaluation Matrix}
+
+This supplementary file contains the complete matrix of studies identified in the systematic review process, including: (1) initial identification, (2) screening decisions, (3) full-text eligibility assessment, (4) final outcome (included or excluded), and (5) methodological quality assessment when applicable. The identifiers (ID) assigned to each study are independent of the IEEE bibliographic numbering of the main manuscript.
+
+\begin{longtblr}[
+  caption = {Complete matrix of identified studies and PRISMA 2020 evaluation.},
+  label   = {tab:matriz_S1}
+]{
+  width = \textwidth,
+  colspec = {X[c,m,0.08] X[l,m,0.32] X[c,m,0.10] X[c,m,0.10] X[c,m,0.10] X[l,m,0.20] X[c,m,0.10]},
+  rowhead = 1,
+  row{1} = {font=\bfseries},
+}
+\toprule
+\textbf{ID} & \textbf{Short reference} & \textbf{Screening} & \textbf{Full-text} & \textbf{Quality} & \textbf{Reason for exclusion} & \textbf{Status} \\ 
+\midrule
+
+% ----------- EXAMPLES (replace with your data) -------------
+ID001 & Smith et al., 2018 & Included & Excluded & Medium & No quantitative metrics & Excluded \\
+ID002 & Zhang et al., 2017 & Included & Included & High & --- & Included \\
+ID003 & Perez et al., 2015 & Excluded & --- & --- & Non-relevant population & Excluded \\
+ID004 & Tanaka et al., 2020 & Included & Excluded & Low & Only clinical data, no images & Excluded \\
+ID005 & Ruiz et al., 2019 & Included & Included & Medium & --- & Included \\
+% --------------------------------------------------------------
+
+\bottomrule
+\end{longtblr}
+
+\textbf{Legend:}
+
+\begin{itemize}
+    \item \textbf{Screening}: decision based on title and abstract.
+    \item \textbf{Full-text}: full evaluation according to inclusion/exclusion criteria.
+    \item \textbf{Quality}: qualitative methodological assessment (High / Medium / Low).
+    \item \textbf{Reason for exclusion}: main reason according to the criteria defined for this review.
+    \item \textbf{Status}: "Included" (moves to synthesis and bibliography) or "Excluded" (does not pass).
+\end{itemize}
+
+
+
+\section*{Recommended Data Repositories}
+
+The following repositories are recommended for publishing the supplementary file S1 and ensuring accessibility, persistence, and DOI assignment:
+
+\begin{itemize}
+    \item \textbf{Zenodo (Highly recommended)}: \url{https://zenodo.org/}
+    \item \textbf{Figshare}: \url{https://figshare.com/}
+    \item \textbf{OSF -- Open Science Framework}: \url{https://osf.io/}
+    \item \textbf{Dryad}: \url{https://datadryad.org/}
+    \item \textbf{Harvard Dataverse}: \url{https://dataverse.harvard.edu/}
+    \item \textbf{SRDR -- Systematic Review Data Repository}: \url{https://srdr.ahrq.gov/}
+\end{itemize}
+
+Each repository assigns a permanent DOI identifier, which complies with reproducibility and transparency standards established by PRISMA 2020 and the editorial policies of international journals.

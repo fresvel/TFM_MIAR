@@ -1,0 +1,119 @@
+\section{Metodología}
+
+El presente trabajo se enmarca en una investigación de revisión sistemática, con enfoque descriptivo-analítico, realizado siguiendo las guías metodológicas de kitchenham (2007) \cite{kitchenham2007}. El propósito es identificar, organizar, evaluar y sintetizar evidencia científica sobre el uso de sistemas de inferencia basados en lógica difusa en plataformas de monitoreo de calidad del aire en tiempo real.
+
+\subsection{Diseño del Estudio}
+El diseño del estudio se estructura mediante el modelo \textbf{PICo} de la tabla \ref{tab:pico_air_quality}, con el fin de delimitar de manera precisa el fenómeno de estudio, el enfoque metodológico y el contexto de aplicación.
+
+\input{assets/tablas/methods/pico_air_quality.tex}
+
+Este enfoque permite identificar y analizar de manera sistemática las contribuciones existentes que combinan evaluación de la calidad del aire, lógica difusa y plataformas de monitoreo en tiempo real.
+
+A partir de la delimitación establecida mediante el modelo PICo, se formula la siguiente pregunta de investigación:
+
+\textbf{Pregunta de investigación:}
+
+\begin{quote}
+¿Cómo se utilizan los sistemas de inferencia basados en lógica difusa en plataformas de monitoreo en tiempo real para evaluar la calidad del aire urbano y los riesgos asociados?
+\end{quote}
+
+Con el fin de operacionalizar esta pregunta y estructurar de manera sistemática la revisión del estado del arte, se definen las siguientes directrices de investigación:
+
+\begin{itemize}
+    \item \textbf{Directriz 1 (Datos y variables):}
+    ¿Qué contaminantes atmosféricos y variables ambientales se utilizan con mayor frecuencia para evaluar la calidad del aire urbano en plataformas de monitoreo en tiempo real?
+
+    \item \textbf{Directriz 2 (Enfoque de lógica difusa):}
+    ¿Qué tipos de sistemas de inferencia basados en lógica difusa se emplean para la evaluación de la calidad del aire y del riesgo asociado, y cuáles son sus principales criterios de diseño?
+
+    \item \textbf{Directriz 3 (Plataforma y tiempo real):}
+    ¿Cómo se implementan las plataformas de monitoreo en tiempo real para el análisis y visualización de la calidad del aire, y qué arquitecturas y tecnologías se emplean?
+\end{itemize}
+
+\subsection*{Estrategia de búsqueda}
+La búsqueda bibliográfica se realizó en las bases de datos Scopus, Web of Science e IEEE Xplore, seleccionadas por su relación en el campo de ingeniería, sistemas inteligentes y ciencias ambientales. A partir de estas fuentes, se definió la estrategia de búsqueda con base en el marco PICo previamente establecido, con el objetivo de identificar literatura relevante sobre el uso de sistemas de inferencia basados en lógica difusa en plataformas de monitoreo de calidad del aire en tiempo real. La búsqueda se restringió a publicaciones en idioma inglés, dentro del período 2021--2026, e incluyó artículos de revista y actas de congresos revisados por pares.
+
+En la construcción de la cadena de búsqueda, se identificaron los conceptos nucleares de cada componente PICo (Problema/Fenómeno, Interés y Contexto) y se derivaron términos variantes y expresiones equivalentes empleadas de forma recurrente en la literatura científica. La Tabla \ref{tab:derivacion_pico} presenta los términos derivados para cada componente del marco PICo.
+
+\input{assets/tablas/methods/derivacion_pico.tex}
+
+Con base en esos términos, se construyeron bloques lógicos para cada componente PICo. Dentro de cada bloque se empleó OR para cubrir variantes semánticas; entre bloques (P, I y Co) se empleó AND para exigir el cumplimiento simultáneo de los tres componentes. Las cadenas se ajustaron iterativamente en cada base mediante revisión de pertinencia por título y resumen, hasta obtener una formulación con cobertura temática adecuada y volumen de resultados manejable para la revisión sistemática.
+
+Como resultado de este proceso de refinamiento, se obtuvo la siguiente cadena de búsqueda final, utilizada para la recuperación de estudios en las bases de datos seleccionadas:
+
+\input{assets/tablas/methods/cadena_final.tex}
+
+
+Esta formulación permitió recuperar un conjunto de estudios suficientemente amplio para caracterizar el estado del arte y, al mismo tiempo, acotado para un análisis profundo y sistemático.
+
+\subsection*{Selección de Artículos}
+El proceso de selección se ejecutó conforme al flujo PRISMA 2020 \cite{prisma2020}, articulando de forma secuencial las fases de identificación, cribado, obtención de texto completo, elegibilidad e inclusión final. Tras la consolidación de resultados provenientes de las bases consultadas y la depuración de duplicados, se conformó el conjunto de registros para cribado por título y resumen. Los criterios operacionales de inclusión y exclusión aplicados en las fases de cribado y elegibilidad se presentan en la Tabla \ref{tab:criterios_ie}.
+
+\input{assets/tablas/methods/criterios_ie.tex}
+
+En el cribado de título y resumen se evaluó para cada registro la relación con el fenómeno de calidad del aire (P), el uso central de lógica difusa (I), la evaluación de calidad del aire mediante lógica difusa (P+I), la naturaleza del estudio y la existencia de plataforma o sistema de monitoreo (Co). Esta fase permitió separar los estudios excluidos de aquellos que debían pasar a recuperación de texto completo.
+
+La obtención de textos completos combinó una estrategia automatizada y una estrategia manual. En la fase automatizada, cada registro con DOI se consultó primero en Unpaywall y, cuando no se identificó un PDF directo, se aplicó una segunda consulta en OpenAlex para localizar enlaces de acceso abierto. Esta etapa permitió clasificar de forma trazable los casos descargados y los no recuperables por ausencia de DOI, falta de enlace PDF directo o restricción de acceso. Para los casos no obtenidos automáticamente, se realizó búsqueda manual en las plataformas de las bases indexadas, en arXiv y en ResearchGate; cuando el documento no estuvo disponible en acceso directo, se gestionó la solicitud a los autores mediante ResearchGate. El estado de recuperación se documentó en la matriz de cribado a través de \texttt{Retrieval\_result}.
+
+La elegibilidad se evaluó sobre los estudios recuperados en texto completo, aplicando los criterios D1--D3 y el criterio transversal de diseño metodológico y validación, con registro explícito de evidencia por página. En esta etapa se consignó una razón única de exclusión por estudio cuando correspondía, manteniendo consistencia con el reporte PRISMA de exclusiones en texto completo.
+
+\subsection{Evaluación de Calidad}
+La evaluación de calidad se fundamentó en el apartado 6.3 de Kitchenham (2007) \cite{kitchenham2007}, aplicando su recomendación de seleccionar los ítems en función de las preguntas de investigación. Cada pregunta del checklist fue contrastada con la pregunta principal de la revisión y con las directrices D1--D3, conservando solo aquellos criterios que aportaban evidencia relevante sobre validez metodológica y robustez de resultados en el contexto de monitoreo de calidad del aire con lógica difusa.
+
+El procedimiento incluyó una tipificación previa de los estudios. Cada artículo incluido por texto completo se clasificó como \texttt{Qualitative}, \texttt{Quantitative} o \texttt{Mixed}. Para los estudios con componente cuantitativo, se realizó una subclasificación en: cuantitativo empírico general, correlacional/observacional, \textit{survey} o experimento. El checklist se aplicó de manera condicionada a esta tipificación, evaluando cada estudio solo con los ítems pertinentes a su tipo y subtipo.
+
+El instrumento final se construyó a partir del bloque cuantitativo de Kitchenham \cite{kitchenham2007} (preguntas comunes y específicas por subtipo), aplicando tres criterios de selección: relevancia para la pregunta de investigación, capacidad de identificar riesgo de sesgo (diseño, ejecución, análisis y conclusiones) y aplicabilidad al corpus final. El resultado fue un instrumento de 30 ítems, organizados en un núcleo común y componentes específicos para estudios experimentales, correlacionales/observacionales y cuantitativos empíricos sin subtipo específico. Los ítems asociados a \textit{survey} se excluyeron, ya que no hubo estudios de ese tipo en la muestra.
+
+La unidad de evaluación fue el estudio primario incluido por texto completo. Dado que el corpus final estuvo compuesto exclusivamente por estudios cuantitativos, no se aplicó el checklist cualitativo. La codificación utilizó la escala \texttt{Yes}, \texttt{Partial}, \texttt{No}, \texttt{Unclear} y \texttt{N/A}. La categoría \texttt{Unclear} se empleó cuando la información reportada era insuficiente para decidir, y \texttt{N/A} únicamente cuando el criterio no aplicaba al subtipo del estudio. Cada decisión se respaldó con evidencia textual y referencia de página (formato \texttt{p.X} o \texttt{p.X-p.Y}) para garantizar trazabilidad.
+
+La puntuación agregada se calculó mediante ponderación explícita (\texttt{Yes}=1, \texttt{Partial}=0.5, \texttt{Unclear}=0.25, \texttt{No}=0), excluyendo los \texttt{N/A} del denominador:
+
+\begin{equation}
+\textit{Score}_{raw} = 1\cdot n_{Yes} + 0.5\cdot n_{Partial} + 0.25\cdot n_{Unclear}
+\end{equation}
+
+\begin{equation}
+\textit{Items}_{aplicables} = 30 - n_{N/A}
+\end{equation}
+
+\begin{equation}
+\textit{Score}_{\%} = \left( \frac{\textit{Score}_{raw}}{\textit{Items}_{aplicables}} \right)\times 100
+\end{equation}
+
+Con base en este porcentaje se definieron tres niveles de calidad: \textbf{Alta} (\(\textit{Score}_{\%}\geq 80\)), \textbf{Media} (\(60 \leq \textit{Score}_{\%} < 80\)) y \textbf{Baja} (\(\textit{Score}_{\%}<60\)). La evaluación no se utilizó como criterio de exclusión automática, sino como insumo para interpretar la heterogeneidad de los hallazgos, identificar posibles sesgos y realizar análisis de sensibilidad.
+
+\subsection{Extracción de datos}
+La extracción de datos se diseñó para responder de forma directa la pregunta principal de investigación y las directrices D1--D3, manteniendo trazabilidad completa desde cada afirmación de síntesis hasta su evidencia en texto completo. El diseño del instrumento tomó como base el principio de Kitchenham \cite{kitchenham2007} de definir previamente qué datos son necesarios para contestar las preguntas de investigación y cómo deben codificarse para reducir sesgo de interpretación entre estudios.
+
+Antes de la extracción definitiva se ejecutó un piloto sobre un subconjunto de artículos incluidos, con el objetivo de estabilizar definiciones operacionales, reducir ambigüedad semántica y verificar que cada campo aportara valor analítico real. Ese piloto permitió consolidar una matriz operativa estructurada en seis bloques: metadatos bibliográficos, datos y variables (D1), enfoque de lógica difusa (D2), plataforma y operación en tiempo real (D3), resultados de evaluación y trazabilidad metodológica. Como resultado de esta depuración, la matriz final quedó en 48 columnas, identificando variables útiles para síntesis transversal.
+
+La extracción registró variables categóricas, descripciones técnicas y valores cuantitativos reportados. Para las variables categóricas se aplicó un catálogo controlado con vocabulario predefinido y reglas de normalización. Cuando una categoría no estaba cubierta por el catálogo, se usó el formato \texttt{Other:<texto>} para preservar precisión. El valor \texttt{NR} se reservó para información no reportada y \texttt{NA} para no aplicabilidad metodológica. Esta convención permitió separar ausencia de reporte, no aplicabilidad y variación terminológica.
+
+Toda celda analítica de D1, D2, D3 y evaluación se respaldó con evidencia de página en formato \texttt{p.X} o \texttt{p.X-p.Y}. La evidencia se registró de forma independiente por bloque (\texttt{Evidence\_D1\_pages}, \texttt{Evidence\_D2\_pages}, \texttt{Evidence\_D3\_pages}, \texttt{Evidence\_Eval\_pages}) para facilitar auditoría focalizada y revisión cruzada durante la síntesis. Esta estrategia evitó depender de notas narrativas no trazables y mejoró la reproducibilidad del proceso.
+
+La implementación operativa de esta fase se conserva en la matriz final de extracción y en su catálogo de codificación controlada. La vista conceptual de la matriz se resume en la Tabla \ref{tab:matriz_extraccion_actualizada}.
+
+\begin{adjustwidth}{-\extralength}{0cm}
+\input{assets/tablas/methods/extraccion_de_datos.tex}
+\end{adjustwidth}
+
+
+\subsubsection{Análisis y Síntesis de Datos}
+El análisis y la síntesis de datos se desarrollaron con un enfoque alineado con Kitchenham, y organizado en cinco fases analíticas encadenadas ilustradas en la Figura \ref{fig:anlisis_sintesis}. En la primera fase (preparación analítica), se trabajó sobre la matriz consolidada de extracción de datos, verificando consistencia entre identificadores, campos analíticos y evidencia por estudio. En esta etapa, se aplicó una estandarización a las columnas categóricas y multietiqueta mediante normalización semántica, descomposición de valores compuestos y armonización de variantes terminológicas, preservando siempre la trazabilidad con el estudio de origen.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{assets/figuras/metodologia/analisis_sintesis.png}
+\caption{Fases del análisis y síntesis de datos. Elaboración propia.}
+\label{fig:anlisis_sintesis}
+\end{figure}
+
+En la segunda fase (evidencia cuantitativa y visual), se construyó la base descriptiva mediante frecuencias absolutas y relativas (\(k/n\), \%) y tablas de distribución por dimensión analítica, complementadas con gráficos de barras de frecuencia por categoría, gráficos de distribución del número de variables por estudio y figuras compuestas con subfiguras comparativas.
+
+En la tercera fase (identificación de patrones), el análisis pasó de describir categorías a relacionarlas entre sí. Para ello se utilizaron tablas cruzadas y matrices de coocurrencia, con el objetivo de responder cómo se combinan las decisiones metodológicas dentro de los estudios y no solo qué tan frecuentes son de forma aislada. En este punto se identificaron convergencias, configuraciones recurrentes y variaciones entre enfoques. Las columnas descriptivas no se forzaron a categorías cerradas; se usaron como apoyo contextual para interpretar por qué ciertos patrones aparecen y cómo deben leerse en la síntesis narrativa.
+
+En la cuarta fase (construcción de perfiles), los patrones relacionales se consolidaron en perfiles compactos de configuración. Estos perfiles resumen combinaciones típicas de diseño (por ejemplo, entradas, enfoque metodológico o componentes de plataforma) y permiten convertir hallazgos del estado del arte en criterios reutilizables.
+
+En la quinta fase (integración y redacción de la síntesis), se articularon todos los hallazgos en una narrativa continua y trazable. La redacción se orientó a explicar implicaciones metodológicas y de diseño, evitando listados de categorías sin interpretación y manteniendo vínculo explícito entre evidencia, visualización e inferencia analítica.
+
+La implementación se realizó con Python, utilizando principalmente \texttt{pandas} para transformación y agregación de datos, y \texttt{seaborn}/\texttt{matplotlib} para la generación de visualizaciones analíticas. Este flujo se mantuvo de forma homogénea en las directrices de síntesis y en los bloques de evaluación transversal, garantizando consistencia entre procesamiento, evidencia y redacción final.

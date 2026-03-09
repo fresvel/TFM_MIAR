@@ -1,0 +1,5 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:PM2.5_Forecast_Only,Prediction_Based_Risk,conceptual_merge,Forecast especifico de contaminante se integra en riesgo predictivo.
+Other:Threshold_Based_Environment_Quality,AQI_Thresholds,conceptual_merge,Clasificacion por umbrales se integra en enfoque AQI basado en thresholds.
+Other:OR_Risk_Group_0_to_13,Custom_Risk_Scale,custom_scale,"Escala propia de riesgo, separada de AQI y prediccion."
+LoP_m-AQI,Custom_Risk_Scale,custom_scale,"Indice hibrido propio, agrupado como escala personalizada."

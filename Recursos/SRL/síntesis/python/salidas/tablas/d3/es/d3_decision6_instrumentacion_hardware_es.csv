@@ -1,0 +1,5 @@
+﻿Configuracion_hardware,Criterio_operativo,k,n,%,Lectura_decision
+Base,Solo sensores/controladores base reportados en el estudio.,4,19,21.1,Perfil minimo viable de instrumentacion.
+Especializada,Solo componentes especializados (sin base explicita).,0,19,0.0,Configuracion orientada a caso especifico.
+Mixta_base_especializada,Convivencia de base de sensado y componentes especializados.,14,19,73.7,Patron dominante para ampliar cobertura funcional.
+NR,Sin evidencia suficiente para clasificar instrumentacion.,1,19,5.3,NR en hardware/sensores.

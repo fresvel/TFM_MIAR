@@ -1,0 +1,24 @@
+\begin{longtblr}[
+  label={tab:eval_boxplot_resumen_valores},
+  caption={Resultados de desempeño: resumen estadístico para valores reportados por métrica y unidad comparable. Elaboración propia.}
+]{
+  colspec={X[2.0,l,m] X[1.4,l,m] X[0.7,c,m] X[0.7,c,m] X[0.8,c,m] X[0.8,c,m] X[0.8,c,m]},
+  width=\textwidth,
+  rowhead=1,
+  row{1}={font=\bfseries}
+}
+\toprule
+Unidad comparable & Métrica & n valores & n artículos & Mediana & Min & Max \\
+\midrule
+Clasificación de AQI & Exactitud & 2 & 2 & 96.45 & 94.0 & 98.9 \\
+Clasificación de IAQ con control & Exactitud & 3 & 2 & 95.0 & 91.16 & 97.3 \\
+\midrule
+\SetCell[r=4]{m}Predicción de PM2.5 & Error absoluto medio (MAE) & 4 & 1 & 1.635 & 0.26 & 7.65 \\
+Predicción de PM2.5 & Error porcentual absoluto medio (MAPE) & 2 & 2 & 2.0457 & 0.4825 & 3.609 \\
+Predicción de PM2.5 & Raíz del error cuadrático medio normalizado (NRMSE) & 4 & 2 & 0.4175 & 0.3447 & 0.6679 \\
+Predicción de PM2.5 & Coeficiente de determinación (R2) & 2 & 2 & 79.985 & 78.25 & 81.72 \\
+\midrule
+\SetCell[r=2]{m}Estimación de AQI/IAQ & Coeficiente de determinación (R2) & 2 & 1 & 96.0 & 96.0 & 96.0 \\
+Estimación de AQI/IAQ & Error porcentual absoluto medio (MAPE) & 4 & 1 & 0.17 & 0.03 & 0.63 \\
+\bottomrule
+\end{longtblr}

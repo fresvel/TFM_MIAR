@@ -1,0 +1,15 @@
+\begin{longtblr}[
+  label={tab:eval_aqi_matriz_complementaria},
+  caption={Matriz complementaria (ART04--ART08): contraste de enfoque AQI, métricas y especificación difusa. Elaboración propia.}
+]{
+  colspec={X[0.7,c,m] X[1.4,l,m] X[1.1,l,m] X[0.8,c,m] X[1.2,l,m] X[1.0,l,m] X[1.9,l,m]},
+  width=\textwidth,
+  row{1}={font=\bfseries}
+}
+ID & Unidad/objetivo & Métricas & ¿Predicción de AQI? & Modelo IA & Fuente de datos & Fuzzy (reglas/defuzzificación) \\
+ART04 & Clasificación IAQ/AQI sobre dataset & Accuracy (clasificación) & No claro & Clasificadores fuzzy (CHI, FURIA, WF-C, FARC-HD, SLAVE) & Dataset público Aachen/Kaggle & Sin pipeline Mamdani/Sugeno IoT completo \\
+ART05 & Clasificación/control IAQ indoor & Sin set comparable estándar & No & Fuzzy controller para ventilación & Sensores directos (sin dataset para validación) & Reglas de control; comparabilidad limitada \\
+ART06 & Clasificación ISPU/AQI & Accuracy (~95\%) & No & Mamdani IoT & Sensores directos & Mamdani; reglas explícitas; centroid en flujo \\
+ART07 & Monitoreo/clasificación AQI en tiempo real & No homogéneas (abstract) & No & FIS en tiempo real & Dataset público no trazable en el reporte & FIS con reglas; tipo no detallado en el abstract \\
+ART08 & Optimización de red WSN (no AQI clásico) & Delay, PDR, PLR, throughput, energía & No & FL + PSO (routing) & Despliegue + dataset/código publicados & Lógica difusa para optimización de red; no pipeline AQI clásico \\
+\end{longtblr}

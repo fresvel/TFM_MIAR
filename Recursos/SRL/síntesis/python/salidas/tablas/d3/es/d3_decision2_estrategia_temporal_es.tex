@@ -1,0 +1,16 @@
+\begin{longtblr}[
+  entry=none,
+  label={tab:d3_decision2_estrategia_temporal},
+  caption={D3 -- Decision 2: estrategia temporal de procesamiento (agrupacion inferida; k/n/\%; n=19). Elaboracion propia.}
+]{
+  colspec={X[1.0,l,m] X[1.6,l,m] X[0.45,c,m] X[0.45,c,m] X[0.55,c,m] X[2.3,l,m]},
+  width=\textwidth,
+  row{1}={font=\bfseries}
+}
+Estrategia\_temporal & Categorias\_incluidas & k & n & \% & Lectura\_decision \\
+Tiempo\_real\_estricto & Real\_Time\_Distributed; Real\_Time\_Edge & 6 & 19 & 31.6 & Operacion de baja latencia en borde/distribuida; patron operativo fuerte. \\
+Cuasi\_tiempo\_real & Near\_Real\_Time & 7 & 19 & 36.8 & Modo dominante del corpus para monitoreo continuo con ventanas de actualizacion. \\
+Hibrido & Hybrid & 4 & 19 & 21.1 & Combina componente en linea con analitica diferida/auxiliar. \\
+Offline & Offline\_Analytics & 1 & 19 & 5.3 & Casos puntuales sin bucle operativo en linea. \\
+NR & NR & 1 & 19 & 5.3 & Sin detalle temporal suficiente para clasificar modo de procesamiento. \\
+\end{longtblr}

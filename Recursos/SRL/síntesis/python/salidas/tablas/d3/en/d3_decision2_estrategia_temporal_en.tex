@@ -1,0 +1,16 @@
+\begin{longtblr}[
+  entry=none,
+  label={tab:d3_decision2_temporal_strategy},
+  caption={D3 -- Decision 2: temporal processing strategy (inferred grouping; k/n/%; n=19).}
+]{
+  colspec={X[1.0,l,m] X[1.6,l,m] X[0.45,c,m] X[0.45,c,m] X[0.55,c,m] X[2.3,l,m]},
+  width=\textwidth,
+  row{1}={font=\bfseries}
+}
+Temporal\_strategy & Included\_categories & k & n & \% & Decision\_reading \\
+Tiempo\_real\_estricto & Real\_Time\_Distributed; Real\_Time\_Edge & 6 & 19 & 31.6 & Low-latency edge/distributed operation; strong operational pattern. \\
+Cuasi\_tiempo\_real & Near\_Real\_Time & 7 & 19 & 36.8 & Dominant corpus mode for continuous monitoring with update windows. \\
+Hibrido & Hybrid & 4 & 19 & 21.1 & Combines online operation with deferred/auxiliary analytics. \\
+Offline & Offline\_Analytics & 1 & 19 & 5.3 & Isolated cases without online operational loop. \\
+NR & NR & 1 & 19 & 5.3 & Insufficient temporal detail to classify processing mode. \\
+\end{longtblr}

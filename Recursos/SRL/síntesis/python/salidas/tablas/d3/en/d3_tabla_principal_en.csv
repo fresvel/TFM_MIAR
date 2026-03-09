@@ -1,0 +1,111 @@
+﻿Dimension,Category,k,n,%
+Platform architecture,IoT_Edge_Cloud,6,19,31.6
+Platform architecture,IoT_2Tier,5,19,26.3
+Platform architecture,Sensor_Node_External_Analytics,2,19,10.5
+Platform architecture,WSN_Pipeline,2,19,10.5
+Platform architecture,IoT_Fog_Layered,1,19,5.3
+Platform architecture,Standalone_Node_PC,1,19,5.3
+Processing mode,Near_Real_Time,7,19,36.8
+Processing mode,Real_Time_Edge,5,19,26.3
+Processing mode,Hybrid,4,19,21.1
+Processing mode,Offline_Analytics,1,19,5.3
+Processing mode,Real_Time_Distributed,1,19,5.3
+Communication/technology,MATLAB,7,19,36.8
+Communication/technology,Cloud_Server,6,19,31.6
+Communication/technology,WiFi,6,19,31.6
+Communication/technology,MCU_Arduino,4,19,21.1
+Communication/technology,ESP8266,3,19,15.8
+Communication/technology,ESP32,3,19,15.8
+Communication/technology,ThingSpeak,3,19,15.8
+Communication/technology,Bluetooth,3,19,15.8
+Communication/technology,Python,2,19,10.5
+Communication/technology,RaspberryPi,2,19,10.5
+Communication/technology,Zigbee,2,19,10.5
+Communication/technology,AWS_EC2,1,19,5.3
+Communication/technology,I2C,1,19,5.3
+Communication/technology,LoRa,1,19,5.3
+Communication/technology,Google_Sheets,1,19,5.3
+Communication/technology,HDFS_MapReduce,1,19,5.3
+Communication/technology,Google_Map,1,19,5.3
+Communication/technology,Other:ATMega32,1,19,5.3
+Communication/technology,Other:Android_Studio,1,19,5.3
+Communication/technology,Other:AWS_IoT,1,19,5.3
+Communication/technology,Other:Ethernet,1,19,5.3
+Communication/technology,Other:Firebase,1,19,5.3
+Communication/technology,Other:Gateway_LAN,1,19,5.3
+Communication/technology,Other:Arduino_Controllers,1,19,5.3
+Communication/technology,Other:BluEpyc,1,19,5.3
+Communication/technology,Other:CAN,1,19,5.3
+Communication/technology,Other:Cloud_Data_Access,1,19,5.3
+Communication/technology,Other:CodeVision_CVAVR,1,19,5.3
+Communication/technology,Other:LCD,1,19,5.3
+Communication/technology,Other:JavaScript_Web_App,1,19,5.3
+Communication/technology,Other:IoT_Sensor_Network,1,19,5.3
+Communication/technology,Other:IBM_SPSS,1,19,5.3
+Communication/technology,Other:Google_Colab,1,19,5.3
+Communication/technology,Other:Local_DB_Server,1,19,5.3
+Communication/technology,Other:MCU_CORTEX-M3,1,19,5.3
+Communication/technology,Other:MAX232,1,19,5.3
+Communication/technology,Other:Thonny,1,19,5.3
+Communication/technology,Other:SGP30,1,19,5.3
+Communication/technology,Other:SD_Logging,1,19,5.3
+Communication/technology,Other:PMS7003,1,19,5.3
+Communication/technology,Other:NRF24L01_RF_Link,1,19,5.3
+Communication/technology,Other:WordPress,1,19,5.3
+Communication/technology,Other:WP6003,1,19,5.3
+Communication/technology,Serial,1,19,5.3
+Visualization and alerting,Dashboard,9,19,47.4
+Visualization and alerting,Alarm_Module,5,19,26.3
+Visualization and alerting,Local_Display,4,19,21.1
+Visualization and alerting,TimeSeries_Plot,2,19,10.5
+Visualization and alerting,AQI_Color_Index,1,19,5.3
+Visualization and alerting,Map_Visualization,1,19,5.3
+Visualization and alerting,Medical_Alert,1,19,5.3
+Visualization and alerting,Model_Visualization,1,19,5.3
+Visualization and alerting,Risk_Graph,1,19,5.3
+Deployment context,Indoor,14,19,73.7
+Deployment context,Urban,11,19,57.9
+Deployment context,Outdoor,6,19,31.6
+Deployment context,Residential,4,19,21.1
+Deployment context,Industrial,3,19,15.8
+Deployment context,Campus,2,19,10.5
+Deployment context,Healthcare_Facility,2,19,10.5
+Deployment context,Educational_Classroom,1,19,5.3
+Deployment context,Desert,1,19,5.3
+Deployment context,Healthcare_Personalized,1,19,5.3
+Deployment context,Rural,1,19,5.3
+Hardware and sensors,PM_Sensor,10,19,52.6
+Hardware and sensors,TempHumidity_Sensor,9,19,47.4
+Hardware and sensors,CO_Sensor,8,19,42.1
+Hardware and sensors,MCU_Arduino,7,19,36.8
+Hardware and sensors,CO2_Sensor,5,19,26.3
+Hardware and sensors,VOC_Sensor,4,19,21.1
+Hardware and sensors,SBC_RaspberryPi,3,19,15.8
+Hardware and sensors,MCU_ESP32,3,19,15.8
+Hardware and sensors,IoT_Sensor_Nodes,2,19,10.5
+Hardware and sensors,Alarm_Module,2,19,10.5
+Hardware and sensors,SO2_Sensor,2,19,10.5
+Hardware and sensors,MCU_Generic,2,19,10.5
+Hardware and sensors,MultiGas_Sensor,2,19,10.5
+Hardware and sensors,Actuator_Fan,1,19,5.3
+Hardware and sensors,LoRa_Transceiver,1,19,5.3
+Hardware and sensors,BLE_Infrastructure,1,19,5.3
+Hardware and sensors,CH4_Sensor,1,19,5.3
+Hardware and sensors,NO2_Sensor,1,19,5.3
+Hardware and sensors,Particle_Counter,1,19,5.3
+Hardware and sensors,Other:WP6003_Device,1,19,5.3
+Hardware and sensors,Other:TGS2201,1,19,5.3
+Hardware and sensors,Other:MultiParameter_Unit,1,19,5.3
+Hardware and sensors,RTC_Module,1,19,5.3
+Hardware and sensors,Reference_Station,1,19,5.3
+Hardware and sensors,Smoke_Sensor,1,19,5.3
+Hardware and sensors,VOC_Reference_Analyzer,1,19,5.3
+Real-time operation,Continuous_Loop,10,19,52.6
+Real-time operation,Interval_Sampling,10,19,52.6
+Real-time operation,Threshold_Alerting,6,19,31.6
+Real-time operation,Streaming_Upload,5,19,26.3
+Real-time operation,RealTime_Data_Collection,2,19,10.5
+Real-time operation,Clock_Synchronization,1,19,5.3
+Real-time operation,RealTime_Data_Correction,1,19,5.3
+Real-time operation,Route_Update_Event,1,19,5.3
+Real-time operation,Temporal_Delay_Evaluated,1,19,5.3

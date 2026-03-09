@@ -1,0 +1,12 @@
+﻿Comparable_unit,k,n,%
+AQI_Classification,3,19,15.8
+AQI_IAQ_Estimation,3,19,15.8
+IAQ_Classification_Control,3,19,15.8
+PM2.5_Prediction,3,19,15.8
+CO_AQI_IAQ_Categorization,1,19,5.3
+OR_Risk_Classification,1,19,5.3
+Hybrid_LoP_mAQI_Prediction,1,19,5.3
+PM10_Prediction,1,19,5.3
+PM2.5_Calibration,1,19,5.3
+SIA_Classification,1,19,5.3
+VOC_Prediction,1,19,5.3
