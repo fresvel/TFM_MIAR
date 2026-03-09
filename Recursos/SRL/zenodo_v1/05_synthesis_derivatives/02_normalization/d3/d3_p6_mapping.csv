@@ -1,0 +1,37 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:CCS811(CO2_tVOC),CO2_Sensor; VOC_Sensor,multilabel_split,Sensor combinado CO2/TVOC se descompone en dos entradas.
+Other:CO2_VOC_Sensor_CCS811,CO2_Sensor; VOC_Sensor,multilabel_split,Sensor combinado CO2/VOC se descompone en dos entradas.
+Other:CO2_TVOC_Sensor_SGP30,CO2_Sensor; VOC_Sensor,multilabel_split,Sensor combinado CO2/TVOC se descompone en dos entradas.
+Other:ATMega32,MCU_Generic,family_unification,Agrupacion de microcontroladores de baja frecuencia.
+MCU_NodeMCU,MCU_Generic,family_unification,Agrupacion de microcontroladores de baja frecuencia.
+Other:ESP32_Controller,MCU_ESP32,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:ESP32,MCU_ESP32,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:ESP32_MCU,MCU_ESP32,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:RaspberryPi3,SBC_RaspberryPi,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:RaspberryPi,SBC_RaspberryPi,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:MQ7(CO),CO_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:MQ135(CO2),CO2_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:MQ4(CH4),CH4_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:SO2_Sensor,SO2_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:MQ136,SO2_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:NO2_Sensor,NO2_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:PMS5003,PM_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:PMS7003,PM_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:SPS30,PM_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:Particle_Counter,PM_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:SOLAIR3100,Particle_Counter,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:Reference_Station,Reference_Station,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:MultiGas_MQ135,MultiGas_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:Multigas(NO2_CO),MultiGas_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:MQ138,VOC_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:PID-A15,VOC_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:FID_PHX42_Reference,VOC_Reference_Analyzer,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:Smoke_Sensor_MQ2,Smoke_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:Exhaust_Fan,Actuator_Fan,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:IoT_Collection_Nodes,IoT_Sensor_Nodes,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:IoT_Air_Quality_Sensors,IoT_Sensor_Nodes,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:LoRa_Transceiver,LoRa_Transceiver,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:MQ135,VOC_Sensor,token_unification,Unificacion semantica de variante/modelo especifico a categoria tecnica.
+Other:BLE_Beacon,BLE_Infrastructure,infra_unification,Infraestructura BLE agrupada.
+Other:BLE_EchoBeacon,BLE_Infrastructure,infra_unification,Infraestructura BLE agrupada.
+Other:BLE_Gateway,BLE_Infrastructure,infra_unification,Infraestructura BLE agrupada.

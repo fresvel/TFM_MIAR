@@ -1,0 +1,5 @@
+﻿Article_ID,Variant_detected,Proposed_normalized,Decision_status,Evidence_D2_pages,Title,Technical_note
+A087,Other:Filter_Replacement_Support,Operational_Optimization,working_v1,p.1; p.7-p.12,IoT-based filter management system using reinforced ANFIS for VOCs reduction in urban industrial facilities,"Soporte de decision de reemplazo de filtro, consolidado en optimizacion operativa."
+A132,Other:HVAC_Power_Optimization,Operational_Optimization,working_v1,p.3; p.5-p.7,Neuro-Fuzzy Decision Support System for Optimization of the Indoor Air Quality in Operation Rooms,"Optimizacion de potencia HVAC, consolidada como optimizacion operativa."
+A084,Other:Sensor_Calibration_Adjustment,Operational_Optimization,working_v1,p.1-p.5; p.8-p.10,Explainable AI for rule reduction in fuzzy models for air pollution measurement adjustment,"Objetivo operativo de calibracion/ajuste, consolidado en optimizacion operativa."
+A168,Route_Optimization,Operational_Optimization,working_v1,p.1; p.5-p.6; p.8,Monitoring of air pollution to establish optimal less polluted path by utilizing wireless sensor network,"Optimizacion de ruta, consolidada en la misma categoria operativa."

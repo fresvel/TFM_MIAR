@@ -1,0 +1,5 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:Sensor_Calibration_Adjustment,Operational_Optimization,purpose_unification,Se integra como optimizacion operativa orientada al ajuste del sistema.
+Other:Filter_Replacement_Support,Operational_Optimization,purpose_unification,Se integra como objetivo operativo de soporte de mantenimiento.
+Other:HVAC_Power_Optimization,Operational_Optimization,purpose_unification,Se integra como optimizacion operativa de actuacion.
+Route_Optimization,Operational_Optimization,purpose_unification,Se integra en optimizacion operativa para comparabilidad de propositos especiales.

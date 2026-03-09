@@ -1,0 +1,3 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:Two_Rules_Reported,Explicit_Rule_Table,conceptual_merge,Reporte de reglas puntuales se consolida como base explicita.
+Other:Mamdani_Rule_Base,Explicit_Rule_Table,conceptual_merge,Base de reglas Mamdani se consolida en la categoria explicita.

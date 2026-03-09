@@ -1,0 +1,9 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+I-ANFIS,ANFIS,family_unification,Variante de ANFIS consolidada en la familia base.
+Other:RANFIS,ANFIS,family_unification,Variante reforzada de ANFIS consolidada para conteo por familia.
+Sugeno,Sugeno/TSK,family_unification,Unificacion operativa con TSK para evitar dispersion semantica.
+Other:TSK,Sugeno/TSK,family_unification,TSK tratado como subfamilia de Sugeno para comparacion agregada.
+Other:Tsukamoto,Tsukamoto,separate_family,Se mantiene como familia propia (no equivalente a Sugeno/TSK).
+Type1_FIS,Type1_Generic,disambiguation,Etiqueta generica de FIS tipo-1 sin subtipo explicito.
+Other:Fuzzy_ARTMAP,Hybrid_Fuzzy,hybrid_family,Se integra en Hybrid_Fuzzy y se conserva nota de variante ML para trazabilidad narrativa.
+ADFIST,ADFIST,preserve_variant,Se preserva como variante estructural (FIS en arbol) del corpus.

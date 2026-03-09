@@ -1,0 +1,8 @@
+﻿value,k
+AQI_Thresholds,8
+Prediction_Based_Risk,5
+NR,2
+Other:Threshold_Based_Environment_Quality,1
+Other:OR_Risk_Group_0_to_13,1
+Other:PM2.5_Forecast_Only,1
+LoP_m-AQI,1

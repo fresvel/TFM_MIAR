@@ -1,0 +1,7 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:Triangular,Triangular,shape_unification,Forma explicita de MF triangular.
+Other:Trapezoidal,Trapezoidal,shape_unification,Forma explicita de MF trapezoidal.
+Other:Triangular_Trapezoidal,Triangular; Trapezoidal,shape_split,Se desdobla en dos etiquetas para analisis multietiqueta.
+Other:Bell_Shaped,Bell,shape_unification,Se integra en familia Bell para comparabilidad.
+Other:Generalized_Bell,Bell,shape_unification,Se integra en familia Bell para comparabilidad.
+Other:Linear_Output,excluded_from_MF_counts,scope_refinement,Se excluye de MF por representar consecuente de salida en Sugeno.

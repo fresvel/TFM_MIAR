@@ -1,0 +1,11 @@
+﻿value,k
+Continuous_Loop,10
+Interval_Sampling,10
+Threshold_Alerting,6
+Streaming_Upload,5
+Other:RealTime_Data_Collection,2
+Other:RealTime_Outlier_Correction,1
+NR,1
+Other:Map_Route_Update,1
+Temporal_Delay_Evaluated,1
+Other:Clock_Synchronization,1

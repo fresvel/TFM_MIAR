@@ -1,0 +1,5 @@
+﻿Article_ID,Variant_detected,Proposed_normalized,Decision_status,Evidence_D2_pages,Title,Technical_note
+A178,LoP_m-AQI,Custom_Risk_Scale,working_v1,p.11-p.15,Personalised healthcare model for monitoring and prediction of airpollution: machine learning approach,Indice compuesto propio; se integra como escala personalizada de riesgo.
+A142,Other:OR_Risk_Group_0_to_13,Custom_Risk_Scale,working_v1,p.6-p.7; p.13-p.14,A Fuzzy Inference System for the Assessment of Indoor Air Quality in an Operating Room to Prevent Surgical Site Infection,Se integra como escala de riesgo propia definida por el estudio.
+A157,Other:PM2.5_Forecast_Only,Prediction_Based_Risk,working_v1,p.1-p.3,Application of a Fuzzy ARTMAP Neural Network for Indoor Air Quality Prediction,Se integra como riesgo basado en prediccion (forecast especifico de PM2.5).
+A114,Other:Threshold_Based_Environment_Quality,AQI_Thresholds,working_v1,p.7-p.10; p.19,Intelligent Factory with Environment Quality Control Based on Fuzzy Method through Deep Reinforcement Learning,Se integra como enfoque de umbrales para clasificacion de riesgo.

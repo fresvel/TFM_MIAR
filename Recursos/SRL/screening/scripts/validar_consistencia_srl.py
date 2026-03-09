@@ -75,7 +75,7 @@ def main() -> int:
         )
 
     # Check de columnas esperadas de extraccion
-    expected_extraction_cols = 48
+    expected_extraction_cols = 50
     real_cols = len(extraction[0].keys()) if extraction else 0
     if real_cols != expected_extraction_cols:
         errors.append(

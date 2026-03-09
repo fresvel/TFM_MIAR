@@ -1,0 +1,12 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:MATLAB,MATLAB,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:ESP8266,ESP8266,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:ESP32,ESP32,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:ThingSpeak,ThingSpeak,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:Python,Python,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:MCU_Arduino,MCU_Arduino,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:BLE,Bluetooth,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:RaspberryPi3,RaspberryPi,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:RaspberryPi,RaspberryPi,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:LoRa,LoRa,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.
+Other:Serial,Serial,token_unification,Unificacion de variante Other:* o alias tecnologico equivalente.

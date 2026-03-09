@@ -1,0 +1,10 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+Other:ThingSpeak_Channel_Visualization,Dashboard,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:Alarm_Message,Alarm_Module,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:Warning_Alert_Code,Alarm_Module,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:Recommendations_Alerts,Alarm_Module,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:Risk_Group_Graph,Risk_Graph,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:FIAQI_TimeSeries_Graph,TimeSeries_Plot,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:Prediction_Plots,TimeSeries_Plot,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:SOM_Visualization,Model_Visualization,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.
+Other:EPA_Color_Coded_Index,AQI_Color_Index,token_unification,Unificacion de variante visual/alerta con mismo rol funcional.

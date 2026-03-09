@@ -1,0 +1,7 @@
+﻿Original_token,Normalized_token,Rule_type,Rationale
+AQI_Mapping_Table,AQI_Mapping,label_generalization,Se generaliza la evidencia de mapeo AQI (tabular o visual) en una sola categoria.
+Other:Fuzzy_Surface,Fuzzy_Surface,label_unification,Se explicita como visualizacion de superficie difusa.
+Other:Confusion_Matrix,Confusion_Matrix,label_unification,Se explicita como evidencia de desempeno clasificatorio.
+Other:Tree_Structure,Rule_Transparency,conceptual_merge,Se integra por su valor explicativo en la interpretabilidad del sistema.
+Other:Color_Mapping,AQI_Mapping,conceptual_merge,Se integra como mapeo visual de clases AQI.
+NR,NR,explicit_missingness,Se mantiene como categoria explicita de no reporte.

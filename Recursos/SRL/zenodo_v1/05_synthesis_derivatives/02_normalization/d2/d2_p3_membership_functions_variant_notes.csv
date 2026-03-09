@@ -1,0 +1,14 @@
+﻿Article_ID,Variant_detected,Proposed_normalized,Decision_status,Evidence_D2_pages,Title,Technical_note
+A084,Other:Bell_Shaped,Bell,working_v1,p.1-p.5; p.8-p.10,Explainable AI for rule reduction in fuzzy models for air pollution measurement adjustment,Se unifica en familia Bell para comparabilidad.
+A087,Other:Generalized_Bell,Bell,working_v1,p.1; p.7-p.12,IoT-based filter management system using reinforced ANFIS for VOCs reduction in urban industrial facilities,Se unifica en familia Bell para comparabilidad.
+A009,Other:Linear_Output,excluded_from_MF_counts,working_v1,p.2-p.3,Air Quality Indices Prediction using Sugeno’s Fuzzy Logic - 2022 International Conference on IoT and Blockchain Technology (ICIBT),No se cuenta como MF; se trata como nota de consecuente Sugeno.
+A132,Other:Trapezoidal,Trapezoidal,working_v1,p.3; p.5-p.7,Neuro-Fuzzy Decision Support System for Optimization of the Indoor Air Quality in Operation Rooms,Forma explicita de MF trapezoidal.
+A136,Other:Trapezoidal,Trapezoidal,working_v1,p.12-p.16,Context-aware IoT-enabled framework to analyse and predict indoor air quality,Forma explicita de MF trapezoidal.
+A142,Other:Trapezoidal,Trapezoidal,working_v1,p.6-p.7; p.13-p.14,A Fuzzy Inference System for the Assessment of Indoor Air Quality in an Operating Room to Prevent Surgical Site Infection,Forma explicita de MF trapezoidal.
+A028,Other:Triangular,Triangular,working_v1,p.1-p.2; p.4,Urban Air Quality Analysis Using Ensemble Learning - 2025 Eighth International Conference on Advances in Biomedical Engineering (ICABME),Forma explicita de MF triangular.
+A132,Other:Triangular,Triangular,working_v1,p.3; p.5-p.7,Neuro-Fuzzy Decision Support System for Optimization of the Indoor Air Quality in Operation Rooms,Forma explicita de MF triangular.
+A135,Other:Triangular,Triangular,working_v1,p.6-p.9,Modeling indoor PM2.5 using Adaptive Dynamic Fuzzy Inference System Tree (ADFIST) on Internet of Things-based sensor network data,Forma explicita de MF triangular.
+A138,Other:Triangular,Triangular,working_v1,p.1; p.5-p.8; p.11,A novel application of fuzzy inference system optimized with particle swarm optimization and genetic algorithm for PM10 prediction,Forma explicita de MF triangular.
+A142,Other:Triangular,Triangular,working_v1,p.6-p.7; p.13-p.14,A Fuzzy Inference System for the Assessment of Indoor Air Quality in an Operating Room to Prevent Surgical Site Infection,Forma explicita de MF triangular.
+A165,Other:Triangular,Triangular,working_v1,p.2-p.4,Implementation of Fuzzy Tsukamoto Algorithm on Smart Node Sensors for Air Quality Monitoring,Forma explicita de MF triangular.
+A001,Other:Triangular_Trapezoidal,Triangular; Trapezoidal,working_v1,p.1; p.7-p.10; p.25-p.27; p.31-p.32,UAV-Based Hybrid Fuzzy Inference Framework for Symmetry and Asymmetry in Real-Time Air Quality Monitoring,Expresion compuesta desdoblada en dos etiquetas de forma.
