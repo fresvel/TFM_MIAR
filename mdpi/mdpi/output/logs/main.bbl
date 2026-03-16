@@ -1,18 +1,55 @@
 \begin{thebibliography}{999}
 
-\bibitem[K and Kumar(2022)]{ART01}
-K, P.; Kumar, P.
-\newblock A critical evaluation of air quality index models (1960--2021).
-\newblock {\em Environmental Monitoring and Assessment} {\bf 2022}, {\em
-  194},~324.
-\newblock {\url{https://doi.org/10.1007/s10661-022-09896-8}}.
+\bibitem[Kelly and Fussell(2015)]{PROB01}
+Kelly, F.J.; Fussell, J.C.
+\newblock Air Pollution and Public Health: Emerging Hazards and Improved
+  Understanding of Risk.
+\newblock {\em Environmental Geochemistry and Health} {\bf 2015}, {\em
+  37},~631--649.
+\newblock {\url{https://doi.org/10.1007/s10653-015-9720-1}}.
 
-\bibitem[Suman(2020)]{ART02}
-Suman.
-\newblock Air quality indices: A review of methods to interpret air quality
-  status.
-\newblock {\em Materials Today: Proceedings} {\bf 2020}.
-\newblock {\url{https://doi.org/10.1016/j.matpr.2020.07.141}}.
+\bibitem[Ott and Thorn(1976)]{PROB02}
+Ott, W.R.; Thorn, G.C.
+\newblock Air Pollution Index Systems in the United States and Canada.
+\newblock {\em Journal of the Air Pollution Control Association} {\bf 1976},
+  {\em 26},~460--470.
+\newblock {\url{https://doi.org/10.1080/00022470.1976.10470272}}.
+
+\bibitem[{U.S. Environmental Protection Agency}(2014)]{PROB03}
+{U.S. Environmental Protection Agency}.
+\newblock Air Quality Index: A Guide to Air Quality and Your Health.
+\newblock Technical Report EPA-456/F-14-002, U.S. Environmental Protection
+  Agency, Office of Air Quality Planning and Standards,  2014.
+
+\bibitem[Cairncross et~al.(2007)Cairncross, John, and Zunckel]{PROB04}
+Cairncross, E.K.; John, J.; Zunckel, M.
+\newblock A Novel Air Pollution Index Based on the Relative Risk of Daily
+  Mortality Associated with Short-Term Exposure to Common Air Pollutants.
+\newblock {\em Atmospheric Environment} {\bf 2007}, {\em 41},~8442--8454.
+\newblock {\url{https://doi.org/10.1016/j.atmosenv.2007.07.003}}.
+
+\bibitem[Hu et~al.(2015)Hu, Ying, Wang, and Zhang]{PROB05}
+Hu, J.; Ying, Q.; Wang, Y.; Zhang, H.
+\newblock Characterizing Multi-Pollutant Air Pollution in China: Comparison of
+  Three Air Quality Indices.
+\newblock {\em Environment International} {\bf 2015}, {\em 84},~17--25.
+\newblock {\url{https://doi.org/10.1016/j.envint.2015.06.014}}.
+
+\bibitem[Yi et~al.(2015)Yi, Lo, Mak, Leung, Leung, and Meng]{PROB06}
+Yi, W.Y.; Lo, K.M.; Mak, T.; Leung, K.S.; Leung, Y.; Meng, M.L.
+\newblock A Survey of Wireless Sensor Network Based Air Pollution Monitoring
+  Systems.
+\newblock {\em Sensors} {\bf 2015}, {\em 15},~31392--31427.
+\newblock {\url{https://doi.org/10.3390/s151229859}}.
+
+\bibitem[Spinelle et~al.(2017)Spinelle, Gerboles, Villani, Aleixandre, and
+  Bonavitacola]{PROB07}
+Spinelle, L.; Gerboles, M.; Villani, M.G.; Aleixandre, M.; Bonavitacola, F.
+\newblock Field Calibration of a Cluster of Low-Cost Commercially Available
+  Sensors for Air Quality Monitoring. Part B: {NO}, {CO} and {CO2}.
+\newblock {\em Sensors and Actuators B: Chemical} {\bf 2017}, {\em
+  238},~706--715.
+\newblock {\url{https://doi.org/10.1016/j.snb.2016.07.036}}.
 
 \bibitem[Zadeh(1973)]{ART03}
 Zadeh, L.A.
@@ -64,6 +101,20 @@ Lingaraj, K.; Malghan, R.L.; Rao, K.; Garg, L.; Somanath~Swamy, R.H.;
   Access; Green Open Access,
   {\url{https://doi.org/10.1038/s41598-025-19748-3}}.
 
+\bibitem[K and Kumar(2022)]{ART01}
+K, P.; Kumar, P.
+\newblock A critical evaluation of air quality index models (1960--2021).
+\newblock {\em Environmental Monitoring and Assessment} {\bf 2022}, {\em
+  194},~324.
+\newblock {\url{https://doi.org/10.1007/s10661-022-09896-8}}.
+
+\bibitem[Suman(2020)]{ART02}
+Suman.
+\newblock Air quality indices: A review of methods to interpret air quality
+  status.
+\newblock {\em Materials Today: Proceedings} {\bf 2020}.
+\newblock {\url{https://doi.org/10.1016/j.matpr.2020.07.141}}.
+
 \bibitem[Kitchenham and Charters(2007)]{kitchenham2007}
 Kitchenham, B.; Charters, S.
 \newblock Guidelines for Performing Systematic Literature Reviews in Software
@@ -71,6 +122,13 @@ Kitchenham, B.; Charters, S.
 \newblock Technical Report EBSE-2007-01, Keele University and Durham
   University,  2007.
 \newblock Version 2.3.
+
+\bibitem[Murena(2004)]{PROB08}
+Murena, F.
+\newblock Measuring Air Quality over Large Urban Areas: Development and
+  Application of an Air Pollution Index at the Urban Area of Naples.
+\newblock {\em Atmospheric Environment} {\bf 2004}, {\em 38},~6195--6202.
+\newblock {\url{https://doi.org/10.1016/j.atmosenv.2004.07.023}}.
 
 \bibitem[Page et~al.(2021)Page, McKenzie, Bossuyt, Boutron, Hoffmann, Mulrow,
   Shamseer, Tetzlaff, Akl, Brennan, Chou, Glanville, Grimshaw, Hrobjartsson,

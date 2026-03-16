@@ -126,7 +126,7 @@ El mapa de calor de la Figura~\ref{fig:relacion_salida_contaminantes} confirma e
 
 La Figura~\ref{fig:contaminantes_vs_salida} integra esta lectura al combinar frecuencia y coocurrencia de contaminantes según tipo de salida.
 
-\begin{figure}[htb]
+\begin{figure}[H]
 %\begin{adjustwidth}{-\extralength}{0cm}
 
 \centering
@@ -232,9 +232,7 @@ En esta sección se analiza cómo se implementan las plataformas de monitoreo de
 \paragraph{Arquitectura y tecnologías empleadas}
 La distribución de arquitectura y modo de procesamiento en este subapartado se fundamenta en las Figuras~\ref{fig:d3_sub_distribucion_arquitectura}, \ref{fig:d3_sub_distribucion_procesamiento} y \ref{fig:d3_cooc_arquitectura_procesamiento}. A partir de esa base, se observa un núcleo de implementación IoT con predominio de \texttt{IoT borde-nube} (\texttt{6/19}; \texttt{31.6\%}) y \texttt{IoT de dos capas} (\texttt{5/19}; \texttt{26.3\%}), junto con una franja menor de arquitecturas alternativas (\texttt{Canal WSN}, \texttt{Nodo sensor con analítica externa} y \texttt{Nodo independiente con PC}). En la dimensión temporal, el modo más frecuente es \texttt{Casi tiempo real} (\texttt{7/19}; \texttt{36.8\%}), seguido por operación estricta en tiempo real al considerar \texttt{Tiempo real en borde} y \texttt{Tiempo real distribuido} (\texttt{6/19}; \texttt{31.6\%} en conjunto), con presencia adicional de configuraciones híbridas (\texttt{4/19}; \texttt{21.1\%}).
 
-\input{assets/tablas/results/d3/d3_tabla_completitud_nr_es.tex}
-
-La Tabla~\ref{tab:d3_tabla_completitud_nr} cumple un rol distinto: documenta la completitud de reporte (NR) por dimensión crítica y funciona como control de cobertura de la evidencia analizada en D3.
+La completitud de reporte en D3 se mantiene, en general, en un nivel alto. Los vacíos más visibles aparecen en visualización y alertamiento, y en menor medida en arquitectura de plataforma y comunicación/tecnología, mientras que el contexto de despliegue queda completamente reportado en el corpus. Más que un resultado independiente, esta observación funciona como apoyo para interpretar hasta qué punto las configuraciones técnicas descritas pueden seguirse con trazabilidad suficiente.
 
 \begin{figure}[H]
 \centering
@@ -264,9 +262,9 @@ En el stack tecnológico, la recurrencia de \texttt{MATLAB} (\texttt{7/19}), \te
 
 La Figura~\ref{fig:d3_cooc_arquitectura_procesamiento} también evidencia excepciones que no deben
 tratarse como ruido. Los casos \texttt{Híbrido} aparecen en dos familias distintas:
-  \texttt{IoT de dos capas} \cite{A132, A142} y \texttt{Nodo sensor con analítica externa} \cite{A149,
-  A157}, lo que sugiere diseños que combinan inferencia local con analítica externa o actualización
-  adaptativa. El patrón \texttt{Tiempo real distribuido} aparece de forma puntual en
+  \texttt{IoT de dos capas} \cite{A132,A142} y \texttt{Nodo sensor con analítica externa}
+  \cite{A149,A157}, lo que sugiere diseños que combinan inferencia local con analítica externa o
+  actualización adaptativa. El patrón \texttt{Tiempo real distribuido} aparece de forma puntual en
   \texttt{IoT-Fog por capas} \cite{A178}, asociado a sincronización y coordinación entre capas. La
   implicación es clara: el diseño base puede ser concentrado, pero la arquitectura debe prever
   extensibilidad explícita para modos híbridos y distribución temporal cuando el contexto operativo

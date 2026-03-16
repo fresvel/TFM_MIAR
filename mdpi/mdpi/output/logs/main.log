@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.27)  9 MAR 2026 22:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.27)  16 MAR 2026 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1242,7 +1242,7 @@ Package: placeins 2005/04/18  v 2.2
 Package: needspace 2025/03/13 v1.3e reserve vertical space
 )
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 168.
+h' as default language. on input line 166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
@@ -1365,31 +1365,31 @@ Package cleveref Info: no abbreviation of names on input line 7852.
 )
 ==> First Aid for cleveref.sty applied!
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 16
-8.
+6.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 (output/build/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 168.
-LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 166.
+LaTeX Font Info:    ... okay on input line 166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1405,13 +1405,13 @@ LaTeX Font Info:    ... okay on input line 168.
 \makeMPintoPDFobject=\count464
 \everyMPtoPDFconversion=\toks64
 )
-LaTeX Info: Redefining \microtypecontext on input line 168.
-Package microtype Info: Applying patch `item' on input line 168.
-Package microtype Info: Applying patch `toc' on input line 168.
-Package microtype Info: Applying patch `eqnum' on input line 168.
-Package microtype Info: Applying patch `footnote' on input line 168.
-Package microtype Info: Applying patch `verbatim' on input line 168.
-LaTeX Info: Redefining \microtypesetup on input line 168.
+LaTeX Info: Redefining \microtypecontext on input line 166.
+Package microtype Info: Applying patch `item' on input line 166.
+Package microtype Info: Applying patch `toc' on input line 166.
+Package microtype Info: Applying patch `eqnum' on input line 166.
+Package microtype Info: Applying patch `footnote' on input line 166.
+Package microtype Info: Applying patch `verbatim' on input line 166.
+LaTeX Info: Redefining \microtypesetup on input line 166.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1431,7 +1431,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 168.
+or `english'. on input line 166.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1474,13 +1474,13 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package newfloat Info: `float' package detected.
-Package hyperref Info: Link coloring ON on input line 168.
+Package hyperref Info: Link coloring ON on input line 166.
 (output/build/main.out) (output/build/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-68.
+66.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
@@ -1490,47 +1490,47 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 1
-68.
+66.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-168.
+166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-168.
+166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-168.
+166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 168.
+(Font)              scaled to size 7.29405pt on input line 166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 168.
+(Font)              scaled to size 5.21004pt on input line 166.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 168.
+(Font)              scaled to size 7.29405pt on input line 166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 168.
+(Font)              scaled to size 5.21004pt on input line 166.
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-168.
+166.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1544,27 +1544,27 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 168.
+(Font)              scaled to size 10.42007pt on input line 166.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 168.
+(Font)              scaled to size 7.91925pt on input line 166.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 168.
+(Font)              scaled to size 6.25204pt on input line 166.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 168.
+(Font)              scaled to size 10.42007pt on input line 166.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 168.
+(Font)              scaled to size 7.91925pt on input line 166.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 168.
-LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 168.
+(Font)              scaled to size 6.25204pt on input line 166.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 166.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
-(Font)                  U/msb/m/n --> U/msb/m/n on input line 168.
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 166.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/msb/m/n --> U/msb/m/n on input line 168.
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 166.
 Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 16
-8.
-Package marginnote Info: right page because not two side mode on input line 168
+6.
+Package marginnote Info: right page because not two side mode on input line 166
 .
-Package marginnote Info: xpos seems to be 167.01753pt on input line 168.
+Package marginnote Info: xpos seems to be 167.01753pt on input line 166.
 Package epstopdf Info: Source file: <Definitions/logo-mdpi.eps>
 (epstopdf)                    date: 2025-11-26 00:03:18
 (epstopdf)                    size: 563678 bytes
@@ -1574,27 +1574,27 @@ Package epstopdf Info: Source file: <Definitions/logo-mdpi.eps>
 (epstopdf)                    size: 13315 bytes
 (epstopdf)             Command: <repstopdf --outfile=Definitions/logo-mdpi-eps-
 converted-to.pdf Definitions/logo-mdpi.eps>
-(epstopdf)             \includegraphics on input line 168.
+(epstopdf)             \includegraphics on input line 166.
 Package epstopdf Info: Output file is already uptodate.
-<Definitions/logo-mdpi-eps-converted-to.pdf, id=108, 74.2775pt x 49.18375pt>
+<Definitions/logo-mdpi-eps-converted-to.pdf, id=116, 74.2775pt x 49.18375pt>
 File: Definitions/logo-mdpi-eps-converted-to.pdf Graphic file (type pdf)
 <use Definitions/logo-mdpi-eps-converted-to.pdf>
 Package pdftex.def Info: Definitions/logo-mdpi-eps-converted-to.pdf  used on in
-put line 168.
+put line 166.
 (pdftex.def)             Requested size: 42.96877pt x 28.45274pt.
-<Definitions/logo-orcid.pdf, id=110, 102.3825pt x 102.3825pt>
+<Definitions/logo-orcid.pdf, id=118, 102.3825pt x 102.3825pt>
 File: Definitions/logo-orcid.pdf Graphic file (type pdf)
 <use Definitions/logo-orcid.pdf>
-Package pdftex.def Info: Definitions/logo-orcid.pdf  used on input line 168.
+Package pdftex.def Info: Definitions/logo-orcid.pdf  used on input line 166.
 (pdftex.def)             Requested size: 9.10509pt x 9.10466pt.
 File: Definitions/logo-orcid.pdf Graphic file (type pdf)
 <use Definitions/logo-orcid.pdf>
-Package pdftex.def Info: Definitions/logo-orcid.pdf  used on input line 168.
+Package pdftex.def Info: Definitions/logo-orcid.pdf  used on input line 166.
 (pdftex.def)             Requested size: 9.10509pt x 9.10466pt.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 168.
+(Font)              scaled to size 8.33606pt on input line 166.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 168.
+(Font)              scaled to size 8.33606pt on input line 166.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1614,7 +1614,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2025
 /texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./Definitions/logo-mdpi-
-eps-converted-to.pdf> <./Definitions/logo-orcid.pdf>])
+eps-converted-to.pdf> <./Definitions/logo-orcid.pdf>]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[2] (./assets/tablas/introduction/antecedentes_intro.tex))
 (./content/2.- Methods.tex
 
 
@@ -1624,7 +1633,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[2] (./assets/tablas/methods/pico_air_quality.tex
+[3] (./assets/tablas/methods/pico_air_quality.tex
 Overfull \hbox (5.4432pt too wide) in paragraph at lines 27--27
 []\T1/ppl/b/n/10 (-20) Compo-
  []
@@ -1653,7 +1662,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[3] (./assets/tablas/methods/derivacion_pico.tex)
+[4] (./assets/tablas/methods/derivacion_pico.tex)
 (./assets/tablas/methods/cadena_final.tex
 
 
@@ -1663,7 +1672,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[4]) (./assets/tablas/methods/criterios_ie.tex
+[5]) (./assets/tablas/methods/criterios_ie.tex
 Overfull \hbox (4.94661pt too wide) in paragraph at lines 73--73
 []\T1/ppl/m/n/10 (-20) Cribado 
  []
@@ -2052,225 +2061,6 @@ Underfull \hbox (badness 5924) in paragraph at lines 73--73
 
 Overfull \hbox (4.94661pt too wide) in paragraph at lines 73--73
 []\T1/ppl/m/n/10 (-20) Cribado 
- []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 18.18796pt, for example:
-(fancyhdr)                \setlength{\headheight}{18.18796pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
-
-[5]
-Underfull \hbox (badness 6708) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Naturaleza del
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Estudio pri-mario con
- []
-
-
-Underfull \hbox (badness 7796) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Revisión sis-temática, re-
- []
-
-
-Underfull \hbox (badness 1960) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) visión nar-ra-tiva, \T1/ppl/m/it/10 (+20) map-ping
- []
-
-
-Overfull \hbox (4.94661pt too wide) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (-20) Cribado 
- []
-
-
-Underfull \hbox (badness 2941) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) tema de mon-i-
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) tema, plataforma o in-te-
- []
-
-
-Overfull \hbox (4.94661pt too wide) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (-20) Cribado 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/b/n/10 (+20) (D1) \T1/ppl/m/n/10 (+20) Es-peci-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) fi-cación de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) vari-ables y
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) con-tam-i-nantes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) am-bi-en-tales em-pleadas
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) tem-per-atura, humedad,
- []
-
-
-Underfull \hbox (badness 6236) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) No se es-peci-f-i-can clara-
- []
-
-
-Underfull \hbox (badness 7099) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) mente las vari-ables uti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Texto
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) Com-
- []
-
-
-Underfull \hbox (badness 1067) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) ex-plícita de un
- []
-
-
-Underfull \hbox (badness 5231) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) en-cia di-fusa a
- []
-
-
-Underfull \hbox (badness 3646) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) La lóg-ica di-fusa es tan-
- []
-
-
-Underfull \hbox (badness 1931) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) gen-cial, se-cun-daria o no
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Texto
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) Com-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) es-truc-tural del
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) mod-elo di-fuso
- []
-
-
-Underfull \hbox (badness 4156) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Se es-peci-fica el tipo de
- []
-
-
-Underfull \hbox (badness 3635) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) sis-tema (p.ej., Mam-dani,
- []
-
-
-Underfull \hbox (badness 1430) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) Sugeno, AN-FIS, tipo-2 u
- []
-
-
-Underfull \hbox (badness 2285) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) otro) y se de-scriben el-e-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Texto
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) Com-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/b/n/10 (+20) (D3) \T1/ppl/m/n/10 (+20) Im-ple-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) mentación
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) en sis-tema o
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) plataforma de
- []
-
-
-Underfull \hbox (badness 1515) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) mentación en plataforma,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) El mod-elo se pre-senta
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) sin con-texto de sis-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) tema/plataforma de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-[]\T1/ppl/m/n/10 (+20) Texto
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
-\T1/ppl/m/n/10 (+20) Com-
  []
 
 
@@ -2283,6 +2073,225 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
 [6]
+Underfull \hbox (badness 6708) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Naturaleza del
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Estudio pri-mario con
+ []
+
+
+Underfull \hbox (badness 7796) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Revisión sis-temática, re-
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) visión nar-ra-tiva, \T1/ppl/m/it/10 (+20) map-ping
+ []
+
+
+Overfull \hbox (4.94661pt too wide) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (-20) Cribado 
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) tema de mon-i-
+ []
+
+
+Underfull \hbox (badness 2913) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) tema, plataforma o in-te-
+ []
+
+
+Overfull \hbox (4.94661pt too wide) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (-20) Cribado 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/b/n/10 (+20) (D1) \T1/ppl/m/n/10 (+20) Es-peci-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) fi-cación de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) vari-ables y
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) con-tam-i-nantes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) am-bi-en-tales em-pleadas
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) tem-per-atura, humedad,
+ []
+
+
+Underfull \hbox (badness 6236) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) No se es-peci-f-i-can clara-
+ []
+
+
+Underfull \hbox (badness 7099) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) mente las vari-ables uti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Texto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) Com-
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) ex-plícita de un
+ []
+
+
+Underfull \hbox (badness 5231) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) en-cia di-fusa a
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) La lóg-ica di-fusa es tan-
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) gen-cial, se-cun-daria o no
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Texto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) Com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) es-truc-tural del
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) mod-elo di-fuso
+ []
+
+
+Underfull \hbox (badness 4156) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Se es-peci-fica el tipo de
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) sis-tema (p.ej., Mam-dani,
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) Sugeno, AN-FIS, tipo-2 u
+ []
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) otro) y se de-scriben el-e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Texto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) Com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/b/n/10 (+20) (D3) \T1/ppl/m/n/10 (+20) Im-ple-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) mentación
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) en sis-tema o
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) plataforma de
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) mentación en plataforma,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) El mod-elo se pre-senta
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) sin con-texto de sis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) tema/plataforma de
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\T1/ppl/m/n/10 (+20) Texto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+\T1/ppl/m/n/10 (+20) Com-
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 73--73
 []\T1/ppl/b/n/10 (+20) (D3) \T1/ppl/m/n/10 (+20) De-scrip-
  []
@@ -2392,7 +2401,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[7]
+[8]
 Overfull \hbox (4.60503pt too wide) in paragraph at lines 69--70
 []\T1/ppl/m/n/10 (-20) La pun-tuación agre-gada se cal-culó me-di-ante pon-dera
 ción ex-plícita (\T1/cmtt/m/n/10 Yes\T1/ppl/m/n/10 (-20) =1, \T1/cmtt/m/n/10 Pa
@@ -2408,7 +2417,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[8] (./assets/tablas/methods/extraccion_de_datos.tex
+[9] (./assets/tablas/methods/extraccion_de_datos.tex
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
 []\T1/ppl/b/n/10 (+20) Direc-
  []
@@ -2750,7 +2759,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[9]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
 []\T1/cmtt/m/n/10 Eval_Metrics_reported\T1/ppl/m/n/10 (+20) ,
  []
@@ -2816,7 +2825,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--30
  []
 
 )
-<assets/figuras/metodologia/analisis_sintesis.png, id=223, 1156.32pt x 650.43pt
+<assets/figuras/metodologia/analisis_sintesis.png, id=291, 1156.32pt x 650.43pt
 >
 File: assets/figuras/metodologia/analisis_sintesis.png Graphic file (type png)
 <use assets/figuras/metodologia/analisis_sintesis.png>
@@ -2832,15 +2841,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[10 <./assets/figuras/metodologia/analisis_sintesis.png>])
+[11 <./assets/figuras/metodologia/analisis_sintesis.png>])
 (./content/3.- Results.tex
-<assets/figuras/perfil/prisma.pdf, id=232, 601.24625pt x 633.36626pt>
+<assets/figuras/perfil/prisma.pdf, id=300, 601.24625pt x 633.36626pt>
 File: assets/figuras/perfil/prisma.pdf Graphic file (type pdf)
 <use assets/figuras/perfil/prisma.pdf>
 Package pdftex.def Info: assets/figuras/perfil/prisma.pdf  used on input line 1
 2.
 (pdftex.def)             Requested size: 394.35522pt x 415.43297pt.
-<assets/figuras/perfil/fig02_distribucion_anual.png, id=235, 448.52568pt x 277.
+<assets/figuras/perfil/fig02_distribucion_anual.png, id=303, 448.52568pt x 277.
 56197pt>
 File: assets/figuras/perfil/fig02_distribucion_anual.png Graphic file (type png
 )
@@ -2848,28 +2857,28 @@ File: assets/figuras/perfil/fig02_distribucion_anual.png Graphic file (type png
 Package pdftex.def Info: assets/figuras/perfil/fig02_distribucion_anual.png  us
 ed on input line 23.
 (pdftex.def)             Requested size: 189.28882pt x 117.1385pt.
-<assets/figuras/perfil/fig03_tipo_estudio.png, id=236, 623.5546pt x 282.53053pt
+<assets/figuras/perfil/fig03_tipo_estudio.png, id=304, 623.5546pt x 282.53053pt
 >
 File: assets/figuras/perfil/fig03_tipo_estudio.png Graphic file (type png)
 <use assets/figuras/perfil/fig03_tipo_estudio.png>
 Package pdftex.def Info: assets/figuras/perfil/fig03_tipo_estudio.png  used on 
 input line 27.
 (pdftex.def)             Requested size: 189.28882pt x 85.76428pt.
-<assets/figuras/perfil/fig04_estado_retrieval.png, id=237, 500.46976pt x 285.01
+<assets/figuras/perfil/fig04_estado_retrieval.png, id=305, 500.46976pt x 285.01
 482pt>
 File: assets/figuras/perfil/fig04_estado_retrieval.png Graphic file (type png)
 <use assets/figuras/perfil/fig04_estado_retrieval.png>
 Package pdftex.def Info: assets/figuras/perfil/fig04_estado_retrieval.png  used
  on input line 33.
 (pdftex.def)             Requested size: 189.28882pt x 107.79791pt.
-<assets/figuras/perfil/fig05_bandas_calidad.png, id=238, 414.87497pt x 277.1102
+<assets/figuras/perfil/fig05_bandas_calidad.png, id=306, 414.87497pt x 277.1102
 8pt>
 File: assets/figuras/perfil/fig05_bandas_calidad.png Graphic file (type png)
 <use assets/figuras/perfil/fig05_bandas_calidad.png>
 Package pdftex.def Info: assets/figuras/perfil/fig05_bandas_calidad.png  used o
 n input line 37.
 (pdftex.def)             Requested size: 189.28882pt x 126.43631pt.
-<assets/figuras/perfil/fig07_nr_campos_criticos.png, id=239, 666.23906pt x 315.
+<assets/figuras/perfil/fig07_nr_campos_criticos.png, id=307, 666.23906pt x 315.
 95541pt>
 File: assets/figuras/perfil/fig07_nr_campos_criticos.png Graphic file (type png
 )
@@ -2886,7 +2895,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[11]
+[12]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2895,7 +2904,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[12 <./assets/figuras/perfil/prisma.pdf> <./assets/figuras/perfil/fig07_nr_camp
+[13 <./assets/figuras/perfil/prisma.pdf> <./assets/figuras/perfil/fig07_nr_camp
 os_criticos.png>]
 
 
@@ -2905,10 +2914,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[13 <./assets/figuras/perfil/fig02_distribucion_anual.png> <./assets/figuras/pe
+[14 <./assets/figuras/perfil/fig02_distribucion_anual.png> <./assets/figuras/pe
 rfil/fig03_tipo_estudio.png> <./assets/figuras/perfil/fig04_estado_retrieval.pn
 g> <./assets/figuras/perfil/fig05_bandas_calidad.png>]
-<assets/figuras/d1/fig05_coocurrencia_top.png, id=308, 643.88052pt x 438.8144pt
+<assets/figuras/d1/fig05_coocurrencia_top.png, id=377, 643.88052pt x 438.8144pt
 >
 File: assets/figuras/d1/fig05_coocurrencia_top.png Graphic file (type png)
 <use assets/figuras/d1/fig05_coocurrencia_top.png>
@@ -2924,8 +2933,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[14 <./assets/figuras/d1/fig05_coocurrencia_top.png>]
-<assets/figuras/d1/fig08_coocurrencia_contaminantes.png, id=334, 642.29962pt x 
+[15 <./assets/figuras/d1/fig05_coocurrencia_top.png>]
+<assets/figuras/d1/fig08_coocurrencia_contaminantes.png, id=402, 642.29962pt x 
 436.78181pt>
 File: assets/figuras/d1/fig08_coocurrencia_contaminantes.png Graphic file (type
  png)
@@ -2933,7 +2942,7 @@ File: assets/figuras/d1/fig08_coocurrencia_contaminantes.png Graphic file (type
 Package pdftex.def Info: assets/figuras/d1/fig08_coocurrencia_contaminantes.png
   used on input line 82.
 (pdftex.def)             Requested size: 236.61554pt x 160.90027pt.
-<assets/figuras/d1/fig09_numero_contaminantes_por_estudio.png, id=335, 610.0039
+<assets/figuras/d1/fig09_numero_contaminantes_por_estudio.png, id=403, 610.0039
 7pt x 336.0555pt>
 File: assets/figuras/d1/fig09_numero_contaminantes_por_estudio.png Graphic file
  (type png)
@@ -2951,9 +2960,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[15 <./assets/figuras/d1/fig08_coocurrencia_contaminantes.png> <./assets/figura
+[16 <./assets/figuras/d1/fig08_coocurrencia_contaminantes.png> <./assets/figura
 s/d1/fig09_numero_contaminantes_por_estudio.png>])
-<assets/figuras/d1/fig02_ambientales_vs_salida.png, id=372, 870.17596pt x 391.8
+<assets/figuras/d1/fig02_ambientales_vs_salida.png, id=440, 870.17596pt x 391.8
 3891pt>
 File: assets/figuras/d1/fig02_ambientales_vs_salida.png Graphic file (type png)
 
@@ -2961,7 +2970,7 @@ File: assets/figuras/d1/fig02_ambientales_vs_salida.png Graphic file (type png)
 Package pdftex.def Info: assets/figuras/d1/fig02_ambientales_vs_salida.png  use
 d on input line 109.
 (pdftex.def)             Requested size: 354.91728pt x 159.81793pt.
-<assets/figuras/d1/fig07_relacion_ambiente_vs_salida.png, id=373, 667.14244pt x
+<assets/figuras/d1/fig07_relacion_ambiente_vs_salida.png, id=441, 667.14244pt x
  436.33012pt>
 File: assets/figuras/d1/fig07_relacion_ambiente_vs_salida.png Graphic file (typ
 e png)
@@ -2978,7 +2987,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[16]
+[17]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2987,9 +2996,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[17 <./assets/figuras/d1/fig02_ambientales_vs_salida.png> <./assets/figuras/d1/
+[18 <./assets/figuras/d1/fig02_ambientales_vs_salida.png> <./assets/figuras/d1/
 fig07_relacion_ambiente_vs_salida.png>]
-<assets/figuras/d1/fig03_contaminantes_vs_salida.png, id=405, 870.17596pt x 393
+<assets/figuras/d1/fig03_contaminantes_vs_salida.png, id=474, 870.17596pt x 393
 .41982pt>
 File: assets/figuras/d1/fig03_contaminantes_vs_salida.png Graphic file (type pn
 g)
@@ -2997,7 +3006,7 @@ g)
 Package pdftex.def Info: assets/figuras/d1/fig03_contaminantes_vs_salida.png  u
 sed on input line 135.
 (pdftex.def)             Requested size: 394.35522pt x 178.29192pt.
-<assets/figuras/d1/fig06_relacion_salida_vs_contaminantes.png, id=406, 656.7536
+<assets/figuras/d1/fig06_relacion_salida_vs_contaminantes.png, id=475, 656.7536
 3pt x 436.78181pt>
 File: assets/figuras/d1/fig06_relacion_salida_vs_contaminantes.png Graphic file
  (type png)
@@ -3024,7 +3033,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[18 <./assets/figuras/d1/fig03_contaminantes_vs_salida.png> <./assets/figuras/d
+[19 <./assets/figuras/d1/fig03_contaminantes_vs_salida.png> <./assets/figuras/d
 1/fig06_relacion_salida_vs_contaminantes.png>]
 (./assets/tablas/results/d1/d1_tabla_trazabilidad_minima_es.tex)
 (./assets/tablas/results/d2/d2_tabla_principal_es.tex
@@ -3036,7 +3045,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[19])
+[20])
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3045,8 +3054,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[20]
-<assets/figuras/d2/fig02_coocurrencia_fis_vs_proposito.png, id=449, 640.94456pt
+[21]
+<assets/figuras/d2/fig02_coocurrencia_fis_vs_proposito.png, id=518, 640.94456pt
  x 436.55597pt>
 File: assets/figuras/d2/fig02_coocurrencia_fis_vs_proposito.png Graphic file (t
 ype png)
@@ -3061,7 +3070,7 @@ e 5--6 clases (\T1/cmtt/m/n/10 Good/Moderate/.../Hazardous\T1/ppl/m/n/10 (-20)
 ),
  []
 
-<assets/figuras/d2/fig03_resumen_clases_aqi.png, id=461, 883.04906pt x 334.7004
+<assets/figuras/d2/fig03_resumen_clases_aqi.png, id=530, 883.04906pt x 334.7004
 4pt>
 File: assets/figuras/d2/fig03_resumen_clases_aqi.png Graphic file (type png)
 <use assets/figuras/d2/fig03_resumen_clases_aqi.png>
@@ -3077,8 +3086,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[21 <./assets/figuras/d2/fig02_coocurrencia_fis_vs_proposito.png>]
-<assets/figuras/d2/fig04_coocurrencia_fis_vs_defuzzificacion.png, id=491, 644.1
+[22 <./assets/figuras/d2/fig02_coocurrencia_fis_vs_proposito.png>]
+<assets/figuras/d2/fig04_coocurrencia_fis_vs_defuzzificacion.png, id=559, 644.1
 0637pt x 438.8144pt>
 File: assets/figuras/d2/fig04_coocurrencia_fis_vs_defuzzificacion.png Graphic f
 ile (type png)
@@ -3086,7 +3095,7 @@ ile (type png)
 Package pdftex.def Info: assets/figuras/d2/fig04_coocurrencia_fis_vs_defuzzific
 acion.png  used on input line 194.
 (pdftex.def)             Requested size: 189.28882pt x 128.95363pt.
-<assets/figuras/d2/fig05_coocurrencia_fis_vs_riesgo.png, id=492, 651.33337pt x 
+<assets/figuras/d2/fig05_coocurrencia_fis_vs_riesgo.png, id=560, 651.33337pt x 
 436.78181pt>
 File: assets/figuras/d2/fig05_coocurrencia_fis_vs_riesgo.png Graphic file (type
  png)
@@ -3094,8 +3103,8 @@ File: assets/figuras/d2/fig05_coocurrencia_fis_vs_riesgo.png Graphic file (type
 Package pdftex.def Info: assets/figuras/d2/fig05_coocurrencia_fis_vs_riesgo.png
   used on input line 198.
 (pdftex.def)             Requested size: 189.28882pt x 126.93674pt.
-<assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png, id=49
-3, 654.0435pt x 438.36272pt>
+<assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png, id=56
+1, 654.0435pt x 438.36272pt>
 File: assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png G
 raphic file (type png)
 <use assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png>
@@ -3111,7 +3120,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[22 <./assets/figuras/d2/fig03_resumen_clases_aqi.png> <./assets/figuras/d2/fig
+[23 <./assets/figuras/d2/fig03_resumen_clases_aqi.png> <./assets/figuras/d2/fig
 04_coocurrencia_fis_vs_defuzzificacion.png> <./assets/figuras/d2/fig05_coocurre
 ncia_fis_vs_riesgo.png>]
 (./assets/tablas/results/d2/d2_tabla_perfiles_fis_es.tex
@@ -3133,7 +3142,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[23 <./assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png>
+[24 <./assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png>
 ]
 Overfull \hbox (9.89328pt too wide) in paragraph at lines 22--22
 []\T1/ppl/m/n/10 (-20) Defuzzificación 
@@ -3153,50 +3162,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[24] (./assets/tablas/results/d3/d3_tabla_completitud_nr_es.tex
-Overfull \hbox (15.36237pt too wide) in paragraph at lines 21--21
-[]\T1/ppl/m/n/10 (-20) Comunicación/tecnología  
- []
-
-
-Overfull \hbox (15.36237pt too wide) in paragraph at lines 21--21
-[]\T1/ppl/m/n/10 (-20) Comunicación/tecnología  
- []
-
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 18.18796pt, for example:
-(fancyhdr)                \setlength{\headheight}{18.18796pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
-
-[25])
-<assets/figuras/d3/fig01_distribucion_arquitectura.png, id=556, 609.32643pt x 3
+[25]
+<assets/figuras/d3/fig01_distribucion_arquitectura.png, id=615, 609.32643pt x 3
 36.28134pt>
 File: assets/figuras/d3/fig01_distribucion_arquitectura.png Graphic file (type 
 png)
 <use assets/figuras/d3/fig01_distribucion_arquitectura.png>
 Package pdftex.def Info: assets/figuras/d3/fig01_distribucion_arquitectura.png 
- used on input line 243.
+ used on input line 241.
 (pdftex.def)             Requested size: 189.28882pt x 104.46678pt.
-<assets/figuras/d3/fig02_distribucion_procesamiento.png, id=557, 609.55228pt x 
+<assets/figuras/d3/fig02_distribucion_procesamiento.png, id=616, 609.55228pt x 
 336.28134pt>
 File: assets/figuras/d3/fig02_distribucion_procesamiento.png Graphic file (type
  png)
 <use assets/figuras/d3/fig02_distribucion_procesamiento.png>
 Package pdftex.def Info: assets/figuras/d3/fig02_distribucion_procesamiento.png
-  used on input line 247.
+  used on input line 245.
 (pdftex.def)             Requested size: 189.28882pt x 104.42572pt.
-<assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png, id=564
-, 645.68729pt x 436.33012pt>
-File: assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png Gr
-aphic file (type png)
-<use assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png>
-Package pdftex.def Info: assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_p
-rocesamiento.png  used on input line 260.
-(pdftex.def)             Requested size: 283.93623pt x 191.87932pt.
 
 
 
@@ -3208,13 +3190,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [26 <./assets/figuras/d3/fig01_distribucion_arquitectura.png> <./assets/figuras
 /d3/fig02_distribucion_procesamiento.png>]
-<assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png, id=586, 656.75
+<assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png, id=634
+, 645.68729pt x 436.33012pt>
+File: assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png Gr
+aphic file (type png)
+<use assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png>
+Package pdftex.def Info: assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_p
+rocesamiento.png  used on input line 258.
+(pdftex.def)             Requested size: 283.93623pt x 191.87932pt.
+<assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png, id=646, 656.75
 363pt x 437.00766pt>
 File: assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png Graphic fi
 le (type png)
 <use assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png>
 Package pdftex.def Info: assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_s
-tack.png  used on input line 283.
+tack.png  used on input line 281.
 (pdftex.def)             Requested size: 307.59659pt x 204.67346pt.
 
 
@@ -3225,23 +3215,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[27 <./assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png> 
-<./assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png>]
-<assets/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png, id=599, 
+[27 <./assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png>]
+<assets/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png, id=660, 
 639.5895pt x 436.55597pt>
 File: assets/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png Grap
 hic file (type png)
 <use assets/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png>
 Package pdftex.def Info: assets/figuras/d3/fig05_coocurrencia_contexto_vs_instr
-umentacion.png  used on input line 294.
+umentacion.png  used on input line 292.
 (pdftex.def)             Requested size: 307.59659pt x 209.95747pt.
-<assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png, id=612,
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[28 <./assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png> <./asset
+s/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png>]
+<assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png, id=680,
  645.68729pt x 436.55597pt>
 File: assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png Gra
 phic file (type png)
 <use assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png>
 Package pdftex.def Info: assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_vi
-sualizacion.png  used on input line 308.
+sualizacion.png  used on input line 306.
 (pdftex.def)             Requested size: 307.59659pt x 207.97241pt.
 
 
@@ -3252,7 +3252,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[28 <./assets/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png>]
+[29 <./assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png>]
 (./assets/tablas/results/d3/d3_trazabilidad_minima.tex
 Overfull \hbox (1.55006pt too wide) in paragraph at lines 17--17
  []\T1/ppl/b/n/10 (-20) Artículo 
@@ -3263,7 +3263,7 @@ Overfull \hbox (1.55006pt too wide) in paragraph at lines 17--17
  []\T1/ppl/b/n/10 (-20) Artículo 
  []
 
-)
+) (./assets/tablas/results/eval/eval_unidades_comparables_es.tex
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3272,34 +3272,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[29 <./assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png>]
-(./assets/tablas/results/eval/eval_unidades_comparables_es.tex)
-<assets/figuras/eval/fig00_metricas_top_general.png, id=635, 768.99797pt x 380.
+[30])
+<assets/figuras/eval/fig00_metricas_top_general.png, id=702, 768.99797pt x 380.
 54672pt>
 File: assets/figuras/eval/fig00_metricas_top_general.png Graphic file (type png
 )
 <use assets/figuras/eval/fig00_metricas_top_general.png>
 Package pdftex.def Info: assets/figuras/eval/fig00_metricas_top_general.png  us
-ed on input line 339.
+ed on input line 337.
 (pdftex.def)             Requested size: 189.28882pt x 93.66736pt.
-<assets/figuras/eval/fig01_metricas_por_grupo_comparable.png, id=636, 825.68475
+<assets/figuras/eval/fig01_metricas_por_grupo_comparable.png, id=703, 825.68475
 pt x 437.45935pt>
 File: assets/figuras/eval/fig01_metricas_por_grupo_comparable.png Graphic file 
 (type png)
 <use assets/figuras/eval/fig01_metricas_por_grupo_comparable.png>
 Package pdftex.def Info: assets/figuras/eval/fig01_metricas_por_grupo_comparabl
-e.png  used on input line 343.
+e.png  used on input line 341.
 (pdftex.def)             Requested size: 189.28882pt x 100.28645pt.
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 18.18796pt, for example:
-(fancyhdr)                \setlength{\headheight}{18.18796pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
-
-[30] (./assets/tablas/results/eval/eval_boxplot_resumen_valores_es.tex
+ (./assets/tablas/results/eval/eval_boxplot_resumen_valores_es.tex
 Overfull \hbox (5.25487pt too wide) in paragraph at lines 24--24
  []\T1/ppl/b/n/10 (-20) Mediana 
  []
@@ -3320,43 +3310,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [31 <./assets/figuras/eval/fig00_metricas_top_general.png> <./assets/figuras/ev
 al/fig01_metricas_por_grupo_comparable.png>])
-<assets/figuras/eval/fig02_boxplot_metric_mape.png, id=657, 436.55597pt x 322.5
+<assets/figuras/eval/fig02_boxplot_metric_mape.png, id=720, 436.55597pt x 322.5
 0487pt>
 File: assets/figuras/eval/fig02_boxplot_metric_mape.png Graphic file (type png)
 
 <use assets/figuras/eval/fig02_boxplot_metric_mape.png>
 Package pdftex.def Info: assets/figuras/eval/fig02_boxplot_metric_mape.png  use
-d on input line 359.
+d on input line 357.
 (pdftex.def)             Requested size: 189.28882pt x 139.83574pt.
-<assets/figuras/eval/fig02_boxplot_metric_accuracy.png, id=658, 436.55597pt x 3
+<assets/figuras/eval/fig02_boxplot_metric_accuracy.png, id=721, 436.55597pt x 3
 20.24644pt>
 File: assets/figuras/eval/fig02_boxplot_metric_accuracy.png Graphic file (type 
 png)
 <use assets/figuras/eval/fig02_boxplot_metric_accuracy.png>
 Package pdftex.def Info: assets/figuras/eval/fig02_boxplot_metric_accuracy.png 
- used on input line 363.
+ used on input line 361.
 (pdftex.def)             Requested size: 189.28882pt x 138.8565pt.
-<assets/figuras/eval/fig02_boxplot_metric_mae.png, id=659, 436.55597pt x 321.82
+<assets/figuras/eval/fig02_boxplot_metric_mae.png, id=722, 436.55597pt x 321.82
 735pt>
 File: assets/figuras/eval/fig02_boxplot_metric_mae.png Graphic file (type png)
 <use assets/figuras/eval/fig02_boxplot_metric_mae.png>
 Package pdftex.def Info: assets/figuras/eval/fig02_boxplot_metric_mae.png  used
- on input line 368.
+ on input line 366.
 (pdftex.def)             Requested size: 126.19655pt x 93.02798pt.
-<assets/figuras/eval/fig02_boxplot_metric_nrmse.png, id=660, 436.55597pt x 321.
+<assets/figuras/eval/fig02_boxplot_metric_nrmse.png, id=723, 436.55597pt x 321.
 6015pt>
 File: assets/figuras/eval/fig02_boxplot_metric_nrmse.png Graphic file (type png
 )
 <use assets/figuras/eval/fig02_boxplot_metric_nrmse.png>
 Package pdftex.def Info: assets/figuras/eval/fig02_boxplot_metric_nrmse.png  us
-ed on input line 372.
+ed on input line 370.
 (pdftex.def)             Requested size: 126.19655pt x 92.96269pt.
-<assets/figuras/eval/fig02_boxplot_metric_r2.png, id=661, 436.55597pt x 322.504
+<assets/figuras/eval/fig02_boxplot_metric_r2.png, id=724, 436.55597pt x 322.504
 87pt>
 File: assets/figuras/eval/fig02_boxplot_metric_r2.png Graphic file (type png)
 <use assets/figuras/eval/fig02_boxplot_metric_r2.png>
 Package pdftex.def Info: assets/figuras/eval/fig02_boxplot_metric_r2.png  used 
-on input line 376.
+on input line 374.
 (pdftex.def)             Requested size: 126.19655pt x 93.22383pt.
 
 
@@ -3367,19 +3357,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[32 <./assets/figuras/eval/fig02_boxplot_metric_mape.png> <./assets/figuras/eva
-l/fig02_boxplot_metric_accuracy.png> <./assets/figuras/eval/fig02_boxplot_metri
-c_mae.png> <./assets/figuras/eval/fig02_boxplot_metric_nrmse.png> <./assets/fig
-uras/eval/fig02_boxplot_metric_r2.png>]
-<assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png, id=685, 655.6244pt x 
+[32]
+<assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png, id=738, 655.6244pt x 
 421.87613pt>
 File: assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png Graphic file (typ
 e png)
 <use assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png>
 Package pdftex.def Info: assets/figuras/eval/fig03_cooc_datasource_vs_unidad.pn
-g  used on input line 387.
+g  used on input line 385.
 (pdftex.def)             Requested size: 362.80608pt x 233.46165pt.
 
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[33 <./assets/figuras/eval/fig02_boxplot_metric_mape.png> <./assets/figuras/eva
+l/fig02_boxplot_metric_accuracy.png> <./assets/figuras/eval/fig02_boxplot_metri
+c_mae.png> <./assets/figuras/eval/fig02_boxplot_metric_nrmse.png> <./assets/fig
+uras/eval/fig02_boxplot_metric_r2.png>]
 (./assets/tablas/results/qa/qa_distribucion_bandas.tex
 Overfull \hbox (5.82869pt too wide) in paragraph at lines 17--17
  []\T1/ppl/b/n/10 (-20) Mediana 
@@ -3399,18 +3398,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[33 <./assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png>])
+[34 <./assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png>])
 (./assets/tablas/results/qa/qa_trazabilidad_sensibilidad.tex))
 (./content/4.- Discussion.tex
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 18.18796pt, for example:
-(fancyhdr)                \setlength{\headheight}{18.18796pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
-
-[34]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3429,25 +3419,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
 [36]
-Overfull \hbox (4.53902pt too wide) in paragraph at lines 30--31
-[]\T1/ppl/m/n/10 (-20) El con-traste ex-terno mues-tra que la may-oría de tra-b
-a-jos pri-or-iza clasi-fi-cación/monitoreo
- []
-
-
-Overfull \hbox (5.53294pt too wide) in paragraph at lines 35--36
-\T1/ppl/m/n/10 (-20) toreo/control so-bre val-i-dación clínica causal. En el co
-r-pus, el con-texto \T1/cmtt/m/n/10 Healthcare_Facility
- []
-
-
-Overfull \hbox (12.66832pt too wide) in paragraph at lines 35--36
-\T1/ppl/m/n/10 (-20) traz-abil-i-dad de pro-to-colo de eval-u-ación clínica per
--manece lim-i-tada (\T1/cmtt/m/n/10 Eval_Protocol_norm=NR\T1/ppl/m/n/10 (-20) )
-,
- []
-
-(./assets/tablas/discussion/cierre_vacios_implicaciones.tex
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3456,7 +3427,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[37])
+[37]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3466,18 +3437,56 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
 [38]
-Overfull \hbox (0.28053pt too wide) in paragraph at lines 48--49
-[]\T1/ppl/b/n/10 (-20) Funciones de perte-nen-cia\T1/ppl/m/n/10 (-20) : dom-i-n
-an fun-ciones lingüís-ti-cas tri-an-gu-lares/trapezoidales,
- []
 
-) (./content/5.- Conclusions.tex)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[39] (./assets/tablas/discussion/cierre_vacios_implicaciones.tex
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[40])
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[41]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[42]) (./content/5.- Conclusions.tex
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 18.18796pt, for example:
+(fancyhdr)                \setlength{\headheight}{18.18796pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
+
+[43])
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 175.
+(Font)              scaled to size 9.37807pt on input line 173.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 175.
- (./content/8.- References.tex
-(output/build/main.bbl
+(Font)              scaled to size 9.37807pt on input line 173.
+ (./content/8.- References.tex (output/build/main.bbl
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3486,7 +3495,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[39]
+[44]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3495,7 +3504,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[40]))
+[45]))
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3504,22 +3513,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-6.18796pt}.
 
-[41] 
+[46] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (output/build/main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C43F297B1F1046337A1F3F6A9BB6D87A;5629.
+(rerunfilecheck)             Checksum: 3705A9CA24E80623F97100BC1376B029;5992.
  ) 
 Here is how much of TeX's memory you used:
- 42958 strings out of 467816
- 876293 string characters out of 5432258
- 1327335 words of memory out of 5000000
- 70138 multiletter control sequences out of 15000+600000
- 738096 words of font info for 566 fonts, out of 8000000 for 9000
+ 43012 strings out of 467816
+ 876721 string characters out of 5432258
+ 1327664 words of memory out of 5000000
+ 70152 multiletter control sequences out of 15000+600000
+ 739467 words of font info for 582 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,12n,121p,5037b,4168s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
@@ -3533,10 +3546,10 @@ ocal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/loc
 al/texlive/2025/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texl
 ive/2025/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/202
 5/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output/build/main.pdf (41 pages, 4603827 bytes).
+Output written on output/build/main.pdf (46 pages, 4627220 bytes).
 PDF statistics:
- 957 PDF objects out of 1000 (max. 8388607)
- 810 compressed objects within 9 object streams
- 172 named destinations out of 1000 (max. 500000)
- 113532 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 1086 PDF objects out of 1200 (max. 8388607)
+ 915 compressed objects within 10 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 115596 words of extra memory for PDF output out of 128383 (max. 10000000)
 
