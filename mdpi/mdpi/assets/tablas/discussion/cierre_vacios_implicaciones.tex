@@ -1,19 +1,21 @@
+\begin{adjustwidth}{-\extralength}{0cm}
 \begin{longtblr}
 [
  label={tab:cierre_vacios_implicaciones},
- caption={Cierre analítico: vacíos recurrentes, impacto metodológico e implicaciones operativas. Elaboración propia.}]{
+ caption={Analytical closure: recurrent gaps, methodological impact, and operational implications. Own elaboration.}]{
   colspec={X[2.2,l,m] X[0.8,c,m] X[0.8,c,m] X[0.9,c,m] X[2.6,l,m] X[2.8,l,m]},
-  width=\textwidth,
+  width=\fulllength,
   rowhead=1,
   row{1}={font=\bfseries}
 }
 \toprule
-Vacío/Límite recurrente & k & n & \% & Impacto en síntesis & Implicación para la propuesta \\
+Recurrent gap/limit & k & n & \% & Impact on synthesis & Implication for the proposal \\
 \midrule
-Partición de datos no reportada \texttt{NR} & 10 & 19 & 52.6 & Introduce incertidumbre en la comparación de desempeño por variación no controlada del esquema de validación. & Definir y justificar un esquema fijo de evaluación \texttt{train/val/test} o validación cruzada), con trazabilidad completa de su aplicación. \\
-Defuzzificación no reportada & 8 & 19 & 42.1 & Dificulta la reproducibilidad del núcleo inferencial y la atribución técnica del desempeño al diseño difuso. & Especificar método de defuzzificación y parametrización asociada como componente obligatorio del pipeline. \\
-Comparador ausente \texttt{NR} & 4 & 19 & 21.1 & Reduce la validez comparativa de afirmaciones de mejora frente a enfoques alternativos. & Incluir un benchmark mínimo y un criterio homogéneo de comparación cuantitativa en la experimentación. \\
-Mejora no reportada \texttt{NR} & 4 & 19 & 21.1 & Limita la interpretación del aporte incremental al no explicitar la magnitud de ganancia. & Reportar mejora absoluta y relativa sobre baseline, bajo métricas y condiciones equivalentes. \\
-Heterogeneidad de métricas (sin núcleo único) & 11 & 19 & 57.9 & Fragmenta la lectura transversal e incrementa heterogeneidad de reporte entre estudios. & Establecer un conjunto base de métricas \texttt{MSE/RMSE/MAE} y, cuando aplique, \texttt{Accuracy} de reporte obligatorio. \\
+Unreported data partition \texttt{NR} & 10 & 19 & 52.6 & Introduces uncertainty into performance comparison due to uncontrolled variation in the validation scheme. & Define and justify a fixed evaluation scheme (\texttt{train/val/test} or cross-validation), with full traceability of its application. \\
+Unreported defuzzification & 8 & 19 & 42.1 & Hinders reproducibility of the inferential core and technical attribution of performance to fuzzy design. & Specify the defuzzification method and associated parameterization as a required pipeline component. \\
+Missing comparator \texttt{NR} & 4 & 19 & 21.1 & Reduces the comparative validity of improvement claims against alternative approaches. & Include a minimum benchmark and a homogeneous criterion for quantitative comparison in experimentation. \\
+Unreported improvement \texttt{NR} & 4 & 19 & 21.1 & Limits interpretation of incremental contribution by not making the magnitude of gain explicit. & Report absolute and relative improvement over the baseline under equivalent metrics and conditions. \\
+Metric heterogeneity (without a single core) & 11 & 19 & 57.9 & Fragments cross-study reading and increases reporting heterogeneity across studies. & Establish a base metric set (\texttt{MSE/RMSE/MAE} and, when applicable, \texttt{Accuracy}) for mandatory reporting. \\
 \bottomrule
 \end{longtblr}
+\end{adjustwidth}

@@ -1,73 +1,75 @@
+\begin{adjustwidth}{-\extralength}{0cm}
 \begin{longtblr}[
   label={tab:criterios_ie},
-  caption={Criterios de inclusión y exclusión aplicados en las fases de \textit{screening} y elegibilidad, alineados con PICo, directrices de investigación (D1--D3) y criterios prácticos de Kitchenham. Elaboración propia.}]
+  caption={Inclusion and exclusion criteria applied in the \textit{screening} and eligibility phases, aligned with PICo, research directives (D1--D3), and Kitchenham's practical criteria. Own elaboration.}]
 {
     colspec = {X[m,j,3] X[m,j,5] X[m,j,5] X[m,j,1.25]},
-    width=\textwidth,
+    width=\fulllength,
     rowhead=1,
     row{1}={font=\bfseries}
 }
 \toprule
-\textbf{Criterio} &
-\textbf{Inclusión (Descripción operacional)} &
-\textbf{Exclusión (Descripción operacional)} &
-\textbf{Fase} \\
+\textbf{Criterion} &
+\textbf{Inclusion (Operational description)} &
+\textbf{Exclusion (Operational description)} &
+\textbf{Phase} \\
 \midrule
 
-Relación con el fenómeno (Calidad del aire -- P) &
-El estudio aborda explícitamente la calidad del aire o contaminación atmosférica ambiental. &
-El estudio se enfoca en agua, suelo, agricultura, acuicultura, ruido u otro dominio no relacionado con calidad del aire. &
-Cribado \\
+Relation to the phenomenon (Air quality -- P) &
+The study explicitly addresses air quality or ambient atmospheric pollution. &
+The study focuses on water, soil, agriculture, aquaculture, noise, or another domain unrelated to air quality. &
+Screening \\
 
-Uso central de lógica difusa (I) &
-El título o resumen menciona \textit{fuzzy logic} o sistemas de inferencia difusa como enfoque principal. &
-No se identifica uso de lógica difusa o esta no constituye el enfoque central del estudio. &
-Cribado \\
+Central use of fuzzy logic (I) &
+The title or abstract mentions \textit{fuzzy logic} or fuzzy inference systems as the main approach. &
+No use of fuzzy logic is identified, or it does not constitute the study's central approach. &
+Screening \\
 
-Evaluación de calidad del aire mediante lógica difusa (P + I) &
-Se propone evaluación, clasificación o análisis del nivel de calidad del aire utilizando lógica difusa. &
-La lógica difusa se aplica únicamente para control (PID, HVAC, secado, ventilación, hornos, etc.) sin evaluar calidad del aire como variable principal. &
-Cribado \\
+Air-quality evaluation through fuzzy logic (P + I) &
+The study proposes evaluation, classification, or analysis of air-quality level using fuzzy logic. &
+Fuzzy logic is applied only to control (PID, HVAC, drying, ventilation, furnaces, etc.) without evaluating air quality as the main variable. &
+Screening \\
 
-Naturaleza del estudio (Tipo de artículo) &
-Estudio primario con propuesta técnica o implementación original. &
-Revisión sistemática, revisión narrativa, \textit{mapping study}, volumen de \textit{proceedings} o literatura gris. &
-Cribado \\
+Nature of the study (Article type) &
+Primary study with an original technical proposal or implementation. &
+Systematic review, narrative review, \textit{mapping study}, \textit{proceedings} volume, or grey literature. &
+Screening \\
 
-Plataforma o sistema de monitoreo de calidad del aire (Co) &
-El estudio propone o implementa una plataforma, sistema de monitoreo, arquitectura IoT, integración de sensores o uso estructurado de \textit{datasets} para análisis de calidad del aire. &
-El estudio no describe sistema, plataforma o integración de datos, o se limita a análisis teórico sin componente de monitoreo o procesamiento estructurado. &
-Cribado \\
+Air-quality monitoring platform or system (Co) &
+The study proposes or implements a platform, monitoring system, IoT architecture, sensor integration, or structured use of \textit{datasets} for air-quality analysis. &
+The study does not describe a system, platform, or data integration, or is limited to theoretical analysis without a monitoring or structured processing component. &
+Screening \\
 
-\textbf{(D1) }Especificación de variables y contaminantes utilizados &
-El estudio identifica explícitamente los contaminantes atmosféricos y/o variables ambientales empleadas como entradas (p.\,ej., PM$_{2.5}$, PM$_{10}$, NO$_2$, O$_3$, CO, SO$_2$, temperatura, humedad, viento). &
-No se especifican claramente las variables utilizadas o no es posible identificarlas a partir del texto completo. &
-Texto Completo \\
+\textbf{(D1) }Specification of variables and pollutants used &
+The study explicitly identifies the atmospheric pollutants and/or environmental variables used as inputs (e.g., PM$_{2.5}$, PM$_{10}$, NO$_2$, O$_3$, CO, SO$_2$, temperature, humidity, wind). &
+The variables used are not clearly specified, or they cannot be identified from the full text. &
+Full Text \\
 
-\textbf{(D2) }Aplicación explícita de un sistema de inferencia difusa a calidad del aire &
-La inferencia difusa constituye el mecanismo central para evaluar la calidad del aire y/o el riesgo asociado. &
-La lógica difusa es tangencial, secundaria o no se aplica directamente a la evaluación de calidad del aire. &
-Texto Completo \\
+\textbf{(D2) }Explicit application of a fuzzy inference system to air quality &
+Fuzzy inference constitutes the central mechanism for evaluating air quality and/or associated risk. &
+Fuzzy logic is tangential, secondary, or not directly applied to air-quality evaluation. &
+Full Text \\
 
-\textbf{(D2) }Descripción estructural del modelo difuso (tipo y diseño) &
-Se especifica el tipo de sistema (p.\,ej., Mamdani, Sugeno, ANFIS, tipo-2 u otro) y se describen elementos estructurales (reglas, funciones de pertenencia o arquitectura). &
-No se detalla el tipo de sistema difuso ni su estructura, impidiendo su caracterización y extracción sistemática. &
-Texto Completo \\
+\textbf{(D2) }Structural description of the fuzzy model (type and design) &
+The system type (e.g., Mamdani, Sugeno, ANFIS, type-2, or other) is specified, and structural elements (rules, membership functions, or architecture) are described. &
+Neither the fuzzy-system type nor its structure is detailed, preventing characterization and systematic extraction. &
+Full Text \\
 
-\textbf{(D3) }Implementación en sistema o plataforma de monitoreo &
-El estudio describe implementación en plataforma, arquitectura IoT, sistema de monitoreo o entorno estructurado de procesamiento de datos de calidad del aire. &
-El modelo se presenta sin contexto de sistema/plataforma de monitoreo o sin integración operacional en un entorno de procesamiento de datos. &
-Texto Completo \\
+\textbf{(D3) }Implementation in a monitoring system or platform &
+The study describes implementation in a platform, IoT architecture, monitoring system, or structured air-quality data-processing environment. &
+The model is presented without the context of a monitoring system/platform or without operational integration into a data-processing environment. &
+Full Text \\
 
-\textbf{(D3) }Descripción del entorno de aplicación y unidad de análisis (Setting / Participants) &
-Se especifica el contexto de aplicación (p.\,ej., urbano/ciudad, estaciones, sensores, \textit{datasets}) y la unidad de análisis evaluada. &
-No se describe claramente el entorno de aplicación o la unidad de análisis, impidiendo su comparación con otros estudios. &
-Texto Completo \\
+\textbf{(D3) }Description of application setting and unit of analysis (Setting / Participants) &
+The application context (e.g., urban/city, stations, sensors, \textit{datasets}) and the evaluated unit of analysis are specified. &
+The application setting or unit of analysis is not clearly described, preventing comparison with other studies. &
+Full Text \\
 
-\textbf{(Transversal) }Diseño metodológico y validación documentados (Research Design / Sampling) &
-El estudio describe un diseño experimental o aplicado y presenta validación empírica o evaluación cuantitativa (p.\,ej., métricas, comparación, casos de prueba). &
-No presenta diseño metodológico claro y/o no reporta validación empírica o evaluación cuantitativa del sistema propuesto. &
-Texto Completo \\
+\textbf{(Cross-cutting) }Documented methodological design and validation (Research Design / Sampling) &
+The study describes an experimental or applied design and presents empirical validation or quantitative evaluation (e.g., metrics, comparison, test cases). &
+It does not present a clear methodological design and/or does not report empirical validation or quantitative evaluation of the proposed system. &
+Full Text \\
 
 \bottomrule
 \end{longtblr}
+\end{adjustwidth}
