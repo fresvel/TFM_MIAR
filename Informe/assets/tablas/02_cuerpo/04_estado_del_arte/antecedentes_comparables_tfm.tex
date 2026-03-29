@@ -1,0 +1,18 @@
+\begin{longtblr}[
+  label={tab:antecedentes_comparables_tfm},
+  caption={Antecedentes comparables derivados del SLR para contrastar la propuesta del TFM.}
+]{
+  colspec={X[0.9,l,m] X[1.4,l,m] X[1.4,l,m] X[1.5,l,m] X[1.1,l,m] X[1.7,l,m]},
+  width=\linewidth
+}
+\toprule
+Estudio & Objetivo y contexto & Entradas y fuente de datos & Enfoque difuso y plataforma & Validación reportada & Límite relevante para contrastar con este TFM \\
+\midrule
+\cite{A028} & Predicción de AQI en contexto urbano. & Datos ambientales y de contaminantes en tiempo real; el artículo destaca NO$_2$ y CO como variables centrales. & Arquitectura híbrida con \texttt{ANFIS} dentro de un ensamble de aprendizaje automático. & Reporta \(R^2=96\%\) en particiones aleatorizadas. & El trabajo plantea integración potencial en estaciones de monitoreo, pero no documenta un despliegue operativo completo. \\
+\cite{A084} & Ajuste de mediciones de PM$_{2.5}$ de sensores de bajo costo en múltiples localizaciones. & PM$_{2.5}$ y datos de co-localización con validación geográfica múltiple; publica software y datos en Zenodo. & \texttt{ANFIS} con reducción explicable de reglas; implementación en MATLAB. & Mantiene correlaciones de prueba entre 0.73 y 0.96 tras la poda de reglas. & Su foco está en calibración y ajuste de medida; no aborda alertamiento ni operación urbana de extremo a extremo. \\
+\cite{A114} & Control de calidad ambiental en fábrica inteligente. & Sensores ambientales conectados a ESP32-S y envío a Firebase. & Reglas difusas más aprendizaje por refuerzo profundo; monitoreo remoto por app/web. & Precisión de 91.16\%, pérdida de 1.64\% y tiempo de inferencia de 3 ms. & El dominio es industrial interior; la solución prioriza control local y eficiencia energética. \\
+\cite{A135} & Pronóstico de PM$_{2.5}$ interior con red IoT y portal web. & PM$_{2.5}$, CO$_2$, CO, temperatura y humedad; combina datos reales de distintas localizaciones y conjuntos de referencia. & \texttt{ADFIST} sobre red IoT y publicación en portal \textit{Vayuveda}. & Contraste con múltiples conjuntos de datos y validación adicional frente a \textit{benchmarks}. & El objetivo es pronóstico interior; la comparación interurbana abierta sigue siendo limitada. \\
+\cite{A165} & Monitoreo de calidad del aire con nodo inteligente y alerta temprana. & CO, CO$_2$ y CH$_4$ en pruebas interiores y exteriores; transmisión por LoRa. & Fuzzy Tsukamoto en nodo sensor con Raspberry Pi como agregador. & Exactitud de 92.4\% para la clasificación del aire. & Trabaja con un conjunto reducido de variables y una semántica de alerta local. \\
+\cite{A167} & Monitoreo automático de calidad del aire interior en hogar inteligente. & CO, PM, temperatura y humedad con sensores de bajo costo en entorno doméstico. & Sistema IoT de dos capas con FIS tipo 1 para calibración y estimación de AQI. & Ensayos experimentales en vivienda; el artículo reporta efectividad del sistema implementado. & El estudio se centra en entorno interior y no desarrolla validación externa entre ciudades o fuentes abiertas. \\
+\bottomrule
+\end{longtblr}

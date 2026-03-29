@@ -68,36 +68,6 @@ Behal, V.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Beryozkina%
-\ \BBA {} Zicmane%
-}{%
-Beryozkina%
-\ \BBA {} Zicmane%
-}{%
-{\protect \APACyear {2025}}%
-}]{%
-A001}
-\APACinsertmetastar {%
-A001}%
-\begin{APACrefauthors}%
-Beryozkina, S.%
-\BCBT {}\ \BBA {} Zicmane, I.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2025}{DEC 1}{}.
-\newblock
-{\BBOQ}\APACrefatitle {UAV-Based Hybrid Fuzzy Inference Framework for Symmetry
-  and Asymmetry in Real-Time Air Quality Monitoring} {Uav-based hybrid fuzzy
-  inference framework for symmetry and asymmetry in real-time air quality
-  monitoring}{\BBCQ}\ [Article].
-\newblock
-\APACjournalVolNumPages{SYMMETRY-BASEL}{17}{12}{}.
-\newblock
-\begin{APACrefDOI} \doi{10.3390/sym17122048} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Bushnag%
 }{%
 Bushnag%
@@ -160,46 +130,6 @@ Chen, S.%
 \APACrefnote{Consultado el 24 de febrero de 2026}
 \newblock
 \begin{APACrefDOI} \doi{10.24432/C5RK5G} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Colella%
-\ \protect \BOthers {.}}{%
-Colella%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2022}}%
-}]{%
-A142}
-\APACinsertmetastar {%
-A142}%
-\begin{APACrefauthors}%
-Colella, Y.%
-, Valente, A\BPBI S.%
-, Rossano, L.%
-, Trunfio, T\BPBI A.%
-, Fiorillo, A.%
-\BCBL {}\ \BBA {} Improta, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2022}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A Fuzzy Inference System for the Assessment of Indoor
-  Air Quality in an Operating Room to Prevent Surgical Site Infection} {A fuzzy
-  inference system for the assessment of indoor air quality in an operating
-  room to prevent surgical site infection}{\BBCQ}\ [Article].
-\newblock
-\APACjournalVolNumPages{International Journal of Environmental Research and
-  Public Health}{19}{6}{}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-85126465696&doi=10.3390%2Fijerph19063533&partnerID=40&md5=7cbffc5af4e57f21db9fb8dca47f5df9}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Cited by: 56; All Open Access; Gold Open Access; Green Accepted
-  Open Access; Green Open Access}
-\newblock
-\begin{APACrefDOI} \doi{10.3390/ijerph19063533} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -407,44 +337,6 @@ Istiqomah, N.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Jamali%
-, Gharib%
-\BCBL {}\ \BBA {} Koma%
-}{%
-Jamali%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2023}}%
-}]{%
-A132}
-\APACinsertmetastar {%
-A132}%
-\begin{APACrefauthors}%
-Jamali, N.%
-, Gharib, M\BPBI R.%
-\BCBL {}\ \BBA {} Koma, B\BPBI O.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2023}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Neuro-Fuzzy Decision Support System for Optimization of
-  the Indoor Air Quality in Operation Rooms} {Neuro-fuzzy decision support
-  system for optimization of the indoor air quality in operation rooms}{\BBCQ}\
-  [Article].
-\newblock
-\APACjournalVolNumPages{International Journal of Robotics and Control
-  Systems}{3}{1}{98 - 106}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-85161921654&doi=10.31763%2Fijrcs.v3i1.854&partnerID=40&md5=138d2e37a4a0d91092806291c19a89a8}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Cited by: 9; All Open Access; Gold Open Access}
-\newblock
-\begin{APACrefDOI} \doi{10.31763/ijrcs.v3i1.854} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 K%
 \ \BBA {} Kumar%
 }{%
@@ -471,44 +363,6 @@ K, P.%
 \APACjournalVolNumPages{Environmental Monitoring and Assessment}{194}{}{324}.
 \newblock
 \begin{APACrefDOI} \doi{10.1007/s10661-022-09896-8} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kim%
-, Chun%
-\BCBL {}\ \BBA {} Yang%
-}{%
-Kim%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2025}}%
-}]{%
-A087}
-\APACinsertmetastar {%
-A087}%
-\begin{APACrefauthors}%
-Kim, K.%
-, Chun, D.%
-\BCBL {}\ \BBA {} Yang, W.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2025}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {IoT-based filter management system using reinforced
-  ANFIS for VOCs reduction in urban industrial facilities} {Iot-based filter
-  management system using reinforced anfis for vocs reduction in urban
-  industrial facilities}{\BBCQ}\ [Article].
-\newblock
-\APACjournalVolNumPages{Scientific Reports}{15}{1}{}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-105005525294&doi=10.1038%2Fs41598-025-02435-8&partnerID=40&md5=ad6e186f357141e62976908017619e8e}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Cited by: 0; All Open Access; Gold Open Access; Green Accepted
-  Open Access; Green Open Access}
-\newblock
-\begin{APACrefDOI} \doi{10.1038/s41598-025-02435-8} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -576,43 +430,6 @@ Kowalski, P\BPBI A.%
   Open Access; Hybrid Gold Open Access}
 \newblock
 \begin{APACrefDOI} \doi{10.1016/j.envsoft.2025.106734} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kumar%
-, Kumar%
-\BCBL {}\ \BBA {} Amiy%
-}{%
-Kumar%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2022}}%
-}]{%
-A009}
-\APACinsertmetastar {%
-A009}%
-\begin{APACrefauthors}%
-Kumar, R.%
-, Kumar, S.%
-\BCBL {}\ \BBA {} Amiy, E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2022}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Air Quality Indices Prediction using Sugeno’s Fuzzy
-  Logic} {Air quality indices prediction using sugeno’s fuzzy logic}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {2022 International Conference on IoT and Blockchain
-  Technology (ICIBT)} {2022 international conference on iot and blockchain
-  technology (icibt)}\ (\BPGS\ 1--5).
-\newblock
-\APACaddressPublisher{}{IEEE}.
-\newblock
-\begin{APACrefURL}
-  \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9807786}
-  \end{APACrefURL}
-\newblock
-\begin{APACrefDOI} \doi{10.1109/ICIBT52874.2022.9807786} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -792,79 +609,6 @@ Peffers, K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Preethi%
-\ \BBA {} Tamilarasan%
-}{%
-Preethi%
-\ \BBA {} Tamilarasan%
-}{%
-{\protect \APACyear {2021}}%
-}]{%
-A168}
-\APACinsertmetastar {%
-A168}%
-\begin{APACrefauthors}%
-Preethi, K\BPBI R.%
-\BCBT {}\ \BBA {} Tamilarasan, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2021}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Monitoring of air pollution to establish optimal less
-  polluted path by utilizing wireless sensor network} {Monitoring of air
-  pollution to establish optimal less polluted path by utilizing wireless
-  sensor network}{\BBCQ}\ [Retracted].
-\newblock
-\APACjournalVolNumPages{Journal of Ambient Intelligence and Humanized
-  Computing}{12}{6}{6375 - 6386}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-85086877018&doi=10.1007%2Fs12652-020-02232-3&partnerID=40&md5=8ec2240f4548d667eb22491e4a5f09a4}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Cited by: 11}
-\newblock
-\begin{APACrefDOI} \doi{10.1007/s12652-020-02232-3} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Rastogi%
-\ \BBA {} Lohani%
-}{%
-Rastogi%
-\ \BBA {} Lohani%
-}{%
-{\protect \APACyear {2022}}%
-}]{%
-A136}
-\APACinsertmetastar {%
-A136}%
-\begin{APACrefauthors}%
-Rastogi, K.%
-\BCBT {}\ \BBA {} Lohani, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2022}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Context-aware IoT-enabled framework to analyse and
-  predict indoor air quality} {Context-aware iot-enabled framework to analyse
-  and predict indoor air quality}{\BBCQ}\ [Article].
-\newblock
-\APACjournalVolNumPages{Intelligent Systems with Applications}{16}{}{}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-85140053655&doi=10.1016%2Fj.iswa.2022.200132&partnerID=40&md5=ef570e7b04e91d7288446f2e32cf0073}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Cited by: 15; All Open Access; Gold Open Access; Green Accepted
-  Open Access; Green Open Access}
-\newblock
-\begin{APACrefDOI} \doi{10.1016/j.iswa.2022.200132} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Saini%
 , Dutta%
 \BCBL {}\ \BBA {} Marques%
@@ -941,43 +685,6 @@ Saini, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Saini%
-, Dutta%
-\BCBL {}\ \BBA {} Marques%
-}{%
-Saini%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2022}}%
-{\protect \APACexlab {{\protect \BCnt {3}}}}}]{%
-A138}
-\APACinsertmetastar {%
-A138}%
-\begin{APACrefauthors}%
-Saini, J.%
-, Dutta, M.%
-\BCBL {}\ \BBA {} Marques, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2022{\protect \BCnt {3}}}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A novel application of fuzzy inference system optimized
-  with particle swarm optimization and genetic algorithm for PM10 prediction}
-  {A novel application of fuzzy inference system optimized with particle swarm
-  optimization and genetic algorithm for pm10 prediction}{\BBCQ}\ [Article].
-\newblock
-\APACjournalVolNumPages{Soft Computing}{26}{18}{9573 - 9586}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-85124332085&doi=10.1007%2Fs00500-022-06777-7&partnerID=40&md5=63ed9047c8cc2b568a9a0f96e84304ec}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Cited by: 14}
-\newblock
-\begin{APACrefDOI} \doi{10.1007/s00500-022-06777-7} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Saleem%
 , Shingari%
 , Farooq%
@@ -1045,43 +752,6 @@ Seibert, V\BPBI A.%
   quality fuzzy classification}.{\BBCQ}.
 \newblock
 \begin{APACrefDOI} \doi{10.5220/0012689000003690} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Sujono%
-, Sulistyowati%
-\BCBL {}\ \BBA {} Satriya%
-}{%
-Sujono%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2023}}%
-}]{%
-A123}
-\APACinsertmetastar {%
-A123}%
-\begin{APACrefauthors}%
-Sujono, H\BPBI A.%
-, Sulistyowati, R.%
-\BCBL {}\ \BBA {} Satriya, W\BPBI A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2023}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Microcontroller-based air quality monitoring design
-  using mamdani fuzzy method} {Microcontroller-based air quality monitoring
-  design using mamdani fuzzy method}{\BBCQ}\ [Article].
-\newblock
-\APACjournalVolNumPages{Indonesian Journal of Electrical Engineering and
-  Computer Science}{32}{2}{715 - 724}.
-\newblock
-\begin{APACrefURL}
-  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-85174256530&doi=10.11591%2Fijeecs.v32.i2.pp715-724&partnerID=40&md5=4fae550d9e52282433e1b642a7f32d1f}
-  \end{APACrefURL}
-\newblock
-\APACrefnote{Cited by: 0; All Open Access; Gold Open Access}
-\newblock
-\begin{APACrefDOI} \doi{10.11591/ijeecs.v32.i2.pp715-724} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

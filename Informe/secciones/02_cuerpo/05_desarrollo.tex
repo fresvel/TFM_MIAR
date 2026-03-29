@@ -39,7 +39,9 @@ Este apartado actúa como un mapa metodológico del trabajo.
 \subsubsection{1: Revisión sistemática del estado del arte}
 
 
-La revisión del estado del arte de este trabajo se estructura mediante el modelo \textbf{PICo}, con el fin de delimitar de manera precisa el fenómeno de estudio, el enfoque metodológico y el contexto de aplicación, garantizando coherencia con el carácter aplicado de la investigación.
+La revisión sistemática del estado del arte constituye la primera fase metodológica de este TFM. Aunque su desarrollo forma parte del presente trabajo, la revisión se ejecutó como un estudio independiente y su versión completa se consolidó en un manuscrito externo sometido a publicación. En esta memoria, la fase 1 se presenta desde su función metodológica: delimitar el problema, fundamentar el estado del arte y derivar criterios de diseño para la propuesta.
+
+La revisión sistemática desarrollada en esta fase se estructura mediante el modelo \textbf{PICo}, con el fin de delimitar de manera precisa el fenómeno de estudio, el enfoque metodológico y el contexto de aplicación, garantizando coherencia con el carácter aplicado de la investigación.
 
 \input{assets/tablas/02_cuerpo/05_desarrollo/pico_air_quality.tex}
 
@@ -99,7 +101,7 @@ Esta cadena representa un compromiso metodológico entre exhaustividad y precisi
 \subsubsection*{Selección de Artículos}
 
 El proceso de selección se ejecutó conforme al flujo PRISMA 2020 \cite{prisma2020}, articulando de forma secuencial las fases de identificación, cribado, obtención de texto completo, elegibilidad e inclusión final. Los criterios operacionales de inclusión y exclusión utilizados en las fases de cribado y elegibilidad se presentan en la Tabla~\ref{tab:criterios_ie}. Tras la consolidación de resultados provenientes de las bases consultadas y la depuración de duplicados, se conformó el conjunto de registros a cribar por título y resumen.
-Para fines de trazabilidad y reproducibilidad, los artefactos finales de resultados y respaldo metodológico se publican en un NOxrepositorio único en Zenodo (DOI del registro).
+Para fines de trazabilidad y reproducibilidad, los artefactos finales de resultados y respaldo metodológico se publican en un repositorio único en Zenodo.
 
 \input{assets/tablas/02_cuerpo/05_desarrollo/criterios_ie.tex}
 
@@ -188,6 +190,10 @@ La implementación se realizó con Python, utilizando principalmente \texttt{pan
 \subsubsection{2: Diseño del módulo de monitoreo}
 Esta fase se sustenta en la lógica de \emph{Design Science Research}, particularmente en la definición de los objetivos de la solución y en el diseño del artefacto \cite[pp.~55--56]{METDSRM01}. En este punto, el problema delimitado por la revisión sistemática deja de tratarse solo como un hallazgo teórico y se transforma en una propuesta técnica estructurada. Metodológicamente, esto implica traducir la necesidad identificada en requisitos de solución, criterios de funcionamiento y condiciones de uso, de modo que el diseño del módulo responda de forma explícita a los vacíos detectados en la literatura. En coherencia con la SLR y con los objetivos del estudio, los criterios rectores de esta fase son: uso de datos abiertos como base de entrada, trazabilidad del flujo de procesamiento, interpretabilidad del razonamiento difuso y capacidad del módulo para producir resultados verificables y útiles para la evaluación del riesgo.
 
+La traducción de estos criterios a decisiones de diseño se apoya de forma directa en la síntesis conceptual del capítulo anterior. En particular, el módulo se concibe a partir de cuatro fundamentos: el AQI como mecanismo de agregación e interpretación del riesgo; la selección explícita de contaminantes y variables ambientales con significado operativo; la inferencia difusa como núcleo auditable de decisión; y el uso de fuentes abiertas con trazabilidad suficiente para sostener reproducibilidad y validación posterior. Bajo este encuadre, el diseño no se formula como una arquitectura abstracta, sino como una respuesta concreta a los vacíos identificados en comparabilidad, integración operativa y generalización externa.
+
+Por esa razón, las decisiones principales de esta fase deben resolver, desde el diseño, aspectos que la literatura suele dejar fragmentados: declaración de la fuente y ventana temporal de los datos, criterio de selección de variables, definición del esquema categorial de riesgo, papel del motor difuso dentro del pipeline, y forma en que la salida del sistema se convierte en monitoreo interpretable y alertamiento útil. Este anclaje asegura continuidad entre el estado del arte sintetizado, la base conceptual y la arquitectura funcional de la propuesta.
+
 En términos operativos, esta fase se desarrolla en una secuencia de definición progresiva del módulo:
 \begin{enumerate}
 \item Se establece la arquitectura general de la solución, delimitando sus capas, componentes y relaciones funcionales, con el fin de definir cómo se conectan la adquisición de datos, el procesamiento, la inferencia y la salida del sistema;
@@ -221,6 +227,8 @@ La validación del módulo se plantea como una evaluación empírica del artefac
 El comportamiento funcional se refiere a que el módulo complete el flujo previsto sin interrupciones injustificadas, desde la recepción de datos hasta la emisión del resultado. La consistencia de la respuesta se refiere a que salidas equivalentes o comparables se mantengan alineadas con las reglas definidas en el diseño, evitando respuestas contradictorias frente a condiciones similares. El desempeño operativo se refiere a que el procesamiento ocurra en un tiempo razonable para el propósito de monitoreo y que el sistema mantenga estabilidad básica ante variaciones previsibles en la entrada.
 
 En coherencia con los criterios derivados de la revisión sistemática, la validación se estructura sobre escenarios de uso y métricas que permitan comprobar si el módulo funciona como una herramienta trazable de apoyo a la decisión. Los escenarios de prueba considerados se orientan a verificar el comportamiento del artefacto en tres situaciones: operación nominal con datos dentro de rangos esperados; condiciones con valores cercanos o superiores a umbrales de alerta, para verificar la activación coherente de niveles de riesgo; y casos con valores faltantes, atípicos o con variaciones de calidad en la entrada, para comprobar la robustez básica del flujo de procesamiento. A su vez, la evaluación se apoya en métricas de funcionamiento y desempeño, entre ellas la completitud del procesamiento, entendida como la capacidad del módulo para recorrer todas sus etapas y producir una salida; la consistencia entre entradas y salidas, entendida como la correspondencia lógica entre las condiciones observadas y la respuesta generada; el tiempo de respuesta del módulo, entendido como el lapso requerido para transformar la entrada en un resultado útil; y la coherencia de la clasificación o alertamiento generado respecto de las reglas y criterios definidos en el diseño.
+
+Dado que la propuesta se apoya en datos abiertos y no en una red propia de sensores, la validación no se centra en calibración instrumental, sino en la solidez del flujo de adquisición, preparación, inferencia y publicación sobre series externas. En consecuencia, la comprobación debe asegurar que la fuente seleccionada, la ventana temporal utilizada, el tratamiento de valores faltantes o atípicos y la lógica de categorización del riesgo queden documentados de forma explícita. Este punto es relevante porque la reproducibilidad de la solución depende tanto de la consistencia del motor difuso como de la trazabilidad de los datos que alimentan el módulo.
 
 En términos operativos, la validación se desarrolla mediante una secuencia de comprobación y análisis del comportamiento del módulo:
 \begin{enumerate}

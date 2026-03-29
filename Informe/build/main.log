@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  28 FEB 2026 23:48
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  29 MAR 2026 00:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1107,11 +1107,7 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 [2] (./secciones/01_preliminares/03_indice_figuras.tex (build/main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[3])
+)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
@@ -1124,14 +1120,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--8
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[4] (./secciones/01_preliminares/04_indice_tablas.tex (build/main.lot
+[3] (./secciones/01_preliminares/04_indice_tablas.tex (build/main.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[5])
+)
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
@@ -1144,426 +1136,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--10
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[6]) (./secciones/02_cuerpo/00_main.tex (./secciones/02_cuerpo/01_resumen.tex)
+[4]) (./secciones/02_cuerpo/00_main.tex (./secciones/02_cuerpo/01_resumen.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[7] (./secciones/02_cuerpo/02_introduccion.tex
+[5] (./secciones/02_cuerpo/02_introduccion.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[8]
+[6]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[9])
+[7])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[10] (./secciones/02_cuerpo/03_objetivos.tex)
+[8] (./secciones/02_cuerpo/03_objetivos.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[11] (./secciones/02_cuerpo/04_estado_del_arte.tex
-Underfull \hbox (badness 1460) in paragraph at lines 14--15
-\TU/Arial(0)/m/n/10.95 densidad en 2022. En [][]b[][][] predominan los estudios
- experimentales y correlaciona-
- []
+[9] (./secciones/02_cuerpo/04_estado_del_arte.tex
 
-File: assets/figuras/perfil/prisma.pdf Graphic file (type pdf)
-<use assets/figuras/perfil/prisma.pdf>
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[10]
 
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[11]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [12]
-File: assets/figuras/perfil/fig02_distribucion_anual.png Graphic file (type bmp
-)
-<assets/figuras/perfil/fig02_distribucion_anual.png>
-File: assets/figuras/perfil/fig03_tipo_estudio.png Graphic file (type bmp)
-<assets/figuras/perfil/fig03_tipo_estudio.png>
-File: assets/figuras/perfil/fig04_estado_retrieval.png Graphic file (type bmp)
-<assets/figuras/perfil/fig04_estado_retrieval.png>
-File: assets/figuras/perfil/fig05_bandas_calidad.png Graphic file (type bmp)
-<assets/figuras/perfil/fig05_bandas_calidad.png>
+(./assets/tablas/02_cuerpo/04_estado_del_arte/antecedentes_comparables_tfm.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 18.
+
+Overfull \hbox (2.19228pt too wide) in paragraph at lines 18--18
+[][][][]\TU/Arial(0)/m/n/9 Istiqomah 
+ []
+
 
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [13]
-File: assets/figuras/perfil/fig07_nr_campos_criticos.png Graphic file (type bmp
-)
-<assets/figuras/perfil/fig07_nr_campos_criticos.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[14]
-File: assets/figuras/d1/fig05_coocurrencia_top.png Graphic file (type bmp)
-<assets/figuras/d1/fig05_coocurrencia_top.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[15]
-File: assets/figuras/d1/fig08_coocurrencia_contaminantes.png Graphic file (type
- bmp)
-<assets/figuras/d1/fig08_coocurrencia_contaminantes.png>
-File: assets/figuras/d1/fig09_numero_contaminantes_por_estudio.png Graphic file
- (type bmp)
-<assets/figuras/d1/fig09_numero_contaminantes_por_estudio.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[16] (./assets/tablas/02_cuerpo/04_estado_del_arte/d1/d1_tabla_resumen_es.tex
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 27.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 27.
-)
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[17]
-File: assets/figuras/d1/fig02_ambientales_vs_salida.png Graphic file (type bmp)
-
-<assets/figuras/d1/fig02_ambientales_vs_salida.png>
-File: assets/figuras/d1/fig07_relacion_ambiente_vs_salida.png Graphic file (typ
-e bmp)
-<assets/figuras/d1/fig07_relacion_ambiente_vs_salida.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[18]
-Underfull \hbox (badness 2828) in paragraph at lines 150--151
-[]\TU/Arial(0)/m/n/10.95 En los modelos orientados a predicción de contaminante
-s, ambas variables —
+Overfull \hbox (2.19228pt too wide) in paragraph at lines 18--18
+[][][][]\TU/Arial(0)/m/n/9 Istiqomah 
  []
 
 
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
+[14])
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[15]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[16]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[17]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[18]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
 [19]
-File: assets/figuras/d1/fig03_contaminantes_vs_salida.png Graphic file (type bm
-p)
-<assets/figuras/d1/fig03_contaminantes_vs_salida.png>
-File: assets/figuras/d1/fig06_relacion_salida_vs_contaminantes.png Graphic file
- (type bmp)
-<assets/figuras/d1/fig06_relacion_salida_vs_contaminantes.png>
+File: assets/figuras/d2/fig07_comparativo_familias_fis.png Graphic file (type b
+mp)
+<assets/figuras/d2/fig07_comparativo_familias_fis.png>
+File: assets/figuras/d2/fig10_flujo_fis.png Graphic file (type bmp)
+<assets/figuras/d2/fig10_flujo_fis.png>
 
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [20]
-(./assets/tablas/02_cuerpo/04_estado_del_arte/d1/d1_tabla_trazabilidad_minima_e
-s.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[21])
-(./assets/tablas/02_cuerpo/04_estado_del_arte/d2/d2_tabla_principal_es.tex
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[22]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[23])
-File: assets/figuras/d2/fig02_coocurrencia_fis_vs_proposito.png Graphic file (t
-ype bmp)
-<assets/figuras/d2/fig02_coocurrencia_fis_vs_proposito.png>
-
-Overfull \hbox (43.91718pt too wide) in paragraph at lines 215--216
-\TU/Arial(0)/m/n/10.95 grupo adopta taxonomías cercanas al AQI clásico de 5–6 c
-lases (\TU/lmtt/m/n/10.95 Good/Moderate/.../Hazardous\TU/Arial(0)/m/n/10.95 ),
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[24]
-File: assets/figuras/d2/fig03_resumen_clases_aqi.png Graphic file (type bmp)
-<assets/figuras/d2/fig03_resumen_clases_aqi.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[25]
-File: assets/figuras/d2/fig04_coocurrencia_fis_vs_defuzzificacion.png Graphic f
-ile (type bmp)
-<assets/figuras/d2/fig04_coocurrencia_fis_vs_defuzzificacion.png>
-File: assets/figuras/d2/fig05_coocurrencia_fis_vs_riesgo.png Graphic file (type
- bmp)
-<assets/figuras/d2/fig05_coocurrencia_fis_vs_riesgo.png>
-File: assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png G
-raphic file (type bmp)
-<assets/figuras/d2/fig06_coocurrencia_proposito_vs_interpretabilidad.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[26]
-Underfull \hbox (badness 1635) in paragraph at lines 266--267
-[]\TU/Arial(0)/b/n/10.95 Funciones de pertenencia. \TU/Arial(0)/m/n/10.95 Las f
-unciones lingüísticas y las formas triangula-
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[27]
-(./assets/tablas/02_cuerpo/04_estado_del_arte/d2/d2_tabla_perfiles_fis_es.tex
-Overfull \hbox (1.44038pt too wide) in paragraph at lines 18--18
-[]\TU/Arial(0)/m/n/9 Interpretabilidad 
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[28]
-Overfull \hbox (1.44038pt too wide) in paragraph at lines 18--18
-[]\TU/Arial(0)/m/n/9 Interpretabilidad 
- []
-
-)
-(./assets/tablas/02_cuerpo/04_estado_del_arte/d2/d2_tabla_trazabilidad_minima_e
-s.tex
-Overfull \hbox (0.50322pt too wide) in paragraph at lines 15--15
-[]\TU/Arial(0)/b/n/10.95 Artículo  
- []
-
-
-Overfull \hbox (0.50322pt too wide) in paragraph at lines 15--15
-[]\TU/Arial(0)/b/n/10.95 Artículo  
- []
-
-)
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[29]
-(./assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_tabla_completitud_nr_es.tex
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[30])
-File: assets/figuras/d3/fig01_distribucion_arquitectura.png Graphic file (type 
-bmp)
-<assets/figuras/d3/fig01_distribucion_arquitectura.png>
-File: assets/figuras/d3/fig02_distribucion_procesamiento.png Graphic file (type
- bmp)
-<assets/figuras/d3/fig02_distribucion_procesamiento.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[31]
-File: assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png Gr
-aphic file (type bmp)
-<assets/figuras/d3/fig03_coocurrencia_arquitectura_vs_procesamiento.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[32]
-File: assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png Graphic fi
-le (type bmp)
-<assets/figuras/d3/fig04_coocurrencia_arquitectura_vs_stack.png>
-File: assets/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png Grap
-hic file (type bmp)
-<assets/figuras/d3/fig05_coocurrencia_contexto_vs_instrumentacion.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[33]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[34]
-File: assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png Gra
-phic file (type bmp)
-<assets/figuras/d3/fig06_coocurrencia_tiempo_real_vs_visualizacion.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[35]
-(./assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_trazabilidad_minima.tex
-Overfull \hbox (3.08954pt too wide) in paragraph at lines 12--12
- []\TU/Arial(0)/b/n/10.95 Artículo 
- []
-
-
-Overfull \hbox (3.08954pt too wide) in paragraph at lines 12--12
- []\TU/Arial(0)/b/n/10.95 Artículo 
- []
-
-)
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[36]
-(./assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_unidades_comparables_es
-.tex)
-File: assets/figuras/eval/fig00_metricas_top_general.png Graphic file (type bmp
-)
-<assets/figuras/eval/fig00_metricas_top_general.png>
-File: assets/figuras/eval/fig01_metricas_por_grupo_comparable.png Graphic file 
-(type bmp)
-<assets/figuras/eval/fig01_metricas_por_grupo_comparable.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[37]
-(./assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_boxplot_resumen_valores
-_es.tex
-Overfull \hbox (5.81148pt too wide) in paragraph at lines 18--18
- []\TU/Arial(0)/b/n/10.95 Mediana 
- []
-
-
-Overfull \hbox (5.81148pt too wide) in paragraph at lines 18--18
- []\TU/Arial(0)/b/n/10.95 Mediana 
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[38])
-File: assets/figuras/eval/fig02_boxplot_metric_mape.png Graphic file (type bmp)
-
-<assets/figuras/eval/fig02_boxplot_metric_mape.png>
-File: assets/figuras/eval/fig02_boxplot_metric_accuracy.png Graphic file (type 
-bmp)
-<assets/figuras/eval/fig02_boxplot_metric_accuracy.png>
-File: assets/figuras/eval/fig02_boxplot_metric_mae.png Graphic file (type bmp)
-<assets/figuras/eval/fig02_boxplot_metric_mae.png>
-File: assets/figuras/eval/fig02_boxplot_metric_nrmse.png Graphic file (type bmp
-)
-<assets/figuras/eval/fig02_boxplot_metric_nrmse.png>
-File: assets/figuras/eval/fig02_boxplot_metric_r2.png Graphic file (type bmp)
-<assets/figuras/eval/fig02_boxplot_metric_r2.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[39]
-File: assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png Graphic file (typ
-e bmp)
-<assets/figuras/eval/fig03_cooc_datasource_vs_unidad.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[40] (./assets/tablas/02_cuerpo/04_estado_del_arte/qa_distribucion_bandas.tex
-Overfull \hbox (6.1541pt too wide) in paragraph at lines 12--12
- []\TU/Arial(0)/b/n/10.95 Mediana 
- []
-
-
-Overfull \hbox (6.1541pt too wide) in paragraph at lines 12--12
- []\TU/Arial(0)/b/n/10.95 Mediana 
- []
-
-)
-(./assets/tablas/02_cuerpo/04_estado_del_arte/qa_trazabilidad_sensibilidad.tex)
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[41]
-Overfull \hbox (5.3366pt too wide) in paragraph at lines 493--494
-[]\TU/Arial(0)/m/n/10.95 En términos de heterogeneidad interna, \TU/Arial(0)/m/
-it/10.95 Media \TU/Arial(0)/m/n/10.95 presenta una amplitud mayor \TU/lmtt/m/n/
-10.95 61.67--78.33
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[42]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[43]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[44]
-Overfull \hbox (4.01271pt too wide) in paragraph at lines 529--530
-\TU/Arial(0)/m/n/10.95 reo/control sobre validación clínica causal. En el corpu
-s, el contexto \TU/lmtt/m/n/10.95 Healthcare_Facility
- []
-
-
-Underfull \hbox (badness 4193) in paragraph at lines 529--530
-\TU/Arial(0)/m/n/10.95 además, la trazabilidad de protocolo de evaluación clíni
-ca permanece limitada
- []
-
-(./assets/tablas/02_cuerpo/04_estado_del_arte/cierre_vacios_implicaciones.tex
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[45])
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[46]
-Overfull \hbox (4.22685pt too wide) in paragraph at lines 542--543
-[]\TU/Arial(0)/b/n/10.95 Funciones de pertenencia\TU/Arial(0)/m/n/10.95 : domin
-an funciones lingüísticas triangulares/trapezoidales,
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[47]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[48]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[49]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[50]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[51] (./assets/figuras/d2/fig07_comparativo_familias_fis.tex)
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[52]
-File: assets/figuras/d2/fig10_flujo_fis.png Graphic file (type bmp)
-<assets/figuras/d2/fig10_flujo_fis.png>
+[21]
 File: assets/figuras/d2/fig08a_conjuntos_borrosos.png Graphic file (type bmp)
 <assets/figuras/d2/fig08a_conjuntos_borrosos.png>
 File: assets/figuras/d2/fig08b_numero_borroso_alpha.png Graphic file (type bmp)
 
 <assets/figuras/d2/fig08b_numero_borroso_alpha.png>
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[53]
 File: assets/figuras/d2/fig09_defuzzificacion_centroide.png Graphic file (type 
 bmp)
 <assets/figuras/d2/fig09_defuzzificacion_centroide.png>
@@ -1571,7 +1239,7 @@ bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[54]
+[22]
 File: assets/figuras/d2/fig11a_anfis_capas.png Graphic file (type bmp)
 <assets/figuras/d2/fig11a_anfis_capas.png>
 File: assets/figuras/d2/fig11b_anfis_superficie.png Graphic file (type bmp)
@@ -1580,23 +1248,23 @@ File: assets/figuras/d2/fig11b_anfis_superficie.png Graphic file (type bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[55]
+[23]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[56]
+[24]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[57]
+[25]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[58]
+[26]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[59]
+[27]
 (./assets/tablas/02_cuerpo/04_estado_del_arte/datasets_publicos_sintesis.tex
 Overfull \hbox (0.86949pt too wide) in paragraph at lines 16--16
 []\TU/Arial(0)/m/n/9 Plataforma 
@@ -1676,7 +1344,7 @@ Overfull \hbox (2.8734pt too wide) in paragraph at lines 16--16
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[60]
+[28]
 Overfull \hbox (1.88023pt too wide) in paragraph at lines 16--16
 []\TU/Arial(0)/m/n/9 Integración 
  []
@@ -1695,19 +1363,23 @@ Overfull \hbox (3.37877pt too wide) in paragraph at lines 16--16
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[61])
+[29])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[62] (./secciones/02_cuerpo/05_desarrollo.tex
+[30] (./secciones/02_cuerpo/05_desarrollo.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[63]
+[31]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[64] (./assets/tablas/02_cuerpo/05_desarrollo/pico_air_quality.tex
+[32]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[33] (./assets/tablas/02_cuerpo/05_desarrollo/pico_air_quality.tex
 Overfull \hbox (2.6132pt too wide) in paragraph at lines 22--22
 []\TU/Arial(0)/b/n/9 Compo-
  []
@@ -1717,20 +1389,19 @@ Overfull \hbox (2.6132pt too wide) in paragraph at lines 22--22
 []\TU/Arial(0)/b/n/9 Compo-
  []
 
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[65])
+)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[66] (./assets/tablas/02_cuerpo/05_desarrollo/derivacion_pico.tex)
+[34] (./assets/tablas/02_cuerpo/05_desarrollo/derivacion_pico.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[67] (./assets/tablas/02_cuerpo/05_desarrollo/cadena_final.tex)
-(./assets/tablas/02_cuerpo/05_desarrollo/criterios_ie.tex
+[35]) (./assets/tablas/02_cuerpo/05_desarrollo/cadena_final.tex)
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[36] (./assets/tablas/02_cuerpo/05_desarrollo/criterios_ie.tex
 Underfull \hbox (badness 1454) in paragraph at lines 69--69
 []\TU/Arial(0)/b/n/9 Inclusión (Descripción opera-
  []
@@ -1906,10 +1577,6 @@ Underfull \hbox (badness 1454) in paragraph at lines 69--69
  []
 
 
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[68]
 Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []\TU/Arial(0)/m/n/9 Relación con el
  []
@@ -1935,6 +1602,10 @@ Underfull \hbox (badness 1189) in paragraph at lines 69--69
  []
 
 
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 69--69
 \TU/Arial(0)/m/n/9 de variables y
  []
@@ -1995,10 +1666,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--69
  []
 
 
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[69]
 Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []\TU/Arial(0)/b/n/9 (D3) \TU/Arial(0)/m/n/9 Implementa-
  []
@@ -2082,8 +1749,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--69
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[70]
-Underfull \hbox (badness 1735) in paragraph at lines 120--123
+[38]
+Underfull \hbox (badness 1735) in paragraph at lines 122--125
 []\TU/Arial(0)/m/n/10.95 El instrumento final se construyó a partir del bloque 
 cuantitativo de Kitchenham
  []
@@ -2092,11 +1759,11 @@ cuantitativo de Kitchenham
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[71]
+[39]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[72] (./assets/tablas/02_cuerpo/05_desarrollo/extraccion_de_datos.tex
+[40] (./assets/tablas/02_cuerpo/05_desarrollo/extraccion_de_datos.tex
 Overfull \hbox (6.49255pt too wide) in paragraph at lines 28--28
 []\TU/Arial(0)/b/n/10.95 Direc-
  []
@@ -2330,6 +1997,10 @@ Overfull \hbox (6.49255pt too wide) in paragraph at lines 28--28
  []
 
 
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 28--28
 []\TU/lmtt/m/n/9 Article_ID\TU/Arial(0)/m/n/9 , \TU/lmtt/m/n/9 Title\TU/Arial(0
 )/m/n/9 , \TU/lmtt/m/n/9 Year\TU/Arial(0)/m/n/9 , \TU/lmtt/m/n/9 Venue\TU/Arial
@@ -2378,10 +2049,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
  []
 
 
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[73]
 Underfull \hbox (badness 10000) in paragraph at lines 28--28
 []\TU/lmtt/m/n/9 D2_Fuzzy_approach_type\TU/Arial(0)/m/n/9 ,
  []
@@ -2560,38 +2227,38 @@ Overfull \hbox (1.12355pt too wide) in paragraph at lines 28--28
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[74]
+[42]
 File: assets/figuras/metodología/analisis_sintesis.png Graphic file (type bmp)
 <assets/figuras/metodología/analisis_sintesis.png>
 
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[75]
+[43]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[76]
+[44]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[77]
+[45]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[78])
+[46]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[79]
+[47])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[80] (./secciones/02_cuerpo/06_conclusiones.tex)
+[48] (./secciones/02_cuerpo/06_conclusiones.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[81]) (./secciones/03_finales/00_main.tex
+[49]) (./secciones/03_finales/00_main.tex
 (./secciones/03_finales/01_referencias.tex (build/main.bbl
 Underfull \hbox (badness 3590) in paragraph at lines 46--69
 []\TU/Arial(0)/m/n/10.95 Behal, V., y Singh, R. K.  (2021).  Personalised healt
@@ -2631,342 +2298,207 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--69
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--133
+Underfull \hbox (badness 10000) in paragraph at lines 81--103
 [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] []
  [][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][] [] 
 [][][][] []
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 176--204
-[]\TU/Arial(0)/m/n/10.95 Colella, Y., Valente, A. S., Rossano, L., Trunfio, T. 
-A., Fiorillo, A., y Improta, G.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--204
-[][][] [] [][][][][][][] [] [][][][] [] [][][][][][] [] [][][][][][] [] [][][][
-] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][][][][][][][][][] [] []
-[] [] [][][][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--204
-[][][][][][][][][][][][][][][][][][][][][][][][][][] [] [][][][][][] [] [][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
- []
-
-
-Underfull \hbox (badness 2302) in paragraph at lines 218--240
+Underfull \hbox (badness 2302) in paragraph at lines 148--170
 \TU/Arial(0)/m/n/10.95 plication of a fuzzy artmap neural network for indoor ai
 r quality prediction
  []
 
 
-Underfull \hbox (badness 3068) in paragraph at lines 218--240
+Underfull \hbox (badness 3068) in paragraph at lines 148--170
 \TU/Arial(0)/m/n/10.95 [Conference paper].  Institute of Electrical and Electro
 nics Engineers Inc.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--240
+Underfull \hbox (badness 10000) in paragraph at lines 148--170
 \TU/Arial(0)/m/n/10.95 Descargado de [][]$[][][][][] [][][] [][][] [] [][][][][
 ][][] [] [][][][] [] [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] []
  [] [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--240
+Underfull \hbox (badness 10000) in paragraph at lines 148--170
 [][] [] [][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][
 ][][][][][][] [] [][][][][] [] [][][][][][][][][][][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 218--240
+Underfull \hbox (badness 1540) in paragraph at lines 148--170
 [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]$[][]   \TU/Arial(0)/m/n/10.95 (Cited by: 8)  doi: $[][] [] [][][][][] []
  []
 
 
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[82]
-Underfull \hbox (badness 10000) in paragraph at lines 254--277
+Underfull \hbox (badness 10000) in paragraph at lines 184--207
 [][][] [] [][][][][][][] [] [][][][] [] [][][][][][] [] [][][][][][] [] [][][][
 ] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][][][][][][][][][] [] []
 [] [] [][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--277
+Underfull \hbox (badness 10000) in paragraph at lines 184--207
 [][][][][][] [] [][] [] [][] [] [][][][][][][][][][][][][][] [] [][][][][][] []
  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--338
+Underfull \hbox (badness 10000) in paragraph at lines 243--268
 [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] []
  [][][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][][]
 [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--338
+Underfull \hbox (badness 10000) in paragraph at lines 243--268
 [][][][][] [] [][][][][][][][][][][][][][][][][][][] [] [][][][][][] [] [][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 383--408
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[50]
+Underfull \hbox (badness 1603) in paragraph at lines 313--338
 []\TU/Arial(0)/m/n/10.95 Istiqomah, N., Yuliana, M., y Santoso, T. B.  (2021). 
  Implementation of fuzzy
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 383--408
+Underfull \hbox (badness 2591) in paragraph at lines 313--338
 \TU/Arial(0)/m/n/10.95 and Electronics Engineers Inc.  Descargado de [][]$[][][
 ][][] [][][] [][][] [] [][][][][][][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--408
+Underfull \hbox (badness 10000) in paragraph at lines 313--338
 [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] []
  [][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][][][]
  [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--446
-[][][] [] [][][][][][][] [] [][][][] [] [][][][][][] [] [][][][][][] [] [][][][
-] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][][][][][][][][][] [] []
-[] [] [][][][][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--446
-[][][][][][][] [] [][][][][] [] [][][][][][][][][][][][][][] [] [][][][][][] []
- [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
- []
-
-
-Underfull \hbox (badness 2158) in paragraph at lines 489--513
-[]\TU/Arial(0)/m/n/10.95 Kim, K., Chun, D., y Yang, W.  (2025).  Iot-based filt
-er management system
- []
-
-
-Underfull \hbox (badness 1147) in paragraph at lines 489--513
-\TU/Arial(0)/m/it/10.95 Scientific Reports\TU/Arial(0)/m/n/10.95 , \TU/Arial(0)
-/m/it/10.95 15\TU/Arial(0)/m/n/10.95 (1).  Descargado de [][]$[][][][][] [][][]
- [][][] [] [][][][][][][] [] [][][][] [] [][][][][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 489--513
-[][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][
-][][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][] [] [][][][] [] []
-[][][][][] []
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[83]
-Underfull \hbox (badness 4013) in paragraph at lines 557--580
+Underfull \hbox (badness 4013) in paragraph at lines 411--434
 \TU/Arial(0)/m/it/10.95 Modelling and Software\TU/Arial(0)/m/n/10.95 , \TU/Aria
 l(0)/m/it/10.95 195\TU/Arial(0)/m/n/10.95 .  Descargado de [][]$[][][][][] [][]
 [] [][][] [] [][][][][][][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--580
+Underfull \hbox (badness 10000) in paragraph at lines 411--434
 [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] []
  [][][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][] [] [][][][]
 [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 629--655
+Underfull \hbox (badness 10000) in paragraph at lines 446--472
 [][][][] [] [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][
 ] [] [][] [] [][][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][]
 [][][][][] []
  []
 
 
-Underfull \hbox (badness 2547) in paragraph at lines 807--830
-[]\TU/Arial(0)/m/n/10.95 Preethi, K. R., y Tamilarasan, R.  (2021).  Monitoring
- of air pollution to es-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 807--830
-\TU/Arial(0)/m/n/10.95 tablish optimal less polluted path by utilizing wireless
- sensor network
- []
-
-
-Underfull \hbox (badness 4291) in paragraph at lines 807--830
-\TU/Arial(0)/m/n/10.95 [Retracted].  \TU/Arial(0)/m/it/10.95 Journal of Ambient
- Intelligence and Humanized Computing\TU/Arial(0)/m/n/10.95 ,
- []
-
-
-Underfull \hbox (badness 6859) in paragraph at lines 807--830
-\TU/Arial(0)/m/it/10.95 12\TU/Arial(0)/m/n/10.95 (6), 6375 - 6386.  Descargado 
-de [][]$[][][][][] [][][] [][][] [] [][][][][][][] [] [][][][] [] [][][][][][] 
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 807--830
-[][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][
-][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][] [] [][][][] [] [][]
-[][][][] []
- []
-
-
-Underfull \hbox (badness 1648) in paragraph at lines 844--866
-\TU/Arial(0)/m/it/10.95 16\TU/Arial(0)/m/n/10.95 .  Descargado de [][]$[][][][]
-[] [][][] [][][] [] [][][][][][][] [] [][][][] [] [][][][][][] [] [][][][][][] 
-[] [][][][] [] [][][][] [] [] [] [][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 844--866
-[][] [] [][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][] [] [][
-][][][] [] [][][][][] [] [][][][][][][][][][][][][][][][][] [] [][][][][][] []
- []
-
-
-Underfull \hbox (badness 2503) in paragraph at lines 844--866
-\TU/Arial(0)/m/n/10.95 Open Access; Green Accepted Open Access; Green Open Acce
-ss)  doi:
- []
-
-
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[84]
-Underfull \hbox (badness 10000) in paragraph at lines 880--904
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 624--648
 [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][
 ][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][][][][][][][][][][][]
 [][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 918--942
+Underfull \hbox (badness 10000) in paragraph at lines 662--686
 [][][] [] [][][][][][][] [] [][][][] [] [][][][][][] [] [][][][][][] [] [][][][
 ] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][][][][][][][][][] [] []
 [] [] [][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 918--942
+Underfull \hbox (badness 10000) in paragraph at lines 662--686
 [][][] [] [][][][] [] [][][][][] [] [][][][][][][][][][][][][][][][][] [] [][][
 ][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][
 ]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 956--979
-[][][][] [] [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][
-] [] [][] [] [][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][][]
-[][][][] []
- []
-
-
-Underfull \hbox (badness 1303) in paragraph at lines 995--1020
+Underfull \hbox (badness 1303) in paragraph at lines 702--727
 \TU/Arial(0)/m/it/10.95 Journal of Advanced Computer Science and Applications\T
 U/Arial(0)/m/n/10.95 , \TU/Arial(0)/m/it/10.95 15\TU/Arial(0)/m/n/10.95 (6), 83
 8 - 846.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 995--1020
+Underfull \hbox (badness 10000) in paragraph at lines 702--727
 \TU/Arial(0)/m/n/10.95 Descargado de [][]$[][][][][] [][][] [][][] [] [][][][][
 ][][] [] [][][][] [] [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] []
  [] [][][] [] [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 995--1020
+Underfull \hbox (badness 10000) in paragraph at lines 702--727
 [][][][][][][][][][][][][][][][] [] [][] [] [][][][][][] [] [][][][][][][][] []
  [][][][][] [] [][][][][][][][][][][][][][][][][][] [] [][][][][][] []
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 1063--1086
-\TU/Arial(0)/m/it/10.95 Journal of Electrical Engineering and Computer Science\
-TU/Arial(0)/m/n/10.95 , \TU/Arial(0)/m/it/10.95 32\TU/Arial(0)/m/n/10.95 (2), 7
-15 - 724.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1086
-\TU/Arial(0)/m/n/10.95 Descargado de [][]$[][][][][] [][][] [][][] [] [][][][][
-][][] [] [][][][] [] [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] []
- [] [][][] [] [][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1086
-[][][][][][][][][][][][][][][][] [] [][] [] [][][][][][] [] [][][][][][][][] []
- [][][][] [] [][][] [] [][][][][][] [] [][][][][][][][][][][][][][] [] [][][][]
-[][] []
- []
-
-
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[85]
-Underfull \hbox (badness 1253) in paragraph at lines 1126--1149
+Underfull \hbox (badness 1253) in paragraph at lines 796--819
 []\TU/Arial(0)/m/n/10.95 Sung, W. T., Aryani, J., y Sung-Jung, H.  (2024).  Int
 elligent factory with envi-
  []
 
 
-Underfull \hbox (badness 1642) in paragraph at lines 1126--1149
+Underfull \hbox (badness 1642) in paragraph at lines 796--819
 \TU/Arial(0)/m/n/10.95 ronment quality control based on fuzzy method through de
 ep reinforcement
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1126--1149
+Underfull \hbox (badness 10000) in paragraph at lines 796--819
 [][]$[][][][][] [][][] [][][] [] [][][][][][][] [] [][][][] [] [][][][][][] [] 
 [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][
 ][][][][][][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1126--1149
+Underfull \hbox (badness 10000) in paragraph at lines 796--819
 [][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][] [] [][][][][][] 
 [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]
  []
 
 
-Underfull \hbox (badness 5519) in paragraph at lines 1241--1268
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[52]
+Underfull \hbox (badness 5519) in paragraph at lines 911--938
 \TU/Arial(0)/m/n/10.95 An intelligent iot fuzzy based approach for automated in
 door air quality
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 1241--1268
+Underfull \hbox (badness 1616) in paragraph at lines 911--938
 \TU/Arial(0)/m/n/10.95 monitoring [Conference paper].  En (p.[] 770 - 775).  In
 stitute of Electrical
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 1241--1268
+Underfull \hbox (badness 2591) in paragraph at lines 911--938
 \TU/Arial(0)/m/n/10.95 and Electronics Engineers Inc.  Descargado de [][]$[][][
 ][][] [][][] [][][] [] [][][][][][][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1241--1268
+Underfull \hbox (badness 10000) in paragraph at lines 911--938
 [][][][][][] [] [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] []
  [][][][][][][][][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][][][]
  [] [][][][][] []
@@ -2976,11 +2508,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 1241--1268
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[86] (./secciones/03_finales/02_apendice_i.tex)
+[53] (./secciones/03_finales/02_apendice_i.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[87] (./secciones/03_finales/03_anexos_i.tex
+[54] (./secciones/03_finales/03_anexos_i.tex
 (./assets/tablas/03_finales/03_anexos_i/anexo_checklist_calidad.tex
 Underfull \hbox (badness 2359) in paragraph at lines 41--41
 []\TU/Arial(0)/m/n/9 General (Exp, Corr, Q-
@@ -3235,7 +2767,7 @@ Underfull \hbox (badness 2359) in paragraph at lines 41--41
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[88]
+[55]
 Underfull \hbox (badness 2359) in paragraph at lines 41--41
 []\TU/Arial(0)/m/n/9 General (Exp, Corr, Q-
  []
@@ -3394,11 +2926,11 @@ Underfull \hbox (badness 3954) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[89]
+[56]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[90]
+[57]
 Underfull \hbox (badness 5726) in paragraph at lines 65--65
 []\TU/Arial(0)/m/n/9 Hardware y sensores utilizados en implementa-
  []
@@ -3412,7 +2944,7 @@ Underfull \hbox (badness 4353) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[91]
+[58]
 Underfull \hbox (badness 3954) in paragraph at lines 65--65
 []\TU/Arial(0)/m/n/9 Banda de calidad metodológica del estudio (Al-
  []
@@ -3421,25 +2953,25 @@ Underfull \hbox (badness 3954) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[92]
+[59]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[93]
+[60]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[94]
+[61]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[95])
+[62])
 (./assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_metricas_por_unidad_cor
 e_es.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[96])))
+[63])))
 
 Package caption Warning: Unused \captionsetup[table] on input line 178.
 See the caption package documentation for explanation.
@@ -3448,7 +2980,7 @@ See the caption package documentation for explanation.
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[97] 
+[64] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -3460,12 +2992,12 @@ L3 programming layer <2025-07-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 39052 strings out of 468457
- 850006 string characters out of 5445913
- 1410728 words of memory out of 5000000
- 66849 multiletter control sequences out of 15000+600000
- 678891 words of font info for 175 fonts, out of 8000000 for 9000
+ 38176 strings out of 468457
+ 815997 string characters out of 5445913
+ 1400295 words of memory out of 5000000
+ 66049 multiletter control sequences out of 15000+600000
+ 659752 words of font info for 140 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,11n,121p,1749b,8247s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,11n,121p,1461b,8001s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on build/main.pdf (97 pages).
+Output written on build/main.pdf (64 pages).

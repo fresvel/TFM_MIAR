@@ -1,0 +1,31 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram id="fig07_comparativo_familias_fis" name="Page-1">
+    <mxGraphModel dx="1678" dy="992" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry width="1600" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="mamdani" value="&lt;div&gt;&lt;b style=&quot;font-size: 20px; background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220));&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;font-size: 20px; background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220));&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;font-size: 20px; background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220));&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;font-size: 20px; background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220));&quot;&gt;Salida:&lt;/b&gt;&lt;span style=&quot;font-size: 20px; background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220));&quot;&gt; conjunto&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 20px; background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220));&quot;&gt;difuso + defuzzificación&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height:1.45;margin-top:16px;&quot;&gt;&lt;font style=&quot;font-size:20px;&quot;&gt;&lt;br&gt;&lt;b&gt;Interpretabilidad:&lt;/b&gt; alta&lt;br&gt;&lt;br&gt;&lt;b&gt;Costo de inferencia:&lt;/b&gt; medio&lt;br&gt;&lt;br&gt;&lt;b&gt;Ajuste con datos:&lt;/b&gt; bajo a medio&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;fillColor=#F2F2F2;strokeColor=#5A5A5A;strokeWidth=2;fontColor=#25324F;align=center;verticalAlign=top;spacingTop=20;" parent="1" vertex="1">
+          <mxGeometry x="40" y="140" width="470" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="mamdani_header" value="&lt;b style=&quot;color: rgb(37, 50, 79); font-size: 24px;&quot;&gt;Mamdani&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=19;fillColor=#F3DECD;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="140" width="470" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="sugeno" value="&lt;div style=&quot;line-height:1.45;margin-top:16px;&quot;&gt;&lt;font style=&quot;font-size:20px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;line-height:1.45;margin-top:16px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220)); font-size: 20px;&quot;&gt;&lt;br&gt;Salida:&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220)); font-size: 20px;&quot;&gt; función o&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(37, 50, 79), rgb(184, 195, 220)); font-size: 20px;&quot;&gt;constante por regla&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height:1.45;margin-top:16px;&quot;&gt;&lt;font style=&quot;font-size:20px;&quot;&gt;&lt;b&gt;Interpretabilidad:&lt;/b&gt; media&lt;br&gt;&lt;br&gt;&lt;b&gt;Costo de inferencia:&lt;/b&gt; bajo&lt;br&gt;&lt;br&gt;&lt;b&gt;Ajuste con datos:&lt;/b&gt; medio&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#F2F2F2;strokeColor=#5A5A5A;strokeWidth=2;fontColor=#25324F;align=center;verticalAlign=top;spacingTop=20;" parent="1" vertex="1">
+          <mxGeometry x="565" y="139" width="470" height="341" as="geometry" />
+        </mxCell>
+        <mxCell id="sugeno_header" value="&lt;font style=&quot;color: rgb(37, 50, 79); font-size: 24px;&quot;&gt;&lt;b&gt;Sugeno/TSK&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=21;fillColor=#F1D8C6;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="565" y="139" width="470" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="anfis" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;div style=&quot;line-height:1.45;margin-top:16px;&quot;&gt;&lt;font style=&quot;font-size:20px;&quot;&gt;&lt;b&gt;Salida:&lt;/b&gt; estructura neuro-difusa entrenable&lt;br&gt;&lt;br&gt;&lt;b&gt;Interpretabilidad:&lt;/b&gt; media a baja&lt;br&gt;&lt;br&gt;&lt;b&gt;Costo de entrenamiento:&lt;/b&gt; alto&lt;br&gt;&lt;br&gt;&lt;b&gt;Ajuste con datos:&lt;/b&gt; alto&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;fillColor=#F2F2F2;strokeColor=#5A5A5A;strokeWidth=2;fontColor=#25324F;align=center;verticalAlign=top;spacingTop=20;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="140" width="470" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="anfis_header" value="&lt;b style=&quot;color: rgb(37, 50, 79); font-size: 24px;&quot;&gt;ANFIS&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#EFD3BE;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="140" width="470" height="92" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
