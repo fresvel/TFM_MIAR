@@ -22,10 +22,10 @@ Con base en ello, el problema que aborda este TFM se define como la falta de un 
 \subsection{Metodología}
 
 \subsubsection{Enfoque y tipo de investigación}
-El presente trabajo se enmarca en una investigación aplicada, orientada al desarrollo de una solución tecnológica para un problema real. El enfoque metodológico combina, en primer lugar, una revisión sistemática de la literatura para fundamentar el problema y derivar criterios de diseño y, en segundo lugar, una lógica de investigación basada en diseño de artefacto, consistente con los principios de \emph{Design Science Research}, en la que el conocimiento se materializa mediante la definición, construcción y evaluación de una solución útil frente a una necesidad identificada \cite[pp.~75--77]{METDSR01}, \cite[pp.~46,55--56]{METDSRM01}. En consecuencia, la validación del módulo no se plantea como un estudio experimental clásico, sino como una evaluación empírica del artefacto centrada en la utilidad, calidad y desempeño de la solución desarrollada.
+El presente trabajo se enmarca en una investigación aplicada orientada al desarrollo de una solución tecnológica para un problema real. El enfoque metodológico combina una revisión sistemática de la literatura, utilizada para fundamentar el problema y derivar criterios de diseño, y una lógica de investigación basada en diseño de artefacto, consistente con los principios de \emph{Design Science Research}, donde el conocimiento se materializa mediante la definición, construcción y evaluación de una solución útil frente a una necesidad identificada \cite[pp.~75--77]{METDSR01}, \cite[pp.~46,55--56]{METDSRM01}. La validación del módulo se formula como una evaluación empírica del artefacto centrada en la utilidad, la calidad y el desempeño de la solución desarrollada.
 
 \subsubsection{Diseño metodológico del estudio}
-El estudio se organiza en fases metodológicas claramente definidas, con el fin de garantizar coherencia y trazabilidad entre los objetivos planteados y las actividades desarrolladas. Esta secuencia no replica de forma estricta un modelo único, pero se apoya en la articulación entre el proceso de revisión sistemática y la lógica nominal propuesta por DSRM para investigación basada en diseño \cite[pp.~46,71]{METDSRM01}. Bajo ese criterio, la primera fase cumple la función de fundamentación y delimitación del problema, mientras que las fases posteriores condensan operativamente la definición de la solución, la construcción del artefacto, su demostración funcional y su evaluación. Las fases del estudio son las siguientes:
+El estudio se organiza en fases metodológicas claramente definidas para garantizar coherencia y trazabilidad entre los objetivos planteados y las actividades desarrolladas. La secuencia articula el proceso de revisión sistemática con la lógica propuesta por DSRM para investigación basada en diseño \cite[pp.~46,71]{METDSRM01}. La primera fase cumple la función de fundamentación y delimitación del problema. Las fases posteriores se orientan a la definición de la solución, la construcción del artefacto, su demostración funcional y su evaluación. Las fases del estudio son las siguientes:
 
 \begin{enumerate}
   \item Revisión sistemática del estado del arte.
@@ -34,14 +34,14 @@ El estudio se organiza en fases metodológicas claramente definidas, con el fin 
   \item Validación del módulo propuesto.
 \end{enumerate}
 
-Este apartado actúa como un mapa metodológico del trabajo.
+La relación con DSRM se utiliza aquí como marco de organización del estudio. La fase 1, basada en revisión sistemática, cumple la función de identificar y justificar el problema y aporta la base para definir los objetivos de la solución. La fase 2 corresponde a la definición de esos objetivos y al diseño conceptual del artefacto. La fase 3 corresponde a la construcción del artefacto e incorpora una demostración funcional inicial de su operabilidad. La fase 4 corresponde a la evaluación del módulo implementado. El paso de comunicación de DSRM se concreta en la memoria del TFM y en el manuscrito derivado de la revisión sistemática \cite[pp.~51--56]{METDSRM01}.
 
 \subsubsection{1: Revisión sistemática del estado del arte}
 
 
 La revisión sistemática del estado del arte constituye la primera fase metodológica de este TFM. Aunque su desarrollo forma parte del presente trabajo, la revisión se ejecutó como un estudio independiente y su versión completa se consolidó en un manuscrito externo sometido a publicación. En esta memoria, la fase 1 se presenta desde su función metodológica: delimitar el problema, fundamentar el estado del arte y derivar criterios de diseño para la propuesta.
 
-La revisión sistemática desarrollada en esta fase se estructura mediante el modelo \textbf{PICo}, con el fin de delimitar de manera precisa el fenómeno de estudio, el enfoque metodológico y el contexto de aplicación, garantizando coherencia con el carácter aplicado de la investigación.
+La revisión sistemática desarrollada en esta fase se estructura mediante el modelo \textbf{PICo}, utilizado para delimitar de manera precisa el fenómeno de estudio, el enfoque metodológico y el contexto de aplicación, en coherencia con el carácter aplicado de la investigación.
 
 \input{assets/tablas/02_cuerpo/05_desarrollo/pico_air_quality.tex}
 
@@ -188,64 +188,193 @@ La implementación se realizó con Python, utilizando principalmente \texttt{pan
 
 
 \subsubsection{2: Diseño del módulo de monitoreo}
-Esta fase se sustenta en la lógica de \emph{Design Science Research}, particularmente en la definición de los objetivos de la solución y en el diseño del artefacto \cite[pp.~55--56]{METDSRM01}. En este punto, el problema delimitado por la revisión sistemática deja de tratarse solo como un hallazgo teórico y se transforma en una propuesta técnica estructurada. Metodológicamente, esto implica traducir la necesidad identificada en requisitos de solución, criterios de funcionamiento y condiciones de uso, de modo que el diseño del módulo responda de forma explícita a los vacíos detectados en la literatura. En coherencia con la SLR y con los objetivos del estudio, los criterios rectores de esta fase son: uso de datos abiertos como base de entrada, trazabilidad del flujo de procesamiento, interpretabilidad del razonamiento difuso y capacidad del módulo para producir resultados verificables y útiles para la evaluación del riesgo.
+Esta fase se inscribe en el segundo paso de DSRM, \emph{define the objectives of a solution}, y recoge además la parte inicial del tercer paso, \emph{design and development}, en lo relativo a la formulación conceptual del artefacto \cite[pp.~52--55]{METDSRM01}. Su función es establecer, con base en la fase 1, qué debe resolver el módulo y bajo qué condiciones debe hacerlo. Esta fase convierte los hallazgos del estado del arte en requisitos explícitos de solución.
 
-La traducción de estos criterios a decisiones de diseño se apoya de forma directa en la síntesis conceptual del capítulo anterior. En particular, el módulo se concibe a partir de cuatro fundamentos: el AQI como mecanismo de agregación e interpretación del riesgo; la selección explícita de contaminantes y variables ambientales con significado operativo; la inferencia difusa como núcleo auditable de decisión; y el uso de fuentes abiertas con trazabilidad suficiente para sostener reproducibilidad y validación posterior. Bajo este encuadre, el diseño no se formula como una arquitectura abstracta, sino como una respuesta concreta a los vacíos identificados en comparabilidad, integración operativa y generalización externa.
-
-Por esa razón, las decisiones principales de esta fase deben resolver, desde el diseño, aspectos que la literatura suele dejar fragmentados: declaración de la fuente y ventana temporal de los datos, criterio de selección de variables, definición del esquema categorial de riesgo, papel del motor difuso dentro del pipeline, y forma en que la salida del sistema se convierte en monitoreo interpretable y alertamiento útil. Este anclaje asegura continuidad entre el estado del arte sintetizado, la base conceptual y la arquitectura funcional de la propuesta.
-
-En términos operativos, esta fase se desarrolla en una secuencia de definición progresiva del módulo:
+El trabajo de diseño se desarrolla sobre cuatro decisiones principales:
 \begin{enumerate}
-\item Se establece la arquitectura general de la solución, delimitando sus capas, componentes y relaciones funcionales, con el fin de definir cómo se conectan la adquisición de datos, el procesamiento, la inferencia y la salida del sistema;
-\item Se define el flujo de datos, desde la fuente de entrada hasta la generación de la salida final del sistema, especificando qué datos ingresan, cómo se transforman y en qué punto se convierten en una evaluación interpretable;
-\item Se precisan los componentes encargados de la ingesta, preparación y transformación de los datos que alimentan el módulo, de modo que el uso de datos abiertos quede resuelto como una decisión metodológica y no solo como una elección técnica posterior;
-\item Se determina el papel del motor de inferencia difusa dentro del proceso, especificando cómo interviene en la evaluación del riesgo y en la generación de alertas, y dejando claro qué parte de la decisión depende de reglas interpretables derivadas del conocimiento experto;
-\item Se fijan los criterios de diseño que orientarán la implementación posterior, entendidos como condiciones que la propuesta debe cumplir: trazabilidad del procesamiento para poder auditar el recorrido de los datos, interpretabilidad de las reglas difusas para justificar la salida del sistema y evaluabilidad mediante métricas verificables para comprobar el cumplimiento de los objetivos.
+\item \textbf{Delimitación del alcance funcional del módulo}. En esta decisión se distinguen las funciones que forman parte del artefacto: adquisición de datos, consolidación del estado de calidad del aire, evaluación difusa del riesgo y generación de alertas.
+\item \textbf{Definición del flujo lógico de procesamiento}. En este punto se identifica el recorrido de los datos desde la fuente de entrada hasta la salida final y se fijan los puntos donde el sistema debe conservar trazabilidad documental.
+\item \textbf{Precisión de la estructura de entradas y salidas}. Esta decisión incluye la definición de contaminantes, covariables, variables derivadas y categorías de riesgo que deberán integrarse en el módulo.
+\item \textbf{Selección del esquema de inferencia y de los criterios de diseño}. Aquí se determina el tipo de inferencia difusa y las condiciones de diseño del artefacto, de modo que la propuesta responda al objetivo del TFM y a los vacíos identificados en comparabilidad, auditabilidad e integración operativa.
 \end{enumerate}
 
-Con esta secuencia, la fase 2 cumple la función de convertir la evidencia previa en una solución viable, coherente y técnicamente justificable, en línea con la noción de artefacto propuesta por Hevner et al. \cite[pp.~84--85]{METDSR01}.
+Como producto de esta fase se obtiene una especificación de diseño. Esa especificación debe dejar definidos el alcance del artefacto, la arquitectura funcional, el papel de la fuente de datos, el criterio de construcción de la salida y las condiciones que guiarán la implementación y la validación posterior. Su función dentro del estudio es reducir ambigüedad entre la evidencia revisada y el desarrollo técnico del módulo \cite[pp.~84--85]{METDSR01}.
 
 \subsubsection{3: Implementación del módulo propuesto}
-Esta fase corresponde a la construcción del artefacto y toma como referencia el bloque de \emph{design and development} de DSRM, entendido como la creación efectiva del objeto diseñado \cite[p.~55]{METDSRM01}. Metodológicamente, aquí la solución deja de ser una formulación de diseño y pasa a expresarse como un sistema implementado. Por ello, la fase se orienta a materializar el artefacto definido previamente, conservando trazabilidad con los objetivos funcionales y con los criterios de diseño establecidos en la fase 2. En coherencia con la SLR y con el objetivo de desarrollar un módulo operable y auditable, la construcción se rige por cuatro criterios: integración funcional, reproducibilidad técnica, consistencia del pipeline y demostración de operabilidad.
+Esta fase desarrolla el núcleo del tercer paso de DSRM, \emph{design and development}, y enlaza con el cuarto paso, \emph{demonstration}, mediante una verificación funcional inicial del artefacto \cite[pp.~55--56]{METDSRM01}. Su función es convertir la especificación definida en la fase 2 en un módulo ejecutable. En esta etapa se construyen e integran los componentes del sistema bajo un criterio de continuidad operativa y reproducibilidad técnica.
 
-La integración funcional implica que los componentes definidos en la fase de diseño deben trabajar como un solo sistema y no como piezas aisladas. La reproducibilidad técnica exige que la implementación pueda volver a ejecutarse bajo las mismas reglas de procesamiento, con los mismos insumos y con resultados consistentes. La consistencia del pipeline supone que la secuencia de adquisición, preparación, inferencia y generación de salida conserve un comportamiento estable entre entradas comparables. Finalmente, la demostración de operabilidad requiere comprobar que el módulo ya puede ejecutarse de extremo a extremo y producir una salida interpretable antes de pasar a la fase de validación.
-
-En términos operativos, esta fase se desarrolla como un proceso de construcción e integración del módulo:
+La implementación comprende las siguientes tareas:
 \begin{enumerate}
-\item Se seleccionan y configuran las tecnologías, librerías y componentes necesarios para soportar la implementación del sistema, procurando que la base tecnológica permita ejecutar el flujo definido y mantener coherencia con los objetivos funcionales;
-\item Se implementa el pipeline de adquisición, depuración y preparación de los datos que alimentan el módulo, asegurando que cada transformación conserve trazabilidad y que el tratamiento de los datos responda a la necesidad de trabajar con insumos abiertos y verificables;
-\item Se construye el motor de inferencia difusa conforme a la lógica de diseño establecida, incluyendo sus reglas, variables y mecanismo de salida, de manera que la inferencia mantenga interpretabilidad y correspondencia con el objetivo de evaluar riesgo y emitir alertas;
-\item Se integran los distintos componentes del sistema para permitir la ejecución coordinada del flujo completo de procesamiento, verificando que la entrada, la inferencia y la salida queden enlazadas en una operación continua y funcional;
-\item Se realiza una demostración funcional inicial del artefacto, verificando que el módulo puede ejecutarse de extremo a extremo y producir una salida interpretable frente a una instancia concreta del problema, como evidencia de factibilidad antes de su evaluación formal.
+\item \textbf{Selección y configuración de tecnologías de soporte}. Esta tarea fija la base técnica sobre la que se ejecutará el módulo.
+\item \textbf{Construcción del mecanismo de adquisición y preparación de datos}. Aquí se implementan las funciones de consulta, transformación, control de calidad y estructuración de la entrada.
+\item \textbf{Codificación del núcleo de inferencia}. En esta tarea se materializan las variables, reglas y salidas del componente difuso.
+\item \textbf{Integración del flujo completo de ejecución}. En este punto se enlazan adquisición, procesamiento, inferencia y salida dentro de un único recorrido funcional.
+\item \textbf{Definición de reglas operativas de ejecución}. Esta tarea incluye tratamiento de errores, registro de metadatos y trazabilidad de la ejecución.
 \end{enumerate}
 
-Esta demostración no sustituye la validación posterior, sino que cumple una función de factibilidad, en el sentido de mostrar que el artefacto ya puede operar como solución implementada. En ese punto, la fase 3 se alinea con la idea de demostración de uso planteada por DSRM y con la noción de \emph{proof by construction} descrita en la literatura de diseño \cite[pp.~55--56]{METDSRM01}, \cite[p.~85]{METDSR01}.
+El objetivo metodológico de la fase es disponer de un artefacto funcional cuya ejecución pueda repetirse bajo las mismas condiciones y con resultados consistentes.
+
+La demostración funcional se ubica al cierre de esta fase. Su propósito es comprobar que el módulo ejecuta el recorrido completo previsto en el diseño, desde la recuperación de datos hasta la emisión de una salida interpretable. Esta demostración no sustituye la evaluación formal, pero aporta evidencia de factibilidad técnica y permite identificar fallos de integración antes de la fase de validación \cite[p.~85]{METDSR01}.
 
 \subsubsection{4: Validación del módulo propuesto}
-La validación del módulo se plantea como una evaluación empírica del artefacto, sustentada en el paso de \emph{evaluation} de DSRM y en la guía de evaluación de diseño propuesta por Hevner et al. \cite[p.~56]{METDSRM01}, \cite[pp.~86--87]{METDSR01}. Metodológicamente, esta fase tiene como propósito observar y medir en qué grado el módulo satisface los objetivos definidos durante el diseño, contrastando el comportamiento del sistema implementado con los requisitos funcionales y de desempeño establecidos para la solución. En coherencia con la SLR y con el objetivo de validar el módulo propuesto, la evaluación se organiza a partir de tres criterios: comportamiento funcional, consistencia de la respuesta y desempeño operativo.
+Esta fase corresponde al quinto paso de DSRM, \emph{evaluation} \cite[p.~56]{METDSRM01}. Su propósito es determinar si el módulo satisface los objetivos fijados en la fase 2 y si su comportamiento resulta útil, consistente y técnicamente adecuado para el problema abordado. La validación se organiza como una evaluación empírica del artefacto, orientada a comprobar el comportamiento del sistema bajo condiciones de uso definidas de antemano.
 
-El comportamiento funcional se refiere a que el módulo complete el flujo previsto sin interrupciones injustificadas, desde la recepción de datos hasta la emisión del resultado. La consistencia de la respuesta se refiere a que salidas equivalentes o comparables se mantengan alineadas con las reglas definidas en el diseño, evitando respuestas contradictorias frente a condiciones similares. El desempeño operativo se refiere a que el procesamiento ocurra en un tiempo razonable para el propósito de monitoreo y que el sistema mantenga estabilidad básica ante variaciones previsibles en la entrada.
-
-En coherencia con los criterios derivados de la revisión sistemática, la validación se estructura sobre escenarios de uso y métricas que permitan comprobar si el módulo funciona como una herramienta trazable de apoyo a la decisión. Los escenarios de prueba considerados se orientan a verificar el comportamiento del artefacto en tres situaciones: operación nominal con datos dentro de rangos esperados; condiciones con valores cercanos o superiores a umbrales de alerta, para verificar la activación coherente de niveles de riesgo; y casos con valores faltantes, atípicos o con variaciones de calidad en la entrada, para comprobar la robustez básica del flujo de procesamiento. A su vez, la evaluación se apoya en métricas de funcionamiento y desempeño, entre ellas la completitud del procesamiento, entendida como la capacidad del módulo para recorrer todas sus etapas y producir una salida; la consistencia entre entradas y salidas, entendida como la correspondencia lógica entre las condiciones observadas y la respuesta generada; el tiempo de respuesta del módulo, entendido como el lapso requerido para transformar la entrada en un resultado útil; y la coherencia de la clasificación o alertamiento generado respecto de las reglas y criterios definidos en el diseño.
-
-Dado que la propuesta se apoya en datos abiertos y no en una red propia de sensores, la validación no se centra en calibración instrumental, sino en la solidez del flujo de adquisición, preparación, inferencia y publicación sobre series externas. En consecuencia, la comprobación debe asegurar que la fuente seleccionada, la ventana temporal utilizada, el tratamiento de valores faltantes o atípicos y la lógica de categorización del riesgo queden documentados de forma explícita. Este punto es relevante porque la reproducibilidad de la solución depende tanto de la consistencia del motor difuso como de la trazabilidad de los datos que alimentan el módulo.
-
-En términos operativos, la validación se desarrolla mediante una secuencia de comprobación y análisis del comportamiento del módulo:
+La evaluación se estructura mediante escenarios representativos del funcionamiento esperado del módulo:
 \begin{enumerate}
-\item Se aplican escenarios de prueba que representen condiciones pertinentes de uso del artefacto, incluyendo operación nominal, activación de condiciones de riesgo y verificación del procesamiento ante variaciones en la calidad de los datos de entrada;
-\item Se emplean métricas y criterios de evaluación orientados a valorar la completitud del flujo de procesamiento, la consistencia de las salidas, el tiempo de respuesta y la correspondencia entre las alertas generadas y las condiciones detectadas;
-\item Se ejecuta el sistema bajo los escenarios definidos, registrando las salidas producidas y el comportamiento observado durante su operación;
-\item Se analizan los resultados obtenidos para verificar si el módulo responde de forma coherente con los objetivos planteados en la fase de diseño;
-\item Se identifican posibles ajustes o mejoras sobre el artefacto cuando la evidencia obtenida muestre brechas entre el comportamiento esperado y el comportamiento observado.
+\item \textbf{Condiciones nominales de operación}. Se comprueba el comportamiento del sistema cuando los datos se encuentran dentro de rangos esperados.
+\item \textbf{Situaciones cercanas o superiores a umbrales de alerta}. Se verifica la coherencia entre las condiciones observadas y la respuesta de riesgo emitida por el módulo.
+\item \textbf{Casos con variaciones en completitud o calidad del dato}. Se observa la estabilidad del sistema ante faltantes, cobertura parcial o disponibilidad incompleta de contaminantes.
 \end{enumerate}
 
-Con esta secuencia, la fase 4 no se orienta a probar hipótesis experimentales, sino a determinar si el artefacto resulta útil, consistente y técnicamente adecuado frente al problema abordado. En ese sentido, la validación se entiende como un proceso de evaluación del desempeño y de la efectividad de la solución implementada, con capacidad de retroalimentar refinamientos posteriores sobre el módulo cuando sea necesario.
+Cada escenario se ejecuta sobre una ventana temporal explícita y con documentación de la fuente utilizada, de la cobertura efectiva de datos y de las reglas de selección del conjunto evaluado. Este procedimiento es necesario porque la propuesta depende de datos abiertos y, por tanto, la validez de la evaluación depende tanto del motor difuso como de la calidad y trazabilidad de la entrada.
+
+La validación considera cuatro dimensiones de análisis:
+\begin{enumerate}
+\item \textbf{Completitud funcional del pipeline}. Se verifica la capacidad del sistema para recorrer todas sus etapas y producir una salida.
+\item \textbf{Coherencia entre condiciones observadas y respuesta del módulo}. Se analiza la correspondencia entre la entrada y la clasificación o alerta emitida.
+\item \textbf{Desempeño operativo}. Se registra el tiempo de respuesta y la estabilidad básica de ejecución.
+\item \textbf{Reproducibilidad}. Se comprueba la estabilidad de la salida cuando se repiten las mismas condiciones de entrada y procesamiento.
+\end{enumerate}
+
+El resultado esperado de esta fase es una base empírica suficiente para juzgar el comportamiento del artefacto e introducir ajustes cuando sea necesario \cite[pp.~86--87]{METDSR01}.
 
 \subsubsection{Consideraciones finales de la metodología}
-Finalmente, se presentan consideraciones metodológicas relacionadas con las limitaciones del estudio, su alcance y posibles líneas de trabajo futuro, cerrando la coherencia metodológica del Trabajo Fin de Máster.
+La secuencia metodológica del TFM se organizó mediante una planificación temporal por fases, articulando revisión sistemática, diseño del módulo, implementación, validación y redacción final. La Figura~\ref{fig:roadmap_tfm} resume esta organización entre mediados de octubre de 2025 y mediados de abril de 2026, identificando la duración relativa de cada bloque, sus solapes principales y los hitos del proceso.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{metodología/roadmap_tfm.png}
+\caption{Roadmap temporal del TFM por fases, actividades e hitos principales. Elaboración propia.}
+\label{fig:roadmap_tfm}
+\end{figure}
+
+Este esquema cumple una función metodológica de trazabilidad. Sitúa cada fase dentro del desarrollo global del trabajo, identifica dependencias entre actividades y hace visible la superposición parcial entre síntesis, diseño, construcción y cierre documental. En el tramo final del estudio, esta planificación también sirve como base para interpretar el alcance efectivo del trabajo, sus limitaciones y las extensiones posibles del módulo propuesto.
 
 
 
 \subsection{Desarrollo del proyecto}
 
+\subsubsection{Propuesta del módulo}
+La propuesta técnica del TFM se materializó en un prototipo ejecutable denominado \textit{AQRisk}. El artefacto implementa un módulo híbrido para monitoreo de calidad del aire, evaluación de riesgo y generación de alertas sobre datos abiertos. Su diseño conserva una base normativa explícita para el cálculo del estado del aire y añade una capa de inferencia difusa para ajustar la severidad operativa del episodio.
+
+La decisión central del diseño fue separar dos problemas. El primero consiste en consolidar el estado base del aire con una referencia regulatoria trazable. El segundo consiste en interpretar ese estado cuando aparecen concurrencia entre contaminantes, persistencia temporal o condiciones ambientales de contexto. Esta separación mantiene comparabilidad externa y deja trazable el aporte del módulo en la parte de interpretación y alertamiento.
+
+\subsubsection{Arquitectura funcional del módulo}
+El prototipo implementado se organiza en cinco capas funcionales encadenadas. La Figura~\ref{fig:capas_modulo} resume esta arquitectura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/fig01_capas_modulo.png}
+\caption{Arquitectura funcional implementada del módulo AQRisk. Elaboración propia.}
+\label{fig:capas_modulo}
+\end{figure}
+
+\begin{enumerate}
+\item \textbf{Consolidación normativa}. Recupera las series horarias, calcula subíndices por contaminante y consolida el AQI global.
+\item \textbf{Variables auxiliares}. Deriva persistencia temporal y concurrencia multi-contaminante a partir del estado base calculado.
+\item \textbf{Inferencia difusa principal}. Aplica la base principal de 54 reglas sobre AQI base, concurrencia y persistencia.
+\item \textbf{Ajuste contextual}. Modula la salida principal mediante temperatura y humedad cuando esas variables están disponibles y el episodio ya se encuentra comprometido.
+\item \textbf{Alertamiento y salida}. Genera la clasificación final, compone la alerta interpretable y serializa el resultado en formato JSON.
+\end{enumerate}
+
+La arquitectura por capas aporta explicabilidad técnica. Cada bloque resuelve una función específica y conserva trazabilidad del paso anterior. Esta organización facilita la verificación del comportamiento del sistema y evita mezclar cálculo normativo, lógica difusa y composición de la salida dentro de una sola etapa.
+
+\subsubsection{Arquitectura de software y flujo de ejecución}
+La implementación se realizó en Python mediante una arquitectura modular monoproceso. La estructura del paquete separa modelos de dominio, ingesta, procesamiento, cálculo AQI, motor difuso, alertamiento, orquestación e interfaz de línea de comandos. Esta decisión reduce complejidad accidental y deja preparada una migración posterior a servicios independientes si el trabajo la requiere.
+
+El flujo de ejecución del prototipo se presenta en la Figura~\ref{fig:pipeline_prototipo}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{propuesta/fig02_pipeline_prototipo.png}
+\caption{Flujo de ejecución del prototipo implementado. Elaboración propia.}
+\label{fig:pipeline_prototipo}
+\end{figure}
+
+El pipeline resuelve la configuración de ejecución, consulta sensores por \textit{location\_id}, recupera series horarias recientes, normaliza datos, calcula cobertura, construye el AQI base, deriva concurrencia y persistencia, ejecuta el motor difuso, aplica la capa contextual cuando corresponde y genera una salida JSON trazable. Esta salida está preparada para exponer el módulo por CLI, por contenedor Docker y, en una etapa posterior, por API o interfaz web.
+
+\subsubsection{Fuente de datos, variables y criterios normativos}
+La fuente operativa principal del prototipo es \textit{OpenAQ}, utilizada como plataforma abierta de consulta programática de mediciones y metadatos de estaciones \cite{DATA_OPENAQ}. El módulo recupera mediciones por estación, sensor y ventana temporal. La fuente se usa como repositorio de observaciones y no como proveedor de un índice final ya resuelto.
+
+La capa normativa del módulo se apoya de forma explícita en la tabla vigente de \textit{AQI Breakpoints} de \textit{EPA/AQS} \cite{DATA_EPA_AQS_BREAKPOINTS}. A partir de esa referencia se implementaron los contaminantes criterio PM$_{2.5}$, PM$_{10}$, CO, NO$_2$, O$_3$ y SO$_2$, junto con sus ventanas regulatorias y categorías del índice. La versión actual del prototipo utiliza:
+\begin{enumerate}
+\item PM$_{2.5}$ con promedio de 24 horas.
+\item PM$_{10}$ con promedio de 24 horas.
+\item CO con promedio de 8 horas.
+\item NO$_2$ con valor horario.
+\item O$_3$ con comparación entre ventanas de 8 horas y 1 hora, según tramo aplicable.
+\item SO$_2$ con comparación entre valor horario y promedio de 24 horas.
+\end{enumerate}
+
+El tratamiento de ventanas parciales se resuelve mediante un umbral mínimo de cobertura del 80\%. Cuando la ventana no está completa, el módulo admite cálculo si la cobertura supera ese umbral y deja registro de la condición aplicada. Esta decisión conserva utilidad operativa sobre datos abiertos sin ocultar la completitud efectiva de la serie.
+
+El prototipo admite además temperatura y humedad como variables de contexto. Estas variables no participan en la consolidación del AQI y tampoco sustituyen a los contaminantes criterio. Su función es modular la salida del riesgo cuando ya existe un episodio comprometido. La variable CO$_2$ no se incorporó al núcleo porque su uso en los antecedentes revisados se concentra en calidad de aire interior y escenarios IAQ, no en el núcleo regulatorio urbano \cite{A135,A165,A167}.
+
+Sobre esa base, el módulo deriva las siguientes variables internas:
+\begin{itemize}
+\item \textbf{AQI global}, como estado base consolidado.
+\item \textbf{Contaminante dominante}, para identificar la variable que gobierna el episodio.
+\item \textbf{Persistencia temporal}, calculada sobre estados AQI sucesivos del propio módulo.
+\item \textbf{Concurrencia}, definida como cercanía entre varios subíndices respecto del dominante.
+\item \textbf{Cobertura global}, como indicador de completitud de la entrada efectiva.
+\end{itemize}
+
+La salida final del prototipo conserva la taxonomía EPA: \textit{Good}, \textit{Moderate}, \textit{Unhealthy for Sensitive Groups}, \textit{Unhealthy}, \textit{Very Unhealthy} y \textit{Hazardous}. El resultado se expresa junto con la alerta textual, el AQI base y la lista de reglas activadas.
+
+\subsubsection{Núcleo de evaluación y motor difuso}
+El núcleo IA del prototipo se organiza en dos niveles de decisión. El primero es determinista y produce el estado base del aire. El segundo es difuso y ajusta ese estado en función de variables agregadas. La Figura~\ref{fig:estructura_decision} resume esta estructura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{propuesta/fig03_estructura_decision.png}
+\caption{Estructura de decisión implementada en el núcleo IA del módulo. Elaboración propia.}
+\label{fig:estructura_decision}
+\end{figure}
+
+El motor principal se implementó con inferencia \textit{Mamdani}. La elección respondió a interpretabilidad, auditabilidad y control directo sobre las funciones de pertenencia y la base de reglas. La malla principal quedó definida sobre tres variables:
+\begin{enumerate}
+\item \textbf{AQI base} con seis categorías EPA.
+\item \textbf{Concurrencia} con tres niveles: baja, media y alta.
+\item \textbf{Persistencia} con tres niveles: baja, media y alta.
+\end{enumerate}
+
+Esta combinación produce una base completa de 54 reglas. La Tabla~\ref{tab:reglas_principales_resumen} resume la lógica por bloques y el detalle completo se presenta en el Anexo~\ref{ane:anexo_reglas_principales}, Tabla~\ref{tab:anexo_reglas_principales_54}. La decisión de utilizar una malla completa y no una base reducida deriva de dos criterios: exhaustividad de cobertura y defensa metodológica frente a tribunal. También es consistente con antecedentes que documentan bases explícitas de 36 y 64 reglas cuando el sistema difuso trabaja sobre entradas instrumentales directas \cite{A114,A165,A167}.
+
+\input{assets/tablas/02_cuerpo/05_desarrollo/reglas_principales_resumen.tex}
+
+La capa contextual se resolvió con una base independiente de 9 reglas sobre temperatura y humedad. Su papel es escalar una categoría cuando el riesgo base ya se encuentra comprometido y el contexto ambiental resulta menos favorable. La Tabla~\ref{tab:reglas_contextuales} presenta esta base.
+
+\input{assets/tablas/02_cuerpo/05_desarrollo/reglas_contextuales.tex}
+
+El mecanismo de inferencia utiliza implicación por mínimo, agregación por máximo y defuzzificación por centroide discreto en el rango 0--500. La etiqueta final se obtiene mediante bandas equivalentes a la taxonomía EPA. Este diseño permite explicar qué regla se activó, sobre qué entrada se apoyó y cómo se obtuvo la categoría final.
+
+\subsubsection{Implementación del prototipo}
+El prototipo se implementó en Python 3.12 bajo el paquete \texttt{aqrisk}. La estructura del software separa las responsabilidades principales:
+\begin{itemize}
+\item \texttt{domain}: modelos de datos y estructuras del recorrido.
+\item \texttt{ingestion}: cliente de OpenAQ y construcción de series por sensor.
+\item \texttt{processing}: cobertura, persistencia, concurrencia y ajuste contextual.
+\item \texttt{aqi}: cálculo del AQI base con ventanas regulatorias.
+\item \texttt{fuzzy}: funciones de pertenencia, matriz de reglas y motor Mamdani.
+\item \texttt{alerting}: composición de la alerta y de la cautela operativa.
+\item \texttt{application}: orquestación del pipeline.
+\item \texttt{interfaces}: interfaz de línea de comandos.
+\end{itemize}
+
+La ejecución local puede realizarse directamente en Python o mediante Docker. El primer corte del prototipo no incorpora todavía interfaz web, gestión de usuarios ni microservicios independientes. Estas extensiones se dejaron fuera para concentrar el esfuerzo en el núcleo del artefacto y en la validación del flujo completo.
+
+\subsubsection{Estrategia de verificación del artefacto}
+La verificación actual del prototipo se centró en completitud del pipeline, coherencia de la salida, trazabilidad de reglas y estabilidad básica de ejecución. Para ello se implementaron pruebas de humo sobre el modo sintético y sobre la validación mínima del modo \textit{OpenAQ}. También se ejecutó un escenario \textit{mock} con cobertura total y disponibilidad completa de contaminantes criterio para comprobar la integración de las cinco capas.
+
 \subsection{Resultados}
+La construcción del prototipo permitió cerrar un primer artefacto funcional alineado con la metodología del TFM. El módulo ya ejecuta ingestión, normalización, control de cobertura, cálculo normativo del AQI, derivación de persistencia y concurrencia, inferencia Mamdani, ajuste contextual y composición de la alerta.
+
+La Tabla~\ref{tab:validacion_prototipo_actual} resume la verificación funcional actual.
+
+\input{assets/tablas/02_cuerpo/05_desarrollo/validacion_prototipo_actual.tex}
+
+Las pruebas automatizadas ejecutadas sobre el prototipo validaron dos aspectos básicos: la ejecución completa del escenario sintético y la exigencia de clave para el modo \textit{OpenAQ}. Ambas pruebas finalizaron correctamente en el entorno de desarrollo. En el escenario \textit{mock}, el módulo procesó una entrada con seis contaminantes criterio y variables de contexto, obtuvo un AQI global de 112, identificó O$_3$ como contaminante dominante, activó una regla de la malla principal y escaló la salida final a \textit{Unhealthy} mediante la regla contextual \texttt{CTX\_high\_high}. Este resultado confirma que la arquitectura de cinco capas ya funciona de extremo a extremo y que la salida conserva trazabilidad por variables, reglas y categoría final.
+
+La integración con \textit{OpenAQ} también quedó implementada a nivel de código, configuración y cliente de consulta. El prototipo recupera estaciones por \textit{location\_id}, consulta sensores asociados y construye series horarias por parámetro. La reproducción de escenarios reales depende de disponibilidad de red, estabilidad del endpoint y cobertura efectiva de cada estación en la ventana consultada. Esta condición es esperable en un artefacto que opera sobre datos abiertos vivos y refuerza la necesidad de conservar cobertura, fuente y ventana temporal dentro de cada ejecución.
+
+En el estado actual del trabajo, el resultado principal no es todavía una comparación extensa de desempeño entre múltiples estaciones. El resultado alcanzado es la construcción de un artefacto ejecutable, trazable y explicable, con base normativa explícita, base principal de 54 reglas, capa contextual de 9 reglas y salida interpretable lista para etapas posteriores de validación comparativa y exposición por servicios.

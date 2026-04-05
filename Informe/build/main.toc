@@ -27,20 +27,28 @@
 \contentsline {subsection}{\numberline {4.2}Metodología}{33}{subsection.4.2}%
 \contentsline {subsubsection}{Enfoque y tipo de investigación}{33}{subsubsection*.23}%
 \contentsline {subsubsection}{Diseño metodológico del estudio}{33}{subsubsection*.24}%
-\contentsline {subsubsection}{1: Revisión sistemática del estado del arte}{33}{subsubsection*.25}%
+\contentsline {subsubsection}{1: Revisión sistemática del estado del arte}{34}{subsubsection*.25}%
 \contentsline {subsubsection}{Evaluación de Calidad}{39}{subsubsection*.26}%
 \contentsline {subsubsection}{Extracción de datos}{40}{subsubsection*.27}%
 \contentsline {subsubsection}{Análisis y Síntesis de Datos}{43}{subsubsection*.28}%
 \contentsline {subsubsection}{2: Diseño del módulo de monitoreo}{44}{subsubsection*.30}%
 \contentsline {subsubsection}{3: Implementación del módulo propuesto}{45}{subsubsection*.31}%
-\contentsline {subsubsection}{4: Validación del módulo propuesto}{47}{subsubsection*.32}%
-\contentsline {subsubsection}{Consideraciones finales de la metodología}{48}{subsubsection*.33}%
-\contentsline {subsection}{\numberline {4.3}Desarrollo del proyecto}{48}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Resultados}{48}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusión y trabajos futuros}{49}{section.5}%
-\contentsline {section}{\numberline {6}Referencias}{50}{section.6}%
-\contentsline {section}{}{50}{section.6}%
-\contentsline {section}{Apéndice I}{54}{section.6}%
-\contentsline {section}{Anexo I}{55}{section.1}%
-\contentsline {section}{Anexo II}{57}{section.2}%
-\contentsline {section}{Anexo III}{59}{section.3}%
+\contentsline {subsubsection}{4: Validación del módulo propuesto}{45}{subsubsection*.32}%
+\contentsline {subsubsection}{Consideraciones finales de la metodología}{46}{subsubsection*.33}%
+\contentsline {subsection}{\numberline {4.3}Desarrollo del proyecto}{47}{subsection.4.3}%
+\contentsline {subsubsection}{Propuesta del módulo}{47}{subsubsection*.35}%
+\contentsline {subsubsection}{Arquitectura funcional del módulo}{48}{subsubsection*.36}%
+\contentsline {subsubsection}{Arquitectura de software y flujo de ejecución}{49}{subsubsection*.38}%
+\contentsline {subsubsection}{Fuente de datos, variables y criterios normativos}{49}{subsubsection*.40}%
+\contentsline {subsubsection}{Núcleo de evaluación y motor difuso}{51}{subsubsection*.41}%
+\contentsline {subsubsection}{Implementación del prototipo}{53}{subsubsection*.43}%
+\contentsline {subsubsection}{Estrategia de verificación del artefacto}{53}{subsubsection*.44}%
+\contentsline {subsection}{\numberline {4.4}Resultados}{54}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusión y trabajos futuros}{56}{section.5}%
+\contentsline {section}{\numberline {6}Referencias}{57}{section.6}%
+\contentsline {section}{}{57}{section.6}%
+\contentsline {section}{Apéndice I}{61}{section.6}%
+\contentsline {section}{Anexo I}{62}{section.1}%
+\contentsline {section}{Anexo II}{64}{section.2}%
+\contentsline {section}{Anexo III}{66}{section.3}%
+\contentsline {section}{Anexo IV}{72}{section.4}%

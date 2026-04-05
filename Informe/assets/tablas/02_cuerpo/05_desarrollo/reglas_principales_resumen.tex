@@ -1,0 +1,18 @@
+\begin{longtblr}[
+  label={tab:reglas_principales_resumen},
+  caption={Resumen por bloques de la base principal de 54 reglas del motor difuso.}
+]{
+  colspec={X[1.2,l,m] X[1.5,l,m] X[1.6,l,m] X[1.6,l,m]},
+  width=\linewidth
+}
+\toprule
+AQI base & Condición de entrada dominante & Respuesta base del bloque & Escalado máximo dentro del bloque \\
+\midrule
+Good & Concurrencia y persistencia bajas & Se mantiene en \textit{Good} & Puede escalar a \textit{Unhealthy for Sensitive Groups} cuando concurrencia y persistencia son altas. \\
+Moderate & Baja concurrencia y baja persistencia & Se mantiene en \textit{Moderate} & Puede escalar a \textit{Unhealthy}. \\
+Unhealthy for Sensitive Groups & Episodio con deterioro inicial y sin combinación severa & Se mantiene en \textit{Unhealthy for Sensitive Groups} & Puede escalar a \textit{Very Unhealthy}. \\
+Unhealthy & Episodio deteriorado con presión moderada de concurrencia o persistencia & Se mantiene en \textit{Unhealthy} & Puede escalar a \textit{Hazardous}. \\
+Very Unhealthy & Episodio severo desde la base normativa & Se mantiene en \textit{Very Unhealthy} & Escala rápidamente a \textit{Hazardous} en combinaciones medias o altas. \\
+Hazardous & Episodio extremo desde la base normativa & Permanece en \textit{Hazardous} & No existe escalado adicional. \\
+\bottomrule
+\end{longtblr}

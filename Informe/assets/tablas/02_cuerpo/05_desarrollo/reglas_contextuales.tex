@@ -1,0 +1,21 @@
+\begin{longtblr}[
+  label={tab:reglas_contextuales},
+  caption={Base contextual de 9 reglas para temperatura y humedad.}
+]{
+  colspec={X[0.9,l,m] X[0.9,l,m] X[2.2,l,m]},
+  width=\linewidth
+}
+\toprule
+Temperatura & Humedad & Ajuste aplicado \\
+\midrule
+Baja & Baja & No modifica la salida de la capa principal. \\
+Baja & Media & No modifica la salida de la capa principal. \\
+Baja & Alta & No modifica la salida de la capa principal. \\
+Normal & Baja & No modifica la salida de la capa principal. \\
+Normal & Media & No modifica la salida de la capa principal. \\
+Normal & Alta & Escala una categoría cuando el riesgo base ya se encuentra comprometido. \\
+Alta & Baja & No modifica la salida de la capa principal. \\
+Alta & Media & Escala una categoría cuando el riesgo base ya se encuentra comprometido. \\
+Alta & Alta & Escala una categoría cuando el riesgo base ya se encuentra comprometido. \\
+\bottomrule
+\end{longtblr}

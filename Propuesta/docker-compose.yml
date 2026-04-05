@@ -1,0 +1,37 @@
+services:
+  aqrisk-api:
+    container_name: aqrisk-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    command: ["aqrisk-api", "--host", "0.0.0.0", "--port", "8010"]
+    ports:
+      - "${AQRISK_API_PORT:-18010}:8010"
+    volumes:
+      - ./src:/app/src
+      - ./README.md:/app/README.md:ro
+      - ./pyproject.toml:/app/pyproject.toml:ro
+      - aqrisk_runtime_data:/app/data
+
+  aqrisk-frontend:
+    container_name: aqrisk-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      VITE_API_BASE_URL: http://localhost:${AQRISK_API_PORT:-18010}
+    ports:
+      - "${AQRISK_FRONTEND_PORT:-18080}:8080"
+    volumes:
+      - ./frontend:/app
+      - aqrisk_frontend_node_modules:/app/node_modules
+    depends_on:
+      - aqrisk-api
+
+volumes:
+  aqrisk_frontend_node_modules:
+  aqrisk_runtime_data:

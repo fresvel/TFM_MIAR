@@ -1,0 +1,17 @@
+\begin{longtblr}[
+  label={tab:validacion_prototipo_actual},
+  caption={Verificación funcional actual del prototipo implementado.}
+]{
+  colspec={X[1.3,l,m] X[2.2,l,m]},
+  width=\linewidth
+}
+\toprule
+Componente verificado & Resultado observado \\
+\midrule
+Pruebas automatizadas & Dos pruebas de humo ejecutadas correctamente sobre el pipeline y la validación mínima del modo \textit{OpenAQ}. \\
+Escenario sintético \textit{mock} & Ejecución completa del flujo con cobertura global del 100\%, soporte para PM$_{2.5}$, PM$_{10}$, CO, NO$_2$, O$_3$ y SO$_2$, AQI global de 112 y salida final \textit{Unhealthy}. \\
+Motor difuso principal & Activación de reglas de la malla de 54 reglas con salida trazable por nombre de regla. \\
+Capa contextual & Activación del ajuste \texttt{CTX\_high\_high} en el escenario sintético cuando temperatura y humedad se ubican en la zona alta. \\
+Salida del prototipo & Generación de alerta interpretable y serialización del resultado en formato JSON. \\
+\bottomrule
+\end{longtblr}

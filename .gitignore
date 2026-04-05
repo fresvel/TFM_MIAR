@@ -1,0 +1,7 @@
+Propuesta/.env
+Propuesta/.venv/
+Propuesta/tests/__pycache__/
+Propuesta/src/**/__pycache__/
+Propuesta/frontend/node_modules/
+Propuesta/frontend/dist/
+Informe/build/

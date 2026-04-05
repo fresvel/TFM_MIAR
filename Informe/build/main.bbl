@@ -844,6 +844,34 @@ Sutton, R\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+{United States Environmental Protection Agency}%
+}{%
+{United States Environmental Protection Agency}%
+}{%
+{\protect \APACyear {2026}}%
+}]{%
+DATA_EPA_AQS_BREAKPOINTS}
+\APACinsertmetastar {%
+DATA_EPA_AQS_BREAKPOINTS}%
+\begin{APACrefauthors}%
+{United States Environmental Protection Agency}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2026}{}{}.
+\newblock
+\APACrefbtitle {AQI Breakpoints.} {Aqi breakpoints.}
+\newblock
+\APAChowpublished {EPA Air Quality System (AQS)}.
+\newblock
+\begin{APACrefURL}
+  \url{https://aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{Consultado el 29 de marzo de 2026}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Vito%
 }{%
 Vito%
