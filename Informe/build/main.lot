@@ -1,16 +1,12 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {table}{\numberline {1}{Antecedentes comparables derivados del SLR para contrastar la propuesta del TFM.}}{13}{table.1}%
-\contentsline {table}{\numberline {2}{Síntesis comparativa de datasets públicos de calidad del aire utilizados como referencia metodológica. Elaboración propia.}}{28}{table.2}%
-\contentsline {table}{\numberline {3}{Marco PICo utilizado para la revisión del estado del arte. Elaboración propia.}}{34}{table.3}%
-\contentsline {table}{\numberline {4}{Derivación de términos de búsqueda a partir del marco PICo. Elaboración propia.}}{35}{table.4}%
-\contentsline {table}{\numberline {5}{Cadena de búsqueda final utilizada en las bases de datos seleccionadas. Elaboración propia.}}{36}{table.5}%
-\contentsline {table}{\numberline {6}{Criterios de inclusión y exclusión aplicados en las fases de \textit {screening} y elegibilidad, alineados con PICo, directrices de investigación (D1--D3) y criterios prácticos de Kitchenham. Elaboración propia.}}{37}{table.6}%
-\contentsline {table}{\numberline {7}{Matriz conceptual de extracción de datos alineada con la pregunta principal y las directrices D1--D3.}}{42}{table.7}%
-\contentsline {table}{\numberline {8}{Resumen por bloques de la base principal de 54 reglas del motor difuso.}}{52}{table.8}%
-\contentsline {table}{\numberline {9}{Base contextual de 9 reglas para temperatura y humedad.}}{52}{table.9}%
-\contentsline {table}{\numberline {10}{Verificación funcional actual del prototipo implementado.}}{54}{table.10}%
-\contentsline {table}{\numberline {11}{Checklist de evaluación de calidad adaptado de Kitchenham (2007), con aplicación condicionada por subtipo cuantitativo. Elaboración propia.}}{62}{table.11}%
-\contentsline {table}{\numberline {12}{Diccionario operativo de campos de la matriz final de extracción de datos.}}{64}{table.12}%
-\contentsline {table}{\numberline {13}{Directriz D3: tabla principal de evidencia cuantitativa (k/n/\%; n=19). Elaboración propia.}}{66}{table.13}%
-\contentsline {table}{\numberline {14}{Resultados de desempeño: frecuencia de métricas en grupos comparables core (k/n/\%; n=19). Elaboración propia.}}{70}{table.14}%
-\contentsline {table}{\numberline {15}{Base principal de 54 reglas del motor difuso implementado.}}{72}{table.15}%
+\contentsline {table}{\numberline {1}{Antecedentes comparables derivados del SLR para contrastar la propuesta del TFM.}}{14}{table.1}%
+\contentsline {table}{\numberline {2}{Síntesis comparativa de datasets públicos de calidad del aire utilizados como referencia metodológica. Elaboración propia.}}{29}{table.2}%
+\contentsline {table}{\numberline {3}{Marco PICo utilizado para la revisión del estado del arte. Elaboración propia.}}{36}{table.3}%
+\contentsline {table}{\numberline {4}{Resumen por bloques de la base principal de 54 reglas del motor difuso.}}{46}{table.4}%
+\contentsline {table}{\numberline {5}{Base contextual de 9 reglas para temperatura y humedad.}}{47}{table.5}%
+\contentsline {table}{\numberline {6}{Verificación funcional actual del prototipo implementado.}}{48}{table.6}%
+\contentsline {table}{\numberline {7}{Checklist de evaluación de calidad adaptado de Kitchenham (2007), con aplicación condicionada por subtipo cuantitativo. Elaboración propia.}}{57}{table.7}%
+\contentsline {table}{\numberline {8}{Diccionario operativo de campos de la matriz final de extracción de datos.}}{59}{table.8}%
+\contentsline {table}{\numberline {9}{Directriz D3: tabla principal de evidencia cuantitativa (k/n/\%; n=19). Elaboración propia.}}{61}{table.9}%
+\contentsline {table}{\numberline {10}{Resultados de desempeño: frecuencia de métricas en grupos comparables core (k/n/\%; n=19). Elaboración propia.}}{65}{table.10}%
+\contentsline {table}{\numberline {11}{Base principal de 54 reglas del motor difuso implementado.}}{67}{table.11}%

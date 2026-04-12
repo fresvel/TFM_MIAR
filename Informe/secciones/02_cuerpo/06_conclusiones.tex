@@ -1,7 +1,13 @@
-% CONCLUSIÓN Y TRABAJOS FUTUROS
+% CONCLUSIONES Y TRABAJOS FUTUROS
 
-\section{Conclusión y trabajos futuros}
+\section{Conclusiones y trabajos futuros}
 
-Especifica y resalta los resultados de la investigación o del desarrollo en relación con los objetivos planteados.
+El desarrollo del presente TFM permitió cumplir, en un estado funcional inicial, los objetivos planteados para la construcción de un módulo de monitoreo de calidad del aire basado en inferencia difusa y datos abiertos. La revisión sistemática del estado del arte permitió caracterizar variables, enfoques difusos y arquitecturas operativas recientes, y aportó la base empírica necesaria para justificar el problema de investigación y derivar criterios explícitos de diseño. Este resultado cumple el primer objetivo específico y evita que la propuesta técnica se apoye en decisiones arbitrarias o desvinculadas de la evidencia reciente.
 
-Habla sobre las las dificultades que te has encontrado y las perspectivas para el futuro de este trabajo.
+A partir de esa base, se definió e implementó el prototipo \textit{AQRisk}, organizado en cinco capas funcionales: consolidación normativa, variables auxiliares, inferencia difusa principal, ajuste contextual y alertamiento. La arquitectura implementada integra cálculo del AQI con base en \textit{EPA/AQS}, una base principal de 54 reglas, una base contextual de 9 reglas, control de cobertura de datos, ejecución por CLI y Docker, y una interfaz web para control, visualización y explicabilidad. Este resultado satisface el segundo y el tercer objetivo específico, ya que la solución dejó de ser únicamente conceptual y pasó a existir como artefacto ejecutable y trazable.
+
+La validación realizada en esta etapa confirma la operabilidad del flujo completo del sistema y la coherencia general de la salida frente a escenarios controlados y consultas reales sobre datos abiertos. El prototipo ya permite inspeccionar contaminantes soportados, reglas activadas, variables auxiliares, ajuste contextual y comparación entre corridas históricas. Con ello, el cuarto objetivo específico se cumple de forma parcial y provisional: existe verificación funcional suficiente para sostener la utilidad técnica del artefacto, pero todavía no una evaluación comparativa extensa entre múltiples estaciones, ventanas temporales y condiciones urbanas diversas.
+
+Entre las principales limitaciones del trabajo actual se encuentran la dependencia de disponibilidad y cobertura efectiva en fuentes abiertas vivas, la validación todavía acotada en escenarios reales y la ausencia de una capa completa de gestión de usuarios, roles y administración. Estas restricciones no invalidan el artefacto, pero sí delimitan el alcance de los resultados presentados: la contribución central del TFM es la construcción y justificación de un módulo explicable y reproducible para evaluación actual del riesgo, no una plataforma productiva plenamente desplegada a escala urbana.
+
+Como trabajo futuro inmediato, resulta pertinente ampliar la validación comparativa del módulo con más estaciones, más horizontes temporales y casos de alerta de mayor diversidad. También conviene cerrar la integración documental entre la interfaz web y la memoria, incorporando evidencia visual del sistema en operación. En una fase posterior, el artefacto podría evolucionar hacia funciones de autenticación, administración y exposición pública controlada, así como hacia una extensión predictiva basada en variables expertas derivadas del propio sistema difuso.

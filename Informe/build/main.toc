@@ -1,54 +1,54 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{Resumen}{5}{Doc-Start}%
-\contentsline {section}{\numberline {1}Introducción}{6}{section.1}%
-\contentsline {section}{\numberline {2}Objetivos}{9}{section.2}%
-\contentsline {section}{\numberline {3}Fundamentación Teórica }{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Revisión de Literatura}{10}{subsection.3.1}%
-\contentsline {subsubsection}{Síntesis metodológica de la revisión}{10}{subsubsection*.1}%
-\contentsline {subsubsection}{Hallazgos del estado del arte relevantes para el TFM}{10}{subsubsection*.2}%
-\contentsline {paragraph}{Variables de entrada y fuentes de datos}{10}{paragraph*.3}%
-\contentsline {paragraph}{Inferencia difusa y modelado del riesgo}{11}{paragraph*.4}%
-\contentsline {paragraph}{Plataformas de monitoreo y operación en tiempo real}{11}{paragraph*.5}%
-\contentsline {subsubsection}{Vacíos del estado del arte}{12}{subsubsection*.6}%
-\contentsline {subsubsection}{Antecedentes comparables para esta investigación}{13}{subsubsection*.7}%
-\contentsline {subsubsection}{Implicaciones para el diseño de la propuesta}{15}{subsubsection*.8}%
-\contentsline {subsection}{\numberline {3.2}Síntesis Conceptual}{16}{subsection.3.2}%
-\contentsline {subsubsection}{AQI, contaminantes atmosféricos y variables meteorológicas}{16}{subsubsection*.9}%
-\contentsline {paragraph}{Contaminantes y variables}{16}{paragraph*.10}%
-\contentsline {paragraph}{Variables ambientales}{17}{paragraph*.11}%
-\contentsline {paragraph}{Cálculo y categorías del AQI}{18}{paragraph*.12}%
-\contentsline {subsubsection}{Modelos de lógica difusa y defuzzificación}{19}{subsubsection*.13}%
-\contentsline {paragraph}{Familias principales de sistemas difusos}{19}{paragraph*.14}%
-\contentsline {paragraph}{Reglas, funciones de pertenencia y defuzzificación}{20}{paragraph*.16}%
-\contentsline {subsubsection}{Modelos de regresión supervisada y métricas}{24}{subsubsection*.21}%
-\contentsline {subsubsection}{Datasets públicos de calidad del aire y sus características}{27}{subsubsection*.22}%
-\contentsline {section}{\numberline {4}Desarrollo del proyecto y resultados}{31}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Planteamiento del problema}{31}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Metodología}{33}{subsection.4.2}%
-\contentsline {subsubsection}{Enfoque y tipo de investigación}{33}{subsubsection*.23}%
-\contentsline {subsubsection}{Diseño metodológico del estudio}{33}{subsubsection*.24}%
-\contentsline {subsubsection}{1: Revisión sistemática del estado del arte}{34}{subsubsection*.25}%
-\contentsline {subsubsection}{Evaluación de Calidad}{39}{subsubsection*.26}%
-\contentsline {subsubsection}{Extracción de datos}{40}{subsubsection*.27}%
-\contentsline {subsubsection}{Análisis y Síntesis de Datos}{43}{subsubsection*.28}%
-\contentsline {subsubsection}{2: Diseño del módulo de monitoreo}{44}{subsubsection*.30}%
-\contentsline {subsubsection}{3: Implementación del módulo propuesto}{45}{subsubsection*.31}%
-\contentsline {subsubsection}{4: Validación del módulo propuesto}{45}{subsubsection*.32}%
-\contentsline {subsubsection}{Consideraciones finales de la metodología}{46}{subsubsection*.33}%
-\contentsline {subsection}{\numberline {4.3}Desarrollo del proyecto}{47}{subsection.4.3}%
-\contentsline {subsubsection}{Propuesta del módulo}{47}{subsubsection*.35}%
-\contentsline {subsubsection}{Arquitectura funcional del módulo}{48}{subsubsection*.36}%
-\contentsline {subsubsection}{Arquitectura de software y flujo de ejecución}{49}{subsubsection*.38}%
-\contentsline {subsubsection}{Fuente de datos, variables y criterios normativos}{49}{subsubsection*.40}%
-\contentsline {subsubsection}{Núcleo de evaluación y motor difuso}{51}{subsubsection*.41}%
-\contentsline {subsubsection}{Implementación del prototipo}{53}{subsubsection*.43}%
-\contentsline {subsubsection}{Estrategia de verificación del artefacto}{53}{subsubsection*.44}%
-\contentsline {subsection}{\numberline {4.4}Resultados}{54}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusión y trabajos futuros}{56}{section.5}%
-\contentsline {section}{\numberline {6}Referencias}{57}{section.6}%
-\contentsline {section}{}{57}{section.6}%
-\contentsline {section}{Apéndice I}{61}{section.6}%
-\contentsline {section}{Anexo I}{62}{section.1}%
-\contentsline {section}{Anexo II}{64}{section.2}%
-\contentsline {section}{Anexo III}{66}{section.3}%
-\contentsline {section}{Anexo IV}{72}{section.4}%
+\contentsline {section}{Abstract}{5}{Doc-Start}%
+\contentsline {section}{\numberline {1}Introducción}{7}{section.1}%
+\contentsline {section}{\numberline {2}Objetivos}{10}{section.2}%
+\contentsline {section}{\numberline {3}Estado del arte}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Síntesis metodológica de la revisión}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Hallazgos del estado del arte relevantes para el TFM}{11}{subsection.3.2}%
+\contentsline {paragraph}{Variables de entrada y fuentes de datos}{11}{paragraph*.1}%
+\contentsline {paragraph}{Inferencia difusa y modelado del riesgo}{12}{paragraph*.2}%
+\contentsline {paragraph}{Plataformas de monitoreo y operación en tiempo real}{12}{paragraph*.3}%
+\contentsline {subsection}{\numberline {3.3}Vacíos del estado del arte}{13}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Antecedentes comparables para esta investigación}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Implicaciones para el diseño de la propuesta}{16}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Marco teórico}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}AQI, contaminantes atmosféricos y variables meteorológicas}{17}{subsection.4.1}%
+\contentsline {paragraph}{Contaminantes y variables}{18}{paragraph*.4}%
+\contentsline {paragraph}{Variables ambientales}{18}{paragraph*.5}%
+\contentsline {paragraph}{Cálculo y categorías del AQI}{19}{paragraph*.6}%
+\contentsline {subsection}{\numberline {4.2}Modelos de lógica difusa y defuzzificación}{20}{subsection.4.2}%
+\contentsline {paragraph}{Familias principales de sistemas difusos}{20}{paragraph*.7}%
+\contentsline {paragraph}{Reglas, funciones de pertenencia y defuzzificación}{21}{paragraph*.9}%
+\contentsline {subsection}{\numberline {4.3}Modelos de regresión supervisada y métricas}{25}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Datasets públicos de calidad del aire y sus características}{28}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Desarrollo del proyecto y resultados}{33}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Planteamiento del problema}{33}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Metodología}{35}{subsection.5.2}%
+\contentsline {subsubsection}{Enfoque y tipo de investigación}{35}{subsubsection*.14}%
+\contentsline {subsubsection}{Diseño metodológico del estudio}{35}{subsubsection*.15}%
+\contentsline {subsubsection}{1: Revisión sistemática del estado del arte}{36}{subsubsection*.16}%
+\contentsline {subsubsection}{Evaluación de Calidad}{37}{subsubsection*.17}%
+\contentsline {subsubsection}{Extracción de datos}{37}{subsubsection*.18}%
+\contentsline {subsubsection}{Análisis y Síntesis de Datos}{38}{subsubsection*.19}%
+\contentsline {subsubsection}{2: Diseño del módulo de monitoreo}{38}{subsubsection*.20}%
+\contentsline {subsubsection}{3: Implementación del módulo propuesto}{39}{subsubsection*.21}%
+\contentsline {subsubsection}{4: Validación del módulo propuesto}{40}{subsubsection*.22}%
+\contentsline {subsubsection}{Consideraciones finales de la metodología}{41}{subsubsection*.23}%
+\contentsline {subsection}{\numberline {5.3}Desarrollo del proyecto}{41}{subsection.5.3}%
+\contentsline {subsubsection}{Propuesta del módulo}{41}{subsubsection*.25}%
+\contentsline {subsubsection}{Arquitectura funcional del módulo}{42}{subsubsection*.26}%
+\contentsline {subsubsection}{Arquitectura de software y flujo de ejecución}{43}{subsubsection*.28}%
+\contentsline {subsubsection}{Fuente de datos, variables y criterios normativos}{44}{subsubsection*.30}%
+\contentsline {subsubsection}{Núcleo de evaluación y motor difuso}{45}{subsubsection*.31}%
+\contentsline {subsubsection}{Implementación del prototipo}{47}{subsubsection*.33}%
+\contentsline {subsubsection}{Estrategia de verificación del artefacto}{48}{subsubsection*.34}%
+\contentsline {subsection}{\numberline {5.4}Resultados}{48}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Conclusiones y trabajos futuros}{50}{section.6}%
+\contentsline {section}{\numberline {7}Referencias}{52}{section.7}%
+\contentsline {section}{}{52}{section.7}%
+\contentsline {section}{Apéndice I}{56}{section.7}%
+\contentsline {section}{Anexo I}{57}{section.1}%
+\contentsline {section}{Anexo II}{59}{section.2}%
+\contentsline {section}{Anexo III}{61}{section.3}%
+\contentsline {section}{Anexo IV}{67}{section.4}%

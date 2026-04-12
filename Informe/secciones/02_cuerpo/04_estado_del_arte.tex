@@ -1,16 +1,11 @@
-\section{Fundamentación Teórica }
+\section{Estado del arte}
 \label{sec:resultados_revision}
-
-Este apartado sintetiza el estado del arte que fundamenta la propuesta del TFM. La base empírica procede de una revisión sistemática de la literatura estructurada con el modelo PICo y el protocolo PRISMA 2020, desarrollada como estudio independiente. En esta memoria se presenta la evidencia necesaria para delimitar el problema, justificar las decisiones de diseño del módulo y fijar antecedentes comparables para su validación posterior.
-
-\subsection{Revisión de Literatura}
-
-\subsubsection{Síntesis metodológica de la revisión}
+\subsection{Síntesis metodológica de la revisión}
 El estado del arte de este TFM se apoya en una revisión sistemática de la literatura desarrollada como estudio independiente y enviada a evaluación en la revista \textit{Smart Cities}. La revisión siguió la guía de Kitchenham \cite{kitchenham2007} y el estándar PRISMA 2020 \cite{prisma2020}, con una estrategia de búsqueda delimitada mediante el modelo PICo. La consulta se ejecutó en Scopus, Web of Science e IEEE Xplore, con restricción a publicaciones en inglés entre 2021 y 2026.
 
 La búsqueda inicial recuperó 240 registros. Tras depuración de duplicados, cribado por título y resumen, recuperación de texto completo y evaluación de elegibilidad, el corpus final quedó constituido por 19 estudios primarios. En esta memoria se presenta la parte del estudio que resulta necesaria para tres propósitos: caracterizar el campo reciente, justificar la brecha de investigación y derivar criterios de diseño para el módulo de monitoreo planteado en este TFM.
 
-\subsubsection{Hallazgos del estado del arte relevantes para el TFM}
+\subsection{Hallazgos del estado del arte relevantes para el TFM}
 \paragraph{Variables de entrada y fuentes de datos}
 La literatura reciente converge en un conjunto acotado de variables para evaluación de la calidad del aire en sistemas difusos. PM$_{2.5}$, CO, CO$_2$ y PM$_{10}$ aparecen con alta recurrencia en tareas de clasificación, estimación y predicción, mientras temperatura y humedad se emplean como variables de apoyo en arquitecturas interiores y urbanas \cite{ART06,ART07,A028,A135,A165,A167}. Esta pauta se observa en sistemas de monitoreo IoT con clasificación AQI/ISPU basados en PM$_{2.5}$, PM$_{10}$ y CO \cite{ART06}, en propuestas urbanas que combinan SO$_2$, NO$_2$, CO, O$_3$ y PM$_{10}$ \cite{ART07}, y en esquemas de pronóstico o ajuste donde PM$_{2.5}$ se combina con covariables microclimáticas y contaminantes adicionales \cite{A084,A135}. Para este TFM, esta evidencia delimita un núcleo de variables pertinente para diseñar un módulo urbano basado en datos abiertos y orientado a evaluación del riesgo.
 
@@ -26,7 +21,7 @@ El corpus revisado confirma la presencia de una base tecnológica relativamente 
 
 La operación continua no implica el mismo nivel de integración en todos los casos. Algunos trabajos reportan monitoreo y publicación de resultados con respuesta por umbral o recomendación operativa \cite{ART05,A114,A165,A167}. Otros concentran el aporte en el modelo predictivo o en la estructura de red y dejan en segundo plano la descripción del ciclo completo de adquisición, procesamiento, publicación y mantenimiento \cite{A028,ART08}. Para este TFM, la diferencia es sustantiva: el objetivo no consiste únicamente en formular un modelo de inferencia, sino en desarrollar un módulo de monitoreo con flujo funcional completo y salida útil para alertamiento.
 
-\subsubsection{Vacíos del estado del arte}
+\subsection{Vacíos del estado del arte}
 \begin{itemize}
 \item \textbf{Generalización externa insuficiente}. La literatura presenta resultados favorables dentro del entorno de prueba de cada estudio, pero la validación en más de una ciudad, más de una red de sensores o más de una ventana temporal sigue siendo escasa \cite{ART04,A028,A084,A135}. Esta limitación ya había sido anticipada en revisiones de AQI, donde la comparabilidad entre modelos y contextos aparece como problema estructural \cite{ART01,ART02}.
 \item \textbf{Comparabilidad metodológica limitada}. Los trabajos difieren en variables de entrada, tipo de salida, métrica reportada, partición de datos y nivel de detalle sobre la configuración difusa. En consecuencia, dos estudios pueden informar alto desempeño sin estar evaluando la misma tarea ni bajo un protocolo equivalente \cite{ART01,ART02,A028,A084,A135}. Esta heterogeneidad dificulta atribuir el rendimiento al diseño del sistema con la precisión necesaria para reutilizarlo en otro contexto.
@@ -37,12 +32,12 @@ La operación continua no implica el mismo nivel de integración en todos los ca
 
 En conjunto, estos vacíos describen un campo activo, pero todavía fragmentado en variables, diseño difuso, arquitectura y validación. Esta evidencia justifica el objetivo del TFM: desarrollar un módulo de monitoreo apoyado en datos abiertos, con inferencia difusa auditable y con criterios de evaluación comparables.
 
-\subsubsection{Antecedentes comparables para esta investigación}
+\subsection{Antecedentes comparables para esta investigación}
 La Tabla~\ref{tab:antecedentes_comparables_tfm} reúne estudios del corpus que ofrecen puntos de comparación directos para el TFM. La selección prioriza trabajos con afinidad en cuatro dimensiones: uso de datos trazables, núcleo difuso explícito, monitoreo en tiempo real o casi tiempo real, y generación de alertas o soporte a decisión.
 
 \input{assets/tablas/02_cuerpo/04_estado_del_arte/antecedentes_comparables_tfm.tex}
 
-\subsubsection{Implicaciones para el diseño de la propuesta}
+\subsection{Implicaciones para el diseño de la propuesta}
 La síntesis anterior fija criterios concretos para el diseño del módulo propuesto:
 \begin{enumerate}
 \item La fuente de datos debe ser trazable y reutilizable, porque la literatura muestra una dependencia excesiva de instrumentación local con validación acotada \cite{A028,A084,A135}.
@@ -53,11 +48,11 @@ La síntesis anterior fija criterios concretos para el diseño del módulo propu
 \end{enumerate}
 
 
-\subsection{Síntesis Conceptual}
+\section{Marco teórico}
 
 Con base en los hallazgos del estado del arte, esta síntesis conceptual fija los fundamentos técnicos que sostienen la propuesta: definición operativa del AQI, estructura de los modelos difusos, criterios de evaluación predictiva y características de los datasets públicos utilizados en estudios recientes.
 
-\subsubsection{AQI, contaminantes atmosféricos y variables meteorológicas}
+\subsection{AQI, contaminantes atmosféricos y variables meteorológicas}
 El índice de calidad del aire (AQI) es un indicador sintético y adimensional diseñado para transformar concentraciones de contaminantes atmosféricos en una escala única de interpretación del riesgo \cite{ART01,ART02}. Su finalidad es convertir mediciones técnicas en información comprensible y utilizable para vigilancia ambiental, comunicación pública y toma de decisiones en salud y gestión de la calidad del aire \cite{ART01,ART02}.
 
 El AQI opera como un mecanismo de normalización y agregación, parte de concentraciones observadas, las relaciona con valores de referencia normativos y produce un valor integrado que resume la condición ambiental en un instante o periodo de análisis \cite{ART01,ART02}. Esta transformación resuelve un problema central de interpretación, porque los contaminantes presentan unidades, escalas y niveles de impacto diferentes; por ello, una lectura directa de concentraciones aisladas no ofrece, por sí sola, una visión clara del nivel de riesgo global.
@@ -96,13 +91,13 @@ A este conjunto se suman variables de estabilidad atmosférica y presión, que a
 El cálculo del AQI se estructura en dos etapas. En la primera etapa, la concentración observada de cada contaminante se transforma en un subíndice normalizado; en la segunda etapa, los subíndices se combinan para obtener un valor único de calidad del aire \cite{ART01,ART02}. Esta estructura permite integrar variables con unidades y rangos distintos en una salida común.
 
 En un enfoque dependiente de estándares de calidad del aire, una formulación reportada para el subíndice es:
-\[
+\begin{equation}
 Q_i = 10\left(\frac{C_i}{S_i}\right),
-\]
+\end{equation}
 donde \(Q_i\) es la calificación del contaminante \(i\), \(C_i\) es la concentración observada y \(S_i\) es el valor estándar de referencia. A partir de esos subíndices, el índice global puede expresarse como:
-\[
+\begin{equation}
 AQI=\left(Q_1\cdot Q_2\cdots Q_n\right)^{1/n},
-\]
+\end{equation}
 con \(n\) contaminantes considerados \cite{ART02}.
 
 Otro esquema ampliamente utilizado emplea concentraciones de quiebre (\textit{breakpoints}) e interpolación lineal segmentada para mapear cada concentración al subíndice correspondiente \cite{ART01,ART02}. Después, los subíndices se agregan con una regla definida por el modelo y el marco regulatorio, por ejemplo operador máximo o funciones de agregación \cite{ART01}.
@@ -116,7 +111,7 @@ El AQI puede entenderse como una cadena técnica de cuatro elementos: selección
 
 
 
-\subsubsection{Modelos de lógica difusa y defuzzificación}
+\subsection{Modelos de lógica difusa y defuzzificación}
 La lógica difusa se fundamenta en la representación de pertenencia gradual, donde cada elemento puede tomar un grado en el intervalo \([0,1]\) dentro de un conjunto difuso \cite{ART03,ARTFZ01,ARTFZ02}. Esta formulación permite modelar fenómenos con fronteras no nítidas y condiciones de transición continua, que son frecuentes en variables ambientales.
 
 Sobre esa base, la inferencia difusa se construye mediante variables lingüísticas, funciones de pertenencia y reglas \textit{if-then}. El flujo general comprende fuzzificación de entradas, evaluación de reglas en el motor de inferencia y defuzzificación para obtener una salida numérica utilizable en decisión o control \cite{ART07,ARTFZ02}. Esta estructura proporciona trazabilidad entre conocimiento experto y salida del sistema.
@@ -193,13 +188,13 @@ La Figura~\ref{fig:marco_fis_mf_numeros}\subref{fig:marco_fis_numero_alpha_sub} 
 \end{figure}
 
 La Figura~\ref{fig:marco_fis_centroide} contrasta dos formas de obtener la salida crisp. En el panel A (Mamdani), cada regla produce una salida recortada, las salidas se agregan en una envolvente difusa y el valor final se calcula por centroide. Ese valor se obtiene como centro de masa de la salida agregada:
-\[
+\begin{equation}
 z^*=\frac{\int z\,\mu_{\mathrm{agg}}(z)\,dz}{\int \mu_{\mathrm{agg}}(z)\,dz}.
-\]
+\end{equation}
 En el panel B (Sugeno/TSK), cada regla entrega un consecuente numérico \(z_r\) y la salida se obtiene mediante promedio ponderado por niveles de activación:
-\[
+\begin{equation}
 z^*=\frac{\sum_r \alpha_r z_r}{\sum_r \alpha_r}.
-\]
+\end{equation}
 Esta diferencia es clave: Mamdani conserva interpretación lingüística hasta la agregación final, mientras que Sugeno/TSK opera directamente con consecuentes numéricos y reduce costo de inferencia \cite{ART03,ART06,ART07,ARTFZ02}. En ambos casos, la etapa final transforma la inferencia difusa en un valor operativo para clasificación, control o alerta.
 
 \begin{figure}[H]
@@ -228,7 +223,7 @@ La Figura~\ref{fig:marco_anfis_elementos}\subref{fig:marco_anfis_superficie} rep
 
 La comparación técnica permite fijar un criterio operativo para la propuesta. Mamdani es adecuado cuando la prioridad es trazabilidad de reglas y lectura directa de niveles de riesgo; Sugeno/TSK es conveniente cuando se requiere inferencia rápida con salida numérica estable en tiempo de ejecución; y ANFIS aporta capacidad de ajuste a partir de datos cuando el objetivo incluye estimación/predicción con variabilidad temporal \cite{ART03,ART04,ART06,A084,A149}. Con base en ello, un diseño consistente para calidad del aire puede separar funciones: núcleo de decisión interpretable con reglas difusas explícitas y módulo de ajuste/predicción entrenable para mejorar respuesta cuantitativa sin perder auditabilidad del sistema.
 
-\subsubsection{Modelos de regresión supervisada y métricas}
+\subsection{Modelos de regresión supervisada y métricas}
 En aprendizaje supervisado, la regresión se utiliza cuando la variable objetivo es continua. El modelo aprende una función \(f(\mathbf{x})\) que aproxima la relación entre predictores y salida numérica, a partir de ejemplos etiquetados \((\mathbf{x}_i, y_i)\) \cite{ARTML01}. Esta formulación es coherente con tareas como predicción de concentración de contaminantes o estimación de un índice continuo de calidad del aire.
 
 Dentro de este marco, las familias de modelos se diferencian por el tipo de relación que pueden representar, el costo de entrenamiento y el nivel de interpretación disponible \cite{ARTML01}. En términos prácticos:
@@ -267,7 +262,7 @@ Con estas reglas, la comparación entre estudios requiere tres condiciones simul
 
 Como cierre metodológico, la evaluación de la propuesta debe definirse desde el tipo de salida que se desea validar: si el objetivo principal es predicción/estimación continua, el bloque central de evaluación debe estructurarse con MAE/RMSE/\(R^2\) y análisis por horizonte; si el objetivo incluye clasificación de niveles o alertamiento, debe añadirse desempeño por clase y evidencia operativa de respuesta. Esta estructura permite que los resultados sean técnicamente auditables, comparables con antecedentes afines y útiles para decisiones de implementación en contexto real.
 
-\subsubsection{Datasets públicos de calidad del aire y sus características}
+\subsection{Datasets públicos de calidad del aire y sus características}
 En esta investigación, los datasets públicos se consideran un componente estructural del diseño experimental y no solo una fuente de entrenamiento. Su función en el marco teórico es doble: sostener reproducibilidad de resultados y habilitar comparación técnica entre estudios con objetivos similares \cite{A135,A144,A178,A084,A028}. Desde esa perspectiva, la lectura de fuentes públicas debe separar con claridad tres perfiles: plataformas actualizables, repositorios históricos curados y artefactos de proyecto publicados para replicación.
 
 Las plataformas actualizables, como \textit{OpenAQ}, aportan cobertura geográfica amplia, trazabilidad por estación y acceso programático para consulta de series históricas y ventanas recientes \cite{DATA_OPENAQ}. Su valor metodológico es que permiten construir flujos de ingestión y evaluación sobre datos que evolucionan en el tiempo, más cercanos a un escenario operativo. En ese mismo perfil, los portales nacionales de AQI usados en algunos antecedentes, como CPCB en India, ofrecen continuidad institucional de publicación, aunque con diferencias normativas y de estructura frente a otras fuentes \cite{A028}.
