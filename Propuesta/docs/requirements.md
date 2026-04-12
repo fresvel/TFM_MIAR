@@ -2,193 +2,219 @@
 
 ## 1. Contexto
 
-El módulo responde al objetivo general del TFM: desarrollar un módulo de monitoreo de calidad del aire para apoyar la evaluación del riesgo y la generación de alertas mediante inferencia difusa y datos abiertos de redes de monitoreo ambiental en entornos urbanos.
+El prototipo implementa el núcleo del TFM: un módulo de monitoreo de calidad del aire que combina datos abiertos, cálculo AQI y lógica difusa para evaluar riesgo y generar alertas trazables.
 
-Este documento traduce los objetivos, la metodología y la propuesta conceptual en requerimientos de software para el primer corte implementable.
+Este documento ya no describe una idea preliminar. Describe el estado actual del prototipo y los vacíos que continúan abiertos.
 
-## 2. Alcance del primer corte
+## 2. Alcance actual del prototipo
 
-El primer corte se implementa como un prototipo funcional en Python, dockerizable y ejecutable por línea de comandos. Su alcance queda delimitado así:
+El alcance implementado incluye:
 
-- Fuente operativa principal: OpenAQ v3.
-- Unidad de análisis: una estación o `location` de OpenAQ.
-- Ventana temporal de análisis: hasta veinticuatro horas recientes por sensor.
-- Cálculo base: AQI determinista para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2`.
-- Capa interpretativa: motor Mamdani para evaluación de riesgo y alertamiento.
+- fuente operativa principal: `OpenAQ v3`;
+- modo `mock` para escenarios controlados;
+- modo `openaq` para corridas reales;
+- análisis por `location_id`;
+- ventana de análisis con series horarias recientes;
+- cálculo AQI para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2`;
+- derivación de persistencia, concurrencia y cobertura;
+- inferencia difusa `Mamdani`;
+- ajuste contextual;
+- salida JSON trazable;
+- API HTTP;
+- frontend web;
+- ejecución dockerizada.
 
-## 3. Requerimientos funcionales del núcleo actual
+Quedan fuera del alcance actual:
 
-### RF-01. Configuración del módulo
+- autenticación;
+- perfiles;
+- roles;
+- administración;
+- persistencia robusta en `SQLite` o `PostgreSQL`;
+- validación E2E completa.
 
-El sistema debe cargar configuración de ejecución desde variables de entorno y argumentos de línea de comandos.
+## 3. Requerimientos funcionales implementados
 
-### RF-02. Selección de fuente y modo de ejecución
+### RF-01. Configuración de ejecución
 
-El sistema debe permitir al menos dos modos:
+El sistema debe aceptar configuración por variables de entorno y argumentos de ejecución.
 
-- `mock`, para ejecutar el pipeline con datos de prueba controlados.
-- `openaq`, para consultar datos reales en OpenAQ v3.
+### RF-02. Modos de operación
+
+El sistema debe permitir al menos:
+
+- `mock`;
+- `openaq`.
 
 ### RF-03. Descubrimiento de sensores
 
-En modo `openaq`, el sistema debe recuperar los sensores asociados a un `location_id` y filtrar aquellos que correspondan a parámetros relevantes para el módulo.
+En modo `openaq`, el sistema debe recuperar sensores por `location_id` y filtrar parámetros relevantes.
 
-### RF-04. Recuperación horaria de mediciones
+### RF-04. Recuperación de series horarias
 
-El sistema debe consultar las series horarias de cada sensor seleccionado y construir una ventana temporal suficiente para calcular concentraciones representativas según ventana regulatoria.
+El sistema debe consultar observaciones horarias por sensor para construir la ventana de análisis.
 
-### RF-05. Normalización de datos
+### RF-05. Estandarización
 
-El sistema debe normalizar nombres de parámetros, unidades, marcas temporales y estructura interna de las observaciones.
+El sistema debe normalizar nombres de parámetros, estructura temporal y representación interna de observaciones.
 
-### RF-06. Control de calidad del dato
+### RF-06. Control de cobertura
 
-El sistema debe registrar el porcentaje de cobertura de cada observación horaria y derivar una cobertura global de la ventana analizada.
+El sistema debe calcular cobertura efectiva para la ventana analizada y exponerla en la salida.
 
-### RF-07. Consolidación del estado base
+### RF-07. Evaluación AQI base
 
-El sistema debe calcular subíndices AQI para los contaminantes soportados y consolidar un estado base mediante el subíndice dominante.
+El sistema debe calcular subíndices AQI para contaminantes soportados y consolidar el valor dominante.
 
-### RF-07a. Concentraciones representativas por contaminante
+### RF-08. Concentraciones representativas
 
-El sistema debe obtener la concentración representativa de cada contaminante con la regla temporal que le corresponda:
+El sistema debe usar la ventana regulatoria correspondiente a cada contaminante:
 
-- promedio de 24 horas para `pm25` y `pm10`;
-- promedio de 8 horas para `co`;
-- valor horario para `no2`;
-- selección entre 8 horas y 1 hora para `o3`, según tramo aplicable;
-- selección entre 1 hora y 24 horas para `so2`, según tramo aplicable.
+- `pm25`: 24 horas;
+- `pm10`: 24 horas;
+- `co`: 8 horas;
+- `no2`: 1 hora;
+- `o3`: 8 horas o 1 hora;
+- `so2`: 1 hora o 24 horas.
 
-Cuando la ventana nominal no esté completa, el sistema podrá calcular una concentración representativa con serie parcial siempre que la cobertura efectiva alcance el umbral mínimo configurado.
+### RF-09. Variables auxiliares
 
-### RF-08. Cálculo de persistencia
+El sistema debe derivar persistencia, concurrencia y métricas auxiliares necesarias para la inferencia.
 
-El sistema debe derivar una medida simple de persistencia a partir del comportamiento reciente del estado base en la ventana analizada.
+### RF-10. Evaluación difusa
 
-### RF-09. Evaluación difusa del riesgo
+El sistema debe producir una categoría lingüística de riesgo mediante un sistema `Mamdani`.
 
-El sistema debe transformar el estado base y la persistencia en una clasificación lingüística de riesgo mediante un sistema de inferencia Mamdani.
+### RF-11. Ajuste contextual
 
-### RF-10. Alertamiento
+El sistema debe permitir modulación adicional del riesgo cuando existan variables contextuales disponibles.
 
-El sistema debe emitir una alerta textual interpretable que incluya:
+### RF-12. Alertamiento
 
-- nivel de riesgo,
-- contaminante dominante,
-- AQI global,
-- cobertura del dato,
+El sistema debe emitir una alerta interpretable que incluya:
+
+- AQI global;
+- contaminante dominante;
+- riesgo final;
+- cobertura;
 - reglas activadas.
 
-### RF-11. Trazabilidad
+### RF-13. Trazabilidad
 
-El sistema debe conservar en la salida el origen de los datos, la estación consultada, la ventana temporal y los parámetros utilizados.
+El sistema debe conservar fuente, estación, ventana temporal, parámetros procesados y decisiones intermedias.
 
-### RF-12. Salida estructurada
+### RF-14. Salida estructurada
 
-El sistema debe generar una salida estructurada en formato JSON apta para ser consumida más adelante por una interfaz web o por otros módulos.
+El sistema debe producir salida JSON consumible por API y frontend.
 
-## 4. Requerimientos funcionales previstos para una capa web posterior
+### RF-15. API HTTP
 
-Estos requerimientos no forman parte del primer corte implementado. Se documentan para mantener continuidad con la evolución prevista del artefacto.
+El sistema debe exponer endpoints de salud, metadatos, evaluación, escenarios, ubicaciones, sensores e histórico.
 
-### RFW-01. Dashboard operativo
+### RF-16. Interfaz web
 
-El sistema deberá ofrecer un tablero con visualización del estado de calidad del aire, riesgo difuso, contaminante dominante, cobertura del dato y alerta activa.
+El sistema debe ofrecer una interfaz para:
 
-### RFW-02. Consulta histórica
+- configurar corridas;
+- seleccionar escenarios;
+- visualizar resultados;
+- revisar explicabilidad;
+- consultar histórico local.
 
-El sistema deberá permitir consulta de ejecuciones previas, con filtros por estación, fecha y nivel de riesgo.
+## 4. Requerimientos funcionales aún abiertos
 
-### RFW-03. Perfil de usuario
+### RFA-01. Persistencia robusta
 
-El sistema deberá permitir que cada usuario consulte sus preferencias de visualización, estaciones de interés y configuraciones personales de seguimiento.
+El sistema debería migrar el histórico local a una base de datos consultable.
 
-### RFW-04. Roles de acceso
+### RFA-02. Gestión de acceso
 
-El sistema deberá distinguir al menos entre usuario general y administrador.
+El sistema podría incorporar autenticación y distinción de perfiles si el alcance del TFM lo exige.
 
-### RFW-05. Administración
+### RFA-03. Administración
 
-El sistema deberá permitir a un administrador gestionar fuentes habilitadas, estaciones monitoreadas, parámetros de ejecución y registros de funcionamiento del módulo.
+La administración de fuentes, estaciones, parámetros de ejecución y registros queda abierta para una etapa posterior.
 
-### RFW-06. Exposición por API
+### RFA-04. Exposición pública controlada
 
-El sistema deberá exponer la salida del módulo mediante una API para consumo por interfaz web y servicios externos.
+La publicación de la aplicación en entorno accesible externamente sigue pendiente.
 
 ## 5. Requerimientos no funcionales
 
 ### RNF-01. Reproducibilidad
 
-La ejecución con la misma entrada y la misma configuración debe producir la misma salida.
+La misma entrada y la misma configuración deben producir la misma salida.
 
 ### RNF-02. Trazabilidad
 
-Cada resultado debe poder asociarse a fuente, estación, ventana temporal, cobertura y reglas activadas.
+Cada corrida debe poder auditarse por fuente, ventana, cobertura y reglas activadas.
 
 ### RNF-03. Modularidad
 
-La implementación debe separar ingesta, normalización, AQI, inferencia difusa, alertamiento e interfaz de ejecución.
+El sistema debe mantener separación entre dominio, procesamiento, inferencia, API y presentación.
 
 ### RNF-04. Auditabilidad
 
-Las reglas difusas, las funciones de pertenencia y el criterio de cálculo del AQI deben estar definidos en código de forma explícita.
+Las reglas difusas y el criterio AQI deben ser explícitos e inspeccionables.
 
 ### RNF-05. Portabilidad
 
-El prototipo debe ejecutarse en entorno local y en contenedor Docker sin depender de servicios externos distintos de OpenAQ.
+El prototipo debe poder ejecutarse localmente y mediante Docker.
 
 ### RNF-06. Extensibilidad
 
-La estructura del código debe permitir incorporar nuevos contaminantes, nuevas fuentes y una futura interfaz web sin rehacer el núcleo del módulo.
+La estructura debe permitir evolución posterior hacia persistencia robusta, validación ampliada y gestión web más completa.
 
-### RNF-07. Separación entre núcleo y presentación
-
-La futura interfaz web no debe alterar la lógica del cálculo AQI, la inferencia difusa ni la trazabilidad del pipeline.
-
-## 6. Entradas y salidas
-
-## Entradas mínimas
+## 6. Entradas mínimas
 
 - `mode`
 - `location_id` en modo `openaq`
 - `OPENAQ_API_KEY` en modo `openaq`
-- ventana temporal y número de horas
+- parámetros de ventana y cobertura mínima
 
-## Salidas mínimas
+## 7. Salidas mínimas
 
-- identificador de estación
-- contaminantes disponibles
+- estación consultada
+- parámetros disponibles
 - cobertura global
 - subíndices AQI
 - AQI global
 - contaminante dominante
 - persistencia
-- riesgo difuso
+- concurrencia
+- riesgo final
 - alerta textual
 - reglas activadas
 
-## 7. Estado actual frente a la hoja de desarrollo
+## 8. Estado de implementación
 
-### Implementado en el primer corte
+### Implementado
 
-- levantamiento de requerimientos;
-- definición de arquitectura de software;
-- estructura del proyecto;
-- implementación inicial del pipeline en Python;
-- dockerización básica;
-- prueba de humo del módulo.
+- requerimientos base del módulo;
+- arquitectura software;
+- núcleo Python;
+- API HTTP;
+- interfaz web;
+- dockerización;
+- histórico local;
+- escenarios controlados;
+- pruebas de humo.
 
-### Pendiente para la siguiente etapa
+### Pendiente
 
-- integración real y validación con OpenAQ;
-- almacenamiento persistente de ejecuciones;
-- API de servicio;
-- dashboard, perfil, roles y administración.
+- persistencia robusta;
+- pruebas de API;
+- pruebas del frontend;
+- pruebas E2E;
+- capturas integradas en la memoria;
+- roles y administración, si se decidiera ampliar alcance.
 
-## 8. Criterios de validación del primer corte
+## 9. Criterios de validación actuales
 
-- El pipeline debe ejecutarse completo en modo `mock`.
-- El módulo debe fallar de forma controlada cuando falte `OPENAQ_API_KEY`.
-- La salida debe conservar trazabilidad suficiente para auditoría manual.
-- Las reglas activadas deben ser visibles en el resultado.
-- El cálculo AQI debe ser verificable para casos simples de contaminantes criterio con distinta ventana regulatoria.
+- el pipeline debe ejecutarse completo en `mock`;
+- el módulo debe fallar de forma controlada cuando falte `OPENAQ_API_KEY`;
+- la salida debe mantener trazabilidad suficiente para inspección manual;
+- las reglas activadas deben ser visibles;
+- el cálculo AQI debe ser verificable para contaminantes soportados;
+- la web debe consumir correctamente la API del prototipo.
+

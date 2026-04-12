@@ -1,76 +1,91 @@
-# Arquitectura inicial
+# Arquitectura del prototipo
 
 ## 1. Vista funcional
 
-El prototipo se organiza en cinco bloques funcionales:
+El prototipo se organiza en cinco capas funcionales:
 
-1. Ingesta de datos.
-2. Normalización y control de calidad.
-3. Consolidación determinista del estado base.
-4. Evaluación difusa del riesgo.
-5. Generación de alerta y exposición por CLI.
+1. adquisición y preparación de datos;
+2. evaluación AQI base;
+3. derivación de variables auxiliares;
+4. inferencia difusa y ajuste contextual;
+5. emisión de resultados y exposición por API/web.
+
+Esta estructura coincide con la lógica explicada en la memoria y con la instrumentación real del sistema.
 
 ## 2. Vista de software
 
 El paquete `aqrisk` queda organizado así:
 
-- `domain`: modelos de datos y tipos base.
-- `ingestion`: acceso a OpenAQ y construcción de series.
-- `processing`: normalización, cobertura y persistencia.
-- `aqi`: cálculo determinista del AQI.
-- `fuzzy`: funciones de pertenencia, reglas y motor Mamdani.
-- `alerting`: composición de la salida interpretable.
-- `application`: orquestación del pipeline.
-- `interfaces`: punto de entrada por línea de comandos.
-- `api`: exposición HTTP mínima del módulo.
+- `domain`: modelos de datos y tipos base;
+- `ingestion`: acceso a OpenAQ y construcción de series;
+- `processing`: normalización, cobertura, persistencia, concurrencia y contexto;
+- `aqi`: cálculo determinista del AQI;
+- `fuzzy`: membresías, reglas y motor Mamdani;
+- `alerting`: composición de la salida interpretable;
+- `application`: orquestación del pipeline y escenarios;
+- `api`: backend HTTP;
+- `storage`: histórico local;
+- `interfaces`: CLI.
 
-La capa web ya se plantea como un consumidor externo del backend HTTP. Esta decisión evita acoplar la interfaz con el núcleo de cálculo y prepara la evolución hacia dashboard, evaluación y explicabilidad sin reescribir el dominio.
+La web consume la API como cliente separado y no altera el núcleo del razonamiento.
 
-## 3. Decisiones de diseño
+## 3. Vista de despliegue
 
-### 3.1 Arquitectura modular antes que microservicios
+El despliegue actual usa dos servicios:
 
-El primer corte se implementa como una aplicación modular monoproceso. Esta decisión reduce complejidad accidental y facilita depuración, trazabilidad y validación. La separación por paquetes deja preparada una migración posterior a servicios independientes si el trabajo lo requiere.
+- `aqrisk-api`
+- `aqrisk-frontend`
 
-### 3.2 Dominio explícito
+Ambos se levantan desde `docker-compose.yml`. La persistencia actual del histórico se resuelve con almacenamiento local montado en volumen.
 
-Las entidades principales del módulo se representan con `dataclasses` para conservar claridad estructural y minimizar dependencias externas.
+## 4. Decisiones de diseño
 
-### 3.3 AQI con ventanas regulatorias
+### 4.1 Arquitectura modular monoproceso
 
-El cálculo AQI implementa ventanas diferenciadas para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2`. La concentración representativa de cada contaminante se obtiene desde series horarias y no desde el último valor aislado.
+El backend se implementa como una aplicación modular monoproceso. Esta decisión reduce complejidad accidental y facilita depuración, validación y trazabilidad.
 
-### 3.4 Inferencia Mamdani auditable
+### 4.2 Separación entre núcleo, API y frontend
 
-El motor difuso se implementa con reglas y funciones de pertenencia declaradas en código. Se evita depender de una librería externa para que cada etapa del razonamiento pueda inspeccionarse directamente.
+La lógica de dominio permanece en el núcleo Python. La API expone servicios de evaluación y consulta. El frontend se limita a control, visualización y explicabilidad.
 
-La descripción textual de la base de reglas se documenta en `docs/rule_base.md`. La justificación ampliada de las decisiones se documenta en `docs/design_decisions.md`.
+### 4.3 AQI con base normativa explícita
 
-### 3.5 Salida preparada para futura API
+El cálculo AQI sigue `EPA/AQS` y usa ventanas regulatorias diferenciadas por contaminante.
 
-La salida final del pipeline se serializa como JSON. Esta decisión facilita exponer el módulo más adelante mediante API web o servicio contenedorizado.
+### 4.4 Inferencia difusa auditable
 
-### 3.6 Control web desacoplado
+La lógica Mamdani se implementa con reglas y funciones de pertenencia declaradas en código, sin depender de una librería de caja negra.
 
-La integración web se resuelve mediante dos piezas separadas:
+### 4.5 Ajuste contextual desacoplado
 
-- un backend HTTP ligero que expone evaluación y metadatos del modelo;
-- un frontend Vue/Vite que actúa como controlador visual del artefacto.
+La modulación contextual no recalcula el AQI. Opera sobre el riesgo derivado y mantiene separación entre capa normativa y capa interpretativa.
 
-Esta separación conserva trazabilidad técnica y permite que el frontend se concentre en control de entrada, explicabilidad y visualización.
+### 4.6 Histórico local como solución transitoria
 
-### 3.7 Gestión web diferida
+El histórico actual permite inspección y comparación de corridas, pero no reemplaza una persistencia robusta.
 
-Las funciones de dashboard, perfil, roles y administración quedan fuera del primer corte. Se consideran una segunda etapa, posterior a la validación del núcleo del módulo.
+### 4.7 Gestión de acceso diferida
 
-## 4. Flujo del pipeline
+Perfiles, roles y administración no forman parte del alcance actual del TFM.
+
+## 5. Flujo de ejecución
 
 1. Resolver configuración.
-2. Obtener sensores de una estación.
-3. Recuperar horas recientes por sensor.
-4. Normalizar datos y calcular cobertura.
-5. Construir snapshot por parámetro.
-6. Calcular concentraciones representativas por ventana regulatoria, subíndices AQI y AQI global.
-7. Calcular persistencia.
-8. Ejecutar reglas Mamdani.
-9. Generar alerta y salida JSON.
+2. Seleccionar modo, estación y parámetros de ejecución.
+3. Recuperar sensores y observaciones.
+4. Estandarizar series y calcular cobertura.
+5. Obtener concentraciones representativas.
+6. Calcular subíndices AQI y AQI global.
+7. Derivar persistencia y concurrencia.
+8. Ejecutar inferencia Mamdani.
+9. Aplicar ajuste contextual si existe contexto disponible.
+10. Construir alerta, salida JSON e histórico local.
+11. Exponer resultados por API y frontend.
+
+## 6. Vacíos arquitectónicos aún abiertos
+
+- falta persistencia robusta;
+- faltan pruebas de API, frontend y E2E;
+- falta endurecimiento para exposición pública;
+- falta autenticación si se ampliara el alcance.
+

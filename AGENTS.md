@@ -40,17 +40,16 @@ Este archivo permite que otro agente retome el trabajo del TFM sin perder contex
 - La web actual es parte del prototipo, pero no una plataforma productiva completa.
 
 ## Qué haría yo ahora
-1. Corregir `README.md`, `requirements.md` y `architecture.md`.
-2. Meter capturas reales del frontend en la memoria.
-3. Instalar o preparar `Playwright MCP`.
-4. Si el alcance aguanta, mover histórico local a `SQLite/PostgreSQL`.
-5. Dejar roles/admin fuera del TFM salvo que el tutor lo exija.
+1. Meter capturas reales del frontend en la memoria.
+2. Instalar o preparar `Playwright MCP`.
+3. Si el alcance aguanta, mover histórico local a `SQLite/PostgreSQL`.
+4. Dejar roles/admin fuera del TFM salvo que el tutor lo exija.
 
 ## Prioridad de trabajo recomendada
 ### Alta
-- Alinear documentación de `Propuesta/` con lo realmente implementado.
 - Insertar evidencia visual real del frontend en `Informe/`.
 - Cerrar ajustes pendientes del PDF según comentarios del tutor.
+- Revisar que `README.md`, `requirements.md` y `architecture.md` se mantengan alineados con nuevos cambios.
 
 ### Media
 - Mejorar la evidencia de validación en `Informe/secciones/02_cuerpo/05_desarrollo.tex`.
@@ -63,8 +62,7 @@ Este archivo permite que otro agente retome el trabajo del TFM sin perder contex
 - Exposición pública del sistema.
 
 ## Riesgos de consistencia
-- `Propuesta/README.md` todavía puede quedar desalineado con el estado real de la web.
-- `Propuesta/docs/requirements.md` y `Propuesta/docs/architecture.md` quedaron atrasados frente a lo implementado.
+- `Propuesta/README.md`, `Propuesta/docs/requirements.md` y `Propuesta/docs/architecture.md` ya fueron alineados, pero deben mantenerse actualizados si cambia el alcance.
 - La memoria ya afirma que existe interfaz web; si no se añaden capturas, el soporte probatorio queda débil.
 - El nivel de validación redactado puede ser más fuerte que la evidencia automatizada disponible.
 
@@ -83,4 +81,3 @@ Este archivo permite que otro agente retome el trabajo del TFM sin perder contex
 - El stack de la propuesta se levanta con Docker.
 - Hay cambios locales no committeados en `Informe/` y una figura nueva en drawio:
   - `Informe/assets/figuras/propuesta/fig02_pipeline_prototipo.drawio`
-

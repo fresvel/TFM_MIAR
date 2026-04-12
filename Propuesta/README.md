@@ -1,36 +1,53 @@
 # Propuesta técnica
 
-Primer corte ejecutable del módulo de monitoreo de calidad del aire planteado en el TFM.
+Implementación actual del prototipo del TFM para monitoreo de calidad del aire con base normativa AQI, inferencia difusa y salida trazable.
 
-## Alcance del primer corte
+## Estado actual
 
-- Ingesta de datos desde OpenAQ v3 por `location_id` y sensores asociados.
-- Consulta horaria por sensor para construir una ventana regulatoria de análisis.
-- Control básico de calidad del dato mediante cobertura reportada por OpenAQ.
-- Cálculo determinista de AQI para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2`.
-- Evaluación de riesgo mediante un sistema difuso tipo Mamdani.
-- Generación de alerta interpretable y trazable.
-- Ejecución local en Python o mediante Docker.
+El prototipo ya implementa:
 
-Este corte no implementa todavía interfaz web ni microservicios independientes. La estructura del código deja separadas las responsabilidades para permitir esa evolución después.
+- ingesta de datos reales desde `OpenAQ v3` por `location_id`;
+- recuperación de series horarias por sensor;
+- normalización temporal y control de cobertura;
+- cálculo AQI para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2` con criterio `EPA/AQS`;
+- derivación de variables auxiliares;
+- inferencia difusa `Mamdani`;
+- ajuste contextual;
+- emisión de alerta y respuesta JSON trazable;
+- API HTTP para evaluación y consulta;
+- interfaz web para control, explicabilidad, escenarios e histórico local;
+- despliegue con Docker Compose.
 
-La capa determinista del AQI sigue la tabla vigente de `AQI breakpoints` de `EPA/AQS`:
+Lo que sigue fuera del alcance actual:
+
+- autenticación;
+- perfiles;
+- roles;
+- administración;
+- persistencia robusta en base de datos;
+- exposición pública endurecida.
+
+## Referencia normativa
+
+La capa determinista sigue la tabla vigente de `AQI breakpoints` de `EPA/AQS`:
 
 - <https://aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html>
 
-## Estructura
+## Estructura del proyecto
 
-- `docs/requirements.md`: levantamiento de requerimientos.
-- `docs/architecture.md`: arquitectura inicial del prototipo.
-- `docs/rule_base.md`: base de reglas y malla difusa.
-- `docs/design_decisions.md`: justificación de decisiones de diseño.
+- `docs/requirements.md`: requerimientos actualizados del prototipo.
+- `docs/architecture.md`: arquitectura funcional, software y despliegue.
+- `docs/rule_base.md`: base de reglas principal y capa contextual.
+- `docs/design_decisions.md`: decisiones de diseño y justificación.
+- `docs/api_contract.md`: contrato HTTP.
 - `docs/integration_checklist.md`: checklist de integración web.
-- `docs/api_contract.md`: contrato HTTP inicial.
-- `src/aqrisk`: código fuente del módulo.
-- `tests`: pruebas de humo del pipeline.
-- `frontend`: interfaz web inicial para control y explicabilidad.
+- `docs/ui_capture_plan.md`: plan de capturas para la memoria.
+- `src/aqrisk/`: núcleo backend.
+- `frontend/`: interfaz web Vue/Vite.
+- `tests/`: pruebas actuales.
+- `scripts/start-services.sh`: arranque del stack dockerizado.
 
-## Ejecución local
+## Ejecución local del núcleo
 
 ```bash
 cd Propuesta
@@ -38,37 +55,46 @@ python3 -m pip install -e .
 aqrisk --mode mock --pretty
 ```
 
-Para usar OpenAQ:
+Para consultar OpenAQ:
 
 ```bash
 cd Propuesta
-aqrisk --mode openaq --location-id 2178 --pretty
+aqrisk --mode openaq --location-id 3175328 --pretty
 ```
 
-El comando carga `Propuesta/.env` automáticamente si existe.
+La configuración se carga desde `Propuesta/.env` si existe.
 
 ## API HTTP
 
 ```bash
 cd Propuesta
 python3 -m pip install -e .
-aqrisk-api --host 0.0.0.0 --port 8010
+aqrisk-api --host 0.0.0.0 --port 18010
 ```
 
-Endpoints iniciales:
+Endpoints actuales:
 
 - `GET /health`
 - `GET /api/v1/metadata`
+- `GET /api/v1/locations`
+- `GET /api/v1/locations/{id}/sensors`
+- `GET /api/v1/history`
+- `GET /api/v1/scenarios`
 - `POST /api/v1/evaluate`
 
-## Pruebas
-
-```bash
-cd Propuesta
-PYTHONPATH=src python3 -m unittest discover -s tests -v
-```
-
 ## Frontend
+
+La interfaz web ya forma parte del prototipo. Permite:
+
+- configurar corridas;
+- seleccionar estación y escenario;
+- visualizar subíndices, AQI, riesgo y alerta;
+- inspeccionar trazabilidad;
+- revisar reglas activadas;
+- ver gráficas de explicabilidad;
+- consultar histórico local.
+
+Desarrollo local:
 
 ```bash
 cd Propuesta/frontend
@@ -76,34 +102,45 @@ npm install
 npm run dev
 ```
 
-La interfaz espera por defecto la API en `http://localhost:18010`. Puede cambiarse con `VITE_API_BASE_URL`.
+La API por defecto esperada es `http://localhost:18010`.
 
 ## Docker
+
+Arranque directo:
 
 ```bash
 cd Propuesta
 docker compose up --build
 ```
 
-Tambien puedes usar el script de arranque:
+O mediante script:
 
 ```bash
 cd Propuesta
 bash scripts/start-services.sh --build
 ```
 
-Opciones disponibles:
-
-- `--up`: levanta servicios sin reconstruir imagenes.
-- `--build`: reconstruye imagenes y luego levanta servicios.
-- `--no-cache`: reconstruye sin cache y luego levanta servicios.
-
-Puertos por defecto en contenedores:
+Puertos por defecto:
 
 - API: `18010`
 - Frontend: `18080`
 
-Estos puertos se controlan con:
+Variables asociadas:
 
 - `AQRISK_API_PORT`
 - `AQRISK_FRONTEND_PORT`
+
+## Pruebas
+
+Pruebas actuales:
+
+```bash
+cd Propuesta
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+```
+
+Cobertura actual:
+
+- pruebas de humo del pipeline;
+- falta ampliar pruebas de API, frontend y extremo a extremo.
+
