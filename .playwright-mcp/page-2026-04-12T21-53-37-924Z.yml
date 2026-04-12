@@ -1,0 +1,98 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - heading "AQRisk Console" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Control web del módulo de monitoreo, evaluación difusa y explicabilidad del artefacto.
+    - generic [ref=e8]:
+      - button "Dashboard" [ref=e9] [cursor=pointer]
+      - button "Trazabilidad" [ref=e10] [cursor=pointer]
+      - button "Explicabilidad" [ref=e11] [cursor=pointer]
+      - button "Evaluación" [ref=e12] [cursor=pointer]
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Panel de control y explicabilidad" [level=2] [ref=e16]
+        - paragraph [ref=e17]: Esta interfaz actúa como controlador entre la selección de entrada, el consumo del backend AQRisk y la visualización del resultado. La salida se organiza por capas para exponer el estado normativo, las variables auxiliares, la inferencia difusa y el ajuste contextual.
+      - generic [ref=e18]:
+        - strong [ref=e19]: Estado del backend
+        - paragraph [ref=e20]: Servicio disponible.
+        - text: "API: http://localhost:18010"
+        - generic [ref=e21]:
+          - button "Cómo leer esta vista" [ref=e22] [cursor=pointer]
+          - button "Interpretar esta corrida" [ref=e92] [cursor=pointer]
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - heading "Control de entrada" [level=3] [ref=e25]
+        - paragraph [ref=e26]: Selecciona el modo de ejecución y los parámetros mínimos de la consulta. Este formulario dispara la evaluación del artefacto.
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: Modo
+            - combobox "Modo" [ref=e30]:
+              - option "mock" [selected]
+              - option "openaq"
+          - generic [ref=e31]:
+            - generic [ref=e32]: Escenario de evaluación
+            - combobox "Escenario de evaluación" [ref=e33]:
+              - option "Urban Escalation" [selected]
+              - option "Particulate Pressure"
+              - option "Moderate Multi-Contaminant"
+          - generic [ref=e34]:
+            - generic [ref=e35]: Location ID
+            - spinbutton "Location ID" [ref=e36]: "2178"
+          - generic [ref=e37]:
+            - generic [ref=e38]: Ventana temporal (horas)
+            - spinbutton "Ventana temporal (horas)" [ref=e39]: "24"
+          - generic [ref=e40]:
+            - generic [ref=e41]: Cobertura mínima (%)
+            - spinbutton "Cobertura mínima (%)" [ref=e42]: "80"
+          - button "Ejecutar evaluación" [ref=e43] [cursor=pointer]
+          - button "Actualizar ubicaciones" [ref=e44] [cursor=pointer]
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - heading "Resumen de la corrida actual" [level=3] [ref=e47]
+          - paragraph [ref=e48]: Síntesis del episodio analizado para lectura rápida y captura documental.
+          - generic [ref=e49]:
+            - article [ref=e50]:
+              - generic [ref=e51]: Fuente
+              - strong [ref=e52]: Escenario controlado
+            - article [ref=e53]:
+              - generic [ref=e54]: Entrada
+              - strong [ref=e55]: Urban Escalation
+            - article [ref=e56]:
+              - generic [ref=e57]: Dominante
+              - strong [ref=e58]: o3
+            - article [ref=e59]:
+              - generic [ref=e60]: Reglas activadas
+              - strong [ref=e61]: "1"
+            - article [ref=e62]:
+              - generic [ref=e63]: Ajuste contextual
+              - strong [ref=e64]: 1 ajuste(s)
+            - article [ref=e65]:
+              - generic [ref=e66]: Histórico local
+              - strong [ref=e67]: "25"
+        - generic [ref=e68]:
+          - heading "Base del modelo" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Metadatos del backend expuestos para el frontend.
+          - generic [ref=e71]:
+            - generic [ref=e72]: consolidacion_normativa
+            - generic [ref=e73]: variables_auxiliares
+            - generic [ref=e74]: inferencia_difusa_principal
+            - generic [ref=e75]: ajuste_contextual
+            - generic [ref=e76]: alertamiento_salida
+          - paragraph [ref=e77]: "Base normativa: EPA/AQS AQI Breakpoints. Reglas principales: 54. Reglas contextuales: 9."
+        - generic [ref=e78]:
+          - article [ref=e79]:
+            - generic [ref=e80]: AQI global
+            - strong [ref=e81]: "112"
+          - article [ref=e82]:
+            - generic [ref=e83]: Categoría base
+            - strong [ref=e84]: unhealthy_sensitive_groups
+          - article [ref=e85]:
+            - generic [ref=e86]: Riesgo final
+            - strong [ref=e87]: unhealthy
+          - article [ref=e88]:
+            - generic [ref=e89]: Cobertura global
+            - strong [ref=e90]: "100"
+    - generic [ref=e93]:
+      - heading "Exploración detallada" [level=3] [ref=e94]
+      - paragraph [ref=e95]: Usa el menú lateral para abrir cada vista en un modal. El visor muestra una sección a la vez y permite cambiar entre ellas sin perder la corrida actual.

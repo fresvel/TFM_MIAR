@@ -1,6 +1,11 @@
 <template>
   <section class="panel">
-    <h3>{{ title }}</h3>
+    <div class="chart-panel-head">
+      <h3>{{ title }}</h3>
+      <button class="secondary chart-download" type="button" @click="downloadChart">
+        Descargar PNG
+      </button>
+    </div>
     <p v-if="caption" class="caption">{{ caption }}</p>
     <div class="chart-wrap">
       <canvas ref="canvasRef"></canvas>
@@ -36,6 +41,26 @@ const props = defineProps({
 const canvasRef = ref(null);
 let chartInstance = null;
 
+function buildFilename() {
+  return `${props.title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "chart"}.png`;
+}
+
+function downloadChart() {
+  if (!chartInstance) {
+    return;
+  }
+  const url = chartInstance.toBase64Image("image/png", 1);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = buildFilename();
+  link.click();
+}
+
 function renderChart() {
   if (!canvasRef.value) {
     return;
@@ -65,3 +90,16 @@ onBeforeUnmount(() => {
   }
 });
 </script>
+
+<style scoped>
+.chart-panel-head {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.chart-download {
+  flex-shrink: 0;
+}
+</style>

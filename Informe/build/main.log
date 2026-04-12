@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  12 APR 2026 17:54
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  12 APR 2026 22:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1102,7 +1102,11 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 [2] (./secciones/01_preliminares/03_indice_figuras.tex (build/main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[3])
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
@@ -1110,7 +1114,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[3] (./secciones/01_preliminares/04_indice_tablas.tex (build/main.lot
+[4] (./secciones/01_preliminares/04_indice_tablas.tex (build/main.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -1121,35 +1125,31 @@ LaTeX Info: Redefining \% on input line 1.
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[4]) (./secciones/02_cuerpo/00_main.tex (./secciones/02_cuerpo/01_resumen.tex
+[5]) (./secciones/02_cuerpo/00_main.tex (./secciones/02_cuerpo/01_resumen.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[5])
+[6])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[6] (./secciones/02_cuerpo/02_introduccion.tex
+[7] (./secciones/02_cuerpo/02_introduccion.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[7]
+[8]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[8])
+[9])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[9] (./secciones/02_cuerpo/03_objetivos.tex)
+[10] (./secciones/02_cuerpo/03_objetivos.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[10] (./secciones/02_cuerpo/04_estado_del_arte.tex
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[11]
+[11] (./secciones/02_cuerpo/04_estado_del_arte.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -1158,6 +1158,10 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [13]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[14]
 (./assets/tablas/02_cuerpo/04_estado_del_arte/antecedentes_comparables_tfm.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 18.
@@ -1172,7 +1176,7 @@ Overfull \hbox (2.19228pt too wide) in paragraph at lines 18--18
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[14]
+[15]
 Overfull \hbox (2.19228pt too wide) in paragraph at lines 18--18
 [][][][]\TU/Arial(0)/m/n/9 Istiqomah 
  []
@@ -1181,11 +1185,7 @@ Overfull \hbox (2.19228pt too wide) in paragraph at lines 18--18
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[15])
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[16]
+[16])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -1202,6 +1202,10 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [20]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[21]
 File: assets/figuras/d2/fig07_comparativo_familias_fis.png Graphic file (type b
 mp)
 <assets/figuras/d2/fig07_comparativo_familias_fis.png>
@@ -1211,11 +1215,11 @@ File: assets/figuras/d2/fig10_flujo_fis.png Graphic file (type bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[21]
+[22]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[22]
+[23]
 File: assets/figuras/d2/fig08a_conjuntos_borrosos.png Graphic file (type bmp)
 <assets/figuras/d2/fig08a_conjuntos_borrosos.png>
 File: assets/figuras/d2/fig08b_numero_borroso_alpha.png Graphic file (type bmp)
@@ -1228,16 +1232,12 @@ bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[23]
+[24]
 File: assets/figuras/d2/fig11a_anfis_capas.png Graphic file (type bmp)
 <assets/figuras/d2/fig11a_anfis_capas.png>
 File: assets/figuras/d2/fig11b_anfis_superficie.png Graphic file (type bmp)
 <assets/figuras/d2/fig11b_anfis_superficie.png>
 
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[24]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -1254,6 +1254,10 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [28]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[29]
 (./assets/tablas/02_cuerpo/04_estado_del_arte/datasets_publicos_sintesis.tex
 Overfull \hbox (0.86949pt too wide) in paragraph at lines 16--16
 []\TU/Arial(0)/m/n/9 Plataforma 
@@ -1328,7 +1332,7 @@ Overfull \hbox (0.82556pt too wide) in paragraph at lines 16--16
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[29]
+[30]
 Overfull \hbox (2.8734pt too wide) in paragraph at lines 16--16
 []\TU/Arial(0)/m/n/9 Repositorio 
  []
@@ -1352,19 +1356,15 @@ Overfull \hbox (3.37877pt too wide) in paragraph at lines 16--16
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[30])
+[31])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[31]
+[32]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[32] (./secciones/02_cuerpo/05_desarrollo.tex
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[33]
+[33] (./secciones/02_cuerpo/05_desarrollo.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -1372,7 +1372,11 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[35] (./assets/tablas/02_cuerpo/05_desarrollo/pico_air_quality.tex
+[35]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[36] (./assets/tablas/02_cuerpo/05_desarrollo/pico_air_quality.tex
 Overfull \hbox (2.6132pt too wide) in paragraph at lines 22--22
 []\TU/Arial(0)/b/n/9 Compo-
  []
@@ -1383,10 +1387,6 @@ Overfull \hbox (2.6132pt too wide) in paragraph at lines 22--22
  []
 
 )
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[36]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -1403,20 +1403,24 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [40]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[41]
 File: assets/figuras/metodología/roadmap_tfm.png Graphic file (type bmp)
 <assets/figuras/metodología/roadmap_tfm.png>
 
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[41]
+[42]
 File: assets/figuras/propuesta/fig01_capas_modulo.png Graphic file (type bmp)
 <assets/figuras/propuesta/fig01_capas_modulo.png>
 
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[42]
+[43]
 File: assets/figuras/propuesta/fig02_pipeline_prototipo.png Graphic file (type 
 bmp)
 <assets/figuras/propuesta/fig02_pipeline_prototipo.png>
@@ -1424,11 +1428,11 @@ bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[43]
+[44]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[44]
+[45]
 File: assets/figuras/propuesta/fig03_estructura_decision.png Graphic file (type
  bmp)
 <assets/figuras/propuesta/fig03_estructura_decision.png>
@@ -1436,32 +1440,103 @@ File: assets/figuras/propuesta/fig03_estructura_decision.png Graphic file (type
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[45] (./assets/tablas/02_cuerpo/05_desarrollo/reglas_principales_resumen.tex)
+[46] (./assets/tablas/02_cuerpo/05_desarrollo/reglas_principales_resumen.tex)
 (./assets/tablas/02_cuerpo/05_desarrollo/reglas_contextuales.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[46])
+[47])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[47] (./assets/tablas/02_cuerpo/05_desarrollo/validacion_prototipo_actual.tex)
+[48] (./assets/tablas/02_cuerpo/05_desarrollo/validacion_prototipo_actual.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[48])
+[49]
+File: assets/figuras/propuesta/ui_dashboard_mock_controlled.png Graphic file (t
+ype bmp)
+<assets/figuras/propuesta/ui_dashboard_mock_controlled.png>
 
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[49] (./secciones/02_cuerpo/06_conclusiones.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
 [50]
+File: assets/figuras/propuesta/ui_traceability_santiago_real.png Graphic file (
+type bmp)
+<assets/figuras/propuesta/ui_traceability_santiago_real.png>
+
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[51]) (./secciones/03_finales/00_main.tex
+[51]
+File: assets/figuras/propuesta/ui_traceability_mock_controlled.png Graphic file
+ (type bmp)
+<assets/figuras/propuesta/ui_traceability_mock_controlled.png>
+
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[52]
+File: assets/figuras/propuesta/ui_explainability_rules_mexico_real.png Graphic 
+file (type bmp)
+<assets/figuras/propuesta/ui_explainability_rules_mexico_real.png>
+File: assets/figuras/propuesta/ui_explainability_aggregation_mexico_real.png Gr
+aphic file (type bmp)
+<assets/figuras/propuesta/ui_explainability_aggregation_mexico_real.png>
+File: assets/figuras/propuesta/ui_explainability_aggregation_mock_controlled.pn
+g Graphic file (type bmp)
+<assets/figuras/propuesta/ui_explainability_aggregation_mock_controlled.png>
+
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[53]
+File: assets/figuras/propuesta/ui_explainability_membership_aqi_santiago_real.p
+ng Graphic file (type bmp)
+<assets/figuras/propuesta/ui_explainability_membership_aqi_santiago_real.png>
+File: assets/figuras/propuesta/ui_explainability_membership_concurrence_santiag
+o_real.png Graphic file (type bmp)
+<assets/figuras/propuesta/ui_explainability_membership_concurrence_santiago_rea
+l.png>
+File: assets/figuras/propuesta/ui_explainability_membership_persistence_lima_re
+al.png Graphic file (type bmp)
+<assets/figuras/propuesta/ui_explainability_membership_persistence_lima_real.pn
+g>
+
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[54]
+File: assets/figuras/propuesta/ui_evaluation_context_lima_real.png Graphic file
+ (type bmp)
+<assets/figuras/propuesta/ui_evaluation_context_lima_real.png>
+File: assets/figuras/propuesta/ui_evaluation_context_mock_controlled.png Graphi
+c file (type bmp)
+<assets/figuras/propuesta/ui_evaluation_context_mock_controlled.png>
+File: assets/figuras/propuesta/ui_evaluation_history_lima_real.png Graphic file
+ (type bmp)
+<assets/figuras/propuesta/ui_evaluation_history_lima_real.png>
+File: assets/figuras/propuesta/ui_evaluation_history_mock_controlled.png Graphi
+c file (type bmp)
+<assets/figuras/propuesta/ui_evaluation_history_mock_controlled.png>
+
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[55])
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[56] (./secciones/02_cuerpo/06_conclusiones.tex
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[57])
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[58]) (./secciones/03_finales/00_main.tex
 (./secciones/03_finales/01_referencias.tex (build/main.bbl
 Underfull \hbox (badness 3590) in paragraph at lines 46--69
 []\TU/Arial(0)/m/n/10.95 Behal, V., y Singh, R. K.  (2021).  Personalised healt
@@ -1568,7 +1643,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--268
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[52]
+[59]
 Underfull \hbox (badness 1603) in paragraph at lines 313--338
 []\TU/Arial(0)/m/n/10.95 Istiqomah, N., Yuliana, M., y Santoso, T. B.  (2021). 
  Implementation of fuzzy
@@ -1612,7 +1687,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 446--472
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[53]
+[60]
 Underfull \hbox (badness 10000) in paragraph at lines 624--648
 [][][][][][] [] [][][][] [] [][][][] [] [] [] [][][] [] [][] [] [][][][][][][][
 ][][][][][][][][] [] [][] [] [][][][][] [] [][][][][][][][][][][][][][][][][][]
@@ -1682,7 +1757,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 796--819
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[54]
+[61]
 Underfull \hbox (badness 5519) in paragraph at lines 939--966
 \TU/Arial(0)/m/n/10.95 An intelligent iot fuzzy based approach for automated in
 door air quality
@@ -1711,11 +1786,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 939--966
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[55] (./secciones/03_finales/02_apendice_i.tex)
+[62] (./secciones/03_finales/02_apendice_i.tex)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[56] (./secciones/03_finales/03_anexos_i.tex
+[63] (./secciones/03_finales/03_anexos_i.tex
 (./assets/tablas/03_finales/03_anexos_i/anexo_checklist_calidad.tex
 Underfull \hbox (badness 2359) in paragraph at lines 41--41
 []\TU/Arial(0)/m/n/9 General (Exp, Corr, Q-
@@ -1970,7 +2045,7 @@ Underfull \hbox (badness 2359) in paragraph at lines 41--41
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[57]
+[64]
 Underfull \hbox (badness 2359) in paragraph at lines 41--41
 []\TU/Arial(0)/m/n/9 General (Exp, Corr, Q-
  []
@@ -2129,11 +2204,11 @@ Underfull \hbox (badness 3954) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[58]
+[65]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[59]
+[66]
 Underfull \hbox (badness 5726) in paragraph at lines 65--65
 []\TU/Arial(0)/m/n/9 Hardware y sensores utilizados en implementa-
  []
@@ -2147,7 +2222,7 @@ Underfull \hbox (badness 4353) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[60]
+[67]
 Underfull \hbox (badness 3954) in paragraph at lines 65--65
 []\TU/Arial(0)/m/n/9 Banda de calidad metodológica del estudio (Al-
  []
@@ -2156,37 +2231,37 @@ Underfull \hbox (badness 3954) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[61]
+[68]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[62]
+[69]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[63]
+[70]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[64])
+[71])
 (./assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_metricas_por_unidad_cor
 e_es.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[65]) (./assets/tablas/03_finales/03_anexos_i/anexo_reglas_principales_54.tex
+[72]) (./assets/tablas/03_finales/03_anexos_i/anexo_reglas_principales_54.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[66]
+[73]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[67]
+[74]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[68])))
+[75])))
 
 Package caption Warning: Unused \captionsetup[table] on input line 177.
 See the caption package documentation for explanation.
@@ -2195,7 +2270,7 @@ See the caption package documentation for explanation.
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[69] 
+[76] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -2207,12 +2282,12 @@ L3 programming layer <2025-07-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 38321 strings out of 468457
- 820324 string characters out of 5445913
- 1401032 words of memory out of 5000000
- 66191 multiletter control sequences out of 15000+600000
+ 38491 strings out of 468457
+ 830822 string characters out of 5445913
+ 1405363 words of memory out of 5000000
+ 66348 multiletter control sequences out of 15000+600000
  662931 words of font info for 139 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,11n,121p,1461b,8001s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on build/main.pdf (69 pages).
+Output written on build/main.pdf (76 pages).

@@ -57,6 +57,21 @@ SCENARIOS: dict[str, ScenarioDefinition] = {
             "humidity": [61.0] * 24,
         },
     ),
+    "diffuse_overlap": ScenarioDefinition(
+        scenario_id="diffuse_overlap",
+        name="Diffuse Overlap",
+        description="Escenario diseñado para caer en zonas solapadas de AQI, concurrencia y persistencia, activando varias reglas de la base principal.",
+        values={
+            "pm25": [18.0] * 8 + [24.0] * 8 + [28.0] * 8,
+            "pm10": [35.0] * 8 + [52.0] * 8 + [46.0] * 8,
+            "co": [0.6] * 8 + [0.8] * 8 + [1.1] * 8,
+            "no2": [0.018] * 24,
+            "o3": [0.042] * 8 + [0.068] * 8 + [0.068] * 8,
+            "so2": [0.004] * 24,
+            "temperature": [26.0] * 24,
+            "humidity": [62.0] * 24,
+        },
+    ),
 }
 
 

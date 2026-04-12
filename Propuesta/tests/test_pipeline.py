@@ -50,6 +50,13 @@ class PipelineSmokeTest(unittest.TestCase):
         self.assertEqual(result.snapshot.location_name, "Moderate Multi-Contaminant")
         self.assertIsNotNone(result.aqi.global_aqi)
 
+    def test_diffuse_overlap_activates_multiple_rules(self) -> None:
+        settings = Settings(mode="mock", scenario_id="diffuse_overlap")
+        result = AirQualityRiskPipeline(settings).run()
+
+        self.assertEqual(result.snapshot.location_name, "Diffuse Overlap")
+        self.assertGreaterEqual(len(result.fuzzy.triggered_rules), 4)
+
 
 if __name__ == "__main__":
     unittest.main()

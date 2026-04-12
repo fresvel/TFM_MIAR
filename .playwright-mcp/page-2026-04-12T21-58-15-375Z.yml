@@ -1,0 +1,268 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - heading "AQRisk Console" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Control web del módulo de monitoreo, evaluación difusa y explicabilidad del artefacto.
+    - generic [ref=e8]:
+      - button "Dashboard" [ref=e9] [cursor=pointer]
+      - button "Trazabilidad" [ref=e10] [cursor=pointer]
+      - button "Explicabilidad" [ref=e11] [cursor=pointer]
+      - button "Evaluación" [ref=e12] [cursor=pointer]
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Panel de control y explicabilidad" [level=2] [ref=e16]
+        - paragraph [ref=e17]: Esta interfaz actúa como controlador entre la selección de entrada, el consumo del backend AQRisk y la visualización del resultado. La salida se organiza por capas para exponer el estado normativo, las variables auxiliares, la inferencia difusa y el ajuste contextual.
+      - generic [ref=e18]:
+        - strong [ref=e19]: Estado del backend
+        - paragraph [ref=e20]: Servicio disponible.
+        - text: "API: http://localhost:18010"
+        - generic [ref=e21]:
+          - button "Cómo leer esta vista" [ref=e22] [cursor=pointer]
+          - button "Interpretar esta corrida" [ref=e92] [cursor=pointer]
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - heading "Control de entrada" [level=3] [ref=e25]
+        - paragraph [ref=e26]: Selecciona el modo de ejecución y los parámetros mínimos de la consulta. Este formulario dispara la evaluación del artefacto.
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: Modo
+            - combobox "Modo" [ref=e30]:
+              - option "mock" [selected]
+              - option "openaq"
+          - generic [ref=e31]:
+            - generic [ref=e32]: Escenario de evaluación
+            - combobox "Escenario de evaluación" [ref=e33]:
+              - option "Urban Escalation" [selected]
+              - option "Particulate Pressure"
+              - option "Moderate Multi-Contaminant"
+          - generic [ref=e34]:
+            - generic [ref=e35]: Location ID
+            - spinbutton "Location ID" [ref=e36]: "2178"
+          - generic [ref=e37]:
+            - generic [ref=e38]: Ventana temporal (horas)
+            - spinbutton "Ventana temporal (horas)" [ref=e39]: "24"
+          - generic [ref=e40]:
+            - generic [ref=e41]: Cobertura mínima (%)
+            - spinbutton "Cobertura mínima (%)" [ref=e42]: "80"
+          - button "Ejecutar evaluación" [ref=e43] [cursor=pointer]
+          - button "Actualizar ubicaciones" [ref=e44] [cursor=pointer]
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - heading "Resumen de la corrida actual" [level=3] [ref=e47]
+          - paragraph [ref=e48]: Síntesis del episodio analizado para lectura rápida y captura documental.
+          - generic [ref=e49]:
+            - article [ref=e50]:
+              - generic [ref=e51]: Fuente
+              - strong [ref=e52]: Escenario controlado
+            - article [ref=e53]:
+              - generic [ref=e54]: Entrada
+              - strong [ref=e55]: Urban Escalation
+            - article [ref=e56]:
+              - generic [ref=e57]: Dominante
+              - strong [ref=e58]: o3
+            - article [ref=e59]:
+              - generic [ref=e60]: Reglas activadas
+              - strong [ref=e61]: "1"
+            - article [ref=e62]:
+              - generic [ref=e63]: Ajuste contextual
+              - strong [ref=e64]: 1 ajuste(s)
+            - article [ref=e65]:
+              - generic [ref=e66]: Histórico local
+              - strong [ref=e67]: "25"
+        - generic [ref=e68]:
+          - heading "Base del modelo" [level=3] [ref=e69]
+          - paragraph [ref=e70]: Metadatos del backend expuestos para el frontend.
+          - generic [ref=e71]:
+            - generic [ref=e72]: consolidacion_normativa
+            - generic [ref=e73]: variables_auxiliares
+            - generic [ref=e74]: inferencia_difusa_principal
+            - generic [ref=e75]: ajuste_contextual
+            - generic [ref=e76]: alertamiento_salida
+          - paragraph [ref=e77]: "Base normativa: EPA/AQS AQI Breakpoints. Reglas principales: 54. Reglas contextuales: 9."
+        - generic [ref=e78]:
+          - article [ref=e79]:
+            - generic [ref=e80]: AQI global
+            - strong [ref=e81]: "112"
+          - article [ref=e82]:
+            - generic [ref=e83]: Categoría base
+            - strong [ref=e84]: unhealthy_sensitive_groups
+          - article [ref=e85]:
+            - generic [ref=e86]: Riesgo final
+            - strong [ref=e87]: unhealthy
+          - article [ref=e88]:
+            - generic [ref=e89]: Cobertura global
+            - strong [ref=e90]: "100"
+    - generic [ref=e93]:
+      - heading "Exploración detallada" [level=3] [ref=e94]
+      - paragraph [ref=e95]: Usa el menú lateral para abrir cada vista en un modal. El visor muestra una sección a la vez y permite cambiar entre ellas sin perder la corrida actual.
+  - generic [ref=e97]:
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - heading "Evaluación" [level=3] [ref=e100]
+        - paragraph [ref=e101]: Visor modal para revisar una sola sección del sistema a la vez.
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - button "Dashboard" [ref=e104] [cursor=pointer]
+          - button "Trazabilidad" [ref=e105] [cursor=pointer]
+          - button "Explicabilidad" [ref=e106] [cursor=pointer]
+          - button "Evaluación" [ref=e107] [cursor=pointer]
+        - button "Cerrar" [ref=e108] [cursor=pointer]
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - heading "Resultado de evaluación" [level=3] [ref=e112]
+        - paragraph [ref=e113]: Unhealthy | AQI 112
+        - paragraph [ref=e114]: "Estado base Unhealthy for Sensitive Groups. Contaminante dominante: o3. Riesgo estimado: Unhealthy. Reglas activadas: R_unhealthy_sensitive_groups_low_medium."
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - heading "Ajuste contextual antes y después" [level=3] [ref=e117]
+          - button "Descargar PNG" [ref=e118] [cursor=pointer]
+        - paragraph [ref=e119]: Comparación entre la salida principal del motor y la salida final tras la capa contextual.
+      - generic [ref=e122]:
+        - heading "Historial reciente" [level=3] [ref=e123]
+        - paragraph [ref=e124]: Corridas registradas localmente por el backend.
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: Texto
+            - textbox "Texto" [ref=e128]:
+              - /placeholder: Ubicación, etiqueta o AQI
+          - generic [ref=e129]:
+            - generic [ref=e130]: Fecha
+            - textbox "Fecha" [ref=e131]
+          - generic [ref=e132]:
+            - generic [ref=e133]: Parámetro dominante
+            - combobox "Parámetro dominante" [ref=e134]:
+              - option "Todos" [selected]
+              - option "o3"
+              - option "pm25"
+        - list [ref=e135]:
+          - listitem [ref=e136]:
+            - button "Urban Escalation 2026-04-12T21:57:58.609103+00:00 AQI 112 · unhealthy · o3" [ref=e137] [cursor=pointer]:
+              - strong [ref=e138]: Urban Escalation
+              - generic [ref=e139]: 2026-04-12T21:57:58.609103+00:00
+              - generic [ref=e140]: AQI 112 · unhealthy · o3
+          - listitem [ref=e141]:
+            - button "Urban Escalation 2026-04-12T21:53:35.958263+00:00 AQI 112 · unhealthy · o3" [active] [ref=e142] [cursor=pointer]:
+              - strong [ref=e143]: Urban Escalation
+              - generic [ref=e144]: 2026-04-12T21:53:35.958263+00:00
+              - generic [ref=e145]: AQI 112 · unhealthy · o3
+          - listitem [ref=e146]:
+            - button "Urban Escalation 2026-04-12T21:44:22.980878+00:00 AQI 112 · unhealthy · o3" [ref=e147] [cursor=pointer]:
+              - strong [ref=e148]: Urban Escalation
+              - generic [ref=e149]: 2026-04-12T21:44:22.980878+00:00
+              - generic [ref=e150]: AQI 112 · unhealthy · o3
+          - listitem [ref=e151]:
+            - button "Adrogué 2026-04-12T21:20:42.325914+00:00 AQI NR · good · sin dominante" [ref=e152] [cursor=pointer]:
+              - strong [ref=e153]: Adrogué
+              - generic [ref=e154]: 2026-04-12T21:20:42.325914+00:00
+              - generic [ref=e155]: AQI NR · good · sin dominante
+          - listitem [ref=e156]:
+            - button "SAN BORJA 2026-04-12T21:18:41.616094+00:00 AQI 87 · moderate · pm25" [ref=e157] [cursor=pointer]:
+              - strong [ref=e158]: SAN BORJA
+              - generic [ref=e159]: 2026-04-12T21:18:41.616094+00:00
+              - generic [ref=e160]: AQI 87 · moderate · pm25
+          - listitem [ref=e161]:
+            - button "Parque O'Higgins 2026-04-12T21:18:07.069885+00:00 AQI 84 · moderate · pm25" [ref=e162] [cursor=pointer]:
+              - strong [ref=e163]: Parque O'Higgins
+              - generic [ref=e164]: 2026-04-12T21:18:07.069885+00:00
+              - generic [ref=e165]: AQI 84 · moderate · pm25
+          - listitem [ref=e166]:
+            - button "Hospital General de México 2026-04-12T21:15:54.766429+00:00 AQI 37 · good · o3" [ref=e167] [cursor=pointer]:
+              - strong [ref=e168]: Hospital General de México
+              - generic [ref=e169]: 2026-04-12T21:15:54.766429+00:00
+              - generic [ref=e170]: AQI 37 · good · o3
+          - listitem [ref=e171]:
+            - button "Hospital General de México 2026-04-12T21:08:39.289317+00:00 AQI 37 · good · o3" [ref=e172] [cursor=pointer]:
+              - strong [ref=e173]: Hospital General de México
+              - generic [ref=e174]: 2026-04-12T21:08:39.289317+00:00
+              - generic [ref=e175]: AQI 37 · good · o3
+          - listitem [ref=e176]:
+            - button "SAN BORJA 2026-04-12T21:08:10.503770+00:00 AQI 87 · moderate · pm25" [ref=e177] [cursor=pointer]:
+              - strong [ref=e178]: SAN BORJA
+              - generic [ref=e179]: 2026-04-12T21:08:10.503770+00:00
+              - generic [ref=e180]: AQI 87 · moderate · pm25
+          - listitem [ref=e181]:
+            - button "Parque O'Higgins 2026-04-12T21:08:07.621659+00:00 AQI 84 · moderate · pm25" [ref=e182] [cursor=pointer]:
+              - strong [ref=e183]: Parque O'Higgins
+              - generic [ref=e184]: 2026-04-12T21:08:07.621659+00:00
+              - generic [ref=e185]: AQI 84 · moderate · pm25
+          - listitem [ref=e186]:
+            - button "Hospital General de México 2026-04-12T21:08:02.984823+00:00 AQI 37 · good · o3" [ref=e187] [cursor=pointer]:
+              - strong [ref=e188]: Hospital General de México
+              - generic [ref=e189]: 2026-04-12T21:08:02.984823+00:00
+              - generic [ref=e190]: AQI 37 · good · o3
+          - listitem [ref=e191]:
+            - button "VILLA MARIA DEL TRIUNFO 2026-04-12T21:08:00.401515+00:00 AQI 64 · moderate · pm25" [ref=e192] [cursor=pointer]:
+              - strong [ref=e193]: VILLA MARIA DEL TRIUNFO
+              - generic [ref=e194]: 2026-04-12T21:08:00.401515+00:00
+              - generic [ref=e195]: AQI 64 · moderate · pm25
+          - listitem [ref=e196]:
+            - button "SAN BORJA 2026-04-12T21:07:58.238402+00:00 AQI 87 · moderate · pm25" [ref=e197] [cursor=pointer]:
+              - strong [ref=e198]: SAN BORJA
+              - generic [ref=e199]: 2026-04-12T21:07:58.238402+00:00
+              - generic [ref=e200]: AQI 87 · moderate · pm25
+          - listitem [ref=e201]:
+            - button "Parque O'Higgins 2026-04-12T21:07:51.226569+00:00 AQI 84 · moderate · pm25" [ref=e202] [cursor=pointer]:
+              - strong [ref=e203]: Parque O'Higgins
+              - generic [ref=e204]: 2026-04-12T21:07:51.226569+00:00
+              - generic [ref=e205]: AQI 84 · moderate · pm25
+          - listitem [ref=e206]:
+            - button "Hospital General de México 2026-04-12T21:07:48.994876+00:00 AQI 37 · good · o3" [ref=e207] [cursor=pointer]:
+              - strong [ref=e208]: Hospital General de México
+              - generic [ref=e209]: 2026-04-12T21:07:48.994876+00:00
+              - generic [ref=e210]: AQI 37 · good · o3
+          - listitem [ref=e211]:
+            - button "Hospital General de México 2026-04-12T21:07:29.627724+00:00 AQI 37 · good · o3" [ref=e212] [cursor=pointer]:
+              - strong [ref=e213]: Hospital General de México
+              - generic [ref=e214]: 2026-04-12T21:07:29.627724+00:00
+              - generic [ref=e215]: AQI 37 · good · o3
+          - listitem [ref=e216]:
+            - button "SAN BORJA 2026-04-12T21:07:11.710670+00:00 AQI 87 · moderate · pm25" [ref=e217] [cursor=pointer]:
+              - strong [ref=e218]: SAN BORJA
+              - generic [ref=e219]: 2026-04-12T21:07:11.710670+00:00
+              - generic [ref=e220]: AQI 87 · moderate · pm25
+          - listitem [ref=e221]:
+            - button "VILLA MARIA DEL TRIUNFO 2026-04-12T21:07:03.556316+00:00 AQI 64 · moderate · pm25" [ref=e222] [cursor=pointer]:
+              - strong [ref=e223]: VILLA MARIA DEL TRIUNFO
+              - generic [ref=e224]: 2026-04-12T21:07:03.556316+00:00
+              - generic [ref=e225]: AQI 64 · moderate · pm25
+          - listitem [ref=e226]:
+            - button "Parque O'Higgins 2026-04-12T21:07:01.121271+00:00 AQI 84 · moderate · pm25" [ref=e227] [cursor=pointer]:
+              - strong [ref=e228]: Parque O'Higgins
+              - generic [ref=e229]: 2026-04-12T21:07:01.121271+00:00
+              - generic [ref=e230]: AQI 84 · moderate · pm25
+          - listitem [ref=e231]:
+            - button "Hospital General de México 2026-04-12T21:06:51.331685+00:00 AQI 37 · good · o3" [ref=e232] [cursor=pointer]:
+              - strong [ref=e233]: Hospital General de México
+              - generic [ref=e234]: 2026-04-12T21:06:51.331685+00:00
+              - generic [ref=e235]: AQI 37 · good · o3
+          - listitem [ref=e236]:
+            - button "SAN BORJA 2026-04-12T21:06:49.533462+00:00 AQI 87 · moderate · pm25" [ref=e237] [cursor=pointer]:
+              - strong [ref=e238]: SAN BORJA
+              - generic [ref=e239]: 2026-04-12T21:06:49.533462+00:00
+              - generic [ref=e240]: AQI 87 · moderate · pm25
+          - listitem [ref=e241]:
+            - button "Parque O'Higgins 2026-04-12T21:06:47.589155+00:00 AQI 84 · moderate · pm25" [ref=e242] [cursor=pointer]:
+              - strong [ref=e243]: Parque O'Higgins
+              - generic [ref=e244]: 2026-04-12T21:06:47.589155+00:00
+              - generic [ref=e245]: AQI 84 · moderate · pm25
+          - listitem [ref=e246]:
+            - button "Hospital General de México 2026-04-12T21:06:43.631268+00:00 AQI 37 · good · o3" [ref=e247] [cursor=pointer]:
+              - strong [ref=e248]: Hospital General de México
+              - generic [ref=e249]: 2026-04-12T21:06:43.631268+00:00
+              - generic [ref=e250]: AQI 37 · good · o3
+          - listitem [ref=e251]:
+            - button "Santa Fe 2026-04-12T20:09:39.067065+00:00 AQI NR · good · sin dominante" [ref=e252] [cursor=pointer]:
+              - strong [ref=e253]: Santa Fe
+              - generic [ref=e254]: 2026-04-12T20:09:39.067065+00:00
+              - generic [ref=e255]: AQI NR · good · sin dominante
+          - listitem [ref=e256]:
+            - button "Xalostoc 2026-04-12T20:09:36.951944+00:00 AQI NR · good · sin dominante" [ref=e257] [cursor=pointer]:
+              - strong [ref=e258]: Xalostoc
+              - generic [ref=e259]: 2026-04-12T20:09:36.951944+00:00
+              - generic [ref=e260]: AQI NR · good · sin dominante
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - heading "Comparación con corrida histórica" [level=3] [ref=e263]
+          - button "Descargar PNG" [ref=e264] [cursor=pointer]
+        - paragraph [ref=e265]: Contrasta la corrida actual con la corrida histórica seleccionada.

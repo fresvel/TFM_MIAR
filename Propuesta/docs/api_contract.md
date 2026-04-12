@@ -2,7 +2,8 @@
 
 ## Base
 
-- URL local esperada: `http://localhost:8010`
+- URL local esperada desde navegador y pruebas manuales: `http://localhost:18010`
+- Puerto interno del backend: `8010`
 - Formato de intercambio: `application/json`
 
 ## 1. `GET /health`

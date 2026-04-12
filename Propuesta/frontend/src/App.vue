@@ -295,7 +295,12 @@
             <article class="trace-box">
               <h4>Reglas activadas</h4>
               <ul>
-                <li v-for="rule in result.fuzzy.triggered_rules" :key="rule">{{ rule }}</li>
+                <li v-if="activatedRuleDetails.length === 0">Sin reglas activadas.</li>
+                <li v-for="rule in activatedRuleDetails" :key="rule.name">
+                  <strong>{{ rule.name }}</strong>
+                  · fuerza {{ rule.strengthLabel }}
+                  · salida {{ rule.outputLabel }}
+                </li>
               </ul>
             </article>
             <article class="trace-box">
@@ -642,7 +647,7 @@ const sectionGuides = {
       },
       {
         title: "Reglas y ajustes",
-        body: "La lista de reglas activadas y los ajustes contextuales permiten justificar por qué la salida final se mantuvo o cambió frente a la clasificación base.",
+        body: "La lista de reglas activadas muestra qué reglas participaron y con qué fuerza. Los ajustes contextuales permiten justificar por qué la salida final se mantuvo o cambió frente a la clasificación base.",
       },
     ],
   },
@@ -741,14 +746,25 @@ const auxiliaryChart = computed(() => ({
   ],
 }));
 
+const activatedRuleDetails = computed(() => {
+  const rules = result.value?.explainability?.layer_outputs?.inferencia_difusa_principal?.rules || [];
+  return [...rules]
+    .sort((left, right) => right.strength - left.strength)
+    .map((rule) => ({
+      ...rule,
+      strengthLabel: Number(rule.strength).toFixed(2),
+      outputLabel: String(rule.output_term || "").replaceAll("_", " "),
+    }));
+});
+
 const triggeredRulesChart = computed(() => ({
-  labels: (result.value?.fuzzy?.triggered_rules || []).length
-    ? result.value.fuzzy.triggered_rules
+  labels: activatedRuleDetails.value.length
+    ? activatedRuleDetails.value.map((rule) => rule.name)
     : ["sin reglas"],
   datasets: [
     {
-      data: (result.value?.fuzzy?.triggered_rules || []).length
-        ? result.value.fuzzy.triggered_rules.map(() => 1)
+      data: activatedRuleDetails.value.length
+        ? activatedRuleDetails.value.map((rule) => rule.strength)
         : [0],
       backgroundColor: "#15304b",
       borderRadius: 8,

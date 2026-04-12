@@ -254,8 +254,115 @@ La Tabla~\ref{tab:validacion_prototipo_actual} resume la verificación funcional
 
 \input{assets/tablas/02_cuerpo/05_desarrollo/validacion_prototipo_actual.tex}
 
-Las pruebas automatizadas ejecutadas sobre el prototipo validaron dos aspectos básicos: la ejecución completa del escenario sintético y la exigencia de clave para el modo \textit{OpenAQ}. Ambas pruebas finalizaron correctamente en el entorno de desarrollo. En el escenario \textit{mock}, el módulo procesó una entrada con seis contaminantes criterio y variables de contexto, obtuvo un AQI global de 112, identificó O$_3$ como contaminante dominante, activó una regla de la malla principal y escaló la salida final a \textit{Unhealthy} mediante la regla contextual \texttt{CTX\_high\_high}. Este resultado confirma que la arquitectura de cinco capas ya funciona de extremo a extremo y que la salida conserva trazabilidad por variables, reglas y categoría final.
+Las pruebas automatizadas validaron dos aspectos básicos: la ejecución completa del escenario sintético y la exigencia de clave para el modo \textit{OpenAQ}. Ambas finalizaron correctamente en el entorno de desarrollo. En el escenario controlado \textit{urban\_escalation}, el módulo procesó seis contaminantes criterio y variables de contexto, obtuvo un AQI global de 112, identificó O$_3$ como contaminante dominante, activó la regla \texttt{R\_unhealthy\_sensitive\_groups\_low\_medium} y escaló la salida final a \textit{Unhealthy} mediante \texttt{CTX\_high\_high}. Esa corrida se conservó como referencia controlada porque los casos reales consultados no produjeron una alerta equivalente ni un escalado contextual visible.
 
-La integración con \textit{OpenAQ} también quedó implementada a nivel de código, configuración y cliente de consulta. El prototipo recupera estaciones por \textit{location\_id}, consulta sensores asociados y construye series horarias por parámetro. La reproducción de escenarios reales depende de disponibilidad de red, estabilidad del endpoint y cobertura efectiva de cada estación en la ventana consultada. Esta condición es esperable en un artefacto que opera sobre datos abiertos vivos y refuerza la necesidad de conservar cobertura, fuente y ventana temporal dentro de cada ejecución.
+La validación visual combinó corridas reales y controladas. Las corridas reales se usaron para verificar comportamiento con datos vivos, cobertura efectiva y diferencias entre estaciones. Las corridas controladas se usaron para mostrar condiciones que el muestreo real no ofreció en esta iteración: soporte completo de contaminantes criterio, alerta de mayor severidad y ajuste contextual activo. Para la parte real se seleccionaron tres ubicaciones con comportamiento útil y estable en la ventana de 24 horas consultada: \textit{Hospital General de México} (\texttt{location\_id=1134}), \textit{Parque O'Higgins} en Santiago (\texttt{25}) y \textit{SAN BORJA} en Lima (\texttt{2402}). La primera aporta un perfil dominado por contaminantes gaseosos; las otras dos concentran la señal en material particulado fino y grueso.
+
+El \textit{dashboard} actúa como punto de entrada de esa lectura. La Figura~\ref{fig:ui_dashboard_mock_controlled} muestra la vista inicial con una corrida controlada completa. El bloque superior concentra la operación: selección de modo, escenario o estación, ventana temporal y cobertura mínima. A la derecha, la interfaz resume la corrida actual mediante tarjetas con fuente, entrada seleccionada, contaminante dominante, número de reglas activadas, ajuste contextual e histórico local. Debajo, cuatro indicadores fijan la lectura ejecutiva del episodio: AQI global, categoría base, riesgo final y cobertura. Esa síntesis permite decidir si la corrida requiere una revisión de auditoría en \textit{Trazabilidad}, una lectura interna del motor en \textit{Explicabilidad} o una comparación temporal en \textit{Evaluación}.
+
+Los colores del \textit{dashboard} siguen una convención estable para reducir ambigüedad entre vistas. El azul identifica la base normativa y las magnitudes ligadas al AQI o a la corrida actual. El naranja se reserva para la concurrencia y, en comparaciones históricas, para la corrida de referencia. El rojo representa persistencia o señales de presión acumulada. El verde se usa para la salida difusa final, la cobertura útil y los estados resueltos por la capa contextual. Esta codificación se repite en las gráficas del visor modal, de modo que la semántica visual no cambia al pasar de \textit{Dashboard} a \textit{Explicabilidad} o \textit{Evaluación}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_dashboard_mock_controlled.png}
+\caption{Vista principal del \textit{dashboard} para el escenario controlado \textit{urban\_escalation}. La pantalla concentra el control de entrada, el resumen ejecutivo de la corrida y los indicadores base del episodio antes de abrir los modales de auditoría, explicabilidad o evaluación. Elaboración propia.}
+\label{fig:ui_dashboard_mock_controlled}
+\end{figure}
+
+El modal de \textit{Trazabilidad} permitió verificar dos situaciones complementarias. La Figura~\ref{fig:ui_traceability_santiago_real} corresponde a la corrida real de Santiago y deja visibles la ruta de decisión, los parámetros efectivamente soportados y el inventario de sensores recuperado para esa estación. La Figura~\ref{fig:ui_traceability_mock_controlled} usa \textit{urban\_escalation} y muestra el caso controlado con cobertura completa, soporte de los seis contaminantes criterio y activación explícita del ajuste contextual \texttt{CTX\_high\_high}. Con ambas capturas se puede distinguir entre lo que el sistema hace con datos observados y lo que es capaz de hacer cuando la entrada cubre todo el espacio previsto por el diseño.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_traceability_santiago_real.png}
+\caption{Modal de \textit{Trazabilidad} para la estación \textit{Parque O'Higgins} de Santiago. La interfaz expone la ruta de decisión del artefacto, separa parámetros soportados y no soportados y deja visible el inventario de sensores publicados por la estación, lo que respalda auditabilidad y defensa metodológica del sistema. Elaboración propia.}
+\label{fig:ui_traceability_santiago_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_traceability_mock_controlled.png}
+\caption{Modal de \textit{Trazabilidad} para el escenario controlado \textit{urban\_escalation}. La captura muestra soporte completo de contaminantes criterio y un ajuste contextual activo, por lo que complementa la evidencia real con un caso de referencia donde el sistema recorre toda la secuencia prevista por el diseño. Elaboración propia.}
+\label{fig:ui_traceability_mock_controlled}
+\end{figure}
+
+El modal de \textit{Explicabilidad} documentó el comportamiento interno del motor \textit{Mamdani}. En la corrida real de Ciudad de México, dominada por O$_3$, la Figura~\ref{fig:ui_explainability_rules_mexico_real} muestra la distribución de reglas activadas. La Figura~\ref{fig:ui_explainability_aggregation_mexico_real} presenta la agregación y la defuzzificación de ese mismo episodio. La Figura~\ref{fig:ui_explainability_aggregation_mock_controlled} añade la lectura controlada del escenario \textit{urban\_escalation}. Ese caso no sustituye a la evidencia real; sirve para mostrar el comportamiento del motor cuando la entrada empuja el sistema hacia una salida más severa y, por tanto, facilita leer la transición entre la base normativa y la puntuación difusa.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_explainability_rules_mexico_real.png}
+\caption{Distribución de reglas activadas en la corrida real de \textit{Hospital General de México}. La figura evidencia un patrón de activación coherente con un episodio gaseoso de baja severidad, dominado por O$_3$, y permite observar cómo la base de reglas reduce la complejidad de entrada a un conjunto trazable de disparos efectivos. Elaboración propia.}
+\label{fig:ui_explainability_rules_mexico_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_explainability_aggregation_mexico_real.png}
+\caption{Agregación y defuzzificación de la corrida real de \textit{Hospital General de México}. La superficie agregada y la puntuación resultante muestran cómo el motor \textit{Mamdani} transforma la evidencia normativa y auxiliar en una salida crisp sin perder interpretabilidad del proceso intermedio. Elaboración propia.}
+\label{fig:ui_explainability_aggregation_mexico_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_explainability_aggregation_mock_controlled.png}
+\caption{Agregación y defuzzificación del escenario controlado \textit{urban\_escalation}. La curva muestra la respuesta del motor bajo una entrada diseñada para producir una alerta superior y complementar los casos reales que, en esta iteración, no alcanzaron ese nivel de severidad. Elaboración propia.}
+\label{fig:ui_explainability_aggregation_mock_controlled}
+\end{figure}
+
+Las Figuras~\ref{fig:ui_explainability_aqi_santiago_real} y~\ref{fig:ui_explainability_concurrence_santiago_real} trasladan el análisis a Santiago. La primera sitúa el AQI consolidado dentro de las categorías lingüísticas del antecedente normativo. La segunda muestra cómo el sistema representa la concurrencia de contaminantes soportados. La Figura~\ref{fig:ui_explainability_persistence_lima_real} completa la lectura de variables auxiliares con el caso de Lima y permite observar la persistencia temporal del episodio.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_explainability_membership_aqi_santiago_real.png}
+\caption{Funciones de pertenencia del AQI para la corrida real de \textit{Parque O'Higgins}. La figura sitúa el AQI consolidado dentro de las categorías lingüísticas del antecedente normativo y ayuda a justificar por qué el episodio queda ubicado en una zona moderada del sistema difuso. Elaboración propia.}
+\label{fig:ui_explainability_aqi_santiago_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_explainability_membership_concurrence_santiago_real.png}
+\caption{Funciones de pertenencia de concurrencia para la corrida real de \textit{Parque O'Higgins}. La visualización muestra cómo el artefacto representa la coexistencia efectiva de contaminantes soportados y la incorpora como variable auxiliar en la inferencia principal. Elaboración propia.}
+\label{fig:ui_explainability_concurrence_santiago_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_explainability_membership_persistence_lima_real.png}
+\caption{Funciones de pertenencia de persistencia para la corrida real de \textit{SAN BORJA}. La captura muestra cómo la continuidad temporal del episodio se traduce a términos lingüísticos antes de combinarse con el AQI y la concurrencia en la base principal de reglas. Elaboración propia.}
+\label{fig:ui_explainability_persistence_lima_real}
+\end{figure}
+
+El modal de \textit{Evaluación} cerró la validación con cuatro lecturas distintas. La Figura~\ref{fig:ui_evaluation_context_lima_real} corresponde a una corrida real de Lima y muestra que la capa contextual fue evaluada sin modificar la severidad base, lo que era coherente con la señal observada. La Figura~\ref{fig:ui_evaluation_context_mock_controlled} usa \textit{urban\_escalation} y muestra el caso opuesto: la capa contextual sí altera la salida final. La Figura~\ref{fig:ui_evaluation_history_lima_real} recupera una comparación histórica real entre episodios observados por el backend y deja ver que el histórico local ya permite contrastar AQI, cobertura y puntuación difusa entre corridas de estaciones distintas. La Figura~\ref{fig:ui_evaluation_history_mock_controlled} añade la comparación del escenario controlado actual con una corrida histórica previa del mismo escenario, lo que permite ver la estabilidad de la respuesta cuando la entrada se mantiene controlada.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_evaluation_context_lima_real.png}
+\caption{Comparación entre salida principal y salida final en la corrida real de \textit{SAN BORJA}. La coincidencia entre ambas barras indica que la capa contextual fue evaluada, pero no encontró evidencia suficiente para modificar la severidad base del episodio. Elaboración propia.}
+\label{fig:ui_evaluation_context_lima_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_evaluation_context_mock_controlled.png}
+\caption{Comparación entre salida principal y salida final en el escenario controlado \textit{urban\_escalation}. La diferencia entre ambas barras muestra el efecto explícito del ajuste contextual cuando temperatura y humedad empujan la salida hacia una categoría más severa. Elaboración propia.}
+\label{fig:ui_evaluation_context_mock_controlled}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_evaluation_history_lima_real.png}
+\caption{Comparación entre la corrida actual de \textit{SAN BORJA} y una corrida histórica real de \textit{Parque O'Higgins}. La vista confirma que el histórico local ya permite contrastar episodios registrados por el backend y utilizar esa memoria como apoyo para análisis posteriores. Elaboración propia.}
+\label{fig:ui_evaluation_history_lima_real}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_evaluation_history_mock_controlled.png}
+\caption{Comparación entre la corrida actual de \textit{urban\_escalation} y una corrida histórica previa del mismo escenario. La vista muestra que el histórico local también permite contrastar escenarios controlados y verificar estabilidad de salida cuando la entrada se repite bajo las mismas condiciones. Elaboración propia.}
+\label{fig:ui_evaluation_history_mock_controlled}
+\end{figure}
+
+La evidencia reunida permitió verificar cuatro hechos. El primero es que la interfaz conserva la semántica técnica de la salida JSON y la hace auditable por capas. El segundo es que las estaciones reales producen comportamientos distintos y útiles para contrastar episodios gaseosos y particulados. El tercero es que el escenario controlado sigue siendo necesario para mostrar una alerta más severa y un ajuste contextual activo, porque esa combinación no apareció en las estaciones consultadas. El cuarto es que el frontend ya puede exportar cada gráfica de \textit{Chart.js} como PNG directamente desde el panel correspondiente, lo que facilita documentación, revisión y reutilización de evidencia visual sin depender de capturas manuales del navegador.
+
+La integración con \textit{OpenAQ} quedó validada a nivel de código, configuración y cliente de consulta. El prototipo recupera estaciones por \textit{location\_id}, consulta sensores asociados y construye series horarias por parámetro. Las corridas reales también hicieron visible una limitación importante: no toda estación con sensores publicados produce una ventana útil para el modelo. Un ejemplo es \textit{Adrogué} en Buenos Aires (\texttt{2847298}), cuya ficha expone PM$_{2.5}$, PM$_{10}$, temperatura y humedad relativa en \textit{OpenAQ}, pero cuya ventana consultada devolvió series vacías, cobertura global nula y una categoría \textit{sin\_datos}. Esa restricción forma parte del comportamiento real del sistema sobre datos abiertos vivos y debe conservarse explícitamente en la evaluación.
 
 En el estado actual del trabajo, el resultado principal no es todavía una comparación extensa de desempeño entre múltiples estaciones. El resultado alcanzado es la construcción de un artefacto ejecutable, trazable y explicable, con base normativa explícita, base principal de 54 reglas, capa contextual de 9 reglas, API HTTP, despliegue en contenedores e interfaz web inicial lista para etapas posteriores de validación comparativa y consolidación operativa.
