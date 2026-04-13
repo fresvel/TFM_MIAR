@@ -1,61 +1,61 @@
 <template>
   <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand">
-        <h1>AQRisk Console</h1>
-        <p>Control web del módulo de monitoreo, evaluación difusa y explicabilidad del artefacto.</p>
-      </div>
-
-      <div class="nav-group">
-        <button
-          v-for="item in sections"
-          :key="item.id"
-          class="nav-button"
-          :class="{ active: currentSection === item.id, disabled: !result }"
-          :disabled="!result"
-          @click="openViewer(item.id)"
-        >
-          {{ item.label }}
-        </button>
-      </div>
-    </aside>
-
-    <main class="content">
-      <section class="hero">
-        <div class="hero-copy">
-          <h2>Panel de control y explicabilidad</h2>
-          <p>
-            Esta interfaz actúa como controlador entre la selección de entrada, el consumo del backend
-            AQRisk y la visualización del resultado. La salida se organiza por capas para exponer el
-            estado normativo, las variables auxiliares, la inferencia difusa y el ajuste contextual.
-          </p>
-        </div>
-        <div class="hero-status">
-          <strong>Estado del backend</strong>
-          <p :class="healthStatusClass">{{ healthMessage }}</p>
-          <small>API: {{ apiBaseUrl }}</small>
-          <div class="status-pill-group">
-            <span class="status-pill" :class="healthStatusClass || 'status-neutral'">
-              {{ isBackendReady ? "Backend operativo" : "Backend pendiente" }}
-            </span>
-            <span class="status-pill status-neutral">Modo {{ form.mode }}</span>
-          </div>
-          <p v-if="lastError" class="caption status-danger">{{ lastError }}</p>
-          <div class="hero-actions">
-            <button class="secondary" type="button" @click="openSectionGuide(currentSection)">
-              Cómo leer esta vista
-            </button>
-            <button v-if="result" class="secondary" type="button" @click="openResultGuide">
-              Interpretar esta corrida
-            </button>
-            <button v-if="result" class="secondary" type="button" @click="exportCurrentRun">
-              Exportar JSON
-            </button>
+    <SidebarNav
+      :coverage-tone="coverageTone"
+      :current-section="currentSection"
+      :has-result="Boolean(result)"
+      :result="result"
+      :risk-tone="riskTone"
+      :sections="sections"
+      @open-viewer="openViewer"
+    />
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-brand">
+          <img :src="fresvelBrand" alt="Fresvel" class="topbar-logo" />
+          <div class="topbar-copy">
+            <strong>AQRisk Console</strong>
+            <span>Monitoreo, evaluación difusa y explicabilidad operativa</span>
           </div>
         </div>
-      </section>
+        <div class="topbar-status">
+          <span class="status-pill" :class="healthStatusClass || 'status-neutral'">
+            {{ isBackendReady ? "Backend operativo" : "Backend pendiente" }}
+          </span>
+          <span class="status-pill status-neutral">Modo {{ form.mode }}</span>
+        </div>
+      </header>
 
-      <section class="grid-two">
+      <main class="content">
+        <section class="page-head panel">
+          <div class="page-head-copy">
+            <span class="eyebrow">Centro de análisis</span>
+            <h2>Panel de control y explicabilidad</h2>
+            <p>
+              Consolida la entrada, el estado normativo, la inferencia difusa y el ajuste contextual en una
+              sola superficie de trabajo.
+            </p>
+          </div>
+          <div class="page-head-side">
+            <strong>Estado del backend</strong>
+            <p :class="healthStatusClass">{{ healthMessage }}</p>
+            <small>API: {{ apiBaseUrl }}</small>
+            <p v-if="lastError" class="caption status-danger">{{ lastError }}</p>
+            <div class="page-head-actions">
+              <button class="secondary" type="button" @click="openSectionGuide(currentSection)">
+                Cómo leer esta vista
+              </button>
+              <button v-if="result" class="secondary" type="button" @click="openResultGuide">
+                Interpretar corrida
+              </button>
+              <button v-if="result" class="secondary" type="button" @click="exportCurrentRun">
+                Exportar JSON
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid-two">
         <section class="panel">
           <h3>Control de entrada</h3>
           <p class="caption">
@@ -82,16 +82,6 @@
             </div>
 
             <div class="field" v-if="form.mode === 'openaq'">
-              <label for="locationPreset">Ubicación sugerida</label>
-              <select id="locationPreset" v-model="selectedLocationPreset" @change="applySelectedLocation">
-                <option value="">Seleccionar ubicación</option>
-                <option v-for="item in locations" :key="item.id" :value="String(item.id)">
-                  {{ item.name }}{{ item.city ? ` · ${item.city}` : "" }}
-                </option>
-              </select>
-            </div>
-
-            <div class="field">
               <label for="locationId">Location ID</label>
               <input id="locationId" v-model="form.location_id" type="number" placeholder="3175328" />
             </div>
@@ -114,39 +104,28 @@
             <button class="primary" :disabled="submitting || !canRunEvaluation" @click="runEvaluation">
               {{ submitting ? "Ejecutando..." : "Ejecutar evaluación" }}
             </button>
-
-            <button v-if="form.mode === 'openaq'" class="nav-button" type="button" @click="refreshLocations">
-              Actualizar ubicaciones
-            </button>
           </div>
+          <LocationPicker
+            v-if="form.mode === 'openaq'"
+            :filtered-locations="filteredLocations"
+            :location-id="form.location_id"
+            :location-search="locationSearch"
+            :locations="locations"
+            :selected-location-preset="selectedLocationPreset"
+            @refresh-locations="refreshLocations"
+            @select-location-card="selectLocationCard"
+            @update:selected-location-preset="updateSelectedLocationPreset"
+            @update:location-search="locationSearch = $event"
+          />
         </section>
 
         <section class="stack">
-          <section v-if="result" class="executive-panel">
-            <div class="executive-copy">
-              <span class="eyebrow">Lectura ejecutiva</span>
-              <h3>{{ currentRunNarrative.title }}</h3>
-              <p>{{ currentRunNarrative.body }}</p>
-            </div>
-            <div class="executive-metrics">
-              <article
-                v-for="metric in executiveMetrics"
-                :key="metric.label"
-                class="executive-metric"
-                :class="metric.tone"
-              >
-                <span>{{ metric.label }}</span>
-                <strong>{{ metric.value }}</strong>
-                <small>{{ metric.helper }}</small>
-              </article>
-            </div>
-            <div class="executive-actions">
-              <button class="primary" type="button" @click="openViewer('evaluation')">Abrir evaluación</button>
-              <button class="secondary" type="button" @click="openViewer('explainability')">
-                Revisar explicabilidad
-              </button>
-            </div>
-          </section>
+          <ExecutivePanel
+            v-if="result"
+            :metrics="executiveMetrics"
+            :narrative="currentRunNarrative"
+            @open-section="openViewer"
+          />
 
           <section class="panel">
             <h3>Resumen de la corrida actual</h3>
@@ -207,33 +186,33 @@
             </article>
           </section>
         </section>
-      </section>
+        </section>
 
-      <section v-if="result" class="panel">
-        <h3>Exploración detallada</h3>
-        <p class="caption">
-          Usa el menú lateral para abrir cada vista en un modal. El visor muestra una sección a la vez y
-          permite cambiar entre ellas sin perder la corrida actual.
-        </p>
-        <div class="section-dock">
-          <button
-            v-for="item in sections"
-            :key="item.id"
-            class="section-dock-button"
-            :class="{ active: currentSection === item.id }"
-            type="button"
-            @click="openViewer(item.id)"
-          >
-            <strong>{{ item.label }}</strong>
-            <span>{{ sectionGuides[item.id]?.caption }}</span>
-          </button>
-        </div>
-      </section>
+        <section v-if="result" class="panel">
+          <h3>Exploración detallada</h3>
+          <p class="caption">
+            Usa el menú lateral o estos accesos rápidos para abrir una vista específica del sistema.
+          </p>
+          <div class="section-dock">
+            <button
+              v-for="item in sections"
+              :key="item.id"
+              class="section-dock-button"
+              :class="{ active: currentSection === item.id }"
+              type="button"
+              @click="openViewer(item.id)"
+            >
+              <strong>{{ item.label }}</strong>
+              <span>{{ sectionGuides[item.id]?.caption }}</span>
+            </button>
+          </div>
+        </section>
 
-      <section v-else class="empty-state">
-        Aún no hay una corrida en memoria. Ejecuta la evaluación para poblar el panel y habilitar las vistas detalladas.
-      </section>
-    </main>
+        <section v-else class="empty-state">
+          Aún no hay una corrida en memoria. Ejecuta la evaluación para poblar el panel y habilitar las vistas detalladas.
+        </section>
+      </main>
+    </div>
 
     <div
       v-if="viewerOpen && result"
@@ -260,266 +239,72 @@
                 {{ item.label }}
               </button>
             </div>
-            <button class="icon-button" type="button" @click="closeViewer">Cerrar</button>
           </div>
         </div>
 
         <div class="modal-body">
-          <section v-show="currentSection === 'dashboard'" class="stack">
-            <section class="panel">
-              <h3>Series temporales por contaminante</h3>
-              <p class="caption">
-                La visualización permite inspeccionar el recorrido reciente de cada parámetro recuperado.
-              </p>
-              <div class="inline-field">
-                <label for="seriesParameter">Parámetro</label>
-                <select id="seriesParameter" v-model="selectedSeriesParameter">
-                  <option v-for="item in availableSeriesParameters" :key="item" :value="item">
-                    {{ item }}
-                  </option>
-                </select>
-              </div>
-            </section>
+          <DashboardSection
+            v-show="currentSection === 'dashboard'"
+            :auxiliary-chart="auxiliaryChart"
+            :available-series-parameters="availableSeriesParameters"
+            :bar-options="barOptions"
+            :base-vs-final-chart="baseVsFinalChart"
+            :selected-series-parameter="selectedSeriesParameter"
+            :series-line-options="seriesLineOptions"
+            :subindices-chart="subindicesChart"
+            :subindices-chart-options="subindicesChartOptions"
+            :time-series-chart="timeSeriesChart"
+            @update:selected-series-parameter="selectedSeriesParameter = $event"
+          />
 
-            <ChartPanel
-              title="Serie temporal filtrada"
-              caption="Observaciones recientes del parámetro seleccionado."
-              type="line"
-              :data="timeSeriesChart"
-              :options="seriesLineOptions"
-            />
+          <TraceabilitySection
+            v-show="currentSection === 'traceability'"
+            :activated-rule-details="activatedRuleDetails"
+            :result="result"
+            :sensors="sensors"
+          />
 
-            <ChartPanel
-              title="Subíndices por contaminante"
-              caption="Comparación rápida entre la base normativa y el contaminante dominante."
-              type="bar"
-              :data="subindicesChart"
-              :options="barOptions"
-            />
+          <ExplainabilitySection
+            v-show="currentSection === 'explainability'"
+            :aggregation-chart="aggregationChart"
+            :aqi-membership-chart="aqiMembershipChart"
+            :bar-options="barOptions"
+            :concurrence-membership-chart="concurrenceMembershipChart"
+            :line-options="lineOptions"
+            :line-options-with-legend="lineOptionsWithLegend"
+            :persistence-membership-chart="persistenceMembershipChart"
+            :result="result"
+            :triggered-rules-chart="triggeredRulesChart"
+          />
 
-            <ChartPanel
-              title="Resumen de evaluación"
-              caption="AQI base, concurrencia, persistencia y puntuación difusa final."
-              type="bar"
-              :data="summaryChart"
-              :options="barOptions"
-            />
-
-            <ChartPanel
-              title="AQI base frente a salida final"
-              caption="Comparación entre la clasificación normativa inicial y la puntuación difusa final."
-              type="bar"
-              :data="baseVsFinalChart"
-              :options="barOptions"
-            />
-
-            <ChartPanel
-              title="Variables auxiliares"
-              caption="Persistencia, concurrencia y cobertura empleadas por el artefacto."
-              type="bar"
-              :data="auxiliaryChart"
-              :options="barOptions"
-            />
-          </section>
-
-          <section v-show="currentSection === 'traceability'" class="trace-grid">
-            <article class="trace-box trace-box-wide">
-              <h4>Ruta de decisión</h4>
-              <ol class="trace-steps">
-                <li>Consolidación normativa del AQI con base en EPA/AQS.</li>
-                <li>Cálculo de concurrencia, persistencia y cobertura del episodio.</li>
-                <li>Aplicación de la base principal de 54 reglas.</li>
-                <li>Ajuste contextual por temperatura y humedad cuando existen datos.</li>
-                <li>Generación de salida final, alerta y registro histórico.</li>
-              </ol>
-            </article>
-            <article class="trace-box">
-              <h4>Parámetros soportados</h4>
-              <div class="tag-list">
-                <span v-for="item in result.aqi.supported_parameters" :key="item" class="tag">{{ item }}</span>
-              </div>
-            </article>
-            <article class="trace-box">
-              <h4>Parámetros no soportados</h4>
-              <div class="tag-list">
-                <span v-for="item in result.aqi.unsupported_parameters" :key="item" class="tag">{{ item }}</span>
-              </div>
-            </article>
-            <article class="trace-box">
-              <h4>Reglas activadas</h4>
-              <ul>
-                <li v-if="activatedRuleDetails.length === 0">Sin reglas activadas.</li>
-                <li v-for="rule in activatedRuleDetails" :key="rule.name">
-                  <strong>{{ rule.name }}</strong>
-                  · fuerza {{ rule.strengthLabel }}
-                  · salida {{ rule.outputLabel }}
-                </li>
-              </ul>
-            </article>
-            <article class="trace-box">
-              <h4>Ajustes contextuales</h4>
-              <ul>
-                <li v-if="result.context_adjustments.length === 0">Sin ajuste contextual.</li>
-                <li v-for="item in result.context_adjustments" :key="item">{{ item }}</li>
-              </ul>
-            </article>
-            <article class="trace-box">
-              <h4>Sensores disponibles</h4>
-              <ul>
-                <li v-if="sensors.length === 0">Sin sensores cargados.</li>
-                <li v-for="item in sensors" :key="item.sensor_id">
-                  {{ item.parameter }} · {{ item.units }} · sensor {{ item.sensor_id }}
-                </li>
-              </ul>
-            </article>
-          </section>
-
-          <section v-show="currentSection === 'explainability'" class="stack">
-            <ChartPanel
-              title="Distribución de reglas activadas"
-              caption="La gráfica refleja cuántas reglas se activaron en esta corrida."
-              type="bar"
-              :data="triggeredRulesChart"
-              :options="barOptions"
-            />
-
-            <ChartPanel
-              title="Agregación y defuzzificación"
-              caption="Curva agregada del sistema difuso para la corrida actual."
-              type="line"
-              :data="aggregationChart"
-              :options="lineOptions"
-            />
-
-            <ChartPanel
-              title="Funciones de pertenencia del AQI"
-              caption="Curvas base utilizadas por el motor para la variable AQI."
-              type="line"
-              :data="aqiMembershipChart"
-              :options="lineOptionsWithLegend"
-            />
-
-            <ChartPanel
-              title="Funciones de pertenencia de concurrencia"
-              caption="Curvas base utilizadas para la variable de concurrencia."
-              type="line"
-              :data="concurrenceMembershipChart"
-              :options="lineOptionsWithLegend"
-            />
-
-            <ChartPanel
-              title="Funciones de pertenencia de persistencia"
-              caption="Curvas base utilizadas para la variable de persistencia."
-              type="line"
-              :data="persistenceMembershipChart"
-              :options="lineOptionsWithLegend"
-            />
-
-            <section class="panel">
-              <h3>Lectura explicable del episodio</h3>
-              <p class="caption">
-                Dominante: <strong>{{ result.aqi.dominant_parameter || "sin dominante" }}</strong>.
-                Concurrencia: <strong>{{ result.concurrence_score }}</strong>.
-                Persistencia: <strong>{{ result.persistence_score }}</strong>.
-                Salida final: <strong>{{ result.fuzzy.label }}</strong>.
-              </p>
-              <p class="caption">
-                La salida principal del motor puede compararse con la salida final en la vista de evaluación
-                cuando existe ajuste contextual.
-              </p>
-            </section>
-          </section>
-
-          <section v-show="currentSection === 'evaluation'" class="stack">
-            <section class="panel">
-              <h3>Resultado de evaluación</h3>
-              <p class="caption">{{ result.alert.title }}</p>
-              <p>{{ result.alert.message }}</p>
-              <p v-if="result.alert.caution" class="status-warn">{{ result.alert.caution }}</p>
-            </section>
-
-            <ChartPanel
-              title="Ajuste contextual antes y después"
-              caption="Comparación entre la salida principal del motor y la salida final tras la capa contextual."
-              type="bar"
-              :data="contextBeforeAfterChart"
-              :options="barOptions"
-            />
-
-            <section class="panel">
-              <h3>Historial reciente</h3>
-              <p class="caption">Corridas registradas localmente por el backend.</p>
-              <div class="filter-grid">
-                <div class="field">
-                  <label for="historyFilter">Texto</label>
-                  <input
-                    id="historyFilter"
-                    v-model="historyFilter"
-                    type="text"
-                    placeholder="Ubicación, etiqueta o AQI"
-                  />
-                </div>
-                <div class="field">
-                  <label for="historyDate">Fecha</label>
-                  <input id="historyDate" v-model="historyDateFilter" type="date" />
-                </div>
-                <div class="field">
-                  <label for="historyParameter">Parámetro dominante</label>
-                  <select id="historyParameter" v-model="historyParameterFilter">
-                    <option value="">Todos</option>
-                    <option v-for="item in historyParameters" :key="item" :value="item">
-                      {{ item }}
-                    </option>
-                  </select>
-                </div>
-              </div>
-              <div class="history-toolbar">
-                <span class="caption">
-                  {{ filteredHistoryItems.length }} coincidencia(s) sobre {{ historyItems.length }} registro(s).
-                </span>
-                <button class="secondary" type="button" @click="resetHistoryFilters">Limpiar filtros</button>
-              </div>
-              <ul class="history-list">
-                <li v-if="filteredHistoryItems.length === 0">Sin corridas registradas.</li>
-                <li v-for="item in filteredHistoryItems" :key="item.recorded_at">
-                  <button
-                    class="history-button"
-                    :class="{ active: selectedHistoryItem?.recorded_at === item.recorded_at }"
-                    type="button"
-                    @click="selectedHistoryItem = item"
-                  >
-                    <strong>{{ item.summary.location_name || "sin ubicación" }}</strong>
-                    <span>{{ item.recorded_at }}</span>
-                    <span>
-                      AQI {{ item.summary.aqi_global ?? "NR" }} · {{ item.summary.fuzzy_label }} ·
-                      {{ item.summary.dominant_parameter || "sin dominante" }}
-                    </span>
-                  </button>
-                </li>
-              </ul>
-              <article v-if="selectedHistoryItem" class="history-focus-card">
-                <span class="eyebrow">Corrida histórica seleccionada</span>
-                <h4>{{ selectedHistoryItem.summary.location_name || "sin ubicación" }}</h4>
-                <p class="caption">
-                  {{ selectedHistoryItem.recorded_at }} · AQI {{ selectedHistoryItem.summary.aqi_global ?? "NR" }} ·
-                  {{ selectedHistoryItem.summary.fuzzy_label }}.
-                </p>
-                <p>
-                  Dominante {{ selectedHistoryItem.summary.dominant_parameter || "sin dominante" }} con cobertura
-                  {{ selectedHistoryItem.summary.coverage_global ?? "NR" }}.
-                </p>
-              </article>
-            </section>
-
-            <ChartPanel
-              v-if="selectedHistoryItem"
-              title="Comparación con corrida histórica"
-              caption="Contrasta la corrida actual con la corrida histórica seleccionada."
-              type="bar"
-              :data="historyComparisonChart"
-              :options="barOptions"
-            />
-          </section>
+          <EvaluationSection
+            v-show="currentSection === 'evaluation'"
+            :active-history-filters="activeHistoryFilters"
+            :bar-options="barOptions"
+            :context-before-after-chart="contextBeforeAfterChart"
+            :filtered-history-items="filteredHistoryItems"
+            :history-comparison-chart="historyComparisonChart"
+            :history-date-filter="historyDateFilter"
+            :history-filter="historyFilter"
+            :history-items="historyItems"
+            :history-parameter-filter="historyParameterFilter"
+            :history-parameters="historyParameters"
+            :history-risk-filter="historyRiskFilter"
+            :history-risk-labels="historyRiskLabels"
+            :result="result"
+            :selected-history-item="selectedHistoryItem"
+            @reset-history-filters="resetHistoryFilters"
+            @select-history-item="selectedHistoryItem = $event"
+            @toggle-history-parameter="toggleHistoryParameter"
+            @toggle-history-risk="toggleHistoryRisk"
+            @update:history-date-filter="historyDateFilter = $event"
+            @update:history-filter="historyFilter = $event"
+            @update:history-parameter-filter="historyParameterFilter = $event"
+            @update:history-risk-filter="historyRiskFilter = $event"
+          />
+        </div>
+        <div class="modal-footer">
+          <button class="danger-button" type="button" @click="closeViewer">Cerrar</button>
         </div>
       </section>
     </div>
@@ -531,7 +316,6 @@
             <h3>{{ modalState.title }}</h3>
             <p class="caption" v-if="modalState.caption">{{ modalState.caption }}</p>
           </div>
-          <button class="icon-button" type="button" @click="closeModal">Cerrar</button>
         </div>
 
         <div class="modal-body">
@@ -549,6 +333,9 @@
             </article>
           </template>
         </div>
+        <div class="modal-footer">
+          <button class="danger-button" type="button" @click="closeModal">Cerrar</button>
+        </div>
       </section>
     </div>
   </div>
@@ -556,7 +343,16 @@
 
 <script setup>
 import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
-import ChartPanel from "./components/ChartPanel.vue";
+import DashboardSection from "./components/DashboardSection.vue";
+import EvaluationSection from "./components/EvaluationSection.vue";
+import ExplainabilitySection from "./components/ExplainabilitySection.vue";
+import ExecutivePanel from "./components/ExecutivePanel.vue";
+import LocationPicker from "./components/LocationPicker.vue";
+import SidebarNav from "./components/SidebarNav.vue";
+import TraceabilitySection from "./components/TraceabilitySection.vue";
+import fresvelBrand from "./assets/fresvel-brand-top.png";
+import { useHistoryFilters } from "./composables/useHistoryFilters";
+import { useLocationSearch } from "./composables/useLocationSearch";
 import { checkHealth, evaluateModule, fetchHistory, fetchLocationSensors, fetchLocations, fetchMetadata, fetchScenarios } from "./services/api";
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:18010";
@@ -580,8 +376,10 @@ const historyItems = ref([]);
 const historyFilter = ref("");
 const historyDateFilter = ref("");
 const historyParameterFilter = ref("");
+const historyRiskFilter = ref("");
 const selectedHistoryItem = ref(null);
 const selectedLocationPreset = ref("");
+const locationSearch = ref("");
 const scenarios = ref([]);
 const viewerOpen = ref(false);
 const modalState = reactive({
@@ -632,7 +430,12 @@ const barOptions = {
     legend: { display: false },
   },
   scales: {
-    y: { beginAtZero: true },
+    x: { grid: { display: false }, ticks: { color: "#627079" } },
+    y: {
+      beginAtZero: true,
+      grid: { color: "rgba(23, 33, 39, 0.08)" },
+      ticks: { color: "#627079" },
+    },
   },
 };
 
@@ -643,8 +446,8 @@ const lineOptions = {
     legend: { display: false },
   },
   scales: {
-    x: { type: "linear" },
-    y: { beginAtZero: true, max: 1.05 },
+    x: { type: "linear", grid: { color: "rgba(23, 33, 39, 0.08)" }, ticks: { color: "#627079" } },
+    y: { beginAtZero: true, max: 1.05, grid: { color: "rgba(23, 33, 39, 0.08)" }, ticks: { color: "#627079" } },
   },
 };
 
@@ -662,20 +465,54 @@ const seriesLineOptions = {
     legend: { display: false },
   },
   scales: {
-    y: { beginAtZero: true },
+    x: { grid: { color: "rgba(23, 33, 39, 0.06)" } },
+    y: { beginAtZero: true, grid: { color: "rgba(23, 33, 39, 0.06)" } },
   },
 };
 
-const palette = ["#1d6fd8", "#d68716", "#ca4b34", "#1d8b5c", "#6a4bcf", "#15304b"];
+const palette = ["#2fb7d3", "#0f8f8a", "#46b34d", "#d38b1e", "#d15e43", "#202738"];
+const aqiThresholds = [
+  { label: "Bueno", value: 50, color: "#46b34d" },
+  { label: "Moderado", value: 100, color: "#d38b1e" },
+  { label: "Sensibles", value: 150, color: "#d15e43" },
+  { label: "Dañino", value: 200, color: "#9a3412" },
+];
+
+function classifyAqiBand(value) {
+  if (value <= 50) {
+    return "good";
+  }
+  if (value <= 100) {
+    return "moderate";
+  }
+  if (value <= 150) {
+    return "unhealthy_sensitive_groups";
+  }
+  if (value <= 200) {
+    return "unhealthy";
+  }
+  if (value <= 300) {
+    return "very_unhealthy";
+  }
+  return "hazardous";
+}
+
+function aqiBandColor(value, isDominant = false) {
+  const paletteByBand = {
+    good: isDominant ? "#2c9a47" : "#83cf7a",
+    moderate: isDominant ? "#c47d13" : "#e5b85f",
+    unhealthy_sensitive_groups: isDominant ? "#cf6447" : "#ef9d86",
+    unhealthy: isDominant ? "#9a3412" : "#c96b4f",
+    very_unhealthy: isDominant ? "#5b2c83" : "#8d63b0",
+    hazardous: isDominant ? "#202738" : "#4d556b",
+  };
+  return paletteByBand[classifyAqiBand(value)];
+}
 
 const isBackendReady = computed(() => healthStatusClass.value === "status-ok");
 const selectedScenarioName = computed(
   () => scenarios.value.find((item) => item.scenario_id === form.scenario_id)?.name || form.scenario_id,
 );
-const selectedLocationName = computed(() => {
-  const byPreset = locations.value.find((item) => String(item.id) === String(form.location_id));
-  return byPreset?.name || result.value?.snapshot?.location_name || String(form.location_id || "sin ubicación");
-});
 const hasContextAdjustments = computed(() => Boolean(result.value?.context_adjustments?.length));
 const contextualDelta = computed(() => {
   const baseScore = Number(
@@ -695,6 +532,41 @@ const riskTone = computed(() => {
   }
   return "tone-ok";
 });
+const coverageTone = computed(() => {
+  const coverage = Number(result.value?.snapshot?.coverage_global || 0);
+  return coverage >= Number(form.min_coverage || 0) ? "tone-ok" : "tone-warn";
+});
+const {
+  filteredLocations,
+  selectLocationCard,
+  selectedLocationName,
+  updateSelectedLocationPreset,
+} = useLocationSearch({
+  locations,
+  form,
+  result,
+  selectedLocationPreset,
+  locationSearch,
+  loadSensors,
+});
+
+const {
+  activeHistoryFilters,
+  filteredHistoryItems,
+  historyParameters,
+  historyRiskLabels,
+  resetHistoryFilters,
+  toggleHistoryParameter,
+  toggleHistoryRisk,
+} = useHistoryFilters({
+  historyItems,
+  historyFilter,
+  historyDateFilter,
+  historyParameterFilter,
+  historyRiskFilter,
+  selectedHistoryItem,
+});
+
 const canRunEvaluation = computed(() => {
   if (form.mode === "openaq") {
     return Boolean(form.location_id);
@@ -891,33 +763,65 @@ const sectionGuides = {
 
 const subindicesChart = computed(() => {
   const labels = Object.keys(result.value?.aqi?.subindices || {});
+  const dominant = result.value?.aqi?.dominant_parameter;
+  const values = labels.map((label) => result.value.aqi.subindices[label]);
   return {
     labels,
     datasets: [
       {
-        label: "Subíndice",
-        data: labels.map((label) => result.value.aqi.subindices[label]),
-        backgroundColor: "#1d6fd8",
-        borderRadius: 8,
+        label: "Subíndice AQI",
+        data: values,
+        backgroundColor: labels.map((label, index) => aqiBandColor(values[index], label === dominant)),
+        borderColor: labels.map((label, index) =>
+          label === dominant ? "#202738" : aqiBandColor(values[index], true),
+        ),
+        borderWidth: labels.map((label) => (label === dominant ? 2 : 1)),
+        borderRadius: 6,
       },
+      ...aqiThresholds
+        .filter((item) => !values.length || Math.max(...values, 0) >= item.value - 20)
+        .map((item) => ({
+          type: "line",
+          label: `Umbral ${item.label} (${item.value})`,
+          data: labels.map(() => item.value),
+          borderColor: item.color,
+          borderDash: [6, 6],
+          borderWidth: 1.5,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          fill: false,
+        })),
     ],
   };
 });
 
-const summaryChart = computed(() => ({
-  labels: ["AQI base", "Concurrencia", "Persistencia", "Puntuación difusa"],
-  datasets: [
-    {
-      data: [
-        result.value?.aqi?.global_aqi || 0,
-        result.value?.concurrence_score || 0,
-        result.value?.persistence_score || 0,
-        result.value?.fuzzy?.score || 0,
-      ],
-      backgroundColor: ["#1d6fd8", "#d68716", "#ca4b34", "#1d8b5c"],
-      borderRadius: 8,
+const subindicesChartOptions = computed(() => ({
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: true,
+      position: "bottom",
+      labels: {
+        color: "#627079",
+        boxWidth: 18,
+      },
     },
-  ],
+  },
+  scales: {
+    x: { grid: { display: false }, ticks: { color: "#627079" } },
+    y: {
+      beginAtZero: true,
+      suggestedMax: Math.max(result.value?.aqi?.global_aqi || 0, 160),
+      grid: { color: "rgba(23, 33, 39, 0.08)" },
+      ticks: { color: "#627079" },
+      title: {
+        display: true,
+        text: "Subíndice AQI",
+        color: "#627079",
+      },
+    },
+  },
 }));
 
 const baseVsFinalChart = computed(() => ({
@@ -925,8 +829,8 @@ const baseVsFinalChart = computed(() => ({
   datasets: [
     {
       data: [result.value?.aqi?.global_aqi || 0, result.value?.fuzzy?.score || 0],
-      backgroundColor: ["#1d6fd8", "#1d8b5c"],
-      borderRadius: 8,
+      backgroundColor: ["#2fb7d3", "#46b34d"],
+      borderRadius: 6,
     },
   ],
 }));
@@ -940,8 +844,8 @@ const auxiliaryChart = computed(() => ({
         result.value?.persistence_score || 0,
         result.value?.snapshot?.coverage_global || 0,
       ],
-      backgroundColor: ["#d68716", "#ca4b34", "#1d8b5c"],
-      borderRadius: 8,
+      backgroundColor: ["#d38b1e", "#d15e43", "#46b34d"],
+      borderRadius: 6,
     },
   ],
 }));
@@ -966,8 +870,8 @@ const triggeredRulesChart = computed(() => ({
       data: activatedRuleDetails.value.length
         ? activatedRuleDetails.value.map((rule) => rule.strength)
         : [0],
-      backgroundColor: "#15304b",
-      borderRadius: 8,
+      backgroundColor: "#202738",
+      borderRadius: 6,
     },
   ],
 }));
@@ -982,8 +886,8 @@ const timeSeriesChart = computed(() => {
       {
         label: selectedSeriesParameter.value,
         data: observations.map((item) => item.value),
-        borderColor: "#1d6fd8",
-        backgroundColor: "rgba(29, 111, 216, 0.18)",
+        borderColor: "#0f8f8a",
+        backgroundColor: "rgba(15, 143, 138, 0.14)",
         fill: true,
         tension: 0.22,
       },
@@ -998,8 +902,8 @@ const aggregationChart = computed(() => {
       {
         label: "Agregación difusa",
         data: points.map((item) => ({ x: item.x, y: item.membership })),
-        borderColor: "#15304b",
-        backgroundColor: "rgba(21, 48, 75, 0.18)",
+        borderColor: "#202738",
+        backgroundColor: "rgba(32, 39, 56, 0.14)",
         fill: true,
         tension: 0.25,
       },
@@ -1015,38 +919,11 @@ const contextBeforeAfterChart = computed(() => {
     datasets: [
       {
         data: [before, after],
-        backgroundColor: ["#d68716", "#1d8b5c"],
-        borderRadius: 8,
+        backgroundColor: ["#d38b1e", "#46b34d"],
+        borderRadius: 6,
       },
     ],
   };
-});
-
-const filteredHistoryItems = computed(() => {
-  const term = historyFilter.value.trim().toLowerCase();
-  return historyItems.value.filter((item) => {
-    const haystack = [
-      item.recorded_at,
-      item.summary.location_name,
-      item.summary.fuzzy_label,
-      item.summary.dominant_parameter,
-      String(item.summary.aqi_global ?? ""),
-    ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-    const matchesText = !term || haystack.includes(term);
-    const matchesDate =
-      !historyDateFilter.value || String(item.recorded_at || "").startsWith(historyDateFilter.value);
-    const matchesParameter =
-      !historyParameterFilter.value ||
-      String(item.summary.dominant_parameter || "") === historyParameterFilter.value;
-    return matchesText && matchesDate && matchesParameter;
-  });
-});
-
-const historyParameters = computed(() => {
-  return [...new Set(historyItems.value.map((item) => item.summary.dominant_parameter).filter(Boolean))];
 });
 
 const historyComparisonChart = computed(() => {
@@ -1062,8 +939,8 @@ const historyComparisonChart = computed(() => {
           current?.snapshot?.coverage_global || 0,
           current?.fuzzy?.score || 0,
         ],
-        backgroundColor: "#1d6fd8",
-        borderRadius: 8,
+        backgroundColor: "#2fb7d3",
+        borderRadius: 6,
       },
       {
         label: "Histórica",
@@ -1072,8 +949,8 @@ const historyComparisonChart = computed(() => {
           previous?.summary?.coverage_global || 0,
           previous?.summary?.fuzzy_score || 0,
         ],
-        backgroundColor: "#d68716",
-        borderRadius: 8,
+        backgroundColor: "#0f8f8a",
+        borderRadius: 6,
       },
     ],
   };
@@ -1195,12 +1072,6 @@ function closeModal() {
   modalState.open = false;
 }
 
-function resetHistoryFilters() {
-  historyFilter.value = "";
-  historyDateFilter.value = "";
-  historyParameterFilter.value = "";
-}
-
 function exportCurrentRun() {
   if (!result.value) {
     return;
@@ -1223,14 +1094,6 @@ function exportCurrentRun() {
   link.download = `aqrisk-run-${new Date().toISOString().slice(0, 19).replaceAll(":", "-")}.json`;
   link.click();
   URL.revokeObjectURL(url);
-}
-
-function applySelectedLocation() {
-  if (!selectedLocationPreset.value) {
-    return;
-  }
-  form.location_id = selectedLocationPreset.value;
-  loadSensors(Number(selectedLocationPreset.value));
 }
 
 function openViewer(sectionId) {
@@ -1332,26 +1195,12 @@ watch(
 );
 
 watch(
-  filteredHistoryItems,
-  (items) => {
-    if (!items.length) {
-      selectedHistoryItem.value = null;
-      return;
-    }
-    const currentId = selectedHistoryItem.value?.recorded_at;
-    if (!currentId || !items.some((item) => item.recorded_at === currentId)) {
-      selectedHistoryItem.value = items[0];
-    }
-  },
-  { immediate: true },
-);
-
-watch(
   () => form.mode,
   (mode) => {
     lastError.value = "";
     if (mode === "mock") {
       sensors.value = [];
+      locationSearch.value = "";
       return;
     }
     if (form.location_id) {

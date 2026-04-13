@@ -78,11 +78,24 @@ La concurrencia se define como la presencia de varios contaminantes con subíndi
 
 Regla operativa:
 
-- `low`: solo un contaminante alcanza la banda cercana al dominante;
-- `medium`: dos contaminantes alcanzan esa banda;
-- `high`: tres o más contaminantes alcanzan esa banda.
+- se identifica un umbral de cercanía fijado en `80%` del dominante, con mínimo operativo de `25`;
+- se excluye un contribuyente dominante para medir solo acompañantes adicionales;
+- cada contaminante restante aporta una cercanía normalizada entre `0` y `1` según qué tan próximo quede del dominante;
+- esas cercanías se suman y se convierten a una escala `0–100`.
 
-La banda cercana al dominante se fija en `80%` del AQI global, con un mínimo operativo de `25`.
+Formalmente:
+
+`threshold = max(25, 0.8 × AQI_dominante)`
+
+Para cada contaminante adicional `i`:
+
+`closeness_i = clamp((AQI_i - threshold) / (AQI_dominante - threshold), 0, 1)`
+
+Y la puntuación final queda:
+
+`concurrence = min(100, (Σ closeness_i / 3) × 100)`
+
+La saturación en `3` acompañantes efectivos mantiene coherencia con la semántica del motor difuso (`low`, `medium`, `high`). A partir de ese punto el episodio ya se interpreta como multi-contaminante alto, por lo que distinguir `4` frente a `5` acompañantes añade poco valor a la malla base de reglas.
 
 ## 7. Definición de persistencia
 
