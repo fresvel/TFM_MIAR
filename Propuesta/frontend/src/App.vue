@@ -347,7 +347,7 @@
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
+import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
 import DashboardSection from "./components/DashboardSection.vue";
 import EvaluationSection from "./components/EvaluationSection.vue";
 import ExplainabilitySection from "./components/ExplainabilitySection.vue";
@@ -394,6 +394,7 @@ const modalState = reactive({
   mode: "list",
   items: [],
 });
+const captureMode = ref(false);
 
 const metadata = reactive({
   modes: ["mock", "openaq"],
@@ -1185,6 +1186,67 @@ function closeViewer() {
   viewerOpen.value = false;
 }
 
+function parseBooleanParam(value) {
+  return value === "1" || value === "true" || value === "yes";
+}
+
+function readCaptureConfig() {
+  if (typeof window === "undefined") {
+    return null;
+  }
+  const params = new URLSearchParams(window.location.search);
+  const mode = params.get("mode");
+  const section = params.get("viewer");
+  const scenarioId = params.get("scenario_id");
+  const locationId = params.get("location_id");
+  const series = params.get("series");
+  const autorun = parseBooleanParam(params.get("autorun") || params.get("capture") || "");
+  const enabled = parseBooleanParam(params.get("capture") || "") || autorun || Boolean(section);
+  if (!enabled) {
+    return null;
+  }
+  return {
+    enabled,
+    autorun,
+    mode,
+    section,
+    scenarioId,
+    locationId,
+    series,
+  };
+}
+
+async function applyCaptureConfig(config) {
+  if (!config) {
+    return;
+  }
+  captureMode.value = true;
+  if (typeof document !== "undefined") {
+    document.body.dataset.captureMode = "true";
+  }
+  if (config.mode && metadata.modes.includes(config.mode)) {
+    form.mode = config.mode;
+  }
+  if (config.scenarioId) {
+    form.scenario_id = config.scenarioId;
+  }
+  if (config.locationId) {
+    form.location_id = config.locationId;
+  }
+  if (config.series) {
+    selectedSeriesParameter.value = config.series;
+  }
+  if (config.autorun) {
+    await runEvaluation();
+    await nextTick();
+  }
+  if (config.section && sections.some((item) => item.id === config.section) && result.value) {
+    currentSection.value = config.section;
+    viewerOpen.value = true;
+    await nextTick();
+  }
+}
+
 async function loadHealth() {
   try {
     await checkHealth();
@@ -1241,10 +1303,14 @@ function handleGlobalKeydown(event) {
 onMounted(async () => {
   window.addEventListener("keydown", handleGlobalKeydown);
   await Promise.all([loadMetadata(), loadHealth(), refreshLocations(), refreshHistory(), refreshScenarios()]);
+  await applyCaptureConfig(readCaptureConfig());
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("keydown", handleGlobalKeydown);
+  if (typeof document !== "undefined") {
+    delete document.body.dataset.captureMode;
+  }
 });
 
 watch(

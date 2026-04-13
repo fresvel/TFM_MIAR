@@ -100,13 +100,17 @@ AQI=\left(Q_1\cdot Q_2\cdots Q_n\right)^{1/n},
 \end{equation}
 con \(n\) contaminantes considerados \cite{ART02}.
 
-Otro esquema ampliamente utilizado emplea concentraciones de quiebre (\textit{breakpoints}) e interpolación lineal segmentada para mapear cada concentración al subíndice correspondiente \cite{ART01,ART02}. Después, los subíndices se agregan con una regla definida por el modelo y el marco regulatorio, por ejemplo operador máximo o funciones de agregación \cite{ART01}.
+Otro esquema ampliamente utilizado emplea concentraciones de quiebre (\textit{breakpoints}) e interpolación lineal segmentada para mapear cada concentración al subíndice correspondiente \cite{ART01,ART02}. En formulaciones regulatorias como las tablas de \textit{EPA/AQS}, el subíndice se obtiene como:
+\begin{equation}
+I_p=\frac{I_{Hi}-I_{Lo}}{BP_{Hi}-BP_{Lo}}\left(C_p-BP_{Lo}\right)+I_{Lo},
+\end{equation}
+donde \(C_p\) es la concentración representativa del contaminante \(p\), \(BP_{Lo}\) y \(BP_{Hi}\) son los \textit{breakpoints} inferior y superior del tramo aplicable, e \(I_{Lo}\) e \(I_{Hi}\) son los límites del subíndice asociados a ese tramo \cite{DATA_EPA_AQS_BREAKPOINTS}. Después, los subíndices se agregan con una regla definida por el modelo y el marco regulatorio; en el marco EPA/AQS la consolidación se basa en el mayor subíndice calculado \cite{DATA_EPA_AQS_BREAKPOINTS}.
 
 La interpretación final del AQI se comunica mediante categorías cualitativas de riesgo, vinculadas a intervalos numéricos y a recomendaciones sanitarias para la población. En la práctica, son frecuentes escalas como \textit{Good, Satisfactory, Moderately Polluted, Poor, Very Poor} y \textit{Severe}; también se emplean escalas que culminan en \textit{Hazardous} \cite{ART01,ART02}.
 
 Las diferencias entre normas y jurisdicciones se originan en los parámetros reglamentarios que define cada autoridad ambiental: conjunto de contaminantes obligatorios, valores de quiebre (\textit{breakpoints}), periodos de promediación y denominación de categorías \cite{ART01,ART02}. En consecuencia, la interpretación del AQI depende de la norma aplicada en cada país o región, y la comparación entre resultados exige declarar explícitamente el marco normativo de referencia.
 
-El AQI puede entenderse como una cadena técnica de cuatro elementos: selección de contaminantes, normalización por estándar, agregación de subíndices y traducción a categorías de riesgo \cite{ART01,ART02}. La validez interpretativa del índice depende de la coherencia entre esos elementos y del marco normativo que los define. Por ello, cualquier implementación orientada a monitoreo o predicción debe declarar de forma explícita contaminantes incluidos, valores de referencia, método de cálculo y esquema categorial, para asegurar trazabilidad y lectura correcta del resultado \cite{ART01,ART02}. Sobre esta base se sustenta el siguiente tema, centrado en cómo la lógica difusa modela esa transición desde variables ambientales y de contaminación hacia salidas de decisión.
+El AQI puede entenderse como una cadena técnica de cuatro elementos: selección de contaminantes, normalización por estándar, agregación de subíndices y traducción a categorías de riesgo \cite{ART01,ART02}. La validez interpretativa del índice depende de la coherencia entre esos elementos y del marco normativo que los define. Por ello, cualquier implementación orientada a monitoreo debe declarar de forma explícita contaminantes incluidos, valores de referencia, método de cálculo y esquema categorial, para asegurar trazabilidad y lectura correcta del resultado \cite{ART01,ART02}. Sobre esta base se sustenta el siguiente tema, centrado en cómo la lógica difusa modela esa transición desde variables ambientales y de contaminación hacia salidas de decisión.
 
 
 
@@ -123,7 +127,7 @@ En sistemas difusos aplicados a calidad del aire se emplean tres familias princi
 
 \textbf{Mamdani} utiliza reglas con consecuentes lingüísticos. Tras evaluar las reglas, se agregan los conjuntos de salida y se aplica defuzzificación para obtener un valor numérico \cite{ART06,ART07}. Este enfoque mantiene una lectura directa de la lógica del sistema y favorece interpretación práctica de reglas.
 
-\textbf{Sugeno/TSK} conserva antecedentes difusos en las reglas, pero define consecuentes numéricos (constantes o funciones de entrada). La salida global se obtiene por promedio ponderado de esos consecuentes, lo que reduce costo computacional en inferencia y facilita integración con bloques matemáticos de control o predicción.
+\textbf{Sugeno/TSK} conserva antecedentes difusos en las reglas, pero define consecuentes numéricos (constantes o funciones de entrada). La salida global se obtiene por promedio ponderado de esos consecuentes, lo que reduce costo computacional en inferencia y facilita integración con bloques matemáticos de control.
 
 \textbf{ANFIS} (\textit{Adaptive Neuro-Fuzzy Inference System}) integra estructura difusa con entrenamiento sobre datos para ajustar parámetros del sistema, en especial funciones de pertenencia y pesos asociados a reglas \cite{ART04}. Este modelo incrementa capacidad de adaptación, aunque exige mayor control metodológico para conservar trazabilidad del proceso.
 
