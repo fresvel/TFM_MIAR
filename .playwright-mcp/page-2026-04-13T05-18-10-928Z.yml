@@ -1,0 +1,537 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: Vistas
+      - generic [ref=e8]:
+        - button "Ayuda sobre navegación" [ref=e9] [cursor=pointer]: i
+        - generic: Navega por bloques de análisis, trazabilidad y evaluación del artefacto.
+    - generic [ref=e10]:
+      - button "Dashboard" [ref=e11] [cursor=pointer]
+      - button "Trazabilidad" [ref=e12] [cursor=pointer]
+      - button "Explicabilidad" [ref=e13] [cursor=pointer]
+      - button "Evaluación" [ref=e14] [cursor=pointer]
+    - generic [ref=e108]:
+      - generic [ref=e109]: Corrida actual
+      - heading "unhealthy" [level=3] [ref=e110]
+      - paragraph [ref=e111]: AQI 112 · o3
+      - generic [ref=e112]:
+        - generic [ref=e113]: Riesgo
+        - generic [ref=e114]: 100%
+  - generic [ref=e15]:
+    - banner [ref=e16]:
+      - generic [ref=e17]:
+        - img "Fresvel" [ref=e18]
+        - generic [ref=e19]:
+          - strong [ref=e20]: AQRisk Console
+          - generic [ref=e21]: Monitoreo, evaluación difusa y explicabilidad operativa
+      - generic [ref=e22]:
+        - generic [ref=e23]: Backend operativo
+        - generic [ref=e24]: Modo mock
+    - main [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: Centro de análisis
+          - heading "Panel de control y explicabilidad" [level=2] [ref=e29]
+          - paragraph [ref=e30]: Consolida la entrada, el estado normativo, la inferencia difusa y el ajuste contextual en una sola superficie de trabajo.
+        - generic [ref=e31]:
+          - strong [ref=e32]: Estado del backend
+          - paragraph [ref=e33]: Servicio disponible.
+          - text: "API: http://localhost:18010"
+          - generic [ref=e34]:
+            - button "Cómo leer esta vista" [ref=e35] [cursor=pointer]
+            - button "Interpretar corrida" [ref=e115] [cursor=pointer]
+            - button "Exportar JSON" [ref=e116] [cursor=pointer]
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "Control de entrada" [level=3] [ref=e38]
+          - paragraph [ref=e39]: Selecciona el modo de ejecución y los parámetros mínimos de la consulta. Este formulario dispara la evaluación del artefacto.
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: Modo
+              - combobox "Modo" [ref=e43]:
+                - option "mock" [selected]
+                - option "openaq"
+            - generic [ref=e44]:
+              - generic [ref=e45]: Escenario de evaluación
+              - combobox "Escenario de evaluación" [ref=e46]:
+                - option "Urban Escalation" [selected]
+                - option "Particulate Pressure"
+                - option "Moderate Multi-Contaminant"
+                - option "Diffuse Overlap"
+            - generic [ref=e47]:
+              - generic [ref=e48]: Ventana temporal (horas)
+              - spinbutton "Ventana temporal (horas)" [ref=e49]: "24"
+            - generic [ref=e50]:
+              - generic [ref=e51]: Cobertura mínima (%)
+              - spinbutton "Cobertura mínima (%)" [ref=e52]: "80"
+            - generic [ref=e53]:
+              - strong [ref=e54]: Modo controlado
+              - paragraph [ref=e55]: Úsalo para demostración, capturas y validación repetible del comportamiento del artefacto.
+            - button "Ejecutar evaluación" [ref=e56] [cursor=pointer]
+        - generic [ref=e57]:
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]: Lectura ejecutiva
+              - heading "unhealthy en Urban Escalation" [level=3] [ref=e120]
+              - paragraph [ref=e121]: El episodio queda dominado por o3 con AQI 112, 1 regla(s) activada(s) y cobertura 100%. La capa contextual modificó la salida final.
+            - generic [ref=e122]:
+              - article [ref=e123]:
+                - generic [ref=e124]: Riesgo final
+                - strong [ref=e125]: unhealthy
+                - generic [ref=e126]: Puntuación 175
+              - article [ref=e127]:
+                - generic [ref=e128]: AQI dominante
+                - strong [ref=e129]: 112 · o3
+                - generic [ref=e130]: unhealthy_sensitive_groups
+              - article [ref=e131]:
+                - generic [ref=e132]: Cobertura
+                - strong [ref=e133]: 100%
+                - generic [ref=e134]: Cumple el umbral configurado
+              - article [ref=e135]:
+                - generic [ref=e136]: Capa contextual
+                - strong [ref=e137]: "+50"
+                - generic [ref=e138]: 1 ajuste(s)
+            - generic [ref=e139]:
+              - button "Abrir evaluación" [ref=e140] [cursor=pointer]
+              - button "Revisar explicabilidad" [ref=e141] [cursor=pointer]
+          - generic [ref=e58]:
+            - heading "Resumen de la corrida actual" [level=3] [ref=e59]
+            - paragraph [ref=e60]: Síntesis del episodio analizado para lectura rápida y captura documental.
+            - generic [ref=e61]:
+              - article [ref=e62]:
+                - generic [ref=e63]: Fuente
+                - strong [ref=e64]: Escenario controlado
+              - article [ref=e65]:
+                - generic [ref=e66]: Entrada
+                - strong [ref=e67]: Urban Escalation
+              - article [ref=e68]:
+                - generic [ref=e69]: Dominante
+                - strong [ref=e70]: o3
+              - article [ref=e71]:
+                - generic [ref=e72]: Reglas activadas
+                - strong [ref=e73]: "1"
+              - article [ref=e74]:
+                - generic [ref=e75]: Ajuste contextual
+                - strong [ref=e76]: 1 ajuste(s)
+              - article [ref=e77]:
+                - generic [ref=e78]: Histórico local
+                - strong [ref=e79]: "25"
+          - generic [ref=e80]:
+            - heading "Base del modelo" [level=3] [ref=e81]
+            - paragraph [ref=e82]: Metadatos del backend expuestos para el frontend.
+            - generic [ref=e83]:
+              - generic [ref=e84]: consolidacion_normativa
+              - generic [ref=e85]: variables_auxiliares
+              - generic [ref=e86]: inferencia_difusa_principal
+              - generic [ref=e87]: ajuste_contextual
+              - generic [ref=e88]: alertamiento_salida
+            - paragraph [ref=e89]: "Base normativa: EPA/AQS AQI Breakpoints. Reglas principales: 54. Reglas contextuales: 9."
+          - generic [ref=e90]:
+            - article [ref=e91]:
+              - generic [ref=e92]: AQI global
+              - strong [ref=e93]: "112"
+              - generic [ref=e94]: o3
+            - article [ref=e95]:
+              - generic [ref=e96]: Categoría base
+              - strong [ref=e97]: unhealthy_sensitive_groups
+              - generic [ref=e98]: EPA/AQS AQI Breakpoints
+            - article [ref=e99]:
+              - generic [ref=e100]: Riesgo final
+              - strong [ref=e101]: unhealthy
+              - generic [ref=e102]: Score 175
+            - article [ref=e103]:
+              - generic [ref=e104]: Cobertura global
+              - strong [ref=e105]: "100"
+              - generic [ref=e106]: Umbral 80%
+      - generic [ref=e142]:
+        - heading "Exploración detallada" [level=3] [ref=e143]
+        - paragraph [ref=e144]: Usa el menú lateral o estos accesos rápidos para abrir una vista específica del sistema.
+        - generic [ref=e145]:
+          - button "Dashboard Esta vista resume el episodio actual y muestra la progresión desde la entrada hasta la salida del sistema." [ref=e146] [cursor=pointer]:
+            - strong [ref=e147]: Dashboard
+            - generic [ref=e148]: Esta vista resume el episodio actual y muestra la progresión desde la entrada hasta la salida del sistema.
+          - button "Trazabilidad Esta vista expone el recorrido completo de la decisión y los elementos observados por el sistema." [ref=e149] [cursor=pointer]:
+            - strong [ref=e150]: Trazabilidad
+            - generic [ref=e151]: Esta vista expone el recorrido completo de la decisión y los elementos observados por el sistema.
+          - button "Explicabilidad Esta vista describe el comportamiento interno del modelo difuso." [ref=e152] [cursor=pointer]:
+            - strong [ref=e153]: Explicabilidad
+            - generic [ref=e154]: Esta vista describe el comportamiento interno del modelo difuso.
+          - button "Evaluación Esta vista ayuda a contrastar la corrida actual con su historial y a revisar el impacto del ajuste contextual." [ref=e155] [cursor=pointer]:
+            - strong [ref=e156]: Evaluación
+            - generic [ref=e157]: Esta vista ayuda a contrastar la corrida actual con su historial y a revisar el impacto del ajuste contextual.
+  - dialog "Evaluación" [ref=e158]:
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - heading "Evaluación" [level=3] [ref=e161]
+        - paragraph [ref=e162]: Visor modal para revisar una sola sección del sistema a la vez.
+      - generic [ref=e164]:
+        - button "Dashboard" [ref=e165] [cursor=pointer]
+        - button "Trazabilidad" [ref=e166] [cursor=pointer]
+        - button "Explicabilidad" [ref=e167] [cursor=pointer]
+        - button "Evaluación" [ref=e168] [cursor=pointer]
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - heading "Resultado de evaluación" [level=3] [ref=e172]
+        - paragraph [ref=e173]: Unhealthy | AQI 112
+        - paragraph [ref=e174]: "Estado base Unhealthy for Sensitive Groups. Contaminante dominante: o3. Riesgo estimado: Unhealthy. Reglas activadas: R_unhealthy_sensitive_groups_low_medium."
+      - generic [ref=e175]:
+        - heading "Impacto del ajuste contextual" [level=3] [ref=e176]
+        - paragraph [ref=e177]: Esta lectura compara la salida principal del motor difuso con la salida final después de la capa contextual basada en reglas.
+        - generic [ref=e178]:
+          - generic [ref=e179]:
+            - generic [ref=e180]: Salida principal
+            - strong [ref=e181]: "125.00"
+            - text: unhealthy_sensitive_groups
+          - generic [ref=e182]:
+            - generic [ref=e183]: Salida final
+            - strong [ref=e184]: "175.00"
+            - text: unhealthy
+          - generic [ref=e185]:
+            - generic [ref=e186]: Delta contextual
+            - strong [ref=e187]: "+50.00"
+            - text: La capa contextual aplicó 1 nivel(es) mediante CTX_high_high.
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - heading "Ajuste contextual antes y después" [level=3] [ref=e190]
+          - button "Descargar PNG" [ref=e191] [cursor=pointer]
+        - paragraph [ref=e192]: Compara la salida principal del motor con la salida final tras la capa contextual.
+      - generic [ref=e195]:
+        - heading "Historial reciente" [level=3] [ref=e196]
+        - paragraph [ref=e197]: Corridas registradas localmente por el backend. Selecciona una para compararla con la corrida actual.
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - generic [ref=e201]: Texto
+              - textbox "Texto" [ref=e202]:
+                - /placeholder: Ubicación, etiqueta o AQI
+            - generic [ref=e203]:
+              - generic [ref=e204]: Fecha
+              - textbox "Fecha" [ref=e205]
+            - generic [ref=e206]:
+              - generic [ref=e207]: Parámetro dominante
+              - combobox "Parámetro dominante" [ref=e208]:
+                - option "Todos" [selected]
+                - option "o3"
+                - option "pm25"
+            - generic [ref=e209]:
+              - generic [ref=e210]: Riesgo
+              - combobox "Riesgo" [ref=e211]:
+                - option "Todos" [selected]
+                - option "unhealthy"
+                - option "moderate"
+          - generic [ref=e212]:
+            - generic [ref=e213]: 25 coincidencia(s) sobre 25 registro(s).
+            - button "Limpiar filtros" [ref=e214] [cursor=pointer]
+          - generic [ref=e215]:
+            - button "o3" [ref=e216] [cursor=pointer]
+            - button "pm25" [ref=e217] [cursor=pointer]
+          - generic [ref=e218]:
+            - button "unhealthy" [ref=e219] [cursor=pointer]
+            - button "moderate" [ref=e220] [cursor=pointer]
+        - generic [ref=e222] [cursor=pointer]: Sin filtros activos
+        - generic [ref=e223]:
+          - list [ref=e224]:
+            - listitem [ref=e225]:
+              - button "Urban Escalation 13 abr 2026, 12:17 a. m. AQI 112 unhealthy o3 mock Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e226] [cursor=pointer]:
+                - generic [ref=e227]:
+                  - strong [ref=e228]: Urban Escalation
+                  - generic [ref=e229]: 13 abr 2026, 12:17 a. m.
+                - generic [ref=e230]:
+                  - generic [ref=e231]: AQI 112
+                  - generic [ref=e232]: unhealthy
+                  - generic [ref=e233]: o3
+                  - generic [ref=e234]: mock
+                - generic [ref=e235]: Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e236]:
+              - button "Diffuse Overlap 13 abr 2026, 12:05 a. m. AQI 93 moderate o3 mock Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas" [ref=e237] [cursor=pointer]:
+                - generic [ref=e238]:
+                  - strong [ref=e239]: Diffuse Overlap
+                  - generic [ref=e240]: 13 abr 2026, 12:05 a. m.
+                - generic [ref=e241]:
+                  - generic [ref=e242]: AQI 93
+                  - generic [ref=e243]: moderate
+                  - generic [ref=e244]: o3
+                  - generic [ref=e245]: mock
+                - generic [ref=e246]: Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas
+            - listitem [ref=e247]:
+              - button "Diffuse Overlap 13 abr 2026, 12:03 a. m. AQI 93 moderate o3 mock Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas" [ref=e248] [cursor=pointer]:
+                - generic [ref=e249]:
+                  - strong [ref=e250]: Diffuse Overlap
+                  - generic [ref=e251]: 13 abr 2026, 12:03 a. m.
+                - generic [ref=e252]:
+                  - generic [ref=e253]: AQI 93
+                  - generic [ref=e254]: moderate
+                  - generic [ref=e255]: o3
+                  - generic [ref=e256]: mock
+                - generic [ref=e257]: Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas
+            - listitem [ref=e258]:
+              - button "Urban Escalation 12 abr 2026, 11:51 p. m. AQI 112 unhealthy o3 mock Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e259] [cursor=pointer]:
+                - generic [ref=e260]:
+                  - strong [ref=e261]: Urban Escalation
+                  - generic [ref=e262]: 12 abr 2026, 11:51 p. m.
+                - generic [ref=e263]:
+                  - generic [ref=e264]: AQI 112
+                  - generic [ref=e265]: unhealthy
+                  - generic [ref=e266]: o3
+                  - generic [ref=e267]: mock
+                - generic [ref=e268]: Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e269]:
+              - button "SAN BORJA 12 abr 2026, 11:44 p. m. AQI 85 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e270] [cursor=pointer]:
+                - generic [ref=e271]:
+                  - strong [ref=e272]: SAN BORJA
+                  - generic [ref=e273]: 12 abr 2026, 11:44 p. m.
+                - generic [ref=e274]:
+                  - generic [ref=e275]: AQI 85
+                  - generic [ref=e276]: moderate
+                  - generic [ref=e277]: pm25
+                  - generic [ref=e278]: openaq
+                - generic [ref=e279]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e280]:
+              - button "Parque O'Higgins 12 abr 2026, 11:44 p. m. AQI 83 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e281] [cursor=pointer]:
+                - generic [ref=e282]:
+                  - strong [ref=e283]: Parque O'Higgins
+                  - generic [ref=e284]: 12 abr 2026, 11:44 p. m.
+                - generic [ref=e285]:
+                  - generic [ref=e286]: AQI 83
+                  - generic [ref=e287]: moderate
+                  - generic [ref=e288]: pm25
+                  - generic [ref=e289]: openaq
+                - generic [ref=e290]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e291]:
+              - button "Hospital General de México 12 abr 2026, 11:44 p. m. AQI 64 moderate o3 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [active] [ref=e292] [cursor=pointer]:
+                - generic [ref=e293]:
+                  - strong [ref=e294]: Hospital General de México
+                  - generic [ref=e295]: 12 abr 2026, 11:44 p. m.
+                - generic [ref=e296]:
+                  - generic [ref=e297]: AQI 64
+                  - generic [ref=e298]: moderate
+                  - generic [ref=e299]: o3
+                  - generic [ref=e300]: openaq
+                - generic [ref=e301]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e302]:
+              - button "Urban Escalation 12 abr 2026, 11:42 p. m. AQI 112 unhealthy o3 mock Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e303] [cursor=pointer]:
+                - generic [ref=e304]:
+                  - strong [ref=e305]: Urban Escalation
+                  - generic [ref=e306]: 12 abr 2026, 11:42 p. m.
+                - generic [ref=e307]:
+                  - generic [ref=e308]: AQI 112
+                  - generic [ref=e309]: unhealthy
+                  - generic [ref=e310]: o3
+                  - generic [ref=e311]: mock
+                - generic [ref=e312]: Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e313]:
+              - button "SAN BORJA 12 abr 2026, 11:42 p. m. AQI 85 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e314] [cursor=pointer]:
+                - generic [ref=e315]:
+                  - strong [ref=e316]: SAN BORJA
+                  - generic [ref=e317]: 12 abr 2026, 11:42 p. m.
+                - generic [ref=e318]:
+                  - generic [ref=e319]: AQI 85
+                  - generic [ref=e320]: moderate
+                  - generic [ref=e321]: pm25
+                  - generic [ref=e322]: openaq
+                - generic [ref=e323]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e324]:
+              - button "Parque O'Higgins 12 abr 2026, 11:41 p. m. AQI 83 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e325] [cursor=pointer]:
+                - generic [ref=e326]:
+                  - strong [ref=e327]: Parque O'Higgins
+                  - generic [ref=e328]: 12 abr 2026, 11:41 p. m.
+                - generic [ref=e329]:
+                  - generic [ref=e330]: AQI 83
+                  - generic [ref=e331]: moderate
+                  - generic [ref=e332]: pm25
+                  - generic [ref=e333]: openaq
+                - generic [ref=e334]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e335]:
+              - button "Urban Escalation 12 abr 2026, 11:41 p. m. AQI 112 unhealthy o3 mock Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e336] [cursor=pointer]:
+                - generic [ref=e337]:
+                  - strong [ref=e338]: Urban Escalation
+                  - generic [ref=e339]: 12 abr 2026, 11:41 p. m.
+                - generic [ref=e340]:
+                  - generic [ref=e341]: AQI 112
+                  - generic [ref=e342]: unhealthy
+                  - generic [ref=e343]: o3
+                  - generic [ref=e344]: mock
+                - generic [ref=e345]: Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e346]:
+              - button "SAN BORJA 12 abr 2026, 11:41 p. m. AQI 85 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e347] [cursor=pointer]:
+                - generic [ref=e348]:
+                  - strong [ref=e349]: SAN BORJA
+                  - generic [ref=e350]: 12 abr 2026, 11:41 p. m.
+                - generic [ref=e351]:
+                  - generic [ref=e352]: AQI 85
+                  - generic [ref=e353]: moderate
+                  - generic [ref=e354]: pm25
+                  - generic [ref=e355]: openaq
+                - generic [ref=e356]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e357]:
+              - button "Parque O'Higgins 12 abr 2026, 11:41 p. m. AQI 83 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e358] [cursor=pointer]:
+                - generic [ref=e359]:
+                  - strong [ref=e360]: Parque O'Higgins
+                  - generic [ref=e361]: 12 abr 2026, 11:41 p. m.
+                - generic [ref=e362]:
+                  - generic [ref=e363]: AQI 83
+                  - generic [ref=e364]: moderate
+                  - generic [ref=e365]: pm25
+                  - generic [ref=e366]: openaq
+                - generic [ref=e367]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e368]:
+              - button "Hospital General de México 12 abr 2026, 11:41 p. m. AQI 64 moderate o3 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e369] [cursor=pointer]:
+                - generic [ref=e370]:
+                  - strong [ref=e371]: Hospital General de México
+                  - generic [ref=e372]: 12 abr 2026, 11:41 p. m.
+                - generic [ref=e373]:
+                  - generic [ref=e374]: AQI 64
+                  - generic [ref=e375]: moderate
+                  - generic [ref=e376]: o3
+                  - generic [ref=e377]: openaq
+                - generic [ref=e378]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e379]:
+              - button "Diffuse Overlap 12 abr 2026, 11:40 p. m. AQI 93 moderate o3 mock Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas" [ref=e380] [cursor=pointer]:
+                - generic [ref=e381]:
+                  - strong [ref=e382]: Diffuse Overlap
+                  - generic [ref=e383]: 12 abr 2026, 11:40 p. m.
+                - generic [ref=e384]:
+                  - generic [ref=e385]: AQI 93
+                  - generic [ref=e386]: moderate
+                  - generic [ref=e387]: o3
+                  - generic [ref=e388]: mock
+                - generic [ref=e389]: Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas
+            - listitem [ref=e390]:
+              - button "Parque O'Higgins 12 abr 2026, 11:40 p. m. AQI 83 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e391] [cursor=pointer]:
+                - generic [ref=e392]:
+                  - strong [ref=e393]: Parque O'Higgins
+                  - generic [ref=e394]: 12 abr 2026, 11:40 p. m.
+                - generic [ref=e395]:
+                  - generic [ref=e396]: AQI 83
+                  - generic [ref=e397]: moderate
+                  - generic [ref=e398]: pm25
+                  - generic [ref=e399]: openaq
+                - generic [ref=e400]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e401]:
+              - button "Urban Escalation 12 abr 2026, 11:40 p. m. AQI 112 unhealthy o3 mock Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e402] [cursor=pointer]:
+                - generic [ref=e403]:
+                  - strong [ref=e404]: Urban Escalation
+                  - generic [ref=e405]: 12 abr 2026, 11:40 p. m.
+                - generic [ref=e406]:
+                  - generic [ref=e407]: AQI 112
+                  - generic [ref=e408]: unhealthy
+                  - generic [ref=e409]: o3
+                  - generic [ref=e410]: mock
+                - generic [ref=e411]: Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e412]:
+              - button "Hospital General de México 12 abr 2026, 11:39 p. m. AQI 64 moderate o3 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e413] [cursor=pointer]:
+                - generic [ref=e414]:
+                  - strong [ref=e415]: Hospital General de México
+                  - generic [ref=e416]: 12 abr 2026, 11:39 p. m.
+                - generic [ref=e417]:
+                  - generic [ref=e418]: AQI 64
+                  - generic [ref=e419]: moderate
+                  - generic [ref=e420]: o3
+                  - generic [ref=e421]: openaq
+                - generic [ref=e422]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e423]:
+              - button "Hospital General de México 12 abr 2026, 11:38 p. m. AQI 64 moderate o3 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e424] [cursor=pointer]:
+                - generic [ref=e425]:
+                  - strong [ref=e426]: Hospital General de México
+                  - generic [ref=e427]: 12 abr 2026, 11:38 p. m.
+                - generic [ref=e428]:
+                  - generic [ref=e429]: AQI 64
+                  - generic [ref=e430]: moderate
+                  - generic [ref=e431]: o3
+                  - generic [ref=e432]: openaq
+                - generic [ref=e433]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e434]:
+              - button "Hospital General de México 12 abr 2026, 11:36 p. m. AQI 64 moderate o3 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e435] [cursor=pointer]:
+                - generic [ref=e436]:
+                  - strong [ref=e437]: Hospital General de México
+                  - generic [ref=e438]: 12 abr 2026, 11:36 p. m.
+                - generic [ref=e439]:
+                  - generic [ref=e440]: AQI 64
+                  - generic [ref=e441]: moderate
+                  - generic [ref=e442]: o3
+                  - generic [ref=e443]: openaq
+                - generic [ref=e444]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e445]:
+              - button "Urban Escalation 12 abr 2026, 11:36 p. m. AQI 112 unhealthy o3 mock Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e446] [cursor=pointer]:
+                - generic [ref=e447]:
+                  - strong [ref=e448]: Urban Escalation
+                  - generic [ref=e449]: 12 abr 2026, 11:36 p. m.
+                - generic [ref=e450]:
+                  - generic [ref=e451]: AQI 112
+                  - generic [ref=e452]: unhealthy
+                  - generic [ref=e453]: o3
+                  - generic [ref=e454]: mock
+                - generic [ref=e455]: Cobertura 100.0% · 1 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e456]:
+              - button "SAN BORJA 12 abr 2026, 11:36 p. m. AQI 85 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e457] [cursor=pointer]:
+                - generic [ref=e458]:
+                  - strong [ref=e459]: SAN BORJA
+                  - generic [ref=e460]: 12 abr 2026, 11:36 p. m.
+                - generic [ref=e461]:
+                  - generic [ref=e462]: AQI 85
+                  - generic [ref=e463]: moderate
+                  - generic [ref=e464]: pm25
+                  - generic [ref=e465]: openaq
+                - generic [ref=e466]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e467]:
+              - button "Parque O'Higgins 12 abr 2026, 11:36 p. m. AQI 83 moderate pm25 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e468] [cursor=pointer]:
+                - generic [ref=e469]:
+                  - strong [ref=e470]: Parque O'Higgins
+                  - generic [ref=e471]: 12 abr 2026, 11:36 p. m.
+                - generic [ref=e472]:
+                  - generic [ref=e473]: AQI 83
+                  - generic [ref=e474]: moderate
+                  - generic [ref=e475]: pm25
+                  - generic [ref=e476]: openaq
+                - generic [ref=e477]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e478]:
+              - button "Hospital General de México 12 abr 2026, 11:36 p. m. AQI 64 moderate o3 openaq Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas" [ref=e479] [cursor=pointer]:
+                - generic [ref=e480]:
+                  - strong [ref=e481]: Hospital General de México
+                  - generic [ref=e482]: 12 abr 2026, 11:36 p. m.
+                - generic [ref=e483]:
+                  - generic [ref=e484]: AQI 64
+                  - generic [ref=e485]: moderate
+                  - generic [ref=e486]: o3
+                  - generic [ref=e487]: openaq
+                - generic [ref=e488]: Cobertura 100.0% · 0 ajuste(s) contextuales · 1 regla(s) activadas
+            - listitem [ref=e489]:
+              - button "Diffuse Overlap 12 abr 2026, 11:26 p. m. AQI 93 moderate o3 mock Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas" [ref=e490] [cursor=pointer]:
+                - generic [ref=e491]:
+                  - strong [ref=e492]: Diffuse Overlap
+                  - generic [ref=e493]: 12 abr 2026, 11:26 p. m.
+                - generic [ref=e494]:
+                  - generic [ref=e495]: AQI 93
+                  - generic [ref=e496]: moderate
+                  - generic [ref=e497]: o3
+                  - generic [ref=e498]: mock
+                - generic [ref=e499]: Cobertura 100.0% · 0 ajuste(s) contextuales · 4 regla(s) activadas
+          - article [ref=e500]:
+            - generic [ref=e501]: Corrida histórica seleccionada
+            - heading "Hospital General de México" [level=4] [ref=e532]
+            - paragraph [ref=e503]: 12 abr 2026, 11:44 p. m. · openaq
+            - generic [ref=e504]:
+              - generic [ref=e505]:
+                - generic [ref=e506]: AQI histórico
+                - strong [ref=e507]: "64"
+                - text: Dominante o3
+              - generic [ref=e508]:
+                - generic [ref=e509]: Salida histórica
+                - strong [ref=e510]: "75.00"
+                - text: moderate
+              - generic [ref=e511]:
+                - generic [ref=e512]: Cobertura histórica
+                - strong [ref=e513]: 100.0%
+                - text: 0 ajuste(s) contextuales
+            - generic [ref=e515] [cursor=pointer]: Sin ajuste contextual
+      - generic [ref=e516]:
+        - generic [ref=e517]:
+          - heading "Comparación histórica de riesgo" [level=3] [ref=e518]
+          - button "Descargar PNG" [ref=e519] [cursor=pointer]
+        - paragraph [ref=e520]: Contrasta la corrida actual con la corrida histórica seleccionada en escalas equivalentes de AQI base y salida final.
+      - generic [ref=e523]:
+        - generic [ref=e524]:
+          - heading "Comparación histórica de cobertura" [level=3] [ref=e525]
+          - button "Descargar PNG" [ref=e526] [cursor=pointer]
+        - paragraph [ref=e527]: Compara solo la completitud de datos de ambas corridas, fuera de la malla difusa.
+    - button "Cerrar" [ref=e531] [cursor=pointer]

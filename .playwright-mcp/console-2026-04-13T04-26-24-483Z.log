@@ -1,0 +1,24 @@
+[     266ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:18080/favicon.ico:0
+[    4965ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[   17983ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[   24630ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[   33450ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  683846ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  685112ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations/2178/sensors:0
+[  685128ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations/1134/sensors:0
+[  685167ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:18010/api/v1/evaluate:0
+[  749760ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  799718ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  846286ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  849463ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  855061ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  883218ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  888318ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  894272ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  900319ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  923390ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  927466ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[  989947ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[ 1056386ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[ 1061897ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0
+[ 1067609ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ http://localhost:18010/api/v1/locations:0

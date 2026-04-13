@@ -8,9 +8,9 @@
 \toprule
 Componente verificado & Resultado observado \\
 \midrule
-Pruebas automatizadas & Dos pruebas de humo ejecutadas correctamente sobre el pipeline y la validación mínima del modo \textit{OpenAQ}. \\
-Escenario sintético \textit{mock} & Ejecución completa del flujo con cobertura global del 100\%, soporte para PM$_{2.5}$, PM$_{10}$, CO, NO$_2$, O$_3$ y SO$_2$, AQI global de 112 y salida final \textit{Unhealthy}. \\
-Motor difuso principal & Activación de reglas de la malla de 54 reglas con salida trazable por nombre de regla. \\
+Pruebas automatizadas & Once pruebas ejecutadas correctamente sobre pipeline y API HTTP, incluyendo validación mínima del modo \textit{OpenAQ}, persistencia en histórico y un escenario con activación múltiple de reglas. \\
+Escenarios sintéticos \textit{mock} & Ejecución completa del flujo en \textit{urban\_escalation} y \textit{diffuse\_overlap}, con cobertura global del 100\%, soporte para PM$_{2.5}$, PM$_{10}$, CO, NO$_2$, O$_3$ y SO$_2$, y evidencia tanto de escalado contextual como de solape difuso. \\
+Motor difuso principal & Activación de reglas de la malla de 54 reglas con salida trazable por nombre, fuerza de disparo y etiqueta resultante. \\
 Capa contextual & Activación del ajuste \texttt{CTX\_high\_high} en el escenario sintético cuando temperatura y humedad se ubican en la zona alta. \\
 Salida del prototipo & Generación de alerta interpretable y serialización del resultado en formato JSON. \\
 \bottomrule

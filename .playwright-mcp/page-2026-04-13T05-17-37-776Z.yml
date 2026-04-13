@@ -1,0 +1,161 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: Vistas
+      - generic [ref=e8]:
+        - button "Ayuda sobre navegación" [ref=e9] [cursor=pointer]: i
+        - generic: Navega por bloques de análisis, trazabilidad y evaluación del artefacto.
+    - generic [ref=e10]:
+      - button "Dashboard" [ref=e11] [cursor=pointer]
+      - button "Trazabilidad" [ref=e12] [cursor=pointer]
+      - button "Explicabilidad" [ref=e13] [cursor=pointer]
+      - button "Evaluación" [ref=e14] [cursor=pointer]
+    - generic [ref=e108]:
+      - generic [ref=e109]: Corrida actual
+      - heading "unhealthy" [level=3] [ref=e110]
+      - paragraph [ref=e111]: AQI 112 · o3
+      - generic [ref=e112]:
+        - generic [ref=e113]: Riesgo
+        - generic [ref=e114]: 100%
+  - generic [ref=e15]:
+    - banner [ref=e16]:
+      - generic [ref=e17]:
+        - img "Fresvel" [ref=e18]
+        - generic [ref=e19]:
+          - strong [ref=e20]: AQRisk Console
+          - generic [ref=e21]: Monitoreo, evaluación difusa y explicabilidad operativa
+      - generic [ref=e22]:
+        - generic [ref=e23]: Backend operativo
+        - generic [ref=e24]: Modo mock
+    - main [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: Centro de análisis
+          - heading "Panel de control y explicabilidad" [level=2] [ref=e29]
+          - paragraph [ref=e30]: Consolida la entrada, el estado normativo, la inferencia difusa y el ajuste contextual en una sola superficie de trabajo.
+        - generic [ref=e31]:
+          - strong [ref=e32]: Estado del backend
+          - paragraph [ref=e33]: Servicio disponible.
+          - text: "API: http://localhost:18010"
+          - generic [ref=e34]:
+            - button "Cómo leer esta vista" [ref=e35] [cursor=pointer]
+            - button "Interpretar corrida" [ref=e115] [cursor=pointer]
+            - button "Exportar JSON" [ref=e116] [cursor=pointer]
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "Control de entrada" [level=3] [ref=e38]
+          - paragraph [ref=e39]: Selecciona el modo de ejecución y los parámetros mínimos de la consulta. Este formulario dispara la evaluación del artefacto.
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - generic [ref=e42]: Modo
+              - combobox "Modo" [ref=e43]:
+                - option "mock" [selected]
+                - option "openaq"
+            - generic [ref=e44]:
+              - generic [ref=e45]: Escenario de evaluación
+              - combobox "Escenario de evaluación" [ref=e46]:
+                - option "Urban Escalation" [selected]
+                - option "Particulate Pressure"
+                - option "Moderate Multi-Contaminant"
+                - option "Diffuse Overlap"
+            - generic [ref=e47]:
+              - generic [ref=e48]: Ventana temporal (horas)
+              - spinbutton "Ventana temporal (horas)" [ref=e49]: "24"
+            - generic [ref=e50]:
+              - generic [ref=e51]: Cobertura mínima (%)
+              - spinbutton "Cobertura mínima (%)" [ref=e52]: "80"
+            - generic [ref=e53]:
+              - strong [ref=e54]: Modo controlado
+              - paragraph [ref=e55]: Úsalo para demostración, capturas y validación repetible del comportamiento del artefacto.
+            - button "Ejecutar evaluación" [ref=e56] [cursor=pointer]
+        - generic [ref=e57]:
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]: Lectura ejecutiva
+              - heading "unhealthy en Urban Escalation" [level=3] [ref=e120]
+              - paragraph [ref=e121]: El episodio queda dominado por o3 con AQI 112, 1 regla(s) activada(s) y cobertura 100%. La capa contextual modificó la salida final.
+            - generic [ref=e122]:
+              - article [ref=e123]:
+                - generic [ref=e124]: Riesgo final
+                - strong [ref=e125]: unhealthy
+                - generic [ref=e126]: Puntuación 175
+              - article [ref=e127]:
+                - generic [ref=e128]: AQI dominante
+                - strong [ref=e129]: 112 · o3
+                - generic [ref=e130]: unhealthy_sensitive_groups
+              - article [ref=e131]:
+                - generic [ref=e132]: Cobertura
+                - strong [ref=e133]: 100%
+                - generic [ref=e134]: Cumple el umbral configurado
+              - article [ref=e135]:
+                - generic [ref=e136]: Capa contextual
+                - strong [ref=e137]: "+50"
+                - generic [ref=e138]: 1 ajuste(s)
+            - generic [ref=e139]:
+              - button "Abrir evaluación" [ref=e140] [cursor=pointer]
+              - button "Revisar explicabilidad" [ref=e141] [cursor=pointer]
+          - generic [ref=e58]:
+            - heading "Resumen de la corrida actual" [level=3] [ref=e59]
+            - paragraph [ref=e60]: Síntesis del episodio analizado para lectura rápida y captura documental.
+            - generic [ref=e61]:
+              - article [ref=e62]:
+                - generic [ref=e63]: Fuente
+                - strong [ref=e64]: Escenario controlado
+              - article [ref=e65]:
+                - generic [ref=e66]: Entrada
+                - strong [ref=e67]: Urban Escalation
+              - article [ref=e68]:
+                - generic [ref=e69]: Dominante
+                - strong [ref=e70]: o3
+              - article [ref=e71]:
+                - generic [ref=e72]: Reglas activadas
+                - strong [ref=e73]: "1"
+              - article [ref=e74]:
+                - generic [ref=e75]: Ajuste contextual
+                - strong [ref=e76]: 1 ajuste(s)
+              - article [ref=e77]:
+                - generic [ref=e78]: Histórico local
+                - strong [ref=e79]: "25"
+          - generic [ref=e80]:
+            - heading "Base del modelo" [level=3] [ref=e81]
+            - paragraph [ref=e82]: Metadatos del backend expuestos para el frontend.
+            - generic [ref=e83]:
+              - generic [ref=e84]: consolidacion_normativa
+              - generic [ref=e85]: variables_auxiliares
+              - generic [ref=e86]: inferencia_difusa_principal
+              - generic [ref=e87]: ajuste_contextual
+              - generic [ref=e88]: alertamiento_salida
+            - paragraph [ref=e89]: "Base normativa: EPA/AQS AQI Breakpoints. Reglas principales: 54. Reglas contextuales: 9."
+          - generic [ref=e90]:
+            - article [ref=e91]:
+              - generic [ref=e92]: AQI global
+              - strong [ref=e93]: "112"
+              - generic [ref=e94]: o3
+            - article [ref=e95]:
+              - generic [ref=e96]: Categoría base
+              - strong [ref=e97]: unhealthy_sensitive_groups
+              - generic [ref=e98]: EPA/AQS AQI Breakpoints
+            - article [ref=e99]:
+              - generic [ref=e100]: Riesgo final
+              - strong [ref=e101]: unhealthy
+              - generic [ref=e102]: Score 175
+            - article [ref=e103]:
+              - generic [ref=e104]: Cobertura global
+              - strong [ref=e105]: "100"
+              - generic [ref=e106]: Umbral 80%
+      - generic [ref=e142]:
+        - heading "Exploración detallada" [level=3] [ref=e143]
+        - paragraph [ref=e144]: Usa el menú lateral o estos accesos rápidos para abrir una vista específica del sistema.
+        - generic [ref=e145]:
+          - button "Dashboard Esta vista resume el episodio actual y muestra la progresión desde la entrada hasta la salida del sistema." [ref=e146] [cursor=pointer]:
+            - strong [ref=e147]: Dashboard
+            - generic [ref=e148]: Esta vista resume el episodio actual y muestra la progresión desde la entrada hasta la salida del sistema.
+          - button "Trazabilidad Esta vista expone el recorrido completo de la decisión y los elementos observados por el sistema." [ref=e149] [cursor=pointer]:
+            - strong [ref=e150]: Trazabilidad
+            - generic [ref=e151]: Esta vista expone el recorrido completo de la decisión y los elementos observados por el sistema.
+          - button "Explicabilidad Esta vista describe el comportamiento interno del modelo difuso." [ref=e152] [cursor=pointer]:
+            - strong [ref=e153]: Explicabilidad
+            - generic [ref=e154]: Esta vista describe el comportamiento interno del modelo difuso.
+          - button "Evaluación Esta vista ayuda a contrastar la corrida actual con su historial y a revisar el impacto del ajuste contextual." [ref=e155] [cursor=pointer]:
+            - strong [ref=e156]: Evaluación
+            - generic [ref=e157]: Esta vista ayuda a contrastar la corrida actual con su historial y a revisar el impacto del ajuste contextual.

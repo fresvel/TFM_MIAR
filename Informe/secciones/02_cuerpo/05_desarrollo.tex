@@ -295,49 +295,128 @@ La Tabla~\ref{tab:validacion_prototipo_actual} resume la verificación funcional
 
 \input{assets/tablas/02_cuerpo/05_desarrollo/validacion_prototipo_actual.tex}
 
-Las pruebas automatizadas validaron dos aspectos básicos: la ejecución completa del escenario sintético y la exigencia de clave para el modo \textit{OpenAQ}. Ambas finalizaron correctamente en el entorno de desarrollo. En el escenario controlado \textit{urban\_escalation}, el módulo procesó seis contaminantes criterio y variables de contexto, obtuvo un AQI global de 112, identificó O$_3$ como contaminante dominante, activó la regla \texttt{R\_unhealthy\_sensitive\_groups\_low\_medium} y escaló la salida final a \textit{Unhealthy} mediante \texttt{CTX\_high\_high}. Esa corrida se conservó como referencia controlada porque los casos reales consultados no produjeron una alerta equivalente ni un escalado contextual visible.
+La validación de esta etapa combinó tres fuentes de evidencia. La primera fue la suite automatizada actual, que ya cubre pipeline y API HTTP. La segunda fueron corridas reales sobre \textit{OpenAQ}, seleccionadas por estabilidad y valor analítico en la ventana de 24 horas consultada. La tercera fueron escenarios controlados, utilizados solo cuando era necesario mostrar comportamientos que las estaciones reales no ofrecieron de forma reproducible en esta iteración. Para la parte real se conservaron tres ubicaciones útiles: \textit{Hospital General de México} (\texttt{location\_id=1134}), \textit{Parque O'Higgins} en Santiago (\texttt{25}) y \textit{SAN BORJA} en Lima (\texttt{2402}). Como casos controlados se mantuvieron \textit{urban\_escalation}, para documentar un escalado contextual efectivo, y \textit{diffuse\_overlap}, para documentar una activación múltiple de reglas en el motor principal.
 
-La validación visual se actualizó con capturas reproducibles del escenario controlado \textit{urban\_escalation}. Se eligió esta corrida como referencia documental porque recorre de forma estable todas las capas relevantes del prototipo actual: cálculo normativo del AQI, derivación de concurrencia y persistencia, activación de reglas difusas, evaluación contextual y modificación efectiva de la salida final. Las corridas reales sobre \textit{OpenAQ} siguen siendo útiles para ver comportamiento sobre datos vivos, pero su disponibilidad y cobertura no siempre producen una evidencia visual tan completa y repetible como la del escenario controlado.
-
-El \textit{dashboard} actúa como punto de entrada de esa lectura. La Figura~\ref{fig:ui_dashboard_mock_controlled} muestra la versión actual de la interfaz principal. El bloque superior concentra estado del backend, ayudas de lectura y exportación; el panel central consolida el control de entrada; y la tarjeta de lectura ejecutiva resume el episodio con AQI dominante, riesgo final, cobertura y efecto de la capa contextual. Esta síntesis permite decidir si la corrida requiere una auditoría más detallada en \textit{Trazabilidad}, una revisión interna del razonamiento en \textit{Explicabilidad} o una comparación con el histórico en \textit{Evaluación}.
-
-Los colores del \textit{dashboard} siguen una convención estable para reducir ambigüedad entre vistas. El azul identifica la base normativa y las magnitudes ligadas al AQI o a la corrida actual. El naranja se reserva para la concurrencia y, en comparaciones históricas, para la corrida de referencia. El rojo representa persistencia o señales de presión acumulada. El verde se usa para la salida final, la cobertura útil y los estados resueltos por la capa contextual. Esta codificación se repite en las gráficas y tarjetas del visor modal, de modo que la semántica visual no cambia al pasar de \textit{Dashboard} a \textit{Explicabilidad} o \textit{Evaluación}.
+El \textit{dashboard} actúa como punto de entrada de esa lectura. La Figura~\ref{fig:ui_dashboard_mock_controlled} muestra la vista principal con una corrida controlada completa. El bloque superior concentra el estado del backend, las ayudas de lectura y la exportación de evidencia. El panel de control consolida la selección de modo, escenario o estación, ventana temporal y cobertura mínima. La tarjeta de lectura ejecutiva resume AQI dominante, riesgo final, cobertura y efecto de la capa contextual. Esta síntesis permite decidir si la corrida requiere una auditoría más detallada en \textit{Trazabilidad}, una revisión interna del razonamiento en \textit{Explicabilidad} o una comparación con el histórico en \textit{Evaluación}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{propuesta/ui_dashboard_mock_controlled.png}
-\caption{Vista principal del \textit{dashboard} para el escenario controlado \textit{urban\_escalation}. La pantalla concentra el control de entrada, la lectura ejecutiva del episodio y los indicadores base que anteceden a la auditoría detallada del artefacto. Elaboración propia.}
+\includegraphics[width=\textwidth]{propuesta/ui_dashboard_mock_controlled_user.png}
+\caption{Vista principal del \textit{dashboard} para la corrida controlada \textit{diffuse\_overlap}. La captura deja visibles el panel de control, la lectura ejecutiva del episodio y el resumen de la corrida, que sirven como punto de entrada antes de abrir las vistas analíticas. Elaboración propia.}
 \label{fig:ui_dashboard_mock_controlled}
 \end{figure}
 
-La \textit{Trazabilidad} expone el recorrido completo de la decisión. La Figura~\ref{fig:ui_traceability_mock_controlled} deja visible la ruta de decisión, las tres entradas reales del motor principal (\(AQI\), concurrencia y persistencia), la salida principal, la salida final, la cobertura global y la explicación de la diferencia entre ambas cuando existe ajuste contextual. También muestra, en bloques separados, la regla difusa activada y la regla contextual \texttt{CTX\_high\_high} con sus valores de temperatura, humedad, escalado y estado de aplicación. Esta separación es importante porque evita confundir la malla Mamdani con la capa contextual basada en reglas.
+Los colores del \textit{dashboard} siguen una convención estable para reducir ambigüedad entre vistas. El azul identifica la base normativa y las magnitudes ligadas al AQI o a la corrida actual. El naranja se reserva para la concurrencia y, en comparaciones históricas, para la corrida de referencia. El rojo representa persistencia o presión acumulada. El verde se usa para la salida final, la cobertura útil y los estados resueltos por la capa contextual. Esta codificación se repite en gráficas, tarjetas y comparaciones para que la semántica visual se mantenga al pasar de \textit{Dashboard} a \textit{Explicabilidad} o \textit{Evaluación}.
+
+A partir de esa vista general, el ejemplo de la Figura~\ref{fig:ui_dashboard_synthesis_mock} resume tres lecturas que justifican la arquitectura propuesta. La subfigura~\ref{fig:ui_dashboard_subindices_mock} mantiene explícita la base normativa: O$_3$ domina el episodio y supera el umbral 100, mientras PM$_{2.5}$ queda en una banda inferior y el resto de contaminantes no compite por la dominancia. La subfigura~\ref{fig:ui_dashboard_base_vs_final_mock} muestra que el artefacto obtiene un valor específico del AQI base; en el que, al implementar reglas crisp de contexto,reexpresa la escala de salida final del sistema. La subfigura~\ref{fig:ui_dashboard_auxiliary_mock} deja visibles las variables auxiliares con un papel separado: la persistencia añade memoria temporal, la concurrencia mide coexistencia efectiva y la cobertura se conserva como control de calidad de datos fuera de la malla difusa. Esa separación es una ventaja del diseño implementado, porque evita mezclar evidencia normativa, modulación difusa y calidad del dato en un único indicador opaco.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{propuesta/ui_traceability_mock_controlled.png}
-\caption{Modal de \textit{Trazabilidad} para el escenario controlado \textit{urban\_escalation}. La captura muestra entradas del motor, salidas intermedias, regla difusa activada y regla contextual aplicada, lo que vuelve auditable la transición entre capas del artefacto. Elaboración propia.}
-\label{fig:ui_traceability_mock_controlled}
+\begin{subfigure}[t]{0.47\textwidth}
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_dashboard_auxiliary_mock.png}
+\caption{Entradas auxiliares del motor difuso.}
+\label{fig:ui_dashboard_auxiliary_mock}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.47\textwidth}
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_dashboard_base_vs_final_mock.png}
+\caption{Escala AQI base frente a salida difusa.}
+\label{fig:ui_dashboard_base_vs_final_mock}
+\end{subfigure}
+
+\vspace{0.8em}
+
+\begin{subfigure}[t]{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_dashboard_subindices_mock.png}
+\caption{Subíndices AQI y umbrales normativos.}
+\label{fig:ui_dashboard_subindices_mock}
+\end{subfigure}
+
+\caption{Lectura analítica del \textit{dashboard} sobre la corrida controlada \textit{urban\_escalation}. Las subfiguras condensan la base normativa del episodio, la reexpresión de esa base en la escala de salida del sistema y el papel de las variables auxiliares que enriquecen la decisión. Elaboración propia.}
+\label{fig:ui_dashboard_synthesis_mock}
 \end{figure}
 
-La vista de \textit{Explicabilidad} ya no se limita al motor difuso principal. La Figura~\ref{fig:ui_explainability_mock_controlled} muestra la lectura actual del episodio: en la parte superior resume los valores reales de entrada y salida del motor principal; debajo documenta la capa contextual como una base crisp independiente, con bandas de temperatura y humedad, clasificación por cortes explícitos y una matriz \(3\times 3\) de reglas. Con ello, la interfaz deja claro que el prototipo no implementa un segundo motor difuso contextual, sino una modulación posterior basada en reglas discretas.
+A partir de la Figura~\ref{fig:ui_dashboard_synthesis_mock}, el resto de resultados se organiza por la pregunta que responde cada vista. \textit{Trazabilidad} y \textit{Explicabilidad} se apoyan en \textit{diffuse\_overlap}, porque ese escenario activa varias reglas con fuerzas distintas dentro del motor principal. \textit{Evaluación} utiliza \textit{urban\_escalation}, ya que en ese caso la capa contextual sí altera la salida final y el escalado se vuelve observable.
+
+La \textit{Trazabilidad} expone el recorrido completo de la decisión y es la vista más útil para distinguir capas. El ejemplo de la Figura~\ref{fig:ui_traceability_diffuse_overlap_modal} deja leer cómo se resuelve la evaluación mostrada. La ruta de decisión fija el orden del proceso. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{propuesta/ui_explainability_mock_controlled.png}
-\caption{Modal de \textit{Explicabilidad} para el escenario controlado \textit{urban\_escalation}. La vista resume la inferencia principal y documenta por separado la capa contextual crisp mediante bandas, términos activos y matriz de reglas \(3\times 3\). Elaboración propia.}
+\includegraphics[width=\textwidth]{propuesta/ui_traceability_diffuse_overlap_modal.png}
+\caption{Modal de \textit{Trazabilidad} para el escenario controlado \textit{diffuse\_overlap}. La captura muestra cuatro reglas de la base principal con fuerzas de disparo distintas y, en paralelo, una regla contextual crisp evaluada sin escalado, lo que permite separar con claridad inferencia difusa principal y modulación contextual posterior. Elaboración propia.}
+\label{fig:ui_traceability_diffuse_overlap_modal}
+\end{figure}
+
+El bloque de entradas y salidas permite comprobar que el episodio parte de un AQI global 93, con concurrencia 4.66 y persistencia 31.00, y que tanto la salida principal como la salida final permanecen en \textit{moderate}. Esta combinación ya anticipa una propiedad importante: el caso no está dominado por concurrencia alta, sino por un AQI situado en zona de transición y una persistencia con solape parcial entre \textit{low} y \textit{medium}. Debajo, las cuatro reglas activadas confirman esa lectura. Domina \texttt{R\_moderate\_low\_low}, pero convive con tres reglas secundarias que introducen contribuciones moderadas y \textit{unhealthy\_sensitive\_groups}. En paralelo, la regla contextual \texttt{CTX\_normal\_medium} aparece evaluada sin escalado. La figura documenta qué módulos existen: muestra que la salida \textit{moderate} surge de una agregación con solape real en la base difusa y que la capa crisp posterior queda visible, separada y sin efecto sobre este episodio.
+
+La vista de \textit{Explicabilidad} se apoya aquí en una única corrida controlada: \textit{diffuse\_overlap}. Este escenario es el más útil para inspección interna porque mantiene una salida final estable, pero activa cuatro reglas de la base principal con fuerzas distintas. La Figura~\ref{fig:ui_explainability_rules_diffuse_overlap} muestra que el peso dominante se concentra en \texttt{R\_moderate\_low\_low}, mientras tres reglas de menor intensidad mantienen abierta la transición hacia categorías más severas. Esa distribución importa porque traduce la intuición del episodio a términos verificables: el sistema reconoce una base todavía moderada, pero no completamente limpia, y por eso no reduce la decisión a una sola etiqueta crisp desde el inicio.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{propuesta/ui_explainability_rules_diffuse_overlap.png}
+\caption{Distribución de reglas activadas en la corrida controlada \textit{diffuse\_overlap}. La evaluación muestra cuatro reglas efectivamente disparadas, con una regla dominante y tres aportes secundarios, lo que confirma que el motor principal combina zonas de solape en lugar de colapsar a una única regla. Elaboración propia.}
+\label{fig:ui_explainability_rules_diffuse_overlap}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_explainability_aggregation_diffuse_overlap.png}
+\caption{Agregación difusa y \textit{score} principal.}
+\label{fig:ui_explainability_aggregation_diffuse_overlap}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_explainability_membership_aqi_diffuse_overlap.png}
+\caption{Funciones de pertenencia del AQI.}
+\label{fig:ui_explainability_aqi_diffuse_overlap}
+\end{subfigure}
+
+\vspace{0.8em}
+
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_explainability_membership_concurrence_diffuse_overlap.png}
+\caption{Funciones de pertenencia de concurrencia.}
+\label{fig:ui_explainability_concurrence_diffuse_overlap}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_explainability_membership_persistence_diffuse_overlap.png}
+\caption{Funciones de pertenencia de persistencia.}
+\label{fig:ui_explainability_persistence_diffuse_overlap}
+\end{subfigure}
+\caption{Lectura interna de la corrida \textit{diffuse\_overlap}. Las subfiguras muestran la evaluación que se está explicando: la agregación del motor principal y la posición del episodio dentro de las tres variables lingüísticas que alimentan la inferencia. Elaboración propia.}
+\label{fig:ui_explainability_overlap_subfigs}
+\end{figure}
+
+Las subfiguras de la Figura~\ref{fig:ui_explainability_overlap_subfigs} completan esa lectura. La agregación difusa muestra cómo esos cuatro disparos se combinan en una única superficie y convergen en un \textit{score} compatible con la etiqueta \textit{moderate}. Las curvas de AQI, concurrencia y persistencia explican por qué ocurre esa combinación: el AQI cae en el borde entre \textit{moderate} y \textit{unhealthy\_sensitive\_groups}, la concurrencia queda anclada en \textit{low} y la persistencia aporta una transición entre \textit{low} y \textit{medium}. La ventaja de la implementación propuesta aparece justamente ahí: la salida depende del contaminante dominante y de una composición interpretable entre severidad normativa, coexistencia efectiva y continuidad temporal.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{propuesta/ui_explainability_mock_controlled_cropped.png}
+\caption{Modal de \textit{Explicabilidad} para el escenario controlado \textit{urban\_escalation}. La vista resume la inferencia principal y documenta por separado la capa contextual crisp mediante bandas, términos activos, matriz de reglas \(3\times 3\) y guardarraíl particulado. Elaboración propia.}
 \label{fig:ui_explainability_mock_controlled}
 \end{figure}
 
-El modal de \textit{Evaluación} cierra la lectura del caso al comparar la salida principal del motor con la salida final y relacionar la corrida actual con el histórico local. La Figura~\ref{fig:ui_evaluation_mock_controlled} muestra tres niveles de lectura: resumen del resultado, impacto del ajuste contextual y contraste visual entre salida principal y salida final. En la versión actual de la interfaz, la zona histórica ya no mezcla cobertura y riesgo en un mismo eje; separa magnitudes para mantener comparabilidad semántica y prepara una lectura más defendible de episodios previos.
+En la Figura~\ref{fig:ui_explainability_mock_controlled} se muestra la explicabilidad de la etapa final de la capa contextual basada en reglas, pero para este ejemplo se mantiene \textit{urban\_escalation} solo para documentar la capa contextual crisp. En esta vista ya no se discute la inferencia principal, sino el mecanismo posterior que decide si se escala o no la salida. La imagen muestra temperatura 31 y humedad 76, combinación que activa la celda \texttt{CTX\_high\_high}. El guardarraíl particulado permite el ajuste y la salida contextual queda marcada como \textit{aplicado}. La utilidad analítica de esta figura demuestra que el escalado final puede justificarse con reglas discretas explícitas y valores observables, sin ocultar el punto de decisión dentro del motor principal.
+
+El modal de \textit{Evaluación} cierra la lectura al comparar salida principal y salida final. La Figura~\ref{fig:ui_evaluation_context_mock_controlled} utiliza la evaluación controlada \textit{urban\_escalation} porque en ese caso la salida final sí se separa de la salida principal y el efecto del ajuste contextual queda visible de forma directa.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{propuesta/ui_evaluation_mock_controlled.png}
-\caption{Modal de \textit{Evaluación} para el escenario controlado \textit{urban\_escalation}. La vista resume el resultado, cuantifica el impacto del ajuste contextual y deja preparada la comparación histórica sin mezclar cobertura con magnitudes de riesgo. Elaboración propia.}
-\label{fig:ui_evaluation_mock_controlled}
+\includegraphics[width=0.92\textwidth]{propuesta/ui_evaluation_context_mock_controlled.png}
+\caption{Comparación entre salida principal y salida final en la evaluación controlada \textit{urban\_escalation}. La figura muestra explícitamente la evaluación presentada en este bloque: la capa contextual eleva la salida final respecto de la salida principal y hace visible el efecto del escalado sobre un episodio diseñado para activar esa condición. Elaboración propia.}
+\label{fig:ui_evaluation_context_mock_controlled}
 \end{figure}
 
-La evidencia reunida permitió verificar cuatro hechos. El primero es que la interfaz conserva la semántica técnica de la salida JSON y la hace auditable por capas. El segundo es que las estaciones reales producen comportamientos distintos y útiles para contrastar episodios gaseosos y particulados. El tercero es que el escenario controlado sigue siendo necesario para mostrar una alerta más severa y un ajuste contextual activo, porque esa combinación no apareció en las estaciones consultadas. El cuarto es que el frontend ya puede exportar cada gráfica de \textit{Chart.js} como PNG directamente desde el panel correspondiente, lo que facilita documentación, revisión y reutilización de evidencia visual sin depender de capturas manuales del navegador.
+La evidencia reunida permitió verificar cinco hechos. El primero es que la interfaz conserva la semántica técnica de la salida JSON y la hace auditable por capas. El segundo es que las estaciones reales producen comportamientos distintos y útiles para contrastar episodios gaseosos y particulados. El tercero es que el escenario controlado sigue siendo necesario para mostrar una alerta más severa y un escalado contextual efectivo, porque esa combinación no apareció en las estaciones consultadas. El cuarto es que \textit{diffuse\_overlap} demuestra un comportamiento genuinamente difuso, con varias reglas activadas y fuerzas distintas dentro de la malla principal. El quinto es que el frontend ya puede exportar cada gráfica de \textit{Chart.js} como PNG directamente desde el panel correspondiente, lo que facilita documentación, revisión y reutilización de evidencia visual sin depender de capturas manuales del navegador.
 
 La integración con \textit{OpenAQ} quedó validada a nivel de código, configuración y cliente de consulta. El prototipo recupera estaciones por \textit{location\_id}, consulta sensores asociados y construye series horarias por parámetro. Las corridas reales también hicieron visible una limitación importante: no toda estación con sensores publicados produce una ventana útil para el modelo. Un ejemplo es \textit{Adrogué} en Buenos Aires (\texttt{2847298}), cuya ficha expone PM$_{2.5}$, PM$_{10}$, temperatura y humedad relativa en \textit{OpenAQ}, pero cuya ventana consultada devolvió series vacías, cobertura global nula y una categoría \textit{sin\_datos}. Esa restricción forma parte del comportamiento real del sistema sobre datos abiertos vivos y debe conservarse explícitamente en la evaluación.
 
