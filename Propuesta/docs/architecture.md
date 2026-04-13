@@ -7,7 +7,7 @@ El prototipo se organiza en cinco capas funcionales:
 1. adquisición y preparación de datos;
 2. evaluación AQI base;
 3. derivación de variables auxiliares;
-4. inferencia difusa y ajuste contextual;
+4. inferencia difusa principal y capa contextual basada en reglas;
 5. emisión de resultados y exposición por API/web.
 
 Esta estructura coincide con la lógica explicada en la memoria y con la instrumentación real del sistema.
@@ -56,9 +56,9 @@ El cálculo AQI sigue `EPA/AQS` y usa ventanas regulatorias diferenciadas por co
 
 La lógica Mamdani se implementa con reglas y funciones de pertenencia declaradas en código, sin depender de una librería de caja negra.
 
-### 4.5 Ajuste contextual desacoplado
+### 4.5 Capa contextual desacoplada basada en reglas
 
-La modulación contextual no recalcula el AQI. Opera sobre el riesgo derivado y mantiene separación entre capa normativa y capa interpretativa.
+La modulación contextual no recalcula el AQI. Opera sobre el riesgo derivado y mantiene separación entre capa normativa, inferencia difusa principal y capa interpretativa. En el estado actual esta capa es crisp, no difusa: clasifica temperatura y humedad por cortes explícitos y consulta una matriz de `9` reglas.
 
 ### 4.6 Histórico local como solución transitoria
 
@@ -88,4 +88,3 @@ Perfiles, roles y administración no forman parte del alcance actual del TFM.
 - faltan pruebas de API, frontend y E2E;
 - falta endurecimiento para exposición pública;
 - falta autenticación si se ampliara el alcance.
-

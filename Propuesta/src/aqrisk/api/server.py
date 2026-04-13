@@ -12,6 +12,7 @@ from aqrisk.application.scenarios import list_scenarios
 from aqrisk.config import Settings
 from aqrisk.fuzzy.mamdani import membership_curve_set, MamdaniRiskEngine
 from aqrisk.ingestion.openaq_client import OpenAQClient, OpenAQClientError
+from aqrisk.processing.context import CONTEXT_RULE_MATRIX, classify_humidity, classify_temperature
 from aqrisk.storage.history import HistoryStore
 
 
@@ -55,6 +56,7 @@ def _build_explainability(result: dict[str, Any]) -> dict[str, Any]:
         result["persistence_score"],
         result["concurrence_score"],
     )
+    context_trace = _build_context_trace(result, trace)
     return {
         "layer_outputs": {
             "consolidacion_normativa": {
@@ -69,12 +71,81 @@ def _build_explainability(result: dict[str, Any]) -> dict[str, Any]:
                 "coverage_global": result["snapshot"]["coverage_global"],
             },
             "inferencia_difusa_principal": trace,
-            "ajuste_contextual": {
-                "adjustments": result["context_adjustments"],
-            },
+            "ajuste_contextual": context_trace,
             "alertamiento_salida": result["alert"],
         }
     }
+
+
+def _latest_series_value(result: dict[str, Any], parameter: str) -> float | None:
+    series = result.get("snapshot", {}).get("series", {}).get(parameter)
+    if not series:
+        return None
+    observations = series.get("observations", [])
+    if not observations:
+        return None
+    return observations[-1].get("value")
+
+
+def _build_context_trace(result: dict[str, Any], principal_trace: dict[str, Any]) -> dict[str, Any]:
+    temperature = _latest_series_value(result, "temperature")
+    humidity = _latest_series_value(result, "humidity")
+
+    payload: dict[str, Any] = {
+        "adjustments": result["context_adjustments"],
+        "temperature": temperature,
+        "humidity": humidity,
+        "temperature_term": None,
+        "humidity_term": None,
+        "rule": None,
+        "escalation": 0,
+        "applied": False,
+        "reason": "sin_datos_contextuales",
+    }
+
+    if temperature is None or humidity is None:
+        return payload
+
+    temperature_term = classify_temperature(float(temperature))
+    humidity_term = classify_humidity(float(humidity))
+    escalation = CONTEXT_RULE_MATRIX[temperature_term][humidity_term]
+    particulate_index = max(
+        result.get("aqi", {}).get("subindices", {}).get("pm25", 0),
+        result.get("aqi", {}).get("subindices", {}).get("pm10", 0),
+    )
+    global_aqi = result.get("aqi", {}).get("global_aqi")
+    blocked_by_particulate_gate = (
+        escalation > 0
+        and particulate_index < 100
+        and global_aqi is not None
+        and global_aqi < 101
+    )
+
+    payload.update(
+        {
+            "temperature_term": temperature_term,
+            "humidity_term": humidity_term,
+            "rule": f"CTX_{temperature_term}_{humidity_term}",
+            "escalation": escalation,
+            "particulate_index": particulate_index,
+            "principal_score": principal_trace["score"],
+            "principal_label": principal_trace["label"],
+            "final_score": result["fuzzy"]["score"],
+            "final_label": result["fuzzy"]["label"],
+        }
+    )
+
+    if escalation == 0:
+        payload["reason"] = "regla_contextual_sin_escalado"
+        return payload
+
+    if blocked_by_particulate_gate:
+        payload["reason"] = "escalado_bloqueado_por_umbral_particulado"
+        return payload
+
+    payload["applied"] = True
+    payload["reason"] = "escalado_contextual_aplicado"
+    return payload
 
 
 def _settings_from_request(base: Settings, payload: dict[str, Any]) -> Settings:

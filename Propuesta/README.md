@@ -1,6 +1,6 @@
 # Propuesta técnica
 
-Implementación actual del prototipo del TFM para monitoreo de calidad del aire con base normativa AQI, inferencia difusa y salida trazable.
+Implementación actual del prototipo del TFM para monitoreo de calidad del aire con base normativa AQI, inferencia difusa principal y salida trazable.
 
 ## Estado actual
 
@@ -11,8 +11,8 @@ El prototipo ya implementa:
 - normalización temporal y control de cobertura;
 - cálculo AQI para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2` con criterio `EPA/AQS`;
 - derivación de variables auxiliares;
-- inferencia difusa `Mamdani`;
-- ajuste contextual;
+- inferencia difusa `Mamdani` sobre `AQI`, `concurrencia` y `persistencia`;
+- capa contextual basada en reglas sobre `temperature` y `humidity`;
 - emisión de alerta y respuesta JSON trazable;
 - API HTTP para evaluación y consulta;
 - interfaz web para control, explicabilidad, escenarios e histórico local;
@@ -37,7 +37,8 @@ La capa determinista sigue la tabla vigente de `AQI breakpoints` de `EPA/AQS`:
 
 - `docs/requirements.md`: requerimientos actualizados del prototipo.
 - `docs/architecture.md`: arquitectura funcional, software y despliegue.
-- `docs/rule_base.md`: base de reglas principal y capa contextual.
+- `docs/rule_base.md`: base difusa principal y capa contextual basada en reglas.
+- `docs/contextual_fuzzy_variant_requirements.md`: requisitos para una variante futura de capa contextual difusa.
 - `docs/design_decisions.md`: decisiones de diseño y justificación.
 - `docs/api_contract.md`: contrato HTTP.
 - `docs/integration_checklist.md`: checklist de integración web.
@@ -143,4 +144,3 @@ Cobertura actual:
 
 - pruebas de humo del pipeline;
 - falta ampliar pruebas de API, frontend y extremo a extremo.
-

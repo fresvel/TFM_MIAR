@@ -270,9 +270,11 @@
             :aqi-membership-chart="aqiMembershipChart"
             :bar-options="barOptions"
             :concurrence-membership-chart="concurrenceMembershipChart"
+            :context-trace="contextTrace"
             :line-options="lineOptions"
             :line-options-with-legend="lineOptionsWithLegend"
             :persistence-membership-chart="persistenceMembershipChart"
+            :principal-trace="principalTrace"
             :result="result"
             :triggered-rules-chart="triggeredRulesChart"
           />
@@ -281,9 +283,10 @@
             v-show="currentSection === 'evaluation'"
             :active-history-filters="activeHistoryFilters"
             :bar-options="barOptions"
+            :context-trace="contextTrace"
             :context-before-after-chart="contextBeforeAfterChart"
             :filtered-history-items="filteredHistoryItems"
-            :history-comparison-chart="historyComparisonChart"
+            :history-coverage-chart="historyCoverageChart"
             :history-date-filter="historyDateFilter"
             :history-filter="historyFilter"
             :history-items="historyItems"
@@ -291,6 +294,8 @@
             :history-parameters="historyParameters"
             :history-risk-filter="historyRiskFilter"
             :history-risk-labels="historyRiskLabels"
+            :history-risk-comparison-chart="historyRiskComparisonChart"
+            :principal-trace="principalTrace"
             :result="result"
             :selected-history-item="selectedHistoryItem"
             @reset-history-filters="resetHistoryFilters"
@@ -870,13 +875,19 @@ const triggeredRulesChart = computed(() => ({
       data: activatedRuleDetails.value.length
         ? activatedRuleDetails.value.map((rule) => rule.strength)
         : [0],
-      backgroundColor: "#202738",
+      backgroundColor: "#2fb7d3",
       borderRadius: 6,
     },
   ],
 }));
 
 const availableSeriesParameters = computed(() => Object.keys(result.value?.snapshot?.series || {}));
+const principalTrace = computed(
+  () => result.value?.explainability?.layer_outputs?.inferencia_difusa_principal || {},
+);
+const contextTrace = computed(
+  () => result.value?.explainability?.layer_outputs?.ajuste_contextual || {},
+);
 
 const timeSeriesChart = computed(() => {
   const observations = result.value?.snapshot?.series?.[selectedSeriesParameter.value]?.observations || [];
@@ -896,7 +907,14 @@ const timeSeriesChart = computed(() => {
 });
 
 const aggregationChart = computed(() => {
-  const points = result.value?.explainability?.layer_outputs?.inferencia_difusa_principal?.aggregation_samples || [];
+  const points = principalTrace.value?.aggregation_samples || [];
+  const principalScoreValue = principalTrace.value?.score || 0;
+  const nearestSample =
+    points.reduce(
+      (best, item) =>
+        Math.abs(item.x - principalScoreValue) < Math.abs(best.x - principalScoreValue) ? item : best,
+      { x: 0, membership: 0 },
+    ) || { x: principalScoreValue, membership: 0 };
   return {
     datasets: [
       {
@@ -906,6 +924,15 @@ const aggregationChart = computed(() => {
         backgroundColor: "rgba(32, 39, 56, 0.14)",
         fill: true,
         tension: 0.25,
+      },
+      {
+        label: "Score principal",
+        data: [{ x: principalScoreValue, y: nearestSample.membership || 0 }],
+        borderColor: "#d15e43",
+        backgroundColor: "#d15e43",
+        pointRadius: 5,
+        pointHoverRadius: 6,
+        showLine: false,
       },
     ],
   };
@@ -926,17 +953,16 @@ const contextBeforeAfterChart = computed(() => {
   };
 });
 
-const historyComparisonChart = computed(() => {
+const historyRiskComparisonChart = computed(() => {
   const current = result.value;
   const previous = selectedHistoryItem.value;
   return {
-    labels: ["AQI", "Cobertura", "Puntuación difusa"],
+    labels: ["AQI base", "Puntuación final"],
     datasets: [
       {
         label: "Actual",
         data: [
           current?.aqi?.global_aqi || 0,
-          current?.snapshot?.coverage_global || 0,
           current?.fuzzy?.score || 0,
         ],
         backgroundColor: "#2fb7d3",
@@ -946,7 +972,6 @@ const historyComparisonChart = computed(() => {
         label: "Histórica",
         data: [
           previous?.summary?.aqi_global || 0,
-          previous?.summary?.coverage_global || 0,
           previous?.summary?.fuzzy_score || 0,
         ],
         backgroundColor: "#0f8f8a",
@@ -956,22 +981,74 @@ const historyComparisonChart = computed(() => {
   };
 });
 
-function buildMembershipChart(curves) {
+const historyCoverageChart = computed(() => {
+  const current = result.value;
+  const previous = selectedHistoryItem.value;
+  return {
+    labels: ["Cobertura"],
+    datasets: [
+      {
+        label: "Actual",
+        data: [current?.snapshot?.coverage_global || 0],
+        backgroundColor: "#46b34d",
+        borderRadius: 6,
+      },
+      {
+        label: "Histórica",
+        data: [previous?.summary?.coverage_global || 0],
+        backgroundColor: "#d38b1e",
+        borderRadius: 6,
+      },
+    ],
+  };
+});
+
+function buildMembershipChart(curves, inputValue) {
   const entries = Object.entries(curves || {});
   return {
-    datasets: entries.map(([term, points], index) => ({
-      label: term,
-      data: points.map((item) => ({ x: item.x, y: item.membership })),
-      borderColor: palette[index % palette.length],
-      backgroundColor: "transparent",
-      tension: 0.22,
-    })),
+    datasets: [
+      ...entries.map(([term, points], index) => ({
+        label: term,
+        data: points.map((item) => ({ x: item.x, y: item.membership })),
+        borderColor: palette[index % palette.length],
+        backgroundColor: "transparent",
+        tension: 0.22,
+      })),
+      ...(typeof inputValue === "number" && Number.isFinite(inputValue)
+        ? [
+            {
+              label: "entrada actual",
+              data: [
+                { x: inputValue, y: 0 },
+                { x: inputValue, y: 1 },
+              ],
+              borderColor: "#202738",
+              borderDash: [6, 4],
+              pointRadius: 0,
+              fill: false,
+              tension: 0,
+            },
+          ]
+        : []),
+    ],
   };
 }
 
-const aqiMembershipChart = computed(() => buildMembershipChart(metadata.model.membership_curves?.aqi));
-const concurrenceMembershipChart = computed(() => buildMembershipChart(metadata.model.membership_curves?.concurrence));
-const persistenceMembershipChart = computed(() => buildMembershipChart(metadata.model.membership_curves?.persistence));
+const aqiMembershipChart = computed(() =>
+  buildMembershipChart(metadata.model.membership_curves?.aqi, principalTrace.value?.inputs?.aqi),
+);
+const concurrenceMembershipChart = computed(() =>
+  buildMembershipChart(
+    metadata.model.membership_curves?.concurrence,
+    principalTrace.value?.inputs?.concurrence,
+  ),
+);
+const persistenceMembershipChart = computed(() =>
+  buildMembershipChart(
+    metadata.model.membership_curves?.persistence,
+    principalTrace.value?.inputs?.persistence,
+  ),
+);
 
 async function loadMetadata() {
   try {

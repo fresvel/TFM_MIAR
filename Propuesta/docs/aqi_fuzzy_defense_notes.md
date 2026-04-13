@@ -183,6 +183,26 @@ Es decir:
 - entrada 2: persistencia temporal del episodio;
 - entrada 3: concurrencia multicontaminante agregada.
 
+La persistencia no entra como serie temporal cruda ni como etiqueta fija. El pipeline primero deriva un `persistence_score` numérico en escala `0–100` a partir de una historia corta del `AQI_global`, y luego el motor lo fuzzifica con tres conjuntos lingüísticos:
+
+- `low`: trapezoidal `(0, 0, 20, 40)`
+- `medium`: triangular `(30, 55, 75)`
+- `high`: trapezoidal `(65, 80, 100, 100)`
+
+Formalmente, si el valor calculado es \(p\), el motor evalúa:
+
+\[
+\mu_{low}(p),\ \mu_{medium}(p),\ \mu_{high}(p)
+\]
+
+y esas pertenencias participan en la fuerza de activación de las reglas junto con las de AQI y concurrencia:
+
+\[
+\alpha_r = \min(\mu_{AQI},\ \mu_{concurrence},\ \mu_{persistence})
+\]
+
+Por tanto, la persistencia entra al motor como una evidencia temporal agregada y fuzzificada, no como un conjunto de observaciones horarias independientes.
+
 Esto es importante para defensa:
 
 - los otros contaminantes sí influyen;
@@ -255,6 +275,18 @@ Total:
 6 \times 3 \times 3 = 54 \text{ reglas}
 \]
 
+Esto aclara una confusión frecuente:
+
+- el motor no tiene `3` reglas;
+- tiene `3` términos lingüísticos para `concurrencia` (`low`, `medium`, `high`);
+- al combinarlos con `6` términos de AQI y `3` de persistencia se obtiene la base completa de `54` reglas.
+
+La razón de usar solo `3` términos de concurrencia es metodológica:
+
+- evita inflar la malla con combinaciones poco defendibles para un prototipo explicable;
+- mantiene continuidad suficiente gracias a las funciones de pertenencia y la defuzzificación;
+- permite distinguir baja, media y alta presión multicontaminante sin fingir una resolución semántica que la base de reglas no necesita.
+
 Forma general de una regla:
 
 \[
@@ -306,6 +338,8 @@ La capa contextual se basa en:
 - clasificación de temperatura: `low`, `normal`, `high`
 - clasificación de humedad: `low`, `medium`, `high`
 - una matriz contextual que decide si escalar o no
+
+Importante para defensa: esta capa contextual no usa funciones de pertenencia ni defuzzificación. Técnicamente es una capa basada en reglas crisp desacoplada del motor Mamdani principal.
 
 Si hay escalamiento:
 
