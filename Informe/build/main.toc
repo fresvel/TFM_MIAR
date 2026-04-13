@@ -45,11 +45,12 @@
 \contentsline {subsubsection}{Implementación del prototipo}{50}{subsubsection*.34}%
 \contentsline {subsubsection}{Estrategia de verificación del artefacto}{51}{subsubsection*.35}%
 \contentsline {subsection}{\numberline {5.4}Resultados}{51}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Conclusiones y trabajos futuros}{59}{section.6}%
-\contentsline {section}{\numberline {7}Referencias}{61}{section.7}%
-\contentsline {section}{}{61}{section.7}%
-\contentsline {section}{Apéndice I}{65}{section.7}%
-\contentsline {section}{Anexo I}{66}{section.1}%
-\contentsline {section}{Anexo II}{68}{section.2}%
-\contentsline {section}{Anexo III}{70}{section.3}%
-\contentsline {section}{Anexo IV}{76}{section.4}%
+\contentsline {subsection}{\numberline {5.5}Discusión}{58}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Conclusiones y trabajos futuros}{61}{section.6}%
+\contentsline {section}{\numberline {7}Referencias}{63}{section.7}%
+\contentsline {section}{}{63}{section.7}%
+\contentsline {section}{Apéndice I}{67}{section.7}%
+\contentsline {section}{Anexo I}{68}{section.1}%
+\contentsline {section}{Anexo II}{70}{section.2}%
+\contentsline {section}{Anexo III}{72}{section.3}%
+\contentsline {section}{Anexo IV}{78}{section.4}%
