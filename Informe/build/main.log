@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  13 APR 2026 15:18
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  13 APR 2026 20:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1133,7 +1133,9 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[7] (./secciones/02_cuerpo/02_introduccion.tex
+[7
+
+] (./secciones/02_cuerpo/02_introduccion.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -1803,7 +1805,15 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[67] (./secciones/03_finales/03_anexos_i.tex
+[67] (./secciones/03_finales/025_acronimos.tex
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[68])
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[69] (./secciones/03_finales/03_anexos_i.tex
 (./assets/tablas/03_finales/03_anexos_i/anexo_checklist_calidad.tex
 Underfull \hbox (badness 2359) in paragraph at lines 41--41
 []\TU/Arial(0)/m/n/9 General (Exp, Corr, Q-
@@ -2058,7 +2068,7 @@ Underfull \hbox (badness 2359) in paragraph at lines 41--41
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[68]
+[70]
 Underfull \hbox (badness 2359) in paragraph at lines 41--41
 []\TU/Arial(0)/m/n/9 General (Exp, Corr, Q-
  []
@@ -2217,11 +2227,11 @@ Underfull \hbox (badness 3954) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[69]
+[71]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[70]
+[72]
 Underfull \hbox (badness 5726) in paragraph at lines 65--65
 []\TU/Arial(0)/m/n/9 Hardware y sensores utilizados en implementa-
  []
@@ -2235,34 +2245,27 @@ Underfull \hbox (badness 4353) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[71]
+[73]
 Underfull \hbox (badness 3954) in paragraph at lines 65--65
 []\TU/Arial(0)/m/n/9 Banda de calidad metodológica del estudio (Al-
  []
 
-) (./assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_tabla_principal_es.tex
+)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[72]
+[74] (./assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_tabla_principal_es.tex
+
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[73]
+[75
+
+]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[74]
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[75])
-(./assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_metricas_por_unidad_cor
-e_es.tex
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[76]) (./assets/tablas/03_finales/03_anexos_i/anexo_reglas_principales_54.tex
+[76]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -2270,11 +2273,27 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[78]
+[78])
+(./assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_metricas_por_unidad_cor
+e_es.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[79])))
+[79])
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[80] (./assets/tablas/03_finales/03_anexos_i/anexo_reglas_principales_54.tex
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[81
+
+]
+
+File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
+<assets/figuras/branding/viu-header.png>
+[82])))
 
 Package caption Warning: Unused \captionsetup[table] on input line 177.
 See the caption package documentation for explanation.
@@ -2283,7 +2302,7 @@ See the caption package documentation for explanation.
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[80] 
+[83] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -2295,12 +2314,12 @@ L3 programming layer <2025-07-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 38501 strings out of 468457
- 830960 string characters out of 5445913
- 1404497 words of memory out of 5000000
- 66358 multiletter control sequences out of 15000+600000
+ 38517 strings out of 468457
+ 831418 string characters out of 5445913
+ 1406870 words of memory out of 5000000
+ 66371 multiletter control sequences out of 15000+600000
  662939 words of font info for 140 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,11n,121p,1888b,8001s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on build/main.pdf (80 pages).
+Output written on build/main.pdf (83 pages).
