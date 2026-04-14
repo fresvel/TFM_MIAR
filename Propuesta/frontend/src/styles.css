@@ -351,6 +351,10 @@ select:focus-visible {
   gap: 16px;
 }
 
+.grid-two > * {
+  min-width: 0;
+}
+
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -373,6 +377,10 @@ select:focus-visible {
 .form-grid {
   display: grid;
   gap: 10px;
+}
+
+.form-grid > * {
+  min-width: 0;
 }
 
 .input-hint {
@@ -405,6 +413,9 @@ select:focus-visible {
 
 .field input,
 .field select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.92);
   border-radius: var(--radius-md);

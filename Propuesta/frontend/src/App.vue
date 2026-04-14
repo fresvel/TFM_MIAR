@@ -83,7 +83,33 @@
 
             <div class="field" v-if="form.mode === 'openaq'">
               <label for="locationId">Location ID</label>
-              <input id="locationId" v-model="form.location_id" type="number" placeholder="3175328" />
+              <select id="locationId" :value="form.location_id" @change="handleLocationSelection($event.target.value)">
+                <option value="">Seleccionar estación</option>
+                <optgroup
+                  v-if="openaqLocationOptions.curated.length"
+                  label="Estaciones usadas en resultados"
+                >
+                  <option
+                    v-for="item in openaqLocationOptions.curated"
+                    :key="item.value"
+                    :value="item.value"
+                  >
+                    {{ item.label }} · ID {{ item.value }}
+                  </option>
+                </optgroup>
+                <optgroup
+                  v-if="openaqLocationOptions.dynamic.length"
+                  label="Ubicaciones cargadas"
+                >
+                  <option
+                    v-for="item in openaqLocationOptions.dynamic"
+                    :key="item.value"
+                    :value="item.value"
+                  >
+                    {{ item.label }} · ID {{ item.value }}
+                  </option>
+                </optgroup>
+              </select>
             </div>
 
             <div class="field">
@@ -347,7 +373,7 @@
 </template>
 
 <script setup>
-import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
 import DashboardSection from "./components/DashboardSection.vue";
 import EvaluationSection from "./components/EvaluationSection.vue";
 import ExplainabilitySection from "./components/ExplainabilitySection.vue";
@@ -356,28 +382,19 @@ import LocationPicker from "./components/LocationPicker.vue";
 import SidebarNav from "./components/SidebarNav.vue";
 import TraceabilitySection from "./components/TraceabilitySection.vue";
 import fresvelBrand from "./assets/fresvel-brand-top.png";
+import { BAR_OPTIONS, LINE_OPTIONS, LINE_OPTIONS_WITH_LEGEND, SERIES_LINE_OPTIONS } from "./config/chartOptions";
+import { REPORT_OPENAQ_STATIONS } from "./config/openaqStations";
+import { SECTION_GUIDES, SECTIONS } from "./config/sections";
+import { useCaptureMode } from "./composables/useCaptureMode";
 import { useHistoryFilters } from "./composables/useHistoryFilters";
 import { useLocationSearch } from "./composables/useLocationSearch";
-import { checkHealth, evaluateModule, fetchHistory, fetchLocationSensors, fetchLocations, fetchMetadata, fetchScenarios } from "./services/api";
-
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:18010";
-const sections = [
-  { id: "dashboard", label: "Dashboard" },
-  { id: "traceability", label: "Trazabilidad" },
-  { id: "explainability", label: "Explicabilidad" },
-  { id: "evaluation", label: "Evaluación" },
-];
+import { useResultCharts } from "./composables/useResultCharts";
+import { useResultPresentation } from "./composables/useResultPresentation";
+import { useWorkspaceData } from "./composables/useWorkspaceData";
+import { downloadJson } from "./utils/download";
 
 const currentSection = ref("dashboard");
 const selectedSeriesParameter = ref("pm25");
-const healthMessage = ref("Verificando servicio...");
-const healthStatusClass = ref("");
-const lastError = ref("");
-const submitting = ref(false);
-const result = ref(null);
-const locations = ref([]);
-const sensors = ref([]);
-const historyItems = ref([]);
 const historyFilter = ref("");
 const historyDateFilter = ref("");
 const historyParameterFilter = ref("");
@@ -385,7 +402,6 @@ const historyRiskFilter = ref("");
 const selectedHistoryItem = ref(null);
 const selectedLocationPreset = ref("");
 const locationSearch = ref("");
-const scenarios = ref([]);
 const viewerOpen = ref(false);
 const modalState = reactive({
   open: false,
@@ -394,154 +410,36 @@ const modalState = reactive({
   mode: "list",
   items: [],
 });
-const captureMode = ref(false);
+const sections = SECTIONS;
+const sectionGuides = SECTION_GUIDES;
+const barOptions = BAR_OPTIONS;
+const lineOptions = LINE_OPTIONS;
+const lineOptionsWithLegend = LINE_OPTIONS_WITH_LEGEND;
+const seriesLineOptions = SERIES_LINE_OPTIONS;
+const reportOpenaqStations = REPORT_OPENAQ_STATIONS;
 
-const metadata = reactive({
-  modes: ["mock", "openaq"],
-  default_config: {
-    mode: "mock",
-    location_id: "",
-    lookback_hours: 24,
-    min_coverage: 80,
-    scenario_id: "urban_escalation",
-  },
-  model: {
-    normative_basis: "EPA/AQS AQI Breakpoints",
-    supported_parameters: [],
-    context_parameters: [],
-    main_rule_count: 54,
-    context_rule_count: 9,
-    layers: [],
-    membership_curves: {
-      aqi: {},
-      persistence: {},
-      concurrence: {},
-      risk: {},
-    },
-  },
-});
+const {
+  apiBaseUrl,
+  canRunEvaluation,
+  executionGuide,
+  form,
+  healthMessage,
+  healthStatusClass,
+  historyItems,
+  initializeWorkspace,
+  isBackendReady,
+  lastError,
+  loadSensors,
+  locations,
+  metadata,
+  refreshHistory,
+  result,
+  runEvaluation,
+  scenarios,
+  sensors,
+  submitting,
+} = useWorkspaceData();
 
-const form = reactive({
-  mode: "mock",
-  location_id: "",
-  lookback_hours: 24,
-  min_coverage: 80,
-  scenario_id: "urban_escalation",
-});
-
-const barOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-  },
-  scales: {
-    x: { grid: { display: false }, ticks: { color: "#627079" } },
-    y: {
-      beginAtZero: true,
-      grid: { color: "rgba(23, 33, 39, 0.08)" },
-      ticks: { color: "#627079" },
-    },
-  },
-};
-
-const lineOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-  },
-  scales: {
-    x: { type: "linear", grid: { color: "rgba(23, 33, 39, 0.08)" }, ticks: { color: "#627079" } },
-    y: { beginAtZero: true, max: 1.05, grid: { color: "rgba(23, 33, 39, 0.08)" }, ticks: { color: "#627079" } },
-  },
-};
-
-const lineOptionsWithLegend = {
-  ...lineOptions,
-  plugins: {
-    legend: { display: true, position: "bottom" },
-  },
-};
-
-const seriesLineOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-  },
-  scales: {
-    x: { grid: { color: "rgba(23, 33, 39, 0.06)" } },
-    y: { beginAtZero: true, grid: { color: "rgba(23, 33, 39, 0.06)" } },
-  },
-};
-
-const palette = ["#2fb7d3", "#0f8f8a", "#46b34d", "#d38b1e", "#d15e43", "#202738"];
-const aqiThresholds = [
-  { label: "Bueno", value: 50, color: "#46b34d" },
-  { label: "Moderado", value: 100, color: "#d38b1e" },
-  { label: "Sensibles", value: 150, color: "#d15e43" },
-  { label: "Dañino", value: 200, color: "#9a3412" },
-];
-
-function classifyAqiBand(value) {
-  if (value <= 50) {
-    return "good";
-  }
-  if (value <= 100) {
-    return "moderate";
-  }
-  if (value <= 150) {
-    return "unhealthy_sensitive_groups";
-  }
-  if (value <= 200) {
-    return "unhealthy";
-  }
-  if (value <= 300) {
-    return "very_unhealthy";
-  }
-  return "hazardous";
-}
-
-function aqiBandColor(value, isDominant = false) {
-  const paletteByBand = {
-    good: isDominant ? "#2c9a47" : "#83cf7a",
-    moderate: isDominant ? "#c47d13" : "#e5b85f",
-    unhealthy_sensitive_groups: isDominant ? "#cf6447" : "#ef9d86",
-    unhealthy: isDominant ? "#9a3412" : "#c96b4f",
-    very_unhealthy: isDominant ? "#5b2c83" : "#8d63b0",
-    hazardous: isDominant ? "#202738" : "#4d556b",
-  };
-  return paletteByBand[classifyAqiBand(value)];
-}
-
-const isBackendReady = computed(() => healthStatusClass.value === "status-ok");
-const selectedScenarioName = computed(
-  () => scenarios.value.find((item) => item.scenario_id === form.scenario_id)?.name || form.scenario_id,
-);
-const hasContextAdjustments = computed(() => Boolean(result.value?.context_adjustments?.length));
-const contextualDelta = computed(() => {
-  const baseScore = Number(
-    result.value?.explainability?.layer_outputs?.inferencia_difusa_principal?.score || 0,
-  );
-  const finalScore = Number(result.value?.fuzzy?.score || 0);
-  return Number((finalScore - baseScore).toFixed(2));
-});
-const riskTone = computed(() => {
-  const label = String(result.value?.fuzzy?.label || "").toLowerCase();
-  const score = Number(result.value?.fuzzy?.score || 0);
-  if (label.includes("alto") || score >= 150) {
-    return "tone-danger";
-  }
-  if (label.includes("moder") || score >= 100) {
-    return "tone-warn";
-  }
-  return "tone-ok";
-});
-const coverageTone = computed(() => {
-  const coverage = Number(result.value?.snapshot?.coverage_global || 0);
-  return coverage >= Number(form.min_coverage || 0) ? "tone-ok" : "tone-warn";
-});
 const {
   filteredLocations,
   selectLocationCard,
@@ -554,6 +452,45 @@ const {
   selectedLocationPreset,
   locationSearch,
   loadSensors,
+});
+
+const openaqLocationOptions = computed(() => {
+  const curated = reportOpenaqStations.map((item) => ({
+    value: String(item.id),
+    label: `${item.label} · ${item.city} · ${item.country}`,
+    group: "Resultados del informe",
+  }));
+  const dynamic = locations.value
+    .filter((item) => !reportOpenaqStations.some((station) => String(station.id) === String(item.id)))
+    .map((item) => ({
+      value: String(item.id),
+      label: `${item.name}${item.city ? ` · ${item.city}` : ""}${item.country ? ` · ${item.country}` : ""}`,
+      group: "Ubicaciones cargadas",
+    }));
+  return { curated, dynamic };
+});
+
+const {
+  activatedRuleDetails,
+  activeSectionLabel,
+  contextTrace,
+  coverageTone,
+  currentRunNarrative,
+  currentRunSummary,
+  contextualDelta,
+  executiveMetrics,
+  hasContextAdjustments,
+  principalTrace,
+  riskTone,
+  statCards,
+} = useResultPresentation({
+  currentSection,
+  form,
+  metadata,
+  result,
+  scenarios,
+  sections,
+  selectedLocationName,
 });
 
 const {
@@ -572,539 +509,43 @@ const {
   historyRiskFilter,
   selectedHistoryItem,
 });
-
-const canRunEvaluation = computed(() => {
-  if (form.mode === "openaq") {
-    return Boolean(form.location_id);
-  }
-  return Boolean(form.scenario_id);
-});
-const executionGuide = computed(() => {
-  if (form.mode === "mock") {
-    return {
-      title: "Modo controlado",
-      body: "Úsalo para demostración, capturas y validación repetible del comportamiento del artefacto.",
-    };
-  }
-  return {
-    title: "Modo OpenAQ",
-    body: "Requiere un location ID válido. Conviene para evidenciar consumo real de datos y trazabilidad de sensores.",
-  };
-});
-
-const currentRunSummary = computed(() => ({
-  source: form.mode === "mock" ? "Escenario controlado" : "OpenAQ",
-  entry:
-    form.mode === "mock"
-      ? selectedScenarioName.value
-      : selectedLocationName.value,
-  dominant: result.value?.aqi?.dominant_parameter || "sin dominante",
-  triggeredRules: String(result.value?.fuzzy?.triggered_rules?.length || 0),
-  context:
-    result.value && result.value.context_adjustments.length > 0
-      ? `${result.value.context_adjustments.length} ajuste(s)`
-      : "Sin ajuste",
-}));
-
-const activeSectionLabel = computed(
-  () => sections.find((item) => item.id === currentSection.value)?.label || "Visor",
-);
-const executiveMetrics = computed(() => {
-  if (!result.value) {
-    return [];
-  }
-  return [
-    {
-      label: "Riesgo final",
-      value: result.value.fuzzy?.label || "NR",
-      helper: `Puntuación ${result.value.fuzzy?.score ?? "NR"}`,
-      tone: riskTone.value,
-    },
-    {
-      label: "AQI dominante",
-      value: `${result.value.aqi?.global_aqi ?? "NR"} · ${result.value.aqi?.dominant_parameter || "sin dominante"}`,
-      helper: result.value.aqi?.category || "Sin categoría",
-      tone: "tone-info",
-    },
-    {
-      label: "Cobertura",
-      value: `${result.value.snapshot?.coverage_global ?? "NR"}%`,
-      helper:
-        Number(result.value.snapshot?.coverage_global || 0) >= Number(form.min_coverage || 0)
-          ? "Cumple el umbral configurado"
-          : "Queda por debajo del umbral configurado",
-      tone:
-        Number(result.value.snapshot?.coverage_global || 0) >= Number(form.min_coverage || 0)
-          ? "tone-ok"
-          : "tone-warn",
-    },
-    {
-      label: "Capa contextual",
-      value: hasContextAdjustments.value ? `${contextualDelta.value > 0 ? "+" : ""}${contextualDelta.value}` : "Sin cambios",
-      helper: hasContextAdjustments.value ? `${result.value.context_adjustments.length} ajuste(s)` : "No hubo modulación adicional",
-      tone: hasContextAdjustments.value ? "tone-warn" : "tone-ok",
-    },
-  ];
-});
-const currentRunNarrative = computed(() => {
-  if (!result.value) {
-    return {
-      title: "Sistema listo para una nueva corrida",
-      body: "Configura un escenario o una ubicación real para poblar el panel con evidencia trazable.",
-    };
-  }
-  return {
-    title: `${result.value.fuzzy?.label || "Riesgo no disponible"} en ${currentRunSummary.value.entry}`,
-    body: `El episodio queda dominado por ${result.value.aqi?.dominant_parameter || "sin parámetro dominante"} con AQI ${
-      result.value.aqi?.global_aqi ?? "NR"
-    }, ${activatedRuleDetails.value.length} regla(s) activada(s) y cobertura ${
-      result.value.snapshot?.coverage_global ?? "NR"
-    }%. ${hasContextAdjustments.value ? "La capa contextual modificó la salida final." : "La capa contextual no alteró la salida principal."}`,
-  };
-});
-const statCards = computed(() => [
-  {
-    label: "AQI global",
-    value: result.value?.aqi?.global_aqi ?? "—",
-    helper: result.value?.aqi?.dominant_parameter || "Sin dominante",
-    tone: "tone-info",
-  },
-  {
-    label: "Categoría base",
-    value: result.value?.aqi?.category ?? "—",
-    helper: metadata.model.normative_basis,
-    tone: "tone-neutral",
-  },
-  {
-    label: "Riesgo final",
-    value: result.value?.fuzzy?.label ?? "—",
-    helper: `Score ${result.value?.fuzzy?.score ?? "—"}`,
-    tone: riskTone.value,
-  },
-  {
-    label: "Cobertura global",
-    value: result.value?.snapshot?.coverage_global ?? "—",
-    helper: `Umbral ${form.min_coverage}%`,
-    tone:
-      Number(result.value?.snapshot?.coverage_global || 0) >= Number(form.min_coverage || 0)
-        ? "tone-ok"
-        : "tone-warn",
-  },
-]);
-
-const sectionGuides = {
-  dashboard: {
-    title: "Cómo leer el dashboard",
-    caption: "Esta vista resume el episodio actual y muestra la progresión desde la entrada hasta la salida del sistema.",
-    items: [
-      {
-        title: "Qué mirar primero",
-        body: "Empieza por el resumen de la corrida y las cuatro tarjetas superiores. Ahí se concentra el AQI global, la categoría base, el riesgo final y la cobertura del episodio.",
-      },
-      {
-        title: "Cómo leer las gráficas",
-        body: "La serie temporal muestra el comportamiento reciente del parámetro seleccionado. La gráfica de subíndices permite identificar el contaminante dominante. La comparación AQI base frente a salida final muestra si el motor difuso endureció o mantuvo la lectura inicial.",
-      },
-      {
-        title: "Qué decisión permite",
-        body: "Esta vista permite decidir si el episodio requiere una revisión más profunda en trazabilidad o explicabilidad y si la salida final es coherente con la fuente de datos y la cobertura disponible.",
-      },
-    ],
-  },
-  traceability: {
-    title: "Cómo leer la trazabilidad",
-    caption: "Esta vista expone el recorrido completo de la decisión y los elementos observados por el sistema.",
-    items: [
-      {
-        title: "Ruta de decisión",
-        body: "La ruta de decisión enumera las cinco capas del artefacto. Sirve para ubicar en qué etapa se consolidó el AQI, en cuál se activó la base difusa y si hubo ajuste contextual.",
-      },
-      {
-        title: "Parámetros y sensores",
-        body: "Los parámetros soportados y no soportados permiten identificar qué parte de la entrada fue usada en el cálculo normativo. La lista de sensores ayuda a verificar la estructura real de la estación consultada.",
-      },
-      {
-        title: "Reglas y ajustes",
-        body: "La lista de reglas activadas muestra qué reglas participaron y con qué fuerza. Los ajustes contextuales permiten justificar por qué la salida final se mantuvo o cambió frente a la clasificación base.",
-      },
-    ],
-  },
-  explainability: {
-    title: "Cómo leer la explicabilidad",
-    caption: "Esta vista describe el comportamiento interno del modelo difuso.",
-    items: [
-      {
-        title: "Funciones de pertenencia",
-        body: "Las curvas de AQI, concurrencia y persistencia muestran cómo el sistema representa lingüísticamente las entradas. Cada término activa una zona distinta del razonamiento.",
-      },
-      {
-        title: "Reglas activadas",
-        body: "La distribución de reglas activadas permite identificar qué fragmentos de la base principal participaron en la corrida. No todas las reglas se activan con la misma fuerza en cada episodio.",
-      },
-      {
-        title: "Defuzzificación",
-        body: "La gráfica de agregación y defuzzificación muestra la salida continua del sistema antes de traducirla a una etiqueta final. Esa puntuación explica por qué la salida se ubicó en una clase específica.",
-      },
-    ],
-  },
-  evaluation: {
-    title: "Cómo leer la evaluación",
-    caption: "Esta vista ayuda a contrastar la corrida actual con su historial y a revisar el impacto del ajuste contextual.",
-    items: [
-      {
-        title: "Alerta final",
-        body: "El bloque superior resume el mensaje operativo del sistema. Debe leerse junto con la categoría final y la cobertura disponible.",
-      },
-      {
-        title: "Antes y después",
-        body: "La comparación antes y después muestra si la capa contextual modificó la salida principal del motor difuso o si la mantuvo.",
-      },
-      {
-        title: "Histórico",
-        body: "El histórico local permite comparar episodios y verificar estabilidad entre corridas. Los filtros ayudan a recuperar estaciones, fechas o contaminantes dominantes específicos.",
-      },
-    ],
-  },
-};
-
-const subindicesChart = computed(() => {
-  const labels = Object.keys(result.value?.aqi?.subindices || {});
-  const dominant = result.value?.aqi?.dominant_parameter;
-  const values = labels.map((label) => result.value.aqi.subindices[label]);
-  return {
-    labels,
-    datasets: [
-      {
-        label: "Subíndice AQI",
-        data: values,
-        backgroundColor: labels.map((label, index) => aqiBandColor(values[index], label === dominant)),
-        borderColor: labels.map((label, index) =>
-          label === dominant ? "#202738" : aqiBandColor(values[index], true),
-        ),
-        borderWidth: labels.map((label) => (label === dominant ? 2 : 1)),
-        borderRadius: 6,
-      },
-      ...aqiThresholds
-        .filter((item) => !values.length || Math.max(...values, 0) >= item.value - 20)
-        .map((item) => ({
-          type: "line",
-          label: `Umbral ${item.label} (${item.value})`,
-          data: labels.map(() => item.value),
-          borderColor: item.color,
-          borderDash: [6, 6],
-          borderWidth: 1.5,
-          pointRadius: 0,
-          pointHoverRadius: 0,
-          fill: false,
-        })),
-    ],
-  };
+const {
+  aggregationChart,
+  aqiMembershipChart,
+  auxiliaryChart,
+  availableSeriesParameters,
+  baseVsFinalChart,
+  concurrenceMembershipChart,
+  contextBeforeAfterChart,
+  historyCoverageChart,
+  historyRiskComparisonChart,
+  persistenceMembershipChart,
+  subindicesChart,
+  subindicesChartOptions,
+  timeSeriesChart,
+  triggeredRulesChart,
+} = useResultCharts({
+  metadata,
+  principalTrace,
+  result,
+  selectedHistoryItem,
+  selectedSeriesParameter,
 });
 
-const subindicesChartOptions = computed(() => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      display: true,
-      position: "bottom",
-      labels: {
-        color: "#627079",
-        boxWidth: 18,
-      },
-    },
-  },
-  scales: {
-    x: { grid: { display: false }, ticks: { color: "#627079" } },
-    y: {
-      beginAtZero: true,
-      suggestedMax: Math.max(result.value?.aqi?.global_aqi || 0, 160),
-      grid: { color: "rgba(23, 33, 39, 0.08)" },
-      ticks: { color: "#627079" },
-      title: {
-        display: true,
-        text: "Subíndice AQI",
-        color: "#627079",
-      },
-    },
-  },
-}));
-
-const baseVsFinalChart = computed(() => ({
-  labels: ["AQI base", "Puntuación difusa"],
-  datasets: [
-    {
-      data: [result.value?.aqi?.global_aqi || 0, result.value?.fuzzy?.score || 0],
-      backgroundColor: ["#2fb7d3", "#46b34d"],
-      borderRadius: 6,
-    },
-  ],
-}));
-
-const auxiliaryChart = computed(() => ({
-  labels: ["Concurrencia", "Persistencia", "Cobertura"],
-  datasets: [
-    {
-      data: [
-        result.value?.concurrence_score || 0,
-        result.value?.persistence_score || 0,
-        result.value?.snapshot?.coverage_global || 0,
-      ],
-      backgroundColor: ["#d38b1e", "#d15e43", "#46b34d"],
-      borderRadius: 6,
-    },
-  ],
-}));
-
-const activatedRuleDetails = computed(() => {
-  const rules = result.value?.explainability?.layer_outputs?.inferencia_difusa_principal?.rules || [];
-  return [...rules]
-    .sort((left, right) => right.strength - left.strength)
-    .map((rule) => ({
-      ...rule,
-      strengthLabel: Number(rule.strength).toFixed(2),
-      outputLabel: String(rule.output_term || "").replaceAll("_", " "),
-    }));
+const {
+  applyCaptureConfig,
+  clearCaptureMode,
+  readCaptureConfig,
+} = useCaptureMode({
+  currentSection,
+  form,
+  metadata,
+  result,
+  runEvaluation,
+  sections,
+  selectedSeriesParameter,
+  viewerOpen,
 });
-
-const triggeredRulesChart = computed(() => ({
-  labels: activatedRuleDetails.value.length
-    ? activatedRuleDetails.value.map((rule) => rule.name)
-    : ["sin reglas"],
-  datasets: [
-    {
-      data: activatedRuleDetails.value.length
-        ? activatedRuleDetails.value.map((rule) => rule.strength)
-        : [0],
-      backgroundColor: "#2fb7d3",
-      borderRadius: 6,
-    },
-  ],
-}));
-
-const availableSeriesParameters = computed(() => Object.keys(result.value?.snapshot?.series || {}));
-const principalTrace = computed(
-  () => result.value?.explainability?.layer_outputs?.inferencia_difusa_principal || {},
-);
-const contextTrace = computed(
-  () => result.value?.explainability?.layer_outputs?.ajuste_contextual || {},
-);
-
-const timeSeriesChart = computed(() => {
-  const observations = result.value?.snapshot?.series?.[selectedSeriesParameter.value]?.observations || [];
-  return {
-    labels: observations.map((item) => item.datetime_to),
-    datasets: [
-      {
-        label: selectedSeriesParameter.value,
-        data: observations.map((item) => item.value),
-        borderColor: "#0f8f8a",
-        backgroundColor: "rgba(15, 143, 138, 0.14)",
-        fill: true,
-        tension: 0.22,
-      },
-    ],
-  };
-});
-
-const aggregationChart = computed(() => {
-  const points = principalTrace.value?.aggregation_samples || [];
-  const principalScoreValue = principalTrace.value?.score || 0;
-  const nearestSample =
-    points.reduce(
-      (best, item) =>
-        Math.abs(item.x - principalScoreValue) < Math.abs(best.x - principalScoreValue) ? item : best,
-      { x: 0, membership: 0 },
-    ) || { x: principalScoreValue, membership: 0 };
-  return {
-    datasets: [
-      {
-        label: "Agregación difusa",
-        data: points.map((item) => ({ x: item.x, y: item.membership })),
-        borderColor: "#202738",
-        backgroundColor: "rgba(32, 39, 56, 0.14)",
-        fill: true,
-        tension: 0.25,
-      },
-      {
-        label: "Score principal",
-        data: [{ x: principalScoreValue, y: nearestSample.membership || 0 }],
-        borderColor: "#d15e43",
-        backgroundColor: "#d15e43",
-        pointRadius: 5,
-        pointHoverRadius: 6,
-        showLine: false,
-      },
-    ],
-  };
-});
-
-const contextBeforeAfterChart = computed(() => {
-  const before = result.value?.explainability?.layer_outputs?.inferencia_difusa_principal?.score || 0;
-  const after = result.value?.fuzzy?.score || 0;
-  return {
-    labels: ["Salida principal", "Salida final"],
-    datasets: [
-      {
-        data: [before, after],
-        backgroundColor: ["#d38b1e", "#46b34d"],
-        borderRadius: 6,
-      },
-    ],
-  };
-});
-
-const historyRiskComparisonChart = computed(() => {
-  const current = result.value;
-  const previous = selectedHistoryItem.value;
-  return {
-    labels: ["AQI base", "Puntuación final"],
-    datasets: [
-      {
-        label: "Actual",
-        data: [
-          current?.aqi?.global_aqi || 0,
-          current?.fuzzy?.score || 0,
-        ],
-        backgroundColor: "#2fb7d3",
-        borderRadius: 6,
-      },
-      {
-        label: "Histórica",
-        data: [
-          previous?.summary?.aqi_global || 0,
-          previous?.summary?.fuzzy_score || 0,
-        ],
-        backgroundColor: "#0f8f8a",
-        borderRadius: 6,
-      },
-    ],
-  };
-});
-
-const historyCoverageChart = computed(() => {
-  const current = result.value;
-  const previous = selectedHistoryItem.value;
-  return {
-    labels: ["Cobertura"],
-    datasets: [
-      {
-        label: "Actual",
-        data: [current?.snapshot?.coverage_global || 0],
-        backgroundColor: "#46b34d",
-        borderRadius: 6,
-      },
-      {
-        label: "Histórica",
-        data: [previous?.summary?.coverage_global || 0],
-        backgroundColor: "#d38b1e",
-        borderRadius: 6,
-      },
-    ],
-  };
-});
-
-function buildMembershipChart(curves, inputValue) {
-  const entries = Object.entries(curves || {});
-  return {
-    datasets: [
-      ...entries.map(([term, points], index) => ({
-        label: term,
-        data: points.map((item) => ({ x: item.x, y: item.membership })),
-        borderColor: palette[index % palette.length],
-        backgroundColor: "transparent",
-        tension: 0.22,
-      })),
-      ...(typeof inputValue === "number" && Number.isFinite(inputValue)
-        ? [
-            {
-              label: "entrada actual",
-              data: [
-                { x: inputValue, y: 0 },
-                { x: inputValue, y: 1 },
-              ],
-              borderColor: "#202738",
-              borderDash: [6, 4],
-              pointRadius: 0,
-              fill: false,
-              tension: 0,
-            },
-          ]
-        : []),
-    ],
-  };
-}
-
-const aqiMembershipChart = computed(() =>
-  buildMembershipChart(metadata.model.membership_curves?.aqi, principalTrace.value?.inputs?.aqi),
-);
-const concurrenceMembershipChart = computed(() =>
-  buildMembershipChart(
-    metadata.model.membership_curves?.concurrence,
-    principalTrace.value?.inputs?.concurrence,
-  ),
-);
-const persistenceMembershipChart = computed(() =>
-  buildMembershipChart(
-    metadata.model.membership_curves?.persistence,
-    principalTrace.value?.inputs?.persistence,
-  ),
-);
-
-async function loadMetadata() {
-  try {
-    const payload = await fetchMetadata();
-    Object.assign(metadata, payload);
-    form.mode = payload.default_config.mode;
-    form.location_id = payload.default_config.location_id ?? "";
-    form.lookback_hours = payload.default_config.lookback_hours;
-    form.min_coverage = payload.default_config.min_coverage;
-    form.scenario_id = payload.default_config.scenario_id || "urban_escalation";
-  } catch (error) {
-    healthMessage.value = "No se pudo cargar metadata del backend.";
-    healthStatusClass.value = "status-danger";
-  }
-}
-
-async function refreshLocations() {
-  try {
-    const payload = await fetchLocations();
-    locations.value = payload.items || [];
-  } catch (error) {
-    locations.value = [];
-  }
-}
-
-async function loadSensors(locationId) {
-  if (!locationId) {
-    sensors.value = [];
-    return;
-  }
-  try {
-    const payload = await fetchLocationSensors(locationId);
-    sensors.value = payload.items || [];
-  } catch (error) {
-    sensors.value = [];
-  }
-}
-
-async function refreshHistory() {
-  try {
-    const payload = await fetchHistory();
-    historyItems.value = payload.items || [];
-  } catch (error) {
-    historyItems.value = [];
-  }
-}
-
-async function refreshScenarios() {
-  try {
-    const payload = await fetchScenarios();
-    scenarios.value = payload.items || [];
-  } catch (error) {
-    scenarios.value = [];
-  }
-}
 
 function openSectionGuide(sectionId) {
   const guide = sectionGuides[sectionId];
@@ -1154,7 +595,7 @@ function exportCurrentRun() {
   if (!result.value) {
     return;
   }
-  const payload = {
+  downloadJson({
     exported_at: new Date().toISOString(),
     request: {
       mode: form.mode,
@@ -1164,14 +605,17 @@ function exportCurrentRun() {
       scenario_id: form.scenario_id,
     },
     response: result.value,
-  };
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `aqrisk-run-${new Date().toISOString().slice(0, 19).replaceAll(":", "-")}.json`;
-  link.click();
-  URL.revokeObjectURL(url);
+  });
+}
+
+function handleLocationSelection(value) {
+  form.location_id = value;
+  selectedLocationPreset.value = value;
+  if (!value) {
+    sensors.value = [];
+    return;
+  }
+  loadSensors(Number(value));
 }
 
 function openViewer(sectionId) {
@@ -1184,107 +628,6 @@ function openViewer(sectionId) {
 
 function closeViewer() {
   viewerOpen.value = false;
-}
-
-function parseBooleanParam(value) {
-  return value === "1" || value === "true" || value === "yes";
-}
-
-function readCaptureConfig() {
-  if (typeof window === "undefined") {
-    return null;
-  }
-  const params = new URLSearchParams(window.location.search);
-  const mode = params.get("mode");
-  const section = params.get("viewer");
-  const scenarioId = params.get("scenario_id");
-  const locationId = params.get("location_id");
-  const series = params.get("series");
-  const autorun = parseBooleanParam(params.get("autorun") || params.get("capture") || "");
-  const enabled = parseBooleanParam(params.get("capture") || "") || autorun || Boolean(section);
-  if (!enabled) {
-    return null;
-  }
-  return {
-    enabled,
-    autorun,
-    mode,
-    section,
-    scenarioId,
-    locationId,
-    series,
-  };
-}
-
-async function applyCaptureConfig(config) {
-  if (!config) {
-    return;
-  }
-  captureMode.value = true;
-  if (typeof document !== "undefined") {
-    document.body.dataset.captureMode = "true";
-  }
-  if (config.mode && metadata.modes.includes(config.mode)) {
-    form.mode = config.mode;
-  }
-  if (config.scenarioId) {
-    form.scenario_id = config.scenarioId;
-  }
-  if (config.locationId) {
-    form.location_id = config.locationId;
-  }
-  if (config.series) {
-    selectedSeriesParameter.value = config.series;
-  }
-  if (config.autorun) {
-    await runEvaluation();
-    await nextTick();
-  }
-  if (config.section && sections.some((item) => item.id === config.section) && result.value) {
-    currentSection.value = config.section;
-    viewerOpen.value = true;
-    await nextTick();
-  }
-}
-
-async function loadHealth() {
-  try {
-    await checkHealth();
-    healthMessage.value = "Servicio disponible.";
-    healthStatusClass.value = "status-ok";
-    lastError.value = "";
-  } catch (error) {
-    healthMessage.value = "Backend no disponible.";
-    healthStatusClass.value = "status-danger";
-    lastError.value = error?.message || "No fue posible establecer conexión con la API.";
-  }
-}
-
-async function runEvaluation() {
-  submitting.value = true;
-  lastError.value = "";
-  try {
-    const payload = {
-      mode: form.mode,
-      location_id: form.mode === "openaq" && form.location_id !== "" ? Number(form.location_id) : null,
-      lookback_hours: Number(form.lookback_hours),
-      min_coverage: Number(form.min_coverage),
-      scenario_id: form.scenario_id,
-    };
-    result.value = await evaluateModule(payload);
-    currentSection.value = "dashboard";
-    await refreshHistory();
-    if (payload.location_id) {
-      await loadSensors(payload.location_id);
-    }
-  } catch (error) {
-    const detail = error?.response?.data?.error || error.message;
-    healthMessage.value = detail;
-    healthStatusClass.value = "status-danger";
-    lastError.value = detail;
-  } finally {
-    submitting.value = false;
-  }
 }
 
 function handleGlobalKeydown(event) {
@@ -1302,15 +645,13 @@ function handleGlobalKeydown(event) {
 
 onMounted(async () => {
   window.addEventListener("keydown", handleGlobalKeydown);
-  await Promise.all([loadMetadata(), loadHealth(), refreshLocations(), refreshHistory(), refreshScenarios()]);
+  await initializeWorkspace();
   await applyCaptureConfig(readCaptureConfig());
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("keydown", handleGlobalKeydown);
-  if (typeof document !== "undefined") {
-    delete document.body.dataset.captureMode;
-  }
+  clearCaptureMode();
 });
 
 watch(
@@ -1330,6 +671,7 @@ watch(
 watch(
   () => form.location_id,
   (value) => {
+    selectedLocationPreset.value = value ? String(value) : "";
     if (form.mode !== "openaq" || value === "" || value === null) {
       return;
     }

@@ -1,14 +1,20 @@
-# Contrato HTTP inicial del prototipo
+# Contrato HTTP
 
-## Base
+## Base de uso
 
 - URL local esperada desde navegador y pruebas manuales: `http://localhost:18010`
-- Puerto interno del backend: `8010`
-- Formato de intercambio: `application/json`
+- puerto interno del backend dentro del contenedor: `8010`
+- formato de intercambio: `application/json`
 
-## 1. `GET /health`
+La API es intencionalmente pequeña. Su función es exponer el núcleo del prototipo sin reimplementar lógica de negocio en la capa HTTP.
 
-Respuesta esperada:
+## Endpoints
+
+### `GET /health`
+
+Verifica disponibilidad del backend.
+
+Respuesta:
 
 ```json
 {
@@ -17,14 +23,11 @@ Respuesta esperada:
 }
 ```
 
-## 2. `GET /api/v1/metadata`
+### `GET /api/v1/metadata`
 
-Propósito:
-- informar al frontend sobre modos disponibles;
-- exponer configuración por defecto;
-- publicar la estructura del modelo para paneles de explicabilidad.
+Entrega la configuración por defecto y la estructura pública del modelo para consumo del frontend.
 
-Respuesta esperada:
+Respuesta resumida:
 
 ```json
 {
@@ -33,7 +36,8 @@ Respuesta esperada:
     "mode": "mock",
     "location_id": null,
     "lookback_hours": 24,
-    "min_coverage": 80.0
+    "min_coverage": 80,
+    "scenario_id": "urban_escalation"
   },
   "model": {
     "normative_basis": "EPA/AQS AQI Breakpoints",
@@ -47,35 +51,58 @@ Respuesta esperada:
       "inferencia_difusa_principal",
       "ajuste_contextual",
       "alertamiento_salida"
-    ],
-    "membership_curves": {}
+    ]
   }
 }
 ```
 
-## 3. `POST /api/v1/evaluate`
+### `GET /api/v1/locations`
 
-Propósito:
-- ejecutar el módulo con una configuración seleccionada desde el frontend.
+Consulta un conjunto de ubicaciones OpenAQ para selección rápida en el frontend.
+
+Parámetros admitidos:
+
+- `iso`
+- `limit`
+- `coordinates`
+- `radius`
+
+### `GET /api/v1/locations/{id}/sensors`
+
+Devuelve sensores resumidos para una ubicación concreta.
+
+### `GET /api/v1/scenarios`
+
+Devuelve los escenarios controlados disponibles en modo `mock`.
+
+### `GET /api/v1/history`
+
+Lista corridas persistidas en el histórico local.
+
+### `POST /api/v1/evaluate`
+
+Ejecuta una corrida del prototipo.
 
 Cuerpo esperado:
 
 ```json
 {
   "mode": "mock",
-  "location_id": 3175328,
+  "location_id": null,
   "lookback_hours": 24,
-  "min_coverage": 80.0
+  "min_coverage": 80,
+  "scenario_id": "diffuse_overlap"
 }
 ```
 
-Campos:
-- `mode`: `mock` u `openaq`
-- `location_id`: obligatorio cuando `mode=openaq`
-- `lookback_hours`: ventana de análisis
-- `min_coverage`: umbral mínimo de cobertura
+Reglas de uso:
 
-Respuesta esperada:
+- `mode` debe ser `mock` u `openaq`;
+- `location_id` es obligatorio cuando `mode=openaq`;
+- `scenario_id` se usa en modo `mock`;
+- `lookback_hours` y `min_coverage` modulan la evaluación.
+
+Respuesta resumida:
 
 ```json
 {
@@ -90,38 +117,9 @@ Respuesta esperada:
 }
 ```
 
-## 4. Errores
+## Errores
 
-## 5. `GET /api/v1/locations`
-
-Propósito:
-- ofrecer al frontend un catálogo inicial de ubicaciones OpenAQ para selección rápida.
-
-Parámetros admitidos:
-- `iso`
-- `limit`
-- `coordinates`
-- `radius`
-
-## 6. `GET /api/v1/locations/{id}/sensors`
-
-Propósito:
-- recuperar los sensores disponibles para una ubicación.
-
-## 7. `GET /api/v1/history`
-
-Propósito:
-- listar corridas recientes registradas localmente por el backend.
-
-## 8. `GET /api/v1/scenarios`
-
-Propósito:
-- listar escenarios de evaluación reproducibles del modo `mock`.
-
-Uso:
-- permite ejecutar casos controlados desde el frontend sin depender de una estación viva.
-
-Respuesta esperada:
+La API devuelve un payload uniforme de error:
 
 ```json
 {
@@ -129,6 +127,8 @@ Respuesta esperada:
 }
 ```
 
-Código HTTP:
-- `400` solicitud inválida
-- `500` fallo interno del pipeline
+Códigos esperados:
+
+- `400`: solicitud inválida o error controlado de entrada;
+- `404`: ruta inexistente;
+- `500`: error interno no controlado.
