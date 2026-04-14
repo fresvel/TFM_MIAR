@@ -53,6 +53,7 @@ con \(n\) contaminantes considerados \cite{ART02}.
 Otro esquema ampliamente utilizado emplea concentraciones de quiebre (\textit{breakpoints}) e interpolación lineal segmentada para mapear cada concentración al subíndice correspondiente \cite{ART01,ART02}. En el marco regulatorio de la \textit{United States Environmental Protection Agency} (EPA), esta transformación se formaliza mediante una interpolación lineal por tramos entre el intervalo de concentración aplicable y el intervalo AQI asociado \cite{DATA_EPA_AQI_TAD}. La expresión utilizada es:
 \begin{equation}
 I_p=\frac{I_{Hi}-I_{Lo}}{BP_{Hi}-BP_{Lo}}\left(C_p-BP_{Lo}\right)+I_{Lo},
+\label{eq:aqi_interp_epa}
 \end{equation}
 donde \(C_p\) es la concentración representativa del contaminante \(p\), \(BP_{Lo}\) y \(BP_{Hi}\) son los \textit{breakpoints} inferior y superior del tramo aplicable, e \(I_{Lo}\) e \(I_{Hi}\) son los límites del subíndice asociados a ese tramo \cite{DATA_EPA_AQI_TAD}. En la práctica, los valores concretos de esos \textit{breakpoints} y de los intervalos AQI se obtienen de las tablas regulatorias publicadas por \textit{EPA/AQS} \cite{DATA_EPA_AQS_BREAKPOINTS}. Después, los subíndices se agregan con una regla definida por el modelo y el marco regulatorio; en el esquema EPA/AQS la consolidación se basa en el mayor subíndice calculado, de modo que el contaminante dominante fija el valor final del índice \cite{DATA_EPA_AQI_TAD,DATA_EPA_AQS_BREAKPOINTS}.
 

@@ -196,11 +196,11 @@ El prototipo admite además temperatura y humedad como variables de contexto. Es
 
 Sobre esa base, el módulo deriva las siguientes variables internas:
 \begin{itemize}
-\item \textbf{AQI global}, como estado base consolidado.
-\item \textbf{Contaminante dominante}, para identificar la variable que gobierna el episodio.
-\item \textbf{Persistencia temporal}, calculada sobre estados AQI sucesivos del propio módulo.
-\item \textbf{Concurrencia}, definida como cercanía entre varios subíndices respecto del dominante.
-\item \textbf{Cobertura global}, como indicador de completitud de la entrada efectiva.
+\item \textbf{AQI global}, como estado base consolidado del episodio y punto de entrada normativo para la inferencia posterior.
+\item \textbf{Contaminante dominante}, para identificar qué subíndice gobierna la clasificación base y cuál variable explica el deterioro principal del episodio.
+\item \textbf{Persistencia temporal}, calculada sobre estados AQI sucesivos del propio módulo para representar continuidad del deterioro y distinguir episodios sostenidos de picos aislados.
+\item \textbf{Concurrencia}, definida como proximidad relativa entre varios subíndices y el dominante, con el fin de capturar presión multicontaminante efectiva.
+\item \textbf{Cobertura global}, como indicador de completitud de la entrada realmente utilizada, separado de la malla difusa y conservado como señal de calidad del dato.
 \end{itemize}
 
 La salida final del prototipo conserva la taxonomía EPA: \textit{Good}, \textit{Moderate}, \textit{Unhealthy for Sensitive Groups}, \textit{Unhealthy}, \textit{Very Unhealthy} y \textit{Hazardous}. El resultado se expresa junto con la alerta textual, el AQI base y la lista de reglas activadas.
@@ -210,15 +210,14 @@ La transición entre la capa normativa y la capa de interpretación se resuelve 
 \begin{equation}
 I_p=\frac{I_{Hi}-I_{Lo}}{BP_{Hi}-BP_{Lo}}\left(C_p-BP_{Lo}\right)+I_{Lo},
 \end{equation}
-donde \(C_p\) es la concentración representativa del contaminante en la ventana regulatoria aplicable, \(BP_{Lo}\) y \(BP_{Hi}\) son los \textit{breakpoints} del tramo, e \(I_{Lo}\) e \(I_{Hi}\) son los límites del subíndice en ese tramo \cite{DATA_EPA_AQS_BREAKPOINTS}. En el prototipo, las concentraciones representativas se obtienen con ventanas diferenciadas: 24 h para PM$_{2.5}$ y PM$_{10}$, 8 h para CO, valor horario para NO$_2$, comparación entre 8 h y 1 h para O$_3$, y comparación entre 1 h y 24 h para SO$_2$.
+donde \(C_p\) es la concentración representativa del contaminante en la ventana regulatoria aplicable, \(BP_{Lo}\) y \(BP_{Hi}\) son los \textit{breakpoints} del tramo, e \(I_{Lo}\) e \(I_{Hi}\) son los límites del subíndice en ese tramo. La formulación y sus componentes ya fueron introducidos en la Ecuación~\ref{eq:aqi_interp_epa} del marco teórico, mientras que los valores concretos de \textit{breakpoints} implementados por la propuesta se toman de la tabla \textit{EPA/AQS} \cite{DATA_EPA_AQS_BREAKPOINTS}. En esta implementación, las concentraciones representativas se obtienen con ventanas diferenciadas: 24 h para PM$_{2.5}$ y PM$_{10}$, 8 h para CO, valor horario para NO$_2$, comparación entre 8 h y 1 h para O$_3$, y comparación entre 1 h y 24 h para SO$_2$.
 
 Una vez calculados los subíndices, el estado base del episodio queda determinado por el contaminante dominante:
 \begin{equation}
 AQI_{global}=\max\left(I_{pm25},I_{pm10},I_{co},I_{no2},I_{o3},I_{so2}\right).
 \end{equation}
-El contaminante asociado a ese máximo se registra como dominante y pasa a gobernar la categoría base del episodio.
 
-Sobre ese estado base, el prototipo deriva dos variables auxiliares antes de entrar al motor \textit{Mamdani}. La primera es la concurrencia multi-contaminante. Para calcularla se fija un umbral de cercanía respecto del dominante:
+El contaminante asociado a ese máximo se registra como dominante y pasa a gobernar la categoría base del episodio. Sobre ese estado base, el prototipo deriva dos variables auxiliares antes de entrar al motor \textit{Mamdani}. La primera es la concurrencia multi-contaminante. Para calcularla se fija un umbral de cercanía respecto del dominante:
 \begin{equation}
 threshold=\max\left(25,\ 0.8\cdot AQI_{dominante}\right).
 \end{equation}
@@ -263,7 +262,7 @@ El motor principal se implementó con inferencia \textit{Mamdani}. La elección 
 \item \textbf{Persistencia} con tres niveles: baja, media y alta.
 \end{enumerate}
 
-Esta combinación produce una base completa de 54 reglas. La Tabla~\ref{tab:reglas_principales_resumen} resume la lógica por bloques y el detalle completo se presenta en el Anexo~\ref{ane:anexo_reglas_principales}, Tabla~\ref{tab:anexo_reglas_principales_54}. La decisión de utilizar una malla completa y no una base reducida deriva de dos criterios: exhaustividad de cobertura y defensa metodológica frente a tribunal. También es consistente con antecedentes que documentan bases explícitas de 36 y 64 reglas cuando el sistema difuso trabaja sobre entradas instrumentales directas \cite{A114,A165,A167}.
+Esta combinación produce una base completa de 54 reglas. La Tabla~\ref{tab:reglas_principales_resumen} resume la lógica por bloques y el detalle completo se presenta en el Anexo~\ref{ane:anexo_reglas_principales}, Tabla~\ref{tab:anexo_reglas_principales_54}. La decisión de utilizar una malla completa y no una base reducida busca exhaustividad de cobertura, también es consistente con antecedentes que documentan bases explícitas de 36 y 64 reglas cuando el sistema difuso trabaja sobre entradas instrumentales directas \cite{A114,A165,A167}.
 
 \input{assets/tablas/02_cuerpo/05_desarrollo/reglas_principales_resumen.tex}
 
