@@ -7,7 +7,6 @@
 \contentsline {table}{\numberline {6}{Verificación funcional actual del prototipo implementado.}}{53}{table.6}%
 \contentsline {table}{\numberline {7}{Checklist de evaluación de calidad adaptado de Kitchenham (2007), con aplicación condicionada por subtipo cuantitativo. Elaboración propia.}}{71}{table.7}%
 \contentsline {table}{\numberline {8}{Diccionario operativo de campos de la matriz final de extracción de datos.}}{73}{table.8}%
-\contentsline {table}{\numberline {9}{Directriz D3: tabla principal de evidencia cuantitativa (k/n/\%; n=19). Elaboración propia.}}{76}{table.9}%
-\contentsline {table}{\numberline {10}{Resultados de desempeño: frecuencia de métricas en grupos comparables core (k/n/\%; n=19). Elaboración propia.}}{80}{table.10}%
-\contentsline {table}{\numberline {11}{Base principal de 54 reglas del motor difuso implementado.}}{82}{table.11}%
-\contentsline {table}{\numberline {12}{AQI Breakpoints EPA/AQS utilizados por el prototipo para construir subíndices por contaminante. La tabla resume únicamente los tramos implementados en \textit {AQRisk}.}}{85}{table.12}%
+\contentsline {table}{\numberline {9}{Directriz D3: tabla principal de evidencia cuantitativa depurada (k/n/\%; n=19). Elaboración propia.}}{76}{table.9}%
+\contentsline {table}{\numberline {10}{Base principal de 54 reglas del motor difuso implementado.}}{80}{table.10}%
+\contentsline {table}{\numberline {11}{AQI Breakpoints EPA/AQS utilizados por el prototipo para construir subíndices por contaminante. La tabla resume únicamente los tramos implementados en \textit {AQRisk}.}}{83}{table.11}%

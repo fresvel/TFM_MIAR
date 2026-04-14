@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  14 APR 2026 05:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.27)  14 APR 2026 06:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2274,8 +2274,8 @@ Underfull \hbox (badness 3954) in paragraph at lines 65--65
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[75] (./assets/tablas/02_cuerpo/04_estado_del_arte/d3/d3_tabla_principal_es.tex
-
+[75]
+(./assets/tablas/03_finales/03_anexos_i/anexo_d3_tabla_principal_depurada.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
@@ -2289,35 +2289,25 @@ File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[78]
+[78])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[79])
-(./assets/tablas/02_cuerpo/04_estado_del_arte/eval/eval_metricas_por_unidad_cor
-e_es.tex
+[79] (./assets/tablas/03_finales/03_anexos_i/anexo_reglas_principales_54.tex
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[80])
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[81] (./assets/tablas/03_finales/03_anexos_i/anexo_reglas_principales_54.tex
-
-File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
-<assets/figuras/branding/viu-header.png>
-[82
+[80
 
 ]
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[83])
+[81])
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[84] (./assets/tablas/03_finales/03_anexos_i/anexo_breakpoints_epa_aqs.tex
+[82] (./assets/tablas/03_finales/03_anexos_i/anexo_breakpoints_epa_aqs.tex
 Overfull \hbox (4.25957pt too wide) in paragraph at lines 51--51
  []\TU/Arial(0)/b/n/9 Breakpoint 
  []
@@ -2341,7 +2331,7 @@ Overfull \hbox (4.25957pt too wide) in paragraph at lines 51--51
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[85
+[83
 
 ])))
 
@@ -2352,7 +2342,7 @@ See the caption package documentation for explanation.
 
 File: assets/figuras/branding/viu-header.png Graphic file (type bmp)
 <assets/figuras/branding/viu-header.png>
-[86] 
+[84] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (build/main.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -2364,12 +2354,12 @@ L3 programming layer <2025-07-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 39840 strings out of 468457
- 857825 string characters out of 5445913
- 1412001 words of memory out of 5000000
- 67680 multiletter control sequences out of 15000+600000
- 668133 words of font info for 143 fonts, out of 8000000 for 9000
+ 37232 strings out of 468457
+ 797738 string characters out of 5445913
+ 1328046 words of memory out of 5000000
+ 65077 multiletter control sequences out of 15000+600000
+ 662252 words of font info for 140 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,11n,121p,1888b,8001s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,11n,121p,1888b,6345s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on build/main.pdf (86 pages).
+Output written on build/main.pdf (84 pages).
