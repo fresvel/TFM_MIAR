@@ -1,0 +1,53 @@
+\begin{longtblr}[
+  label={tab:anexo_breakpoints_epa_aqs},
+  caption={AQI Breakpoints EPA/AQS utilizados por el prototipo para construir subíndices por contaminante. La tabla resume únicamente los tramos implementados en \textit{AQRisk}.}
+]{
+  colspec={X[1.5,l,m] X[0.9,l,m] X[1.6,l,m] X[0.7,c,m] X[0.7,c,m] X[0.9,c,m] X[0.9,c,m]},
+  width=\linewidth
+}
+\toprule
+Parámetro & Duración & Categoría AQI & AQI bajo & AQI alto & Breakpoint bajo & Breakpoint alto \\
+\midrule
+PM$_{2.5}$ & 24 h & Good & 0 & 50 & 0.0 & 9.0 \\
+PM$_{2.5}$ & 24 h & Moderate & 51 & 100 & 9.1 & 35.4 \\
+PM$_{2.5}$ & 24 h & Unhealthy for Sensitive Groups & 101 & 150 & 35.5 & 55.4 \\
+PM$_{2.5}$ & 24 h & Unhealthy & 151 & 200 & 55.5 & 125.4 \\
+PM$_{2.5}$ & 24 h & Very Unhealthy & 201 & 300 & 125.5 & 225.4 \\
+PM$_{2.5}$ & 24 h & Hazardous & 301 & 500 & 225.5 & 325.4 \\
+PM$_{10}$ & 24 h & Good & 0 & 50 & 0.0 & 54.0 \\
+PM$_{10}$ & 24 h & Moderate & 51 & 100 & 55.0 & 154.0 \\
+PM$_{10}$ & 24 h & Unhealthy for Sensitive Groups & 101 & 150 & 155.0 & 254.0 \\
+PM$_{10}$ & 24 h & Unhealthy & 151 & 200 & 255.0 & 354.0 \\
+PM$_{10}$ & 24 h & Very Unhealthy & 201 & 300 & 355.0 & 424.0 \\
+PM$_{10}$ & 24 h & Hazardous & 301 & 500 & 425.0 & 604.0 \\
+CO & 8 h & Good & 0 & 50 & 0.0 & 4.4 \\
+CO & 8 h & Moderate & 51 & 100 & 4.5 & 9.4 \\
+CO & 8 h & Unhealthy for Sensitive Groups & 101 & 150 & 9.5 & 12.4 \\
+CO & 8 h & Unhealthy & 151 & 200 & 12.5 & 15.4 \\
+CO & 8 h & Very Unhealthy & 201 & 300 & 15.5 & 30.4 \\
+CO & 8 h & Hazardous & 301 & 500 & 30.5 & 50.4 \\
+NO$_2$ & 1 h & Good & 0 & 50 & 0.0 & 53.0 \\
+NO$_2$ & 1 h & Moderate & 51 & 100 & 54.0 & 100.0 \\
+NO$_2$ & 1 h & Unhealthy for Sensitive Groups & 101 & 150 & 101.0 & 360.0 \\
+NO$_2$ & 1 h & Unhealthy & 151 & 200 & 361.0 & 649.0 \\
+NO$_2$ & 1 h & Very Unhealthy & 201 & 300 & 650.0 & 1249.0 \\
+NO$_2$ & 1 h & Hazardous & 301 & 500 & 1250.0 & 2049.0 \\
+O$_3$ & 8 h & Good & 0 & 50 & 0.000 & 0.054 \\
+O$_3$ & 8 h & Moderate & 51 & 100 & 0.055 & 0.070 \\
+O$_3$ & 8 h & Unhealthy for Sensitive Groups & 101 & 150 & 0.071 & 0.085 \\
+O$_3$ & 8 h & Unhealthy & 151 & 200 & 0.086 & 0.105 \\
+O$_3$ & 8 h & Very Unhealthy & 201 & 300 & 0.106 & 0.200 \\
+O$_3$ & 1 h & Unhealthy for Sensitive Groups & 101 & 150 & 0.125 & 0.164 \\
+O$_3$ & 1 h & Unhealthy & 151 & 200 & 0.165 & 0.204 \\
+O$_3$ & 1 h & Very Unhealthy & 201 & 300 & 0.205 & 0.404 \\
+O$_3$ & 1 h & Hazardous & 301 & 500 & 0.405 & 0.604 \\
+SO$_2$ & 1 h & Good & 0 & 50 & 0.0 & 35.0 \\
+SO$_2$ & 1 h & Moderate & 51 & 100 & 36.0 & 75.0 \\
+SO$_2$ & 1 h & Unhealthy for Sensitive Groups & 101 & 150 & 76.0 & 185.0 \\
+SO$_2$ & 1 h & Unhealthy & 151 & 200 & 186.0 & 304.0 \\
+SO$_2$ & 24 h & Very Unhealthy & 201 & 300 & 305.0 & 604.0 \\
+SO$_2$ & 24 h & Hazardous & 301 & 500 & 605.0 & 1004.0 \\
+\bottomrule
+\end{longtblr}
+
+\noindent\footnotesize\textit{Fuente:} tabla oficial \textit{AQI Breakpoints} de EPA/AQS \cite{DATA_EPA_AQS_BREAKPOINTS}. \normalsize

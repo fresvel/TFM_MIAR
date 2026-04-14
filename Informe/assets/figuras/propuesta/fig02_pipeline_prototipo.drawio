@@ -1,11 +1,11 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
   <diagram id="fig02_pipeline_prototipo" name="Page-1">
-    <mxGraphModel dx="2593" dy="1533" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="2600" math="0" shadow="0">
+    <mxGraphModel dx="2852" dy="1686" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="2600" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F7F8FB;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry y="220" width="1800" height="1490" as="geometry" />
+          <mxGeometry y="220" width="1800" height="1410" as="geometry" />
         </mxCell>
         <mxCell id="c1" value="&lt;div&gt;&lt;font style=&quot;font-size:24px;&quot;&gt;Selección de modo, ubicación, ventana temporal y cobertura mínima.&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#FFFFFF;strokeColor=#CBD4E1;strokeWidth=2;fontColor=#23324D;align=center;verticalAlign=middle;spacingTop=26;spacingLeft=18;spacingRight=18;" parent="1" vertex="1">
           <mxGeometry x="110" y="260" width="720" height="220" as="geometry" />

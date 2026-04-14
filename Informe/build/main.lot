@@ -2,11 +2,12 @@
 \contentsline {table}{\numberline {1}{Antecedentes comparables derivados del SLR para contrastar la propuesta del TFM.}}{16}{table.1}%
 \contentsline {table}{\numberline {2}{Síntesis comparativa de datasets públicos de calidad del aire utilizados como referencia metodológica. Elaboración propia.}}{32}{table.2}%
 \contentsline {table}{\numberline {3}{Marco PICo utilizado para la revisión del estado del arte. Elaboración propia.}}{38}{table.3}%
-\contentsline {table}{\numberline {4}{Resumen por bloques de la base principal de 54 reglas del motor difuso.}}{50}{table.4}%
-\contentsline {table}{\numberline {5}{Base contextual de 9 reglas para temperatura y humedad.}}{50}{table.5}%
-\contentsline {table}{\numberline {6}{Verificación funcional actual del prototipo implementado.}}{52}{table.6}%
-\contentsline {table}{\numberline {7}{Checklist de evaluación de calidad adaptado de Kitchenham (2007), con aplicación condicionada por subtipo cuantitativo. Elaboración propia.}}{70}{table.7}%
-\contentsline {table}{\numberline {8}{Diccionario operativo de campos de la matriz final de extracción de datos.}}{72}{table.8}%
-\contentsline {table}{\numberline {9}{Directriz D3: tabla principal de evidencia cuantitativa (k/n/\%; n=19). Elaboración propia.}}{75}{table.9}%
-\contentsline {table}{\numberline {10}{Resultados de desempeño: frecuencia de métricas en grupos comparables core (k/n/\%; n=19). Elaboración propia.}}{79}{table.10}%
-\contentsline {table}{\numberline {11}{Base principal de 54 reglas del motor difuso implementado.}}{81}{table.11}%
+\contentsline {table}{\numberline {4}{Resumen por bloques de la base principal de 54 reglas del motor difuso.}}{51}{table.4}%
+\contentsline {table}{\numberline {5}{Base contextual de 9 reglas para temperatura y humedad.}}{51}{table.5}%
+\contentsline {table}{\numberline {6}{Verificación funcional actual del prototipo implementado.}}{53}{table.6}%
+\contentsline {table}{\numberline {7}{Checklist de evaluación de calidad adaptado de Kitchenham (2007), con aplicación condicionada por subtipo cuantitativo. Elaboración propia.}}{71}{table.7}%
+\contentsline {table}{\numberline {8}{Diccionario operativo de campos de la matriz final de extracción de datos.}}{73}{table.8}%
+\contentsline {table}{\numberline {9}{Directriz D3: tabla principal de evidencia cuantitativa (k/n/\%; n=19). Elaboración propia.}}{76}{table.9}%
+\contentsline {table}{\numberline {10}{Resultados de desempeño: frecuencia de métricas en grupos comparables core (k/n/\%; n=19). Elaboración propia.}}{80}{table.10}%
+\contentsline {table}{\numberline {11}{Base principal de 54 reglas del motor difuso implementado.}}{82}{table.11}%
+\contentsline {table}{\numberline {12}{AQI Breakpoints EPA/AQS utilizados por el prototipo para construir subíndices por contaminante. La tabla resume únicamente los tramos implementados en \textit {AQRisk}.}}{85}{table.12}%

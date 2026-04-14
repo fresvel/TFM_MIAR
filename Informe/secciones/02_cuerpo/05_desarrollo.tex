@@ -151,19 +151,19 @@ El prototipo implementado se organiza en cinco capas funcionales encadenadas. La
 \end{figure}
 
 \begin{enumerate}
-\item \textbf{Consolidación normativa}. Recupera las series horarias, calcula subíndices por contaminante y consolida el AQI global.
-\item \textbf{Variables auxiliares}. Deriva persistencia temporal y concurrencia multi-contaminante a partir del estado base calculado.
-\item \textbf{Inferencia difusa principal}. Aplica la base principal de 54 reglas sobre AQI base, concurrencia y persistencia.
-\item \textbf{Capa contextual basada en reglas}. Modula la salida principal mediante temperatura y humedad cuando esas variables están disponibles y el episodio ya se encuentra comprometido.
-\item \textbf{Alertamiento y salida}. Genera la clasificación final, compone la alerta interpretable y serializa el resultado en formato JSON.
+\item \textbf{Consolidación normativa}. Esta capa fija el estado base del episodio sobre una referencia regulatoria explícita. A partir de series horarias por contaminante, selecciona la ventana aplicable para cada parámetro, calcula los subíndices con \textit{breakpoints} EPA/AQS y resuelve el AQI global por dominancia. Su función es producir una base comparable y externamente interpretable antes de cualquier modulación difusa.
+\item \textbf{Variables auxiliares}. Sobre ese estado base, la arquitectura deriva dos señales agregadas con significado operacional distinto: persistencia, para representar continuidad temporal del deterioro, y concurrencia, para representar presión multicontaminante efectiva. Estas variables no sustituyen al AQI ni a los contaminantes criterio; actúan como entradas auxiliares para enriquecer la lectura del episodio.
+\item \textbf{Inferencia difusa principal}. La base principal recibe AQI base, concurrencia y persistencia como entradas separadas y las evalúa mediante una malla Mamdani de 54 reglas, cuyo detalle completo se presenta en el Anexo~\ref{ane:anexo_reglas_principales}. En esta capa se concentra la interpretación del riesgo, ya que el motor transforma un estado normativo puntual en una salida graduada, auditable y trazable en términos de activación de reglas.
+\item \textbf{Capa contextual basada en reglas}. Después de la inferencia principal, la arquitectura incorpora una modulación discreta por temperatura y humedad. Esta capa permanece desacoplada del motor principal y solo interviene cuando existe contexto ambiental disponible y el episodio ya muestra compromiso suficiente. Su papel es ajustar la severidad final sin alterar la lógica normativa ni difusa que produjo la salida base.
+\item \textbf{Alertamiento y salida}. La última capa traduce el resultado del recorrido completo a una salida operativa. Aquí se fija la categoría final, se compone el mensaje interpretable y se serializa la corrida en JSON con trazas de cálculo, reglas activadas, cobertura y metadatos de contexto. Esta salida es la base común para CLI, API e interfaz web.
 \end{enumerate}
 
 La arquitectura por capas aporta explicabilidad técnica. Cada bloque resuelve una función específica y conserva trazabilidad del paso anterior. Esta organización facilita la verificación del comportamiento del sistema y evita mezclar cálculo normativo, lógica difusa y composición de la salida dentro de una sola etapa.
 
 \subsubsection{Arquitectura de software y flujo de ejecución}
-La implementación se realizó en Python mediante una arquitectura modular monoproceso. La estructura del paquete separa modelos de dominio, ingesta, procesamiento, cálculo AQI, motor difuso, alertamiento, orquestación e interfaz de línea de comandos. Esta decisión reduce complejidad accidental y deja preparada una migración posterior a servicios independientes si el trabajo la requiere.
+La implementación del sistema se realizó en Python mediante una arquitectura modular monoproceso. La estructura del paquete separa modelos de dominio, ingesta, procesamiento, cálculo AQI, motor difuso, alertamiento, orquestación e interfaz de línea de comandos. Esta decisión reduce complejidad accidental y deja preparada una migración posterior a servicios independientes si el trabajo lo requiere.
 
-El flujo de ejecución del prototipo se presenta en la Figura~\ref{fig:pipeline_prototipo}.
+El flujo de ejecución del prototipo se presenta en la Figura~\ref{fig:pipeline_prototipo}, en donde se muestra que el sistema opera como una secuencia desacoplada de transformación de datos. El recorrido comienza con la definición explícita del contexto de ejecución, porque modo, estación, ventana temporal y umbral de cobertura condicionan qué observaciones pueden entrar al análisis. A partir de ahí, el sistema consulta sensores por \textit{location\_id}, recupera series horarias recientes y las estandariza en una forma común de trabajo, lo que permite tratar de manera homogénea contaminantes con unidades, disponibilidad y ventanas regulatorias distintas.
 
 \begin{figure}[H]
 \centering
@@ -172,19 +172,22 @@ El flujo de ejecución del prototipo se presenta en la Figura~\ref{fig:pipeline_
 \label{fig:pipeline_prototipo}
 \end{figure}
 
-El pipeline resuelve la configuración de ejecución, consulta sensores por \textit{location\_id}, recupera series horarias recientes, normaliza datos, calcula cobertura, construye el AQI base, deriva concurrencia y persistencia, ejecuta el motor difuso, aplica la capa contextual cuando corresponde y genera una salida JSON trazable. Esta salida está preparada para exponer el módulo por CLI, por contenedor Docker y, en una etapa posterior, por API o interfaz web.
+
+Sobre esa base homogénea, el pipeline separa tres decisiones técnicas. La primera es normativa: calcular cobertura efectiva, construir subíndices por contaminante y consolidar el AQI base. La segunda es analítica: derivar concurrencia y persistencia como variables agregadas que resumen coexistencia multicontaminante y continuidad temporal del episodio. La tercera es interpretativa: ejecutar el motor Mamdani, aplicar la capa contextual cuando corresponde y componer la respuesta final. Esta organización hace visible dónde termina la consolidación regulatoria y dónde empieza la modulación del riesgo.
+
+El resultado del recorrido entrega una categoría final; pero además, el pipeline genera una salida JSON trazable que conserva subíndices, variable dominante, cobertura, variables auxiliares, reglas activadas, regla contextual evaluada y estado final del alertamiento. Por ello, la misma ejecución puede exponerse por CLI, por contenedor Docker, por API HTTP o por la interfaz web sin perder consistencia entre cálculo interno, evidencia visual y salida operativa.
 
 \subsubsection{Fuente de datos, variables y criterios normativos}
 La fuente operativa principal del prototipo es \textit{OpenAQ}, utilizada como plataforma abierta de consulta programática de mediciones y metadatos de estaciones \cite{DATA_OPENAQ}. El módulo recupera mediciones por estación, sensor y ventana temporal. La fuente se usa como repositorio de observaciones y no como proveedor de un índice final ya resuelto.
 
-La capa normativa del módulo se apoya de forma explícita en la tabla vigente de \textit{AQI Breakpoints} de \textit{EPA/AQS} \cite{DATA_EPA_AQS_BREAKPOINTS}. A partir de esa referencia se implementaron los contaminantes criterio PM$_{2.5}$, PM$_{10}$, CO, NO$_2$, O$_3$ y SO$_2$, junto con sus ventanas regulatorias y categorías del índice. La versión actual del prototipo utiliza:
+La capa normativa del módulo se apoya de forma explícita en la tabla vigente de \textit{AQI Breakpoints} de \textit{EPA/AQS} \cite{DATA_EPA_AQS_BREAKPOINTS}. A partir de esa referencia se implementaron los contaminantes criterio PM$_{2.5}$, PM$_{10}$, CO, NO$_2$, O$_3$ y SO$_2$, junto con sus ventanas regulatorias y categorías del índice. El Anexo~\ref{ane:anexo_breakpoints_epa} recoge los tramos oficiales utilizados por el prototipo. La versión actual del prototipo utiliza:
 \begin{enumerate}
-\item PM$_{2.5}$ con promedio de 24 horas.
-\item PM$_{10}$ con promedio de 24 horas.
-\item CO con promedio de 8 horas.
-\item NO$_2$ con valor horario.
-\item O$_3$ con comparación entre ventanas de 8 horas y 1 hora, según tramo aplicable.
-\item SO$_2$ con comparación entre valor horario y promedio de 24 horas.
+\item PM$_{2.5}$ con promedio móvil de 24 horas, porque la referencia regulatoria para este contaminante parte de exposición diaria acumulada y no de una observación instantánea.
+\item PM$_{10}$ con promedio de 24 horas, bajo la misma lógica de exposición integrada sobre un día completo.
+\item CO con promedio de 8 horas, dado que la norma EPA/AQS evalúa este contaminante sobre una ventana subdiaria sostenida.
+\item NO$_2$ con valor horario, ya que el prototipo utiliza el tramo de 1 hora definido por la tabla regulatoria implementada.
+\item O$_3$ con evaluación sobre 8 horas y, cuando el tramo normativo lo exige, contraste adicional con 1 hora; el subíndice final se resuelve con la ventana aplicable al episodio observado.
+\item SO$_2$ con contraste entre valor horario y promedio de 24 horas, porque la norma distingue situaciones de exposición aguda y acumulada según el nivel detectado.
 \end{enumerate}
 
 El tratamiento de ventanas parciales se resuelve mediante un umbral mínimo de cobertura del 80\%. Cuando la ventana no está completa, el módulo admite cálculo si la cobertura supera ese umbral y deja registro de la condición aplicada. Esta decisión conserva utilidad operativa sobre datos abiertos sin ocultar la completitud efectiva de la serie.
