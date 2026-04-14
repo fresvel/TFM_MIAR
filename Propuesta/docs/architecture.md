@@ -1,90 +1,107 @@
 # Arquitectura del prototipo
 
-## Resumen
+## Propósito arquitectónico
 
-`AQRisk` está construido como un prototipo modular con separación clara entre núcleo de evaluación, exposición por API y cliente web. La arquitectura prioriza tres propiedades del TFM: auditabilidad, explicabilidad y facilidad de despliegue local.
+`AQRisk` se construyó como un prototipo modular orientado a tres propiedades: `auditabilidad`, `explicabilidad` y `despliegue controlado`. La arquitectura evita distribuir prematuramente el sistema y concentra el valor en un núcleo de evaluación bien separado del transporte HTTP y de la interfaz web.
 
-## Vista funcional
+## Vista general
 
-La ejecución completa sigue cinco capas:
+El sistema tiene tres subsistemas principales:
 
-1. adquisición y normalización de datos;
-2. consolidación normativa del estado base mediante AQI;
-3. derivación de variables auxiliares;
-4. inferencia difusa principal y ajuste contextual;
-5. construcción de alerta, persistencia local y exposición por API/frontend.
+- **backend de evaluación**: resuelve adquisición, normalización, cálculo AQI, variables auxiliares, inferencia difusa, ajuste contextual y alertamiento;
+- **API HTTP**: expone el backend como servicio JSON y entrega metadatos que el frontend necesita para explicar el modelo;
+- **frontend web**: actúa como cliente del backend y organiza la lectura de resultados en `Dashboard`, `Trazabilidad`, `Explicabilidad` y `Evaluación`.
 
-La separación es intencional. El AQI conserva su papel normativo y la capa difusa opera sobre variables derivadas, no sobre todos los contaminantes crudos.
+La persistencia actual es deliberadamente simple: un histórico local en archivo para comparar corridas previas.
 
-## Vista de software
+## Arquitectura del backend
 
-El paquete `aqrisk` queda organizado así:
+El paquete `src/aqrisk/` conserva la estructura citada en el informe:
 
-- `domain`: modelos tipados y estructura de resultados.
-- `ingestion`: cliente `OpenAQ` y recuperación de sensores/series.
-- `processing`: normalización, cobertura, persistencia, concurrencia y reglas contextuales.
-- `aqi`: cálculo determinista del índice con base `EPA/AQS`.
-- `fuzzy`: funciones de pertenencia, base de reglas y motor `Mamdani`.
-- `alerting`: composición de la salida operativa final.
-- `application`: orquestación del pipeline y escenarios `mock`.
-- `api`: backend HTTP.
-- `storage`: histórico local.
+- `domain`: modelos tipados como `InputSnapshot`, `AQIResult`, `FuzzyResult`, `Alert` y `ModuleResult`.
+- `ingestion`: cliente `OpenAQ` y funciones de recuperación de ubicaciones, sensores y series horarias.
+- `processing`: normalización, cobertura, persistencia, concurrencia y capa contextual.
+- `aqi`: cálculo determinista del índice a partir de breakpoints `EPA/AQS`.
+- `fuzzy`: funciones de pertenencia, constantes del motor y `MamdaniRiskEngine`.
+- `alerting`: composición del mensaje operativo final.
+- `application`: `AirQualityRiskPipeline` y escenarios `mock`.
+- `api`: servidor HTTP, mapeo de settings, serialización, metadata y explainability.
+- `storage`: persistencia del histórico local.
 - `interfaces`: CLI.
 
-El frontend vive en `frontend/` y consume la API como cliente separado. No contiene lógica del motor; su responsabilidad es operar el prototipo y exponer capas de lectura.
+La separación es intencional. El núcleo normativo no vive en la API ni en el frontend, y la capa contextual no se mezcla con la malla difusa principal.
 
 ## Flujo de ejecución
 
-1. Resolver configuración desde entorno y parámetros de entrada.
-2. Seleccionar modo `mock` u `openaq`.
-3. Recuperar sensores y observaciones.
-4. Normalizar series y calcular cobertura efectiva.
-5. Obtener concentraciones representativas y subíndices AQI.
-6. Consolidar AQI global y contaminante dominante.
-7. Calcular `concurrence` y `persistence`.
-8. Ejecutar la malla `Mamdani`.
-9. Aplicar la capa contextual crisp si existen temperatura y humedad válidas.
-10. Generar salida final, alerta e histórico.
-11. Publicar resultados a través de CLI, API y frontend.
+La evaluación completa sigue once pasos:
 
-## Vista de despliegue
+1. resolver configuración desde entorno y parámetros de entrada;
+2. seleccionar `mode=mock` o `mode=openaq`;
+3. recuperar observaciones;
+4. normalizar series y calcular cobertura;
+5. obtener concentraciones representativas por contaminante;
+6. calcular subíndices y `AQI` global;
+7. derivar `concurrence` y `persistence`;
+8. ejecutar la malla `Mamdani`;
+9. aplicar la capa contextual crisp cuando hay temperatura y humedad válidas;
+10. construir alerta e histórico local;
+11. exponer el resultado por CLI, API y frontend.
 
-El despliegue actual usa dos servicios:
+Este flujo es el mismo en ambos modos. La diferencia entre `mock` y `openaq` está solo en el origen de los datos.
 
-- `aqrisk-api`: backend Python expuesto en el host por `18010` y escuchando internamente en `8010`.
-- `aqrisk-frontend`: aplicación Vue/Vite expuesta en el host por `18080`.
+## Vista del frontend
 
-El histórico local se persiste en un volumen Docker. La solución es suficiente para el prototipo, pero no sustituye una base de datos robusta.
+El frontend vive en `frontend/` y se organiza por responsabilidad:
 
-## Decisiones arquitectónicas
+- `components/`: paneles y secciones visibles;
+- `composables/`: carga de datos, filtros, estado reactivo y derivaciones;
+- `config/`: configuración de vistas, gráficas y estaciones OpenAQ sugeridas;
+- `services/`: cliente HTTP con `axios`;
+- `utils/`: utilidades de apoyo y exportación de imágenes.
 
-### Núcleo modular monoproceso
+La aplicación no contiene lógica del motor. Su papel es:
 
-Se evita una arquitectura distribuida porque el objetivo del TFM no es escalar horizontalmente, sino demostrar razonamiento auditable y trazabilidad de extremo a extremo con complejidad controlada.
+- disparar corridas;
+- mostrar el resumen ejecutivo;
+- explicar las capas del modelo;
+- comparar la corrida actual con el histórico local;
+- facilitar la captura de evidencia visual.
 
-### Separación entre AQI y lógica difusa
+## Decisiones arquitectónicas centrales
 
-El AQI se calcula de forma normativa y explícita. La inferencia difusa entra después, sobre variables agregadas. Esta decisión mantiene correspondencia con la referencia regulatoria y evita un sistema opaco.
+### Separación entre AQI y razonamiento difuso
+
+El `AQI` se calcula primero como base normativa. La lógica difusa no sustituye esa capa, sino que opera después sobre variables derivadas. Esta decisión preserva trazabilidad regulatoria y evita convertir el sistema en una caja negra.
 
 ### Capa contextual desacoplada
 
-Temperatura y humedad no forman parte de la malla principal. La modulación contextual se resuelve con una matriz crisp `3 × 3`. Con ello se contiene la explosión combinatoria y se preserva interpretabilidad.
+Temperatura y humedad no forman parte de la malla principal de `54` reglas. Se resuelven en una matriz crisp `3 × 3` separada. Con ello se controla la complejidad combinatoria y se mantiene legibilidad metodológica.
 
-### Histórico local transitorio
+### API fina y sin lógica de negocio
 
-El almacenamiento actual permite comparación básica entre corridas y soporte para la interfaz. No resuelve consulta avanzada, concurrencia multiusuario ni persistencia robusta.
+La API no recalcula reglas ni contiene heurísticas propias. Su responsabilidad es orquestar el pipeline, validar entradas simples, serializar la salida y publicar metadatos que el frontend usa para explicar el modelo.
 
-## Estado de organización
+### Persistencia local deliberadamente mínima
 
-La mayor deuda de organización estaba en el frontend, donde `App.vue` acumulaba estado, efectos, builders de gráficas y control de captura. Esa lógica ya está separada en:
+El histórico local sirve para comparación básica entre corridas y soporte a la vista `Evaluación`. No está diseñado para escenarios multiusuario ni para consulta analítica extensa.
 
-- `composables/` para estado y derivación reactiva;
-- `config/` para opciones y guías;
-- `utils/` para helpers puros.
+## Vista de despliegue
 
-## Vacíos abiertos
+El despliegue actual usa dos servicios Docker:
 
+- `aqrisk-api`: backend Python, escucha internamente en `8010` y se expone por `18010` en el host;
+- `aqrisk-frontend`: aplicación Vue/Vite, escucha internamente en `8080` y se expone por `18080`.
+
+El histórico local se guarda en un volumen Docker dedicado. La configuración se carga desde `.env`.
+
+## Fronteras y límites
+
+La arquitectura actual resuelve el objetivo del TFM, pero deja fuera:
+
+- autenticación y control de acceso;
 - persistencia robusta;
-- pruebas de frontend y E2E;
-- autenticación y gestión de acceso si el alcance creciera;
-- endurecimiento para despliegue público.
+- pruebas E2E;
+- endurecimiento para despliegue público;
+- operación distribuida o multiinstancia.
+
+Estas ausencias no son omisiones accidentales. Son decisiones de alcance para priorizar un prototipo explicable y defendible.

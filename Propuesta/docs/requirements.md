@@ -1,85 +1,113 @@
 # Alcance funcional y criterios de validación
 
-## Contexto
+## Propósito
 
-Este documento describe qué resuelve hoy el prototipo y qué queda deliberadamente fuera del alcance. No es una lista especulativa: resume el estado implementado de `Propuesta`.
+Este documento fija qué resuelve hoy el prototipo y cómo se valida ese estado. No describe una hoja de ruta futura: resume el artefacto implementado en `Propuesta`.
 
 ## Alcance implementado
 
-El sistema cubre las siguientes capacidades:
+El sistema cubre actualmente:
 
-- ejecución en modo `mock` para escenarios controlados;
-- ejecución en modo `openaq` para corridas reales por `location_id`;
-- descubrimiento de sensores y recuperación de series horarias;
-- normalización de observaciones y cálculo de cobertura;
-- cálculo de subíndices y AQI global para contaminantes criterio;
+- ejecución en `mode=mock` con escenarios controlados;
+- ejecución en `mode=openaq` por `location_id`;
+- descubrimiento de ubicaciones y sensores `OpenAQ`;
+- recuperación y normalización de series horarias;
+- cálculo de cobertura efectiva;
+- cálculo de subíndices y `AQI` global para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2`;
 - derivación de `concurrence` y `persistence`;
 - inferencia `Mamdani` con base principal de `54` reglas;
-- ajuste contextual sobre temperatura y humedad con matriz crisp de `9` reglas;
-- generación de alerta interpretable y salida estructurada;
-- histórico local de corridas;
-- exposición por CLI, API HTTP y frontend web;
-- despliegue dockerizado del stack completo.
+- ajuste contextual crisp sobre temperatura y humedad con `9` reglas;
+- generación de alerta interpretable y payload estructurado;
+- persistencia local de corridas;
+- exposición por CLI, API HTTP y frontend;
+- despliegue dockerizado de todo el stack.
 
-## Requerimientos funcionales clave
+## Requerimientos funcionales
 
 ### Configuración y modos
 
-El sistema debe aceptar configuración por variables de entorno y por parámetros de ejecución. Debe soportar al menos los modos `mock` y `openaq`.
+El sistema debe aceptar configuración desde variables de entorno y desde parámetros de ejecución. Debe soportar, al menos, los modos `mock` y `openaq`.
 
 ### Adquisición y preprocesamiento
 
-En modo `openaq`, el sistema debe recuperar sensores y series temporales para parámetros relevantes. Debe normalizar nombres, estructura temporal y representación interna antes de la evaluación.
+En modo `openaq`, el sistema debe recuperar sensores y series relevantes de una estación real, normalizar nombres y estructura temporal y construir una representación interna consistente antes de la evaluación.
 
 ### Evaluación normativa
 
-El módulo debe calcular subíndices AQI y consolidar un AQI global con base en la referencia `EPA/AQS` para `pm25`, `pm10`, `co`, `no2`, `o3` y `so2`.
+El módulo debe calcular subíndices `AQI` y consolidar un `AQI` global usando la referencia `EPA/AQS`.
 
 ### Variables auxiliares
 
-El prototipo debe derivar `concurrence`, `persistence` y `coverage` como soporte a la evaluación del riesgo y a la trazabilidad de la salida.
+El sistema debe derivar `concurrence`, `persistence` y `coverage` como entradas de apoyo a la interpretación del riesgo.
 
 ### Inferencia y ajuste contextual
 
-El sistema debe generar una salida lingüística mediante inferencia `Mamdani` y, cuando existan datos contextuales válidos, evaluar una capa adicional de ajuste explícito.
+El prototipo debe generar una salida lingüística mediante inferencia `Mamdani` y, cuando existan datos contextuales válidos, evaluar una capa contextual separada.
 
-### Exposición y trazabilidad
+### Trazabilidad y explicabilidad
 
-La salida debe conservar la información necesaria para explicar:
+La salida debe conservar información suficiente para explicar:
 
 - fuente y ubicación;
-- parámetros usados y no usados;
 - cobertura global;
+- parámetros soportados y no soportados;
 - subíndices y contaminante dominante;
+- score y etiqueta principal;
 - reglas activadas;
-- salida principal y salida final;
-- ajustes contextuales.
+- salida final y ajuste contextual;
+- alerta resultante.
 
 ### Operación web
 
 La interfaz debe permitir:
 
 - ejecutar corridas;
-- seleccionar escenarios y ubicaciones;
-- consultar trazabilidad;
-- revisar explicabilidad;
-- comparar la corrida actual con el histórico local.
+- seleccionar escenarios y estaciones;
+- consultar `Dashboard`, `Trazabilidad`, `Explicabilidad` y `Evaluación`;
+- comparar la corrida actual con el histórico local;
+- exportar imágenes de gráficas para documentación.
 
 ## Requerimientos no funcionales
 
-- reproducibilidad para una misma entrada;
-- modularidad entre dominio, procesamiento, inferencia y presentación;
-- auditabilidad del criterio AQI y de la base de reglas;
+El estado actual del prototipo prioriza:
+
+- reproducibilidad en `mock`;
+- modularidad entre dominio, cálculo normativo, inferencia, API y presentación;
+- auditabilidad de la base normativa y de la base de reglas;
 - portabilidad para ejecución local y con Docker;
-- extensibilidad hacia persistencia robusta y validación ampliada.
+- mantenibilidad del backend bajo una estructura POO por servicios y modelos.
 
 ## Criterios de validación actuales
 
-- el pipeline debe ejecutarse de extremo a extremo en modo `mock`;
-- `mode=openaq` debe fallar de forma controlada si falta `OPENAQ_API_KEY`;
-- la API debe exponer sus endpoints básicos y responder con payload trazable;
-- el frontend debe consumir la API sin transformar el contrato del backend;
-- el histórico local debe registrar y devolver corridas previas.
+La validación disponible hoy cubre:
+
+- ejecución de extremo a extremo del pipeline en `mock`;
+- fallo controlado de `mode=openaq` cuando falta `OPENAQ_API_KEY`;
+- contrato HTTP básico del backend;
+- persistencia y consulta del histórico local;
+- activación de múltiples reglas en `diffuse_overlap`;
+- consumo estable del contrato por el frontend.
+
+Estado actual de pruebas automatizadas:
+
+- `11` pruebas backend en `tests/test_pipeline.py` y `tests/test_api.py`.
+
+Comando de ejecución:
+
+```bash
+cd Propuesta
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+```
+
+## Validación manual esperada
+
+Además de la suite backend, el prototipo debe verificarse manualmente en la interfaz:
+
+1. correr una evaluación `mock`;
+2. revisar trazabilidad de reglas y ajustes contextuales;
+3. inspeccionar paneles de explicabilidad;
+4. comprobar comparación con histórico;
+5. si hay credencial, ejecutar una corrida `openaq`.
 
 ## Fuera de alcance
 
@@ -89,4 +117,6 @@ No forman parte del estado actual:
 - perfiles y roles;
 - administración;
 - persistencia robusta en `SQLite` o `PostgreSQL`;
-- pruebas E2E y endurecimiento para exposición pública.
+- endurecimiento para despliegue público;
+- pruebas E2E;
+- operación multiusuario.

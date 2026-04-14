@@ -11,6 +11,7 @@ LABEL_TEXT = {
     "very_unhealthy": "Very Unhealthy",
     "hazardous": "Hazardous",
 }
+NO_DOMINANT_PARAMETER_LABEL = "sin contaminante dominante"
 
 
 def build_alert(
@@ -19,12 +20,23 @@ def build_alert(
     coverage: float,
     min_coverage: float,
 ) -> Alert:
+    """Build the public alert payload exposed by the prototype.
+
+    Args:
+        aqi: Consolidated AQI result for the current episode.
+        fuzzy: Final fuzzy evaluation after the main inference stage.
+        coverage: Effective data coverage available for the episode.
+        min_coverage: Recommended minimum coverage configured for the run.
+
+    Returns:
+        Alert: User-facing title, message and optional coverage caution.
+    """
     caution = None
     if coverage < min_coverage:
         caution = (
             f"Cobertura de datos inferior al umbral recomendado ({min_coverage:.0f}%)."
         )
-    dominant = aqi.dominant_parameter or "sin contaminante dominante"
+    dominant = aqi.dominant_parameter or NO_DOMINANT_PARAMETER_LABEL
     title = f"{LABEL_TEXT.get(fuzzy.label, fuzzy.label)} | AQI {aqi.global_aqi if aqi.global_aqi is not None else 'NA'}"
     message = (
         f"Estado base {LABEL_TEXT.get(aqi.category, aqi.category)}. "

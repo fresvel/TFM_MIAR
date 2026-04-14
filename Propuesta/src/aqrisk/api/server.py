@@ -2,298 +2,201 @@ from __future__ import annotations
 
 import argparse
 import json
-from dataclasses import replace
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 
-from aqrisk.application.pipeline import AirQualityRiskPipeline, PipelineError
+from aqrisk.api.constants import (
+    DEFAULT_HISTORY_LIMIT,
+    DEFAULT_LOCATION_COORDINATES,
+    DEFAULT_LOCATION_ISO,
+    DEFAULT_LOCATION_LIMIT,
+    DEFAULT_LOCATION_RADIUS,
+    EVALUATE_ROUTE,
+    HEALTH_ROUTE,
+    HISTORY_ROUTE,
+    JSON_ERROR_INVALID,
+    JSON_ERROR_ROUTE_NOT_FOUND,
+    LOCATIONS_ROUTE,
+    METADATA_ROUTE,
+    SCENARIOS_ROUTE,
+    SENSORS_ROUTE_SUFFIX,
+)
+from aqrisk.api.services import (
+    EvaluationService,
+    ExplainabilityBuilder,
+    JsonResponseWriter,
+    MetadataBuilder,
+    SettingsMapper,
+)
+from aqrisk.application.pipeline import PipelineError
 from aqrisk.application.scenarios import list_scenarios
 from aqrisk.config import Settings
-from aqrisk.fuzzy.mamdani import membership_curve_set, MamdaniRiskEngine
 from aqrisk.ingestion.openaq_client import OpenAQClient, OpenAQClientError
-from aqrisk.processing.context import CONTEXT_RULE_MATRIX, classify_humidity, classify_temperature
 from aqrisk.storage.history import HistoryStore
 
 
-def _metadata_payload(settings: Settings) -> dict[str, Any]:
-    return {
-        "modes": ["mock", "openaq"],
-        "default_config": {
-            "mode": settings.mode,
-            "location_id": settings.openaq_location_id,
-            "lookback_hours": settings.lookback_hours,
-            "min_coverage": settings.min_coverage,
-            "scenario_id": settings.scenario_id,
-        },
-        "model": {
-            "normative_basis": "EPA/AQS AQI Breakpoints",
-            "supported_parameters": ["pm25", "pm10", "co", "no2", "o3", "so2"],
-            "context_parameters": ["temperature", "humidity"],
-            "main_rule_count": 54,
-            "context_rule_count": 9,
-            "layers": [
-                "consolidacion_normativa",
-                "variables_auxiliares",
-                "inferencia_difusa_principal",
-                "ajuste_contextual",
-                "alertamiento_salida",
-            ],
-            "membership_curves": {
-                "aqi": membership_curve_set("aqi"),
-                "persistence": membership_curve_set("persistence"),
-                "concurrence": membership_curve_set("concurrence"),
-                "risk": membership_curve_set("risk"),
-            },
-        },
-    }
-
-
-def _build_explainability(result: dict[str, Any]) -> dict[str, Any]:
-    engine = MamdaniRiskEngine()
-    trace = engine.trace(
-        result["aqi"]["global_aqi"],
-        result["persistence_score"],
-        result["concurrence_score"],
-    )
-    context_trace = _build_context_trace(result, trace)
-    return {
-        "layer_outputs": {
-            "consolidacion_normativa": {
-                "global_aqi": result["aqi"]["global_aqi"],
-                "category": result["aqi"]["category"],
-                "dominant_parameter": result["aqi"]["dominant_parameter"],
-                "subindices": result["aqi"]["subindices"],
-            },
-            "variables_auxiliares": {
-                "concurrence_score": result["concurrence_score"],
-                "persistence_score": result["persistence_score"],
-                "coverage_global": result["snapshot"]["coverage_global"],
-            },
-            "inferencia_difusa_principal": trace,
-            "ajuste_contextual": context_trace,
-            "alertamiento_salida": result["alert"],
-        }
-    }
-
-
-def _latest_series_value(result: dict[str, Any], parameter: str) -> float | None:
-    series = result.get("snapshot", {}).get("series", {}).get(parameter)
-    if not series:
-        return None
-    observations = series.get("observations", [])
-    if not observations:
-        return None
-    return observations[-1].get("value")
-
-
-def _build_context_trace(result: dict[str, Any], principal_trace: dict[str, Any]) -> dict[str, Any]:
-    temperature = _latest_series_value(result, "temperature")
-    humidity = _latest_series_value(result, "humidity")
-
-    payload: dict[str, Any] = {
-        "adjustments": result["context_adjustments"],
-        "temperature": temperature,
-        "humidity": humidity,
-        "temperature_term": None,
-        "humidity_term": None,
-        "rule": None,
-        "escalation": 0,
-        "applied": False,
-        "reason": "sin_datos_contextuales",
-    }
-
-    if temperature is None or humidity is None:
-        return payload
-
-    temperature_term = classify_temperature(float(temperature))
-    humidity_term = classify_humidity(float(humidity))
-    escalation = CONTEXT_RULE_MATRIX[temperature_term][humidity_term]
-    particulate_index = max(
-        result.get("aqi", {}).get("subindices", {}).get("pm25", 0),
-        result.get("aqi", {}).get("subindices", {}).get("pm10", 0),
-    )
-    global_aqi = result.get("aqi", {}).get("global_aqi")
-    blocked_by_particulate_gate = (
-        escalation > 0
-        and particulate_index < 100
-        and global_aqi is not None
-        and global_aqi < 101
-    )
-
-    payload.update(
-        {
-            "temperature_term": temperature_term,
-            "humidity_term": humidity_term,
-            "rule": f"CTX_{temperature_term}_{humidity_term}",
-            "escalation": escalation,
-            "particulate_index": particulate_index,
-            "principal_score": principal_trace["score"],
-            "principal_label": principal_trace["label"],
-            "final_score": result["fuzzy"]["score"],
-            "final_label": result["fuzzy"]["label"],
-        }
-    )
-
-    if escalation == 0:
-        payload["reason"] = "regla_contextual_sin_escalado"
-        return payload
-
-    if blocked_by_particulate_gate:
-        payload["reason"] = "escalado_bloqueado_por_umbral_particulado"
-        return payload
-
-    payload["applied"] = True
-    payload["reason"] = "escalado_contextual_aplicado"
-    return payload
-
-
-def _settings_from_request(base: Settings, payload: dict[str, Any]) -> Settings:
-    mode = payload.get("mode", base.mode)
-    location_id = payload.get("location_id", base.openaq_location_id)
-    lookback_hours = payload.get("lookback_hours", base.lookback_hours)
-    min_coverage = payload.get("min_coverage", base.min_coverage)
-    scenario_id = payload.get("scenario_id", base.scenario_id)
-    return replace(
-        base,
-        mode=str(mode),
-        openaq_location_id=int(location_id) if location_id is not None else None,
-        lookback_hours=int(lookback_hours),
-        min_coverage=float(min_coverage),
-        scenario_id=str(scenario_id),
-    )
-
-
-def _json_response(
-    handler: BaseHTTPRequestHandler,
-    status: HTTPStatus,
-    payload: dict[str, Any],
-) -> None:
-    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    handler.send_response(status.value)
-    handler.send_header("Content-Type", "application/json; charset=utf-8")
-    handler.send_header("Content-Length", str(len(body)))
-    handler.send_header("Access-Control-Allow-Origin", "*")
-    handler.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-    handler.send_header("Access-Control-Allow-Headers", "Content-Type")
-    handler.end_headers()
-    handler.wfile.write(body)
-
-
 def create_handler(base_settings: Settings):
+    """Create the HTTP handler bound to the provided base settings."""
     history_store = HistoryStore(base_settings.history_path)
+    metadata_builder = MetadataBuilder()
+    explainability_builder = ExplainabilityBuilder()
+    evaluation_service = EvaluationService()
 
     class AQRiskRequestHandler(BaseHTTPRequestHandler):
+        """Serve the public HTTP endpoints for the AQRisk prototype."""
+
         server_version = "AQRiskHTTP/0.1"
 
         def do_OPTIONS(self) -> None:  # noqa: N802
-            _json_response(self, HTTPStatus.NO_CONTENT, {})
+            """Respond to CORS preflight requests."""
+            JsonResponseWriter.write(self, HTTPStatus.NO_CONTENT, {})
 
         def do_GET(self) -> None:  # noqa: N802
-            if self.path == "/health":
-                _json_response(
+            """Serve read-only API resources."""
+            if self.path == HEALTH_ROUTE:
+                JsonResponseWriter.write(
                     self,
                     HTTPStatus.OK,
                     {"status": "ok", "service": "aqrisk-api"},
                 )
                 return
-            if self.path == "/api/v1/metadata":
-                _json_response(self, HTTPStatus.OK, _metadata_payload(base_settings))
+
+            if self.path == METADATA_ROUTE:
+                JsonResponseWriter.write(self, HTTPStatus.OK, metadata_builder.build(base_settings))
                 return
-            if self.path == "/api/v1/scenarios":
-                _json_response(self, HTTPStatus.OK, {"items": list_scenarios()})
+
+            if self.path == SCENARIOS_ROUTE:
+                JsonResponseWriter.write(self, HTTPStatus.OK, {"items": list_scenarios()})
                 return
-            if self.path.startswith("/api/v1/history"):
-                _json_response(self, HTTPStatus.OK, {"items": history_store.list(limit=25)})
+
+            if self.path.startswith(HISTORY_ROUTE):
+                JsonResponseWriter.write(
+                    self,
+                    HTTPStatus.OK,
+                    {"items": history_store.list(limit=DEFAULT_HISTORY_LIMIT)},
+                )
                 return
-            if self.path.startswith("/api/v1/locations/") and self.path.endswith("/sensors"):
-                try:
-                    location_id = int(self.path.split("/")[4])
-                    client = OpenAQClient(
-                        api_key=base_settings.openaq_api_key or "",
-                        base_url=base_settings.openaq_base_url,
-                    )
-                    sensors = client.list_sensor_summaries(location_id)
-                except (ValueError, OpenAQClientError) as exc:
-                    _json_response(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
-                    return
-                _json_response(self, HTTPStatus.OK, {"items": sensors})
+
+            if self.path.startswith(f"{LOCATIONS_ROUTE}/") and self.path.endswith(SENSORS_ROUTE_SUFFIX):
+                self._handle_location_sensors()
                 return
-            if self.path.startswith("/api/v1/locations"):
-                try:
-                    query = self.path.split("?", 1)[1] if "?" in self.path else ""
-                    params = {}
-                    for item in query.split("&"):
-                        if not item or "=" not in item:
-                            continue
-                        key, value = item.split("=", 1)
-                        params[key] = value
-                    client = OpenAQClient(
-                        api_key=base_settings.openaq_api_key or "",
-                        base_url=base_settings.openaq_base_url,
-                    )
-                    items = client.list_locations(
-                        iso=params.get("iso", "EC"),
-                        limit=int(params.get("limit", "20")),
-                        coordinates=params.get("coordinates", "-2.15968,-79.89807"),
-                        radius=int(params.get("radius", "30000")),
-                    )
-                except (ValueError, OpenAQClientError) as exc:
-                    _json_response(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
-                    return
-                _json_response(self, HTTPStatus.OK, {"items": items})
+
+            if self.path.startswith(LOCATIONS_ROUTE):
+                self._handle_locations()
                 return
-            _json_response(self, HTTPStatus.NOT_FOUND, {"error": "Ruta no encontrada"})
+
+            JsonResponseWriter.write(self, HTTPStatus.NOT_FOUND, {"error": JSON_ERROR_ROUTE_NOT_FOUND})
 
         def do_POST(self) -> None:  # noqa: N802
-            if self.path != "/api/v1/evaluate":
-                _json_response(self, HTTPStatus.NOT_FOUND, {"error": "Ruta no encontrada"})
+            """Serve mutating API resources."""
+            if self.path != EVALUATE_ROUTE:
+                JsonResponseWriter.write(self, HTTPStatus.NOT_FOUND, {"error": JSON_ERROR_ROUTE_NOT_FOUND})
                 return
+
             try:
-                length = int(self.headers.get("Content-Length", "0"))
-                raw = self.rfile.read(length) if length > 0 else b"{}"
-                request_payload = json.loads(raw.decode("utf-8"))
-                settings = _settings_from_request(base_settings, request_payload)
-                result = AirQualityRiskPipeline(settings).run()
+                request_payload = self._read_json_payload()
+                settings = SettingsMapper.from_request(base_settings, request_payload)
+                payload = evaluation_service.evaluate(settings)
             except json.JSONDecodeError:
-                _json_response(self, HTTPStatus.BAD_REQUEST, {"error": "JSON inválido"})
+                JsonResponseWriter.write(self, HTTPStatus.BAD_REQUEST, {"error": JSON_ERROR_INVALID})
                 return
             except (ValueError, TypeError) as exc:
-                _json_response(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
+                JsonResponseWriter.write(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
                 return
             except PipelineError as exc:
-                _json_response(self, HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+                JsonResponseWriter.write(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
                 return
-            response_payload = result.to_dict()
-            response_payload["explainability"] = _build_explainability(response_payload)
-            history_store.append(request=request_payload, response=response_payload)
-            _json_response(self, HTTPStatus.OK, response_payload)
 
-        def log_message(self, format: str, *args: object) -> None:
+            payload["explainability"] = explainability_builder.build(payload)
+            history_store.append(request=request_payload, response=payload)
+            JsonResponseWriter.write(self, HTTPStatus.OK, payload)
+
+        def log_message(self, format: str, *args: Any) -> None:  # noqa: A003
+            """Silence the default request logging in tests and local runs."""
             return
+
+        def _read_json_payload(self) -> dict[str, Any]:
+            """Read and decode the JSON request body."""
+            length = int(self.headers.get("Content-Length", "0"))
+            raw = self.rfile.read(length) if length > 0 else b"{}"
+            return json.loads(raw.decode("utf-8"))
+
+        def _handle_location_sensors(self) -> None:
+            """Return the sensors associated with a single OpenAQ location."""
+            try:
+                location_id = int(self.path.split("/")[4])
+                client = OpenAQClient(
+                    api_key=base_settings.openaq_api_key or "",
+                    base_url=base_settings.openaq_base_url,
+                )
+                sensors = client.list_sensor_summaries(location_id)
+            except (ValueError, OpenAQClientError) as exc:
+                JsonResponseWriter.write(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
+                return
+
+            JsonResponseWriter.write(self, HTTPStatus.OK, {"items": sensors})
+
+        def _handle_locations(self) -> None:
+            """Return simplified OpenAQ locations for frontend discovery."""
+            try:
+                params = self._parse_query_string()
+                client = OpenAQClient(
+                    api_key=base_settings.openaq_api_key or "",
+                    base_url=base_settings.openaq_base_url,
+                )
+                items = client.list_locations(
+                    iso=params.get("iso", DEFAULT_LOCATION_ISO),
+                    limit=int(params.get("limit", str(DEFAULT_LOCATION_LIMIT))),
+                    coordinates=params.get("coordinates", DEFAULT_LOCATION_COORDINATES),
+                    radius=int(params.get("radius", str(DEFAULT_LOCATION_RADIUS))),
+                )
+            except (ValueError, OpenAQClientError) as exc:
+                JsonResponseWriter.write(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
+                return
+
+            JsonResponseWriter.write(self, HTTPStatus.OK, {"items": items})
+
+        def _parse_query_string(self) -> dict[str, str]:
+            """Parse the query string using the current request path."""
+            query = self.path.split("?", 1)[1] if "?" in self.path else ""
+            params: dict[str, str] = {}
+            for item in query.split("&"):
+                if not item or "=" not in item:
+                    continue
+                key, value = item.split("=", 1)
+                params[key] = value
+            return params
 
     return AQRiskRequestHandler
 
 
+def run_server(settings: Settings, host: str, port: int) -> None:
+    """Start the threaded HTTP server using the provided configuration."""
+    server = ThreadingHTTPServer((host, port), create_handler(settings))
+    print(f"AQRisk API listening on http://{host}:{port}")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        server.server_close()
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="AQRisk HTTP API")
+    """Build the CLI parser for the HTTP API entrypoint."""
+    parser = argparse.ArgumentParser(description="Run AQRisk HTTP API")
     parser.add_argument("--host", default="0.0.0.0")
     parser.add_argument("--port", type=int, default=8010)
     return parser
 
 
 def main() -> int:
-    args = build_parser().parse_args()
+    """Execute the HTTP API entrypoint."""
+    parser = build_parser()
+    args = parser.parse_args()
     settings = Settings.from_env()
-    handler = create_handler(settings)
-    server = ThreadingHTTPServer((args.host, args.port), handler)
-    try:
-        print(f"AQRisk API listening on http://{args.host}:{args.port}")
-        server.serve_forever()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        server.server_close()
+    run_server(settings, host=args.host, port=args.port)
     return 0
 
 

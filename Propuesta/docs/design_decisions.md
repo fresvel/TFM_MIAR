@@ -1,4 +1,4 @@
-# Decisiones de diseño del núcleo IA
+# Decisiones de diseño del núcleo de evaluación
 
 ## 1. Punto de partida
 
@@ -103,7 +103,7 @@ La persistencia se calcula a partir de estados AQI sucesivos del propio módulo.
 
 ## 8. Justificación del tamaño de la base de reglas
 
-La primera versión del prototipo usó `7` reglas como prueba de funcionamiento. Esa versión ya no se considera base final.
+La primera versión del prototipo usó `7` reglas como validación inicial de funcionamiento. Esa versión ya no se considera base final.
 
 La base actual usa `54` reglas:
 

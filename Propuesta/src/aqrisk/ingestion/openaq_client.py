@@ -11,31 +11,41 @@ from urllib.request import Request, urlopen
 from aqrisk.domain.models import HourlyObservation, ParameterSeries, SensorDescriptor
 
 
+OPENAQ_USER_AGENT = "aqrisk/0.1.0"
+OPENAQ_TIMEOUT_SECONDS = 30
+OPENAQ_LOOKBACK_PADDING_HOURS = 2
+OPENAQ_MIN_HOURLY_LIMIT = 10
+
+
 class OpenAQClientError(RuntimeError):
-    pass
+    """Represents failures produced while talking to the OpenAQ API."""
 
 
 def _parse_datetime(value: str) -> datetime:
+    """Parse an OpenAQ UTC datetime string into an aware datetime."""
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(UTC)
 
 
 @dataclass(slots=True)
 class OpenAQClient:
+    """HTTP client for retrieving locations, sensors and hourly series from OpenAQ."""
+
     api_key: str
     base_url: str = "https://api.openaq.org/v3"
 
     def _get(self, path: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
+        """Execute a GET request against OpenAQ and decode its JSON response."""
         query = f"?{urlencode(params)}" if params else ""
         request = Request(
             url=f"{self.base_url}{path}{query}",
             headers={
                 "X-API-Key": self.api_key,
                 "Accept": "application/json",
-                "User-Agent": "aqrisk/0.1.0",
+                "User-Agent": OPENAQ_USER_AGENT,
             },
         )
         try:
-            with urlopen(request, timeout=30) as response:
+            with urlopen(request, timeout=OPENAQ_TIMEOUT_SECONDS) as response:
                 return json.loads(response.read().decode("utf-8"))
         except HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="ignore")
@@ -46,6 +56,7 @@ class OpenAQClient:
             raise OpenAQClientError(f"OpenAQ request failed for {path}: {exc.reason}") from exc
 
     def get_location_name(self, location_id: int) -> str:
+        """Return the display name for a single OpenAQ location."""
         payload = self._get(f"/locations/{location_id}")
         results = payload.get("results", [])
         if not results:
@@ -60,6 +71,7 @@ class OpenAQClient:
         coordinates: str | None = None,
         radius: int | None = None,
     ) -> list[dict[str, Any]]:
+        """List simplified locations for frontend selection."""
         params: dict[str, Any] = {"limit": limit, "page": 1}
         if iso:
             params["iso"] = iso
@@ -68,20 +80,19 @@ class OpenAQClient:
         if radius is not None:
             params["radius"] = radius
         payload = self._get("/locations", params=params)
-        results: list[dict[str, Any]] = []
-        for item in payload.get("results", []):
-            results.append(
-                {
-                    "id": int(item["id"]),
-                    "name": item.get("name") or f"location_{item['id']}",
-                    "city": item.get("city"),
-                    "country": (item.get("country") or {}).get("code"),
-                    "coordinates": item.get("coordinates"),
-                }
-            )
-        return results
+        return [
+            {
+                "id": int(item["id"]),
+                "name": item.get("name") or f"location_{item['id']}",
+                "city": item.get("city"),
+                "country": (item.get("country") or {}).get("code"),
+                "coordinates": item.get("coordinates"),
+            }
+            for item in payload.get("results", [])
+        ]
 
     def get_sensors_by_location(self, location_id: int) -> list[SensorDescriptor]:
+        """Return the sensors published by a location."""
         payload = self._get(f"/locations/{location_id}/sensors")
         sensors: list[SensorDescriptor] = []
         for item in payload.get("results", []):
@@ -96,13 +107,10 @@ class OpenAQClient:
         return sensors
 
     def list_sensor_summaries(self, location_id: int) -> list[dict[str, Any]]:
+        """Return sensor metadata as plain dictionaries for API responses."""
         sensors = self.get_sensors_by_location(location_id)
         return [
-            {
-                "sensor_id": sensor.sensor_id,
-                "parameter": sensor.parameter,
-                "units": sensor.units,
-            }
+            {"sensor_id": sensor.sensor_id, "parameter": sensor.parameter, "units": sensor.units}
             for sensor in sensors
         ]
 
@@ -111,6 +119,7 @@ class OpenAQClient:
         sensor: SensorDescriptor,
         lookback_hours: int,
     ) -> ParameterSeries:
+        """Return one hourly time series for a sensor and lookback window."""
         now = datetime.now(UTC).replace(minute=0, second=0, microsecond=0)
         start = now - timedelta(hours=lookback_hours)
         payload = self._get(
@@ -118,7 +127,7 @@ class OpenAQClient:
             params={
                 "datetime_from": start.isoformat(),
                 "datetime_to": now.isoformat(),
-                "limit": max(lookback_hours + 2, 10),
+                "limit": max(lookback_hours + OPENAQ_LOOKBACK_PADDING_HOURS, OPENAQ_MIN_HOURLY_LIMIT),
                 "page": 1,
             },
         )
@@ -143,7 +152,7 @@ class OpenAQClient:
                     else None,
                 )
             )
-        observations.sort(key=lambda obs: obs.datetime_from)
+        observations.sort(key=lambda observation: observation.datetime_from)
         if len(observations) > lookback_hours:
             observations = observations[-lookback_hours:]
         return ParameterSeries(parameter=sensor.parameter, unit=sensor.units, observations=observations)

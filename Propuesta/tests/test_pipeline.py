@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from aqrisk.application.pipeline import AirQualityRiskPipeline, PipelineError
 from aqrisk.config import Settings
-from aqrisk.fuzzy.mamdani import RULE_MATRIX
+from aqrisk.fuzzy.constants import RISK_RULE_MATRIX
 
 
 class PipelineSmokeTest(unittest.TestCase):
@@ -35,7 +35,14 @@ class PipelineSmokeTest(unittest.TestCase):
         self.assertIn("no2", result.snapshot.series)
         self.assertIn("o3", result.snapshot.series)
         self.assertTrue({"pm25", "pm10", "co", "no2", "o3", "so2"}.issubset(set(result.aqi.supported_parameters)))
-        self.assertEqual(sum(len(persistence_map) for concurrence_map in RULE_MATRIX.values() for persistence_map in concurrence_map.values()), 54)
+        self.assertEqual(
+            sum(
+                len(persistence_map)
+                for concurrence_map in RISK_RULE_MATRIX.values()
+                for persistence_map in concurrence_map.values()
+            ),
+            54,
+        )
 
     def test_openaq_mode_requires_api_key(self) -> None:
         settings = Settings(mode="openaq", openaq_location_id=2178, openaq_api_key=None)

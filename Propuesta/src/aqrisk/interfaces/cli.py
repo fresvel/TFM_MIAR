@@ -9,6 +9,7 @@ from aqrisk.config import Settings
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """Build the command-line interface for one-off backend executions."""
     parser = argparse.ArgumentParser(description="AQRisk prototype")
     parser.add_argument("--mode", choices=["mock", "openaq"], default=None)
     parser.add_argument("--location-id", type=int, default=None)
@@ -18,6 +19,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> int:
+    """Execute the CLI entrypoint and print the evaluation payload as JSON."""
     parser = build_parser()
     args = parser.parse_args()
     settings = Settings.from_env()
