@@ -4,6 +4,7 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{titlesec}
+\usepackage{titlecaps}
 \usepackage{tocloft}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -105,13 +106,38 @@
 % Ajuste fino de separación título <-> header
 \newcommand{\VIUTitlePad}{\vspace*{\VIUSectionTitlePadLen}}
 \let\VIUOrigSection\section
-\renewcommand{\section}{\VIUTitlePad\VIUOrigSection}
+\let\VIUOrigSubsection\subsection
+
+% Título en estilo "Title Case" con exclusión de artículos y preposiciones frecuentes
+\Addlcwords{a al ante bajo cabe con contra de del desde durante e el en entre hacia hasta la las lo los mediante o para por según sin so sobre tras u y}
+\newcommand{\VIUTitleCase}[1]{\titlecap{#1}}
+\AtBeginDocument{%
+  \pdfstringdefDisableCommands{%
+    \def\titlecap#1{#1}%
+    \def\VIUTitleCase#1{#1}%
+  }%
+}
+
+\makeatletter
+\renewcommand{\section}{%
+  \VIUTitlePad%
+  \@ifstar{\VIUSectionStarInternal}{\VIUSectionInternal}%
+}
+\newcommand{\VIUSectionInternal}[1]{\VIUOrigSection{\VIUTitleCase{#1}}}
+\newcommand{\VIUSectionStarInternal}[1]{\VIUOrigSection*{\VIUTitleCase{#1}}}
+
+\renewcommand{\subsection}{%
+  \@ifstar{\VIUSubsectionStarInternal}{\VIUSubsectionInternal}%
+}
+\newcommand{\VIUSubsectionInternal}[1]{\VIUOrigSubsection{\VIUTitleCase{#1}}}
+\newcommand{\VIUSubsectionStarInternal}[1]{\VIUOrigSubsection*{\VIUTitleCase{#1}}}
+\makeatother
 
 % Secciones sin numerar con sangría como en Word
 \newcommand{\VIUSectionStar}[1]{%
   \VIUTitlePad%
-  \section*{\hspace{0.65cm}#1}%
-  \addcontentsline{toc}{section}{#1}%
+  \VIUOrigSection*{\hspace{0.65cm}\VIUTitleCase{#1}}%
+  \addcontentsline{toc}{section}{\VIUTitleCase{#1}}%
 }
 
 % TOC

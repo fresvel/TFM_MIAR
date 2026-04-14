@@ -1,0 +1,252 @@
+\section{Marco teórico}
+
+Con base en los hallazgos del estado del arte, esta síntesis conceptual fija los fundamentos técnicos que sostienen la propuesta: definición operativa del AQI, estructura de los modelos difusos, criterios de evaluación predictiva y características de los datasets públicos utilizados en estudios recientes.
+
+\subsection{AQI, contaminantes atmosféricos y variables meteorológicas}
+El índice de calidad del aire (AQI) es un indicador sintético y adimensional diseñado para transformar concentraciones de contaminantes atmosféricos en una escala única de interpretación del riesgo \cite{ART01,ART02}. Su finalidad es convertir mediciones técnicas en información comprensible y utilizable para vigilancia ambiental, comunicación pública y toma de decisiones en salud y gestión de la calidad del aire \cite{ART01,ART02}.
+
+El AQI opera como un mecanismo de normalización y agregación, parte de concentraciones observadas, las relaciona con valores de referencia normativos y produce un valor integrado que resume la condición ambiental en un instante o periodo de análisis \cite{ART01,ART02}. Esta transformación resuelve un problema central de interpretación, porque los contaminantes presentan unidades, escalas y niveles de impacto diferentes; por ello, una lectura directa de concentraciones aisladas no ofrece, por sí sola, una visión clara del nivel de riesgo global.
+
+En términos de propósito, el AQI cumple las siguientes funciones:
+\begin{itemize}
+\item \textbf{Función informativa}: comunica de forma estandarizada el estado de la calidad del aire.
+\item \textbf{Función preventiva}: alerta sobre escenarios de deterioro para reducir exposición poblacional.
+\item \textbf{Función operativa}: sirve como variable de referencia para sistemas de monitoreo, alerta y control ambiental.
+\end{itemize}
+
+Por esta razón, el AQI se considera una pieza conceptual clave en arquitecturas de evaluación y gestión de contaminación del aire \cite{ART01,ART02}.
+
+\paragraph{Contaminantes y variables}
+Los modelos de AQI se construyen con contaminantes criterio que representan el nivel de exposición de la población y el riesgo sanitario asociado \cite{ART01,ART02}. De manera general, el núcleo más extendido incluye PM2.5, PM10, O3, NO2, SO2 y CO; en algunos marcos regulatorios también se incorpora Pb \cite{ART01,ART02}.
+
+Las definiciones técnicas de estos contaminantes, en el contexto del AQI, son:
+\begin{itemize}
+\item \textbf{PM2.5}: material particulado fino con diámetro aerodinámico menor o igual a 2.5 \(\mu m\), capaz de penetrar regiones profundas del sistema respiratorio.
+\item \textbf{PM10}: material particulado inhalable con diámetro aerodinámico menor o igual a 10 \(\mu m\), útil para caracterizar carga de partículas gruesas y fracción respirable.
+\item \textbf{O3} (ozono troposférico): contaminante secundario formado por reacciones fotoquímicas entre precursores (principalmente NOx y compuestos orgánicos) bajo radiación solar.
+\item \textbf{NO2} (dióxido de nitrógeno): gas reactivo asociado a procesos de combustión (tráfico, calderas y fuentes estacionarias), relevante por su papel en irritación respiratoria y química atmosférica secundaria.
+\item \textbf{SO2} (dióxido de azufre): gas generado por combustibles con azufre y procesos industriales; se asocia a irritación respiratoria y formación de sulfatos/lluvia ácida.
+\item \textbf{CO} (monóxido de carbono): gas producto de combustión incompleta, incluido en esquemas AQI por su efecto sobre transporte de oxígeno en sangre.
+\item \textbf{Pb} (plomo): metal pesado tóxico considerado en algunos marcos de calidad del aire por su impacto sistémico y neurológico.
+\end{itemize}
+
+Además del núcleo anterior, existen modelos de AQI que incorporan contaminantes o términos compuestos adicionales (por ejemplo, TSP, NOx o combinaciones ponderadas) para contextos específicos de evaluación \cite{ART01,ART02}. Por separado, los modelos de calidad de aire interior suelen ampliar entradas con CO2, TVOC y variables ambientales; estas extensiones fortalecen la lectura del entorno, aunque no siempre forman parte del AQI regulatorio clásico.
+
+\paragraph{Variables ambientales}
+En los modelos de calidad del aire, las variables ambientales funcionan como covariables transversales para interpretar la dinámica de los contaminantes y la variación del índice en el tiempo y en el espacio \cite{ART01,ART02}. La temperatura del aire condiciona procesos físico-químicos atmosféricos y modifica patrones temporales de concentración; la humedad relativa influye en el comportamiento del material particulado y en la respuesta de los aerosoles; y el viento, tanto en velocidad como en dirección, determina la dispersión, el transporte y la posible procedencia espacial de episodios de contaminación \cite{ART01,ART02}.
+
+A este conjunto se suman variables de estabilidad atmosférica y presión, que ayudan a distinguir escenarios de mezcla o estancamiento del aire. Por ello, estas variables no se tratan como entradas accesorias, sino como componentes de contexto que permiten interpretar con mayor precisión el valor del AQI y su significado operativo \cite{ART01,ART02}.
+
+\paragraph{Cálculo y categorías del AQI}
+El cálculo del AQI se estructura en dos etapas. En la primera etapa, la concentración observada de cada contaminante se transforma en un subíndice normalizado; en la segunda etapa, los subíndices se combinan para obtener un valor único de calidad del aire \cite{ART01,ART02}. Esta estructura permite integrar variables con unidades y rangos distintos en una salida común.
+
+En un enfoque dependiente de estándares de calidad del aire, una formulación reportada para el subíndice es:
+\begin{equation}
+Q_i = 10\left(\frac{C_i}{S_i}\right),
+\end{equation}
+donde \(Q_i\) es la calificación del contaminante \(i\), \(C_i\) es la concentración observada y \(S_i\) es el valor estándar de referencia. A partir de esos subíndices, el índice global puede expresarse como:
+\begin{equation}
+AQI=\left(Q_1\cdot Q_2\cdots Q_n\right)^{1/n},
+\end{equation}
+con \(n\) contaminantes considerados \cite{ART02}.
+
+Otro esquema ampliamente utilizado emplea concentraciones de quiebre (\textit{breakpoints}) e interpolación lineal segmentada para mapear cada concentración al subíndice correspondiente \cite{ART01,ART02}. En el marco regulatorio de la \textit{United States Environmental Protection Agency} (EPA), esta transformación se formaliza mediante una interpolación lineal por tramos entre el intervalo de concentración aplicable y el intervalo AQI asociado \cite{DATA_EPA_AQI_TAD}. La expresión utilizada es:
+\begin{equation}
+I_p=\frac{I_{Hi}-I_{Lo}}{BP_{Hi}-BP_{Lo}}\left(C_p-BP_{Lo}\right)+I_{Lo},
+\end{equation}
+donde \(C_p\) es la concentración representativa del contaminante \(p\), \(BP_{Lo}\) y \(BP_{Hi}\) son los \textit{breakpoints} inferior y superior del tramo aplicable, e \(I_{Lo}\) e \(I_{Hi}\) son los límites del subíndice asociados a ese tramo \cite{DATA_EPA_AQI_TAD}. En la práctica, los valores concretos de esos \textit{breakpoints} y de los intervalos AQI se obtienen de las tablas regulatorias publicadas por \textit{EPA/AQS} \cite{DATA_EPA_AQS_BREAKPOINTS}. Después, los subíndices se agregan con una regla definida por el modelo y el marco regulatorio; en el esquema EPA/AQS la consolidación se basa en el mayor subíndice calculado, de modo que el contaminante dominante fija el valor final del índice \cite{DATA_EPA_AQI_TAD,DATA_EPA_AQS_BREAKPOINTS}.
+
+La interpretación final del AQI se comunica mediante categorías cualitativas de riesgo asociadas a intervalos numéricos y a recomendaciones sanitarias para la población. En el esquema estadounidense documentado por EPA, la escala se organiza en seis bandas: \textit{Good} (0--50), \textit{Moderate} (51--100), \textit{Unhealthy for Sensitive Groups} (101--150), \textit{Unhealthy} (151--200), \textit{Very Unhealthy} (201--300) y \textit{Hazardous} (301--500) \cite{DATA_EPA_AQI_TAD}. Estas categorías entregan una función descriptiva al constituir el vínculo operativo entre concentración, nivel de riesgo y comunicación pública.
+
+Las diferencias entre normas y jurisdicciones se originan en los parámetros reglamentarios que define cada autoridad ambiental: conjunto de contaminantes obligatorios, valores de quiebre (\textit{breakpoints}), periodos de promediación, intervalos categoriales y denominación de clases \cite{ART01,ART02}. En consecuencia, la interpretación del AQI depende de la norma aplicada en cada país o región, y la comparación entre resultados exige declarar explícitamente el marco normativo de referencia. En el caso de EPA/AQS, los \textit{breakpoints} publicados especifican para cada contaminante el tramo de concentración y el tramo AQI que alimentan la interpolación lineal del subíndice \cite{DATA_EPA_AQS_BREAKPOINTS}.
+
+Desde el punto de vista de implementación, el AQI puede entenderse como una cadena técnica de cuatro elementos: selección de contaminantes, normalización por estándar, agregación de subíndices y traducción a categorías de riesgo \cite{ART01,ART02}. En el marco EPA/AQS, esa cadena culmina con una regla de consolidación por dominancia: el valor final del índice se fija por el mayor subíndice calculado entre los contaminantes criterio \cite{DATA_EPA_AQI_TAD,DATA_EPA_AQS_BREAKPOINTS}. Esta precisión es importante para la propuesta desarrollada en esta memoria, porque el artefacto implementado adopta precisamente esas seis bandas categoriales como base normativa del AQI. Por ello, cualquier implementación orientada a monitoreo debe declarar de forma explícita contaminantes incluidos, valores de referencia, método de cálculo, regla de consolidación y esquema categorial, para asegurar trazabilidad y lectura correcta del resultado \cite{ART01,ART02}. Sobre esta base se sustenta el siguiente tema, centrado en cómo la lógica difusa modela esa transición desde variables ambientales y de contaminación hacia salidas de decisión.
+
+
+
+
+\subsection{Modelos de lógica difusa}
+La lógica difusa se fundamenta en la representación de pertenencia gradual, donde cada elemento puede tomar un grado en el intervalo \([0,1]\) dentro de un conjunto difuso \cite{ART03,ARTFZ01,ARTFZ02}. Esta formulación permite modelar fenómenos con fronteras no nítidas y condiciones de transición continua, que son frecuentes en variables ambientales.
+
+Sobre esa base, la inferencia difusa se construye mediante variables lingüísticas, funciones de pertenencia y reglas \textit{if-then}. El flujo general comprende fuzzificación de entradas, evaluación de reglas en el motor de inferencia y defuzzificación para obtener una salida numérica utilizable en decisión o control \cite{ART07,ARTFZ02}. Esta estructura proporciona trazabilidad entre conocimiento experto y salida del sistema.
+
+En aplicaciones de calidad del aire, este marco se implementa de forma práctica para transformar lecturas de sensores en niveles de riesgo o estado ambiental. Se reportan implementaciones con inferencia Mamdani para operación en tiempo real y manejo de incertidumbre en entradas de contaminación \cite{ART06}; también se presentan configuraciones neuro-difusas adaptativas para integrar aprendizaje sobre datos y ajuste del sistema de inferencia \cite{ART04}.
+
+\subsubsection{Familias principales de sistemas difusos}
+En sistemas difusos aplicados a calidad del aire se emplean tres familias principales: \textit{Mamdani}, \textit{Sugeno/TSK} y \textit{ANFIS}. Comparten la misma base de conjuntos difusos, funciones de pertenencia y reglas, pero difieren en la forma de producir la salida final y en el mecanismo de ajuste del modelo \cite{ART04,ART06,ART07}. Esa diferencia determina su uso en problemas orientados a interpretación, eficiencia computacional o aprendizaje con datos.
+
+\textbf{Mamdani} utiliza reglas con consecuentes lingüísticos. Tras evaluar las reglas, se agregan los conjuntos de salida y se aplica defuzzificación para obtener un valor numérico \cite{ART06,ART07}. Este enfoque mantiene una lectura directa de la lógica del sistema y favorece interpretación práctica de reglas.
+
+\textbf{Sugeno/TSK} conserva antecedentes difusos en las reglas, pero define consecuentes numéricos (constantes o funciones de entrada). La salida global se obtiene por promedio ponderado de esos consecuentes, lo que reduce costo computacional en inferencia y facilita integración con bloques matemáticos de control.
+
+\textbf{ANFIS} (\textit{Adaptive Neuro-Fuzzy Inference System}) integra estructura difusa con entrenamiento sobre datos para ajustar parámetros del sistema, en especial funciones de pertenencia y pesos asociados a reglas \cite{ART04}. Este modelo incrementa capacidad de adaptación, aunque exige mayor control metodológico para conservar trazabilidad del proceso.
+
+La selección práctica depende del objetivo del sistema: Mamdani cuando se prioriza interpretación de reglas, Sugeno/TSK cuando se prioriza inferencia eficiente y ANFIS cuando se requiere ajuste guiado por datos. La Figura~\ref{fig:marco_fis_comparativo} resume este contraste con foco en criterios de diseño prácticos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{d2/fig07_comparativo_familias_fis.png}
+  \caption{Comparación conceptual de familias FIS para diseño de sistemas de calidad del aire. Elaboración propia.}
+  \label{fig:marco_fis_comparativo}
+\end{figure}
+
+\paragraph{Reglas, funciones de pertenencia y defuzzificación}
+El funcionamiento de un FIS puede leerse como una cadena de transformación de datos, desde una medición numérica hasta una salida de decisión. La Figura~\ref{fig:marco_fis_flujo} resume esa cadena y permite ubicar con precisión el rol de reglas, funciones de pertenencia y defuzzificación \cite{ART06,ART07}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{d2/fig10_flujo_fis.png}
+  \caption{Flujo general de inferencia difusa para sistemas de calidad del aire. Elaboración propia.}
+  \label{fig:marco_fis_flujo}
+\end{figure}
+
+La lectura técnica del flujo es la siguiente:
+\begin{enumerate}
+\item \textbf{Entradas crisp}. El sistema recibe variables numéricas medidas (por ejemplo, concentración de contaminantes, temperatura o humedad). Estas magnitudes están en unidades físicas y todavía no tienen significado lingüístico dentro del FIS.
+\item \textbf{Fuzzificación}. Cada entrada \(x_j\) se transforma a grados de pertenencia mediante funciones \(\mu_{A_{jk}}(x_j)\in[0,1]\), donde \(A_{jk}\) representa etiquetas como \textit{bajo}, \textit{medio} o \textit{alto}. Esta etapa convierte una lectura puntual en una representación gradual, permitiendo modelar transiciones suaves entre estados \cite{ARTFZ01,ARTFZ02}.
+\item \textbf{Base de reglas}. El motor de inferencia evalúa reglas \textit{if-then}; por ejemplo: ``si PM2.5 es alto y humedad es alta, entonces riesgo es alto''. Cada regla obtiene una fuerza de activación \(\alpha_r\) a partir de operadores difusos (t-norm/t-conorm), lo que cuantifica cuánto se cumple la condición antecedente \cite{ARTFZ01,ARTFZ02}.
+\item \textbf{Agregación}. Las salidas parciales de las reglas activadas se combinan en una única función de salida \(\mu_{\mathrm{agg}}(z)\). En Mamdani, esto suele hacerse con operaciones tipo \(\max\) y \(\min\), preservando la contribución conjunta de todas las reglas relevantes.
+\item \textbf{Defuzzificación}. La salida difusa agregada se convierte en un valor crisp \(z^*\) para habilitar decisión operativa (clasificación, control o alerta). El método más común es el centroide, que entrega un punto representativo del área de salida.
+\end{enumerate}
+
+En términos de implementación, este encadenamiento conserva interpretación semántica en las etapas intermedias y, al mismo tiempo, entrega un resultado numérico operativo al final \cite{ART06,ART07}. Esto es particularmente útil en monitoreo de calidad del aire, donde se necesita trazabilidad de la decisión y respuesta cuantificable.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig08a_conjuntos_borrosos.png}
+    \caption{Funciones de pertenencia para una variable de contaminación.}
+    \label{fig:marco_fis_mf_conjuntos_sub}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig08b_numero_borroso_alpha.png}
+    \caption{Número borroso y corte alfa.}
+    \label{fig:marco_fis_numero_alpha_sub}
+  \end{subfigure}
+  \caption{Representación de funciones de pertenencia y números borrosos en un FIS. Elaboración propia.}
+  \label{fig:marco_fis_mf_numeros}
+\end{figure}
+
+La Figura~\ref{fig:marco_fis_mf_numeros}\subref{fig:marco_fis_mf_conjuntos_sub} muestra cómo se construye la semántica de entrada en un FIS. El eje horizontal representa el universo de la variable (PM2.5), y el eje vertical el grado de pertenencia. Las funciones trapezoidales en extremos (\textit{bajo}, \textit{alto}) modelan zonas de saturación, mientras que la triangular central (\textit{medio}) enfatiza una región de transición. La superposición entre curvas es intencional: una misma medición puede activar más de una etiqueta con distinta intensidad, evitando discontinuidades cuando el valor cruza umbrales.
+
+La Figura~\ref{fig:marco_fis_mf_numeros}\subref{fig:marco_fis_numero_alpha_sub} detalla el número borroso y su corte alfa. El número borroso se expresa como una función de pertenencia (triangular o trapezoidal), y el corte \(\alpha\) selecciona todos los valores del universo cuyo grado de pertenencia cumple \(\mu(x)\ge\alpha\). Ese intervalo permite pasar de una descripción difusa a bandas numéricas con interpretación operativa, por ejemplo para fijar márgenes de decisión o niveles de incertidumbre \cite{ART03,ARTFZ01,ARTFZ02}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{d2/fig09_defuzzificacion_centroide.png}
+  \caption{Comparación de salida en Mamdani (centroide) y Sugeno/TSK (promedio ponderado). Elaboración propia.}
+  \label{fig:marco_fis_centroide}
+\end{figure}
+
+La Figura~\ref{fig:marco_fis_centroide} contrasta dos formas de obtener la salida crisp. En el panel A (Mamdani), cada regla produce una salida recortada, las salidas se agregan en una envolvente difusa y el valor final se calcula por centroide. Ese valor se obtiene como centro de masa de la salida agregada:
+\begin{equation}
+z^*=\frac{\int z\,\mu_{\mathrm{agg}}(z)\,dz}{\int \mu_{\mathrm{agg}}(z)\,dz}.
+\end{equation}
+En el panel B (Sugeno/TSK), cada regla entrega un consecuente numérico \(z_r\) y la salida se obtiene mediante promedio ponderado por niveles de activación:
+\begin{equation}
+z^*=\frac{\sum_r \alpha_r z_r}{\sum_r \alpha_r}.
+\end{equation}
+Esta diferencia es clave: Mamdani conserva interpretación lingüística hasta la agregación final, mientras que Sugeno/TSK opera directamente con consecuentes numéricos y reduce costo de inferencia \cite{ART03,ART06,ART07,ARTFZ02}. En ambos casos, la etapa final transforma la inferencia difusa en un valor operativo para clasificación, control o alerta.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig11a_anfis_capas.png}
+    \caption{Arquitectura por capas de un modelo ANFIS de dos entradas.}
+    \label{fig:marco_anfis_capas}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{d2/fig11b_anfis_superficie.png}
+    \caption{Ejemplo de superficie de salida aprendida por ANFIS.}
+    \label{fig:marco_anfis_superficie}
+  \end{subfigure}
+  \caption{Elementos estructurales e interpretación funcional de ANFIS. Elaboración propia.}
+  \label{fig:marco_anfis_elementos}
+\end{figure}
+
+La Figura~\ref{fig:marco_anfis_elementos}\subref{fig:marco_anfis_capas} muestra la arquitectura interna típica de ANFIS. La Capa 1 calcula pertenencias de las entradas; la Capa 2 combina esas pertenencias para obtener la fuerza de activación de cada regla; la Capa 3 normaliza los pesos relativos; la Capa 4 evalúa el consecuente de cada regla como función lineal; y la Capa 5 integra todas las contribuciones en una salida única. Esta descomposición explica por qué ANFIS conserva semántica difusa en la premisa y, al mismo tiempo, se ajusta con parámetros entrenables sobre datos \cite{ART04,A084,A149}.
+
+La Figura~\ref{fig:marco_anfis_elementos}\subref{fig:marco_anfis_superficie} representa la salida final como superficie en función de dos entradas. En práctica, esta superficie resume el comportamiento conjunto de todas las reglas después del entrenamiento: zonas planas indican sensibilidad baja, mientras que regiones con mayor pendiente reflejan cambios más rápidos de la salida frente a variaciones de entrada. Esta lectura es útil para verificar estabilidad, interpretar rangos operativos y detectar transiciones críticas en sistemas de calidad del aire \cite{A084,A135,A149,ARTFZ02}.
+
+
+La comparación técnica permite fijar un criterio operativo para la propuesta. Mamdani es adecuado cuando la prioridad es trazabilidad de reglas y lectura directa de niveles de riesgo; Sugeno/TSK es conveniente cuando se requiere inferencia rápida con salida numérica estable en tiempo de ejecución; y ANFIS aporta capacidad de ajuste a partir de datos cuando el objetivo incluye estimación/predicción con variabilidad temporal \cite{ART03,ART04,ART06,A084,A149}. Con base en ello, un diseño consistente para calidad del aire puede separar funciones: núcleo de decisión interpretable con reglas difusas explícitas y módulo de ajuste/predicción entrenable para mejorar respuesta cuantitativa sin perder auditabilidad del sistema.
+
+\subsection{Modelos de Regresión Supervisada}
+En aprendizaje supervisado, la regresión se utiliza cuando la variable objetivo es continua. El modelo aprende una función \(f(\mathbf{x})\) que aproxima la relación entre predictores y salida numérica, a partir de ejemplos etiquetados \((\mathbf{x}_i, y_i)\) \cite{ARTML01}. Esta formulación es coherente con tareas como predicción de concentración de contaminantes o estimación de un índice continuo de calidad del aire.
+
+Dentro de este marco, las familias de modelos se diferencian por el tipo de relación que pueden representar, el costo de entrenamiento y el nivel de interpretación disponible \cite{ARTML01}. En términos prácticos:
+\begin{enumerate}
+\item \textbf{Modelos lineales}. Suponen una relación aproximadamente lineal entre predictores y salida, del tipo \(\hat{y}=\mathbf{w}^{\top}\mathbf{x}+b\). Son útiles como línea base por su bajo costo computacional y alta interpretabilidad de coeficientes. Su principal límite aparece cuando la dinámica real es no lineal o presenta interacciones complejas entre variables.
+\item \textbf{Árboles de decisión y ensambles}. Los árboles particionan el espacio de entrada por reglas secuenciales y capturan no linealidades sin requerir escalado estricto de variables. Ensambles como \textit{Random Forest} o \textit{Gradient Boosting} reducen varianza o sesgo respecto a un árbol único y suelen mejorar robustez predictiva. El costo es menor interpretabilidad global y mayor complejidad de ajuste de hiperparámetros.
+\item \textbf{Máquinas de soporte para regresión (SVR)}. Buscan una función con buen margen y control explícito de complejidad, con posibilidad de mapear relaciones no lineales mediante kernels. Son efectivas en conjuntos de tamaño medio y con fronteras funcionales bien estructuradas. Su limitación práctica es la sensibilidad a parámetros del kernel y a la escala de variables.
+\item \textbf{Redes neuronales}. Modelan relaciones altamente no lineales mediante composiciones de capas y activaciones, y pueden aproximar comportamientos complejos en escenarios multivariables. Son convenientes cuando existe volumen suficiente de datos y se prioriza capacidad predictiva. A cambio, requieren mayor costo de entrenamiento, regularización cuidadosa y validación estricta para evitar sobreajuste.
+\end{enumerate}
+
+La selección no se basa en preferencia algorítmica aislada, sino en la coherencia entre complejidad del fenómeno, disponibilidad de datos, requisitos de tiempo de inferencia y necesidad de trazabilidad del modelo en el entorno de aplicación.
+
+Para tomar una decisión, cuando la prioridad es interpretabilidad y trazabilidad, se favorecen modelos lineales o árboles de baja profundidad, porque permiten explicar con claridad el efecto de cada variable. Cuando la prioridad es precisión predictiva en patrones no lineales, suelen ser más competitivos los ensambles y las redes neuronales, asumiendo mayor costo de ajuste y menor transparencia global. Para contextos operativos de calidad del aire, una práctica sólida consiste en comenzar con una base interpretable y escalar a modelos más complejos solo si la mejora de desempeño justifica la pérdida relativa de explicabilidad.
+
+Las métricas centrales para regresión son MAE, MSE/RMSE, MAPE y \(R^2\), pero su utilidad depende del tipo de salida, la escala de los datos y el objetivo operativo de la predicción \cite{ARTML01}. Su interpretación técnica puede resumirse así:
+\begin{enumerate}
+\item \textbf{MAE (Error Absoluto Medio)}. Mide error promedio en unidades originales de la variable objetivo. Es robusto frente a valores atípicos extremos en comparación con métricas cuadráticas y resulta útil cuando se busca una lectura directa del error esperado en operación.
+\item \textbf{MSE/RMSE (Error Cuadrático Medio / Raíz del Error Cuadrático Medio)}. Penalizan con mayor peso los errores grandes. Son adecuados cuando el costo de fallos severos es alto, por ejemplo sobreestimaciones o subestimaciones amplias en pronóstico de concentración.
+\item \textbf{MAPE (Error Porcentual Absoluto Medio)}. Expresa error relativo en porcentaje, lo que facilita comparar magnitudes entre series con escalas diferentes. Su uso exige cautela cuando los valores reales son cercanos a cero, porque puede inflar artificialmente el error porcentual.
+\item \textbf{\(R^2\) (Coeficiente de determinación)}. Resume proporción de variabilidad explicada por el modelo respecto a una referencia base. Es útil como indicador de ajuste global, pero no sustituye métricas de error absoluto para evaluación operativa.
+\end{enumerate}
+
+En aplicaciones de calidad del aire, una práctica metodológica sólida es reportar al menos una métrica de error absoluto (MAE o RMSE) y una de ajuste global (\(R^2\)), añadiendo MAPE cuando la escala de la variable permita una lectura porcentual estable. Esto mejora comparabilidad y evita conclusiones basadas en un único indicador.
+
+Como contraste conceptual, el aprendizaje por refuerzo optimiza políticas de decisión secuencial mediante recompensas y no modela directamente una variable objetivo continua en formato supervisado estándar \cite{ARTRL01}. En esta investigación, el desarrollo de modelos predictivos queda fuera del alcance, porque la propuesta se concentra en evaluación actual del riesgo, inferencia explicable y alertamiento operativo sobre datos abiertos. Aun así, estas métricas y protocolos mantienen valor como base metodológica para una fase posterior en la que el motor de inferencia implementado pueda utilizarse para generar series derivadas, etiquetas de riesgo o nuevas salidas supervisadas que habiliten el entrenamiento de modelos predictivos de calidad del aire sobre datasets construidos a partir del comportamiento del propio sistema.
+
+Para asegurar comparabilidad según tipo de salida, se distinguen cuatro escenarios metodológicos:
+\begin{enumerate}
+\item \textbf{Predicción/estimación continua de contaminantes o índice}. La comparación válida se realiza con métricas de regresión (MAE, RMSE, MAPE, \(R^2\)), manteniendo la misma unidad física y el mismo horizonte temporal de predicción.
+\item \textbf{Clasificación de estados o categorías AQI/IAQ}. La lectura debe basarse en métricas de clasificación (por ejemplo, exactitud, precisión, sensibilidad, F1 y matriz de confusión), porque el objetivo es asignar clases y no estimar magnitudes continuas.
+\item \textbf{Clasificación con actuación o alertamiento}. Además del acierto de clase, la evaluación debe incluir desempeño operativo (latencia de inferencia, falsas alarmas y omisiones de alerta), ya que la utilidad final depende de la respuesta en campo.
+\item \textbf{Pronóstico en series temporales por horizonte}. Cuando existe predicción a distintos horizontes, el error debe reportarse por tramo de anticipación (corto, medio, largo), evitando promedios únicos que oculten degradación a horizontes extensos.
+\end{enumerate}
+
+Con estas reglas, la comparación entre estudios requiere tres condiciones simultáneas: misma unidad de salida evaluable, mismo protocolo de validación y métricas compatibles con dicha salida. Si alguna de estas condiciones no se cumple, el contraste cuantitativo pierde validez interpretativa.
+
+Como cierre metodológico, la evaluación de la propuesta debe definirse desde el tipo de salida que se desea validar: si el objetivo principal es predicción/estimación continua, el bloque central de evaluación debe estructurarse con MAE/RMSE/\(R^2\) y análisis por horizonte; si el objetivo incluye clasificación de niveles o alertamiento, debe añadirse desempeño por clase y evidencia operativa de respuesta. Esta estructura permite que los resultados sean técnicamente auditables, comparables con antecedentes afines y útiles para decisiones de implementación en contexto real.
+
+\subsection{Datasets públicos de calidad del aire}
+En esta investigación, los datasets públicos se consideran un componente estructural del diseño experimental, a partir de los que se alimentará el sistema difuso propuesto. Su función en el marco teórico es doble: sostener reproducibilidad de resultados y habilitar comparación técnica entre estudios con objetivos similares \cite{A135,A144,A178,A084,A028}. Desde esa perspectiva, la lectura de fuentes públicas debe separar con claridad tres perfiles: plataformas actualizables, repositorios históricos curados y artefactos de proyecto publicados para replicación.
+
+Las plataformas actualizables, como \textit{OpenAQ}, aportan cobertura geográfica amplia, trazabilidad por estación y acceso programático para consulta de series históricas y ventanas recientes \cite{DATA_OPENAQ}. Su valor metodológico es que permiten construir flujos de ingestión y evaluación sobre datos que evolucionan en el tiempo, más cercanos a un escenario operativo. En ese mismo perfil, los portales nacionales de AQI usados en algunos antecedentes, como CPCB en India, ofrecen continuidad institucional de publicación, aunque con diferencias normativas y de estructura frente a otras fuentes \cite{A028}.
+
+Los repositorios históricos curados responden a otra necesidad: controlar mejor las condiciones de entrenamiento y validación. El conjunto \textit{Air Quality} de UCI (ID 360) concentra una serie temporal horaria con canales de sensores químicos, variables meteorológicas y valores de referencia para tareas de modelado y calibración \cite{DATA_UCI_360}. En esa misma línea, el conjunto \textit{Beijing Multi-Site Air Quality} (UCI ID 501) extiende la evaluación a múltiples estaciones y periodos, lo cual favorece análisis por sitio, particiones temporales y pruebas de transferencia entre contextos \cite{DATA_UCI_501,A135}.
+
+Un tercer grupo corresponde a artefactos abiertos asociados a estudios concretos. Aquí se ubican repositorios como \textit{GAMS Indoor Air Quality Dataset}, colecciones heterogéneas UCI/Kaggle empleadas en marcos multipaís y conjuntos publicados en Zenodo con insumos de datos y modelos \cite{A144,A178,A084}. Estos recursos son valiosos para replicar decisiones de preprocesamiento y comparar pipelines, pero suelen reflejar el contexto específico del estudio que los publica, por lo que requieren mayor cautela para extrapolar resultados.
+
+La principal implicación metodológica es que ``dataset público'' no equivale automáticamente a ``dataset comparable''. Cambian la cobertura de contaminantes, las unidades de reporte, la resolución temporal, la proporción de valores faltantes y los criterios de control de calidad. Si estas diferencias no se normalizan y documentan, la comparación entre modelos mezcla efectos del método con efectos de la fuente de datos.
+
+Por ello, para esta propuesta se exige trazabilidad mínima en cada fuente: origen institucional, licencia de uso, variables seleccionadas, ventana temporal efectiva, resolución de muestreo, reglas de limpieza e imputación, y protocolo de partición/validación. Esta trazabilidad reduce el riesgo de sobreestimar rendimiento en un entorno local y mejora la transferibilidad de los resultados hacia escenarios urbanos distintos.
+
+La Tabla~\ref{tab:datasets_publicos_sintesis} resume las fuentes públicas priorizadas y su lectura metodológica para esta investigación.
+\input{assets/tablas/02_cuerpo/04_estado_del_arte/datasets_publicos_sintesis.tex}
+
+A partir de esta síntesis, el análisis de limitaciones se reduce al tipo de sesgo que introduce en el ciclo de modelado. El sesgo de cobertura espacial aparece cuando el entrenamiento se concentra en pocas estaciones o en un solo contexto urbano; en ese caso, el modelo puede aprender patrones locales y perder estabilidad al transferirse a otra ciudad \cite{A084,A144}. El sesgo temporal surge cuando la ventana de datos no incluye suficiente variación estacional o cambios operativos, lo que afecta especialmente tareas de predicción por horizonte y validación fuera de muestra \cite{A135,DATA_UCI_501}. 
+
+También existe sesgo por instrumentación y protocolo de medición: distintas redes usan sensores, calibraciones y criterios de control de calidad diferentes, por lo que una misma variable puede no ser estrictamente equivalente entre fuentes \cite{A178,A084}. A esto se suma el sesgo de completitud, asociado a valores faltantes, retrasos de publicación y revisiones posteriores de registros en plataformas actualizables, situación que puede alterar métricas si no se fija una política de corte temporal y depuración reproducible \cite{DATA_OPENAQ}. Finalmente, en fuentes basadas en índices nacionales, aparece sesgo normativo: cambian umbrales y categorías de interpretación, de modo que comparar resultados entre jurisdicciones exige armonizar primero la semántica del índice \cite{A028}.
+
+Por tanto, la validez metodológica depende de declarar explícitamente qué sesgos son tolerados, cuáles se corrigen y cuáles se controlan por diseño experimental. Sin esta declaración, un resultado puede parecer competitivo en métrica agregada y, al mismo tiempo, carecer de robustez cuando se desplaza a otro contexto geográfico, temporal o regulatorio.
+
+Con esta base, la selección de datasets para la propuesta se define mediante criterios operativos verificables:
+\begin{enumerate}
+\item \textbf{Trazabilidad de origen}. La fuente debe identificar institución responsable, ubicación de medición, marca temporal y metadatos suficientes para auditoría.
+\item \textbf{Cobertura de variables pertinente}. Debe incluir contaminantes y variables ambientales coherentes con la salida objetivo del modelo (clasificación o predicción de AQI/IAQ).
+\item \textbf{Resolución temporal utilizable}. La frecuencia de muestreo debe permitir construir ventanas de entrada y horizontes de salida sin interpolaciones excesivas.
+\item \textbf{Calidad y completitud}. Se requiere política explícita para faltantes, valores atípicos y consistencia de unidades antes de cualquier comparación de desempeño.
+\item \textbf{Comparabilidad normativa}. Si se integran fuentes de distintas jurisdicciones, se debe armonizar la semántica de categorías y umbrales del índice.
+\item \textbf{Reproducibilidad técnica}. El acceso a datos debe ser estable y replicable (consulta programática o descarga versionada), junto con documentación mínima de extracción.
+\item \textbf{Potencial de validación externa}. La fuente debe permitir particiones por tiempo, sitio o contexto para evaluar transferencia y no solo ajuste local.
+\end{enumerate}
+
+La regla de decisión derivada de estos criterios es usar una combinación de fuentes con roles complementarios: una fuente pública actualizable como base operativa del sistema, y una o más fuentes históricas curadas para pruebas controladas y validación de estabilidad. Esta combinación permite balancear realismo de despliegue, comparabilidad metodológica y robustez externa del desempeño reportado.

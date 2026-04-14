@@ -848,6 +848,36 @@ Sutton, R\BPBI S.%
 }{%
 {United States Environmental Protection Agency}%
 }{%
+{\protect \APACyear {2024}}%
+}]{%
+DATA_EPA_AQI_TAD}
+\APACinsertmetastar {%
+DATA_EPA_AQI_TAD}%
+\begin{APACrefauthors}%
+{United States Environmental Protection Agency}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {Technical Assistance Document for the Reporting of Daily Air
+  Quality -- the Air Quality Index (AQI).} {Technical assistance document for
+  the reporting of daily air quality -- the air quality index (aqi).}
+\newblock
+\APAChowpublished {AirNow}.
+\newblock
+\begin{APACrefURL}
+  \url{https://document.airnow.gov/technical-assistance-document-for-the-reporting-of-daily-air-quailty.pdf}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{Consultado el 13 de abril de 2026}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{United States Environmental Protection Agency}%
+}{%
+{United States Environmental Protection Agency}%
+}{%
 {\protect \APACyear {2026}}%
 }]{%
 DATA_EPA_AQS_BREAKPOINTS}
