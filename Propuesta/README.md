@@ -1,106 +1,119 @@
 # AQRisk
 
-`AQRisk` es el artefacto implementado del TFM. El sistema evalúa episodios de calidad del aire a partir de datos abiertos o escenarios controlados, consolida un estado base mediante `AQI`, deriva variables auxiliares y aplica una capa de inferencia difusa auditable con ajuste contextual explícito.
+## Presentación del artefacto
 
-El repositorio `Propuesta/` reúne tres subsistemas:
+`AQRisk` es el artefacto implementado del Trabajo Fin de Máster. Su objetivo es evaluar episodios de calidad del aire a partir de datos abiertos o escenarios controlados, consolidar un estado base mediante `AQI` y complementar esa lectura con una capa de inferencia difusa auditable y un ajuste contextual explícito.
 
-- un backend Python con el núcleo de evaluación;
-- una API HTTP que expone el resultado y los metadatos del modelo;
-- un frontend Vue/Vite para operar el prototipo, revisar trazabilidad y apoyar la documentación de resultados.
+El repositorio `Propuesta/` constituye, por tanto, el anexo técnico de implementación del TFM. Reúne el código fuente del backend, la API HTTP, el frontend web, las pruebas disponibles y la documentación necesaria para comprender la arquitectura del sistema, ejecutar el prototipo y revisar sus decisiones de diseño.
 
-La solución actual no corresponde a una plataforma productiva completa. Sí cubre el núcleo defendible del TFM: consolidación normativa, explicabilidad operativa, histórico local, despliegue dockerizado e interfaz web para inspección del razonamiento del artefacto.
+## Alcance del sistema
 
-## Capacidades implementadas
+El artefacto implementa las siguientes capacidades:
 
-El flujo completo del sistema sigue estas etapas:
+1. adquisición de observaciones desde `OpenAQ` o construcción de escenarios reproducibles en modo `mock`;
+2. normalización de series y cálculo de cobertura efectiva;
+3. cálculo de subíndices y `AQI` global con base normativa `EPA/AQS`;
+4. derivación de variables auxiliares `concurrence` y `persistence`;
+5. ejecución de una malla `Mamdani` de `54` reglas;
+6. aplicación de una capa contextual crisp de `9` reglas sobre temperatura y humedad;
+7. construcción de alerta, trazabilidad, explicabilidad e histórico local.
 
-1. recuperar o sintetizar observaciones;
-2. normalizar series y calcular cobertura;
-3. obtener subíndices y `AQI` global con base `EPA/AQS`;
-4. derivar `concurrence` y `persistence`;
-5. ejecutar una malla `Mamdani` de `54` reglas;
-6. aplicar una capa contextual crisp de `9` reglas sobre temperatura y humedad;
-7. construir alerta, trazabilidad, explicabilidad e histórico local.
+El sistema actual resuelve el núcleo metodológico defendible del trabajo. No constituye todavía una plataforma multiusuario ni una solución endurecida para exposición pública.
 
-El resultado es una evaluación interpretable por capas. El frontend no recalcula nada: consume la API y organiza la lectura del estado base, la inferencia principal, el ajuste contextual y la comparación con corridas previas.
+## Estructura general del repositorio
 
-## Mapa del repositorio
+El repositorio se organiza en cinco bloques principales:
 
-### Backend
+- `src/aqrisk/`: backend Python estructurado por capas de dominio, adquisición, procesamiento, cálculo AQI, inferencia difusa, API, persistencia e interfaces.
+- `frontend/`: cliente web Vue/Vite para control de ejecución, trazabilidad, explicabilidad y evaluación histórica.
+- `tests/`: validación automatizada del pipeline y del contrato HTTP.
+- `docs/`: documentación técnica del artefacto.
+- `docker-compose.yml`: definición del despliegue del stack completo.
 
-- `src/aqrisk/domain`: modelos tipados y estructura de resultados.
-- `src/aqrisk/ingestion`: cliente `OpenAQ`, ubicaciones, sensores y series.
-- `src/aqrisk/processing`: normalización, cobertura, persistencia, concurrencia y capa contextual.
-- `src/aqrisk/aqi`: cálculo normativo del índice con referencia `EPA/AQS`.
-- `src/aqrisk/fuzzy`: funciones de pertenencia, base de reglas y motor `Mamdani`.
-- `src/aqrisk/alerting`: composición de la salida operativa final.
-- `src/aqrisk/application`: pipeline principal y escenarios `mock`.
-- `src/aqrisk/api`: endpoints HTTP, serialización y metadatos.
-- `src/aqrisk/storage`: histórico local en archivo.
-- `src/aqrisk/interfaces`: CLI.
+La estructura interna del backend conserva la organización citada en el informe:
 
-### Frontend
+- `domain`
+- `ingestion`
+- `processing`
+- `aqi`
+- `fuzzy`
+- `alerting`
+- `application`
+- `api`
+- `storage`
+- `interfaces`
 
-- `frontend/src/components`: secciones visuales y paneles reutilizables.
-- `frontend/src/composables`: estado, carga de datos, filtros y derivaciones reactivas.
-- `frontend/src/config`: configuración de vistas, gráficos y estaciones OpenAQ sugeridas.
-- `frontend/src/services`: cliente HTTP hacia la API.
-- `frontend/src/utils`: utilidades puras y descarga de PNG.
+Una descripción más detallada del backend y del frontend está en [docs/repository_guide.md](docs/repository_guide.md).
 
-### Soporte
+## Arquitectura funcional
 
-- `tests`: pruebas del pipeline y del contrato HTTP.
-- `docs`: documentación técnica del artefacto.
-- `docker-compose.yml`: despliegue del stack completo.
-- `scripts/start-services.sh`: arranque asistido con Docker.
+El sistema se compone de tres subsistemas:
 
-Un mapa más descriptivo del backend y del frontend está en [docs/repository_guide.md](docs/repository_guide.md).
+- un backend de evaluación que concentra la lógica normativa, difusa y contextual;
+- una API HTTP que expone el resultado y los metadatos públicos del modelo;
+- un frontend web que actúa como cliente del backend y organiza la lectura operativa del artefacto.
 
-## Documentación disponible
+El flujo de evaluación sigue esta secuencia:
 
-La documentación se organiza por responsabilidad:
+1. resolver configuración y modo de ejecución;
+2. recuperar o sintetizar observaciones;
+3. normalizar series y calcular cobertura;
+4. calcular subíndices y `AQI` global;
+5. derivar `concurrence` y `persistence`;
+6. ejecutar la inferencia difusa principal;
+7. aplicar la capa contextual cuando existen datos válidos;
+8. serializar la salida, registrar el histórico y exponer la evaluación por CLI, API y frontend.
 
-1. [README.md](README.md): guía maestra de entrada.
-2. [docs/repository_guide.md](docs/repository_guide.md): mapa del repositorio, backend y frontend.
-3. [docs/architecture.md](docs/architecture.md): arquitectura, flujo y límites técnicos.
-4. [docs/rule_base.md](docs/rule_base.md): base normativa, variables auxiliares, malla difusa y capa contextual.
-5. [docs/api_contract.md](docs/api_contract.md): endpoints, payloads y errores.
-6. [docs/deployment.md](docs/deployment.md): instalación local, Docker y troubleshooting.
-7. [docs/requirements.md](docs/requirements.md): alcance implementado y criterios de validación.
-8. [docs/design_decisions.md](docs/design_decisions.md): justificación metodológica de las decisiones principales.
+Esta arquitectura mantiene una separación explícita entre la capa normativa y la capa difusa. El frontend no recalcula resultados: consume el contrato público del backend y organiza su interpretación.
 
-## Modos de ejecución
+## Modos de operación
 
-### `mock`
+### Modo `mock`
 
-Usa escenarios controlados reproducibles para demostrar comportamiento del artefacto, activar reglas concretas y documentar casos que no siempre aparecen en datos reales.
+El modo `mock` permite ejecutar escenarios reproducibles y controlados. Su función es documentar comportamientos concretos del sistema, como la activación de varias reglas o el escalado contextual, incluso cuando esos casos no aparecen con facilidad en una estación real.
 
-Escenarios disponibles:
+Escenarios actualmente disponibles:
 
 - `urban_escalation`
 - `particulate_pressure`
 - `moderate_multicontaminant`
 - `diffuse_overlap`
 
-### `openaq`
+### Modo `openaq`
 
-Consulta una estación real mediante `location_id`, recupera sensores y series horarias, y ejecuta el mismo pipeline sobre datos abiertos. Este modo requiere `OPENAQ_API_KEY`.
+El modo `openaq` consulta una estación real mediante `location_id`, recupera sensores y series horarias, y ejecuta el mismo pipeline sobre datos abiertos. Este modo requiere `OPENAQ_API_KEY`.
 
-## Ejecución
+## Documentación técnica disponible
 
-### Opción recomendada: Docker
+La documentación incluida en `docs/` se organiza por finalidad:
+
+1. [docs/repository_guide.md](docs/repository_guide.md): mapa del repositorio, del backend y del frontend.
+2. [docs/architecture.md](docs/architecture.md): arquitectura, flujo de ejecución y límites técnicos.
+3. [docs/rule_base.md](docs/rule_base.md): base normativa, variables auxiliares, reglas difusas y capa contextual.
+4. [docs/api_contract.md](docs/api_contract.md): endpoints, payloads y errores.
+5. [docs/deployment.md](docs/deployment.md): instalación local, despliegue dockerizado y resolución de problemas.
+6. [docs/requirements.md](docs/requirements.md): alcance implementado y criterios de validación.
+7. [docs/design_decisions.md](docs/design_decisions.md): justificación metodológica de las decisiones principales.
+
+## Ejecución del artefacto
+
+### Despliegue recomendado
+
+La forma recomendada de ejecución es el despliegue dockerizado:
 
 ```bash
 cd Propuesta
 docker compose up --build
 ```
 
-Puertos por defecto:
+Puertos expuestos por defecto:
 
 - API: `http://localhost:18010`
-- Frontend: `http://localhost:18080`
+- frontend: `http://localhost:18080`
 
-### Backend por CLI
+### Ejecución local
+
+Backend por CLI:
 
 ```bash
 cd Propuesta
@@ -108,7 +121,7 @@ python3 -m pip install -e .
 aqrisk --mode mock --pretty
 ```
 
-### API HTTP
+API HTTP:
 
 ```bash
 cd Propuesta
@@ -116,7 +129,7 @@ python3 -m pip install -e .
 aqrisk-api --host 0.0.0.0 --port 18010
 ```
 
-### Frontend en desarrollo
+Frontend en desarrollo:
 
 ```bash
 cd Propuesta/frontend
@@ -124,11 +137,11 @@ npm install
 npm run dev
 ```
 
-El detalle completo de configuración, arranque y verificación está en [docs/deployment.md](docs/deployment.md).
+Las instrucciones completas de instalación, variables de entorno, verificación operativa y resolución de problemas están en [docs/deployment.md](docs/deployment.md).
 
-## Variables de entorno
+## Configuración
 
-El sistema carga configuración desde `Propuesta/.env`. Si el archivo no existe, puede crearse a partir de `.env.example`.
+La configuración se carga desde `Propuesta/.env`. Si el archivo no existe, puede crearse a partir de `.env.example`.
 
 Variables principales:
 
@@ -140,19 +153,19 @@ Variables principales:
 - `AQRISK_HISTORY_PATH`
 - `AQRISK_API_PORT`
 - `AQRISK_FRONTEND_PORT`
-- `AQRISK_SCENARIO_ID` como override opcional del escenario por defecto
+- `AQRISK_SCENARIO_ID`
 
-## Validación actual
+## Validación disponible
 
-La validación automatizada disponible cubre:
+La validación automatizada actual cubre:
 
-- ejecución completa del pipeline en `mock`;
+- ejecución de extremo a extremo del pipeline en `mock`;
 - fallo controlado de `mode=openaq` cuando falta `OPENAQ_API_KEY`;
 - endpoints básicos del backend;
 - persistencia y consulta del histórico local;
-- explicación de reglas múltiples con `diffuse_overlap`.
+- casos con múltiples reglas activadas, en particular `diffuse_overlap`.
 
-La suite actual se ejecuta así:
+Comando de ejecución de la suite:
 
 ```bash
 cd Propuesta
@@ -162,17 +175,17 @@ PYTHONPATH=src python3 -m unittest discover -s tests -v
 Estado actual de cobertura:
 
 - backend: pruebas de pipeline y contrato HTTP;
-- frontend: verificación manual, sin suite automatizada propia;
-- E2E: no implementadas todavía.
+- frontend: validación manual;
+- E2E: no implementadas.
 
-## Estado actual y límites
+## Límites actuales
 
-El prototipo implementa el núcleo defendible del TFM, pero mantiene límites claros:
+El alcance actual deja fuera:
 
-- no hay autenticación ni perfiles;
-- el histórico sigue siendo local y basado en archivo;
-- no existe persistencia robusta en `SQLite` o `PostgreSQL`;
-- no hay endurecimiento para exposición pública;
-- no hay pruebas E2E ni endurecimiento de frontend.
+- autenticación y control de acceso;
+- persistencia robusta en `SQLite` o `PostgreSQL`;
+- endurecimiento para exposición pública;
+- pruebas E2E;
+- operación multiusuario.
 
-Estas restricciones responden al alcance definido para el artefacto. La prioridad es demostrar razonamiento trazable y defendible, no resolver todavía una plataforma multiusuario completa.
+Estas restricciones corresponden al alcance fijado para el TFM. La prioridad del artefacto es demostrar razonamiento trazable, defendible y técnicamente coherente.

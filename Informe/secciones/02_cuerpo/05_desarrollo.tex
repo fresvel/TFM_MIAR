@@ -246,12 +246,12 @@ Con ello, la persistencia no representa duración cronológica estricta, sino co
 En esta transición también se calcula la cobertura global de la entrada. Sin embargo, la cobertura no entra a la malla difusa principal; se conserva como indicador de completitud de datos y como criterio de cautela en la salida.
 
 \subsubsection{Núcleo de evaluación y motor difuso}
-El núcleo IA del prototipo se organiza en dos niveles de decisión. El primero es determinista y produce el estado base del aire. El segundo es difuso y ajusta ese estado en función de variables agregadas. La Figura~\ref{fig:estructura_decision} resume esta estructura.
+El núcleo de evaluación del prototipo se organiza en dos niveles de decisión. El primero es determinista y produce el estado base del aire. El segundo es difuso y ajusta ese estado en función de variables agregadas. La Figura~\ref{fig:estructura_decision} resume esta estructura.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{propuesta/fig03_estructura_decision.png}
-\caption{Estructura de decisión implementada en el núcleo IA del módulo. Elaboración propia.}
+\caption{Estructura de decisión implementada en el núcleo de evaluación del módulo. Elaboración propia.}
 \label{fig:estructura_decision}
 \end{figure}
 
@@ -288,7 +288,7 @@ El prototipo se implementó en Python 3.12 bajo el paquete \texttt{aqrisk}. La e
 La ejecución local puede realizarse directamente en Python o mediante Docker. Sobre ese núcleo se implementó además una API HTTP y una interfaz web orientada a control, visualización, explicabilidad y revisión histórica de corridas. La interfaz permite seleccionar entradas, consultar escenarios, visualizar subíndices, reglas activadas, curvas de pertenencia y comparación entre ejecuciones. La gestión de usuarios, roles y administración todavía no forma parte del alcance actual.
 
 \subsubsection{Estrategia de verificación del artefacto}
-La verificación actual del prototipo se centró en completitud del pipeline, coherencia de la salida, trazabilidad de reglas y estabilidad básica de ejecución. Para ello se implementaron pruebas de humo sobre el modo sintético y sobre la validación mínima del modo \textit{OpenAQ}. También se ejecutó un escenario \textit{mock} con cobertura total y disponibilidad completa de contaminantes criterio para comprobar la integración de las cinco capas.
+La verificación actual del prototipo se centró en completitud del pipeline, coherencia de la salida, trazabilidad de reglas y estabilidad básica de ejecución. Para ello se implementó una suite automatizada que ya cubre el pipeline y el contrato HTTP básico de la API, además de escenarios controlados orientados a validar activación de reglas y comportamiento contextual. También se ejecutó un escenario \textit{mock} con cobertura total y disponibilidad completa de contaminantes criterio para comprobar la integración de las cinco capas.
 
 \subsection{Resultados}
 La construcción del prototipo permitió cerrar un primer artefacto funcional alineado con la metodología del TFM. El módulo ya ejecuta ingestión, normalización, control de cobertura, cálculo normativo del AQI, derivación de persistencia y concurrencia, inferencia Mamdani, ajuste contextual y composición de la alerta. Sobre este núcleo se integró una capa web de supervisión que consume la API del sistema y expone paneles de dashboard, trazabilidad, explicabilidad y evaluación.
@@ -434,4 +434,4 @@ La validación es el punto donde la comparación exige mayor precisión metodol�
 
 La integración con \textit{OpenAQ} quedó validada a nivel de código, configuración y cliente de consulta. El prototipo recupera estaciones por \textit{location\_id}, consulta sensores asociados y construye series horarias por parámetro. Las corridas reales también hicieron visible una limitación importante: no toda estación con sensores publicados produce una ventana útil para el modelo. Un ejemplo es \textit{Adrogué} en Buenos Aires (\texttt{2847298}), cuya ficha expone PM$_{2.5}$, PM$_{10}$, temperatura y humedad relativa en \textit{OpenAQ}, pero cuya ventana consultada devolvió series vacías, cobertura global nula y una categoría \textit{sin\_datos}. Esa restricción forma parte del comportamiento real del sistema sobre datos abiertos vivos y debe conservarse explícitamente en la evaluación.
 
-En el estado actual del trabajo, el resultado principal no es todavía una comparación extensa de desempeño entre múltiples estaciones. El resultado alcanzado es la construcción de un artefacto ejecutable, trazable y explicable, con base normativa explícita, base principal de 54 reglas, capa contextual de 9 reglas, API HTTP, despliegue en contenedores e interfaz web inicial lista para etapas posteriores de validación comparativa y consolidación operativa.
+En el estado actual del trabajo, el resultado principal no es todavía una comparación extensa de desempeño entre múltiples estaciones. El resultado alcanzado es la construcción de un artefacto ejecutable, trazable y explicable, con base normativa explícita, base principal de 54 reglas, capa contextual de 9 reglas, API HTTP, despliegue en contenedores e interfaz web funcional lista para etapas posteriores de validación comparativa y consolidación operativa.
